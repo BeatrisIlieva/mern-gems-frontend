@@ -16,7 +16,9 @@ export const Home = () => {
             imageUrl={item.imageUrl}
             variant={index % 2 === 0 ? "hero-box" : "hero-box-reverse"}
           />
-          <HorizontalLine variant={"small"} />
+          {index < collectionItems.length - 1 && (
+            <HorizontalLine variant={"small"} />
+          )}
         </>
       ))}
     </section>
