@@ -1,0 +1,56 @@
+@keyframes slideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0px 60px;
+}
+
+.logo-image {
+  height: 140px;
+  margin-right: 92px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-list {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-item {
+}
+
+.icon-bar-item {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: var(--normal);
+}
+
+.icon-span {
+  color: var(--pink);
+  margin-right: 4px;
+}
+
+.text-span {
+  font-size: var(--medium);
+}
+
+.count-span {
+  margin-left: 4px;
+}

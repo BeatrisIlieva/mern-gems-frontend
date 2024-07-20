@@ -1,0 +1,107 @@
+.app {
+  font-family: var(--main-font-family);
+  font-size: var(--normal);
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  letter-spacing: 1.2;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  margin: 0px;
+  min-height: 100vh;
+  /* margin-top: 158px; */
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --pink: #fc8eac;
+  --red: #fa2a55;
+  --green: #5daa68;
+  --gray: #4C4A49;
+  --border: hsl(0deg 0.99% 80.2%);
+}
+
+@font-face {
+  font-family: "tisaSansProLight";
+  src: url("./fonts/tisaSansProLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "tisaSansProBold";
+  src: url("./fonts/tisaSansProMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "tisaSansProBoldItalic";
+  src: url("./fonts/tisaSansProMediumItalic.ttf") format("truetype");
+}
+
+:root {
+  --main-font-family: tisaSansProLight, Arial, sans-serif, -apple-system,
+    ui-sans-serif, system-ui;
+  --bold-font-family: tisaSansProBold, Arial, sans-serif, -apple-system,
+    ui-sans-serif, system-ui;
+  --bold-italic-font-family: tisaSansProBoldItalic, Arial, sans-serif,
+    -apple-system, ui-sans-serif, system-ui;
+}
+
+:root {
+  --small: 12px;
+  --normal: 14px;
+  --medium: 16px;
+  --large: 22px;
+  --xlarge: 28px;
+  --xxlarge: 38px;
+}
+
+input[type="text"],
+[type="password"],
+[type="email"] {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-internal-autofill-selected {
+  -webkit-box-shadow: 0 0 0px 1000px var(--white) inset !important;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  caret-color: var(--dark-pink);
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--minimum-font-size);
+  height: var(--minimum-font-size);
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  border: 1px solid var(--gray);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--not-transparent-white-pink);
+}

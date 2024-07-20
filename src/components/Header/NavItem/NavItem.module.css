@@ -1,0 +1,9 @@
+.nav-item {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.nav-title {
+  font-family: var(--main-font-family);
+  font-size: var(--medium);
+}
