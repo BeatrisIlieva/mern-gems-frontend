@@ -8,10 +8,22 @@
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s forwards;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.wrapper {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin: 0px 60px;
+  background-color: var(--white);
+  padding-bottom: 13px;
 }
 
 .logo-image {
@@ -21,6 +33,7 @@
 
 .nav {
   display: flex;
+  margin-left: 80px;
 }
 
 .nav-list {
@@ -31,9 +44,7 @@
 .icon-list {
   display: flex;
   gap: 20px;
-}
-
-.icon-item {
+  margin-right: 80px !important;
 }
 
 .icon-bar-item {

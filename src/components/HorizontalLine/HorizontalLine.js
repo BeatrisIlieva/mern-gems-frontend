@@ -1,8 +1,14 @@
 import styles from "./HorizontalLine.module.css";
 
-export const HorizontalLine = ({ variant }) => {
+export const HorizontalLine = ({ variant, position }) => {
   return (
-    <div className={styles["flex-container-line"]}>
+    <div
+      className={
+        position
+          ? styles["flex-container-line-absolute"]
+          : styles["flex-container-line"]
+      }
+    >
       <hr className={styles[`hr-line-${variant}`]} />
       <img
         className={styles["line-img"]}

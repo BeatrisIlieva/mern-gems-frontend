@@ -10,6 +10,10 @@
   letter-spacing: 1.2;
 }
 
+body {
+  margin-top: 200px;
+}
+
 h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
@@ -18,7 +22,6 @@ h1, h2, h3, h4 {
 .main {
   margin: 0px;
   min-height: 100vh;
-  /* margin-top: 158px; */
 }
 
 :root {
@@ -29,7 +32,7 @@ h1, h2, h3, h4 {
   --green: #5daa68;
   --gray: #4C4A49;
   --medium-gray: #878685;
-  --border: hsl(0deg 0.99% 80.2%);
+  --light-gray: #CBC9C9;
 }
 
 @font-face {
