@@ -1,13 +1,24 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import styles from "./NavItem.module.css";
 
-export const NavItem = ({ path, title }) => {
+export const NavItem = ({ path, title, index }) => {
   return (
     <li>
-      <Link className={styles["nav-item"]} to={path}>
+      <NavLink
+      className={({isActive}) => isActive ?  styles["selected"] : `${styles["nav-item"]} ${styles[`nav-item-${index}`]}`}
+        to={path}
+      >
         <h1 className={styles["nav-title"]}>{title}</h1>
-      </Link>
+      </NavLink>
     </li>
   );
 };
+
+<NavLink
+className={({ isActive }) =>
+  isActive ? styles["selected"] : styles[ "sub-nav-title"]}
+to={"orders"}
+>
+Order History
+</NavLink>

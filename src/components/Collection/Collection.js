@@ -11,7 +11,7 @@ export const Collection = ({ path, title, description, imageUrl, variant }) => {
         <div className={styles["hero-text"]}>
           <h2 className={styles["title"]}>{title} Collection</h2>
           <p className={styles["paragraph"]}>{description}</p>
-          <AnimatedButton title={"Discover"}/>
+          <AnimatedButton title={"Discover"} />
         </div>
         <div className={styles["hero-img-container"]}>
           <img className={styles["hero-img"]} src={imageUrl} alt={title} />

@@ -8,7 +8,7 @@ import { MiniHeader } from "./MiniHeader/MiniHeader";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Header.module.css";
@@ -52,22 +52,25 @@ export const Header = () => {
           <div className={styles["wrapper"]}>
             <nav className={styles["nav"]}>
               <ul className={styles["nav-list"]} role="list">
-                {navItems.map((item) => (
+                {navItems.map((item, index) => (
                   <NavItem
                     key={item.title}
                     path={item.path}
                     title={item.title}
+                    index={index}
                   />
                 ))}
               </ul>
             </nav>
-            <img
-              className={styles["logo-image"]}
-              src={
-                "https://res.cloudinary.com/deztgvefu/image/upload/v1719057213/template_images/Screenshot_2024-06-22_at_14.52.43_xrdvgt.png"
-              }
-              alt="logo-image"
-            />
+            <Link to={"/"}>
+              <img
+                className={styles["logo-image"]}
+                src={
+                  "https://res.cloudinary.com/deztgvefu/image/upload/v1719057213/template_images/Screenshot_2024-06-22_at_14.52.43_xrdvgt.png"
+                }
+                alt="logo-image"
+              />
+            </Link>
             <ul className={styles["icon-list"]} role="list">
               <li className={`${styles["icon-item"]}`}>
                 <Link
@@ -123,7 +126,7 @@ export const Header = () => {
               )}
             </ul>
           </div>
-          <HorizontalLine variant={"large"} position={"absolute"}/>
+          <HorizontalLine variant={"large"} position={"absolute"} />
         </header>
       )}
     </>
