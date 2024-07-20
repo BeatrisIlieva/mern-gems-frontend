@@ -87,7 +87,7 @@ export const Header = () => {
               </li>
               <li className={`${styles["icon-item"]}`}>
                 <Link
-                  className={styles["icon-bar-item"]}
+                  className={`${styles["icon-bar-item"]} ${styles["icon-bar-item-bag"]}`}
                   to={"/users/shopping-bag"}
                 >
                   <FontAwesomeIcon
@@ -96,7 +96,7 @@ export const Header = () => {
                   />
                   <span className={styles["text-span"]}>My Bag</span>
                   <span className={styles["count-span"]}>
-                    ({totalQuantity})
+                    {totalQuantity}
                   </span>
                 </Link>
               </li>

@@ -20,7 +20,7 @@
 }
 
 .nav-title-selected {
-  font-family: var(--bold-font-family);
+    font-family: var(--main-font-family);
   font-size: var(--medium);
   animation: wavy 2s ease-in-out infinite;
   color: var(--pink);
