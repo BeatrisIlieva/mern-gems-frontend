@@ -1,11 +1,15 @@
 const router = require("express").Router();
 const collectionManager = require("../../managers/jewelries/collectionManager");
 
-router.get("/:collectionId", async (req, res) => {
+router.get("/:collectionId/:skip/:limit", async (req, res) => {
   const collectionId = Number(req.params.collectionId);
+  const skip = Number(req.params.skip);
+  const limit = Number(req.params.limit);
+
+  const data = { categoryId, skip, limit };
 
   try {
-    let result = await collectionManager.findAll(collectionId);
+    let result = await collectionManager.findAll(data);
 
     res.status(200).json(result);
   } catch (err) {
