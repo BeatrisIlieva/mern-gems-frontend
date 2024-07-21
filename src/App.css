@@ -14,7 +14,10 @@ body {
   margin-top: 200px;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -31,9 +34,9 @@ h1, h2, h3, h4 {
   --light-pink: #fff4f7;
   --red: #fa2a55;
   --green: #5daa68;
-  --gray: #4C4A49;
+  --gray: #4c4a49;
   --medium-gray: #878685;
-  --light-gray: #CBC9C9;
+  --light-gray: #cbc9c9;
 }
 
 @font-face {

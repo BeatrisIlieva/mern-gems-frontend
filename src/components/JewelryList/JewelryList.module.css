@@ -1,0 +1,22 @@
+.jewelries {
+    margin: 40px 80px 40px 80px;
+  }
+  
+  .jewelry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .jewelries-count {
+    color: var(--medium-gray);
+    margin-bottom: 8px;
+    font-size: var(--normal);
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  

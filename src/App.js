@@ -19,6 +19,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bracelets" element={<JewelryByCategoryList />} />
+          <Route path="/earrings" element={<JewelryByCategoryList />} />
+          <Route path="/necklaces" element={<JewelryByCategoryList />} />
+          <Route path="/rings" element={<JewelryByCategoryList />} />
           {/* <Route
             path="/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:_id"
             element={<JewelryItem />}
