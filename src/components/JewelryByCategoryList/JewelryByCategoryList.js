@@ -8,6 +8,7 @@ import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 
 import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
+import { ITEMS_PER_PAGE } from "../../constants/itemsPerPage";
 
 import styles from "./JewelryByCategoryList.module.css";
 
@@ -16,7 +17,10 @@ export const JewelryByCategoryList = () => {
   const pathname = location.pathname.substring(1);
   const categoryId = CATEGORIES_BY_ID[pathname];
 
-  let [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+
+  const [page, setPage] = useState(0);
+  const [loadMore, setLoadMore] = useState(true);
 
   const [jewelries, setJewelries] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -24,10 +28,17 @@ export const JewelryByCategoryList = () => {
   useEffect(() => {
     setLoading(true);
 
+    const skip = page * ITEMS_PER_PAGE;
+    const limit = ITEMS_PER_PAGE;
+
     jewelryByCategoryService
-      .getAll(categoryId)
+      .getAll(categoryId, skip, limit)
       .then((data) => {
-        setJewelries(data.jewelries);
+        if (page === 0) {
+          setJewelries(data.jewelries);
+        } else {
+          setJewelries((state) => [...state, ...data.jewelries]);
+        }
         setTotalCount(data.totalCount);
       })
       .catch((err) => {
@@ -36,7 +47,15 @@ export const JewelryByCategoryList = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [pathname, categoryId]);
+  }, [pathname, categoryId, page]);
+
+  useEffect(() => {
+    setLoadMore(jewelries.length < totalCount);
+  }, [loading]);
+
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
 
   return (
     <>
@@ -45,17 +64,20 @@ export const JewelryByCategoryList = () => {
       ) : (
         <section div className={styles["jewelries"]}>
           <div className={styles["jewelries-count"]}>
-            Showing 1 - {totalCount}
-            {/* {totalCount >= displayedItems ? displayedItems : totalCount} 0f{" "} */}
+            Showing 1 -{" "}
+            {totalCount >= jewelries.length ? jewelries.length : totalCount} of{" "}
+            {totalCount}
           </div>
           <div className={styles["jewelry-grid"]}>
             {jewelries.map((j) => (
               <JewelryByCategoryListItem key={j._id} {...j} />
             ))}
           </div>
-          <div className={styles["button"]}>
-            <AnimatedButton title={"Load More"} />
-          </div>
+          {loadMore === true && (
+            <div className={styles["button"]} onClick={handleLoadMore}>
+              <AnimatedButton title={"Load More"} />
+            </div>
+          )}
         </section>
       )}
     </>
