@@ -98,6 +98,12 @@ exports.findAll = async ({ categoryId, skip, limit }) => {
         _id: 1,
       },
     },
+    {
+      $skip: skip,
+    },
+    {
+      $limit: limit,
+    },
   ];
 
   const countQuery = [

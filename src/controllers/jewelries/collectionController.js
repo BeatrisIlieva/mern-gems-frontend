@@ -6,7 +6,7 @@ router.get("/:collectionId/:skip/:limit", async (req, res) => {
   const skip = Number(req.params.skip);
   const limit = Number(req.params.limit);
 
-  const data = { categoryId, skip, limit };
+  const data = { collectionId, skip, limit };
 
   try {
     let result = await collectionManager.findAll(data);
