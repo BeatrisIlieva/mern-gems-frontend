@@ -19,6 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bracelets" element={<JewelryByCategoryList />} />
+          {/* <Route
+            path="/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:_id"
+            element={<JewelryItem />}
+          /> */}
         </Routes>
       </main>
       <Footer />

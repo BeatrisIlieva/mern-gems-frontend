@@ -1,3 +1,7 @@
+import { JewelryCard } from "../../JewelryCard/JewelryCard";
+
+import { slugify } from "../../../utils/slugify";
+
 export const JewelryByCategoryListItem = ({
   _id,
   firstImageUrl,

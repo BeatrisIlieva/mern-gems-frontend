@@ -1,0 +1,7 @@
+.image {
+    border: .1px solid var(--light-gray);
+}
+
+.image:hover {
+    background-color: var(--light-pink);
+}
