@@ -6,6 +6,7 @@ import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
+import { JewelryItem } from "./components/JewelryItem/JewelryItem";
 
 import "normalize.css";
 import styles from "./App.css";
@@ -26,10 +27,10 @@ function App() {
           <Route path="/sparkling-cluster" element={<JewelryList />} />
           <Route path="/sunflower" element={<JewelryList />} />
           <Route path="/diamond-loop" element={<JewelryList />} />
-          {/* <Route
-            path="/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:_id"
+          <Route
+            path="/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:jewelryId"
             element={<JewelryItem />}
-          /> */}
+          />
         </Routes>
       </main>
       <Footer />
