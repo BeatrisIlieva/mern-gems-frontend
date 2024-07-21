@@ -5,15 +5,19 @@ import { JewelryListItem } from "./JewelryListItem/JewelryListItem";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 
+import { ENTITIES_MAPPER } from "../../mappers/entitiesMapper";
+
 import styles from "./JewelryList.module.css";
 
-export const JewelryList = ({ mapper, fetchService }) => {
+export const JewelryList = () => {
   const location = useLocation();
   const pathname = location.pathname.substring(1);
-  const entityId = mapper[pathname];
+
+  const entityId = ENTITIES_MAPPER[pathname].entityId;
+  const fetchFunction = ENTITIES_MAPPER[pathname].fetchFunction;
 
   const { loading, jewelries, totalCount, loadMore, handleLoadMore } =
-    useJewelryList(entityId, fetchService);
+    useJewelryList(entityId, fetchFunction);
 
   return (
     <>

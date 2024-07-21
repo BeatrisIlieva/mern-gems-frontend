@@ -5,8 +5,7 @@ import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
-import { JewelryByCategoryList } from "./components/JewelryByCategoryList/JewelryByCategoryList";
-import { JewelryByCollectionList } from "./components/JewelryByCollectionList/JewelryByCollectionList";
+import { JewelryList } from "./components/JewelryList/JewelryList";
 
 import "normalize.css";
 import styles from "./App.css";
@@ -19,17 +18,14 @@ function App() {
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/bracelets" element={<JewelryByCategoryList />} />
-          <Route path="/earrings" element={<JewelryByCategoryList />} />
-          <Route path="/necklaces" element={<JewelryByCategoryList />} />
-          <Route path="/rings" element={<JewelryByCategoryList />} />
-          <Route path="/forget-me-not" element={<JewelryByCollectionList />} />
-          <Route
-            path="/sparkling-cluster"
-            element={<JewelryByCollectionList />}
-          />
-          <Route path="/sunflower" element={<JewelryByCollectionList />} />
-          <Route path="/diamond-loop" element={<JewelryByCollectionList />} />
+          <Route path="/bracelets" element={<JewelryList />} />
+          <Route path="/earrings" element={<JewelryList />} />
+          <Route path="/necklaces" element={<JewelryList />} />
+          <Route path="/rings" element={<JewelryList />} />
+          <Route path="/forget-me-not" element={<JewelryList />} />
+          <Route path="/sparkling-cluster" element={<JewelryList />} />
+          <Route path="/sunflower" element={<JewelryList />} />
+          <Route path="/diamond-loop" element={<JewelryList />} />
           {/* <Route
             path="/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:_id"
             element={<JewelryItem />}
