@@ -91,7 +91,7 @@ import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
 export const JewelryByCategoryList = () => {
   return (
     <JewelryList
-      categoryMap={CATEGORIES_BY_ID}
+    mapper={CATEGORIES_BY_ID}
       fetchService={jewelryByCategoryService.getAll}
     />
   );

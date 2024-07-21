@@ -7,10 +7,11 @@ import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 
 import styles from "./JewelryList.module.css";
 
-export const JewelryList = ({ categoryMap, fetchService }) => {
+export const JewelryList = ({ mapper, fetchService }) => {
   const location = useLocation();
+  console.log(location);
   const pathname = location.pathname.substring(1);
-  const entityId = categoryMap[pathname];
+  const entityId = mapper[pathname];
 
   const { loading, jewelries, totalCount, loadMore, handleLoadMore } =
     useJewelryList(entityId, fetchService);
