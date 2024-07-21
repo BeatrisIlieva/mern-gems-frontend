@@ -115,7 +115,7 @@ exports.findAll = async (categoryId) => {
   ]);
 
   return {
-    data: result[0].data,
+    jewelries: result[0].data,
     totalCount: result[0].count[0] ? result[0].count[0].totalCount : 0,
   };
 };
