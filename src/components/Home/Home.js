@@ -9,7 +9,7 @@ export const Home = () => {
       {collectionItems.map((item, index) => (
         <>
           <Collection
-            key={item.title}
+            key={item.imageUrl}
             path={item.path}
             title={item.title}
             description={item.description}
@@ -17,7 +17,7 @@ export const Home = () => {
             variant={index % 2 === 0 ? "hero-box" : "hero-box-reverse"}
           />
           {index < collectionItems.length - 1 && (
-            <HorizontalLine variant={"small"} />
+            <HorizontalLine key={index} variant={"small"} />
           )}
         </>
       ))}

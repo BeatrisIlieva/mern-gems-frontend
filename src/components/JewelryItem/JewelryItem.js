@@ -17,9 +17,9 @@ export const JewelryItem = () => {
     setLoading(true);
 
     jewelryItemService
-      .getOne()
+      .getOne(jewelryId)
       .then((data) => {
-        setJewelry(data);
+        setJewelry(data[0]);
       })
       .catch((err) => {
         console.log(err.message);
@@ -27,5 +27,7 @@ export const JewelryItem = () => {
       .finally(() => {
         setLoading(false);
       });
-  });
+  }, []);
+
+  return <img src={jewelry.firstImageUrl} alt="" />;
 };
