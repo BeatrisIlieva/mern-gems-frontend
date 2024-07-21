@@ -9,7 +9,6 @@ import styles from "./JewelryList.module.css";
 
 export const JewelryList = ({ mapper, fetchService }) => {
   const location = useLocation();
-  console.log(location);
   const pathname = location.pathname.substring(1);
   const entityId = mapper[pathname];
 

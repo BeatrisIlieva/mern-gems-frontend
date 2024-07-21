@@ -41,7 +41,7 @@ export const useJewelryList = (entityId, fetchService) => {
     setLoadMore(true);
     setJewelries([]);
     setTotalCount(0);
-  }, [entityId]);
+  }, [entityId, fetchService]);
 
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import styles from "./JewelryCard.module.css"
+import styles from "./JewelryCard.module.css";
 
 export const JewelryCard = ({
   firstImageUrl,
@@ -12,7 +12,11 @@ export const JewelryCard = ({
     <Link
       to={`/${slugifiedCategoryTitle}/${slugifiedJewelryTitle}/${jewelryId}`}
     >
-      <img src={firstImageUrl} alt={slugifiedJewelryTitle} className={styles["image"]}/>
+      <img
+        src={firstImageUrl}
+        alt={slugifiedJewelryTitle}
+        className={styles["image"]}
+      />
     </Link>
   );
 };

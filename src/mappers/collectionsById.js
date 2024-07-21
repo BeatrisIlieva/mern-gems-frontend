@@ -4,35 +4,3 @@ export const COLLECTIONS_BY_ID = {
   sunflower: 4,
   "sparkling-cluster": 2,
 };
-
-// await Category.create({
-//     title: "Bracelet",
-//   });
-
-//   await Category.create({
-//     title: "Earring",
-//   });
-
-//   await Category.create({
-//     title: "Necklace",
-//   });
-
-//   await Category.create({
-//     title: "Ring",
-//   });
-
-//   await JewelryCollection.create({
-//     title: "Diamond Loop",
-//   });
-
-//   await JewelryCollection.create({
-//     title: "Sparkling Cluster",
-//   });
-
-//   await JewelryCollection.create({
-//     title: "Forget-Me-Not",
-//   });
-
-//   await JewelryCollection.create({
-//     title: "Sunflower",
-//   });
