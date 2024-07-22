@@ -1,16 +1,4 @@
-const PASSWORD_LENGTH = {
-  MIN: 8,
-  MAX: 255,
-};
 
-export const PASSWORD_PATTERN = new RegExp(
-  `^(?=.*[A-Z]{1})(?=.*[a-z]{1})(?=.*[0-9]{1})[A-Za-z0-9]{${PASSWORD_LENGTH.MIN},${PASSWORD_LENGTH.MAX}}$`
-);
-const PASSWORD_ERROR_MESSAGE = `* Password must be ${PASSWORD_LENGTH.MIN}-${PASSWORD_LENGTH.MAX} characters and include at least one lowercase letter, one uppercase letter, and one digit`;
-const PASSWORD_MISMATCH_ERROR_MESSAGE =
-  "* Ensure that both password fields contain the same password";
-
-const PASSWORD_SUCCESS_MESSAGE = "Your password has been changed successfully";
 
 export const EMAIL_PATTERN = /^[A-Za-z0-9]+@+[a-z]+\.[a-z]{2,4}$/;
 const EMAIL_ERROR_MESSAGE = "* Ensure you enter a valid email address";

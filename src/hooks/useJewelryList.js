@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ITEMS_PER_PAGE } from "../constants/itemsPerPage";
+import { ITEMS_PER_PAGE } from "../constants/pagination";
 
 export const useJewelryList = (entityId, fetchService) => {
   const [loading, setLoading] = useState(true);
