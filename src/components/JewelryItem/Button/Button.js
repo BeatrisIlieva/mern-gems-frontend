@@ -1,13 +1,10 @@
-export const Button = ({ isSoldOut, price }) => {
+import styles from "./Button.module.css";
+
+export const Button = ({price}) => {
   return (
-    <button
-      className={`${styles["add-to-bag-button"]} ${
-        isSoldOut === true ? styles["button-disabled"] : ""
-      }`.trim()}
-      disabled={isSoldOut}
-    >
+    <button className={styles["button"]}>
       <span className={styles["price-span"]}>${price}</span>
-      <span className={styles["add-span"]}>Add to Bag</span>
+      <span className={styles["text-span"]}>Add to Bag</span>
     </button>
   );
 };

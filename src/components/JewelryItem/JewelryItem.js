@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import * as jewelryItemService from "../../services/jewelryItemService";
 
 import { JewelryImage } from "./JewelryImage/JewelryImage";
-import { CircleIcon } from "./CircleIcon/CircleIcon";
+import { Button } from "./Button/Button";
 
 import styles from "./JewelryItem.module.css";
 
@@ -59,13 +59,13 @@ export const JewelryItem = () => {
       return;
     }
 
-    if (jewelry.category === 2) {
-      const sizeId = jewelry.sizes[0]._id;
+    // if (jewelry.category === 2) {
+    //   const sizeId = jewelry.sizes[0]._id;
 
-      await onAddToBagClick({ size: sizeId }, jewelry._id);
-    } else {
-      await onAddToBagClick(values, jewelry._id);
-    }
+    //   await onAddToBagClick({ size: sizeId }, jewelry._id);
+    // } else {
+    //   await onAddToBagClick(values, jewelry._id);
+    // }
   };
 
   return (
@@ -93,7 +93,7 @@ export const JewelryItem = () => {
         </p>
         {jewelry.category !== 2 && <h4>Size:</h4>}
         <form method="POST" onSubmit={onSubmit}>
-          
+          {!jewelry.isSoldOut && <Button price={jewelry.price} />}
         </form>
       </div>
     </section>
