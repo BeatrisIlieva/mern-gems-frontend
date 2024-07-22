@@ -5,13 +5,11 @@ import styles from "./CircleIcon.module.css";
 
 export const CircleIcon = ({ isSelected }) => {
   return (
-
-      <FontAwesomeIcon
-        icon={faCircle}
-        className={`${styles["circle"]} ${
-          isSelected === true ? styles["selected"] : ""
-        }`.trim()}
-      />
-
+    <FontAwesomeIcon
+      icon={faCircle}
+      className={`${styles["circle"]} ${
+        isSelected === true ? styles["selected"] : ""
+      }`.trim()}
+    />
   );
 };

@@ -12,7 +12,7 @@ export const JewelryImage = ({
   rightIsSelected,
 }) => {
   return (
-    <>
+    <div className={styles["jewelry-images"]}>
       <div
         className={`${styles["image"]} ${
           isSoldOut === true ? styles["sold-out"] : ""
@@ -22,7 +22,7 @@ export const JewelryImage = ({
           src={imageUrl}
           alt={title}
           onClick={toggleSelected}
-          className={variant}
+          className={styles[variant]}
         />
         {isSoldOut && <span className={styles["sold-out-span"]}>SOLD OUT</span>}
       </div>
@@ -30,6 +30,6 @@ export const JewelryImage = ({
         <CircleIcon isSelected={leftIsSelected} />
         <CircleIcon isSelected={rightIsSelected} />
       </div>
-    </>
+    </div>
   );
 };
