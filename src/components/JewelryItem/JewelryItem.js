@@ -62,7 +62,16 @@ export const JewelryItem = () => {
           rightIsSelected={rightIsSelected}
         />
       </div>
-      <div className={styles["right-container"]}></div>
+      <div className={styles["right-container"]}>
+        <h2 className={styles["title"]}>{jewelry.title}</h2>
+        <p>
+          {jewelry.description}.{" "}
+          {jewelry.sizes &&
+            jewelry.category === 2 &&
+            jewelry.sizes[0].measurement}
+          .
+        </p>
+      </div>
     </section>
   );
 };

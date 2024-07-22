@@ -1,14 +1,25 @@
 .jewelry-wrapper {
   margin: 40px 80px 40px 80px;
   display: flex;
-  gap: 30px;
+  justify-content: space-between;
+  /* gap: 30px; */
 }
 
 .left-container {
-  width: 60%;
+  width: 50%;
   position: relative;
 }
 
 .right-container {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--bold-italic-font-family);
+}
+
+.description {
+
 }
