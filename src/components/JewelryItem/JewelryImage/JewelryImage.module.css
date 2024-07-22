@@ -1,0 +1,45 @@
+.left-image {
+  position: relative;
+  display: inline-block;
+  animation: slideInLeft 0.5s forwards;
+}
+
+.right-image {
+  position: relative;
+  display: inline-block;
+  animation: slideInRight 0.5s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    left: -94px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    right: -94px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+.image {
+  top: 0;
+  right: 0;
+  animation: slideIn 0.5s forwards;
+  display: inline-block;
+}
+
+.circles-container {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -3,6 +3,11 @@ import { useEffect, useState, useRef } from "react";
 
 import * as jewelryItemService from "../../services/jewelryItemService";
 
+import { JewelryImage } from "./JewelryImage/JewelryImage";
+import { CircleIcon } from "./CircleIcon/CircleIcon";
+
+import styles from "./JewelryItem.module.css";
+
 const SizeFormKeys = {
   Size: "size",
 };
@@ -16,6 +21,14 @@ export const JewelryItem = () => {
   const [jewelry, setJewelry] = useState([]);
 
   const [sizeIsSelected, setSizeIsSelected] = useState(true);
+
+  const [leftIsSelected, setLeftIsSelected] = useState(true);
+  const [rightIsSelected, setRightIsSelected] = useState(false);
+
+  const toggleSelected = () => {
+    setLeftIsSelected(!leftIsSelected);
+    setRightIsSelected(!rightIsSelected);
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -34,5 +47,22 @@ export const JewelryItem = () => {
       });
   }, []);
 
-  return <img src={jewelry.firstImageUrl} alt={jewelry.title} />;
+  return (
+    <section className={styles["jewelry-wrapper"]}>
+      <div className={styles["left-container"]}>
+        <JewelryImage
+          isSoldOut={jewelry.isSoldOut}
+          imageUrl={
+            leftIsSelected ? jewelry.firstImageUrl : jewelry.secondImageUrl
+          }
+          title={jewelry.title}
+          toggleSelected={toggleSelected}
+          variant={leftIsSelected ? "left-image" : "right-image"}
+          leftIsSelected={leftIsSelected}
+          rightIsSelected={rightIsSelected}
+        />
+      </div>
+      <div className={styles["right-container"]}></div>
+    </section>
+  );
 };
