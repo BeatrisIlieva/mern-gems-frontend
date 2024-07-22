@@ -9,9 +9,6 @@ const {
 const { EMAIL_PATTERN, EMAIL_ERROR_MESSAGE } = require("../constants/email");
 
 const userLoginDetailsSchema = new mongoose.Schema({
-  _id: {
-    type: String,
-  },
   email: {
     type: String,
     required: [true, EMAIL_ERROR_MESSAGE],
@@ -28,10 +25,6 @@ const userLoginDetailsSchema = new mongoose.Schema({
       message: PASSWORD_ERROR_MESSAGE,
     },
   },
-});
-
-userLoginDetailsSchema.pre("save", async function () {
-  this._id = this._id;
 });
 
 userLoginDetailsSchema.pre("save", async function () {
