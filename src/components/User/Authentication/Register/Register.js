@@ -1,3 +1,5 @@
+import { SwitchButton } from "../SwitchButton/SwitchButton";
+
 export const Register = () => {
-  return <h1>Register</h1>;
+  return <SwitchButton text={"Not a member?"} title={"Sign Up"} />;
 };
