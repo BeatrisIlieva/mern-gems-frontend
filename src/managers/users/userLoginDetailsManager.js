@@ -1,14 +1,15 @@
-const UserLoginInformation = require("../models/UserLoginInformation");
-const { EMAIL_PATTERN, EMAIL_ERROR_MESSAGE } = require("../constants/email");
-const { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } = require("../constants/email");
-const { INVALID_CREDENTIALS_ERROR_MESSAGE } = require("../constants/email");
 const jwt = require("../lib/jwt");
 const bcrypt = require("bcrypt");
+
+const UserLoginDetails = require("../../models/UserLoginDetails");
+
+const { EMAIL_PATTERN, EMAIL_ERROR_MESSAGE } = require("../../constants/email");
+const { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } = require("../../constants/email");
+const { INVALID_CREDENTIALS_ERROR_MESSAGE } = require("../../constants/email");
 const {
   DEFAULT_SALT,
   INVALID_PASSWORD_ERROR_MESSAGE,
-} = require("../constants/password");
-require("dotenv").config();
+} = require("../../constants/password");
 
 exports.register = async (data) => {
   const user = await UserLoginDetails.findOne({ email: data.email });
