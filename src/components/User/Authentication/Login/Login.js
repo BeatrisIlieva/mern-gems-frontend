@@ -1,7 +1,5 @@
-import { SwitchButton } from "../SwitchButton/SwitchButton"
+import { SwitchButton } from "../SwitchButton/SwitchButton";
 
 export const Login = () => {
-    return (
-        <SwitchButton text={"Not a member?"} title={"Sign Up"}/>
-    )
-}
+  return <SwitchButton text={"Already a member?"} title={"Sign In"} />;
+};
