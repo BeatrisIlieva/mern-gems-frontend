@@ -1,27 +1,14 @@
-import { useState } from "react";
 import { Collection } from "../Collection/Collection";
 import { collectionItems } from "../Collection/collectionItems";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
-import { Popup } from "../Popup/Popup";
+import { Authentication } from "../User/Authentication/Authentication";
 
 import styles from "./Home.module.css";
 
 export const Home = () => {
-  const isAuthenticated = false;
-
-  const [isPopupVisible, setIsPopupVisible] = useState(!isAuthenticated);
-
-  const togglePopup = () => {
-    setIsPopupVisible(!isPopupVisible);
-  };
-
   return (
     <>
-      <Popup isVisible={isPopupVisible}>
-        <h1>This is the Popup Content</h1>
-        <p>Here you can render any component or content dynamically.</p>
-        <button onClick={togglePopup}>Close</button>
-      </Popup>
+      <Authentication />
       <section className={styles["hero"]}>
         {collectionItems.map((item, index) => (
           <div key={item.imageUrl}>

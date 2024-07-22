@@ -15,11 +15,24 @@
   display: flex;
 }
 
-.modal {
+/* .modal {
   background-color: var(--white);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px; /* Adjust the size as needed */
+  width: 300px; 
   text-align: center;
+} */
+
+.modal, .modal-authentication {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal-authentication {
+  width: 40vw;
+  height: 80vh;
 }
