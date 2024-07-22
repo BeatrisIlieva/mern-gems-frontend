@@ -6,8 +6,8 @@ export const Login = ({ switchPopupHandler, switchOptions }) => {
     <section>
       <PopupHeader title={"Sign In to Shop"} />
       <SwitchButton
-        text={"Already a member?"}
-        title={"Sign In"}
+        text={"Not a member?"}
+        title={"Sign Up"}
         switchPopupHandler={switchPopupHandler}
         option={switchOptions.Register}
       />
