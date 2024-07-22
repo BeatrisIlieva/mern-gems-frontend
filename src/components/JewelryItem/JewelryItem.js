@@ -6,6 +6,7 @@ import * as jewelryItemService from "../../services/jewelryItemService";
 import { JewelryImage } from "./JewelryImage/JewelryImage";
 import { PinkButton } from "../PinkButton/PinkButton";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
+import { LargeTitle } from "../LargeTitle/LargeTitle";
 
 import styles from "./JewelryItem.module.css";
 
@@ -90,14 +91,14 @@ export const JewelryItem = () => {
         />
       </div>
       <div className={styles["right-container"]}>
-        <h2 className={styles["title"]}>{jewelry.title}</h2>
+        <LargeTitle title={jewelry.title} />
         <p className={styles["description"]}>
           {jewelry.description}.{" "}
           {jewelry.sizes &&
             jewelry.category === EarringId &&
             jewelry.sizes[0].measurement}
         </p>
-        {jewelry.category !== EarringId && <SmallTitle title={"Size:"}/>}
+        {jewelry.category !== EarringId && <SmallTitle title={"Size:"} />}
         <form method="POST" onSubmit={onSubmit}>
           {jewelry.category !== EarringId && jewelry.sizes && (
             <div className={styles["size-wrapper"]}>
@@ -127,7 +128,7 @@ export const JewelryItem = () => {
               <div className={styles["error-message"]}>{errorMessage}</div>
             </div>
           )}
-          <SmallTitle title={`$ ${jewelry.price}`}/>
+          <SmallTitle title={`$ ${jewelry.price}`} />
           {!jewelry.isSoldOut && <PinkButton title={"Add To Bag"} />}
         </form>
       </div>
