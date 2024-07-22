@@ -6,7 +6,7 @@ import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
-import { ENTITIES_MAPPER } from "../../mappers/entitiesMapper";
+import { ENTITIES_MAPPER } from "../../mappers/entities";
 
 import styles from "./JewelryList.module.css";
 
