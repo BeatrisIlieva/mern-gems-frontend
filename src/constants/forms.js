@@ -17,10 +17,7 @@
 
 
 
-export const CVV_CODE_PATTERN = /^\d{3}$/;
 
-const CVV_CODE_PATTERN_ERROR_MESSAGE =
-  "The CVV code should be exactly 3 digits long";
 
 export const ERROR_MESSAGES = {
   password: PASSWORD_ERROR_MESSAGE,
