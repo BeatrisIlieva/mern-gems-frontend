@@ -6,4 +6,5 @@ const PHONE_LENGTH = {
 export const PHONE_PATTERN = new RegExp(
   `^[0-9]{${PHONE_LENGTH.MIN},${PHONE_LENGTH.MAX}}$`
 );
+
 export const PHONE_ERROR_MESSAGE = `* This field requires ${PHONE_LENGTH.MIN}-${PHONE_LENGTH.MAX} digits`;

@@ -6,4 +6,5 @@ const NAME_LENGTH = {
 export const NAME_PATTERN = new RegExp(
   `^[A-Za-z]{${NAME_LENGTH.MIN},${NAME_LENGTH.MAX}}$`
 );
+
 export const NAME_ERROR_MESSAGE = `* This field requires ${NAME_LENGTH.MIN}-${NAME_LENGTH.MAX} letters`;

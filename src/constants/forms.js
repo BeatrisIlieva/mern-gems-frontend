@@ -13,9 +13,7 @@
 
 
 
-export const SUCCESS_MESSAGES = {
-  newPassword: PASSWORD_SUCCESS_MESSAGE,
-};
+
 
 export const LONG_CARD_NUMBER_PATTERN = /^\d{16}$/;
 
