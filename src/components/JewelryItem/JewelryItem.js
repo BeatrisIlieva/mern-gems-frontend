@@ -93,12 +93,12 @@ export const JewelryItem = () => {
         <p className={styles["description"]}>
           {jewelry.description}.{" "}
           {jewelry.sizes &&
-            jewelry.category === 2 &&
+            jewelry.category === EarringId &&
             jewelry.sizes[0].measurement}
         </p>
-        {jewelry.category !== 2 && <h4>Size:</h4>}
+        {jewelry.category !== EarringId && <h4>Size:</h4>}
         <form method="POST" onSubmit={onSubmit}>
-          {jewelry.category !== 2 && jewelry.sizes && (
+          {jewelry.category !== EarringId && jewelry.sizes && (
             <div className={styles["size-wrapper"]}>
               <div className={styles["radio-container"]}>
                 {jewelry.sizes.map((item) => (
@@ -117,14 +117,7 @@ export const JewelryItem = () => {
                         setErrorMessage("");
                       }}
                     />
-                    <label
-                      className={`${styles["label"]} ${
-                        Number(selectedSize[SizeFormKeys.Size]) === item._id
-                          ? styles["selected"]
-                          : ""
-                      }`.trim()}
-                      htmlFor={item._id}
-                    >
+                    <label className={styles["label"]} htmlFor={item._id}>
                       {item.measurement}
                     </label>
                   </div>
@@ -134,7 +127,7 @@ export const JewelryItem = () => {
             </div>
           )}
           <h4 className={styles["price"]}>$ {jewelry.price}</h4>
-          {!jewelry.isSoldOut && <PinkButton title={"Add To Bag"}/>}
+          {!jewelry.isSoldOut && <PinkButton title={"Add To Bag"} />}
         </form>
       </div>
     </section>
