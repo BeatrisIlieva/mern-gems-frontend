@@ -22,10 +22,11 @@ export const JewelryItem = () => {
   const { jewelryId } = useParams();
   const [jewelry, setJewelry] = useState([]);
 
-  const [sizeIsSelected, setSizeIsSelected] = useState(true);
-
   const [leftIsSelected, setLeftIsSelected] = useState(true);
   const [rightIsSelected, setRightIsSelected] = useState(false);
+
+  const [sizeIsSelected, setSizeIsSelected] = useState(true);
+  const [selectedSize, setSelectedSize] = useState({ [SizeFormKeys.Size]: 0 });
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -51,6 +52,10 @@ export const JewelryItem = () => {
       });
   }, []);
 
+  const changeHandler = (e) => {
+    setSelectedSize((state) => ({ ...state, [e.target.name]: e.target.value }));
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -64,7 +69,7 @@ export const JewelryItem = () => {
 
     //   await onAddToBagClick({ size: sizeId }, jewelry._id);
     // } else {
-    //   await onAddToBagClick(values, jewelry._id);
+    //   await onAddToBagClick(selectedSize, jewelry._id);
     // }
   };
 
@@ -93,6 +98,41 @@ export const JewelryItem = () => {
         </p>
         {jewelry.category !== 2 && <h4>Size:</h4>}
         <form method="POST" onSubmit={onSubmit}>
+          {jewelry.category !== 2 && jewelry.sizes && (
+            <div className={styles["size-wrapper"]}>
+              <div className={styles["radio-container"]}>
+                {jewelry.sizes.map((item) => (
+                  <div key={item._id}>
+                    <input
+                      type="radio"
+                      name={SizeFormKeys.Size}
+                      id={item._id}
+                      value={item._id}
+                      onChange={changeHandler}
+                      checked={
+                        Number(selectedSize[SizeFormKeys.Size]) === item._id
+                      }
+                      onClick={() => {
+                        setSizeIsSelected(true);
+                        setErrorMessage("");
+                      }}
+                    />
+                    <label
+                      className={`${styles["label"]} ${
+                        Number(selectedSize[SizeFormKeys.Size]) === item._id
+                          ? styles["selected"]
+                          : ""
+                      }`.trim()}
+                      htmlFor={item._id}
+                    >
+                      {item.measurement}
+                    </label>
+                  </div>
+                ))}
+              </div>
+              <div className={styles["error-message"]}>{errorMessage}</div>
+            </div>
+          )}
           {!jewelry.isSoldOut && <Button price={jewelry.price} />}
         </form>
       </div>
