@@ -6,15 +6,7 @@
 
 
 
-const PHONE_LENGTH = {
-  MIN: 7,
-  MAX: 15,
-};
 
-export const PHONE_PATTERN = new RegExp(
-  `^[0-9]{${PHONE_LENGTH.MIN},${PHONE_LENGTH.MAX}}$`
-);
-const PHONE_ERROR_MESSAGE = `* This field requires ${PHONE_LENGTH.MIN}-${PHONE_LENGTH.MAX} digits`;
 
 const STREET_LENGTH = {
   MIN: 8,
