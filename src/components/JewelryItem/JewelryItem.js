@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import * as jewelryItemService from "../../services/jewelryItemService";
 
 import { JewelryImage } from "./JewelryImage/JewelryImage";
-import { Button } from "./Button/Button";
+import { PinkButton } from "../PinkButton/PinkButton";
 
 import styles from "./JewelryItem.module.css";
 
@@ -133,7 +133,8 @@ export const JewelryItem = () => {
               <div className={styles["error-message"]}>{errorMessage}</div>
             </div>
           )}
-          {!jewelry.isSoldOut && <Button price={jewelry.price} />}
+          <h4 className={styles["price"]}>$ {jewelry.price}</h4>
+          {!jewelry.isSoldOut && <PinkButton title={"Add To Bag"}/>}
         </form>
       </div>
     </section>

@@ -11,7 +11,6 @@
   border: 1px solid var(--light-gray);
   font-family: var(--bold-italic-font-family);
   outline: none;
-  letter-spacing: 1.2px;
 }
 
 .animated-button::before {

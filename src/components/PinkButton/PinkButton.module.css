@@ -1,6 +1,6 @@
 .button {
   position: relative;
-  padding: 22px;
+  padding: 18px;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
   border: none;
@@ -9,27 +9,9 @@
   background: var(--medium-pink);
   color: var(--white);
   outline: none;
-  letter-spacing: 1.2px;
-}
-
-.button {
-  width: 100%;
-  position: relative;
   display: flex;
-  align-items: center;
-}
-.price-span,
-.text-span {
-  position: absolute;
-}
-.price-span {
-  left: 0;
-  margin-left: 20px;
-}
-
-.text-span {
-  right: 0;
-  margin-right: 20px;
+  justify-content: center;
+  width: 100%;
 }
 
 .button:hover {

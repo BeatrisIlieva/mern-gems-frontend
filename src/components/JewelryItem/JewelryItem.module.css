@@ -56,3 +56,7 @@
 .error-message {
   color: var(--red);
 }
+
+.price {
+  margin-bottom: 6px;
+}
