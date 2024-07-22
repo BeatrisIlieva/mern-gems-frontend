@@ -2,18 +2,9 @@
 
 
 
-const NAME_LENGTH = {
-  MIN: 2,
-  MAX: 255,
-};
 
-export const NAME_PATTERN = new RegExp(
-  `^[A-Za-z]{${NAME_LENGTH.MIN},${NAME_LENGTH.MAX}}$`
-);
-const NAME_ERROR_MESSAGE = `* This field requires ${NAME_LENGTH.MIN}-${NAME_LENGTH.MAX} letters`;
 
-export const DATE_PATTERN = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
-const DATE_ERROR_MESSAGE = "* Ensure you enter a valid date";
+
 
 const PHONE_LENGTH = {
   MIN: 7,
