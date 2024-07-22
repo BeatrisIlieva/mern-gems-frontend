@@ -7,11 +7,15 @@ const SizeFormKeys = {
   Size: "size",
 };
 
+const EarringId = 2;
+
 export const JewelryItem = () => {
   const [loading, setLoading] = useState(true);
 
   const { jewelryId } = useParams();
   const [jewelry, setJewelry] = useState([]);
+
+  const [sizeIsSelected, setSizeIsSelected] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -20,6 +24,7 @@ export const JewelryItem = () => {
       .getOne(jewelryId)
       .then((data) => {
         setJewelry(data[0]);
+        setSizeIsSelected(data[0].category === EarringId);
       })
       .catch((err) => {
         console.log(err.message);
@@ -29,5 +34,5 @@ export const JewelryItem = () => {
       });
   }, []);
 
-  return <img src={jewelry.firstImageUrl} alt="" />;
+  return <img src={jewelry.firstImageUrl} alt={jewelry.title} />;
 };

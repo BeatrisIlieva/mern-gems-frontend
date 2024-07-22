@@ -13,12 +13,13 @@ export const NavItem = ({ path, title, index }) => {
         }
         to={path}
       >
-        {({ isActive }) => isActive ? (
-          <h1 className={styles["nav-title-selected"]}>{title}</h1>
-        ): (
-          <h1 className={styles["nav-title"]}>{title}</h1>
-        )}
-        
+        {({ isActive }) =>
+          isActive ? (
+            <h1 className={styles["nav-title-selected"]}>{title}</h1>
+          ) : (
+            <h1 className={styles["nav-title"]}>{title}</h1>
+          )
+        }
       </NavLink>
     </li>
   );

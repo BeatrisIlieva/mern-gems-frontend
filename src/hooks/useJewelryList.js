@@ -7,6 +7,7 @@ export const useJewelryList = (entityId, fetchService) => {
   const [loadMore, setLoadMore] = useState(true);
   const [jewelries, setJewelries] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
+  const [showLoadMore, setShowLoadMore] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -28,6 +29,10 @@ export const useJewelryList = (entityId, fetchService) => {
       })
       .finally(() => {
         setLoading(false);
+        setShowLoadMore(false);
+        setTimeout(() => {
+          setShowLoadMore(true);
+        }, 2000);
       });
   }, [entityId, page, fetchService]);
 
@@ -47,5 +52,12 @@ export const useJewelryList = (entityId, fetchService) => {
     setPage((prevPage) => prevPage + 1);
   };
 
-  return { loading, jewelries, totalCount, loadMore, handleLoadMore };
+  return {
+    loading,
+    jewelries,
+    totalCount,
+    loadMore,
+    handleLoadMore,
+    showLoadMore,
+  };
 };

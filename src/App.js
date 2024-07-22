@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
@@ -12,6 +13,19 @@ import "normalize.css";
 import styles from "./App.css";
 
 function App() {
+  const [showFooter, setShowFooter] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setShowFooter(false);
+
+    const timer = setTimeout(() => {
+      setShowFooter(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
   return (
     <div className={styles["app"]}>
       <ScrollToTop />
@@ -33,7 +47,7 @@ function App() {
           />
         </Routes>
       </main>
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 }

@@ -14,8 +14,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Header.module.css";
 
 export const Header = () => {
-  const isAuthenticated = false;
-  const totalQuantity = 0;
+  const totalQuantity = 4;
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
@@ -72,18 +71,15 @@ export const Header = () => {
               />
             </Link>
             <ul className={styles["icon-list"]} role="list">
-              <li className={`${styles["icon-item"]}`}>
-                <Link
-                  className={styles["icon-bar-item"]}
-                  to={"/users/shopping-bag"}
-                >
-                  <FontAwesomeIcon
-                    icon={faSearch}
-                    className={styles["icon-span"]}
-                    // onClick={() => popupClickHandler(POPUP_OPTIONS.Search)}
-                  />
-                  <span className={styles["text-span"]}>Search</span>
-                </Link>
+              {/* onClick={() => popupClickHandler(POPUP_OPTIONS.Search)} */}
+              <li
+                className={`${styles["icon-item"]} ${styles["icon-bar-item"]}`}
+              >
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  className={styles["icon-span"]}
+                />
+                <span className={styles["text-span"]}>Search</span>
               </li>
               <li className={`${styles["icon-item"]}`}>
                 <Link
@@ -95,35 +91,24 @@ export const Header = () => {
                     className={styles["icon-span"]}
                   />
                   <span className={styles["text-span"]}>My Bag</span>
-                  <span className={styles["count-span"]}>
-                    {totalQuantity}
-                  </span>
+                  {totalQuantity > 0 && (
+                    <span
+                      className={`${styles["count-span"]} ${styles["pulse"]}`}
+                    >
+                      {totalQuantity}
+                    </span>
+                  )}
                 </Link>
               </li>
-              {!isAuthenticated && (
-                <li className={styles["icon-item"]}>
-                  <Link className={styles["icon-bar-item"]} to="/users/login">
-                    <FontAwesomeIcon
-                      icon={faUser}
-                      className={styles["icon-span"]}
-                    />
-                    <span className={styles["text-span"]}>Sign In</span>
-                  </Link>
-                </li>
-              )}
-              {isAuthenticated && (
-                <li className={styles["icon-item"]}>
-                  <Link className={styles["icon-bar-item"]} to="/users/account">
-                    <span>
-                      <FontAwesomeIcon
-                        icon={faUser}
-                        className={styles["icon-span"]}
-                      />
-                    </span>
-                    <span className={styles["text-span"]}>Account</span>
-                  </Link>
-                </li>
-              )}
+              <li className={styles["icon-item"]}>
+                <Link className={styles["icon-bar-item"]} to="/users/account">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className={styles["icon-span"]}
+                  />
+                  <span className={styles["text-span"]}>Account</span>
+                </Link>
+              </li>
             </ul>
           </div>
           <HorizontalLine variant={"large"} position={"absolute"} />
