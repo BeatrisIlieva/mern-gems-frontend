@@ -1,6 +1,6 @@
 const Jewelry = require("../../models/Jewelry");
 
-exports.findOne = async (jewelryId) => {
+exports.getOne = async (jewelryId) => {
   const result = await Jewelry.aggregate([
     {
       $lookup: {
@@ -101,5 +101,7 @@ exports.findOne = async (jewelryId) => {
       $match: { _id: jewelryId },
     },
   ]);
+  
   return result;
+  
 };

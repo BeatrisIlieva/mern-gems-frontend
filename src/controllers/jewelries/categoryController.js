@@ -9,7 +9,7 @@ router.get("/:categoryId/:skip/:limit", async (req, res) => {
   const data = { categoryId, skip, limit };
 
   try {
-    let result = await categoryManager.findAll(data);
+    let result = await categoryManager.getAll(data);
 
     res.status(200).json(result);
   } catch (err) {

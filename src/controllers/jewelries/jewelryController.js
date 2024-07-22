@@ -5,7 +5,7 @@ router.get("/:jewelryId", async (req, res) => {
   const jewelryId = Number(req.params.jewelryId);
 
   try {
-    const result = await jewelryManager.findOne(jewelryId);
+    const result = await jewelryManager.getOne(jewelryId);
 
     res.status(200).json(result);
   } catch (err) {

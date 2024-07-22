@@ -9,7 +9,7 @@ router.get("/:collectionId/:skip/:limit", async (req, res) => {
   const data = { collectionId, skip, limit };
 
   try {
-    let result = await collectionManager.findAll(data);
+    let result = await collectionManager.getAll(data);
 
     res.status(200).json(result);
   } catch (err) {

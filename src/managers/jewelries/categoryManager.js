@@ -1,6 +1,6 @@
 const Jewelry = require("../../models/Jewelry");
 
-exports.findAll = async ({ categoryId, skip, limit }) => {
+exports.getAll = async ({ categoryId, skip, limit }) => {
   const query = [
     {
       $lookup: {
