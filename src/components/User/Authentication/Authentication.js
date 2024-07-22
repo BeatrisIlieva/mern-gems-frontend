@@ -10,7 +10,7 @@ const SwitchOptions = {
 };
 
 export const Authentication = () => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const [displayPopup, setDisplayPopup] = useState(!isAuthenticated);
 
   const [currentPopup, setCurrentPopup] = useState(SwitchOptions.Login);

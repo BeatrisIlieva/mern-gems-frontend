@@ -1,0 +1,7 @@
+.large-title {
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: var(--large);
+  font-family: var(--bold-italic-font-family);
+  color: var(--gray);
+}

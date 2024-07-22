@@ -2,7 +2,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 // import { useAuthContext } from "../../contexts/AuthContext";
 
 export const RouteGuard = ({ children }) => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   // const { isAuthenticated } = useAuthContext();
   const location = useLocation();
 

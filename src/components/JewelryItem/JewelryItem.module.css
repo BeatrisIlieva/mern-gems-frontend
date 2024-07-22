@@ -15,10 +15,6 @@
   flex-direction: column;
 }
 
-.title {
-  font-family: var(--bold-italic-font-family);
-}
-
 .description {
   margin-bottom: 30px;
 }

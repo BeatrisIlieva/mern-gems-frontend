@@ -6,7 +6,7 @@ import { Authentication } from "../User/Authentication/Authentication";
 import styles from "./Home.module.css";
 
 export const Home = () => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   return (
     <>
       <Authentication />
