@@ -1,8 +1,8 @@
 import styles from "./DynamicForm.module.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faQuestion } from "@fortawesome/free-solid-svg-icons";
-// import { QuestionMarkEmailRegister } from "./QuestionMarkEmailRegister/QuestionMarkEmailRegister";
-// import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { QuestionMark } from "./QuestionMark/QuestionMark";
+import { useState } from "react";
 
 export const DynamicForm = ({
   values,
@@ -13,32 +13,31 @@ export const DynamicForm = ({
   initialFormValues,
   buttonTitle,
 }) => {
-  //   const [hoveredQuestionMarkEmail, setHoveredQuestionMarkEmail] =
-  //     useState(false);
+  const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
 
-  //   const onHoverQuestionMarkEmail = () => {
-  //     setHoveredQuestionMarkEmail(true);
-  //   };
+  const onHoverQuestionMark = () => {
+    setHoveredQuestionMark(true);
+  };
 
-  //   const onUnhoverQuestionMarkEmail = () => {
-  //     setHoveredQuestionMarkEmail(false);
-  //   };
+  const onUnhoverQuestionMark = () => {
+    setHoveredQuestionMark(false);
+  };
 
   return (
     <>
       {Object.entries(formKeys).map(([key, value]) => (
         <div key={key} className={styles["field-box"]}>
-          {/* {key === "Email" && (
+          {key === "Email" && (
             <span>
-              <>{hoveredQuestionMarkEmail && <QuestionMarkEmailRegister />}</>
+              <>{hoveredQuestionMark && <QuestionMark />}</>
               <FontAwesomeIcon
                 icon={faQuestion}
-                className={styles["input-icon"]}
-                onMouseEnter={() => onHoverQuestionMarkEmail()}
-                onMouseLeave={() => onUnhoverQuestionMarkEmail()}
+                className={styles["icon"]}
+                onMouseEnter={() => onHoverQuestionMark()}
+                onMouseLeave={() => onUnhoverQuestionMark()}
               />
             </span>
-          )} */}
+          )}
           <div
             className={`${styles["field-container"]} ${
               values[value].errorMessage !== "" ? styles["error"] : ""
@@ -79,10 +78,7 @@ export const DynamicForm = ({
           </div>
         </div>
       ))}
-      <button
-        className={styles["button"]}
-        type="submit"
-      >
+      <button className={styles["button"]} type="submit">
         {buttonTitle}
       </button>
     </>
