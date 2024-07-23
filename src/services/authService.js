@@ -14,6 +14,18 @@ export const register = async (data) => {
   return result;
 };
 
+export const login = async (data) => {
+  const response = await fetch(`${baseUrl}/login`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  return result;
+};
+
 export const remove = async (userId) => {
   const response = await fetch(`${baseUrl}/delete/${userId}`, {
     method: "DELETE",
@@ -25,13 +37,13 @@ export const remove = async (userId) => {
 };
 
 export const update = async (userId, data) => {
-    const response = await fetch(`${baseUrl}/update/${userId}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
-    });
-  
-    const result = await response.json();
-  
-    return result;
-  };
+  const response = await fetch(`${baseUrl}/update/${userId}`, {
+    method: "PUT",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  return result;
+};
