@@ -35,7 +35,8 @@ export const AccountManagement = () => {
         />
       </div>
       <div className={styles["slideIn"]}>
-        <UpdateEmailForm />
+        {showUpdateEmail && <UpdateEmailForm />}
+        {/* {showUpdatePassword } */}
       </div>
     </section>
   );

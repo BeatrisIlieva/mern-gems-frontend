@@ -68,7 +68,6 @@ export const UpdateEmailForm = () => {
   };
 
   return (
-    // <section className={styles["slideIn"]}>
     <form method="POST" onSubmit={onSubmit}>
       <DynamicForm
         values={values}
@@ -81,6 +80,5 @@ export const UpdateEmailForm = () => {
         buttonTitle={ButtonTitle}
       />
     </form>
-    // </section>
   );
 };
