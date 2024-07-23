@@ -2,6 +2,10 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import { useAuthContext } from "./contexts/AuthContext";
+
+import { Authentication } from "./components/Authentication/Authentication";
+
 import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
@@ -17,6 +21,8 @@ function App() {
   const [showFooter, setShowFooter] = useState(false);
   const location = useLocation();
 
+  const { isAuthenticated } = useAuthContext();
+
   useEffect(() => {
     setShowFooter(false);
 
@@ -29,6 +35,7 @@ function App() {
 
   return (
     <div className={styles["app"]}>
+      {!isAuthenticated && <Authentication />}
       <ScrollToTop />
       <Header />
       <main className={styles["main"]}>

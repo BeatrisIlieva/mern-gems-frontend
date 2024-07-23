@@ -1,3 +1,4 @@
+// import { useAuthContext } from "../../contexts/AuthContext";
 import { Collection } from "../Collection/Collection";
 import { collectionItems } from "../Collection/collectionItems";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
@@ -6,10 +7,10 @@ import { Authentication } from "../Authentication/Authentication";
 import styles from "./Home.module.css";
 
 export const Home = () => {
-  const isAuthenticated = false;
+  // const {isAuthenticated} = useAuthContext();
   return (
     <>
-      <Authentication />
+      {/* <Authentication /> */}
       <section className={styles["hero"]}>
         {collectionItems.map((item, index) => (
           <div key={item.imageUrl}>

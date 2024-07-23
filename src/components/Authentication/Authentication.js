@@ -10,9 +10,6 @@ const SwitchOptions = {
 };
 
 export const Authentication = () => {
-  const isAuthenticated = false;
-  const [displayPopup, setDisplayPopup] = useState(!isAuthenticated);
-
   const [currentPopup, setCurrentPopup] = useState(SwitchOptions.Login);
 
   const switchPopupHandler = (option) => {
@@ -20,7 +17,7 @@ export const Authentication = () => {
   };
 
   return (
-    <Popup isVisible={displayPopup} variant={"modal-authentication"}>
+    <Popup isVisible variant={"modal-authentication"}>
       {currentPopup === SwitchOptions.Login && (
         <Login
           switchPopupHandler={switchPopupHandler}

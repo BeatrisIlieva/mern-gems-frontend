@@ -5,21 +5,19 @@ import { getEmailMismatchErrorMessage } from "../../../../utils/getEmailMismatch
 import { getPasswordMismatchErrorMessage } from "../../../../utils/getPasswordMismatchErrorMessage";
 import { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } from "../../../../constants/email";
 
-
-
-
+import { useAuthContext } from "../../../../contexts/AuthContext";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { useForm } from "../../../../hooks/useForm";
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
 
-const ButtonTitle = "Sign Up"
+import * as authService from "../../../../services/authService";
+
+const ButtonTitle = "Sign Up";
 
 export const RegisterForm = () => {
-//   const { onRegisterSubmit } = useContext(AuthContext);
-
-let onRegisterSubmit;
+  const { updateAuth } = useAuthContext();
 
   let {
     values,
@@ -40,33 +38,6 @@ let onRegisterSubmit;
 
     const updatedValues = { ...values };
 
-    if (
-      updatedValues[FORM_KEYS.Email].errorMessage === "" ||
-      updatedValues[FORM_KEYS.RetypeEmail].errorMessage === ""
-    ) {
-      const emailErrorMessage = getEmailMismatchErrorMessage(
-        updatedValues[FORM_KEYS.Email].fieldValue,
-        updatedValues[FORM_KEYS.RetypeEmail].fieldValue
-      );
-
-      updatedValues[FORM_KEYS.Email].errorMessage = emailErrorMessage;
-      updatedValues[FORM_KEYS.RetypeEmail].errorMessage = emailErrorMessage;
-    }
-
-    if (
-      updatedValues[FORM_KEYS.Password].errorMessage === "" ||
-      updatedValues[FORM_KEYS.RetypePassword].errorMessage === ""
-    ) {
-      const passwordErrorMessage = getPasswordMismatchErrorMessage(
-        values[FORM_KEYS.Password].fieldValue,
-        values[FORM_KEYS.RetypePassword].fieldValue
-      );
-
-      updatedValues[FORM_KEYS.Password].errorMessage = passwordErrorMessage;
-      updatedValues[FORM_KEYS.RetypePassword].errorMessage =
-        passwordErrorMessage;
-    }
-
     setValues(updatedValues);
     updateForm();
 
@@ -75,12 +46,13 @@ let onRegisterSubmit;
     if (!errorOccurred) {
       const email = values.email.fieldValue;
       const password = values.password.fieldValue;
-      const firstName = values.firstName.fieldValue;
-      const lastName = values.lastName.fieldValue;
 
-      const data = { email, password, firstName, lastName };
+      const data = { email, password };
+
       try {
-        await onRegisterSubmit(data);
+        const result = await authService.register(data);
+
+        await updateAuth(result);
 
         Object.keys(FORM_KEYS).forEach((key) => {
           INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
