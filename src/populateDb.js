@@ -7,12 +7,13 @@ const StoneColor = require("./models/StoneColor");
 const JewelryStones = require("./models/JewelryStones");
 const Size = require("./models/Size");
 const Inventory = require("./models/Inventory");
-require("dotenv").config();
 
+// async function populateDb() {
+//   await mongoose.connect(
+//     "mongodb+srv://beatrisilieve:31iiG2CgGYT18OZg@merngemscluster.u9znfhf.mongodb.net/?retryWrites=true&w=majority&appName=MERNGemsCluster"
+//   );
 async function populateDb() {
-  await mongoose.connect(
-    "mongodb+srv://beatrisilieve:31iiG2CgGYT18OZg@merngemscluster.u9znfhf.mongodb.net/?retryWrites=true&w=majority&appName=MERNGemsCluster"
-  );
+  await mongoose.connect("mongodb://127.0.0.1:27017/mern-gems");
 
   await Category.create({
     title: "Bracelet",

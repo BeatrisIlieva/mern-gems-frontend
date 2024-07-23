@@ -101,7 +101,6 @@ exports.getOne = async (jewelryId) => {
       $match: { _id: jewelryId },
     },
   ]);
-  
+
   return result;
-  
 };

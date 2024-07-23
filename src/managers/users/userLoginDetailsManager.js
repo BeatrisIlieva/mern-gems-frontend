@@ -1,4 +1,4 @@
-const jwt = require("../lib/jwt");
+const jwt = require("../../lib/jwt");
 const bcrypt = require("bcrypt");
 
 const UserLoginDetails = require("../../models/UserLoginDetails");

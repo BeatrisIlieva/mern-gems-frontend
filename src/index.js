@@ -7,10 +7,15 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+// mongoose
+//   .connect(
+//     "mongodb+srv://beatrisilieve:31iiG2CgGYT18OZg@merngemscluster.u9znfhf.mongodb.net/?retryWrites=true&w=majority&appName=MERNGemsCluster"
+//   )
+//   .then(() => console.log("DB connected"))
+//   .catch((err) => console.log(err.message));
+
 mongoose
-  .connect(
-    "mongodb+srv://beatrisilieve:31iiG2CgGYT18OZg@merngemscluster.u9znfhf.mongodb.net/?retryWrites=true&w=majority&appName=MERNGemsCluster"
-  )
+  .connect("mongodb://127.0.0.1:27017/mern-gems")
   .then(() => console.log("DB connected"))
   .catch((err) => console.log(err.message));
 
