@@ -1,17 +1,15 @@
 import { useEffect } from "react";
 
-
-
 import { useAuthContext } from "../../../../contexts/AuthContext";
-
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-import { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } from "../../../../constants/email";
 
 import { useForm } from "../../../../hooks/useForm";
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
 
-import * as authService from "../../../../services/authService";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+import { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } from "../../../../constants/email";
+
+import { register } from "../../../../services/authService";
 
 const ButtonTitle = "Sign Up";
 
@@ -49,7 +47,7 @@ export const RegisterForm = () => {
       const data = { email, password };
 
       try {
-        const result = await authService.register(data);
+        const result = await register(data);
 
         await updateAuth(result);
 
