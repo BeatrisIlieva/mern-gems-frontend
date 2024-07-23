@@ -1,7 +1,6 @@
 import { PASSWORD_ERROR_MESSAGE } from "../constants/password";
 import { PASSWORD_MISMATCH_ERROR_MESSAGE } from "../constants/password";
 import { EMAIL_ERROR_MESSAGE } from "../constants/email";
-import { EMAIL_MISMATCH_ERROR_MESSAGE } from "../constants/email";
 import { NAME_ERROR_MESSAGE } from "../constants/name";
 import { PHONE_ERROR_MESSAGE } from "../constants/phone";
 import { STREET_ERROR_MESSAGE } from "../constants/street";
@@ -19,7 +18,6 @@ export const ERROR_MESSAGES = {
   passwordMismatch: PASSWORD_MISMATCH_ERROR_MESSAGE,
   email: EMAIL_ERROR_MESSAGE,
   retypeEmail: EMAIL_ERROR_MESSAGE,
-  emailMismatch: EMAIL_MISMATCH_ERROR_MESSAGE,
   firstName: NAME_ERROR_MESSAGE,
   lastName: NAME_ERROR_MESSAGE,
   phoneNumber: PHONE_ERROR_MESSAGE,
