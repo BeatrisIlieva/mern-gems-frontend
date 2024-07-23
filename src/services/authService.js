@@ -58,7 +58,7 @@ export const remove = async (userId) => {
   return result;
 };
 
-export const getOne = async (userId) => {
+export const getUser = async (userId) => {
   const response = await fetch(`${baseUrl}/${userId}`, {
     method: "GET",
   });

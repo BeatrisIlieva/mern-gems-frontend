@@ -10,13 +10,12 @@ import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { updateEmail } from "../../../../services/authService";
+import { getUser, updateEmail } from "../../../../services/authService";
 
 const ButtonTitle = "Save";
 
-export const EmailInformationForm = () => {
+export const UpdateEmailForm = () => {
   const { userId } = useAuthContext();
-  const loginInformationService = useService(loginInformationServiceFactory);
   const [userInformation, setUserInformation] = useState([]);
 
   const {
@@ -30,8 +29,7 @@ export const EmailInformationForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    loginInformationService
-      .find(userId)
+    getUser(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();
@@ -52,7 +50,7 @@ export const EmailInformationForm = () => {
 
       const data = { email, password };
       try {
-        await loginInformationService.updateEmail(userId, data);
+        await updateEmail(userId, data);
       } catch (err) {
         console.log(err.message);
 
