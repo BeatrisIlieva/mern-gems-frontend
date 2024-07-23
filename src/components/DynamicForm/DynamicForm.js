@@ -11,6 +11,7 @@ export const DynamicForm = ({
   blurHandler,
   changeHandler,
   initialFormValues,
+  userInformation,
   buttonTitle,
 }) => {
   const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
@@ -49,7 +50,7 @@ export const DynamicForm = ({
               type={values[value].fieldType}
               name={value}
               id={value}
-              value={values[key]}
+              value={userInformation ? userInformation[key] : values[key]}
               onChange={(e) => changeHandler(value, e.target.value)}
               onFocus={() => clickHandler(value)}
               data-testid={`${value}-input`}

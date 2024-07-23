@@ -27,15 +27,26 @@ export const login = async (data) => {
 };
 
 export const logout = async () => {
-    const response = await fetch(`${baseUrl}/logout`, {
-      method: "GET",
-    });
-  
-    const result = await response.json();
-  
-    return result;
-  };
+  const response = await fetch(`${baseUrl}/logout`, {
+    method: "GET",
+  });
 
+  const result = await response.json();
+
+  return result;
+};
+
+export const updateEmail = async (userId, data) => {
+  const response = await fetch(`${baseUrl}/update-email/${userId}`, {
+    method: "PUT",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  return result;
+};
 
 export const remove = async (userId) => {
   const response = await fetch(`${baseUrl}/delete/${userId}`, {
@@ -47,15 +58,12 @@ export const remove = async (userId) => {
   return result;
 };
 
-export const update = async (userId, data) => {
-  const response = await fetch(`${baseUrl}/update/${userId}`, {
-    method: "PUT",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(data),
+export const getOne = async (userId) => {
+  const response = await fetch(`${baseUrl}/${userId}`, {
+    method: "GET",
   });
 
   const result = await response.json();
 
   return result;
 };
-
