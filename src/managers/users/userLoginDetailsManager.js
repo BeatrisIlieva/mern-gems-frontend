@@ -27,23 +27,23 @@ exports.register = async (data) => {
   return { token, userId };
 };
 
-// exports.login = async (data) => {
-//   const user = await UserLoginInformation.findOne({ email: data.email });
+exports.login = async (data) => {
+  const user = await UserLoginDetails.findOne({ email: data.email });
 
-//   if (!user) {
-//     throw new Error(INVALID_CREDENTIALS_ERROR_MESSAGE);
-//   }
+  if (!user) {
+    throw new Error(INVALID_CREDENTIALS_ERROR_MESSAGE);
+  }
 
-//   const isValid = await bcrypt.compare(data.password, user.password);
+  const isValid = await bcrypt.compare(data.password, user.password);
 
-//   if (!isValid) {
-//     throw new Error(INVALID_CREDENTIALS_ERROR_MESSAGE);
-//   }
+  if (!isValid) {
+    throw new Error(INVALID_CREDENTIALS_ERROR_MESSAGE);
+  }
 
-//   const token = await generateToken(user);
+  const token = await generateToken(user);
 
-//   return { token, user };
-// };
+  return { token, user };
+};
 
 // exports.find = async (userId) => {
 //   const result = await UserLoginInformation.findById(userId);

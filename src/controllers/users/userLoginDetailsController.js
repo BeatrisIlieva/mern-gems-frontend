@@ -22,7 +22,7 @@ router.post("/register", async (req, res) => {
 
     await userShippingDetailsManager.create({ _id: userId });
 
-    sendRegistrationEmail(email);
+    // sendRegistrationEmail(email);
 
     res.status(201).json({ token, userId });
   } catch (err) {
@@ -33,34 +33,22 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// router.post("/login", async (req, res) => {
-//   const userUUID = req.headers["user-uuid"];
+router.post("/login", async (req, res) => {
 
-//   const { email, password } = { ...req.body };
+  const { email, password } = { ...req.body };
 
-//   try {
-//     const user = await userLoginInformation.findOne({ email });
+  try {
 
-//     if (user) {
-//       const userId = user._id;
+    const result = await userLoginDetailsManager.login({ email, password });
 
-//       if (userId !== userUUID) {
-//         await transferWishlist(userUUID, userId);
-
-//         await transferBag(userUUID, userId);
-//       }
-//     }
-
-//     const result = await userLoginInformationManager.login({ email, password });
-
-//     res.status(200).json(result);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(401).json({
-//       message: err.message,
-//     });
-//   }
-// });
+    res.status(200).json(result);
+  } catch (err) {
+    console.log(err.message);
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
 
 // router.get("/:userId", async (req, res) => {
 //   const userId = req.params.userId;
