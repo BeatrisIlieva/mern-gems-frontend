@@ -69,21 +69,21 @@ exports.getUser = async (userId) => {
   return result;
 };
 
-// exports.updatePassword = async (userId, data) => {
-//   let user = await UserLoginInformation.findById(userId);
+exports.updatePassword = async (userId, data) => {
+  let user = await UserLoginInformation.findById(userId);
 
-//   const isPasswordValid = await bcrypt.compare(data.password, user.password);
+  const isPasswordValid = await bcrypt.compare(data.password, user.password);
 
-//   if (!isPasswordValid) {
-//     throw new Error(INVALID_PASSWORD_ERROR_MESSAGE);
-//   } else {
-//     const hash = await bcrypt.hash(data.newPassword, DEFAULT_SALT);
-//     const user = await UserLoginInformation.findByIdAndUpdate(userId, {
-//       password: hash,
-//     });
-//     return user;
-//   }
-// };
+  if (!isPasswordValid) {
+    throw new Error(INVALID_PASSWORD_ERROR_MESSAGE);
+  } else {
+    const hash = await bcrypt.hash(data.newPassword, DEFAULT_SALT);
+    const user = await UserLoginInformation.findByIdAndUpdate(userId, {
+      password: hash,
+    });
+    return user;
+  }
+};
 
 // exports.delete = async (userId) => {
 //   const result = await UserLoginInformation.findByIdAndDelete(userId);

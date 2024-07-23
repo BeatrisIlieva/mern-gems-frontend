@@ -84,25 +84,22 @@ router.get("/:userId", async (req, res) => {
   }
 });
 
-// router.put("/update-password/:userId", async (req, res) => {
-//   const userId = req.params.userId;
+router.put("/update-password/:userId", async (req, res) => {
+  const userId = req.params.userId;
 
-//   const data = { ...req.body };
+  const data = { ...req.body };
 
-//   try {
-//     const result = await userLoginInformationManager.updatePassword(
-//       userId,
-//       data
-//     );
+  try {
+    const result = await userLoginDetailsManager.updatePassword(userId, data);
 
-//     res.status(200).json(result);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(401).json({
-//       message: err.message,
-//     });
-//   }
-// });
+    res.status(200).json(result);
+  } catch (err) {
+    console.log(err.message);
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
 
 // router.delete("/:userId", async (req, res) => {
 //   const userId = req.params.userId;
