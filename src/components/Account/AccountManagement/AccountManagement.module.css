@@ -1,0 +1,30 @@
+.slideIn {
+  animation: slideIn 0.4s forwards;
+  padding-bottom: 40px;
+}
+
+.slideOut {
+  animation: slideOut 0.4s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
