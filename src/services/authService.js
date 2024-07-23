@@ -45,7 +45,13 @@ export const updateEmail = async (userId, data) => {
 
   const result = await response.json();
 
-  return result;
+  if (!response.ok) {
+    throw result;
+  } else {
+    
+
+    return result;
+  }
 };
 
 export const updatePassword = async (userId, data) => {
@@ -54,10 +60,15 @@ export const updatePassword = async (userId, data) => {
     headers: { "content-type": "application/json" },
     body: JSON.stringify(data),
   });
-
   const result = await response.json();
+  
+  if (!response.ok) {
+    throw result;
+  } else {
+    
 
-  return result;
+    return result;
+  }
 };
 
 export const remove = async (userId) => {

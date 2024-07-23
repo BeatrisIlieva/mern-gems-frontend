@@ -69,18 +69,22 @@ export const DynamicForm = ({
               {initialFormValues[value].fieldLabel}
             </label>
           </div>
-          <div
-            className={styles["error-message"]}
-            data-testid={`${value}-error`}
-          >
-            {values[value].errorMessage}
-          </div>
-          <div
-            className={styles["success-message"]}
-            data-testid={`${value}-success`}
-          >
-            {values[value].successMessage}
-          </div>
+          {values[value].errorMessage && (
+            <div
+              className={styles["error-message"]}
+              data-testid={`${value}-error`}
+            >
+              {values[value].errorMessage}
+            </div>
+          )}
+          {values[value].successMessage && (
+            <div
+              className={styles["success-message"]}
+              data-testid={`${value}-success`}
+            >
+              {values[value].successMessage}
+            </div>
+          )}
         </div>
       ))}
       <button className={styles["button"]} type="submit">

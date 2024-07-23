@@ -50,9 +50,11 @@ export const UpdateEmailForm = () => {
 
       const data = { email, password };
       try {
+        console.log("try")
         await updateEmail(userId, data);
       } catch (err) {
         console.log(err.message);
+        console.log("catch")
 
         setValues((prevValues) => ({
           ...prevValues,
