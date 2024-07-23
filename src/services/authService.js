@@ -26,6 +26,17 @@ export const login = async (data) => {
   return result;
 };
 
+export const logout = async () => {
+    const response = await fetch(`${baseUrl}/logout`, {
+      method: "GET",
+    });
+  
+    const result = await response.json();
+  
+    return result;
+  };
+
+
 export const remove = async (userId) => {
   const response = await fetch(`${baseUrl}/delete/${userId}`, {
     method: "DELETE",
@@ -47,3 +58,4 @@ export const update = async (userId, data) => {
 
   return result;
 };
+

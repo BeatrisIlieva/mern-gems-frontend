@@ -1,20 +1,22 @@
 import { useEffect } from "react";
-// import { AuthContext } from "../../../../contexts/AuthContext";
-// import { useContext } from "react";
+
+import { useAuthContext } from "../../../../../contexts/AuthContext";
+
+import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
+
+import { useForm } from "../../../../../hooks/useForm";
+
+import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
 
 import { INVALID_CREDENTIALS_ERROR_MESSAGE } from "../../../../../constants/email";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-import { useForm } from "../../../../../hooks/useForm";
-import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
-import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
-// import styles from "../Login.module.css";
 
-const ButtonTitle = "Sign In"
+import { login } from "../../../../../services/authService";
+
+const ButtonTitle = "Sign In";
 
 export const LoginForm = () => {
-  // const { onLoginSubmit } = useContext(AuthContext);
-
-  let onLoginSubmit;
+  const { updateAuth } = useAuthContext();
 
   let {
     values,
@@ -47,7 +49,9 @@ export const LoginForm = () => {
       const data = { email, password };
 
       try {
-        await onLoginSubmit(data);
+        const result = await login(data);
+
+        await updateAuth(result);
       } catch (err) {
         if (err.message === INVALID_CREDENTIALS_ERROR_MESSAGE) {
           setValues((prevValues) => ({

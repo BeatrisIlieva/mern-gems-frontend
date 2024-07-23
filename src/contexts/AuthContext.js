@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect } from "react";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
-import * as authService from "../services/authService";
+import { logout } from "../services/authService";
 
 export const AuthContext = createContext();
 
@@ -12,11 +12,14 @@ export const AuthProvider = ({ children }) => {
   const resetTimer = () => {
     if (auth.accessToken) {
       clearTimeout(logoutTimer);
+
       logoutTimer = setTimeout(async () => {
         setAuth({});
+
         localStorage.removeItem("auth");
-        // await authService.logout();
-      }, 600000);
+//600000
+        await logout();
+      }, 60000000);
     }
   };
 
@@ -51,8 +54,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const context = {
-    // auth,
-    // setAuth,
     updateAuth,
     userId: auth._id,
     token: auth.accessToken,
