@@ -11,6 +11,7 @@ export const DynamicForm = ({
   blurHandler,
   changeHandler,
   initialFormValues,
+  buttonTitle,
 }) => {
   //   const [hoveredQuestionMarkEmail, setHoveredQuestionMarkEmail] =
   //     useState(false);
@@ -79,10 +80,10 @@ export const DynamicForm = ({
         </div>
       ))}
       <button
-        className={styles["animated-button"]}
+        className={styles["button"]}
         type="submit"
       >
-        Sign In
+        {buttonTitle}
       </button>
     </>
   );

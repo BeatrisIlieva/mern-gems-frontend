@@ -9,6 +9,8 @@ import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
 import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
 // import styles from "../Login.module.css";
 
+const ButtonTitle = "Sign In"
+
 export const LoginForm = () => {
   // const { onLoginSubmit } = useContext(AuthContext);
 
@@ -72,6 +74,7 @@ export const LoginForm = () => {
           blurHandler={blurHandler}
           changeHandler={changeHandler}
           initialFormValues={INITIAL_FORM_VALUES}
+          buttonTitle={ButtonTitle}
         />
       </form>
     </section>

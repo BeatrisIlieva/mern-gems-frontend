@@ -1,4 +1,4 @@
-import { ERROR_MESSAGES } from "../constants/forms";
+import { ERROR_MESSAGES } from "../mappers/errorMessages";
 
 export const getPasswordMismatchErrorMessage = (password, retypePassword) => {
   if (password !== retypePassword) {

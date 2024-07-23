@@ -20,6 +20,7 @@
   padding-top: 4px;
   margin: 0px;
   padding-bottom: 0px;
+  text-align: left;
 }
 
 .success-message {
@@ -59,8 +60,7 @@
   width: 9px;
 }
 
-.animated-button {
-  position: relative;
+.button {
   padding: 16px 48px;
   font-size: var(--medium-font-size);
   border: none;
@@ -69,24 +69,14 @@
   background: none;
   background: var(--white);
   color: var(--medium-gray);
-  border: .1px solid var(--medium-pink);
   font-family: var(--bold-italic-font-family);
   outline: none;
-  margin-bottom: 14px;
-}
-
-.animated-button::before {
-  content: "";
-  position: absolute;
-  width: 0px;
-  height: 1px;
-  bottom: 0;
-  left: 50%;
-  background-color: var(--medium-pink);
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.animated-button:hover::before {
+  margin: 10px 0px;
   width: 100%;
-  left: 0;
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+.button:hover {
+  background-color: var(--medium-pink);
 }

@@ -10,7 +10,6 @@ import { APARTMENT_ERROR_MESSAGE } from "../constants/apartment";
 import { LONG_CARD_NUMBER_PATTERN_ERROR_MESSAGE } from "../constants/cardNumber";
 import { CVV_CODE_PATTERN_ERROR_MESSAGE } from "../constants/cVVCode";
 import { CARD_HOLDER_NAME_PATTERN_ERROR_MESSAGE } from "../constants/cardHolder";
-import { INVALID_CREDENTIALS_ERROR_MESSAGE } from "../constants/email";
 
 export const ERROR_MESSAGES = {
   password: PASSWORD_ERROR_MESSAGE,
