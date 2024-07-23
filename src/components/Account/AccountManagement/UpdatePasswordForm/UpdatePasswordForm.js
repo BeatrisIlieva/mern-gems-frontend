@@ -6,25 +6,20 @@ import { useForm } from "../../../../hooks/useForm";
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
-import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
-
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-
 import { getUser, updatePassword } from "../../../../services/authService";
 
+import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
 
 import { getPasswordMismatchErrorMessage } from "../../../../utils/getPasswordMismatchErrorMessage";
 
-import { SUCCESS_MESSAGES } from "../../../../../constants/forms";
+import { SUCCESS_MESSAGES } from "../../../../mappers/successMessages";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-import { DynamicFormAuthUser } from "../../../../DynamicForm/DynamicFormAuthUser";
-import { useForm } from "../../../../../hooks/useForm";
-import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
-import styles from "../AccountDetails.module.css";
+
+const ButtonTitle = "Save";
 
 export const PasswordInformationForm = () => {
   const { userId } = useAuthContext();
-  const loginInformationService = useService(loginInformationServiceFactory);
+
   const [userInformation, setUserInformation] = useState([]);
 
   const {
@@ -38,8 +33,7 @@ export const PasswordInformationForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    loginInformationService
-      .find(userId)
+    getUser(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();
@@ -79,7 +73,7 @@ export const PasswordInformationForm = () => {
 
       const data = { password, newPassword };
       try {
-        await loginInformationService.updatePassword(userId, data);
+        await updatePassword(userId, data);
 
         setValues((prevValues) => ({
           ...prevValues,
@@ -108,29 +102,17 @@ export const PasswordInformationForm = () => {
   };
 
   return (
-    <section className={styles["slideIn"]}>
-      <form
-        method="POST"
-        onSubmit={onSubmit}
-        data-testid="update-password-form"
-      >
-        <DynamicFormAuthUser
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          userInformation={userInformation}
-        />
-        <button
-          className={`${styles["animated-button"]} ${styles["button"]}`}
-          type="submit"
-          data-testid="submit"
-        >
-          Save
-        </button>
-      </form>
-    </section>
+    <form method="POST" onSubmit={onSubmit}>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userInformation}
+        buttonTitle={ButtonTitle}
+      />
+    </form>
   );
 };

@@ -50,11 +50,15 @@ export const DynamicForm = ({
               type={values[value].fieldType}
               name={value}
               id={value}
-              value={userInformation ? userInformation[key] : values[key]}
+              defaultValue={
+                key !== "Password"
+                  ? userInformation
+                    ? userInformation[value]
+                    : values[key]
+                  : ""
+              }
               onChange={(e) => changeHandler(value, e.target.value)}
               onFocus={() => clickHandler(value)}
-              data-testid={`${value}-input`}
-              className={styles["password"]}
             />
             <label
               htmlFor={value}

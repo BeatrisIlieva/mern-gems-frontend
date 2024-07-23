@@ -48,6 +48,18 @@ export const updateEmail = async (userId, data) => {
   return result;
 };
 
+export const updatePassword = async (userId, data) => {
+  const response = await fetch(`${baseUrl}/update-password/${userId}`, {
+    method: "PUT",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  const result = await response.json();
+
+  return result;
+};
+
 export const remove = async (userId) => {
   const response = await fetch(`${baseUrl}/delete/${userId}`, {
     method: "DELETE",

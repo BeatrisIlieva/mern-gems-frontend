@@ -20,7 +20,7 @@ export const INITIAL_FORM_VALUES = {
     differentPasswordsTestData: "test@email.com",
     differentEmailsTestData: "test@email.com",
   },
-  
+
   [FORM_KEYS.Password]: {
     fieldLabel: "Password",
     fieldValue: "",

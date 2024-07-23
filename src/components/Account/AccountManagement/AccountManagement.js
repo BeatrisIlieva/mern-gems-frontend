@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
+import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 import { Button } from "./Button/Button";
 
 import styles from "./AccountManagement.module.css";
@@ -36,7 +37,7 @@ export const AccountManagement = () => {
       </div>
       <div className={styles["slideIn"]}>
         {showUpdateEmail && <UpdateEmailForm />}
-        {/* {showUpdatePassword } */}
+        {showUpdatePassword && <UpdatePasswordForm />}
       </div>
     </section>
   );
