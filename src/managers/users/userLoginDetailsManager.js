@@ -63,11 +63,11 @@ exports.updateEmail = async (userId, data) => {
   }
 };
 
-// exports.find = async (userId) => {
-//   const result = await UserLoginInformation.findById(userId);
+exports.getUser = async (userId) => {
+  const result = await UserLoginDetails.findById(userId);
 
-//   return result;
-// };
+  return result;
+};
 
 // exports.updatePassword = async (userId, data) => {
 //   let user = await UserLoginInformation.findById(userId);

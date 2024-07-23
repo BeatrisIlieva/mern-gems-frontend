@@ -69,20 +69,20 @@ router.put("/update-email/:userId", async (req, res) => {
   }
 });
 
-// router.get("/:userId", async (req, res) => {
-//   const userId = req.params.userId;
+router.get("/:userId", async (req, res) => {
+  const userId = req.params.userId;
 
-//   try {
-//     const result = await userLoginInformationManager.find(userId);
+  try {
+    const result = await userLoginDetailsManager.getUser(userId);
 
-//     res.status(200).json(result);
-//   } catch (err) {
-//     console.log(err);
-//     res.status(401).json({
-//       message: err.message,
-//     });
-//   }
-// });
+    res.status(200).json(result);
+  } catch (err) {
+    console.log(err);
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
 
 // router.put("/update-password/:userId", async (req, res) => {
 //   const userId = req.params.userId;
