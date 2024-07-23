@@ -35,10 +35,12 @@ export const AccountManagement = () => {
           callbackFunction={onUpdatePasswordClick}
         />
       </div>
-      <div className={styles["slideIn"]}>
+
         {showUpdateEmail && <UpdateEmailForm />}
+
+  
         {showUpdatePassword && <UpdatePasswordForm />}
-      </div>
+
     </section>
   );
 };

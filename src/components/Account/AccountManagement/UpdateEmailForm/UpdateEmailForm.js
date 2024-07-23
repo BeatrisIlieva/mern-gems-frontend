@@ -12,6 +12,8 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import { getUser, updateEmail } from "../../../../services/authService";
 
+import styles from "./UpdateEmailForm.module.css";
+
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
@@ -50,11 +52,11 @@ export const UpdateEmailForm = () => {
 
       const data = { email, password };
       try {
-        console.log("try")
+        console.log("try");
         await updateEmail(userId, data);
       } catch (err) {
         console.log(err.message);
-        console.log("catch")
+        console.log("catch");
 
         setValues((prevValues) => ({
           ...prevValues,
@@ -70,17 +72,19 @@ export const UpdateEmailForm = () => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        userInformation={userInformation}
-        buttonTitle={ButtonTitle}
-      />
-    </form>
+    <div className={styles["slideIn"]}>
+      <form method="POST" onSubmit={onSubmit}>
+        <DynamicForm
+          values={values}
+          formKeys={FORM_KEYS}
+          clickHandler={clickHandler}
+          blurHandler={blurHandler}
+          changeHandler={changeHandler}
+          initialFormValues={INITIAL_FORM_VALUES}
+          userInformation={userInformation}
+          buttonTitle={ButtonTitle}
+        />
+      </form>
+    </div>
   );
 };
