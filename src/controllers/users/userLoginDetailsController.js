@@ -34,12 +34,31 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-
   const { email, password } = { ...req.body };
 
   try {
-
     const result = await userLoginDetailsManager.login({ email, password });
+
+    res.status(200).json(result);
+  } catch (err) {
+    console.log(err.message);
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
+
+router.get("/logout", (req, res) => {
+  res.end();
+});
+
+router.put("/update-email/:userId", async (req, res) => {
+  const userId = req.params.userId;
+
+  const data = { ...req.body };
+
+  try {
+    const result = await userLoginDetailsManager.updateEmail(userId, data);
 
     res.status(200).json(result);
   } catch (err) {
@@ -65,23 +84,6 @@ router.post("/login", async (req, res) => {
 //   }
 // });
 
-// router.put("/update-email/:userId", async (req, res) => {
-//   const userId = req.params.userId;
-
-//   const data = { ...req.body };
-
-//   try {
-//     const result = await userLoginInformationManager.updateEmail(userId, data);
-
-//     res.status(200).json(result);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(401).json({
-//       message: err.message,
-//     });
-//   }
-// });
-
 // router.put("/update-password/:userId", async (req, res) => {
 //   const userId = req.params.userId;
 
@@ -100,10 +102,6 @@ router.post("/login", async (req, res) => {
 //       message: err.message,
 //     });
 //   }
-// });
-
-// router.get("/logout", (req, res) => {
-//   res.end();
 // });
 
 // router.delete("/:userId", async (req, res) => {
