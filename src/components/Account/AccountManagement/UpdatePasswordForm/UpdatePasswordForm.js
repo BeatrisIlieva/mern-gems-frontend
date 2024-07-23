@@ -17,7 +17,7 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 const ButtonTitle = "Save";
 
-export const PasswordInformationForm = () => {
+export const UpdatePasswordForm = () => {
   const { userId } = useAuthContext();
 
   const [userInformation, setUserInformation] = useState([]);
