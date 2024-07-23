@@ -45,28 +45,28 @@ exports.login = async (data) => {
   return { token, user };
 };
 
+exports.updateEmail = async (userId, data) => {
+  let user = await UserLoginDetails.findById(userId);
+
+  const isPasswordValid = await bcrypt.compare(data.password, user.password);
+
+  const isEmailValid = EMAIL_PATTERN.test(data.email);
+
+  if (!isPasswordValid) {
+    throw new Error(INVALID_PASSWORD_ERROR_MESSAGE);
+  } else if (!isEmailValid) {
+    throw new Error(EMAIL_ERROR_MESSAGE);
+  } else {
+    await UserLoginDetails.findByIdAndUpdate(userId, { email: data.email });
+
+    return user;
+  }
+};
+
 // exports.find = async (userId) => {
 //   const result = await UserLoginInformation.findById(userId);
 
 //   return result;
-// };
-
-// exports.updateEmail = async (userId, data) => {
-//   let user = await UserLoginInformation.findById(userId);
-
-//   const isPasswordValid = await bcrypt.compare(data.password, user.password);
-
-//   const isEmailValid = EMAIL_PATTERN.test(data.email);
-
-//   if (!isPasswordValid) {
-//     throw new Error(INVALID_PASSWORD_ERROR_MESSAGE);
-//   } else if (!isEmailValid) {
-//     throw new Error(EMAIL_ERROR_MESSAGE);
-//   } else {
-//     await UserLoginInformation.findByIdAndUpdate(userId, { email: data.email });
-
-//     return user;
-//   }
 // };
 
 // exports.updatePassword = async (userId, data) => {
@@ -96,7 +96,10 @@ async function generateToken(user) {
     _id: user._id,
   };
 
-  const token = await jwt.sign(payload, "4bbac8ce0aca40d84618677c0fcae39ddc9880ba2272a7995783bce1287cf678");
+  const token = await jwt.sign(
+    payload,
+    "4bbac8ce0aca40d84618677c0fcae39ddc9880ba2272a7995783bce1287cf678"
+  );
 
   const result = {
     _id: user._id,
