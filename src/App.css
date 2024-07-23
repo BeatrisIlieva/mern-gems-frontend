@@ -97,14 +97,14 @@ input[type="email"]:focus {
 
 input,
 textarea {
-  caret-color: var(--dark-pink);
+  caret-color: var(--pink);
 }
 
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  width: var(--minimum-font-size);
-  height: var(--minimum-font-size);
+  width: var(--small);
+  height: var(--small);
   border-radius: 0.15em;
   margin-right: 0.5em;
   border: 1px solid var(--gray);

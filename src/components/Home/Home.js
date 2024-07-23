@@ -1,7 +1,7 @@
 import { Collection } from "../Collection/Collection";
 import { collectionItems } from "../Collection/collectionItems";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
-import { Authentication } from "../User/Authentication/Authentication";
+import { Authentication } from "../Authentication/Authentication";
 
 import styles from "./Home.module.css";
 
