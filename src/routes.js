@@ -1,12 +1,12 @@
 const router = require("express").Router();
 
+const userController = require("./controllers/userController");
+const jewelryController = require("./controllers/jewelryController");
+
 // const userLoginInformationController = require("./controllers/userLoginInformationController");
 // const userPersonalInformationController = require("./controllers/userPersonalInformationController");
 // const userAddressInformationController = require("./controllers/userAddressInformationController");
-const authenticationController = require("./controllers/users/authenticationController");
-const jewelryController = require("./controllers/jewelries/jewelryController");
-const categoryController = require("./controllers/jewelries/categoryController");
-const collectionController = require("./controllers/jewelries/collectionController");
+
 // const stoneController = require("./controllers/stoneController");
 // const searchController = require("./controllers/searchController");
 // const bagController = require("./controllers/bagController");
@@ -20,10 +20,10 @@ const collectionController = require("./controllers/jewelries/collectionControll
 // router.use("/user-login-information", userLoginInformationController);
 // router.use("/user-personal-information", userPersonalInformationController);
 // router.use("/user-address-information", userAddressInformationController);
-router.use("/users/authentication", authenticationController);
+
+router.use("/users", userController);
 router.use("/jewelries", jewelryController);
-router.use("/categories", categoryController);
-router.use("/collections", collectionController);
+
 // router.use("/stone", stoneController);
 // router.use("/search", searchController);
 // router.use("/bag", bagController);

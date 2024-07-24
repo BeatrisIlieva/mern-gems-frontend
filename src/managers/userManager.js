@@ -1,15 +1,22 @@
-const jwt = require("../../lib/jwt");
+
+const {generateToken} = require("../lib/generateToken");
+
 const bcrypt = require("bcrypt");
 
-const UserLoginDetails = require("../../models/UserLoginDetails");
+const UserLoginDetails = require("../models/UserLoginDetails");
+const UserShippingDetails = require("../models/UserShippingDetails");
 
-const { EMAIL_PATTERN, EMAIL_ERROR_MESSAGE } = require("../../constants/email");
-const { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } = require("../../constants/email");
-const { INVALID_CREDENTIALS_ERROR_MESSAGE } = require("../../constants/email");
+const {
+  EMAIL_PATTERN,
+  EMAIL_ERROR_MESSAGE,
+  EMAIL_ALREADY_EXISTS_ERROR_MESSAGE,
+  INVALID_CREDENTIALS_ERROR_MESSAGE,
+} = require("../constants/email");
+
 const {
   DEFAULT_SALT,
   INVALID_PASSWORD_ERROR_MESSAGE,
-} = require("../../constants/password");
+} = require("../constants/password");
 
 exports.register = async (data) => {
   const user = await UserLoginDetails.findOne({ email: data.email });
@@ -54,7 +61,6 @@ exports.updateEmail = async (userId, data) => {
 
   if (!isPasswordValid) {
     throw new Error(INVALID_PASSWORD_ERROR_MESSAGE);
-    
   } else if (!isEmailValid) {
     throw new Error(EMAIL_ERROR_MESSAGE);
   } else {
@@ -93,20 +99,27 @@ exports.updatePassword = async (userId, data) => {
 //   return result;
 // };
 
-async function generateToken(user) {
-  const payload = {
-    _id: user._id,
-  };
+exports.createUserShippingDetails = async (data) => {
+  await UserShippingDetails.create(data);
+};
 
-  const token = await jwt.sign(
-    payload,
-    "4bbac8ce0aca40d84618677c0fcae39ddc9880ba2272a7995783bce1287cf678"
-  );
+// exports.find = async (userId) => {
+//   const result = await UserAddressInformation.findById(userId);
 
-  const result = {
-    _id: user._id,
-    accessToken: token,
-  };
+//   return result;
+// };
 
-  return result;
-}
+// exports.update = async (userId, data) => {
+//   const result = await UserAddressInformation.findByIdAndUpdate(userId, data, {
+//     runValidators: true,
+//     new: true,
+//   });
+
+//   return result;
+// };
+
+// exports.delete = async (userId) => {
+//   const result = await UserAddressInformation.findByIdAndDelete(userId);
+
+//   return result;
+// };
