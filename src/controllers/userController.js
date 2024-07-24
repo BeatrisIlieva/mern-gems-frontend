@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
-  res.end();
+  res.status(204).json();
 });
 
 router.put("/update-email/:userId", async (req, res) => {
