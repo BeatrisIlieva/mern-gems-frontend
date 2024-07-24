@@ -1,13 +1,10 @@
-const requester = async (method, token, url, data, setError) => {
-  const userUUID = localStorage.getItem("userUUID");
-
+const requester = async (method, token, url, data) => {
   const options = {};
 
   options.method = method;
 
   options.headers = {
     "content-type": "application/json",
-    "user-uuid": userUUID,
   };
 
   if (method !== "GET") {
@@ -26,11 +23,6 @@ const requester = async (method, token, url, data, setError) => {
   const response = await fetch(url, options);
 
   if (response.status === 204) {
-    return {};
-  }
-
-  if (response.status === 404) {
-    setError({ code: 404, message: "Not Found" });
     return {};
   }
 
