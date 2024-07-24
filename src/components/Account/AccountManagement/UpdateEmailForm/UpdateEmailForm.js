@@ -17,7 +17,7 @@ import styles from "./UpdateEmailForm.module.css";
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
-  const { userId } = useAuthContext();
+  const { userId, token } = useAuthContext();
   const [userInformation, setUserInformation] = useState([]);
 
   const {
@@ -52,11 +52,11 @@ export const UpdateEmailForm = () => {
 
       const data = { email, password };
       try {
-        console.log("try");
-        await updateEmail(userId, data);
+
+        await updateEmail(userId, data, token);
       } catch (err) {
         console.log(err.message);
-        console.log("catch");
+
 
         setValues((prevValues) => ({
           ...prevValues,

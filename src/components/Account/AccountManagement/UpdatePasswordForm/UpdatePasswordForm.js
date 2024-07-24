@@ -20,7 +20,7 @@ import styles from "./UpdatePasswordForm.module.css";
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-  const { userId } = useAuthContext();
+  const { userId, token } = useAuthContext();
 
   const [userInformation, setUserInformation] = useState([]);
 
@@ -75,7 +75,7 @@ export const UpdatePasswordForm = () => {
 
       const data = { password, newPassword };
       try {
-        await updatePassword(userId, data);
+        await updatePassword(userId, data, token);
 
         setValues((prevValues) => ({
           ...prevValues,

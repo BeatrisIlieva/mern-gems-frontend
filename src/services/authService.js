@@ -5,7 +5,7 @@ const baseUrl = `${HOST}/users`;
 export const register = async (data) => {
   const response = await fetch(`${baseUrl}/register`, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json",  },
     body: JSON.stringify(data),
   });
 
@@ -17,7 +17,7 @@ export const register = async (data) => {
 export const login = async (data) => {
   const response = await fetch(`${baseUrl}/login`, {
     method: "POST",
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json",  },
     body: JSON.stringify(data),
   });
 
@@ -36,10 +36,10 @@ export const logout = async () => {
   return result;
 };
 
-export const updateEmail = async (userId, data) => {
+export const updateEmail = async (userId, data, token) => {
   const response = await fetch(`${baseUrl}/update-email/${userId}`, {
     method: "PUT",
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", "X-Authorization": token },
     body: JSON.stringify(data),
   });
 
@@ -54,14 +54,15 @@ export const updateEmail = async (userId, data) => {
   }
 };
 
-export const updatePassword = async (userId, data) => {
+export const updatePassword = async (userId, data, token) => {
+
   const response = await fetch(`${baseUrl}/update-password/${userId}`, {
     method: "PUT",
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", "X-Authorization": token },
     body: JSON.stringify(data),
   });
   const result = await response.json();
-  
+
   if (!response.ok) {
     throw result;
   } else {
@@ -71,9 +72,10 @@ export const updatePassword = async (userId, data) => {
   }
 };
 
-export const remove = async (userId) => {
+export const remove = async (userId, token) => {
   const response = await fetch(`${baseUrl}/delete/${userId}`, {
     method: "DELETE",
+    headers: { "content-type": "application/json", "X-Authorization": token },
   });
 
   const result = await response.json();
@@ -81,9 +83,11 @@ export const remove = async (userId) => {
   return result;
 };
 
-export const getUser = async (userId) => {
+export const getUser = async (userId, token) => {
   const response = await fetch(`${baseUrl}/${userId}`, {
     method: "GET",
+    headers: { "content-type": "application/json", "X-Authorization": token },
+    
   });
 
   const result = await response.json();
