@@ -7,6 +7,8 @@ import { userServiceFactory } from "../../../../services/userService";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
+const LogoutButtonTitle = "Logout";
+
 export const Logout = () => {
   const userService = useService(userServiceFactory);
   const { clearToken } = useAuthenticationContext();
@@ -21,5 +23,5 @@ export const Logout = () => {
     navigate("/");
   };
 
-  return <Button title={"Logout"} callbackFunction={logoutHandler} />;
+  return <Button title={LogoutButtonTitle} callbackFunction={logoutHandler} />;
 };
