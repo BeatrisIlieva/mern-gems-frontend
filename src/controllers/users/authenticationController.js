@@ -8,19 +8,19 @@ const router = require("express").Router();
 // const { sendRegistrationEmail } = require("../../mailer");
 // const Bag = require("../models/Bag");
 // const Wishlist = require("../models/Wishlist");
-const userLoginDetailsManager = require("../../managers/users/userLoginDetailsManager");
-const userShippingDetailsManager = require("../../managers/users/userShippingDetailsManager");
+const authenticationManager = require("../../managers/users/authenticationManager");
+const shippingManager = require("../../managers/users/shippingManager");
 
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const { token, userId } = await userLoginDetailsManager.register({
+    const { token, userId } = await authenticationManager.register({
       email,
       password,
     });
 
-    await userShippingDetailsManager.create({ _id: userId });
+    await shippingManager.create({ _id: userId });
 
     // sendRegistrationEmail(email);
 
@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
   const { email, password } = { ...req.body };
 
   try {
-    const result = await userLoginDetailsManager.login({ email, password });
+    const result = await authenticationManager.login({ email, password });
 
     res.status(200).json(result);
   } catch (err) {
@@ -58,7 +58,7 @@ router.put("/update-email/:userId", async (req, res) => {
   const data = { ...req.body };
 
   try {
-    const result = await userLoginDetailsManager.updateEmail(userId, data);
+    const result = await authenticationManager.updateEmail(userId, data);
 
     res.status(200).json(result);
   } catch (err) {
@@ -73,7 +73,7 @@ router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const result = await userLoginDetailsManager.getUser(userId);
+    const result = await authenticationManager.getUser(userId);
 
     res.status(200).json(result);
   } catch (err) {
@@ -90,7 +90,7 @@ router.put("/update-password/:userId", async (req, res) => {
   const data = { ...req.body };
 
   try {
-    const result = await userLoginDetailsManager.updatePassword(userId, data);
+    const result = await authenticationManager.updatePassword(userId, data);
 
     res.status(200).json(result);
   } catch (err) {

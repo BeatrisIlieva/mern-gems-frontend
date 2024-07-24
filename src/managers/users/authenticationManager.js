@@ -54,6 +54,7 @@ exports.updateEmail = async (userId, data) => {
 
   if (!isPasswordValid) {
     throw new Error(INVALID_PASSWORD_ERROR_MESSAGE);
+    
   } else if (!isEmailValid) {
     throw new Error(EMAIL_ERROR_MESSAGE);
   } else {
@@ -78,6 +79,7 @@ exports.updatePassword = async (userId, data) => {
     throw new Error(INVALID_PASSWORD_ERROR_MESSAGE);
   } else {
     const hash = await bcrypt.hash(data.newPassword, DEFAULT_SALT);
+
     const user = await UserLoginDetails.findByIdAndUpdate(userId, {
       password: hash,
     });

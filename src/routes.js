@@ -3,7 +3,7 @@ const router = require("express").Router();
 // const userLoginInformationController = require("./controllers/userLoginInformationController");
 // const userPersonalInformationController = require("./controllers/userPersonalInformationController");
 // const userAddressInformationController = require("./controllers/userAddressInformationController");
-const userLoginDetailsController = require("./controllers/users/userLoginDetailsController");
+const authenticationController = require("./controllers/users/authenticationController");
 const jewelryController = require("./controllers/jewelries/jewelryController");
 const categoryController = require("./controllers/jewelries/categoryController");
 const collectionController = require("./controllers/jewelries/collectionController");
@@ -20,7 +20,7 @@ const collectionController = require("./controllers/jewelries/collectionControll
 // router.use("/user-login-information", userLoginInformationController);
 // router.use("/user-personal-information", userPersonalInformationController);
 // router.use("/user-address-information", userAddressInformationController);
-router.use("/users", userLoginDetailsController);
+router.use("/users/authentication", authenticationController);
 router.use("/jewelries", jewelryController);
 router.use("/categories", categoryController);
 router.use("/collections", collectionController);
