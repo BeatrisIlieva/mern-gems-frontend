@@ -58,8 +58,16 @@ export const AuthenticationProvider = ({ children }) => {
     setAuthentication(token);
   };
 
+  const clearToken = async () => {
+
+    localStorage.removeItem("authentication");
+
+    setAuthentication({});
+  }
+
   const context = {
     updateAuthentication,
+    clearToken,
     userId: authentication._id,
     token: authentication.accessToken,
     isAuthenticated: !!authentication.accessToken,

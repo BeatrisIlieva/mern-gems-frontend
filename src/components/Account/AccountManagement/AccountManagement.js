@@ -5,6 +5,7 @@ import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 import { Button } from "./Button/Button";
 import { LargeTitle } from "../../LargeTitle/LargeTitle";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
+import { Logout } from "./Logout/Logout";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -61,6 +62,7 @@ export const AccountManagement = () => {
           title={UpdatePasswordButtonTitle}
           callbackFunction={onUpdatePasswordClick}
         />
+        <Logout/>
       </div>
 
       {showUpdateEmail && <UpdateEmailForm />}
