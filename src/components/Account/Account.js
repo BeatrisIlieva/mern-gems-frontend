@@ -6,9 +6,11 @@ export const Account = () => {
   return (
     <section className={styles["account"]}>
       <div className={styles["left-container"]}>
-        <AccountManagement />
+
       </div>
-      <div className={styles["right-container"]}></div>
+      <div className={styles["right-container"]}>
+      <AccountManagement/>
+      </div>
     </section>
   );
 };

@@ -3,11 +3,14 @@ import { useState } from "react";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 import { Button } from "./Button/Button";
+import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
 import styles from "./AccountManagement.module.css";
 
 const UpdateEmailButtonTitle = "Update Email Address";
 const UpdatePasswordButtonTitle = "Change Password";
+
+const Title = "Account Management";
 
 export const AccountManagement = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
@@ -25,6 +28,7 @@ export const AccountManagement = () => {
 
   return (
     <section className={styles["account-management"]}>
+      <LargeTitle title={Title} />
       <div className={styles["button-container"]}>
         <Button
           title={UpdateEmailButtonTitle}
@@ -36,11 +40,9 @@ export const AccountManagement = () => {
         />
       </div>
 
-        {showUpdateEmail && <UpdateEmailForm />}
+      {showUpdateEmail && <UpdateEmailForm />}
 
-  
-        {showUpdatePassword && <UpdatePasswordForm />}
-
+      {showUpdatePassword && <UpdatePasswordForm />}
     </section>
   );
 };

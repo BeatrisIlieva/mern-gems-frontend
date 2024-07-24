@@ -1,10 +1,15 @@
 .account {
   display: flex;
   margin: 40px 80px 40px 80px;
+  gap: 40px;
 }
 
 .left-container {
+  border: .1px solid var(--pink);
+  width: 50%;
 }
 
 .right-container {
+  border: .1px solid var(--pink);
+  width: 50%;
 }
