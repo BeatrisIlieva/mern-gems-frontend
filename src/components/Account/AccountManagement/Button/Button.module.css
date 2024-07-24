@@ -5,8 +5,11 @@
   background-color: var(--white);
   outline: none;
   text-decoration: underline;
-  margin: 0px;
   padding: 0px;
+}
+
+.button:last-child {
+  padding-bottom: 20px;
 }
 
 .button:hover {

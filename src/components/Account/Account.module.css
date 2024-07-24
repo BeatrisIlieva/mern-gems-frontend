@@ -7,9 +7,11 @@
 .left-container {
   border: .1px solid var(--pink);
   width: 50%;
+  padding: 30px;
 }
 
 .right-container {
   border: .1px solid var(--pink);
   width: 50%;
+  padding: 30px;
 }

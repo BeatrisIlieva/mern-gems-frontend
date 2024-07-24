@@ -1,3 +1,7 @@
 .small-title {
-  margin-bottom: 8px;
+  padding-bottom: 20px;
+  text-decoration: none;
+  font-size: var(--);
+  font-family: var(--bold-italic-font-family);
+  color: var(--gray);
 }
