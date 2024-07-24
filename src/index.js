@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AuthenticationProvider } from "./contexts/AuthenticationContext";
 // import { BagProvider } from "./contexts/BagContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -11,11 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
+      <AuthenticationProvider>
         {/* <BagProvider> */}
           <App />
         {/* </BagProvider> */}
-      </AuthProvider>
+      </AuthenticationProvider>
     </Router>
   </React.StrictMode>
 );

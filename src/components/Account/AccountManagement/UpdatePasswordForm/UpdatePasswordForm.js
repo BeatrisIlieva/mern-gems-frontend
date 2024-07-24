@@ -1,28 +1,33 @@
 import { useState, useEffect } from "react";
 
-import { useAuthContext } from "../../../../contexts/AuthContext";
+import { useService } from "../../../../hooks/useService";
 
-import { useForm } from "../../../../hooks/useForm";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext"; 
+
+import { useForm } from "../../../../hooks/useForm"; 
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
-import { getUser, updatePassword } from "../../../../services/authService";
-
-import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
+import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred"; 
 
 import { getPasswordMismatchErrorMessage } from "../../../../utils/getPasswordMismatchErrorMessage";
 
-import { SUCCESS_MESSAGES } from "../../../../mappers/successMessages";
+import { SUCCESS_MESSAGES } from "../../../../mappers/successMessages"
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+
+import { userServiceFactory } from "../../../../services/userService";
 
 import styles from "./UpdatePasswordForm.module.css";
 
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-  const { userId, token } = useAuthContext();
+
+  const { userId, token } = useAuthenticationContext();
 
   const [userInformation, setUserInformation] = useState([]);
+
+  const userService = useService(userServiceFactory);
 
   const {
     values,
@@ -35,7 +40,7 @@ export const UpdatePasswordForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    getUser(userId)
+    userService.getUser(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();
@@ -75,7 +80,7 @@ export const UpdatePasswordForm = () => {
 
       const data = { password, newPassword };
       try {
-        await updatePassword(userId, data, token);
+        await userService.updatePassword(userId, data, token);
 
         setValues((prevValues) => ({
           ...prevValues,

@@ -1,22 +1,25 @@
 import { useEffect } from "react";
 
-import { useAuthContext } from "../../../../../contexts/AuthContext";
+import { useService } from "../../../../hooks/useService";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext"; 
 
-import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
+import { DynamicForm } from "../../../DynamicForm/DynamicForm"; 
 
-import { useForm } from "../../../../../hooks/useForm";
+import { useForm } from "../../../../hooks/useForm";
 
-import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
+import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred"; 
 
-import { INVALID_CREDENTIALS_ERROR_MESSAGE } from "../../../../../constants/email";
+import { INVALID_CREDENTIALS_ERROR_MESSAGE } from "../../../../constants/email";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { login } from "../../../../../services/authService";
+import { userServiceFactory } from "../../../../services/userService";
 
 const ButtonTitle = "Sign In";
 
 export const LoginForm = () => {
-  const { updateAuth } = useAuthContext();
+  const { updateAuthentication } = useAuthenticationContext();
+
+  const userService = useService(userServiceFactory);
 
   let {
     values,
@@ -49,9 +52,9 @@ export const LoginForm = () => {
       const data = { email, password };
 
       try {
-        const result = await login(data);
+        const result = await userService.login(data);
 
-        await updateAuth(result);
+        await updateAuthentication(result);
       } catch (err) {
         if (err.message === INVALID_CREDENTIALS_ERROR_MESSAGE) {
           setValues((prevValues) => ({

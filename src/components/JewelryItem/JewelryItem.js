@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
-import * as jewelryItemService from "../../services/jewelryItemService";
+import { useService } from "../../hooks/useService"; 
+
+import { jewelryServiceFactory } from "../../services/jewelryService";
 
 import { JewelryImage } from "./JewelryImage/JewelryImage";
 import { PinkButton } from "../PinkButton/PinkButton";
@@ -19,6 +21,8 @@ const EarringId = 2;
 const ErrorMessage = "Ensure you have selected the desired size";
 
 export const JewelryItem = () => {
+  const jewelryService = useService(jewelryServiceFactory);
+
   const [loading, setLoading] = useState(true);
 
   const { jewelryId } = useParams();
@@ -40,7 +44,7 @@ export const JewelryItem = () => {
   useEffect(() => {
     setLoading(true);
 
-    jewelryItemService
+    jewelryService
       .getOne(jewelryId)
       .then((data) => {
         setJewelry(data[0]);

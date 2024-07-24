@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import { useAuthContext } from "./contexts/AuthContext";
+import { useAuthenticationContext } from "./contexts/AuthenticationContext";
 
 import { Authentication } from "./components/Authentication/Authentication";
 
@@ -22,7 +22,7 @@ function App() {
   const [showFooter, setShowFooter] = useState(false);
   const location = useLocation();
 
-  const { isAuthenticated } = useAuthContext();
+  const { isAuthenticated } = useAuthenticationContext();
 
   useEffect(() => {
     setShowFooter(false);

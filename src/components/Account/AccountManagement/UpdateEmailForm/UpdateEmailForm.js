@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
-import { useAuthContext } from "../../../../contexts/AuthContext";
+import { useService } from "../../../../hooks/useService";
+
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { useForm } from "../../../../hooks/useForm";
 
@@ -10,15 +12,18 @@ import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { getUser, updateEmail } from "../../../../services/authService";
+import { userServiceFactory } from "../../../../services/userService";
 
 import styles from "./UpdateEmailForm.module.css";
 
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
-  const { userId, token } = useAuthContext();
+  const { userId, token } = useAuthenticationContext();
+  
   const [userInformation, setUserInformation] = useState([]);
+
+  const userService = useService(userServiceFactory);
 
   const {
     values,
@@ -31,7 +36,7 @@ export const UpdateEmailForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    getUser(userId)
+    userService.getUser(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();
@@ -53,7 +58,7 @@ export const UpdateEmailForm = () => {
       const data = { email, password };
       try {
 
-        await updateEmail(userId, data, token);
+        await userService.updateEmail(userId, data, token);
       } catch (err) {
         console.log(err.message);
 

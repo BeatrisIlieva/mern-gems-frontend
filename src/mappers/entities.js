@@ -1,22 +1,29 @@
-import * as jewelryByCategoryService from "../services/jewelryByCategoryService";
-import * as jewelryByCollectionService from "../services/jewelryByCollectionService";
-
 export const ENTITIES_MAPPER = {
-  bracelets: { entityId: 1, fetchFunction: jewelryByCategoryService.getAll },
-  earrings: { entityId: 2, fetchFunction: jewelryByCategoryService.getAll },
-  necklaces: { entityId: 3, fetchFunction: jewelryByCategoryService.getAll },
-  rings: { entityId: 4, fetchFunction: jewelryByCategoryService.getAll },
+  bracelets: { entityId: 1, fetchFunction: "getAllByCategory" },
+
+  earrings: { entityId: 2, fetchFunction: "getAllByCategory" },
+
+  necklaces: { entityId: 3, fetchFunction: "getAllByCategory" },
+
+  rings: { entityId: 4, fetchFunction: "getAllByCategory" },
+
   "diamond-loop": {
     entityId: 1,
-    fetchFunction: jewelryByCollectionService.getAll,
+    fetchFunction: "getAllByCollection",
   },
+
   "sparkling-cluster": {
     entityId: 2,
-    fetchFunction: jewelryByCollectionService.getAll,
+    fetchFunction: "getAllByCollection",
   },
+
   "forget-me-not": {
     entityId: 3,
-    fetchFunction: jewelryByCollectionService.getAll,
+    fetchFunction: "getAllByCollection",
   },
-  sunflower: { entityId: 4, fetchFunction: jewelryByCollectionService.getAll },
+
+  sunflower: {
+    entityId: 4,
+    fetchFunction: "getAllByCollection",
+  },
 };

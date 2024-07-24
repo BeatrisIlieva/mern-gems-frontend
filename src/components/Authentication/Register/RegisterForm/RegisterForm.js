@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
-import { useAuthContext } from "../../../../contexts/AuthContext";
+import { useService } from "../../../../hooks/useService";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { useForm } from "../../../../hooks/useForm";
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
@@ -9,12 +10,14 @@ import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } from "../../../../constants/email";
 
-import { register } from "../../../../services/authService";
+import { userServiceFactory } from "../../../../services/userService";
 
 const ButtonTitle = "Sign Up";
 
 export const RegisterForm = () => {
-  const { updateAuth } = useAuthContext();
+  const { updateAuthentication } = useAuthenticationContext();
+
+  const userService = useService(userServiceFactory);
 
   let {
     values,
@@ -47,9 +50,9 @@ export const RegisterForm = () => {
       const data = { email, password };
 
       try {
-        const result = await register(data);
+        const result = await userService.register(data);
 
-        await updateAuth(result);
+        await updateAuthentication(result);
 
         Object.keys(FORM_KEYS).forEach((key) => {
           INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
