@@ -23,9 +23,13 @@
   border-inline-end: 1px solid var(--medium-pink);
   border-block-end: 1px solid var(--medium-pink);
   border-block-start: 1px solid var(--medium-pink);
-  text-align: center;
-  padding: 20px 78px 0px 78px;
+  /* text-align: center; */
+  /* padding: 20px 78px 0px 78px; */
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .modal-authentication {
@@ -35,7 +39,7 @@
 
 .delete-account {
   width: 34vw;
-  height: 30vh;
+  height: 36vh;
 }
 
 .icon {

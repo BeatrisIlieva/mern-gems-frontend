@@ -6,7 +6,7 @@ import { Button } from "./Button/Button";
 import { LargeTitle } from "../../LargeTitle/LargeTitle";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { Logout } from "./Logout/Logout";
-import { DeleteAccount } from "./DeleteAccount/DeleteAccount"; 
+import { DeleteAccount } from "./DeleteAccount/DeleteAccount";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -48,6 +48,15 @@ export const AccountManagement = () => {
     setShowUpdatePassword(true);
     setShowUpdateEmail(false);
   };
+  const [displayDeleteAccountPopup, setDeleteAccountPopup] = useState(false);
+
+  const toggleDeleteAccountPopup = () => {
+    // document.body.style.overflow = "visible";
+
+    setDeleteAccountPopup(
+      (displayDeleteAccountPopup) => !displayDeleteAccountPopup
+    );
+  };
 
   return (
     <section className={styles["account-management"]}>
@@ -63,11 +72,18 @@ export const AccountManagement = () => {
           callbackFunction={onUpdatePasswordClick}
         />
         <Logout />
-        <DeleteAccount />
+        <Button
+          title={DeleteAccountButtonTitle}
+          callbackFunction={toggleDeleteAccountPopup}
+        />
+        {displayDeleteAccountPopup && (
+          <DeleteAccount
+            toggleDeleteAccountPopup={toggleDeleteAccountPopup}
+            displayDeleteAccountPopup={displayDeleteAccountPopup}
+          />
+        )}
       </div>
-
       {showUpdateEmail && <UpdateEmailForm />}
-
       {showUpdatePassword && <UpdatePasswordForm />}
     </section>
   );
