@@ -16,18 +16,23 @@
 }
 
 .modal,
-.modal-authentication {
+.modal-authentication,
+.delete-account {
   background-color: var(--white);
-  padding: 20px;
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
   border-block-end: 1px solid var(--medium-pink);
   border-block-start: 1px solid var(--medium-pink);
   text-align: center;
-  padding: 10px 78px 0px 78px;
+  padding: 20px 78px 0px 78px;
 }
 
 .modal-authentication {
   width: 34vw;
   height: 80vh;
+}
+
+.delete-account {
+  width: 34vw;
+  height: 30vh;
 }

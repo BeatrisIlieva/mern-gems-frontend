@@ -6,6 +6,7 @@ import { Button } from "./Button/Button";
 import { LargeTitle } from "../../LargeTitle/LargeTitle";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { Logout } from "./Logout/Logout";
+import { DeleteAccount } from "./DeleteAccount/DeleteAccount"; 
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -17,9 +18,9 @@ import styles from "./AccountManagement.module.css";
 
 const UpdateEmailButtonTitle = "Update Email Address";
 const UpdatePasswordButtonTitle = "Change Password";
+const DeleteAccountButtonTitle = "Delete Account";
 
 const LargeTitleContent = "Account Management";
-const SmallTitleContent = "Email Address";
 
 export const AccountManagement = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
@@ -51,8 +52,7 @@ export const AccountManagement = () => {
   return (
     <section className={styles["account-management"]}>
       <LargeTitle title={LargeTitleContent} />
-      <SmallTitle title={SmallTitleContent} />
-      <div>{userData.email}</div>
+      <SmallTitle title={userData.email} />
       <div className={styles["button-container"]}>
         <Button
           title={UpdateEmailButtonTitle}
@@ -62,7 +62,8 @@ export const AccountManagement = () => {
           title={UpdatePasswordButtonTitle}
           callbackFunction={onUpdatePasswordClick}
         />
-        <Logout/>
+        <Logout />
+        <DeleteAccount />
       </div>
 
       {showUpdateEmail && <UpdateEmailForm />}
