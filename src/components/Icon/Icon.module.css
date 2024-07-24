@@ -6,3 +6,10 @@
 .icon:hover {
   color: var(--pink);
 }
+
+.add-address-book {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 4px 6px;
+  border-radius: 32px;
+}

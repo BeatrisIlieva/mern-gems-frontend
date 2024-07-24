@@ -60,7 +60,7 @@ export const AccountManagement = () => {
 
   return (
     <section className={styles["account-management"]}>
-      <LargeTitle title={LargeTitleContent} />
+      <LargeTitle title={LargeTitleContent} variant={"large-title"}/>
       <SmallTitle title={userData.email} />
       <div className={styles["button-container"]}>
         <Button
