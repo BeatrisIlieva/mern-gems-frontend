@@ -25,6 +25,7 @@
   border-block-start: 1px solid var(--medium-pink);
   text-align: center;
   padding: 20px 78px 0px 78px;
+  position: relative;
 }
 
 .modal-authentication {
@@ -35,4 +36,10 @@
 .delete-account {
   width: 34vw;
   height: 30vh;
+}
+
+.icon {
+  position: absolute;
+  top: 8px;
+  right: 12px;
 }

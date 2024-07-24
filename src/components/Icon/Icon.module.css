@@ -1,0 +1,8 @@
+.icon {
+  color: var(--medium-pink);
+  height: var(--large);
+}
+
+.icon:hover {
+  color: var(--pink);
+}
