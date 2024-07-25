@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-import { NavLink } from "react-router-dom";
 import { Navigation } from "./Navigation/Navigation";
 
 import { useLocation } from "react-router-dom";
