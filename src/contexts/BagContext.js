@@ -1,11 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 import { BAG_ACTIONS } from "../mappers/bagActions";
 
 export const BagContext = createContext();
 
 export const BagProvider = ({ children }) => {
-  const [bagQuantity, setBagQuantity] = useState(0);
+  const [bagQuantity, setBagQuantity] = useLocalStorage("bagQuantity", 0);
 
   const updateBagQuantity = (action) => {
     if (action === BAG_ACTIONS.Subtract) {
