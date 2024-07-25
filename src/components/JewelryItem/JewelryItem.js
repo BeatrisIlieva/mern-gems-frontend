@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import { BAG_ACTIONS } from "../../mappers/bagActions";
+
 import { useBagContext } from "../../contexts/BagContext";
 
 import { useService } from "../../hooks/useService";
@@ -92,7 +94,7 @@ export const JewelryItem = () => {
 
     decreaseSizeQuantity(sizeId);
 
-    updateBagQuantity("add");
+    updateBagQuantity(BAG_ACTIONS.Add);
   };
 
   const onSubmit = async (e) => {

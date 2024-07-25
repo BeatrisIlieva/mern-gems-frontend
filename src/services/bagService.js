@@ -12,8 +12,6 @@ export const bagServiceFactory = (token) => {
 
     getAll: (userId) => request.get(`${baseUrl}/${userId}`),
 
-    getCount: () => request.get(`${baseUrl}/count`),
-
     decrease: (bagId) => request.put(`${baseUrl}/decrease/${bagId}`),
 
     increase: (bagId) => request.put(`${baseUrl}/increase/${bagId}`),
