@@ -7,7 +7,7 @@ import styles from "./Navigation.module.css";
 const navItems = [
   { to: "bracelets", label: "Bracelets" },
   { to: "earrings", label: "Earrings" },
-  { to: "necklaces", label: "Necklaces" },
+  { to: "necklaces", label: "Necklaces & Pendants" },
   { to: "rings", label: "Rings" },
 ];
 

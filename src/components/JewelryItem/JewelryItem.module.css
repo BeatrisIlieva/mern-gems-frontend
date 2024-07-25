@@ -1,11 +1,12 @@
 .jewelry-wrapper {
   margin: 40px 80px 40px 80px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 30px;
 }
 
 .left-container {
-  width: 50%;
+  width: 40%;
   position: relative;
 }
 

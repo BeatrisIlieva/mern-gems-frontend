@@ -3,11 +3,9 @@
   text-decoration: none;
   font-size: var(--large);
   font-family: var(--bold-italic-font-family);
-  color: var(--gray);
 }
 
 .address-book {
-  /* text-align: center; */
   border-bottom: .1px solid var(--gray);
   padding: 10px 20px 10px 20px;
 }

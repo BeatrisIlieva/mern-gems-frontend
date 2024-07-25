@@ -95,7 +95,7 @@ export const JewelryItem = () => {
         />
       </div>
       <div className={styles["right-container"]}>
-        <LargeTitle title={jewelry.title} />
+        <LargeTitle title={jewelry.title} variant={"large-title"}/>
         <p className={styles["description"]}>
           {jewelry.description}.{" "}
           {jewelry.sizes &&
