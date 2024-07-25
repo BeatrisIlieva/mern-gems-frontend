@@ -11,8 +11,5 @@ export const jewelryServiceFactory = (token) => {
 
     getAll: (collectionId, categoryId, skip, limit) =>
       request.get(`${baseUrl}/${collectionId}/${categoryId}/${skip}/${limit}`),
-
-    // getAllByCollection: (collectionId, skip, limit) =>
-    //   request.get(`${baseUrl}/collections/${collectionId}/${skip}/${limit}`),
   };
 };
