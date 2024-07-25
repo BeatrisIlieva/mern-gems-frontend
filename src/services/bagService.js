@@ -10,9 +10,9 @@ export const bagServiceFactory = (token) => {
     create: (data, jewelryId) =>
       request.post(`${baseUrl}/create/${jewelryId}`, data),
 
-    findAll: (userId) => request.get(`${baseUrl}/find-all/${userId}`),
+    getAll: (userId) => request.get(`${baseUrl}/${userId}`),
 
-    findCount: () => request.get(`${baseUrl}/find-count`),
+    getCount: () => request.get(`${baseUrl}/count`),
 
     decrease: (bagId) => request.put(`${baseUrl}/decrease/${bagId}`),
 

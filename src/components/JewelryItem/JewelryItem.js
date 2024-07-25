@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { useService } from "../../hooks/useService"; 
+import { useService } from "../../hooks/useService";
 
 import { jewelryServiceFactory } from "../../services/jewelryService";
+import { bagServiceFactory } from "../../services/bagService";
 
 import { JewelryImage } from "./JewelryImage/JewelryImage";
 import { PinkButton } from "../PinkButton/PinkButton";
@@ -22,6 +23,7 @@ const ErrorMessage = "Ensure you have selected the desired size";
 
 export const JewelryItem = () => {
   const jewelryService = useService(jewelryServiceFactory);
+  const bagService = useService(bagServiceFactory);
 
   const [loading, setLoading] = useState(true);
 
@@ -62,6 +64,10 @@ export const JewelryItem = () => {
     setSelectedSize((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
+  const addToBagHandler = async (data, jewelryId) => {
+    await bagService.create(data, jewelryId);
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -70,13 +76,17 @@ export const JewelryItem = () => {
       return;
     }
 
-    // if (jewelry.category === 2) {
-    //   const sizeId = jewelry.sizes[0]._id;
+    try {
+      if (jewelry.category === EarringId) {
+        const sizeId = jewelry.sizes[0]._id;
 
-    //   await onAddToBagClick({ size: sizeId }, jewelry._id);
-    // } else {
-    //   await onAddToBagClick(selectedSize, jewelry._id);
-    // }
+        await addToBagHandler({ size: sizeId }, jewelry._id);
+      } else {
+        await addToBagHandler(selectedSize, jewelry._id);
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
@@ -95,7 +105,7 @@ export const JewelryItem = () => {
         />
       </div>
       <div className={styles["right-container"]}>
-        <LargeTitle title={jewelry.title} variant={"large-title"}/>
+        <LargeTitle title={jewelry.title} variant={"large-title"} />
         <p className={styles["description"]}>
           {jewelry.description}.{" "}
           {jewelry.sizes &&
@@ -133,7 +143,12 @@ export const JewelryItem = () => {
             </div>
           )}
           <SmallTitle title={`$ ${jewelry.price}`} />
-          {!jewelry.isSoldOut && <PinkButton title={"Add To Bag"} />}
+          {!jewelry.isSoldOut && (
+            <PinkButton
+              title={"Add To Bag"}
+              callBackFunction={addToBagHandler}
+            />
+          )}
         </form>
       </div>
     </section>
