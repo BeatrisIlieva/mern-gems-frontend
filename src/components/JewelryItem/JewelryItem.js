@@ -6,9 +6,9 @@ import { Form } from "./Form/Form";
 
 import { useJewelryItem } from "../../hooks/useJewelryItem";
 
-import styles from "./JewelryItem.module.css";
+import { EARRING_ID } from "../../constants/earringId";
 
-const EarringId = 2;
+import styles from "./JewelryItem.module.css";
 
 export const JewelryItem = () => {
   const {
@@ -39,10 +39,10 @@ export const JewelryItem = () => {
         <p className={styles["description"]}>
           {jewelry.description}.{" "}
           {jewelry.sizes &&
-            jewelry.category === EarringId &&
+            jewelry.category === EARRING_ID &&
             jewelry.sizes[0].measurement}
         </p>
-        {jewelry.category !== EarringId && <SmallTitle title={"Size:"} />}
+        {jewelry.category !== EARRING_ID && <SmallTitle title={"Size:"} />}
         <Form />
       </div>
     </section>
