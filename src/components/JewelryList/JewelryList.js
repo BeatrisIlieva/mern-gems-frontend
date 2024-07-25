@@ -27,31 +27,29 @@ export const JewelryList = () => {
   } = useJewelryList(entityId, fetchFunction);
 
   return (
-    <>
-      <section className={styles["jewelries"]}>
-        <div className={styles["jewelries-count"]}>
-          Showing 1 -{" "}
-          {totalCount >= jewelries.length ? jewelries.length : totalCount} of{" "}
-          {totalCount}
+    <section className={styles["jewelries"]}>
+      <div className={styles["jewelries-count"]}>
+        Showing 1 -{" "}
+        {totalCount >= jewelries.length ? jewelries.length : totalCount} of{" "}
+        {totalCount}
+      </div>
+      {loading ? (
+        <>
+          <LoadingSpinner />
+          <CardSkeleton />
+        </>
+      ) : (
+        <div className={styles["jewelry-grid"]}>
+          {jewelries.map((j) => (
+            <JewelryListItem key={j._id} {...j} />
+          ))}
         </div>
-        {loading ? (
-          <>
-            <LoadingSpinner />
-            <CardSkeleton />
-          </>
-        ) : (
-          <div className={styles["jewelry-grid"]}>
-            {jewelries.map((j) => (
-              <JewelryListItem key={j._id} {...j} />
-            ))}
-          </div>
-        )}
-        {loadMore && showLoadMore && (
-          <div className={styles["button"]} onClick={handleLoadMore}>
-            <AnimatedButton title={"Load More"} />
-          </div>
-        )}
-      </section>
-    </>
+      )}
+      {loadMore && showLoadMore && (
+        <div className={styles["button"]} onClick={handleLoadMore}>
+          <AnimatedButton title={"Load More"} />
+        </div>
+      )}
+    </section>
   );
 };
