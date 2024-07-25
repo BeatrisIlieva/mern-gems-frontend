@@ -16,15 +16,17 @@ router.get("/:jewelryId", async (req, res) => {
   }
 });
 
-router.get("/categories/:categoryId/:skip/:limit", async (req, res) => {
-  const categoryId = Number(req.params.categoryId);
+router.get("/:collectionId/:categoryId/:skip/:limit", async (req, res) => {
+  const collectionId = Number(req.params.collectionId)
+  const categoryId = req.params.categoryId ? Number(req.params.categoryId) : null;
+
   const skip = Number(req.params.skip);
   const limit = Number(req.params.limit);
 
-  const data = { categoryId, skip, limit };
+  const data = { collectionId, categoryId, skip, limit };
 
   try {
-    let result = await jewelryManager.getAllByCategory(data);
+    let result = await jewelryManager.getAll(data);
 
     res.status(200).json(result);
   } catch (err) {
