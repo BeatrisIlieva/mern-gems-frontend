@@ -1,14 +1,14 @@
 .account {
   display: flex;
   margin: 40px 80px 40px 80px;
-  gap: 30px;
+  gap: 80px;
 }
 
 .left-container {
   width: 50vw;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 80px;
 }
 
 .right-container {
@@ -19,25 +19,4 @@
   display: block;
 }
 
-/* .top-container {
-  border: 0.1px solid var(--pink);
-  height: 32vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.bottom-container {
-  border: 0.1px solid var(--pink);
-  height: 32vh;
-}
-
-.button-wrapper {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-  cursor: pointer;
-  justify-content: center;
-} */

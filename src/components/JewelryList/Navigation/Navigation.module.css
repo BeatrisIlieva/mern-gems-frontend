@@ -1,0 +1,17 @@
+.sub-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.selected {
+  text-decoration-color: var(--violet);
+  text-underline-offset: 4px;
+  color: var(--gray);
+}
+
+.sub-nav-title {
+  text-decoration: none;
+}

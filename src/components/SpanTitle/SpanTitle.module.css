@@ -1,0 +1,5 @@
+.span-title {
+  font-size: var(--medium);
+  color: var(--gray);
+  text-decoration: none;
+}

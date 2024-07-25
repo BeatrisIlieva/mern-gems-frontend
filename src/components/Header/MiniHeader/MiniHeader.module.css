@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: transparent;
+  height: 120px;
 }
 
 .header-box {
@@ -28,6 +29,7 @@
   width: 74px;
   aspect-ratio: 1 / 1;
   margin-left: 10px;
+
 }
 
 .logo-img {
@@ -37,4 +39,5 @@
   transition: transform 0.3s ease-in-out;
   display: inline-block;
   vertical-align: middle;
+
 }

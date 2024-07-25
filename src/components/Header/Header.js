@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import { NavItem } from "./NavItem/NavItem";
-import { navItems } from "./NavItem/navItems";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 import { MiniHeader } from "./MiniHeader/MiniHeader";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faGem } from "@fortawesome/free-regular-svg-icons";
+import { Icon } from "../Icon/Icon";
+import { SpanTitle } from "../SpanTitle/SpanTitle";
 
 import styles from "./Header.module.css";
 
@@ -36,7 +37,9 @@ export const Header = () => {
 
       setLastScrollY(currentScrollY);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -49,67 +52,61 @@ export const Header = () => {
       ) : (
         <header className={styles["header"]}>
           <div className={styles["wrapper"]}>
-            <nav className={styles["nav"]}>
-              <ul className={styles["nav-list"]} role="list">
-                {navItems.map((item, index) => (
-                  <NavItem
-                    key={item.title}
-                    path={item.path}
-                    title={item.title}
-                    index={index}
-                  />
-                ))}
+            <nav>
+              <ul className={styles["icon-list"]} role="list">
+                {/* onClick={() => popupClickHandler(POPUP_OPTIONS.Search)} */}
+                <li className={styles["icon-bar-item"]}>
+                  <Icon icon={faSearch} variant={"header"} />
+                  <SpanTitle title={"Search"} />
+                </li>
+                <li className={styles["icon-bar-item"]}>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? styles["selected"]
+                        : `${styles["icon-item"]} ${styles["icon-bar-item"]}`
+                    }
+                    to={"/"}
+                  >
+                    <Icon icon={faGem} variant={"header"} />
+                    <SpanTitle title={"Collections"} />
+                  </NavLink>
+                </li>
               </ul>
             </nav>
-            <Link to={"/"}>
-              <img
-                className={styles["logo-image"]}
-                src={
-                  "https://res.cloudinary.com/deztgvefu/image/upload/v1719057213/template_images/Screenshot_2024-06-22_at_14.52.43_xrdvgt.png"
-                }
-                alt="logo-image"
-              />
-            </Link>
-            <ul className={styles["icon-list"]} role="list">
-              {/* onClick={() => popupClickHandler(POPUP_OPTIONS.Search)} */}
-              <li
-                className={`${styles["icon-item"]} ${styles["icon-bar-item"]}`}
-              >
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  className={styles["icon-span"]}
-                />
-                <span className={styles["text-span"]}>Search</span>
-              </li>
-              <li className={`${styles["icon-item"]}`}>
-                <Link
-                  className={`${styles["icon-bar-item"]} ${styles["icon-bar-item-bag"]}`}
-                  to={"/users/shopping-bag"}
-                >
-                  <FontAwesomeIcon
-                    icon={faBagShopping}
-                    className={styles["icon-span"]}
-                  />
-                  <span className={styles["text-span"]}>My Bag</span>
-                  {totalQuantity > 0 && (
-                    <span
-                      className={`${styles["count-span"]} ${styles["pulse"]}`}
-                    >
-                      {totalQuantity}
-                    </span>
-                  )}
-                </Link>
-              </li>
-              <li className={styles["icon-item"]}>
-                <Link className={styles["icon-bar-item"]} to="/users/account">
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    className={styles["icon-span"]}
-                  />
-                  <span className={styles["text-span"]}>Account</span>
-                </Link>
-              </li>
-            </ul>
+            <img
+              className={styles["logo-image"]}
+              src={
+                "https://res.cloudinary.com/deztgvefu/image/upload/v1719057213/template_images/Screenshot_2024-06-22_at_14.52.43_xrdvgt.png"
+              }
+              alt="logo-image"
+            />
+            <nav>
+              <ul className={styles["icon-list"]} role="list">
+                <li>
+                  <Link
+                    className={`${styles["icon-bar-item"]} ${styles["icon-bar-item-bag"]}`}
+                    to={"/users/shopping-bag"}
+                  >
+                    <Icon icon={faBagShopping} variant={"header"} />
+                    <SpanTitle title={"My Bag"} />
+                    {totalQuantity > 0 && (
+                      <span
+                        className={`${styles["count-span"]} ${styles["pulse"]}`}
+                      >
+                        {totalQuantity}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+                <li>
+                  <Link className={styles["icon-bar-item"]} to="/users/account">
+                    <Icon icon={faUser} variant={"header"} />
+                    <SpanTitle title={"Account"} />
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
           <HorizontalLine variant={"large"} position={"absolute"} />
         </header>

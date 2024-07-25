@@ -3,7 +3,7 @@ import { ITEMS_PER_PAGE } from "../constants/pagination";
 import { useService } from "./useService";
 import { jewelryServiceFactory } from "../services/jewelryService";
 
-export const useJewelryList = (entityId, fetchFunction) => {
+export const useJewelryList = (collectionId, categoryId) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [loadMore, setLoadMore] = useState(true);
@@ -11,7 +11,7 @@ export const useJewelryList = (entityId, fetchFunction) => {
   const [totalCount, setTotalCount] = useState(0);
   const [showLoadMore, setShowLoadMore] = useState(false);
 
-  const jewelryService = useService(jewelryServiceFactory)
+  const jewelryService = useService(jewelryServiceFactory);
 
   useEffect(() => {
     setLoading(true);
@@ -19,7 +19,8 @@ export const useJewelryList = (entityId, fetchFunction) => {
     const skip = page * ITEMS_PER_PAGE;
     const limit = ITEMS_PER_PAGE;
 
-    jewelryService[fetchFunction](entityId, skip, limit)
+    jewelryService
+      .getAll(collectionId, categoryId, skip, limit)
       .then((data) => {
         if (page === 0) {
           setJewelries(data.jewelries);
@@ -38,7 +39,7 @@ export const useJewelryList = (entityId, fetchFunction) => {
           setShowLoadMore(true);
         }, 2000);
       });
-  }, [entityId, page, fetchFunction]);
+  }, [collectionId, categoryId, page]);
 
   useEffect(() => {
     setLoadMore(jewelries.length < totalCount);
@@ -50,7 +51,7 @@ export const useJewelryList = (entityId, fetchFunction) => {
     setLoadMore(true);
     setJewelries([]);
     setTotalCount(0);
-  }, [entityId, fetchFunction]);
+  }, [collectionId, categoryId]);
 
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);

@@ -42,40 +42,40 @@ function App() {
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
+          {/* <Route
             path="/bracelets"
             element={
               <RouteGuard>
                 <JewelryList />
               </RouteGuard>
             }
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/earrings"
             element={
               <RouteGuard>
                 <JewelryList />
               </RouteGuard>
             }
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/necklaces"
             element={
               <RouteGuard>
                 <JewelryList />
               </RouteGuard>
             }
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="/rings"
             element={
               <RouteGuard>
                 <JewelryList />
               </RouteGuard>
             }
-          />
+          /> */}
           <Route
-            path="/forget-me-not"
+            path="/forget-me-not/*"
             element={
               <RouteGuard>
                 <JewelryList />
@@ -83,7 +83,7 @@ function App() {
             }
           />
           <Route
-            path="/sparkling-cluster"
+            path="/sparkling-cluster/*"
             element={
               <RouteGuard>
                 <JewelryList />
@@ -91,7 +91,7 @@ function App() {
             }
           />
           <Route
-            path="/sunflower"
+            path="/sunflower/*"
             element={
               <RouteGuard>
                 <JewelryList />
@@ -99,7 +99,7 @@ function App() {
             }
           />
           <Route
-            path="/diamond-loop"
+            path="/diamond-loop/*"
             element={
               <RouteGuard>
                 <JewelryList />

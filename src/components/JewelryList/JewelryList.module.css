@@ -21,3 +21,13 @@
   justify-content: center;
   margin-top: 80px;
 }
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.nav {
+  margin-bottom: 30px;
+}

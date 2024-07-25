@@ -1,15 +1,19 @@
-.icon {
-  color: var(--medium-pink);
-  height: var(--large);
+.icon, .add-address-book, .header {
+  color: var(--pink);
+  height: var(--medium);
 }
 
-.icon:hover {
+/* .icon:hover {
   color: var(--pink);
-}
+} */
 
 .add-address-book {
   background-color: var(--pink);
   color: var(--white);
   padding: 4px 6px;
   border-radius: 32px;
+}
+
+.header {
+  padding-right: 4px;
 }
