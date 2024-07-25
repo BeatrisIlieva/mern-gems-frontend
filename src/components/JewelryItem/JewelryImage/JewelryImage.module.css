@@ -47,3 +47,27 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.sold-out-span {
+  position: absolute;
+  color: var(--medium-gray);
+  font-family: var(--bold-italic-font-family);
+  right: 12px;
+  top: 40px;
+  padding: 8px;
+  opacity: 0.6;
+}
+
+
+input[type="radio"] {
+  display: none;
+  &:not(:disabled) ~ label {
+    cursor: pointer;
+  }
+  &:disabled ~ label {
+    color: var(--medium-gray);
+    border: 1px solid var(--medium-gray);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}

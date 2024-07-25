@@ -22,6 +22,9 @@ const EarringId = 2;
 const ErrorMessage = "Ensure you have selected the desired size";
 
 export const JewelryItem = () => {
+  const [sizes, setSizes] = useState([]);
+  const [isSoldOut, setIsSoldOut] = useState(false);
+
   const jewelryService = useService(jewelryServiceFactory);
   const bagService = useService(bagServiceFactory);
 
@@ -51,6 +54,8 @@ export const JewelryItem = () => {
       .then((data) => {
         setJewelry(data[0]);
         setSizeIsSelected(data[0].category === EarringId);
+
+        setSizes(data[0].sizes);
       })
       .catch((err) => {
         console.log(err.message);
@@ -64,8 +69,30 @@ export const JewelryItem = () => {
     setSelectedSize((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
 
+  const decreaseSizeQuantity = (sizeId) => {
+    setSizes((prevSizes) =>
+      prevSizes.map((size) =>
+        size._id === sizeId ? { ...size, quantity: size.quantity - 1 } : size
+      )
+    );
+  };
+
+  useEffect(() => {
+
+    const allZero = sizes.every(size => size.quantity === 0);
+    setIsSoldOut(allZero);
+  }, [sizes]);
+
   const addToBagHandler = async (data, jewelryId) => {
-    await bagService.create(data, jewelryId);
+    try {
+      await bagService.create(data, jewelryId);
+
+      const sizeId = Number(data["size"]);
+
+      decreaseSizeQuantity(sizeId);
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   const onSubmit = async (e) => {
@@ -93,7 +120,7 @@ export const JewelryItem = () => {
     <section className={styles["jewelry-wrapper"]}>
       <div className={styles["left-container"]}>
         <JewelryImage
-          isSoldOut={jewelry.isSoldOut}
+          isSoldOut={isSoldOut}
           imageUrl={
             leftIsSelected ? jewelry.firstImageUrl : jewelry.secondImageUrl
           }
@@ -117,7 +144,7 @@ export const JewelryItem = () => {
           {jewelry.category !== EarringId && jewelry.sizes && (
             <div className={styles["size-wrapper"]}>
               <div className={styles["radio-container"]}>
-                {jewelry.sizes.map((item) => (
+                {sizes.map((item) => (
                   <div key={item._id}>
                     <input
                       type="radio"
@@ -132,6 +159,7 @@ export const JewelryItem = () => {
                         setSizeIsSelected(true);
                         setErrorMessage("");
                       }}
+                      disabled={!Number(item.quantity) > 0}
                     />
                     <label className={styles["label"]} htmlFor={item._id}>
                       {item.measurement}
@@ -143,12 +171,7 @@ export const JewelryItem = () => {
             </div>
           )}
           <SmallTitle title={`$ ${jewelry.price}`} />
-          {!jewelry.isSoldOut && (
-            <PinkButton
-              title={"Add To Bag"}
-              callBackFunction={addToBagHandler}
-            />
-          )}
+           <PinkButton title={"Add To Bag"} buttonIsDisabled={isSoldOut}/>
         </form>
       </div>
     </section>

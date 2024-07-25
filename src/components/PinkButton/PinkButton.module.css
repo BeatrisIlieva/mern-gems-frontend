@@ -1,12 +1,11 @@
-.button {
-  position: relative;
+.button, .button-disabled {
   padding: 18px;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
   border: none;
-  cursor: pointer;
+
   overflow: hidden;
-  background: var(--medium-pink);
+
   color: var(--white);
   outline: none;
   display: flex;
@@ -14,6 +13,28 @@
   width: 100%;
 }
 
+.button {
+  cursor: pointer;
+  background: var(--medium-pink);
+}
+
 .button:hover {
   background: var(--pink);
+}
+
+.button-disabled {
+  padding: 12px;
+  font-size: var(--medium-font-size);
+  border: none;
+  overflow: hidden;
+  background: var(--medium-pink);
+  color: var(--white);
+  outline: none;
+  letter-spacing: 1.2px;
+  width: 84%;
+  cursor: not-allowed;
+}
+
+.button-disabled:hover {
+  background: var(--medium-pink);
 }
