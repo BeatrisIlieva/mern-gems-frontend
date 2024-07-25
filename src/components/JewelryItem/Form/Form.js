@@ -3,11 +3,9 @@ import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { useJewelryItem } from "../../../hooks/useJewelryItem";
 import styles from "./Form.module.css";
 
-const SizeFormKeys = {
-  Size: "size",
-};
+import { SIZE_FORM_KEY } from "../../../constants/sizeFormKey";
 
-const EarringId = 2;
+import { EARRING_ID } from "../../../constants/earringId";
 
 export const Form = () => {
   const {
@@ -24,18 +22,20 @@ export const Form = () => {
 
   return (
     <form method="POST" onSubmit={onSubmit}>
-      {jewelry.category !== EarringId && jewelry.sizes && (
+      {jewelry.category !== EARRING_ID && jewelry.sizes && (
         <div className={styles["size-wrapper"]}>
           <div className={styles["radio-container"]}>
             {sizes.map((item) => (
               <div key={item._id}>
                 <input
                   type="radio"
-                  name={SizeFormKeys.Size}
+                  name={SIZE_FORM_KEY.Size}
                   id={item._id}
                   value={item._id}
                   onChange={changeHandler}
-                  checked={Number(selectedSize[SizeFormKeys.Size]) === item._id}
+                  checked={
+                    Number(selectedSize[SIZE_FORM_KEY.Size]) === item._id
+                  }
                   onClick={() => {
                     setSizeIsSelected(true);
                     setErrorMessage("");
