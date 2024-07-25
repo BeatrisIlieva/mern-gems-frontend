@@ -4,7 +4,7 @@ import { RegisterForm } from "./RegisterForm/RegisterForm";
 
 export const Register = ({ switchPopupHandler, switchOptions }) => {
   return (
-    <section>
+    <>
       <PopupHeader title={"Become A Member"} />
       <RegisterForm />
       <SwitchButton
@@ -13,6 +13,6 @@ export const Register = ({ switchPopupHandler, switchOptions }) => {
         switchPopupHandler={switchPopupHandler}
         option={switchOptions.Login}
       />
-    </section>
+    </>
   );
 };

@@ -78,21 +78,16 @@ export const JewelryItem = () => {
   };
 
   useEffect(() => {
-
-    const allZero = sizes.every(size => size.quantity === 0);
+    const allZero = sizes.every((size) => size.quantity === 0);
     setIsSoldOut(allZero);
   }, [sizes]);
 
   const addToBagHandler = async (data, jewelryId) => {
-    try {
-      await bagService.create(data, jewelryId);
+    await bagService.create(data, jewelryId);
 
-      const sizeId = Number(data["size"]);
+    const sizeId = Number(data["size"]);
 
-      decreaseSizeQuantity(sizeId);
-    } catch (err) {
-      console.log(err.message);
-    }
+    decreaseSizeQuantity(sizeId);
   };
 
   const onSubmit = async (e) => {
@@ -171,7 +166,7 @@ export const JewelryItem = () => {
             </div>
           )}
           <SmallTitle title={`$ ${jewelry.price}`} />
-           <PinkButton title={"Add To Bag"} buttonIsDisabled={isSoldOut}/>
+          <PinkButton title={"Add To Bag"} buttonIsDisabled={isSoldOut} />
         </form>
       </div>
     </section>
