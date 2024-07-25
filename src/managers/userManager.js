@@ -1,5 +1,4 @@
-
-const {generateToken} = require("../lib/generateToken");
+const { generateToken } = require("../lib/generateToken");
 
 const bcrypt = require("bcrypt");
 
@@ -93,11 +92,13 @@ exports.updatePassword = async (userId, data) => {
   }
 };
 
-// exports.delete = async (userId) => {
-//   const result = await UserLoginInformation.findByIdAndDelete(userId);
+exports.delete = async (userId) => {
+  const result = await UserLoginDetails.findByIdAndDelete(userId);
 
-//   return result;
-// };
+  await UserShippingDetails.findByIdAndDelete(userId);
+
+  return result;
+};
 
 exports.createUserShippingDetails = async (data) => {
   await UserShippingDetails.create(data);
@@ -118,8 +119,4 @@ exports.createUserShippingDetails = async (data) => {
 //   return result;
 // };
 
-// exports.delete = async (userId) => {
-//   const result = await UserAddressInformation.findByIdAndDelete(userId);
-
-//   return result;
 // };
