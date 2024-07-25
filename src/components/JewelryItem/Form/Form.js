@@ -3,11 +3,11 @@ import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { useJewelryItem } from "../../../hooks/useJewelryItem";
 import styles from "./Form.module.css";
 
-// const SizeFormKeys = {
-//   Size: "size",
-// };
+const SizeFormKeys = {
+  Size: "size",
+};
 
-// const EarringId = 2;
+const EarringId = 2;
 
 export const Form = () => {
   const {

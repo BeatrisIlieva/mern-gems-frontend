@@ -10,13 +10,11 @@ import { useService } from "./useService";
 import { jewelryServiceFactory } from "../services/jewelryService";
 import { bagServiceFactory } from "../services/bagService";
 
-const SizeFormKeys = {
-  Size: "size",
-};
+import { SIZE_FORM_KEY } from "../constants/sizeFormKey";
 
-const EarringId = 2;
+import { EARRING_ID } from "../constants/earringId";
 
-const ErrorMessage = "Ensure you have selected the desired size";
+import { SIZE_ERROR_MESSAGE } from "../constants/sizeErrorMessage";
 
 export const useJewelryItem = () => {
   const [sizes, setSizes] = useState([]);
@@ -35,7 +33,7 @@ export const useJewelryItem = () => {
   const [rightIsSelected, setRightIsSelected] = useState(false);
 
   const [sizeIsSelected, setSizeIsSelected] = useState(true);
-  const [selectedSize, setSelectedSize] = useState({ [SizeFormKeys.Size]: 0 });
+  const [selectedSize, setSelectedSize] = useState({ [SIZE_FORM_KEY.Size]: 0 });
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -51,7 +49,7 @@ export const useJewelryItem = () => {
       .getOne(jewelryId)
       .then((data) => {
         setJewelry(data[0]);
-        setSizeIsSelected(data[0].category === EarringId);
+        setSizeIsSelected(data[0].category === EARRING_ID);
 
         setSizes(data[0].sizes);
       })
@@ -94,12 +92,12 @@ export const useJewelryItem = () => {
     e.preventDefault();
 
     if (!sizeIsSelected) {
-      setErrorMessage(ErrorMessage);
+      setErrorMessage(SIZE_ERROR_MESSAGE);
       return;
     }
 
     try {
-      if (jewelry.category === EarringId) {
+      if (jewelry.category === EARRING_ID) {
         const sizeId = jewelry.sizes[0]._id;
 
         await addToBagHandler({ size: sizeId }, jewelry._id);
