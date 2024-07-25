@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import { useBagContext } from "../../contexts/BagContext";
+
 import { useService } from "../../hooks/useService";
 
 import { jewelryServiceFactory } from "../../services/jewelryService";
@@ -24,6 +26,7 @@ const ErrorMessage = "Ensure you have selected the desired size";
 export const JewelryItem = () => {
   const [sizes, setSizes] = useState([]);
   const [isSoldOut, setIsSoldOut] = useState(false);
+  const {updateBagQuantity} = useBagContext()
 
   const jewelryService = useService(jewelryServiceFactory);
   const bagService = useService(bagServiceFactory);
@@ -88,6 +91,8 @@ export const JewelryItem = () => {
     const sizeId = Number(data["size"]);
 
     decreaseSizeQuantity(sizeId);
+
+    updateBagQuantity("add");
   };
 
   const onSubmit = async (e) => {

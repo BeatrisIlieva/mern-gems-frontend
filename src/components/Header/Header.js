@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
+import { useBagContext } from "../../contexts/BagContext";
+
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 import { MiniHeader } from "./MiniHeader/MiniHeader";
 
@@ -15,7 +17,8 @@ import { SpanTitle } from "../SpanTitle/SpanTitle";
 import styles from "./Header.module.css";
 
 export const Header = () => {
-  const totalQuantity = 4;
+  // const totalQuantity = 4;
+  const {bagQuantity} = useBagContext()
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
@@ -90,11 +93,11 @@ export const Header = () => {
                   >
                     <Icon icon={faBagShopping} variant={"header"} />
                     <SpanTitle title={"My Bag"} />
-                    {totalQuantity > 0 && (
+                    {bagQuantity > 0 && (
                       <span
                         className={`${styles["count-span"]} ${styles["pulse"]}`}
                       >
-                        {totalQuantity}
+                        {bagQuantity}
                       </span>
                     )}
                   </Link>
