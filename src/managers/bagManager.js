@@ -3,8 +3,6 @@ const Inventory = require("../models/Inventory");
 const {
   DEFAULT_ADD_QUANTITY,
   DEFAULT_MIN_QUANTITY,
-  NOT_SELECTED_SIZE_ERROR_MESSAGE,
-  SOLD_OUT_JEWELRY_ERROR_MESSAGE,
 } = require("../constants/bag");
 
 const getOne = async ({ userId, jewelryId, sizeId }) => {
