@@ -59,11 +59,10 @@ export const AuthenticationProvider = ({ children }) => {
   };
 
   const clearToken = async () => {
-
     localStorage.removeItem("authentication");
 
     setAuthentication({});
-  }
+  };
 
   const context = {
     updateAuthentication,
