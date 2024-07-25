@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const userController = require("./controllers/userController");
 const jewelryController = require("./controllers/jewelryController");
+const bagController = require("./controllers/bagController");
 
 // const userLoginInformationController = require("./controllers/userLoginInformationController");
 // const userPersonalInformationController = require("./controllers/userPersonalInformationController");
@@ -23,6 +24,7 @@ const jewelryController = require("./controllers/jewelryController");
 
 router.use("/users", userController);
 router.use("/jewelries", jewelryController);
+router.use("/bag", bagController);
 
 // router.use("/stone", stoneController);
 // router.use("/search", searchController);
