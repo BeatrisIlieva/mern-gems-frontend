@@ -1,11 +1,11 @@
-.button, .button-disabled {
+.button,
+.button-disabled {
   padding: 18px;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
   border: none;
-
+  background: var(--medium-pink);
   overflow: hidden;
-
   color: var(--white);
   outline: none;
   display: flex;
@@ -15,7 +15,6 @@
 
 .button {
   cursor: pointer;
-  background: var(--medium-pink);
 }
 
 .button:hover {
@@ -23,18 +22,5 @@
 }
 
 .button-disabled {
-  padding: 12px;
-  font-size: var(--medium-font-size);
-  border: none;
-  overflow: hidden;
-  background: var(--medium-pink);
-  color: var(--white);
-  outline: none;
-  letter-spacing: 1.2px;
-  width: 84%;
   cursor: not-allowed;
-}
-
-.button-disabled:hover {
-  background: var(--medium-pink);
 }
