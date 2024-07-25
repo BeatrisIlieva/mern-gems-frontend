@@ -9,31 +9,16 @@ const {
 const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 
-router.get("/find-all/:userId", async (req, res) => {
+router.get("/:userId", async (req, res) => {
   const userId = req.user._id;
 
   try {
-    const jewelries = await bagManager.findAll(userId);
+    const jewelries = await bagManager.getAll(userId);
 
     res.status(200).json({ jewelries, DEFAULT_MIN_QUANTITY });
   } catch (err) {
     console.log(err.message);
 
-    res.status(401).json({
-      message: err.message,
-    });
-  }
-});
-
-router.get("/find-count", async (req, res) => {
-  const userId = req.user._id;
-
-  try {
-    const result = await bagManager.findCount(userId);
-
-    res.status(200).json(result);
-  } catch (err) {
-    console.log(err);
     res.status(401).json({
       message: err.message,
     });

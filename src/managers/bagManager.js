@@ -131,7 +131,7 @@ const deleteBag = async (bagItemId) => {
   await bagItem.deleteOne();
 };
 
-const findAll = async (userId) => {
+const getAll = async (userId) => {
   let result = await Bag.aggregate([
     {
       $match: {
@@ -276,7 +276,7 @@ const findAll = async (userId) => {
 
 module.exports = {
   getOne,
-  findAll,
+  getAll,
   create,
   decrease,
   increase,

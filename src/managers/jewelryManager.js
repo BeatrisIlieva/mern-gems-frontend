@@ -31,6 +31,40 @@ exports.getOne = async (jewelryId) => {
         price: { $arrayElemAt: ["$inventories.price", 0] },
       },
     },
+    // {
+    //   $addFields: {
+    //     sizes: {
+    //       $map: {
+    //         input: "$sizes",
+    //         as: "size",
+    //         in: {
+    //           _id: "$$size._id",
+    //           measurement: "$$size.measurement",
+    //           title: "$$size.title",
+    //           available: {
+    //             $gt: [
+    //               {
+    //                 $size: {
+    //                   $filter: {
+    //                     input: "$inventories",
+    //                     as: "inventory",
+    //                     cond: {
+    //                       $and: [
+    //                         { $eq: ["$$inventory.size", "$$size._id"] },
+    //                         { $gt: ["$$inventory.quantity", 0] },
+    //                       ],
+    //                     },
+    //                   },
+    //                 },
+    //               },
+    //               0,
+    //             ],
+    //           },
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
     {
       $addFields: {
         sizes: {
@@ -41,24 +75,24 @@ exports.getOne = async (jewelryId) => {
               _id: "$$size._id",
               measurement: "$$size.measurement",
               title: "$$size.title",
-              available: {
-                $gt: [
-                  {
-                    $size: {
-                      $filter: {
-                        input: "$inventories",
-                        as: "inventory",
-                        cond: {
-                          $and: [
-                            { $eq: ["$$inventory.size", "$$size._id"] },
-                            { $gt: ["$$inventory.quantity", 0] },
-                          ],
+              quantity: {
+                $let: {
+                  vars: {
+                    matchingInventory: {
+                      $arrayElemAt: [
+                        {
+                          $filter: {
+                            input: "$inventories",
+                            as: "inventory",
+                            cond: { $eq: ["$$inventory.size", "$$size._id"] },
+                          },
                         },
-                      },
+                        0,
+                      ],
                     },
                   },
-                  0,
-                ],
+                  in: "$$matchingInventory.quantity",
+                },
               },
             },
           },
