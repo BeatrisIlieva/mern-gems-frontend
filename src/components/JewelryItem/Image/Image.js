@@ -1,8 +1,8 @@
 import { CircleIcon } from "../CircleIcon/CircleIcon";
 
-import styles from "./JewelryImage.module.css";
+import styles from "./Image.module.css";
 
-export const JewelryImage = ({
+export const Image = ({
   isSoldOut,
   imageUrl,
   title,

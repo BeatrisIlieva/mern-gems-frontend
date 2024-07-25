@@ -1,0 +1,33 @@
+.radio-container {
+  display: flex;
+}
+
+.label {
+  display: flex;
+  gap: 1px;
+  border: 1px solid var(--medium-pink);
+  padding: 12px;
+  margin-right: 6px;
+  margin-top: 6px;
+  width: 96px;
+  justify-content: center;
+}
+
+.selected {
+  background-color: var(--light-pink) !important;
+}
+
+.size-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.size-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+
+.error-message {
+  color: var(--red);
+}
