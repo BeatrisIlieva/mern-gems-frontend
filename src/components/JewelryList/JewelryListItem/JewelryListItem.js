@@ -1,4 +1,4 @@
-import { JewelryCard } from "../../JewelryCard/JewelryCard";
+import { JewelryCard } from "./JewelryCard/JewelryCard";
 
 import { slugify } from "../../../utils/slugify";
 
@@ -7,6 +7,7 @@ export const JewelryListItem = ({
   firstImageUrl,
   jewelryTitle,
   categoryTitle,
+  isSoldOut,
 }) => {
   const slugifiedCategoryTitle = slugify(categoryTitle);
   const slugifiedJewelryTitle = slugify(jewelryTitle);
@@ -17,6 +18,7 @@ export const JewelryListItem = ({
       firstImageUrl={firstImageUrl}
       slugifiedCategoryTitle={slugifiedCategoryTitle}
       slugifiedJewelryTitle={slugifiedJewelryTitle}
+      isSoldOut={isSoldOut}
     />
   );
 };

@@ -42,38 +42,6 @@ function App() {
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route
-            path="/bracelets"
-            element={
-              <RouteGuard>
-                <JewelryList />
-              </RouteGuard>
-            }
-          /> */}
-          {/* <Route
-            path="/earrings"
-            element={
-              <RouteGuard>
-                <JewelryList />
-              </RouteGuard>
-            }
-          /> */}
-          {/* <Route
-            path="/necklaces"
-            element={
-              <RouteGuard>
-                <JewelryList />
-              </RouteGuard>
-            }
-          /> */}
-          {/* <Route
-            path="/rings"
-            element={
-              <RouteGuard>
-                <JewelryList />
-              </RouteGuard>
-            }
-          /> */}
           <Route
             path="/forget-me-not/*"
             element={

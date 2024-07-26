@@ -1,0 +1,28 @@
+.image,
+.sold-out {
+  border: 0.1px solid var(--light-gray);
+}
+
+.image:hover,
+.sold-out:hover {
+  background-color: var(--light-pink);
+}
+
+.sold-out {
+  background-color: var(--white-pink);
+  opacity: 0.7;
+}
+
+.sold-out-span {
+  position: absolute;
+  color: var(--medium-gray);
+  font-family: var(--bold-italic-font-family);
+  right: 12px;
+  top: 12px;
+  padding: 8px;
+  opacity: 0.6;
+}
+
+.jewelry-card {
+  position: relative;
+}

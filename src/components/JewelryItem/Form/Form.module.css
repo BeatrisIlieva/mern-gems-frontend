@@ -31,3 +31,16 @@
 .error-message {
   color: var(--red);
 }
+
+input[type="radio"] {
+  display: none;
+  &:not(:disabled) ~ label {
+    cursor: pointer;
+  }
+  &:disabled ~ label {
+    color: var(--medium-gray);
+    border: 1px solid var(--medium-gray);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
