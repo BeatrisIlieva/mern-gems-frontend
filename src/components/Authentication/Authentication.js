@@ -17,7 +17,7 @@ export const Authentication = () => {
   };
 
   return (
-    <Popup isVisible={true} variant={"modal-authentication"}>
+    <Popup isVisible={true} variant={"authentication"}>
       {currentPopup === SwitchOptions.Login && (
         <Login
           switchPopupHandler={switchPopupHandler}

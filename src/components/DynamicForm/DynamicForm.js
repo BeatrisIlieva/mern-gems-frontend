@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { QuestionMark } from "./QuestionMark/QuestionMark";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export const DynamicForm = ({
   values,
@@ -12,8 +13,11 @@ export const DynamicForm = ({
   changeHandler,
   initialFormValues,
   userInformation,
-  buttonTitle,
+  buttonTitle
 }) => {
+
+  const location = useLocation();
+
   const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
 
   const onHoverQuestionMark = () => {
@@ -28,7 +32,7 @@ export const DynamicForm = ({
     <>
       {Object.entries(formKeys).map(([key, value]) => (
         <div key={key} className={styles["field-box"]}>
-          {key === "Email" && (
+          {(key === "Email" && location.pathname !== "/users/account") && (
             <span>
               <>{hoveredQuestionMark && <QuestionMark />}</>
               <FontAwesomeIcon
