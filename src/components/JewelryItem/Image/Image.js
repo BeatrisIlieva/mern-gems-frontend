@@ -19,11 +19,7 @@ export const Image = () => {
 
   return (
     <div className={styles["jewelry-images"]}>
-      <div
-        className={`${styles["image"]} ${
-          isSoldOut === true ? styles["sold-out"] : ""
-        }`.trim()}
-      >
+      <div className={styles["image"]}>
         <img
           src={leftIsSelected ? jewelry.firstImageUrl : jewelry.secondImageUrl}
           alt={jewelry.title}

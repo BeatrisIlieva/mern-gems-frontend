@@ -3,8 +3,6 @@
 }
 
 .image {
-  top: 0;
-  right: 0;
   animation: slideIn 0.5s forwards;
   display: inline-block;
 }

@@ -16,7 +16,7 @@ import { EARRING_ID } from "../../../constants/earringId";
 import { useBagContext } from "../../../contexts/BagContext";
 
 export const Form = () => {
-  const { sizes, isSoldOut, jewelry, decreaseSizeQuantity} = useJewelryItem();
+  const { sizes, isSoldOut, jewelry, decreaseSizeQuantity } = useJewelryItem();
 
   const { updateBagQuantity } = useBagContext();
 
@@ -38,7 +38,6 @@ export const Form = () => {
     decreaseSizeQuantity(sizeId);
 
     updateBagQuantity(BAG_ACTIONS.Add);
-
   };
 
   const changeHandler = (e) => {
