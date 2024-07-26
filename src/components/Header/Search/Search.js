@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { useService } from "../../../hooks/useService";
-import { searchServiceFactory } from "../../../services/search";
+import { searchServiceFactory } from "../../../services/searchService";
 import { Popup } from "../../Popup/Popup";
 import { JewelryListItem } from "../../JewelryListItem/JewelryListItem";
 

@@ -18,7 +18,7 @@
 .modal,
 .modal-authentication,
 .delete-account,
-.search{
+.search {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -29,6 +29,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  animation: slideIn 1s forwards;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+@keyframes slideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
 }
 
 .modal-authentication {

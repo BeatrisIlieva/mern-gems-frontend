@@ -9,11 +9,12 @@
 .search-field {
   position: absolute;
   top: 30px;
-  border: 1px solid var(--pink);
+  left: 30px;
+  border: 0.1px solid var(--pink);
   border-radius: 32px;
   width: calc(100% - 60px);
   display: flex;
-  padding: 6px;
+  padding: 4px 8px;
 }
 
 .input {
