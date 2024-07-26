@@ -5,8 +5,12 @@ import { useService } from "./useService";
 
 import { jewelryServiceFactory } from "../services/jewelryService";
 
+import { EARRING_ID } from "../constants/earringId";
+
 export const useJewelryItem = () => {
   const [sizes, setSizes] = useState([]);
+
+  const [sizeIsSelected, setSizeIsSelected] = useState(false);
 
   const [isSoldOut, setIsSoldOut] = useState(false);
 
@@ -27,6 +31,8 @@ export const useJewelryItem = () => {
         setJewelry(data[0]);
 
         setSizes(data[0].sizes);
+
+        setSizeIsSelected(data[0].category === EARRING_ID);
       })
       .catch((err) => {
         console.log(err.message);
@@ -44,6 +50,10 @@ export const useJewelryItem = () => {
     );
   };
 
+  const updateSizeIsSelected = () => {
+    setSizeIsSelected(true);
+  };
+
   useEffect(() => {
     const allZero = sizes.every((size) => size.quantity === 0);
 
@@ -56,5 +66,7 @@ export const useJewelryItem = () => {
     loading,
     jewelry,
     decreaseSizeQuantity,
+    sizeIsSelected,
+    updateSizeIsSelected,
   };
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useService } from "../../../hooks/useService";
 import { bagServiceFactory } from "../../../services/bagService";
@@ -16,15 +16,18 @@ import { EARRING_ID } from "../../../constants/earringId";
 import { useBagContext } from "../../../contexts/BagContext";
 
 export const Form = () => {
-  const { sizes, isSoldOut, jewelry, decreaseSizeQuantity } = useJewelryItem();
+  const {
+    sizes,
+    isSoldOut,
+    jewelry,
+    decreaseSizeQuantity,
+    sizeIsSelected,
+    updateSizeIsSelected,
+  } = useJewelryItem();
 
   const { updateBagQuantity } = useBagContext();
 
   const bagService = useService(bagServiceFactory);
-
-  const [sizeIsSelected, setSizeIsSelected] = useState(
-    jewelry.category === EARRING_ID
-  );
 
   const [selectedSize, setSelectedSize] = useState({ [SIZE_FORM_KEY.Size]: 0 });
 
@@ -82,7 +85,7 @@ export const Form = () => {
                     Number(selectedSize[SIZE_FORM_KEY.Size]) === item._id
                   }
                   onClick={() => {
-                    setSizeIsSelected(true);
+                    updateSizeIsSelected();
                     setErrorMessage("");
                   }}
                   disabled={!Number(item.quantity) > 0}
