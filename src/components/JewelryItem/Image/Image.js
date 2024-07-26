@@ -28,7 +28,11 @@ export const Image = () => {
           src={leftIsSelected ? jewelry.firstImageUrl : jewelry.secondImageUrl}
           alt={jewelry.title}
           onClick={toggleSelected}
-          className={leftIsSelected ? styles[`${"left-image"}`] : styles[`${"right-image"}`]}
+          className={
+            leftIsSelected
+              ? styles[`${"left-image"}`]
+              : styles[`${"right-image"}`]
+          }
         />
         {isSoldOut && <span className={styles["sold-out-span"]}>SOLD OUT</span>}
       </div>
