@@ -12,10 +12,12 @@
   border: 1px solid var(--pink);
   border-radius: 32px;
   width: calc(100% - 60px);
+  display: flex;
+  padding: 6px;
 }
 
 .input {
-  padding: 2px;
+  color: var(--medium-gray);
 }
 
 .jewelry-grid {
