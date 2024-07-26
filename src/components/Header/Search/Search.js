@@ -68,6 +68,7 @@
 // };
 
 import { useState, useEffect } from "react";
+
 import { useService } from "../../../hooks/useService";
 import { searchServiceFactory } from "../../../services/search";
 import { Popup } from "../../Popup/Popup";
@@ -112,13 +113,16 @@ export const Search = ({ toggleDisplaySearchPopup }) => {
       >
         <section className={styles["search"]}>
           <form method="GET">
+            <div className={styles["search-field"]}>
             <input
               value={query}
               onChange={onChange}
               type="text"
-              className={`${styles["search-input"]} ${styles["custom-placeholder"]}`}
-              placeholder="Search"
+              placeholder="Type To Search"
+              className={styles["input"]}
+              autoFocus
             />
+            </div>
           </form>
           <div className={styles["jewelry-grid"]}>
             {jewelries.map((j) => (

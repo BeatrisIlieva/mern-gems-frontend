@@ -1,11 +1,21 @@
 .search {
   padding: 30px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 30px;
   flex-direction: column;
   overflow-y: auto;
+}
+
+.search-field {
+  position: absolute;
+  top: 30px;
+  border: 1px solid var(--pink);
+  border-radius: 32px;
+  width: calc(100% - 60px);
+}
+
+.input {
+  padding: 2px;
 }
 
 .jewelry-grid {
@@ -14,4 +24,5 @@
   gap: 30px;
   z-index: 100;
   overflow-y: auto;
+  margin-top: 20px;
 }
