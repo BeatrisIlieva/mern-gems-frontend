@@ -40,7 +40,7 @@ export const UpdatePasswordForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    userService.getUser(userId)
+    userService.getUserLogindetails(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();

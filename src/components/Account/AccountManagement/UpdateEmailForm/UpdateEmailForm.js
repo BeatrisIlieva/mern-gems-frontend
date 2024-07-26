@@ -36,7 +36,7 @@ export const UpdateEmailForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    userService.getUser(userId)
+    userService.getUserLoginDetails(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();

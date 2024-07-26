@@ -4,7 +4,15 @@ import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
 
 import { INITIAL_FORM_VALUES } from "../initialFormValues";
 
+import { useService } from "../../../../../hooks/useService";
+
+import { userServiceFactory } from "../../../../../services/userService";
+
+const ButtonTitle = "Save";
+
 export const ShippingDetailsForm = () => {
+  const userService = useService(userServiceFactory);
+
   const { userId } = useAuthenticationContext();
 
   const addressInformationService = useService(
@@ -63,7 +71,7 @@ export const ShippingDetailsForm = () => {
           INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
         });
 
-        popupSubmitHandler();
+        // popupSubmitHandler();
 
         updateForm();
       } catch (err) {
@@ -71,4 +79,18 @@ export const ShippingDetailsForm = () => {
       }
     }
   };
+
+  return (
+    <form method="POST" onSubmit={onSubmit}>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        buttonTitle={ButtonTitle}
+      />
+    </form>
+  );
 };

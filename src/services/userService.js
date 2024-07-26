@@ -12,13 +12,19 @@ export const userServiceFactory = (token) => {
 
     login: (data) => request.post(`${baseUrl}/login`, data),
 
-    getUser: (userId) => request.get(`${baseUrl}/${userId}`),
+    getUserLoginDetails: (userId) => request.get(`${baseUrl}/${userId}`),
 
     updateEmail: (userId, data) =>
-      request.put(`${baseUrl}/update-email/${userId}`, data),
+      request.put(`${baseUrl}/email/${userId}`, data),
 
     updatePassword: (userId, data) =>
-      request.put(`${baseUrl}/update-password/${userId}`, data),
+      request.put(`${baseUrl}/password/${userId}`, data),
+
+    updateShippingDetails: (userId, data) =>
+      request.put(`${baseUrl}/shipping-details/${userId}`, data),
+
+    getUserShippingDetails: (userId) =>
+      request.get(`${baseUrl}/shipping-details/${userId}`),
 
     logout: () => request.get(`${baseUrl}/logout`),
 

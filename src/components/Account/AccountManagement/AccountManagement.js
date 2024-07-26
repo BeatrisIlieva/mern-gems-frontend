@@ -34,7 +34,7 @@ export const AccountManagement = () => {
 
   useEffect(() => {
     userService
-      .getUser(userId)
+      .getUserLoginDetails(userId)
       .then((data) => setUserData(data))
       .catch((err) => console.log(err.message));
   }, [userData]);
