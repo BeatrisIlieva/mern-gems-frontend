@@ -1,10 +1,8 @@
-import {
-  PHONE_PATTERN,
-  ZIP_CODE_PATTERN,
-  NAME_PATTERN,
-  STREET_PATTERN,
-  APARTMENT_PATTERN,
-} from "../../../../../constants/forms";
+import { PHONE_PATTERN } from "../../../../constants/phone";
+import { ZIP_CODE_PATTERN } from "../../../../constants/zipCode";
+import { NAME_PATTERN } from "../../../../constants/name";
+import { STREET_PATTERN } from "../../../../constants/street";
+import { APARTMENT_PATTERN } from "../../../../constants/apartment";
 
 const FORM_KEYS = {
   FirstName: "firstName",
@@ -41,7 +39,7 @@ export const INITIAL_FORM_VALUES = {
     invalidTestData: "Test1",
     emptyTestData: "",
   },
-  
+
   [FORM_KEYS.PhoneNumber]: {
     fieldLabel: "Phone Number *",
     fieldValue: "",

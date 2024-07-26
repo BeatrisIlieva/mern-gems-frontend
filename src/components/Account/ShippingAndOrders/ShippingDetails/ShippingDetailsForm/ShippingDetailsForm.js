@@ -15,9 +15,6 @@ export const ShippingDetailsForm = () => {
 
   const { userId } = useAuthenticationContext();
 
-  const addressInformationService = useService(
-    addressInformationServiceFactory
-  );
 
   const [userInformation, setUserInformation] = useState([]);
 
@@ -31,8 +28,8 @@ export const ShippingDetailsForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    addressInformationService
-      .find(userId)
+    userService
+      .getUserShippingDetails(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();
@@ -65,7 +62,7 @@ export const ShippingDetailsForm = () => {
       };
 
       try {
-        await addressInformationService.update(userId, data);
+        await userService.updateShippingDetails(userId, data);
 
         Object.keys(FORM_KEYS).forEach((key) => {
           INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
