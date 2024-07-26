@@ -75,8 +75,8 @@ import { JewelryListItem } from "../../JewelryListItem/JewelryListItem";
 
 import styles from "./Search.module.css";
 
-export const Search = ({ toggleDisplaySearchPopup, displaySearchPopup }) => {
-  const [query, setQuery] = useState(""); // Start with an empty string to fetch all initially
+export const Search = ({ toggleDisplaySearchPopup }) => {
+  const [query, setQuery] = useState("");
   const [jewelries, setJewelries] = useState([]);
   const searchService = useService(searchServiceFactory);
 
