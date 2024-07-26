@@ -1,5 +1,6 @@
 import { Popup } from "../../../Popup/Popup";
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
+import { PopupHeader } from "../../../Authentication/PopupHeader/PopupHeader";
+import { ShippingDetailsFrom } from "./ShippingDetailsForm/ShippingDetailsForm";
 
 export const ShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
   return (
@@ -7,6 +8,8 @@ export const ShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
       isVisible
       variant={"order"}
       popupCloseHandler={toggleDisplayShippingDetailsPopup}
-    ></Popup>
+    >
+      <PopupHeader title={"Add A New Address Book"} />
+    </Popup>
   );
 };
