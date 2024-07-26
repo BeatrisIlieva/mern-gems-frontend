@@ -1,4 +1,5 @@
 const router = require("express").Router();
+
 const bagManager = require("../managers/bagManager");
 const {
   DEFAULT_ADD_QUANTITY,
@@ -6,7 +7,9 @@ const {
   NOT_SELECTED_SIZE_ERROR_MESSAGE,
   SOLD_OUT_JEWELRY_ERROR_MESSAGE,
 } = require("../constants/bag");
+
 const Bag = require("../models/Bag");
+
 const Inventory = require("../models/Inventory");
 
 router.get("/:userId", async (req, res) => {
