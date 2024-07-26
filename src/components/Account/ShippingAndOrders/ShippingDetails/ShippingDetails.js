@@ -1,15 +1,11 @@
 import { Popup } from "../../../Popup/Popup";
 
-export const ShippingDetails = ({
-  toggleDisplayShippingDetailsPopup,
-}) => {
+export const ShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
   return (
-    <>
-      <Popup
-        isVisible
-        variant={"order"}
-        popupCloseHandler={toggleDisplayShippingDetailsPopup}
-      ></Popup>
-    </>
+    <Popup
+      isVisible
+      variant={"order"}
+      popupCloseHandler={toggleDisplayShippingDetailsPopup}
+    ></Popup>
   );
 };
