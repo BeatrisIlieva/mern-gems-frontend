@@ -69,7 +69,7 @@ exports.updateEmail = async (userId, data) => {
   }
 };
 
-exports.getUser = async (userId) => {
+exports.getUserLoginDetails = async (userId) => {
   const result = await UserLoginDetails.findById(userId);
 
   return result;
@@ -104,19 +104,17 @@ exports.createUserShippingDetails = async (data) => {
   await UserShippingDetails.create(data);
 };
 
-// exports.find = async (userId) => {
-//   const result = await UserAddressInformation.findById(userId);
+exports.getUserShippingDetails = async (userId) => {
+  const result = await UserAddressInformation.findById(userId);
 
-//   return result;
-// };
+  return result;
+};
 
-// exports.update = async (userId, data) => {
-//   const result = await UserAddressInformation.findByIdAndUpdate(userId, data, {
-//     runValidators: true,
-//     new: true,
-//   });
+exports.updateShippingDetails = async (userId, data) => {
+  const result = await UserShippingDetails.findByIdAndUpdate(userId, data, {
+    runValidators: true,
+    new: true,
+  });
 
-//   return result;
-// };
-
-// };
+  return result;
+};
