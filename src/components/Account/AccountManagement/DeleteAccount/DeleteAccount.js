@@ -16,10 +16,7 @@ const SmallTitleContent = "Are you sure you want to delete your Account?";
 const GoBackButtonTitle = "Go Back";
 const DeleteAccountButtonTitle = "Delete Account";
 
-export const DeleteAccount = ({
-  toggleDeleteAccountPopup,
-  displayDeleteAccountPopup,
-}) => {
+export const DeleteAccount = ({ toggleDeleteAccountPopup }) => {
   const { userId, clearToken } = useAuthenticationContext();
   const userService = useService(userServiceFactory);
 
@@ -34,29 +31,25 @@ export const DeleteAccount = ({
   };
 
   return (
-    <>
-      {displayDeleteAccountPopup && (
-        <Popup
-          isVisible
-          variant={"delete-account"}
-          popupCloseHandler={toggleDeleteAccountPopup}
-        >
-          <LargeTitle title={LargeTitleContent} />
-          <SmallTitle title={SmallTitleContent} />
-          <div className={styles["button-wrapper"]}>
-            <Button
-              variant={"pink-button"}
-              title={GoBackButtonTitle}
-              callBackFunction={toggleDeleteAccountPopup}
-            />
-            <Button
-              variant={"red-button"}
-              title={DeleteAccountButtonTitle}
-              callBackFunction={deleteHandler}
-            />
-          </div>
-        </Popup>
-      )}
-    </>
+    <Popup
+      isVisible
+      variant={"delete-account"}
+      popupCloseHandler={toggleDeleteAccountPopup}
+    >
+      <LargeTitle title={LargeTitleContent} />
+      <SmallTitle title={SmallTitleContent} />
+      <div className={styles["button-wrapper"]}>
+        <Button
+          variant={"pink-button"}
+          title={GoBackButtonTitle}
+          callBackFunction={toggleDeleteAccountPopup}
+        />
+        <Button
+          variant={"red-button"}
+          title={DeleteAccountButtonTitle}
+          callBackFunction={deleteHandler}
+        />
+      </div>
+    </Popup>
   );
 };

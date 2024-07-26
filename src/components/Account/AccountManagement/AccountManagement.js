@@ -51,7 +51,6 @@ export const AccountManagement = () => {
   const [displayDeleteAccountPopup, setDeleteAccountPopup] = useState(false);
 
   const toggleDeleteAccountPopup = () => {
-
     setDeleteAccountPopup(
       (displayDeleteAccountPopup) => !displayDeleteAccountPopup
     );
@@ -59,7 +58,7 @@ export const AccountManagement = () => {
 
   return (
     <section className={styles["account-management"]}>
-      <LargeTitle title={LargeTitleContent} variant={"large-title"}/>
+      <LargeTitle title={LargeTitleContent} variant={"large-title"} />
       <SmallTitle title={userData.email} />
       <div className={styles["button-container"]}>
         <Button
@@ -76,10 +75,7 @@ export const AccountManagement = () => {
           callbackFunction={toggleDeleteAccountPopup}
         />
         {displayDeleteAccountPopup && (
-          <DeleteAccount
-            toggleDeleteAccountPopup={toggleDeleteAccountPopup}
-            displayDeleteAccountPopup={displayDeleteAccountPopup}
-          />
+          <DeleteAccount toggleDeleteAccountPopup={toggleDeleteAccountPopup} />
         )}
       </div>
       {showUpdateEmail && <UpdateEmailForm />}

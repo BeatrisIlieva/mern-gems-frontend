@@ -16,9 +16,10 @@
 }
 
 .modal,
-.modal-authentication,
+.authentication,
 .delete-account,
-.search {
+.search,
+.order {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -42,7 +43,7 @@
   }
 }
 
-.modal-authentication {
+.authentication {
   width: 34vw;
   height: 80vh;
 }
@@ -56,7 +57,10 @@
   width: 50vw;
   height: 80vh;
 }
-
+.order {
+  width: 90vw;
+  height: 90vh; 
+}
 .icon {
   position: absolute;
   top: 8px;

@@ -15,7 +15,7 @@ import { BAG_ACTIONS } from "../../../mappers/bagActions";
 import { EARRING_ID } from "../../../constants/earringId";
 import { useBagContext } from "../../../contexts/BagContext";
 
-export const Form = () => {
+export const Form = ({toggleDisplayBagPopup}) => {
   const {
     sizes,
     isSoldOut,
@@ -33,6 +33,7 @@ export const Form = () => {
 
   const [errorMessage, setErrorMessage] = useState("");
 
+
   const addToBagHandler = async (data, jewelryId) => {
     await bagService.create(data, jewelryId);
 
@@ -41,6 +42,10 @@ export const Form = () => {
     decreaseSizeQuantity(sizeId);
 
     updateBagQuantity(BAG_ACTIONS.Add);
+
+    // setSelectedSize({ [SIZE_FORM_KEY.Size]: 0 })
+
+    toggleDisplayBagPopup();
   };
 
   const changeHandler = (e) => {

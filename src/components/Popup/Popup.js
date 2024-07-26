@@ -12,7 +12,7 @@ export const Popup = ({ isVisible, children, variant, popupCloseHandler }) => {
     >
       <div className={styles[variant]}>
         <div className={styles["icon"]}>
-          {variant !== "modal-authentication" && (
+          {variant !== "authentication" && (
             <Icon icon={faXmark} popupCloseHandler={popupCloseHandler} />
           )}
         </div>
