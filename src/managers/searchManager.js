@@ -236,9 +236,7 @@ exports.getAll = async (search) => {
         isSoldOut: 1,
       },
     },
-    {
-      $sort: { _id: 1 },
-    },
+    { $sort: { isSoldOut: 1, _id: 1 } },
   ];
 
   const searchResult = await Jewelry.aggregate(pipeline);
