@@ -74,18 +74,16 @@ export const RegisterForm = () => {
   };
 
   return (
-    <section>
-      <form method="POST" onSubmit={onSubmit}>
-        <DynamicForm
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          buttonTitle={ButtonTitle}
-        />
-      </form>
-    </section>
+    <form method="POST" onSubmit={onSubmit}>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        buttonTitle={ButtonTitle}
+      />
+    </form>
   );
 };

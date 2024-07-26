@@ -1,6 +1,6 @@
 import { Popup } from "../../../Popup/Popup";
 import { PopupHeader } from "../../../Authentication/PopupHeader/PopupHeader";
-import { ShippingDetailsFrom } from "./ShippingDetailsForm/ShippingDetailsForm";
+import { ShippingDetailsForm } from "./ShippingDetailsForm/ShippingDetailsForm";
 
 export const ShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
   return (
@@ -10,6 +10,7 @@ export const ShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
       popupCloseHandler={toggleDisplayShippingDetailsPopup}
     >
       <PopupHeader title={"Add A New Address Book"} />
+      <ShippingDetailsForm />
     </Popup>
   );
 };

@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 
 import { useService } from "../../../../hooks/useService";
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext"; 
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm"; 
+import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
 import { useForm } from "../../../../hooks/useForm";
 
-import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred"; 
+import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
 
 import { INVALID_CREDENTIALS_ERROR_MESSAGE } from "../../../../constants/email";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
@@ -72,18 +72,16 @@ export const LoginForm = () => {
   };
 
   return (
-    <section>
-      <form method="POST" onSubmit={onSubmit}>
-        <DynamicForm
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          buttonTitle={ButtonTitle}
-        />
-      </form>
-    </section>
+    <form method="POST" onSubmit={onSubmit}>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        buttonTitle={ButtonTitle}
+      />
+    </form>
   );
 };
