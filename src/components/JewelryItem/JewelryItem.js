@@ -9,10 +9,13 @@ import { useJewelryItem } from "../../hooks/useJewelryItem";
 
 import { EARRING_ID } from "../../constants/earringId";
 
+
 import styles from "./JewelryItem.module.css";
 
 export const JewelryItem = () => {
   const { jewelry, loading } = useJewelryItem();
+
+
 
   return (
     <>
