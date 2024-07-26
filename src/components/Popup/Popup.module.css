@@ -17,7 +17,8 @@
 
 .modal,
 .modal-authentication,
-.delete-account {
+.delete-account,
+.search{
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -38,6 +39,11 @@
 .delete-account {
   width: 34vw;
   height: 36vh;
+}
+
+.search {
+  width: 50vw;
+  height: 80vh;
 }
 
 .icon {

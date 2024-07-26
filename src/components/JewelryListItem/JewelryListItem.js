@@ -1,6 +1,6 @@
 import { JewelryCard } from "./JewelryCard/JewelryCard";
 
-import { slugify } from "../../../utils/slugify";
+import { slugify } from "../../utils/slugify";
 
 export const JewelryListItem = ({
   _id,

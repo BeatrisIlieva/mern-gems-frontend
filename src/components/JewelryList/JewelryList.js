@@ -5,7 +5,7 @@ import { Navigation } from "./Navigation/Navigation";
 import { useLocation } from "react-router-dom";
 import { useJewelryList } from "../../hooks/useJewelryList";
 
-import { JewelryListItem } from "./JewelryListItem/JewelryListItem";
+import { JewelryListItem } from "../JewelryListItem/JewelryListItem";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";

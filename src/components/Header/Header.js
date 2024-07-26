@@ -12,17 +12,29 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { Icon } from "../Icon/Icon";
+import { Search } from "./Search/Search";
 import { SpanTitle } from "../SpanTitle/SpanTitle";
 
 import styles from "./Header.module.css";
 
 export const Header = () => {
   // const totalQuantity = 4;
-  const {bagQuantity} = useBagContext()
+  const { bagQuantity } = useBagContext();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const [displaySearchPopup, setDisplaySearchPopup] = useState(false);
+
+  const toggleDisplaySearchPopup = () => {
+    setDisplaySearchPopup((displaySearchPopup) => !displaySearchPopup);
+
+    document.body.style.overflow === "hidden"
+      ? (document.body.style.overflow = "visible")
+      : (document.body.style.overflow = "hidden");
+  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,11 +66,16 @@ export const Header = () => {
         <MiniHeader />
       ) : (
         <header className={styles["header"]}>
+          {displaySearchPopup && (
+            <Search toggleDisplaySearchPopup={toggleDisplaySearchPopup} />
+          )}
           <div className={styles["wrapper"]}>
             <nav>
               <ul className={styles["icon-list"]} role="list">
-                {/* onClick={() => popupClickHandler(POPUP_OPTIONS.Search)} */}
-                <li className={styles["icon-bar-item"]}>
+                <li
+                  className={styles["icon-bar-item"]}
+                  onClick={toggleDisplaySearchPopup}
+                >
                   <Icon icon={faSearch} variant={"header"} />
                   <SpanTitle title={"Search"} />
                 </li>

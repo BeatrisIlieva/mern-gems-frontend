@@ -51,7 +51,6 @@ export const AccountManagement = () => {
   const [displayDeleteAccountPopup, setDeleteAccountPopup] = useState(false);
 
   const toggleDeleteAccountPopup = () => {
-    // document.body.style.overflow = "visible";
 
     setDeleteAccountPopup(
       (displayDeleteAccountPopup) => !displayDeleteAccountPopup
