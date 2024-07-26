@@ -1,3 +1,8 @@
+import { useState, useEffect } from "react";
+import { useForm } from "../../../../../hooks/useForm";
+import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
+import { FORM_KEYS } from "../initialFormValues";
+
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
 import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
@@ -8,13 +13,14 @@ import { useService } from "../../../../../hooks/useService";
 
 import { userServiceFactory } from "../../../../../services/userService";
 
+import styles from "./ShippingDetailsForm.module.css";
+
 const ButtonTitle = "Save";
 
 export const ShippingDetailsForm = () => {
   const userService = useService(userServiceFactory);
 
   const { userId } = useAuthenticationContext();
-
 
   const [userInformation, setUserInformation] = useState([]);
 
@@ -45,6 +51,8 @@ export const ShippingDetailsForm = () => {
     const errorOccurred = hasFormErrorOccurred(values);
 
     if (!errorOccurred) {
+      const firstName = values.firstName.fieldValue;
+      const lastName = values.lastName.fieldValue;
       const phoneNumber = values.phoneNumber.fieldValue;
       const country = values.country.fieldValue;
       const city = values.city.fieldValue;
@@ -53,6 +61,8 @@ export const ShippingDetailsForm = () => {
       const zipCode = values.zipCode.fieldValue;
 
       const data = {
+        firstName,
+        lastName,
         phoneNumber,
         country,
         city,
@@ -78,7 +88,7 @@ export const ShippingDetailsForm = () => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit}>
+    <form method="POST" onSubmit={onSubmit} className={styles[["form"]]}>
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
@@ -86,6 +96,7 @@ export const ShippingDetailsForm = () => {
         blurHandler={blurHandler}
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userInformation}
         buttonTitle={ButtonTitle}
       />
     </form>
