@@ -50,8 +50,8 @@
   position: absolute;
   color: var(--medium-gray);
   font-family: var(--bold-italic-font-family);
-  right: 12px;
-  top: 40px;
+  right: -10px;
+  top: -4px;
   padding: 8px;
   opacity: 0.6;
 }
