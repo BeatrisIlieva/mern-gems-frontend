@@ -495,17 +495,7 @@ async function populateDb() {
 
 
 
-  await Jewelry.create({
-    title: "Sunflower Diamond Earrings on Platinum Wire",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038506/mern-gems/sunflower/earrings/sunflower_earrings_diamond_platinum_eadpwimesf_e-1_oaweay.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038506/mern-gems/sunflower/earrings/sunflower_earrings_diamond_platinum_eadpwimesf_e-2_iqss9b.webp",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[3],
-    description:
-      "18 round brilliant diamonds weighing a total of approximately 4.43 carats, center stones are approximately 1.00 carats, set in platinum",
-  });
+
 
   await Jewelry.create({
     title: "Sunflower Petite Ruby and Diamond Earrings",
