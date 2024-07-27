@@ -490,7 +490,6 @@ async function populateDb() {
 
   const allJewelries = await Jewelry.find();
 
-
   await Inventory.insertMany([
     {
       jewelry: allJewelries[0],
@@ -924,108 +923,6 @@ async function populateDb() {
       quantity: 3,
       price: 18000,
     },
-    // {
-    //   jewelry: allJewelries[30],
-    //   size: allSizes[0],
-    //   quantity: 3,
-    //   price: 38000,
-    // },
-    // {
-    //   jewelry: allJewelries[30],
-    //   size: allSizes[1],
-    //   quantity: 3,
-    //   price: 38000,
-    // },
-    // {
-    //   jewelry: allJewelries[30],
-    //   size: allSizes[2],
-    //   quantity: 3,
-    //   price: 38000,
-    // },
-    // {
-    //   jewelry: allJewelries[31],
-    //   size: allSizes[4],
-    //   quantity: 3,
-    //   price: 27000,
-    // },
-    // {
-    //   jewelry: allJewelries[32],
-    //   size: allSizes[3],
-    //   quantity: 3,
-    //   price: 22000,
-    // },
-    // {
-    //   jewelry: allJewelries[33],
-    //   size: allSizes[6],
-    //   quantity: 3,
-    //   price: 49000,
-    // },
-    // {
-    //   jewelry: allJewelries[33],
-    //   size: allSizes[7],
-    //   quantity: 3,
-    //   price: 49000,
-    // },
-    // {
-    //   jewelry: allJewelries[33],
-    //   size: allSizes[8],
-    //   quantity: 3,
-    //   price: 49000,
-    // },
-    // {
-    //   jewelry: allJewelries[34],
-    //   size: allSizes[6],
-    //   quantity: 3,
-    //   price: 41000,
-    // },
-    // {
-    //   jewelry: allJewelries[34],
-    //   size: allSizes[7],
-    //   quantity: 3,
-    //   price: 41000,
-    // },
-    // {
-    //   jewelry: allJewelries[34],
-    //   size: allSizes[8],
-    //   quantity: 3,
-    //   price: 41000,
-    // },
-    // {
-    //   jewelry: allJewelries[35],
-    //   size: allSizes[9],
-    //   quantity: 3,
-    //   price: 19000,
-    // },
-    // {
-    //   jewelry: allJewelries[35],
-    //   size: allSizes[10],
-    //   quantity: 3,
-    //   price: 19000,
-    // },
-    // {
-    //   jewelry: allJewelries[35],
-    //   size: allSizes[11],
-    //   quantity: 3,
-    //   price: 19000,
-    // },
-    // {
-    //   jewelry: allJewelries[36],
-    //   size: allSizes[9],
-    //   quantity: 3,
-    //   price: 14000,
-    // },
-    // {
-    //   jewelry: allJewelries[36],
-    //   size: allSizes[10],
-    //   quantity: 3,
-    //   price: 14000,
-    // },
-    // {
-    //   jewelry: allJewelries[36],
-    //   size: allSizes[11],
-    //   quantity: 3,
-    //   price: 14000,
-    // },
   ]);
 }
 populateDb();
