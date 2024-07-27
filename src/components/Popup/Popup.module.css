@@ -32,6 +32,7 @@
   flex-direction: column;
   animation: slideIn 1s forwards;
   transition: opacity 0.8s ease, transform 0.8s ease;
+  padding: 30px;
 }
 
 @keyframes slideIn {

@@ -1,0 +1,25 @@
+.bag {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.delivery {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.delivery-span {
+  font-size: var(--normal);
+  color: var(--medium-gray);
+}
+
+.left-container {
+  width: 60%;
+}
+
+.right-container {
+  width: 40%;
+}
