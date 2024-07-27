@@ -495,44 +495,6 @@ async function populateDb() {
 
 
 
-
-
-  await Jewelry.create({
-    title: "Sunflower Petite Ruby and Diamond Earrings",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038506/mern-gems/sunflower/earrings/sunflower_earrings_ruby_and_diamond_earppopetsf_e-1_zxcysr.avif",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038506/mern-gems/sunflower/earrings/sunflower_earrings_ruby_and_diamond_earppopetsf_e-2_zydukf.avif",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[3],
-    description:
-      "16 round brilliant diamonds weighing a total of approximately 0.90 carats with round ruby center stones of approximately 0.44 carats each, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sunflower Diamond Necklace",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038507/mern-gems/sunflower/necklaces/sunflower_necklace_diamond_nkdpnasmsf_e-1_icjsbb.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038506/mern-gems/sunflower/necklaces/sunflower_necklace_diamond_nkdpnasmsf_e-2_gdbr95.webp",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[3],
-    description:
-      "429 round brilliant diamonds weighing a total of approximately 20.60 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sunflower Ruby and Diamond Pendant",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038506/mern-gems/sunflower/necklaces/sunflower_petite_ruby_and_diamond_pendant_perpnapetsf_e-1h_qgneby.avif",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038507/mern-gems/sunflower/necklaces/sunflower_petite_ruby_and_diamond_pendant_perpnapetsf_e-2_qpkwnn.avif",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[3],
-    description:
-      "8 round brilliant diamonds weighing a total of approximately 0.44 carats with a round ruby center stone of approximately 0.46 carats, set in platinum",
-  });
-
   await Jewelry.create({
     title: "Sunflower Diamond Twin Ring",
     firstImageUrl:
