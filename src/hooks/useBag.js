@@ -5,7 +5,6 @@ import { useService } from "./useService";
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
 import { bagServiceFactory } from "../services/bagService";
-import { useBagContext } from "../contexts/BagContext";
 
 export const useBag = () => {
   const { userId } = useAuthenticationContext();
@@ -13,10 +12,6 @@ export const useBag = () => {
   const [loading, setLoading] = useState(true);
 
   const [bagItems, setBagItems] = useState([]);
-  const [totalQuantity, setTotalQuantity] = useState(0);
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  const { bagQuantity } = useBagContext();
 
   useEffect(() => {
     setLoading(true);
@@ -24,7 +19,6 @@ export const useBag = () => {
     bagService
       .getAll(userId)
       .then((data) => {
-        console.log(data);
         setBagItems(data);
       })
       .catch((err) => {
@@ -62,7 +56,5 @@ export const useBag = () => {
   return {
     loading,
     bagItems,
-    totalQuantity,
-    totalPrice,
   };
 };

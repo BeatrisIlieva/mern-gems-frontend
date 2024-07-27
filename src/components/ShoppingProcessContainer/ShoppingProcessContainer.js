@@ -7,10 +7,12 @@ import { faTruck } from "@fortawesome/free-solid-svg-icons";
 
 import { useBag } from "../../hooks/useBag";
 
+import { useBagContext } from "../../contexts/BagContext";
+
 import styles from "./ShoppingProcessContainer.module.css";
 
 export const ShoppingProcessContainer = ({ children, title }) => {
-  const { totalQuantity } = useBag();
+  const { bagQuantity } = useBagContext();
 
   const childrenArray = Children.toArray(children);
 
@@ -22,9 +24,9 @@ export const ShoppingProcessContainer = ({ children, title }) => {
           <Icon icon={faTruck} variant={"icon"} />
           <LargeTitle title={"Delivery"} variant={"large-title"} />
           <span className={styles["delivery-span"]}>
-            {totalQuantity === 1
-              ? `(${totalQuantity} item)`
-              : `(${totalQuantity} items)`}
+            {bagQuantity === 1
+              ? `(${bagQuantity} item)`
+              : `(${bagQuantity} items)`}
           </span>
         </div>
       </div>
