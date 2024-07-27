@@ -1,5 +1,7 @@
 const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
+const UserLoginDetails = require("../models/UserLoginDetails");
+
 const {
   DEFAULT_ADD_QUANTITY,
   DEFAULT_MIN_QUANTITY,
@@ -131,11 +133,307 @@ const deleteBag = async (bagItemId) => {
   await bagItem.deleteOne();
 };
 
+// const getAll = async (userId) => {
+//   const user = await UserLoginDetails.findById(userId);
+
+//   let result = await Bag.aggregate([
+//     {
+//       $match: {
+//         user: user._id,
+//       },
+//     },
+//     {
+//       $lookup: {
+//         as: "jewelries",
+//         from: "jewelries",
+//         foreignField: "_id",
+//         localField: "jewelry",
+//       },
+//     },
+//     {
+//       $unwind: "$jewelries",
+//     },
+//     {
+//       $lookup: {
+//         as: "inventories",
+//         from: "inventories",
+//         foreignField: "jewelry",
+//         localField: "jewelry",
+//       },
+//     },
+//     {
+//       $lookup: {
+//         as: "sizes",
+//         from: "sizes",
+//         foreignField: "_id",
+//         localField: "size",
+//       },
+//     },
+//     {
+//       $unwind: "$inventories",
+//     },
+//     {
+//       $unwind: "$sizes",
+//     },
+//     {
+//       $addFields: {
+//         totalPrice: {
+//           $multiply: ["$inventories.price", "$quantity"],
+//         },
+//         minQuantity: 0,
+//         maxQuantity: {
+//           $sum: ["$inventories.quantity", "$quantity"],
+//         },
+//       },
+//     },
+//     {
+//       $addFields: {
+//         jewelryId: "$jewelries._id",
+//       },
+//     },
+//     {
+//       $addFields: {
+//         sizeId: "$sizes._id",
+//       },
+//     },
+//     {
+//       $group: {
+//         _id: "$_id",
+//         jewelryId: {
+//           $first: "$jewelryId",
+//         },
+//         user: {
+//           $first: "$user",
+//         },
+//         jewelryTitle: {
+//           $first: "$jewelries.title",
+//         },
+//         firstImageUrl: {
+//           $first: "$jewelries.firstImageUrl",
+//         },
+//         size: {
+//           $first: "$sizes.measurement",
+//         },
+//         sizeId: {
+//           $first: "$sizeId",
+//         },
+//         quantity: {
+//           $first: "$quantity",
+//         },
+//         maxQuantity: {
+//           $first: "$maxQuantity",
+//         },
+//         minQuantity: {
+//           $first: "$minQuantity",
+//         },
+//         totalPrice: {
+//           $first: "$totalPrice",
+//         },
+//         createdAt: {
+//           $first: "$createdAt",
+//         },
+//       },
+//     },
+//     {
+//       $sort: {
+//         createdAt: -1,
+//       },
+//     },
+//     {
+//       $project: {
+//         user: 1,
+//         jewelryId: 1,
+//         jewelryTitle: 1,
+//         firstImageUrl: 1,
+//         size: 1,
+//         sizeId: 1,
+//         quantity: 1,
+//         maxQuantity: 1,
+//         minQuantity: 1,
+//         totalPrice: 1,
+//       },
+//     },
+//     {
+//       $group: {
+//         _id: null,
+//         documents: {
+//           $push: "$$ROOT",
+//         },
+//         totalTotalPrice: {
+//           $sum: "$totalPrice",
+//         },
+//         totalQuantity: {
+//           $sum: "$quantity",
+//         },
+//       },
+//     },
+//     {
+//       $project: {
+//         documents: 1,
+//         totalTotalPrice: 1,
+//         totalQuantity: 1,
+//       },
+//     },
+//   ]);
+//   return result;
+// };
+
+// const getAll = async (userId) => {
+//   const user = await UserLoginDetails.findById(userId);
+//   let result = await Bag.aggregate([
+//     {
+//       $match: {
+//         user: user._id,
+//       },
+//     },
+//     {
+//       $lookup: {
+//         as: "jewelries",
+//         from: "jewelries",
+//         foreignField: "_id",
+//         localField: "jewelry",
+//       },
+//     },
+//     {
+//       $unwind: "$jewelries",
+//     },
+//     {
+//       $lookup: {
+//         as: "categories",
+//         from: "categories",
+//         foreignField: "_id",
+//         localField: "jewelries.category",
+//       },
+//     },
+//     {
+//       $unwind: "$categories",
+//     },
+//     {
+//       $lookup: {
+//         as: "inventories",
+//         from: "inventories",
+//         foreignField: "jewelry",
+//         localField: "jewelry",
+//       },
+//     },
+//     {
+//       $unwind: "$inventories",
+//     },
+//     {
+//       $lookup: {
+//         as: "sizes",
+//         from: "sizes",
+//         foreignField: "_id",
+//         localField: "size",
+//       },
+//     },
+//     {
+//       $unwind: "$sizes",
+//     },
+//     {
+//       $addFields: {
+//         totalPrice: {
+//           $multiply: ["$inventories.price", "$quantity"],
+//         },
+//         minQuantity: 0,
+//         maxQuantity: {
+//           $sum: ["$inventories.quantity", "$quantity"],
+//         },
+//       },
+//     },
+//     {
+//       $group: {
+//         _id: "$_id",
+//         jewelryId: {
+//           $first: "$jewelries._id",
+//         },
+//         user: {
+//           $first: "$user",
+//         },
+//         jewelryTitle: {
+//           $first: "$jewelries.title",
+//         },
+//         firstImageUrl: {
+//           $first: "$jewelries.firstImageUrl",
+//         },
+//         size: {
+//           $first: "$sizes.measurement",
+//         },
+//         sizeId: {
+//           $first: "$sizes._id",
+//         },
+//         quantity: {
+//           $first: "$quantity",
+//         },
+//         maxQuantity: {
+//           $first: "$maxQuantity",
+//         },
+//         minQuantity: {
+//           $first: "$minQuantity",
+//         },
+//         totalPrice: {
+//           $first: "$totalPrice",
+//         },
+//         createdAt: {
+//           $first: "$createdAt",
+//         },
+//         categoryTitle: {
+//           $first: "$categories.title",
+//         },
+//       },
+//     },
+//     {
+//       $sort: {
+//         createdAt: -1,
+//       },
+//     },
+//     {
+//       $project: {
+//         user: 1,
+//         jewelryId: 1,
+//         jewelryTitle: 1,
+//         firstImageUrl: 1,
+//         size: 1,
+//         sizeId: 1,
+//         quantity: 1,
+//         maxQuantity: 1,
+//         minQuantity: 1,
+//         totalPrice: 1,
+//         categoryTitle: 1,
+//       },
+//     },
+//     {
+//       $group: {
+//         _id: null,
+//         documents: {
+//           $push: "$$ROOT",
+//         },
+//         totalTotalPrice: {
+//           $sum: "$totalPrice",
+//         },
+//         totalQuantity: {
+//           $sum: "$quantity",
+//         },
+//       },
+//     },
+//     {
+//       $project: {
+//         documents: 1,
+//         totalTotalPrice: 1,
+//         totalQuantity: 1,
+//       },
+//     },
+//   ]);
+//   return result;
+// };
+
 const getAll = async (userId) => {
+  const user = await UserLoginDetails.findById(userId);
+
   let result = await Bag.aggregate([
     {
       $match: {
-        user: userId,
+        user: user._id,
       },
     },
     {
@@ -151,11 +449,25 @@ const getAll = async (userId) => {
     },
     {
       $lookup: {
+        as: "categories",
+        from: "categories",
+        foreignField: "_id",
+        localField: "jewelries.category",
+      },
+    },
+    {
+      $unwind: "$categories",
+    },
+    {
+      $lookup: {
         as: "inventories",
         from: "inventories",
         foreignField: "jewelry",
         localField: "jewelry",
       },
+    },
+    {
+      $unwind: "$inventories",
     },
     {
       $lookup: {
@@ -166,16 +478,10 @@ const getAll = async (userId) => {
       },
     },
     {
-      $unwind: "$inventories",
-    },
-    {
       $unwind: "$sizes",
     },
     {
       $addFields: {
-        totalPrice: {
-          $multiply: ["$inventories.price", "$quantity"],
-        },
         minQuantity: 0,
         maxQuantity: {
           $sum: ["$inventories.quantity", "$quantity"],
@@ -222,11 +528,11 @@ const getAll = async (userId) => {
         minQuantity: {
           $first: "$minQuantity",
         },
-        totalPrice: {
-          $first: "$totalPrice",
-        },
         createdAt: {
           $first: "$createdAt",
+        },
+        categoryTitle: {
+          $first: "$categories.title",
         },
       },
     },
@@ -246,31 +552,11 @@ const getAll = async (userId) => {
         quantity: 1,
         maxQuantity: 1,
         minQuantity: 1,
-        totalPrice: 1,
-      },
-    },
-    {
-      $group: {
-        _id: null,
-        documents: {
-          $push: "$$ROOT",
-        },
-        totalTotalPrice: {
-          $sum: "$totalPrice",
-        },
-        totalQuantity: {
-          $sum: "$quantity",
-        },
-      },
-    },
-    {
-      $project: {
-        documents: 1,
-        totalTotalPrice: 1,
-        totalQuantity: 1,
+        categoryTitle: 1,
       },
     },
   ]);
+
   return result;
 };
 

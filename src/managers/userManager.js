@@ -105,7 +105,7 @@ exports.createUserShippingDetails = async (data) => {
 };
 
 exports.getUserShippingDetails = async (userId) => {
-  const result = await UserAddressInformation.findById(userId);
+  const result = await UserShippingDetails.findById(userId);
 
   return result;
 };
