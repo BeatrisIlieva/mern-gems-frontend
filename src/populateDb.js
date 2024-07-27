@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 const Jewelry = require("./models/Jewelry");
 const Category = require("./models/Category");
 const JewelryCollection = require("./models/JewelryCollection");
-const StoneType = require("./models/StoneType");
-const StoneColor = require("./models/StoneColor");
-const JewelryStones = require("./models/JewelryStones");
 const Size = require("./models/Size");
 const Inventory = require("./models/Inventory");
 
@@ -43,53 +40,53 @@ async function populateDb() {
     title: "Forget-Me-Not",
   });
 
-  await JewelryCollection.create({
-    title: "Sunflower",
-  });
+  // await JewelryCollection.create({
+  //   title: "Sunflower",
+  // });
 
-  await StoneType.create({
-    title: "Spinel",
-  });
+  // await StoneType.create({
+  //   title: "Spinel",
+  // });
 
-  await StoneType.create({
-    title: "Diamond",
-  });
+  // await StoneType.create({
+  //   title: "Diamond",
+  // });
 
-  await StoneType.create({
-    title: "Ruby",
-  });
+  // await StoneType.create({
+  //   title: "Ruby",
+  // });
 
-  await StoneType.create({
-    title: "Sapphire",
-  });
+  // await StoneType.create({
+  //   title: "Sapphire",
+  // });
 
-  await StoneColor.create({
-    title: "Aquamarine",
-  });
+  // await StoneColor.create({
+  //   title: "Aquamarine",
+  // });
 
-  await StoneColor.create({
-    title: "Black",
-  });
+  // await StoneColor.create({
+  //   title: "Black",
+  // });
 
-  await StoneColor.create({
-    title: "Blue",
-  });
+  // await StoneColor.create({
+  //   title: "Blue",
+  // });
 
-  await StoneColor.create({
-    title: "Pink",
-  });
+  // await StoneColor.create({
+  //   title: "Pink",
+  // });
 
-  await StoneColor.create({
-    title: "Red",
-  });
+  // await StoneColor.create({
+  //   title: "Red",
+  // });
 
-  await StoneColor.create({
-    title: "White",
-  });
+  // await StoneColor.create({
+  //   title: "White",
+  // });
 
-  await StoneColor.create({
-    title: "Yellow",
-  });
+  // await StoneColor.create({
+  //   title: "Yellow",
+  // });
 
   await Size.create({
     measurement: "15.2 cm",
@@ -141,8 +138,6 @@ async function populateDb() {
 
   const allCategories = await Category.find();
   const allJewelryCollections = await JewelryCollection.find();
-  const allStoneTypes = await StoneType.find();
-  const allStoneColors = await StoneColor.find();
   const allSizes = await Size.find();
 
   await Jewelry.create({
@@ -495,353 +490,6 @@ async function populateDb() {
 
   const allJewelries = await Jewelry.find();
 
-  await JewelryStones.insertMany([
-    {
-      jewelry: allJewelries[0],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[1],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[2],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[2],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[6],
-    },
-    {
-      jewelry: allJewelries[3],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[3],
-      stoneType: allStoneTypes[0],
-      stoneColor: allStoneColors[1],
-    },
-    {
-      jewelry: allJewelries[4],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[4],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[5],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[6],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[6],
-    },
-    {
-      jewelry: allJewelries[6],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[7],
-      stoneType: allStoneTypes[0],
-      stoneColor: allStoneColors[1],
-    },
-    {
-      jewelry: allJewelries[7],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[8],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[8],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[9],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[10],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[11],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[11],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[11],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[0],
-    },
-    {
-      jewelry: allJewelries[12],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[13],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[13],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[13],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[0],
-    },
-    {
-      jewelry: allJewelries[14],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[15],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[15],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[0],
-    },
-    {
-      jewelry: allJewelries[15],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[16],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[17],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[17],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[0],
-    },
-    {
-      jewelry: allJewelries[17],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[18],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[18],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[3],
-    },
-    {
-      jewelry: allJewelries[19],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[19],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[0],
-    },
-    {
-      jewelry: allJewelries[19],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[20],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[20],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[21],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[3],
-    },
-    {
-      jewelry: allJewelries[21],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[22],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[22],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[0],
-    },
-    {
-      jewelry: allJewelries[22],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[23],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[23],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[24],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[24],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[3],
-    },
-    {
-      jewelry: allJewelries[25],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[25],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[0],
-    },
-    {
-      jewelry: allJewelries[25],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[26],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[26],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[27],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[27],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[3],
-    },
-    {
-      jewelry: allJewelries[28],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[28],
-      stoneType: allStoneTypes[3],
-      stoneColor: allStoneColors[2],
-    },
-    {
-      jewelry: allJewelries[29],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[29],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[30],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[31],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[32],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[32],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[33],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[34],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-    {
-      jewelry: allJewelries[34],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[35],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[36],
-      stoneType: allStoneTypes[1],
-      stoneColor: allStoneColors[5],
-    },
-    {
-      jewelry: allJewelries[36],
-      stoneType: allStoneTypes[2],
-      stoneColor: allStoneColors[4],
-    },
-  ]);
 
   await Inventory.insertMany([
     {
@@ -1276,108 +924,108 @@ async function populateDb() {
       quantity: 3,
       price: 18000,
     },
-    {
-      jewelry: allJewelries[30],
-      size: allSizes[0],
-      quantity: 3,
-      price: 38000,
-    },
-    {
-      jewelry: allJewelries[30],
-      size: allSizes[1],
-      quantity: 3,
-      price: 38000,
-    },
-    {
-      jewelry: allJewelries[30],
-      size: allSizes[2],
-      quantity: 3,
-      price: 38000,
-    },
-    {
-      jewelry: allJewelries[31],
-      size: allSizes[4],
-      quantity: 3,
-      price: 27000,
-    },
-    {
-      jewelry: allJewelries[32],
-      size: allSizes[3],
-      quantity: 3,
-      price: 22000,
-    },
-    {
-      jewelry: allJewelries[33],
-      size: allSizes[6],
-      quantity: 3,
-      price: 49000,
-    },
-    {
-      jewelry: allJewelries[33],
-      size: allSizes[7],
-      quantity: 3,
-      price: 49000,
-    },
-    {
-      jewelry: allJewelries[33],
-      size: allSizes[8],
-      quantity: 3,
-      price: 49000,
-    },
-    {
-      jewelry: allJewelries[34],
-      size: allSizes[6],
-      quantity: 3,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[34],
-      size: allSizes[7],
-      quantity: 3,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[34],
-      size: allSizes[8],
-      quantity: 3,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[35],
-      size: allSizes[9],
-      quantity: 3,
-      price: 19000,
-    },
-    {
-      jewelry: allJewelries[35],
-      size: allSizes[10],
-      quantity: 3,
-      price: 19000,
-    },
-    {
-      jewelry: allJewelries[35],
-      size: allSizes[11],
-      quantity: 3,
-      price: 19000,
-    },
-    {
-      jewelry: allJewelries[36],
-      size: allSizes[9],
-      quantity: 3,
-      price: 14000,
-    },
-    {
-      jewelry: allJewelries[36],
-      size: allSizes[10],
-      quantity: 3,
-      price: 14000,
-    },
-    {
-      jewelry: allJewelries[36],
-      size: allSizes[11],
-      quantity: 3,
-      price: 14000,
-    },
+    // {
+    //   jewelry: allJewelries[30],
+    //   size: allSizes[0],
+    //   quantity: 3,
+    //   price: 38000,
+    // },
+    // {
+    //   jewelry: allJewelries[30],
+    //   size: allSizes[1],
+    //   quantity: 3,
+    //   price: 38000,
+    // },
+    // {
+    //   jewelry: allJewelries[30],
+    //   size: allSizes[2],
+    //   quantity: 3,
+    //   price: 38000,
+    // },
+    // {
+    //   jewelry: allJewelries[31],
+    //   size: allSizes[4],
+    //   quantity: 3,
+    //   price: 27000,
+    // },
+    // {
+    //   jewelry: allJewelries[32],
+    //   size: allSizes[3],
+    //   quantity: 3,
+    //   price: 22000,
+    // },
+    // {
+    //   jewelry: allJewelries[33],
+    //   size: allSizes[6],
+    //   quantity: 3,
+    //   price: 49000,
+    // },
+    // {
+    //   jewelry: allJewelries[33],
+    //   size: allSizes[7],
+    //   quantity: 3,
+    //   price: 49000,
+    // },
+    // {
+    //   jewelry: allJewelries[33],
+    //   size: allSizes[8],
+    //   quantity: 3,
+    //   price: 49000,
+    // },
+    // {
+    //   jewelry: allJewelries[34],
+    //   size: allSizes[6],
+    //   quantity: 3,
+    //   price: 41000,
+    // },
+    // {
+    //   jewelry: allJewelries[34],
+    //   size: allSizes[7],
+    //   quantity: 3,
+    //   price: 41000,
+    // },
+    // {
+    //   jewelry: allJewelries[34],
+    //   size: allSizes[8],
+    //   quantity: 3,
+    //   price: 41000,
+    // },
+    // {
+    //   jewelry: allJewelries[35],
+    //   size: allSizes[9],
+    //   quantity: 3,
+    //   price: 19000,
+    // },
+    // {
+    //   jewelry: allJewelries[35],
+    //   size: allSizes[10],
+    //   quantity: 3,
+    //   price: 19000,
+    // },
+    // {
+    //   jewelry: allJewelries[35],
+    //   size: allSizes[11],
+    //   quantity: 3,
+    //   price: 19000,
+    // },
+    // {
+    //   jewelry: allJewelries[36],
+    //   size: allSizes[9],
+    //   quantity: 3,
+    //   price: 14000,
+    // },
+    // {
+    //   jewelry: allJewelries[36],
+    //   size: allSizes[10],
+    //   quantity: 3,
+    //   price: 14000,
+    // },
+    // {
+    //   jewelry: allJewelries[36],
+    //   size: allSizes[11],
+    //   quantity: 3,
+    //   price: 14000,
+    // },
   ]);
 }
 populateDb();
