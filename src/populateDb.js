@@ -493,32 +493,6 @@ async function populateDb() {
       "6 pear-shaped rubies weighing a total of approximately 0.95 carats and 8 pear-shaped and round brilliant diamonds weighing a total of approximately 1.17 carats, set in platinum",
   });
 
-
-
-  await Jewelry.create({
-    title: "Sunflower Diamond Twin Ring",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038508/mern-gems/sunflower/rings/sunflower_ring_diamond_frdptw003sf_e-1_f31djd.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038507/mern-gems/sunflower/rings/sunflower_ring_diamond_frdptw003sf_e-2_zhoq8y.avif",
-    category: allCategories[3],
-    jewelryCollection: allJewelryCollections[3],
-    description:
-      "36 round brilliant diamonds weighing a total of approximately 1.86 carats, center stones are approximately 0.30 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sunflower Ruby and Diamond Ring",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038507/mern-gems/sunflower/rings/sunflower_ring_ruby_and_diamond_frrpnapetsf_e-1_dkkirx.avif",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038507/mern-gems/sunflower/rings/sunflower_ring_ruby_and_diamond_frrpnapetsf_e-2_eoul0j.avif",
-    category: allCategories[3],
-    jewelryCollection: allJewelryCollections[3],
-    description:
-      "18 round brilliant diamonds, weighing a total of approximately 0.58 carats with a round ruby center stone of approximately 0.44 carats, set in platinum",
-  });
-
   const allJewelries = await Jewelry.find();
 
   await JewelryStones.insertMany([
