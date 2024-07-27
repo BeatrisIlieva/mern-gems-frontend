@@ -40,54 +40,6 @@ async function populateDb() {
     title: "Forget-Me-Not",
   });
 
-  // await JewelryCollection.create({
-  //   title: "Sunflower",
-  // });
-
-  // await StoneType.create({
-  //   title: "Spinel",
-  // });
-
-  // await StoneType.create({
-  //   title: "Diamond",
-  // });
-
-  // await StoneType.create({
-  //   title: "Ruby",
-  // });
-
-  // await StoneType.create({
-  //   title: "Sapphire",
-  // });
-
-  // await StoneColor.create({
-  //   title: "Aquamarine",
-  // });
-
-  // await StoneColor.create({
-  //   title: "Black",
-  // });
-
-  // await StoneColor.create({
-  //   title: "Blue",
-  // });
-
-  // await StoneColor.create({
-  //   title: "Pink",
-  // });
-
-  // await StoneColor.create({
-  //   title: "Red",
-  // });
-
-  // await StoneColor.create({
-  //   title: "White",
-  // });
-
-  // await StoneColor.create({
-  //   title: "Yellow",
-  // });
-
   await Size.create({
     measurement: "15.2 cm",
   });
