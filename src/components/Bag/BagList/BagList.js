@@ -4,6 +4,11 @@ import { useService } from "../../../hooks/useService";
 import { bagServiceFactory } from "../../../services/bagService";
 
 import { JewelryCard } from "../../JewelryCard/JewelryCard";
+import { SmallTitle } from "../../SmallTitle/SmallTitle";
+import { SpanTitle } from "../../SpanTitle/SpanTitle";
+import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
+
+import styles from "./BagList.module.css";
 
 export const BagList = ({
   _id,
@@ -18,12 +23,21 @@ export const BagList = ({
   size,
 }) => {
   return (
-    <JewelryCard
-      jewelryId={jewelryId}
-      firstImageUrl={firstImageUrl}
-      isSoldOut={isSoldOut}
-      categoryTitle={categoryTitle}
-      jewelryTitle={jewelryTitle}
-    />
+    <section className={styles["bag-list"]}>
+      <JewelryCard
+        jewelryId={jewelryId}
+        firstImageUrl={firstImageUrl}
+        isSoldOut={isSoldOut}
+        categoryTitle={categoryTitle}
+        jewelryTitle={jewelryTitle}
+        variant={"bag-list"}
+      />
+      <div className={styles["middle-container"]}>
+      <SmallTitle title={jewelryTitle} />
+      <SpanTitle title={size} />
+      {/* <UnderlinedButton title={"Remove"} callbackFunction={}/> */}
+      </div>
+
+    </section>
   );
 };

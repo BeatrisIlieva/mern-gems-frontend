@@ -1,0 +1,17 @@
+.underlined-button {
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--white);
+  outline: none;
+  text-decoration: underline;
+  padding: 0px;
+}
+
+.underlined-button:last-child {
+  padding-bottom: 20px;
+}
+
+.underlined-button:hover {
+  font-family: var(--bold-font-family);
+}

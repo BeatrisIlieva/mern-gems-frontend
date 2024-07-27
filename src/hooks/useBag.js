@@ -5,6 +5,7 @@ import { useService } from "./useService";
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
 import { bagServiceFactory } from "../services/bagService";
+import { useBagContext } from "../contexts/BagContext";
 
 export const useBag = () => {
   const { userId } = useAuthenticationContext();
@@ -15,21 +16,16 @@ export const useBag = () => {
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  const { bagQuantity } = useBagContext();
+
   useEffect(() => {
     setLoading(true);
 
     bagService
       .getAll(userId)
       .then((data) => {
-        const bagData = data.jewelries;
-        const bagItems = bagData[0].documents;
-        setBagItems(bagItems);
-
-        const totalPrice = bagData[0].totalTotalPrice;
-        setTotalPrice(totalPrice);
-
-        const totalQuantity = bagData[0].totalQuantity;
-        setTotalQuantity(totalQuantity);
+        console.log(data);
+        setBagItems(data);
       })
       .catch((err) => {
         console.log(err.message);
@@ -38,6 +34,30 @@ export const useBag = () => {
         setLoading(false);
       });
   }, []);
+
+  //   useEffect(() => {
+  //     setLoading(true);
+
+  //     bagService
+  //       .getAll(userId)
+  //       .then((data) => {
+  //         const bagData = data.jewelries;
+  //         const bagItems = bagData[0].documents;
+  //         setBagItems(bagItems);
+
+  //         const totalPrice = bagData[0].totalTotalPrice;
+  //         setTotalPrice(totalPrice);
+
+  //         const totalQuantity = bagData[0].totalQuantity;
+  //         setTotalQuantity(totalQuantity);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err.message);
+  //       })
+  //       .finally(() => {
+  //         setLoading(false);
+  //       });
+  //   }, []);
 
   return {
     loading,

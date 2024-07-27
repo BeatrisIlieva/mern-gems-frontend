@@ -10,6 +10,7 @@ export const JewelryCard = ({
   categoryTitle,
   jewelryTitle,
   isSoldOut,
+  variant,
 }) => {
   const slugifiedCategoryTitle = slugify(categoryTitle);
   const slugifiedJewelryTitle = slugify(jewelryTitle);
@@ -19,11 +20,15 @@ export const JewelryCard = ({
       <Link
         to={`/${slugifiedCategoryTitle}/${slugifiedJewelryTitle}/${jewelryId}`}
       >
-        <img
-          src={firstImageUrl}
-          alt={slugifiedJewelryTitle}
-          className={isSoldOut ? `${styles["sold-out"]}` : `${styles["image"]}`}
-        />
+        <div className={styles[variant]}>
+          <img
+            src={firstImageUrl}
+            alt={slugifiedJewelryTitle}
+            className={
+              isSoldOut ? `${styles["sold-out"]}` : `${styles["image"]}`
+            }
+          />
+        </div>
         {isSoldOut && <span className={styles["sold-out-span"]}>SOLD OUT</span>}
       </Link>
     </article>

@@ -78,13 +78,13 @@ export const Header = () => {
           <div className={styles["wrapper"]}>
             <nav>
               <ul className={styles["icon-list"]} role="list">
-                <li
+                {/* <li
                   className={styles["icon-bar-item"]}
                   onClick={toggleDisplaySearchPopup}
                 >
                   <Icon icon={faSearch} variant={"header"} />
                   <SpanTitle title={"Search"} />
-                </li>
+                </li> */}
                 <li className={styles["icon-bar-item"]}>
                   <NavLink
                     className={({ isActive }) =>
