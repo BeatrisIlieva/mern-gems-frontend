@@ -1,0 +1,47 @@
+.shopping-bag-process-container {
+  margin: 40px 80px 40px 80px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.delivery {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.delivery-span {
+  font-size: var(--normal);
+  color: var(--medium-gray);
+}
+
+.bottom {
+  display: flex;
+  gap: 30px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 60%;
+}
+
+.child {
+  height: 500px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
+  rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
+}
+
+.right {
+  width: 40%;
+  height: 200px;
+  position: sticky;
+  top: 200px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
+  rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
+}

@@ -1,7 +1,4 @@
 .app {
-  /* font-family: var(--main-font-family);
-  font-size: var(--normal);
-  color: var(--gray); */
   display: flex;
   flex-direction: column;
   margin: 0;
