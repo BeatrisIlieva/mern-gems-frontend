@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-container {
+  width: 60%;
+}
+
 .delivery {
   display: flex;
   gap: 6px;
@@ -14,10 +23,6 @@
 .delivery-span {
   font-size: var(--normal);
   color: var(--medium-gray);
-}
-
-.left-container {
-  width: 60%;
 }
 
 .right-container {

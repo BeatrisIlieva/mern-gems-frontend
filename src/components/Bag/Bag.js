@@ -24,18 +24,24 @@ export const Bag = ({ toggleDisplayBagPopup }) => {
     >
       <section className={styles["bag"]}>
         <LargeTitle title={"Your Bag"} variant={"large-title"} />
-        <div className={styles["left-container"]}>
-          <div className={styles["delivery"]}>
-            <Icon icon={faTruck} variant={"icon"} />
-            <SmallTitle title={"Delivery"} />
-            <span className={styles["delivery-span"]}>
-              {bagQuantity === 1
-                ? `(${bagQuantity} item)`
-                : `(${bagQuantity} items)`}
-            </span>
+        <div className={styles["wrapper"]}>
+          <div className={styles["left-container"]}>
+            <div className={styles["delivery"]}>
+              <Icon icon={faTruck} variant={"icon"} />
+              <SmallTitle title={"Delivery"} />
+              <span className={styles["delivery-span"]}>
+                {bagQuantity === 1
+                  ? `(${bagQuantity} item)`
+                  : `(${bagQuantity} items)`}
+              </span>
+            </div>
+          </div>
+          <div className={styles["right-container"]}>
+            <div className={styles["delivery"]}>
+              <SmallTitle title={"Order Summary"} />
+            </div>
           </div>
         </div>
-        <div className={styles["right-container"]}></div>
       </section>
     </Popup>
   );
