@@ -22,10 +22,6 @@ export const JewelryItem = () => {
 
   const toggleDisplayBagPopup = () => {
     setDisplayBagPopup((displayBagPopup) => !displayBagPopup);
-
-    document.body.style.overflow === "hidden"
-      ? (document.body.style.overflow = "visible")
-      : (document.body.style.overflow = "hidden");
   };
 
   return (
@@ -52,7 +48,7 @@ export const JewelryItem = () => {
               {jewelry.category !== EARRING_ID && (
                 <SmallTitle title={"Size:"} />
               )}
-              <Form toggleDisplayBagPopup={toggleDisplayBagPopup}/>
+              <Form toggleDisplayBagPopup={toggleDisplayBagPopup} />
             </div>
           </section>
         </>

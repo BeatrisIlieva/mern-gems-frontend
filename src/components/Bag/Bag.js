@@ -5,6 +5,8 @@ import { bagServiceFactory } from "../../services/bagService";
 import { Popup } from "../Popup/Popup";
 
 export const Bag = ({ toggleDisplayBagPopup }) => {
+
+
   const bagService = useService(bagServiceFactory);
 
   return (

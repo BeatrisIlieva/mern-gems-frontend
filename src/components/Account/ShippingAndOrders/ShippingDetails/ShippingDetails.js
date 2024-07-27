@@ -10,7 +10,9 @@ export const ShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
       popupCloseHandler={toggleDisplayShippingDetailsPopup}
     >
       <PopupHeader title={"Add A New Address Book"} />
-      <ShippingDetailsForm toggleDisplayShippingDetailsPopup={toggleDisplayShippingDetailsPopup} />
+      <ShippingDetailsForm
+        toggleDisplayShippingDetailsPopup={toggleDisplayShippingDetailsPopup}
+      />
     </Popup>
   );
 };

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useForm } from "../../../../../hooks/useForm";
 import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
 import { FORM_KEYS } from "../initialFormValues";
+import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
@@ -74,9 +75,11 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
       try {
         await userService.updateShippingDetails(userId, data);
 
-        Object.keys(FORM_KEYS).forEach((key) => {
-          INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
-        });
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+
+        // Object.keys(FORM_KEYS).forEach((key) => {
+        //   INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
+        // });
 
         toggleDisplayShippingDetailsPopup();
 

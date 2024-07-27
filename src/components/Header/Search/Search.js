@@ -32,12 +32,6 @@ export const Search = ({ toggleDisplaySearchPopup }) => {
     fetchJewelries();
   }, [query, searchService]);
 
-  useEffect(() => {
-    document.body.style.overflow === "hidden"
-      ? (document.body.style.overflow = "visible")
-      : (document.body.style.overflow = "hidden");
-  }, [query]);
-
   return (
     <>
       <Popup

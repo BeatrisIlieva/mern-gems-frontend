@@ -16,6 +16,8 @@ import { userServiceFactory } from "../../../../services/userService";
 
 import styles from "./UpdateEmailForm.module.css";
 
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
@@ -59,6 +61,8 @@ export const UpdateEmailForm = () => {
       try {
 
         await userService.updateEmail(userId, data, token);
+
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       } catch (err) {
         console.log(err.message);
 

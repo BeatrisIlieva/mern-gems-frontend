@@ -17,6 +17,8 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import { userServiceFactory } from "../../../../services/userService";
 
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+
 import styles from "./UpdatePasswordForm.module.css";
 
 const ButtonTitle = "Save";
@@ -89,6 +91,8 @@ export const UpdatePasswordForm = () => {
             successMessage: SUCCESS_MESSAGES.newPassword,
           },
         }));
+
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
         updateForm();
       } catch (err) {

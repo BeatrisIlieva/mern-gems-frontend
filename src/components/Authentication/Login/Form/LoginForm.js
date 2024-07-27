@@ -14,6 +14,8 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import { userServiceFactory } from "../../../../services/userService";
 
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+
 const ButtonTitle = "Sign In";
 
 export const LoginForm = () => {
@@ -55,6 +57,8 @@ export const LoginForm = () => {
         const result = await userService.login(data);
 
         await updateAuthentication(result);
+
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       } catch (err) {
         if (err.message === INVALID_CREDENTIALS_ERROR_MESSAGE) {
           setValues((prevValues) => ({

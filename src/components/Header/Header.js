@@ -33,10 +33,6 @@ export const Header = () => {
 
   const toggleDisplaySearchPopup = () => {
     setDisplaySearchPopup((displaySearchPopup) => !displaySearchPopup);
-
-    document.body.style.overflow === "hidden"
-      ? (document.body.style.overflow = "visible")
-      : (document.body.style.overflow = "hidden");
   };
 
   useEffect(() => {

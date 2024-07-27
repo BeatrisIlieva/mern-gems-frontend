@@ -12,6 +12,8 @@ import { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } from "../../../../constants/email"
 
 import { userServiceFactory } from "../../../../services/userService";
 
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+
 const ButtonTitle = "Sign Up";
 
 export const RegisterForm = () => {
@@ -54,9 +56,8 @@ export const RegisterForm = () => {
 
         await updateAuthentication(result);
 
-        Object.keys(FORM_KEYS).forEach((key) => {
-          INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
-        });
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+        
       } catch (err) {
         if (err.message === EMAIL_ALREADY_EXISTS_ERROR_MESSAGE) {
           setValues((prevValues) => ({
