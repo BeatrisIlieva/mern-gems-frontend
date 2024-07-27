@@ -25,6 +25,11 @@
   color: var(--medium-gray);
 }
 
+.bag-items {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
+      rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
+  }
+
 .right-container {
   width: 40%;
 }

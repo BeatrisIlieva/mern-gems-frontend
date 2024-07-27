@@ -6,11 +6,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "../Icon/Icon";
 
 export const Popup = ({ isVisible, children, variant, popupCloseHandler }) => {
-  document.body.style.overflow = "hidden";
-
   const onClose = () => {
-    document.body.style.overflow = "visible";
-
     popupCloseHandler();
   };
 
@@ -24,7 +20,7 @@ export const Popup = ({ isVisible, children, variant, popupCloseHandler }) => {
             <Icon icon={faXmark} popupCloseHandler={onClose} />
           )}
         </div>
-        {children}
+        <div className={styles["content"]}>{children}</div>
       </div>
     </section>
   );

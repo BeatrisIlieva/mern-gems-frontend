@@ -13,6 +13,7 @@
 
 .overlay.visible {
   display: flex;
+  /* justify-content: flex-end; */
 }
 
 .modal,
@@ -46,7 +47,7 @@
 
 .authentication {
   width: 34vw;
-  height: 80vh;
+  height: 90vh;
 }
 
 .delete-account {
@@ -60,10 +61,14 @@
 }
 .order {
   width: 90vw;
-  height: 90vh; 
+  height: 90vh;
 }
 .icon {
   position: absolute;
   top: 8px;
   right: 12px;
+}
+
+.content {
+  overflow-y: auto;
 }

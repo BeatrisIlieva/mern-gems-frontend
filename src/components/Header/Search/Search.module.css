@@ -3,7 +3,6 @@
   display: flex;
   gap: 30px;
   flex-direction: column;
-  overflow-y: auto;
 }
 
 .search-field {
@@ -15,6 +14,8 @@
   width: calc(100% - 60px);
   display: flex;
   padding: 4px 8px;
+  z-index: 1000;
+  background-color: var(--white);
 }
 
 .input {
@@ -26,6 +27,5 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   z-index: 100;
-  overflow-y: auto;
   margin-top: 20px;
 }

@@ -13,9 +13,8 @@ export const DynamicForm = ({
   changeHandler,
   initialFormValues,
   userInformation,
-  buttonTitle
+  buttonTitle,
 }) => {
-
   const location = useLocation();
 
   const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
@@ -32,7 +31,7 @@ export const DynamicForm = ({
     <>
       {Object.entries(formKeys).map(([key, value]) => (
         <div key={key} className={styles["field-box"]}>
-          {(key === "Email" && location.pathname !== "/users/account") && (
+          {key === "Email" && location.pathname !== "/users/account" && (
             <span>
               <>{hoveredQuestionMark && <QuestionMark />}</>
               <FontAwesomeIcon

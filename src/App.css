@@ -1,7 +1,7 @@
 .app {
-  font-family: var(--main-font-family);
+  /* font-family: var(--main-font-family);
   font-size: var(--normal);
-  color: var(--gray);
+  color: var(--gray); */
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -12,6 +12,9 @@
 
 body {
   margin-top: 220px;
+  font-family: var(--main-font-family);
+  font-size: var(--normal);
+  color: var(--gray);
 }
 
 h1,
