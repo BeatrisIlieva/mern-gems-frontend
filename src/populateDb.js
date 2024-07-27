@@ -493,15 +493,7 @@ async function populateDb() {
       "6 pear-shaped rubies weighing a total of approximately 0.95 carats and 8 pear-shaped and round brilliant diamonds weighing a total of approximately 1.17 carats, set in platinum",
   });
 
-  await Jewelry.create({
-    title: "Sunflower Diamond Bracelet",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1719038508/mern-gems/sunflower/bracelets/sunflower-_bracelet_diamond_brdpnasmsf_e-1_gr2rdj.webp",
-    category: allCategories[0],
-    jewelryCollection: allJewelryCollections[3],
-    description:
-      "198 round brilliant diamonds weighing a total of approximately 9.70 carats, set in platinum",
-  });
+
 
   await Jewelry.create({
     title: "Sunflower Diamond Earrings on Platinum Wire",

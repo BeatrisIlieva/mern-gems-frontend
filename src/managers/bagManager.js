@@ -482,13 +482,6 @@ const getAll = async (userId) => {
     },
     {
       $addFields: {
-        maxQuantity: {
-          $sum: ["$inventories.quantity", "$quantity"],
-        },
-      },
-    },
-    {
-      $addFields: {
         jewelryId: "$jewelries._id",
       },
     },
@@ -536,9 +529,6 @@ const getAll = async (userId) => {
         },
         quantity: {
           $first: "$quantity",
-        },
-        maxQuantity: {
-          $first: "$maxQuantity",
         },
         createdAt: {
           $first: "$createdAt",
