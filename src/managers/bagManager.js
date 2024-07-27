@@ -498,6 +498,16 @@ const getAll = async (userId) => {
       },
     },
     {
+      $addFields: {
+        inventoryQuantity: "$inventories.quantity",
+      },
+    },
+    {
+      $addFields: {
+        price: "$inventories.price",
+      },
+    },
+    {
       $group: {
         _id: "$_id",
         jewelryId: {
@@ -517,6 +527,12 @@ const getAll = async (userId) => {
         },
         sizeId: {
           $first: "$sizeId",
+        },
+        inventoryQuantity: {
+          $first: "$inventories.quantity",
+        },
+        price: {
+          $first: "$inventories.price",
         },
         quantity: {
           $first: "$quantity",
@@ -548,6 +564,8 @@ const getAll = async (userId) => {
         quantity: 1,
         maxQuantity: 1,
         categoryTitle: 1,
+        inventoryQuantity: 1,
+        price: 1,
       },
     },
   ]);
