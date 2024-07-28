@@ -23,7 +23,7 @@ export const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { bagQuantity } = useBagContext();
+  const { bagTotalQuantityIntoState } = useBagContext();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
@@ -116,11 +116,11 @@ export const Header = () => {
                   >
                     <Icon icon={faBagShopping} variant={"header"} />
                     <SpanTitle title={"My Bag"} />
-                    {bagQuantity > 0 && (
+                    {bagTotalQuantityIntoState > 0 && (
                       <span
                         className={`${styles["count-span"]} ${styles["pulse"]}`}
                       >
-                        {bagQuantity}
+                        {bagTotalQuantityIntoState}
                       </span>
                     )}
                   </Link>

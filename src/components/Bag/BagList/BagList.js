@@ -8,6 +8,9 @@ import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { SpanTitle } from "../../SpanTitle/SpanTitle";
 import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 
+import { IncreaseBagItemQuantity } from "../../IncreaseBagItemQuantity/IncreaseBagItemQuantity";
+import { DecreaseBagItemQuantity } from "../../DecreaseBagItemQuantity/DecreaseBagItemQuantity";
+
 import styles from "./BagList.module.css";
 
 export const BagList = ({
@@ -35,7 +38,9 @@ export const BagList = ({
       <div className={styles["middle-container"]}>
       <SmallTitle title={jewelryTitle} />
       <SpanTitle title={size} />
-      {/* <UnderlinedButton title={"Remove"} callbackFunction={}/> */}
+      <IncreaseBagItemQuantity bagId={_id}/>
+      <span>{quantity}</span>
+      <DecreaseBagItemQuantity bagId={_id}/>
       </div>
 
     </section>

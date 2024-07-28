@@ -7,7 +7,6 @@ import { jewelryServiceFactory } from "../services/jewelryService";
 
 import { EARRING_ID } from "../constants/earringId";
 
-import { useLocation } from "react-router-dom";
 
 export const useJewelryItem = () => {
   const [sizes, setSizes] = useState([]);
@@ -24,7 +23,7 @@ export const useJewelryItem = () => {
 
   const [jewelry, setJewelry] = useState([]);
 
-  const location = useLocation();
+
 
   useEffect(() => {
     setLoading(true);
@@ -44,7 +43,7 @@ export const useJewelryItem = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [location.pathname]);
+  }, []);
 
   const decreaseSizeQuantity = (sizeId) => {
     setSizes((prevSizes) =>

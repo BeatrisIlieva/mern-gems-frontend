@@ -7,11 +7,29 @@ import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 import { bagServiceFactory } from "../services/bagService";
 
 export const useBag = () => {
-  const { userId } = useAuthenticationContext();
   const bagService = useService(bagServiceFactory);
+
+  const { userId } = useAuthenticationContext();
+
   const [loading, setLoading] = useState(true);
 
   const [bagItems, setBagItems] = useState([]);
+
+  const increaseBagItemTotalQuantityIntoState = (bagId) => {
+    setBagItems((state) =>
+      state.map((x) =>
+        x._id === bagId ? { ...x, quantity: x.quantity + 1 } : x
+      )
+    );
+  };
+
+  const decreaseBagItemTotalQuantityIntoState = (bagId) => {
+    setBagItems((state) =>
+      state.map((x) =>
+        x._id === bagId ? { ...x, quantity: x.quantity + 1 } : x
+      )
+    );
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -27,34 +45,12 @@ export const useBag = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
-
-  //   useEffect(() => {
-  //     setLoading(true);
-
-  //     bagService
-  //       .getAll(userId)
-  //       .then((data) => {
-  //         const bagData = data.jewelries;
-  //         const bagItems = bagData[0].documents;
-  //         setBagItems(bagItems);
-
-  //         const totalPrice = bagData[0].totalTotalPrice;
-  //         setTotalPrice(totalPrice);
-
-  //         const totalQuantity = bagData[0].totalQuantity;
-  //         setTotalQuantity(totalQuantity);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err.message);
-  //       })
-  //       .finally(() => {
-  //         setLoading(false);
-  //       });
-  //   }, []);
+  }, [bagItems]);
 
   return {
     loading,
     bagItems,
+    increaseBagItemTotalQuantityIntoState,
+    decreaseBagItemTotalQuantityIntoState,
   };
 };
