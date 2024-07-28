@@ -1,0 +1,19 @@
+.button, .enabled, .disabled{
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 0px;
+}
+
+.enabled {
+  color: var(--pink);
+}
+
+.disabled {
+  color: var(--light-gray);
+}
+
+
+
+

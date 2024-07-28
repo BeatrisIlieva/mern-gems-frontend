@@ -41,7 +41,7 @@ export const Bag = () => {
       });
   }, [userId]);
 
-  const updateBagItemQuantity = (bagId, delta) => {
+  const updateBagItemQuantityIntoState = (bagId, delta) => {
     setBagItems((state) => {
       const updatedItems = state.map((item) =>
         item._id === bagId
@@ -49,7 +49,7 @@ export const Bag = () => {
               ...item,
               quantity: item.quantity + delta,
               increaseQuantityDisabled:
-                item.quantity + delta >= item.inventoryQuantity,
+                item.quantity + delta > item.inventoryQuantity,
               decreaseQuantityDisabled: item.quantity + delta <= 0,
             }
           : item
@@ -64,7 +64,10 @@ export const Bag = () => {
       <ul role="list">
         {bagItems.map((item) => (
           <li key={item._id}>
-            <BagList {...item} updateBagItemQuantity={updateBagItemQuantity} />
+            <BagList
+              {...item}
+              updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
+            />
           </li>
         ))}
       </ul>

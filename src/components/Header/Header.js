@@ -11,7 +11,7 @@ import { MiniHeader } from "./MiniHeader/MiniHeader";
 
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { Icon } from "../Icon/Icon";
 import { Search } from "./Search/Search";

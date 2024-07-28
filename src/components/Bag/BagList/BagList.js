@@ -11,6 +11,11 @@ import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 import { IncreaseBagItemQuantity } from "../../IncreaseBagItemQuantity/IncreaseBagItemQuantity";
 import { DecreaseBagItemQuantity } from "../../DecreaseBagItemQuantity/DecreaseBagItemQuantity";
 
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
+
+import { UpdateQuantityButton } from "./UpdateQuantityButton/UpdateQuantityButton";
+
 import styles from "./BagList.module.css";
 
 export const BagList = ({
@@ -26,9 +31,8 @@ export const BagList = ({
   size,
   increaseQuantityDisabled,
   decreaseQuantityDisabled,
-  updateBagItemQuantity,
-  // increaseBagItemTotalQuantityIntoState,
-  // decreaseBagItemTotalQuantityIntoState
+  updateBagItemQuantityIntoState,
+  
 }) => {
   return (
     <section className={styles["bag-list"]}>
@@ -43,18 +47,22 @@ export const BagList = ({
       <div className={styles["middle-container"]}>
         <SmallTitle title={jewelryTitle} />
         <SpanTitle title={size} />
-        <IncreaseBagItemQuantity
+        <UpdateQuantityButton
+          title={"Increase"}
           bagId={_id}
           buttonDisabled={increaseQuantityDisabled}
-          updateBagItemQuantity={updateBagItemQuantity}
-          // increaseBagItemTotalQuantityIntoState={increaseBagItemTotalQuantityIntoState}
+          updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
+          delta={1}
+          icon={faPlus}
         />
         <span>{quantity}</span>
-        <DecreaseBagItemQuantity
+        <UpdateQuantityButton
+          title={"Decrease"}
           bagId={_id}
           buttonDisabled={decreaseQuantityDisabled}
-          updateBagItemQuantity={updateBagItemQuantity}
-          // decreaseBagItemTotalQuantityIntoState={decreaseBagItemTotalQuantityIntoState}
+          updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
+          delta={-1}
+          icon={faMinus}
         />
       </div>
     </section>
