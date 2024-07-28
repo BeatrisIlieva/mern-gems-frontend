@@ -7,8 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Icon } from "../../../Icon/Icon";
 
-import { useBag } from "../../../../hooks/useBag";
-
 import styles from "./UpdateQuantityButton.module.css";
 
 export const UpdateQuantityButton = ({
@@ -22,8 +20,6 @@ export const UpdateQuantityButton = ({
   const bagService = useService(bagServiceFactory);
 
   const { updateBagTotalQuantityIntoState } = useBagContext();
-
-  // const { updateBagItemQuantityIntoState } = useBag();
 
   const updateBagItemQuantity = async (bagId, delta) => {
     try {
