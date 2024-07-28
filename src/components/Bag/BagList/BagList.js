@@ -24,6 +24,11 @@ export const BagList = ({
   maxQuantity,
   quantity,
   size,
+  increaseQuantityDisabled,
+  decreaseQuantityDisabled,
+  updateBagItemQuantity,
+  // increaseBagItemTotalQuantityIntoState,
+  // decreaseBagItemTotalQuantityIntoState
 }) => {
   return (
     <section className={styles["bag-list"]}>
@@ -36,13 +41,22 @@ export const BagList = ({
         variant={"bag-list"}
       />
       <div className={styles["middle-container"]}>
-      <SmallTitle title={jewelryTitle} />
-      <SpanTitle title={size} />
-      <IncreaseBagItemQuantity bagId={_id}/>
-      <span>{quantity}</span>
-      <DecreaseBagItemQuantity bagId={_id}/>
+        <SmallTitle title={jewelryTitle} />
+        <SpanTitle title={size} />
+        <IncreaseBagItemQuantity
+          bagId={_id}
+          buttonDisabled={increaseQuantityDisabled}
+          updateBagItemQuantity={updateBagItemQuantity}
+          // increaseBagItemTotalQuantityIntoState={increaseBagItemTotalQuantityIntoState}
+        />
+        <span>{quantity}</span>
+        <DecreaseBagItemQuantity
+          bagId={_id}
+          buttonDisabled={decreaseQuantityDisabled}
+          updateBagItemQuantity={updateBagItemQuantity}
+          // decreaseBagItemTotalQuantityIntoState={decreaseBagItemTotalQuantityIntoState}
+        />
       </div>
-
     </section>
   );
 };

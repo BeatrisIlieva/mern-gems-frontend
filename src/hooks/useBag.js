@@ -15,21 +15,21 @@ export const useBag = () => {
 
   const [bagItems, setBagItems] = useState([]);
 
-  const increaseBagItemTotalQuantityIntoState = (bagId) => {
-    setBagItems((state) =>
-      state.map((x) =>
-        x._id === bagId ? { ...x, quantity: x.quantity + 1 } : x
-      )
-    );
-  };
+  // useEffect(() => {
+  //   setLoading(true);
 
-  const decreaseBagItemTotalQuantityIntoState = (bagId) => {
-    setBagItems((state) =>
-      state.map((x) =>
-        x._id === bagId ? { ...x, quantity: x.quantity + 1 } : x
-      )
-    );
-  };
+  //   bagService
+  //     .getAll(userId)
+  //     .then((data) => {
+  //       setBagItems(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     })
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -37,7 +37,13 @@ export const useBag = () => {
     bagService
       .getAll(userId)
       .then((data) => {
-        setBagItems(data);
+        const modifiedData = data.map((item) => ({
+          ...item,
+          increaseQuantityDisabled: item.inventoryQuantity === 0,
+          decreaseQuantityDisabled: item.quantity === 0,
+        }));
+
+        setBagItems(modifiedData);
       })
       .catch((err) => {
         console.log(err.message);
@@ -45,7 +51,39 @@ export const useBag = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [bagItems]);
+  }, [userId]);
+
+  const increaseBagItemTotalQuantityIntoState = (bagId) => {
+    setBagItems((state) =>
+      state.map((x) =>
+        x._id === bagId
+          ? {
+              ...x,
+              quantity: x.quantity + 1,
+              inventoryQuantity: x.inventoryQuantity - 1,
+              increaseQuantityDisabled: x.inventoryQuantity === 0,
+              decreaseQuantityDisabled: x.quantity === 0,
+            }
+          : x
+      )
+    );
+  };
+
+  const decreaseBagItemTotalQuantityIntoState = (bagId) => {
+    setBagItems((state) =>
+      state.map((x) =>
+        x._id === bagId
+          ? {
+              ...x,
+              quantity: x.quantity - 1,
+              inventoryQuantity: x.inventoryQuantity + 1,
+              increaseQuantityDisabled: x.inventoryQuantity > 0,
+              decreaseQuantityDisabled: x.quantity > 0,
+            }
+          : x
+      )
+    );
+  };
 
   return {
     loading,

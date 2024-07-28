@@ -5,7 +5,6 @@ import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 
-
 import { useBagContext } from "../../contexts/BagContext";
 
 import styles from "./ShoppingProcessContainer.module.css";

@@ -6,10 +6,12 @@ import { bagServiceFactory } from "../../services/bagService";
 import { useBag } from "../../hooks/useBag";
 import { useBagContext } from "../../contexts/BagContext";
 
-export const DecreaseBagItemQuantity = ({ bagId }) => {
+export const DecreaseBagItemQuantity = ({
+  bagId,
+  buttonDisabled,
+  updateBagItemQuantity,
+}) => {
   const bagService = useService(bagServiceFactory);
-
-  const { decreaseBagItemTotalQuantityIntoState } = useBag();
 
   const { decreaseBagTotalQuantityIntoState } = useBagContext();
 
@@ -17,7 +19,7 @@ export const DecreaseBagItemQuantity = ({ bagId }) => {
     try {
       await bagService.decrease(bagId);
 
-      decreaseBagItemTotalQuantityIntoState(bagId);
+      updateBagItemQuantity(bagId, -1);
 
       decreaseBagTotalQuantityIntoState();
     } catch (err) {

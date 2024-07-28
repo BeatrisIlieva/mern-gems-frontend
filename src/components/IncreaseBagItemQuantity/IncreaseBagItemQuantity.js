@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useService } from "../../hooks/useService";
 import { bagServiceFactory } from "../../services/bagService";
@@ -6,10 +6,14 @@ import { bagServiceFactory } from "../../services/bagService";
 import { useBag } from "../../hooks/useBag";
 import { useBagContext } from "../../contexts/BagContext";
 
-export const IncreaseBagItemQuantity = ({ bagId }) => {
-  const bagService = useService(bagServiceFactory);
+import styles from "./IncreaseBagItemQuantity.module.css";
 
-  const { increaseBagItemTotalQuantityIntoState } = useBag();
+export const IncreaseBagItemQuantity = ({
+  bagId,
+  buttonDisabled,
+  updateBagItemQuantity,
+}) => {
+  const bagService = useService(bagServiceFactory);
 
   const { increaseBagTotalQuantityIntoState } = useBagContext();
 
@@ -17,7 +21,7 @@ export const IncreaseBagItemQuantity = ({ bagId }) => {
     try {
       await bagService.increase(bagId);
 
-      increaseBagItemTotalQuantityIntoState(bagId);
+      updateBagItemQuantity(bagId, +1);
 
       increaseBagTotalQuantityIntoState();
     } catch (err) {
@@ -25,6 +29,16 @@ export const IncreaseBagItemQuantity = ({ bagId }) => {
     }
   };
   return (
-    <button onClick={() => increaseBagItemQuantity(bagId)}>Increase</button>
+    <button
+      className={
+        buttonDisabled === false
+          ? `${styles["button"]}`
+          : `${styles["disabled"]}`
+      }
+      onClick={() => increaseBagItemQuantity(bagId)}
+      disabled={buttonDisabled}
+    >
+      Increase
+    </button>
   );
 };
