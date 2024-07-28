@@ -65,20 +65,7 @@ export const Bag = () => {
   };
 
 
-  // const updateBagItemQuantity = (bagId, delta) => {
-  //   setBagItems((state) =>
-  //     state.map((item) =>
-  //       item._id === bagId
-  //         ? {
-  //             ...item,
-  //             quantity: item.quantity + delta,
-  //             increaseQuantityDisabled: item.quantity + delta >= item.inventoryQuantity,
-  //             decreaseQuantityDisabled: item.quantity + delta <= 0,
-  //           }
-  //         : item
-  //     )
-  //   );
-  // };
+
   
   // const increaseBagItemTotalQuantityIntoState = (bagId) => {
   //   setBagItems((state) =>
