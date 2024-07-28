@@ -29,6 +29,7 @@ export const Bag = () => {
           ...item,
           increaseQuantityDisabled: item.inventoryQuantity === item.quantity,
           decreaseQuantityDisabled: item.quantity === 0,
+          totalPrice: item.quantity * item.price
         }));
 
         setBagItems(modifiedData);
@@ -51,6 +52,7 @@ export const Bag = () => {
               increaseQuantityDisabled:
                 item.quantity + delta > item.inventoryQuantity,
               decreaseQuantityDisabled: item.quantity + delta <= 0,
+              totalPrice: (item.quantity + delta) * item.price
             }
           : item
       );

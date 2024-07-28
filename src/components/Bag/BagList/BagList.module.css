@@ -1,11 +1,29 @@
 .bag-list {
   display: flex;
-  gap: 30px;
   margin-bottom: 30px;
+  gap: 30px;
 }
 
 .middle-container {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

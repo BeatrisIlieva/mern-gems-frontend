@@ -8,9 +8,6 @@ import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { SpanTitle } from "../../SpanTitle/SpanTitle";
 import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 
-import { IncreaseBagItemQuantity } from "../../IncreaseBagItemQuantity/IncreaseBagItemQuantity";
-import { DecreaseBagItemQuantity } from "../../DecreaseBagItemQuantity/DecreaseBagItemQuantity";
-
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,7 +29,6 @@ export const BagList = ({
   increaseQuantityDisabled,
   decreaseQuantityDisabled,
   updateBagItemQuantityIntoState,
-  
 }) => {
   return (
     <section className={styles["bag-list"]}>
@@ -45,25 +41,30 @@ export const BagList = ({
         variant={"bag-list"}
       />
       <div className={styles["middle-container"]}>
-        <SmallTitle title={jewelryTitle} />
-        <SpanTitle title={size} />
-        <UpdateQuantityButton
-          title={"Increase"}
-          bagId={_id}
-          buttonDisabled={increaseQuantityDisabled}
-          updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
-          delta={1}
-          icon={faPlus}
-        />
-        <span>{quantity}</span>
-        <UpdateQuantityButton
-          title={"Decrease"}
-          bagId={_id}
-          buttonDisabled={decreaseQuantityDisabled}
-          updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
-          delta={-1}
-          icon={faMinus}
-        />
+        <div className={styles["left"]}>
+          <SmallTitle title={jewelryTitle} />
+          <SpanTitle title={size} />
+        </div>
+        <div className={styles["right"]}>
+          <SmallTitle title={totalPrice} />
+          <div className={styles["button-wrapper"]}>
+            <UpdateQuantityButton
+              bagId={_id}
+              buttonDisabled={increaseQuantityDisabled}
+              updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
+              delta={1}
+              icon={faPlus}
+            />
+            <span>{quantity}</span>
+            <UpdateQuantityButton
+              bagId={_id}
+              buttonDisabled={decreaseQuantityDisabled}
+              updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
+              delta={-1}
+              icon={faMinus}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
