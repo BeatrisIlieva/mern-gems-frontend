@@ -10,6 +10,8 @@ import { bagServiceFactory } from "../../services/bagService";
 
 import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
+import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
+
 export const Bag = () => {
   const bagService = useService(bagServiceFactory);
 
@@ -27,9 +29,9 @@ export const Bag = () => {
       .then((data) => {
         const modifiedData = data.map((item) => ({
           ...item,
-          increaseQuantityDisabled: item.inventoryQuantity === item.quantity,
+          increaseQuantityDisabled: item.inventoryQuantity === 1,
           decreaseQuantityDisabled: item.quantity === 0,
-          totalPrice: item.quantity * item.price
+          totalPrice: item.quantity * item.price,
         }));
 
         setBagItems(modifiedData);
@@ -42,6 +44,8 @@ export const Bag = () => {
       });
   }, [userId]);
 
+  console.log(bagItems);
+
   const updateBagItemQuantityIntoState = (bagId, delta) => {
     setBagItems((state) => {
       const updatedItems = state.map((item) =>
@@ -52,7 +56,7 @@ export const Bag = () => {
               increaseQuantityDisabled:
                 item.quantity + delta > item.inventoryQuantity,
               decreaseQuantityDisabled: item.quantity + delta <= 0,
-              totalPrice: (item.quantity + delta) * item.price
+              totalPrice: (item.quantity + delta) * item.price,
             }
           : item
       );
@@ -62,18 +66,21 @@ export const Bag = () => {
   };
 
   return (
-    <ShoppingProcessContainer title={"My Bag"}>
-      <ul role="list">
-        {bagItems.map((item) => (
-          <li key={item._id}>
-            <BagList
-              {...item}
-              updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
-            />
-          </li>
-        ))}
-      </ul>
-      <h1>Bag</h1>
-    </ShoppingProcessContainer>
+    <>
+      {loading && <LoadingSpinner />}
+      <ShoppingProcessContainer title={"My Bag"}>
+        <ul role="list">
+          {bagItems.map((item) => (
+            <li key={item._id}>
+              <BagList
+                {...item}
+                updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
+              />
+            </li>
+          ))}
+        </ul>
+        <h1>Bag</h1>
+      </ShoppingProcessContainer>
+    </>
   );
 };
