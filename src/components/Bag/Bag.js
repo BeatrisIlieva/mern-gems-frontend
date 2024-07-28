@@ -3,9 +3,6 @@ import { useEffect, useState } from "react";
 import { BagList } from "./BagList/BagList";
 
 import { ShoppingProcessContainer } from "../ShoppingProcessContainer/ShoppingProcessContainer";
-import { useBag } from "../../hooks/useBag";
-
-import { useBagContext } from "../../contexts/BagContext";
 
 import { useService } from "../../hooks/useService";
 
@@ -14,8 +11,6 @@ import { bagServiceFactory } from "../../services/bagService";
 import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
 export const Bag = () => {
-  // const { bagItems } = useBagContext();
-
   const bagService = useService(bagServiceFactory);
 
   const { userId } = useAuthenticationContext();
@@ -48,35 +43,28 @@ export const Bag = () => {
 
   const updateBagItemQuantity = (bagId, delta) => {
     setBagItems((state) => {
-
       const updatedItems = state.map((item) =>
         item._id === bagId
           ? {
               ...item,
               quantity: item.quantity + delta,
-              increaseQuantityDisabled: item.quantity + delta >= item.inventoryQuantity,
+              increaseQuantityDisabled:
+                item.quantity + delta >= item.inventoryQuantity,
               decreaseQuantityDisabled: item.quantity + delta <= 0,
             }
           : item
       );
-  
-      return updatedItems.filter(item => item.quantity > 0);
+
+      return updatedItems.filter((item) => item.quantity > 0);
     });
   };
-
-
-
 
   return (
     <ShoppingProcessContainer title={"My Bag"}>
       <ul role="list">
         {bagItems.map((item) => (
           <li key={item._id}>
-            <BagList
-              {...item}
-              updateBagItemQuantity={updateBagItemQuantity}
-
-            />
+            <BagList {...item} updateBagItemQuantity={updateBagItemQuantity} />
           </li>
         ))}
       </ul>

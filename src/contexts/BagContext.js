@@ -8,18 +8,13 @@ export const BagProvider = ({ children }) => {
   const [bagTotalQuantityIntoState, setBagTotalQuantityIntoState] =
     useLocalStorage("bagTotalQuantity", 0);
 
-  const increaseBagTotalQuantityIntoState = () => {
-    setBagTotalQuantityIntoState(bagTotalQuantityIntoState + 1);
-  };
-
-  const decreaseBagTotalQuantityIntoState = () => {
-    setBagTotalQuantityIntoState(bagTotalQuantityIntoState - 1);
+  const updateBagTotalQuantityIntoState = (delta) => {
+    setBagTotalQuantityIntoState(bagTotalQuantityIntoState + delta);
   };
 
   const context = {
     bagTotalQuantityIntoState,
-    increaseBagTotalQuantityIntoState,
-    decreaseBagTotalQuantityIntoState,
+    updateBagTotalQuantityIntoState,
   };
 
   return <BagContext.Provider value={context}>{children}</BagContext.Provider>;

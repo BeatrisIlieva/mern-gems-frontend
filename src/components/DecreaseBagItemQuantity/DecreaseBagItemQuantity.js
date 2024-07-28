@@ -13,7 +13,7 @@ export const DecreaseBagItemQuantity = ({
 }) => {
   const bagService = useService(bagServiceFactory);
 
-  const { decreaseBagTotalQuantityIntoState } = useBagContext();
+  const { updateBagTotalQuantityIntoState } = useBagContext();
 
   const decreaseBagItemQuantity = async (bagId) => {
     try {
@@ -21,7 +21,7 @@ export const DecreaseBagItemQuantity = ({
 
       updateBagItemQuantity(bagId, -1);
 
-      decreaseBagTotalQuantityIntoState();
+      updateBagTotalQuantityIntoState(-1);
     } catch (err) {
       console.log(err.message);
     }

@@ -25,7 +25,7 @@ export const Form = ({toggleDisplayBagPopup}) => {
     updateSizeIsSelected,
   } = useJewelryItem();
 
-  const { increaseBagTotalQuantityIntoState } = useBagContext();
+  const { updateBagTotalQuantityIntoState } = useBagContext();
 
   const bagService = useService(bagServiceFactory);
 
@@ -41,7 +41,7 @@ export const Form = ({toggleDisplayBagPopup}) => {
 
     decreaseSizeQuantity(sizeId);
 
-    increaseBagTotalQuantityIntoState()
+    updateBagTotalQuantityIntoState(+1)
 
     // updateBagQuantity(BAG_ACTIONS.Add);
 
