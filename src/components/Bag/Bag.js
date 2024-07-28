@@ -66,20 +66,6 @@ export const Bag = () => {
 
 
 
-  // const decreaseBagItemTotalQuantityIntoState = (bagId) => {
-  //   setBagItems((state) =>
-  //     state.map((x) =>
-  //       x._id === bagId
-  //         ? {
-  //             ...x,
-  //             quantity: x.quantity - 1,
-  //             increaseQuantityDisabled: x.inventoryQuantity === x.quantity,
-  //             decreaseQuantityDisabled: x.quantity === 0,
-  //           }
-  //         : x
-  //     )
-  //   );
-  // };
 
   return (
     <ShoppingProcessContainer title={"My Bag"}>
@@ -89,12 +75,7 @@ export const Bag = () => {
             <BagList
               {...item}
               updateBagItemQuantity={updateBagItemQuantity}
-              // increaseBagItemTotalQuantityIntoState={
-              //   increaseBagItemTotalQuantityIntoState
-              // }
-              // decreaseBagItemTotalQuantityIntoState={
-              //   decreaseBagItemTotalQuantityIntoState
-              // }
+
             />
           </li>
         ))}
