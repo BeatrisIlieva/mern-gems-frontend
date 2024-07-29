@@ -1,11 +1,13 @@
 import { LONG_CARD_NUMBER_PATTERN } from "../../../../constants/cardNumber";
 import { CARD_HOLDER_NAME_PATTERN } from "../../../../constants/cardHolder";
 import { CVV_CODE_PATTERN } from "../../../../constants/cVVCode";
+import { EXPIRY_DATE_PATTERN } from "../../../../constants/expiryDate";
 
 const FORM_KEYS = {
   LongCardNumber: "longCardNumber",
   CardHolder: "cardHolder",
   CvvCode: "cvvCode",
+  ExpiryDate: "expiryDate",
 };
 
 export const INITIAL_FORM_VALUES = {
@@ -42,6 +44,18 @@ export const INITIAL_FORM_VALUES = {
     fieldType: "text",
     validTestData: "123",
     invalidTestData: "12T",
+    emptyTestData: "",
+  },
+
+  [FORM_KEYS.ExpiryDate]: {
+    fieldLabel: "Expiry Date In The Format MM/YY *",
+    fieldValue: "",
+    regexPattern: EXPIRY_DATE_PATTERN,
+    errorMessage: "",
+    isFocused: false,
+    fieldType: "text",
+    validTestData: "11/30",
+    invalidTestData: "11/20",
     emptyTestData: "",
   },
 };

@@ -9,6 +9,7 @@ import { APARTMENT_ERROR_MESSAGE } from "../constants/apartment";
 import { LONG_CARD_NUMBER_PATTERN_ERROR_MESSAGE } from "../constants/cardNumber";
 import { CVV_CODE_PATTERN_ERROR_MESSAGE } from "../constants/cVVCode";
 import { CARD_HOLDER_NAME_PATTERN_ERROR_MESSAGE } from "../constants/cardHolder";
+import { EXPIRY_DATE_PATTERN_ERROR_MESSAGE } from "../constants/expiryDate";
 
 export const ERROR_MESSAGES = {
   password: PASSWORD_ERROR_MESSAGE,
@@ -29,4 +30,5 @@ export const ERROR_MESSAGES = {
   longCardNumber: LONG_CARD_NUMBER_PATTERN_ERROR_MESSAGE,
   cvvCode: CVV_CODE_PATTERN_ERROR_MESSAGE,
   cardHolder: CARD_HOLDER_NAME_PATTERN_ERROR_MESSAGE,
+  expiryDate: EXPIRY_DATE_PATTERN_ERROR_MESSAGE,
 };
