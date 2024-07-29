@@ -67,6 +67,7 @@ router.post("/create/:jewelryId", async (req, res) => {
       });
     } else {
       newQuantity = Number(bagItem.quantity) + DEFAULT_ADD_QUANTITY;
+
       await Bag.findOneAndUpdate(
         {
           user: userId,
@@ -78,7 +79,7 @@ router.post("/create/:jewelryId", async (req, res) => {
 
       await Inventory.findOneAndUpdate(
         { jewelry: jewelryId, size: sizeId },
-        { $inc: { quantity: -1 } },
+        { $inc: { quantity: - DEFAULT_ADD_QUANTITY } },
         { new: true }
       );
     }
@@ -115,9 +116,13 @@ router.put("/increase/:bagId", async (req, res) => {
   const bagId = req.params.bagId;
 
   try {
-    const result = await bagManager.increase(bagId);
+    // const result = await bagManager.increase(bagId);
 
-    res.status(200).json({ result });
+    // res.status(200).json({ result });
+
+    await bagManager.increase(bagId);
+
+    res.status(204).json();
   } catch (err) {
     res.status(401).json({
       message: err.message,
