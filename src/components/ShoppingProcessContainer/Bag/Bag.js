@@ -16,7 +16,6 @@ export const Bag = () => {
           </li>
         ))}
       </ul>
-      <h1>Bag</h1>
     </ShoppingProcessContainer>
   );
 };
