@@ -1,15 +1,6 @@
-import { useEffect, useState } from "react";
-
 import { BagList } from "./BagList/BagList";
 
 import { ShoppingProcessContainer } from "../ShoppingProcessContainer/ShoppingProcessContainer";
-
-import { useService } from "../../hooks/useService";
-
-import { bagServiceFactory } from "../../services/bagService";
-
-import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
-
 
 import { useBagContext } from "../../contexts/BagContext";
 
