@@ -16,6 +16,8 @@ import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorH
 
 import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate";
 
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+
 import styles from "./PaymentInformation.module.css";
 
 export const PaymentInformation = () => {

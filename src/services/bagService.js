@@ -1,7 +1,7 @@
 import { requestFactory } from "./requester";
 import { HOST } from "../constants/host";
 
-const baseUrl = `${HOST}/bag`;
+const baseUrl = `${HOST}/bags`;
 
 export const bagServiceFactory = (token) => {
   const request = requestFactory(token);

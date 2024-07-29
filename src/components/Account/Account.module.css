@@ -14,7 +14,7 @@
 .right-container {
   border: 0.1px solid var(--pink);
   width: 50vw;
-  height: auto;
+  height: fit-content;
   padding: 30px;
   display: block;
 }
