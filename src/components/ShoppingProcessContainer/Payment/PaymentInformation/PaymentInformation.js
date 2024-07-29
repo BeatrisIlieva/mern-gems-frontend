@@ -10,11 +10,14 @@ import { checkIfCardHasExpired } from "./checkIfCardHasExpired";
 
 import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
+import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate";
+
 import styles from "./PaymentInformation.module.css";
 
 export const PaymentInformation = () => {
   const {
     values,
+    setValues,
     updateForm,
     clickHandler,
     blurHandler,
@@ -28,6 +31,18 @@ export const PaymentInformation = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     const cardHasExpired = checkIfCardHasExpired(values.expiryDate.fieldValue);
+
+    if (cardHasExpired) {
+      setValues((prevValues) => ({
+        ...prevValues,
+        [FORM_KEYS.ExpiryDate]: {
+          ...prevValues[FORM_KEYS.ExpiryDate],
+          errorMessage: CARD_HAS_EXPIRED_ERROR_MESSAGE,
+        },
+      }));
+
+      return;
+    }
 
     if (!errorOccurred && cardHasExpired) {
       const longCardNumber = values.longCardNumber.fieldValue;
