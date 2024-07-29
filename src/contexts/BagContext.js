@@ -68,8 +68,6 @@ export const BagProvider = ({ children }) => {
       .then((data) => {
         const modifiedData = data.map((item) => ({
           ...item,
-          // increaseQuantityDisabled: item.inventoryQuantity <= item.quantity,
-          // decreaseQuantityDisabled: item.quantity === 0,
           totalPrice: item.quantity * item.price,
         }));
 
@@ -88,9 +86,6 @@ export const BagProvider = ({ children }) => {
               ...item,
               quantity: item.quantity + delta,
               inventoryQuantity: item.inventoryQuantity - delta,
-              // increaseQuantityDisabled:
-              //   item.quantity + delta >= item.inventoryQuantity,
-              // decreaseQuantityDisabled: item.quantity + delta <= 0,
             }
           : item
       );
