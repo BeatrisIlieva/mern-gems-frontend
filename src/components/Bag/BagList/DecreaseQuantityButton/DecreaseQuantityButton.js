@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { useService } from "../../../../hooks/useService";
 import { bagServiceFactory } from "../../../../services/bagService";
 
