@@ -1,17 +1,6 @@
-import { useState, useEffect } from "react";
-
-import { useService } from "../../../hooks/useService";
-import { bagServiceFactory } from "../../../services/bagService";
-
 import { JewelryCard } from "../../JewelryCard/JewelryCard";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { SpanTitle } from "../../SpanTitle/SpanTitle";
-import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
-
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faMinus } from "@fortawesome/free-solid-svg-icons";
-
-import { UpdateQuantityButton } from "./UpdateQuantityButton/UpdateQuantityButton";
 
 import { IncreaseQuantityButton } from "./IncreaseQuantityButton/IncreaseQuantityButton";
 import { DecreaseQuantityButton } from "./DecreaseQuantityButton/DecreaseQuantityButton";
