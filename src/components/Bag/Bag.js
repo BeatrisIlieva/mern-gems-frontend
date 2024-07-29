@@ -8,7 +8,7 @@ export const Bag = () => {
   const { bagItems } = useBagContext();
 
   return (
-    <ShoppingProcessContainer title={"My Bag"}>
+    <ShoppingProcessContainer title={"My Bag"} path={"/checkout"}>
       <ul role="list">
         {bagItems.map((item) => (
           <li key={item._id}>

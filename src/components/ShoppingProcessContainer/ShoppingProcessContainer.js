@@ -1,5 +1,7 @@
 import { Children } from "react";
 
+import { Link } from "react-router-dom";
+
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { MediumTitle } from "../MediumTitle/MediumTitle";
@@ -14,7 +16,7 @@ import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 
 import styles from "./ShoppingProcessContainer.module.css";
 
-export const ShoppingProcessContainer = ({ children, title }) => {
+export const ShoppingProcessContainer = ({ children, title, path }) => {
   const { bagTotalQuantityIntoState, totalPrice } = useBagContext();
 
   const childrenArray = Children.toArray(children);
@@ -51,12 +53,14 @@ export const ShoppingProcessContainer = ({ children, title }) => {
             <SpanTitle title={"Shipping"} />
             <SpanTitle title={"Complimentary"} />
           </div>
-          <HorizontalLine variant={"large"}/>
+          <HorizontalLine variant={"large"} />
           <div className={styles["right-sub-container"]}>
             <SmallTitle title={"Total"} />
             <SmallTitle title={`$ ${totalPrice}`} />
           </div>
-          <PinkButton title={"Continue Checkout"} />
+          <Link to={path} className={styles["no-decoration"]}>
+            <PinkButton title={"Continue Checkout"} />
+          </Link>
         </div>
       </div>
     </section>

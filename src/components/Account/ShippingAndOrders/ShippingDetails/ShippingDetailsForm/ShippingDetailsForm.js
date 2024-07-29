@@ -18,7 +18,7 @@ import styles from "./ShippingDetailsForm.module.css";
 
 const ButtonTitle = "Save";
 
-export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
+export const ShippingDetailsForm = () => {
   const userService = useService(userServiceFactory);
 
   const { userId } = useAuthenticationContext();
@@ -81,7 +81,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
         //   INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
         // });
 
-        toggleDisplayShippingDetailsPopup();
+        // toggleDisplayShippingDetailsPopup();
 
         updateForm();
       } catch (err) {

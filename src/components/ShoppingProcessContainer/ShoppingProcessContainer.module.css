@@ -35,7 +35,7 @@
 
 .child {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
-  rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
+    rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
   padding: 30px 30px 0px 30px;
 }
 
@@ -45,7 +45,7 @@
   position: sticky;
   top: 200px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
-  rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
+    rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -55,4 +55,8 @@
 .right-sub-container {
   display: flex;
   justify-content: space-between;
+}
+
+.no-decoration {
+  text-decoration: none;
 }
