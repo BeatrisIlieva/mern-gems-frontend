@@ -4,6 +4,8 @@ import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred"
 import { FORM_KEYS } from "../initialFormValues";
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 
+import { useLocation, useNavigate } from "react-router-dom";
+
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
 import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
@@ -16,14 +18,19 @@ import { userServiceFactory } from "../../../../../services/userService";
 
 import styles from "./ShippingDetailsForm.module.css";
 
-const ButtonTitle = "Save";
 
-export const ShippingDetailsForm = () => {
+export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const userService = useService(userServiceFactory);
 
   const { userId } = useAuthenticationContext();
 
   const [userInformation, setUserInformation] = useState([]);
+
+  const location = useLocation();
+
+  const navigate = useNavigate();
+
+  const ButtonTitle =  location.pathname === "/checkout" ? "Continue Checkout" : "Save";
 
   const {
     values,
@@ -77,13 +84,13 @@ export const ShippingDetailsForm = () => {
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        // Object.keys(FORM_KEYS).forEach((key) => {
-        //   INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
-        // });
+        if (location.pathname === "/checkout") {
+          navigate("/payment");
+        } else {
+          toggleDisplayShippingDetailsPopup();
 
-        // toggleDisplayShippingDetailsPopup();
-
-        updateForm();
+          updateForm();
+        }
       } catch (err) {
         console.log(err.message);
       }

@@ -16,6 +16,7 @@ import { JewelryItem } from "./components/JewelryItem/JewelryItem";
 import { Account } from "./components/Account/Account";
 import { Bag } from "./components/Bag/Bag";
 import { Checkout } from "./components/Checkout/Checkout";
+import { Payment } from "./components/Payment/Payment";
 
 import "normalize.css";
 import styles from "./App.css";
@@ -105,6 +106,14 @@ function App() {
             element={
               <RouteGuard>
                 <Checkout />
+              </RouteGuard>
+            }
+          />
+          <Route
+            path="/payment"
+            element={
+              <RouteGuard>
+                <Payment />
               </RouteGuard>
             }
           />

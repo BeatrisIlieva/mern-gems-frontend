@@ -3,11 +3,9 @@ import { ShoppingProcessContainer } from "../ShoppingProcessContainer/ShoppingPr
 import { ShippingDetailsForm } from "../Account/ShippingAndOrders/ShippingDetails/ShippingDetailsForm/ShippingDetailsForm";
 
 export const Checkout = () => {
-  
-    return (
-      <ShoppingProcessContainer title={"Checkout"}>
-        
-        <ShippingDetailsForm/>
-      </ShoppingProcessContainer>
-    );
-  };
+  return (
+    <ShoppingProcessContainer title={"Checkout"}>
+      <ShippingDetailsForm />
+    </ShoppingProcessContainer>
+  );
+};

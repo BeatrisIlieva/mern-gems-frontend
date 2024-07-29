@@ -1,6 +1,6 @@
 import { Children } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
@@ -14,12 +14,18 @@ import { useBagContext } from "../../contexts/BagContext";
 
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 
+import { JewelryCard } from "../JewelryCard/JewelryCard";
+
 import styles from "./ShoppingProcessContainer.module.css";
 
 export const ShoppingProcessContainer = ({ children, title, path }) => {
   const { bagTotalQuantityIntoState, totalPrice } = useBagContext();
 
   const childrenArray = Children.toArray(children);
+
+  const location = useLocation();
+
+  const { bagItems } = useBagContext();
 
   return (
     <section className={styles["shopping-bag-process-container"]}>
@@ -43,7 +49,14 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
             </div>
           ))}
         </div>
-        <div className={styles["right"]}>
+        <div
+          className={
+            location.pathname === "/users/shopping-bag"
+              ? styles["right"]
+              : styles["right-large"]
+          }
+        >
+          {/* <div className={styles["right"]}> */}
           <MediumTitle title={"Order Summary"} />
           <div className={styles["right-sub-container"]}>
             <SmallTitle title={"Subtotal"} />
@@ -58,9 +71,23 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
             <SmallTitle title={"Total"} />
             <SmallTitle title={`$ ${totalPrice}`} />
           </div>
-          <Link to={path} className={styles["no-decoration"]}>
-            <PinkButton title={"Continue Checkout"} />
-          </Link>
+          {location.pathname === "/users/shopping-bag" ? (
+            <div className={styles["button-container"]}>
+              <Link to={path} className={styles["no-decoration"]}>
+                <PinkButton title={"Continue Checkout"} />
+              </Link>
+            </div>
+          ) : (
+            <div className={styles["items-container"]}>
+              <ul role="list">
+                {bagItems.map((item) => (
+                  <li key={item._id}>
+                    <JewelryCard {...item} variant={"shopping-process-container"}/>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </section>
