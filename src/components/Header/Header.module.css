@@ -46,7 +46,7 @@
   align-items: flex-end;
   justify-content: space-between;
   background-color: var(--white);
-  padding-bottom: 13px;
+  padding-bottom: 6px;
   margin: 0px 80px;
 }
 
@@ -64,9 +64,9 @@
 }
 
 .logo-image {
-  height: 160px;
-  margin-left: 114px;
-  margin-top: 4px;
+  height: 150px;
+  margin-left: 112px;
+  margin-top: 3px;
 }
 
 .icon-list {
