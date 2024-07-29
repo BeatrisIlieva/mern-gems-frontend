@@ -1,4 +1,8 @@
 import { useForm } from "../../../../hooks/useForm";
+import { useService } from "../../../../hooks/useService";
+import { paymentServiceFactory } from "../../../../services/paymentService";
+
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
@@ -15,6 +19,8 @@ import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate
 import styles from "./PaymentInformation.module.css";
 
 export const PaymentInformation = () => {
+  const { userId } = useAuthenticationContext();
+  const paymentService = useService(paymentServiceFactory);
   const {
     values,
     setValues,
@@ -57,21 +63,15 @@ export const PaymentInformation = () => {
         expiryDate,
       };
 
-      //   try {
-      //     await userService.updateShippingDetails(userId, data);
+      try {
+        await paymentService.confirm(userId, data);
 
-      //     clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-      //     if (location.pathname === "/checkout") {
-      //       navigate("/payment");
-      //     } else {
-      //       toggleDisplayShippingDetailsPopup();
-
-      //       updateForm();
-      //     }
-      //   } catch (err) {
-      //     console.log(err.message);
-      //   }
+        updateForm();
+      } catch (err) {
+        console.log(err.message);
+      }
     }
   };
 
