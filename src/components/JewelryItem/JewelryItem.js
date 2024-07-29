@@ -11,7 +11,7 @@ import { useJewelryItem } from "../../hooks/useJewelryItem";
 
 import { EARRING_ID } from "../../constants/earringId";
 
-import { Bag } from "../Bag/Bag";
+import { Bag } from "../ShoppingProcessContainer/Bag/Bag";
 
 import styles from "./JewelryItem.module.css";
 

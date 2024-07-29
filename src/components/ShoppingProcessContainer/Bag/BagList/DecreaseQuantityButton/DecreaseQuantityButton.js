@@ -1,9 +1,9 @@
-import { useService } from "../../../../hooks/useService";
-import { bagServiceFactory } from "../../../../services/bagService";
+import { useService } from "../../../../../hooks/useService";
+import { bagServiceFactory } from "../../../../../services/bagService";
 
-import { useBagContext } from "../../../../contexts/BagContext";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
-import { Icon } from "../../../Icon/Icon";
+import { Icon } from "../../../../Icon/Icon";
 
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 

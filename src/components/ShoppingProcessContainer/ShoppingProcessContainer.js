@@ -10,11 +10,11 @@ import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import { PinkButton } from "../PinkButton/PinkButton";
 
+import { BagList } from "./Bag/BagList/BagList";
+
 import { useBagContext } from "../../contexts/BagContext";
 
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
-
-import { JewelryCard } from "../JewelryCard/JewelryCard";
 
 import styles from "./ShoppingProcessContainer.module.css";
 
@@ -24,6 +24,8 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
   const childrenArray = Children.toArray(children);
 
   const location = useLocation();
+
+  const locationIsShoppingBag = location.pathname === "/users/shopping-bag";
 
   const { bagItems } = useBagContext();
 
@@ -49,14 +51,7 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
             </div>
           ))}
         </div>
-        <div
-          className={
-            location.pathname === "/users/shopping-bag"
-              ? styles["right"]
-              : styles["right-large"]
-          }
-        >
-          {/* <div className={styles["right"]}> */}
+        <div className={styles["right"]}>
           <MediumTitle title={"Order Summary"} />
           <div className={styles["right-sub-container"]}>
             <SmallTitle title={"Subtotal"} />
@@ -67,11 +62,11 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
             <SpanTitle title={"Complimentary"} />
           </div>
           <HorizontalLine variant={"large"} />
-          <div className={styles["right-sub-container"]}>
+          <div className={styles["right-bottom-sub-container"]}>
             <SmallTitle title={"Total"} />
             <SmallTitle title={`$ ${totalPrice}`} />
           </div>
-          {location.pathname === "/users/shopping-bag" ? (
+          {locationIsShoppingBag ? (
             <div className={styles["button-container"]}>
               <Link to={path} className={styles["no-decoration"]}>
                 <PinkButton title={"Continue Checkout"} />
@@ -82,7 +77,7 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
               <ul role="list">
                 {bagItems.map((item) => (
                   <li key={item._id}>
-                    <JewelryCard {...item} variant={"shopping-process-container"}/>
+                    <BagList {...item} />
                   </li>
                 ))}
               </ul>

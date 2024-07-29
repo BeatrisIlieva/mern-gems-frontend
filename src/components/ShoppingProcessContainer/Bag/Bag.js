@@ -1,8 +1,8 @@
 import { BagList } from "./BagList/BagList";
 
-import { ShoppingProcessContainer } from "../ShoppingProcessContainer/ShoppingProcessContainer";
+import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
 
-import { useBagContext } from "../../contexts/BagContext";
+import { useBagContext } from "../../../contexts/BagContext";
 
 export const Bag = () => {
   const { bagItems } = useBagContext();

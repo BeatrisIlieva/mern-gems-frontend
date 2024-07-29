@@ -14,9 +14,9 @@ import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
 import { JewelryItem } from "./components/JewelryItem/JewelryItem";
 import { Account } from "./components/Account/Account";
-import { Bag } from "./components/Bag/Bag";
-import { Checkout } from "./components/Checkout/Checkout";
-import { Payment } from "./components/Payment/Payment";
+import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
+import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
+import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
 
 import "normalize.css";
 import styles from "./App.css";

@@ -40,9 +40,10 @@
 }
 
 .right {
+  position: sticky;
   width: 40%;
   height: 300px;
-  position: sticky;
+  height:fit-content;
   top: 200px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
     rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
@@ -52,22 +53,13 @@
   gap: 10px;
 }
 
-.right-large {
-  width: 40%;
-  height: 600px;
-  position: sticky;
-  top: 200px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
-    rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.right-sub-container {
+.right-sub-container, .right-bottom-sub-container {
   display: flex;
   justify-content: space-between;
+}
+
+.right-bottom-sub-container {
+  margin-bottom: 30px;
 }
 
 .no-decoration {

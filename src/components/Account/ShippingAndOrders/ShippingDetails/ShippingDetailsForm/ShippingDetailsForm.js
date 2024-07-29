@@ -18,6 +18,7 @@ import { userServiceFactory } from "../../../../../services/userService";
 
 import styles from "./ShippingDetailsForm.module.css";
 
+import { MediumTitle } from "../../../../MediumTitle/MediumTitle";
 
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const userService = useService(userServiceFactory);
@@ -30,7 +31,8 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
 
   const navigate = useNavigate();
 
-  const ButtonTitle =  location.pathname === "/checkout" ? "Continue Checkout" : "Save";
+  const ButtonTitle =
+    location.pathname === "/checkout" ? "Continue Checkout" : "Save";
 
   const {
     values,
@@ -98,17 +100,22 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit} className={styles[["form"]]}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        userInformation={userInformation}
-        buttonTitle={ButtonTitle}
-      />
-    </form>
+    <section className={styles["shipping-details"]}>
+      <div className={styles["top-container"]}>
+        <MediumTitle title={"Shipping Details"} />
+      </div>
+      <form method="POST" onSubmit={onSubmit} className={styles[["form"]]}>
+        <DynamicForm
+          values={values}
+          formKeys={FORM_KEYS}
+          clickHandler={clickHandler}
+          blurHandler={blurHandler}
+          changeHandler={changeHandler}
+          initialFormValues={INITIAL_FORM_VALUES}
+          userInformation={userInformation}
+          buttonTitle={ButtonTitle}
+        />
+      </form>
+    </section>
   );
 };
