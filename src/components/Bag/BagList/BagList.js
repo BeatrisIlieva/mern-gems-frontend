@@ -1,6 +1,6 @@
 import { JewelryCard } from "../../JewelryCard/JewelryCard";
-import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { SpanTitle } from "../../SpanTitle/SpanTitle";
+import { MediumTitle } from "../../MediumTitle/MediumTitle";
 
 import { IncreaseQuantityButton } from "./IncreaseQuantityButton/IncreaseQuantityButton";
 import { DecreaseQuantityButton } from "./DecreaseQuantityButton/DecreaseQuantityButton";
@@ -31,18 +31,18 @@ export const BagList = ({
       />
       <div className={styles["middle-container"]}>
         <div className={styles["left"]}>
-          <SmallTitle title={jewelryTitle} />
-          <SpanTitle title={size} />
+          <MediumTitle title={jewelryTitle} />
+          <SpanTitle title={`Size: ${size}`} />
         </div>
         <div className={styles["right"]}>
-          <SmallTitle title={totalPrice} />
+          <MediumTitle title={`$ ${totalPrice}`} />
           <div className={styles["button-wrapper"]}>
             <IncreaseQuantityButton
               bagId={_id}
               quantity={quantity}
               inventoryQuantity={inventoryQuantity}
             />
-            <span>{quantity}</span>
+            <span className={styles["quantity"]}>{quantity}</span>
             <DecreaseQuantityButton bagId={_id} />
           </div>
         </div>

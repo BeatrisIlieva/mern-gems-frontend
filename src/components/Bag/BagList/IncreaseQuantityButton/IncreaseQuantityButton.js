@@ -5,8 +5,6 @@ import { bagServiceFactory } from "../../../../services/bagService";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { Icon } from "../../../Icon/Icon";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
