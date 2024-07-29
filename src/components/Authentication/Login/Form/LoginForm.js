@@ -7,7 +7,7 @@ import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
 import { useForm } from "../../../../hooks/useForm";
 
-import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
 import { INVALID_CREDENTIALS_ERROR_MESSAGE } from "../../../../constants/email";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
@@ -45,7 +45,7 @@ export const LoginForm = () => {
 
     updateForm();
 
-    const errorOccurred = hasFormErrorOccurred(values);
+    const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
       const email = values.email.fieldValue;

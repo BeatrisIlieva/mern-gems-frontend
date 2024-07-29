@@ -1,5 +1,4 @@
-export const isCardExpired = (expirationDate) => {
-    console.log(expirationDate)
+export const checkIfCardHasExpired = (expirationDate) => {
   const [month, year] = expirationDate
     .split("/")
     .map((val) => parseInt(val, 10));

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useForm } from "../../../../../hooks/useForm";
-import { hasFormErrorOccurred } from "../../../../../utils/hasFormErrorOccurred";
+import { checkIfFormErrorHasOccurred } from "../../../../../utils/checkIfFormErrorHasOccurred";
 import { FORM_KEYS } from "../initialFormValues";
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 
@@ -58,7 +58,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const onSubmit = async (e) => {
     submitHandler(e);
 
-    const errorOccurred = hasFormErrorOccurred(values);
+    const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
       const firstName = values.firstName.fieldValue;

@@ -8,7 +8,7 @@ import { useForm } from "../../../../hooks/useForm";
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
-import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred"; 
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
@@ -51,7 +51,7 @@ export const UpdateEmailForm = () => {
   const onSubmit = async (e) => {
     submitHandler(e);
 
-    const errorOccurred = hasFormErrorOccurred(values);
+    const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
       const email = values.email.fieldValue;

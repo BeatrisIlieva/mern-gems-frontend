@@ -5,7 +5,7 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 
 import { useForm } from "../../../../hooks/useForm";
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
-import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred";
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } from "../../../../constants/email";
@@ -43,7 +43,7 @@ export const RegisterForm = () => {
     setValues(updatedValues);
     updateForm();
 
-    const errorOccurred = hasFormErrorOccurred(updatedValues);
+    const errorOccurred = checkIfFormErrorHasOccurred(updatedValues);
 
     if (!errorOccurred) {
       const email = values.email.fieldValue;

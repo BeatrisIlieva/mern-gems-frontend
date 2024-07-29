@@ -8,7 +8,7 @@ import { useForm } from "../../../../hooks/useForm";
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
-import { hasFormErrorOccurred } from "../../../../utils/hasFormErrorOccurred"; 
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred"; 
 
 import { getPasswordMismatchErrorMessage } from "../../../../utils/getPasswordMismatchErrorMessage";
 
@@ -74,7 +74,7 @@ export const UpdatePasswordForm = () => {
     setValues(updatedValues);
     updateForm();
 
-    const errorOccurred = hasFormErrorOccurred(values);
+    const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
       const password = values.password.fieldValue;

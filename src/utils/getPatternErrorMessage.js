@@ -5,7 +5,6 @@ const isValid = (value, pattern) => {
 };
 
 export const getPatternErrorMessage = (field, value, pattern) => {
-  console.log("here", field, value, pattern)
   if (!isValid(value, pattern)) {
     return ERROR_MESSAGES[field];
   } else {

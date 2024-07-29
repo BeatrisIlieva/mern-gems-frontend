@@ -6,6 +6,9 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import { MediumTitle } from "../../../MediumTitle/MediumTitle";
 
+import { checkIfCardHasExpired } from "./checkIfCardHasExpired";
+
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
 import styles from "./PaymentInformation.module.css";
 
@@ -19,9 +22,43 @@ export const PaymentInformation = () => {
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
 
-  let onSubmit;
+  const onSubmit = async (e) => {
+    submitHandler(e);
 
-  let userInformation;
+    const errorOccurred = checkIfFormErrorHasOccurred(values);
+
+    const cardHasExpired = checkIfCardHasExpired(values.expiryDate.fieldValue);
+
+    if (!errorOccurred && cardHasExpired) {
+      const longCardNumber = values.longCardNumber.fieldValue;
+      const cardHolder = values.cardHolder.fieldValue;
+      const cvvCode = values.cvvCode.fieldValue;
+      const expiryDate = values.expiryDate.fieldValue;
+
+      const data = {
+        longCardNumber,
+        cardHolder,
+        cvvCode,
+        expiryDate,
+      };
+
+      //   try {
+      //     await userService.updateShippingDetails(userId, data);
+
+      //     clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+
+      //     if (location.pathname === "/checkout") {
+      //       navigate("/payment");
+      //     } else {
+      //       toggleDisplayShippingDetailsPopup();
+
+      //       updateForm();
+      //     }
+      //   } catch (err) {
+      //     console.log(err.message);
+      //   }
+    }
+  };
 
   const ButtonTitle = "Place Order Total Price";
 
@@ -36,7 +73,6 @@ export const PaymentInformation = () => {
           blurHandler={blurHandler}
           changeHandler={changeHandler}
           initialFormValues={INITIAL_FORM_VALUES}
-          userInformation={userInformation}
           buttonTitle={ButtonTitle}
         />
       </form>
