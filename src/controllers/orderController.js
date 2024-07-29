@@ -10,7 +10,7 @@ router.get("/confirm/:userId", async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const order = await orderManager.getOne(userId);
+    const result = await orderManager.getOne(userId);
 
     await Bag.deleteMany({ user: userId });
 
@@ -26,7 +26,7 @@ router.get("/confirm/:userId", async (req, res) => {
 
     // sendOrderConfirmationEmail(email, firstName);
 
-    res.status(200).json(order);
+    res.status(200).json(result);
   } catch (err) {
     console.log(err);
     res.status(401).json({
