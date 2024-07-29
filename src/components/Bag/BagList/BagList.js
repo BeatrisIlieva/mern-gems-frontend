@@ -13,6 +13,9 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 import { UpdateQuantityButton } from "./UpdateQuantityButton/UpdateQuantityButton";
 
+import { IncreaseQuantityButton } from "./IncreaseQuantityButton/IncreaseQuantityButton";
+import { DecreaseQuantityButton } from "./DecreaseQuantityButton/DecreaseQuantityButton";
+
 import styles from "./BagList.module.css";
 
 export const BagList = ({
@@ -23,12 +26,9 @@ export const BagList = ({
   isSoldOut,
   jewelryId,
   totalPrice,
-  maxQuantity,
   quantity,
   size,
-  increaseQuantityDisabled,
-  decreaseQuantityDisabled,
-  updateBagItemQuantityIntoState,
+  inventoryQuantity,
 }) => {
   return (
     <section className={styles["bag-list"]}>
@@ -48,21 +48,13 @@ export const BagList = ({
         <div className={styles["right"]}>
           <SmallTitle title={totalPrice} />
           <div className={styles["button-wrapper"]}>
-            <UpdateQuantityButton
+            <IncreaseQuantityButton
               bagId={_id}
-              buttonDisabled={increaseQuantityDisabled}
-              updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
-              delta={1}
-              icon={faPlus}
+              quantity={quantity}
+              inventoryQuantity={inventoryQuantity}
             />
             <span>{quantity}</span>
-            <UpdateQuantityButton
-              bagId={_id}
-              buttonDisabled={decreaseQuantityDisabled}
-              updateBagItemQuantityIntoState={updateBagItemQuantityIntoState}
-              delta={-1}
-              icon={faMinus}
-            />
+            <DecreaseQuantityButton bagId={_id} />
           </div>
         </div>
       </div>

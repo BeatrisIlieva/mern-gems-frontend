@@ -10,7 +10,7 @@ import { useBagContext } from "../../contexts/BagContext";
 import styles from "./ShoppingProcessContainer.module.css";
 
 export const ShoppingProcessContainer = ({ children, title }) => {
-  const { bagTotalQuantityIntoState } = useBagContext();
+  const { bagTotalQuantityIntoState, totalPrice } = useBagContext();
 
   const childrenArray = Children.toArray(children);
 
@@ -36,7 +36,10 @@ export const ShoppingProcessContainer = ({ children, title }) => {
             </div>
           ))}
         </div>
-        <div className={styles["right"]}>Order Summary</div>
+        <div className={styles["right"]}>
+          <h2>Order Summary</h2>
+          {totalPrice}
+          </div>
       </div>
     </section>
   );

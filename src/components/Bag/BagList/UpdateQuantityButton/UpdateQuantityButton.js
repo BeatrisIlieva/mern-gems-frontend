@@ -10,16 +10,15 @@ import { Icon } from "../../../Icon/Icon";
 import styles from "./UpdateQuantityButton.module.css";
 
 export const UpdateQuantityButton = ({
-  title,
   icon,
   bagId,
   buttonDisabled,
-  updateBagItemQuantityIntoState,
   delta,
 }) => {
   const bagService = useService(bagServiceFactory);
 
-  const { updateBagTotalQuantityIntoState } = useBagContext();
+  const { updateBagTotalQuantityIntoState, updateBagItemQuantityIntoState } =
+    useBagContext();
 
   const updateBagItemQuantity = async (bagId, delta) => {
     try {
@@ -37,18 +36,16 @@ export const UpdateQuantityButton = ({
     }
   };
   return (
-    <FontAwesomeIcon
-      onClick={() => updateBagItemQuantity(bagId, delta)}
-      icon={icon}
-      className={
-        buttonDisabled === true
-          ? `${styles["disabled"]}`
-          : `${styles["enabled"]}`
-      }
-    />
+    <button className={styles["button"]} disabled={buttonDisabled}>
+      <FontAwesomeIcon
+        onClick={() => updateBagItemQuantity(bagId, delta)}
+        icon={icon}
+        className={
+          buttonDisabled === true
+            ? `${styles["disabled"]}`
+            : `${styles["enabled"]}`
+        }
+      />
+    </button>
   );
 };
-
-{
-  /* <Icon icon={icon} variant={buttonDisabled === true ? "disabled" : "header"} /> */
-}

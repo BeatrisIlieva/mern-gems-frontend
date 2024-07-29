@@ -4,6 +4,7 @@
   overflow: hidden;
   outline: none;
   padding: 0px;
+  background: none;
 }
 
 .enabled {
@@ -12,6 +13,7 @@
 
 .disabled {
   color: var(--light-gray);
+  cursor: not-allowed;
 }
 
 
