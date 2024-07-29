@@ -3,13 +3,9 @@ import { bagServiceFactory } from "../../../../services/bagService";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { Icon } from "../../../Icon/Icon";
 
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
-
-import styles from "./DecreaseQuantityButton.module.css";
 
 export const DecreaseQuantityButton = ({ bagId }) => {
   const bagService = useService(bagServiceFactory);
@@ -30,10 +26,10 @@ export const DecreaseQuantityButton = ({ bagId }) => {
   };
 
   return (
-    <FontAwesomeIcon
-      onClick={updateBagItemQuantity}
+    <Icon
+      callBackFunction={updateBagItemQuantity}
       icon={faMinus}
-      className={styles["enabled"]}
+      variant={"icon"}
     />
   );
 };

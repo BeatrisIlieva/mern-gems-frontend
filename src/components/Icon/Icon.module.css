@@ -1,6 +1,6 @@
 .icon,
 .add-address-book,
-.header, .disabled {
+.header{
   color: var(--pink);
   height: var(--medium);
 }
@@ -20,3 +20,8 @@
   padding-right: 4px;
 }
 
+.disabled {
+  height: var(--medium);
+  color: var(--light-gray);
+  cursor: not-allowed;
+}

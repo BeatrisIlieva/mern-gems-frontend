@@ -44,14 +44,10 @@ export const IncreaseQuantityButton = ({
 
   return (
     <button disabled={buttonDisabled} className={styles["button"]}>
-      <FontAwesomeIcon
-        onClick={updateBagItemQuantity}
+      <Icon
+        callBackFunction={updateBagItemQuantity}
         icon={faPlus}
-        className={
-          buttonDisabled === true
-            ? `${styles["disabled"]}`
-            : `${styles["enabled"]}`
-        }
+        variant={buttonDisabled === true ? "disabled" : "icon"}
       />
     </button>
   );
