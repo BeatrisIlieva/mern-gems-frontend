@@ -6,7 +6,6 @@ import styles from "./Home.module.css";
 
 export const Home = () => {
   return (
-    <>
       <section className={styles["hero"]}>
         {collectionItems.map((item, index) => (
           <div key={item.imageUrl}>
@@ -23,6 +22,5 @@ export const Home = () => {
           </div>
         ))}
       </section>
-    </>
   );
 };

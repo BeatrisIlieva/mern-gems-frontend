@@ -61,14 +61,14 @@ export const OrderConfirmation = ({ toggleDisplayOrderConfirmationPopup }) => {
   const readableDate = convertToReadableDate(order.createdAt);
 
   const closePopup = () => {
-    toggleDisplayOrderConfirmationPopup()
-navigate("/users/shopping-bag")
-  }
+    toggleDisplayOrderConfirmationPopup();
+    navigate("/");
+  };
 
   return (
     <Popup
       isVisible={true}
-      variant={"order"}
+      variant={"order-confirmation"}
       popupCloseHandler={closePopup}
     >
       <section className={styles["order-confirmation"]}>

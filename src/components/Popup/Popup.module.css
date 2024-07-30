@@ -20,7 +20,7 @@
 .authentication,
 .delete-account,
 .search,
-.order {
+.order-confirmation {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -59,9 +59,9 @@
   width: 50vw;
   height: 80vh;
 }
-.order {
-  width: 90vw;
-  height: 90vh;
+.order-confirmation {
+  width: 34vw;
+  height: fit-content;
 }
 .icon {
   position: absolute;
