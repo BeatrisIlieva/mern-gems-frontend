@@ -1,6 +1,6 @@
-const { generateToken } = require("../lib/generateToken");
-
 const bcrypt = require("bcrypt");
+
+const { generateToken } = require("../lib/generateToken");
 
 const UserLoginDetails = require("../models/UserLoginDetails");
 const UserShippingDetails = require("../models/UserShippingDetails");

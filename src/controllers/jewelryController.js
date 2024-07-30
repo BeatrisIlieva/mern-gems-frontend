@@ -1,4 +1,5 @@
 const router = require("express").Router();
+
 const jewelryManager = require("../managers/jewelryManager");
 
 router.get("/:jewelryId", async (req, res) => {

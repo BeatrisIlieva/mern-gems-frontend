@@ -1,7 +1,5 @@
 const router = require("express").Router();
 
-const Inventory = require("../models/Inventory");
-
 const bagManager = require("../managers/bagManager");
 
 const {
@@ -9,8 +7,6 @@ const {
   NOT_SELECTED_SIZE_ERROR_MESSAGE,
   SOLD_OUT_JEWELRY_ERROR_MESSAGE,
 } = require("../constants/bag");
-
-
 
 router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
@@ -36,28 +32,23 @@ router.post("/create/:jewelryId", async (req, res) => {
   const jewelryId = Number(req.params.jewelryId);
 
   try {
-    let bagItem;
-    let sizeId;
-
-    const isAvailable = await Inventory.findOne({
-      jewelry: jewelryId,
-      size: Number(size),
-      quantity: { $gt: 0 },
-    });
-
     if (!size) {
       throw new Error(NOT_SELECTED_SIZE_ERROR_MESSAGE);
-    } else if (!isAvailable) {
-      throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
-    } else {
-      sizeId = Number(size);
-
-      bagItem = await bagManager.getOne({
-        userId,
-        jewelryId,
-        sizeId,
-      });
     }
+
+    const isAvailable = await bagManager.checkAvailability(jewelryId, size);
+
+    if (!isAvailable) {
+      throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
+    }
+
+    const sizeId = Number(size);
+
+    const bagItem = await bagManager.getOne({
+      userId,
+      jewelryId,
+      sizeId,
+    });
 
     if (!bagItem) {
       await bagManager.create({

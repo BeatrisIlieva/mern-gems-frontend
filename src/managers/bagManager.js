@@ -1,6 +1,7 @@
 const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
+
 const { updateBagQuantity } = require("../utils/updateBagQuantity");
 
 const { DEFAULT_ADD_QUANTITY } = require("../constants/bag");
@@ -43,6 +44,16 @@ exports.increase = async (bagId) => {
   const updatedQuantity = bagQuantity + DEFAULT_ADD_QUANTITY;
 
   await updateBagQuantity(bagId, updatedQuantity);
+};
+
+exports.checkAvailability = async (jewelryId, size) => {
+  const result = await Inventory.findOne({
+    jewelry: jewelryId,
+    size: Number(size),
+    quantity: { $gt: 0 },
+  });
+
+  return result;
 };
 
 exports.getOne = async ({ userId, jewelryId, sizeId }) => {
