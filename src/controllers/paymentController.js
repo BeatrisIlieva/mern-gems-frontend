@@ -1,16 +1,12 @@
 const router = require("express").Router();
+
 const paymentManager = require("../managers/paymentManager");
 const orderManager = require("../managers/orderManager");
 
 router.post("/:userId", async (req, res) => {
   const userId = req.params.userId;
 
-  const {
-    longCardNumber,
-    cardHolder,
-    cvvCode,
-    expiryDate
-  } = { ...req.body };
+  const { longCardNumber, cardHolder, cvvCode, expiryDate } = { ...req.body };
 
   try {
     await paymentManager.verifyCardDetails(

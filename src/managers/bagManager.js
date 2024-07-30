@@ -1,21 +1,9 @@
 const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
+const { updateBagQuantity } = require("../utils/updateBagQuantity");
 
-const {
-  DEFAULT_ADD_QUANTITY,
-  DEFAULT_MIN_QUANTITY,
-} = require("../constants/bag");
-
-exports.getOne = async ({ userId, jewelryId, sizeId }) => {
-  const bagItem = await Bag.findOne({
-    user: userId,
-    jewelry: jewelryId,
-    size: sizeId,
-  });
-
-  return bagItem;
-};
+const { DEFAULT_ADD_QUANTITY } = require("../constants/bag");
 
 exports.create = async ({
   userId,
@@ -38,72 +26,33 @@ exports.create = async ({
 };
 
 exports.decrease = async (bagId) => {
-  let bagItem = await Bag.findById(bagId);
+  const bagItem = await Bag.findById(bagId);
 
   const bagQuantity = bagItem.quantity;
 
   const updatedQuantity = bagQuantity - DEFAULT_ADD_QUANTITY;
 
-  await update(bagId, updatedQuantity);
+  await updateBagQuantity(bagId, updatedQuantity);
 };
 
 exports.increase = async (bagId) => {
-  let bagItem = await Bag.findById(bagId);
+  const bagItem = await Bag.findById(bagId);
 
   const bagQuantity = bagItem.quantity;
 
   const updatedQuantity = bagQuantity + DEFAULT_ADD_QUANTITY;
 
-  await update(bagId, updatedQuantity);
+  await updateBagQuantity(bagId, updatedQuantity);
 };
 
-const update = async (bagItemId, updatedQuantity) => {
-  const bagItem = await Bag.findById(bagItemId);
-
-  const sizeId = Number(bagItem.size);
-
-  const alreadyAddedQuantity = bagItem.quantity;
-
-  const jewelryId = Number(bagItem.jewelry);
-
-  const inventoryItem = await Inventory.findOne({
+exports.getOne = async ({ userId, jewelryId, sizeId }) => {
+  const bagItem = await Bag.findOne({
+    user: userId,
     jewelry: jewelryId,
     size: sizeId,
   });
 
-  const quantity = inventoryItem.quantity || 0;
-
-  const availableQuantity = quantity + alreadyAddedQuantity;
-
-  if (updatedQuantity < DEFAULT_MIN_QUANTITY) {
-    throw new Error("Quantity must be greater than zero");
-  } else if (updatedQuantity > availableQuantity) {
-    throw new Error(
-      `Please choose quantity between ${DEFAULT_MIN_QUANTITY} and ${availableQuantity}`
-    );
-  } else {
-    await bagItem.updateOne({ quantity: updatedQuantity });
-
-    let newQuantity;
-
-    if (alreadyAddedQuantity < updatedQuantity) {
-      difference = updatedQuantity - alreadyAddedQuantity;
-      newQuantity = quantity - difference;
-    } else {
-      difference = alreadyAddedQuantity - updatedQuantity;
-      newQuantity = quantity + difference;
-    }
-
-    await Inventory.findOneAndUpdate(
-      { jewelry: jewelryId, size: sizeId },
-      { quantity: newQuantity },
-      { new: true }
-    );
-
-    if (Number(updatedQuantity) === 0) {
-      await bagItem.deleteOne();
-    }
-  }
+  return bagItem;
 };
 
 exports.getAll = async (userId) => {
@@ -182,6 +131,9 @@ exports.getAll = async (userId) => {
     {
       $group: {
         _id: "$_id",
+        bagId: {
+          $first: "$_id",
+        },
         jewelryId: {
           $first: "$jewelryId",
         },
@@ -224,6 +176,7 @@ exports.getAll = async (userId) => {
     },
     {
       $project: {
+        bagId: 1,
         user: 1,
         jewelryId: 1,
         jewelryTitle: 1,

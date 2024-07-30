@@ -1,15 +1,16 @@
 const router = require("express").Router();
 
+const Inventory = require("../models/Inventory");
+
 const bagManager = require("../managers/bagManager");
+
 const {
   DEFAULT_ADD_QUANTITY,
   NOT_SELECTED_SIZE_ERROR_MESSAGE,
   SOLD_OUT_JEWELRY_ERROR_MESSAGE,
 } = require("../constants/bag");
 
-const Bag = require("../models/Bag");
 
-const Inventory = require("../models/Inventory");
 
 router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
@@ -66,29 +67,10 @@ router.post("/create/:jewelryId", async (req, res) => {
         quantity: DEFAULT_ADD_QUANTITY,
       });
     } else {
-      newQuantity = Number(bagItem.quantity) + DEFAULT_ADD_QUANTITY;
-
-      await Bag.findOneAndUpdate(
-        {
-          user: userId,
-          jewelry: jewelryId,
-          size: sizeId,
-        },
-        { quantity: newQuantity }
-      );
-
-      await Inventory.findOneAndUpdate(
-        { jewelry: jewelryId, size: sizeId },
-        { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
-        { new: true }
-      );
+      await bagManager.increase(bagItem._id);
     }
 
-    const result = await Bag.find({
-      user: userId,
-    });
-
-    res.status(200).json(result);
+    res.status(204).json();
   } catch (err) {
     console.log(err.message);
 
