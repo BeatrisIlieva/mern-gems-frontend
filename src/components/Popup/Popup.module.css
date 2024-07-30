@@ -19,7 +19,7 @@
 .modal,
 .authentication,
 .delete-account,
-.search,
+.shipping-details,
 .order-confirmation {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
@@ -34,6 +34,7 @@
   animation: slideIn 1s forwards;
   transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 30px;
+  margin: 30px;
 }
 
 @keyframes slideIn {
@@ -46,22 +47,31 @@
 }
 
 .authentication {
-  width: 34vw;
-  height: 90vh;
+  width: fit-content;
+  height: fit-content;
+  /* width: 34vw;
+  height: 90vh; */
 }
 
 .delete-account {
-  width: 34vw;
-  height: 36vh;
+  width: fit-content;
+  height: fit-content;
+  /* width: 34vw;
+  height: 36vh; */
 }
 
-.search {
-  width: 50vw;
+.shipping-details {
+  width: 64vw;
+  /* width: 94vw; */
   height: 80vh;
 }
+
+
 .order-confirmation {
-  width: 34vw;
+  width: fit-content;
   height: fit-content;
+  /* width: 34vw;
+  height: fit-content; */
 }
 .icon {
   position: absolute;
@@ -69,6 +79,4 @@
   right: 12px;
 }
 
-.content {
-  overflow-y: auto;
-}
+

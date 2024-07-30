@@ -7,9 +7,11 @@ import { userServiceFactory } from "../../../services/userService";
 
 import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
 
-import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
+import { ShippingInformation } from "../ShippingInformation/ShippingInformation";
 
-import { PaymentInformation } from "./PaymentInformation/PaymentInformation";
+import { PaymentForm } from "./PaymentForm/PaymentForm";
+
+import { OrderSummary } from "../OrderSummary/OrderSummary";
 
 
 export const Payment = () => {
@@ -27,10 +29,14 @@ export const Payment = () => {
       });
   }, [userId, userService]);
 
+
   return (
     <ShoppingProcessContainer title={"Payment"}>
       <ShippingInformation userInformation={userInformation} />
-      <PaymentInformation />
+      <PaymentForm
+        // updateTransactionIsSuccessful={updateTransactionIsSuccessful}
+      />
+      <OrderSummary/>
     </ShoppingProcessContainer>
   );
 };

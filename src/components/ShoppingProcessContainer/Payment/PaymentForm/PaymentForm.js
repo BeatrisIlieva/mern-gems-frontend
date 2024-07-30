@@ -1,27 +1,31 @@
-import { useForm } from "../../../../../hooks/useForm";
-import { useService } from "../../../../../hooks/useService";
-import { paymentServiceFactory } from "../../../../../services/paymentService";
 
-import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
-import { DynamicForm } from "../../../../DynamicForm/DynamicForm";
+import { useForm } from "../../../../hooks/useForm";
+import { useService } from "../../../../hooks/useService";
+import { paymentServiceFactory } from "../../../../services/paymentService";
+
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+
+import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { MediumTitle } from "../../../../MediumTitle/MediumTitle";
+import { MediumTitle } from "../../../MediumTitle/MediumTitle";
 
 import { checkIfCardHasExpired } from "./checkIfCardHasExpired";
 
-import { checkIfFormErrorHasOccurred } from "../../../../../utils/checkIfFormErrorHasOccurred";
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
-import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../../constants/expiryDate";
+import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate";
 
-import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
-import { useBagContext } from "../../../../../contexts/BagContext";
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { useBagContext } from "../../../../contexts/BagContext";
+
+import { useNavigate } from "react-router-dom";
 
 import styles from "./PaymentForm.module.css";
 
-export const PaymentForm = ({ toggleDisplayOrderConfirmationPopup }) => {
+export const PaymentForm = () => {
   const { userId } = useAuthenticationContext();
   const paymentService = useService(paymentServiceFactory);
   const {
@@ -35,6 +39,8 @@ export const PaymentForm = ({ toggleDisplayOrderConfirmationPopup }) => {
   } = useForm(INITIAL_FORM_VALUES);
 
   const {clearShoppingBag} = useBagContext()
+
+  const navigate = useNavigate()
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -75,9 +81,11 @@ export const PaymentForm = ({ toggleDisplayOrderConfirmationPopup }) => {
 
         updateForm();
 
+        // updateTransactionIsSuccessful();
+
         clearShoppingBag();
 
-        toggleDisplayOrderConfirmationPopup();
+        navigate("/order-confirmation");
       } catch (err) {
         console.log(err.message);
       }

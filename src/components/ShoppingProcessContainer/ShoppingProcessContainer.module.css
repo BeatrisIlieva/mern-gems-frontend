@@ -14,13 +14,6 @@
   align-items: center;
 }
 
-.delivery-span {
-  font-size: var(--normal);
-  color: var(--medium-gray);
-  width: 60px;
-  text-align: end;
-}
-
 .bottom {
   display: flex;
   gap: 30px;
@@ -39,11 +32,16 @@
   padding: 30px 30px 0px 30px;
 }
 
+.child:last-child {
+  position: sticky;
+  top: 200px;
+}
+
 .right {
   position: sticky;
   width: 40%;
   height: 300px;
-  height:fit-content;
+  height: fit-content;
   top: 200px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
     rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
@@ -53,7 +51,8 @@
   gap: 10px;
 }
 
-.right-sub-container, .right-bottom-sub-container {
+.right-sub-container,
+.right-bottom-sub-container {
   display: flex;
   justify-content: space-between;
 }

@@ -9,7 +9,7 @@ import styles from "./BagList.module.css";
 import { useLocation } from "react-router-dom";
 
 export const BagList = ({
-  _id,
+  bagId,
   jewelryTitle,
   categoryTitle,
   firstImageUrl,
@@ -46,12 +46,12 @@ export const BagList = ({
           {locationIsShoppingBag ? (
             <div className={styles["button-wrapper"]}>
               <IncreaseQuantityButton
-                bagId={_id}
+                bagId={bagId}
                 quantity={quantity}
                 inventoryQuantity={inventoryQuantity}
               />
               <span className={styles["quantity"]}>{quantity}</span>
-              <DecreaseQuantityButton bagId={_id} />
+              <DecreaseQuantityButton bagId={bagId} />
             </div>
           ) : (
             `Qty ${quantity}`

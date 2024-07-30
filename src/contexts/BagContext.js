@@ -42,10 +42,6 @@ export const BagProvider = ({ children }) => {
   const [bagTotalQuantityIntoState, setBagTotalQuantityIntoState] =
     useLocalStorage("bagTotalQuantity", 0);
 
-  const updateBagTotalQuantityIntoState = (delta) => {
-    setBagTotalQuantityIntoState(bagTotalQuantityIntoState + delta);
-  };
-
   const bagService = useService(bagServiceFactory);
 
   const { userId } = useAuthenticationContext();
@@ -80,10 +76,14 @@ export const BagProvider = ({ children }) => {
       });
   }, [userId, bagService]);
 
+  const updateBagTotalQuantityIntoState = (delta) => {
+    setBagTotalQuantityIntoState(bagTotalQuantityIntoState + delta);
+  };
+
   const updateBagItemQuantityIntoState = (bagId, delta) => {
     setBagItems((state) => {
       const updatedItems = state.map((item) =>
-        item._id === bagId
+        item.bagId === bagId 
           ? {
               ...item,
               quantity: item.quantity + delta,
@@ -97,7 +97,7 @@ export const BagProvider = ({ children }) => {
   };
 
   const clearShoppingBag = () => {
-    localStorage.removeItem("bagTotalQuantity");
+    localStorage.setItem("bagTotalQuantity", 0);
 
     setBagTotalQuantityIntoState(0)
   };

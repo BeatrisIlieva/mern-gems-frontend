@@ -15,17 +15,25 @@ import { BagList } from "./Bag/BagList/BagList";
 import { useBagContext } from "../../contexts/BagContext";
 
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
+import { useService } from "../../hooks/useService";
+import { orderServiceFactory } from "../../services/orderService";
 
 import styles from "./ShoppingProcessContainer.module.css";
 
-export const ShoppingProcessContainer = ({ children, title, path }) => {
-  const { bagTotalQuantityIntoState, totalPrice } = useBagContext();
+export const ShoppingProcessContainer = ({ children, title}) => {
+  const { totalPrice } = useBagContext();
+
+  // const childrenArray = Children.toArray(children);
 
   const childrenArray = Children.toArray(children);
+
+  const lastChild = childrenArray[childrenArray.length - 1];
 
   const location = useLocation();
 
   const locationIsShoppingBag = location.pathname === "/users/shopping-bag";
+
+  const locationIsPayment = location.pathname === "/users/payment";
 
   const { bagItems } = useBagContext();
 
@@ -36,16 +44,16 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
         <div className={styles["delivery"]}>
           <Icon icon={faTruck} variant={"icon"} />
           <LargeTitle title={"Delivery"} variant={"large-title"} />
-          <span className={styles["delivery-span"]}>
-            {bagTotalQuantityIntoState === 1
-              ? `(${bagTotalQuantityIntoState} item)`
-              : `(${bagTotalQuantityIntoState} items)`}
-          </span>
         </div>
       </div>
       <div className={styles["bottom"]}>
         <div className={styles["left"]}>
-          {childrenArray.map((child, index) => (
+          {/* {childrenArray.map((child, index) => (
+            <div key={index} className={styles["child"]}>
+              {child}
+            </div>
+          ))} */}
+          {childrenArray.slice(0, -1).map((child, index) => (
             <div key={index} className={styles["child"]}>
               {child}
             </div>
@@ -66,23 +74,7 @@ export const ShoppingProcessContainer = ({ children, title, path }) => {
             <SmallTitle title={"Total"} />
             <SmallTitle title={`$ ${totalPrice}`} />
           </div>
-          {locationIsShoppingBag ? (
-            <div className={styles["button-container"]}>
-              <Link to={path} className={styles["no-decoration"]}>
-                <PinkButton title={"Continue Checkout"} />
-              </Link>
-            </div>
-          ) : (
-            <div className={styles["items-container"]}>
-              <ul role="list">
-                {bagItems.map((item) => (
-                  <li key={item._id}>
-                    <BagList {...item} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {lastChild}
         </div>
       </div>
     </section>

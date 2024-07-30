@@ -1,7 +1,7 @@
-import { LONG_CARD_NUMBER_PATTERN } from "../../../../../constants/cardNumber";
-import { CARD_HOLDER_NAME_PATTERN } from "../../../../../constants/cardHolder";
-import { CVV_CODE_PATTERN } from "../../../../../constants/cVVCode";
-import { EXPIRY_DATE_PATTERN } from "../../../../../constants/expiryDate";
+import { LONG_CARD_NUMBER_PATTERN } from "../../../../constants/cardNumber";
+import { CARD_HOLDER_NAME_PATTERN } from "../../../../constants/cardHolder";
+import { CVV_CODE_PATTERN } from "../../../../constants/cVVCode";
+import { EXPIRY_DATE_PATTERN } from "../../../../constants/expiryDate";
 
 const FORM_KEYS = {
   LongCardNumber: "longCardNumber",

@@ -37,7 +37,8 @@ export const IncreaseQuantityButton = ({
   };
 
   useEffect(() => {
-    setButtonDisabled(quantity >= inventoryQuantity);
+    setButtonDisabled(inventoryQuantity === 0);
+    // setButtonDisabled(quantity >= inventoryQuantity);
   }, [quantity, inventoryQuantity]);
 
   return (

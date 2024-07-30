@@ -7,7 +7,7 @@ import { Icon } from "../../../../Icon/Icon";
 
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
-export const DecreaseQuantityButton = ({ bagId }) => {
+export const DecreaseQuantityButton = ({ bagId}) => {
   const bagService = useService(bagServiceFactory);
 
   const { updateBagTotalQuantityIntoState, updateBagItemQuantityIntoState } =

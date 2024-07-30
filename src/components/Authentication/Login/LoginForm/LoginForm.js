@@ -35,7 +35,7 @@ export const LoginForm = () => {
 
   useEffect(() => {
     updateForm();
-  }, []);
+  }, [updateForm]);
 
   const onSubmit = async (e) => {
     submitHandler(e);
