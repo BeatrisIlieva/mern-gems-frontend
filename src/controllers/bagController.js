@@ -79,7 +79,7 @@ router.post("/create/:jewelryId", async (req, res) => {
 
       await Inventory.findOneAndUpdate(
         { jewelry: jewelryId, size: sizeId },
-        { $inc: { quantity: - DEFAULT_ADD_QUANTITY } },
+        { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
         { new: true }
       );
     }
@@ -116,10 +116,6 @@ router.put("/increase/:bagId", async (req, res) => {
   const bagId = req.params.bagId;
 
   try {
-    // const result = await bagManager.increase(bagId);
-
-    // res.status(200).json({ result });
-
     await bagManager.increase(bagId);
 
     res.status(204).json();
@@ -129,19 +125,5 @@ router.put("/increase/:bagId", async (req, res) => {
     });
   }
 });
-
-// router.delete("/delete/:bagId", async (req, res) => {
-//   const bagId = req.params.bagId;
-
-//   try {
-//     const result = await bagManager.delete(bagId);
-
-//     res.status(200).json({ result });
-//   } catch (err) {
-//     res.status(401).json({
-//       message: err.message,
-//     });
-//   }
-// });
 
 module.exports = router;

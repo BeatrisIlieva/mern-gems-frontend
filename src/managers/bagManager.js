@@ -106,8 +106,6 @@ const update = async (bagItemId, updatedQuantity) => {
   }
 };
 
-
-
 exports.getAll = async (userId) => {
   const user = await UserLoginDetails.findById(userId);
 
@@ -243,5 +241,3 @@ exports.getAll = async (userId) => {
 
   return jewelries;
 };
-
-
