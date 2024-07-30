@@ -3,6 +3,7 @@
 .header{
   color: var(--pink);
   height: var(--medium);
+  cursor: pointer;
 }
 
 .add-address-book {

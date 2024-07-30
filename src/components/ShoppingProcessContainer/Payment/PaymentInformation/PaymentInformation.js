@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { PaymentForm } from "./PaymentForm/PaymentForm";
 import { OrderConfirmation } from "./OrderConfirmation/OrderConfirmation";
 
 export const PaymentInformation = () => {
-  const [paymentIsIsCompleted, setPaymentCompleted] = useState(false);
+  const [
+    displayOrderConfirmationPopup,
+    setDisplayOrderConfirmationPopup,
+  ] = useState(false);
 
-  const updatePaymentIsCompleted = () => {
-    setPaymentCompleted(true);
+  const toggleDisplayOrderConfirmationPopup = () => {
+    setDisplayOrderConfirmationPopup(
+      (displayOrderConfirmationPopup) =>
+        !displayOrderConfirmationPopup
+    );
   };
 
   return (
     <>
-      {paymentIsIsCompleted && <OrderConfirmation />}
-      <PaymentForm updatePaymentIsCompleted={updatePaymentIsCompleted} />
+      {displayOrderConfirmationPopup && (
+        <OrderConfirmation
+        toggleDisplayOrderConfirmationPopup={toggleDisplayOrderConfirmationPopup}
+        />
+      )}
+      <PaymentForm toggleDisplayOrderConfirmationPopup={toggleDisplayOrderConfirmationPopup} />
     </>
   );
 };

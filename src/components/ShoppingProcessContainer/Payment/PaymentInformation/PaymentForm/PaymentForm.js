@@ -20,7 +20,7 @@ import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitia
 
 import styles from "./PaymentForm.module.css";
 
-export const PaymentForm = ({updatePaymentIsCompleted}) => {
+export const PaymentForm = ({toggleDisplayOrderConfirmationPopup}) => {
   const { userId } = useAuthenticationContext();
   const paymentService = useService(paymentServiceFactory);
   const {
@@ -72,7 +72,7 @@ export const PaymentForm = ({updatePaymentIsCompleted}) => {
 
         updateForm();
 
-        updatePaymentIsCompleted();
+        toggleDisplayOrderConfirmationPopup();
       } catch (err) {
         console.log(err.message);
       }

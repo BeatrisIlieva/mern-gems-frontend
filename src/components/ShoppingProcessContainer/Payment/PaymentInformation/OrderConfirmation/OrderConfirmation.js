@@ -15,7 +15,7 @@ import { SpanTitle } from "../../../../SpanTitle/SpanTitle";
 
 import { convertToReadableDate } from "../../../../../utils/convertToReadableDate";
 import styles from "./OrderConfirmation.module.css";
-export const OrderConfirmation = () => {
+export const OrderConfirmation = ({ toggleDisplayOrderConfirmationPopup }) => {
   const { userId } = useAuthenticationContext();
   const [userShippingInformation, setUserShippingInformation] = useState([]);
   const [userLoginInformation, setUserLoginInformation] = useState([]);
@@ -59,7 +59,11 @@ export const OrderConfirmation = () => {
   const readableDate = convertToReadableDate(order.createdAt);
 
   return (
-    <Popup isVisible={true} variant={"authentication"}>
+    <Popup
+      isVisible={true}
+      variant={"order"}
+      popupCloseHandler={toggleDisplayOrderConfirmationPopup}
+    >
       <section className={styles["order-confirmation"]}>
         <MediumTitle
           title={`Thank you for your purchase, ${userShippingInformation.firstName}!`}
