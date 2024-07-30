@@ -1,6 +1,6 @@
 import { PopupHeader } from "../PopupHeader/PopupHeader";
 import { SwitchButton } from "../SwitchButton/SwitchButton";
-import { LoginForm } from "./Form/LoginForm";
+import { LoginForm } from "./LoginForm/LoginForm";
 
 
 
