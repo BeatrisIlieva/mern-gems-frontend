@@ -52,6 +52,8 @@ export const BagProvider = ({ children }) => {
 
   const [bagItems, setBagItems] = useState([]);
 
+  const bagIsEmpty = bagItems.length < 1;
+
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
@@ -94,12 +96,20 @@ export const BagProvider = ({ children }) => {
     });
   };
 
+  const clearShoppingBag = () => {
+    localStorage.removeItem("bagTotalQuantity");
+
+    setBagTotalQuantityIntoState(0)
+  };
+
   const context = {
     bagTotalQuantityIntoState,
     updateBagTotalQuantityIntoState,
     bagItems,
     updateBagItemQuantityIntoState,
     totalPrice,
+    bagIsEmpty,
+    clearShoppingBag,
   };
 
   return <BagContext.Provider value={context}>{children}</BagContext.Provider>;

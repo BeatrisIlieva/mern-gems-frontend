@@ -17,10 +17,11 @@ import { checkIfFormErrorHasOccurred } from "../../../../../utils/checkIfFormErr
 import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../../constants/expiryDate";
 
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
 import styles from "./PaymentForm.module.css";
 
-export const PaymentForm = ({toggleDisplayOrderConfirmationPopup}) => {
+export const PaymentForm = ({ toggleDisplayOrderConfirmationPopup }) => {
   const { userId } = useAuthenticationContext();
   const paymentService = useService(paymentServiceFactory);
   const {
@@ -32,6 +33,8 @@ export const PaymentForm = ({toggleDisplayOrderConfirmationPopup}) => {
     changeHandler,
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
+
+  const {clearShoppingBag} = useBagContext()
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -71,6 +74,8 @@ export const PaymentForm = ({toggleDisplayOrderConfirmationPopup}) => {
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
         updateForm();
+
+        clearShoppingBag();
 
         toggleDisplayOrderConfirmationPopup();
       } catch (err) {

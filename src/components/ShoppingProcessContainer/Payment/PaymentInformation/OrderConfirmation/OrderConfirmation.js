@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
@@ -22,6 +22,8 @@ export const OrderConfirmation = ({ toggleDisplayOrderConfirmationPopup }) => {
   const [order, setOrder] = useState([]);
   const orderService = useService(orderServiceFactory);
   const userService = useService(userServiceFactory);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     orderService
@@ -58,11 +60,16 @@ export const OrderConfirmation = ({ toggleDisplayOrderConfirmationPopup }) => {
 
   const readableDate = convertToReadableDate(order.createdAt);
 
+  const closePopup = () => {
+    toggleDisplayOrderConfirmationPopup()
+navigate("/users/shopping-bag")
+  }
+
   return (
     <Popup
       isVisible={true}
       variant={"order"}
-      popupCloseHandler={toggleDisplayOrderConfirmationPopup}
+      popupCloseHandler={closePopup}
     >
       <section className={styles["order-confirmation"]}>
         <MediumTitle

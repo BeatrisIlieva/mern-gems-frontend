@@ -4,15 +4,12 @@ import { PaymentForm } from "./PaymentForm/PaymentForm";
 import { OrderConfirmation } from "./OrderConfirmation/OrderConfirmation";
 
 export const PaymentInformation = () => {
-  const [
-    displayOrderConfirmationPopup,
-    setDisplayOrderConfirmationPopup,
-  ] = useState(false);
+  const [displayOrderConfirmationPopup, setDisplayOrderConfirmationPopup] =
+    useState(false);
 
   const toggleDisplayOrderConfirmationPopup = () => {
     setDisplayOrderConfirmationPopup(
-      (displayOrderConfirmationPopup) =>
-        !displayOrderConfirmationPopup
+      (displayOrderConfirmationPopup) => !displayOrderConfirmationPopup
     );
   };
 
@@ -20,10 +17,16 @@ export const PaymentInformation = () => {
     <>
       {displayOrderConfirmationPopup && (
         <OrderConfirmation
-        toggleDisplayOrderConfirmationPopup={toggleDisplayOrderConfirmationPopup}
+          toggleDisplayOrderConfirmationPopup={
+            toggleDisplayOrderConfirmationPopup
+          }
         />
       )}
-      <PaymentForm toggleDisplayOrderConfirmationPopup={toggleDisplayOrderConfirmationPopup} />
+      <PaymentForm
+        toggleDisplayOrderConfirmationPopup={
+          toggleDisplayOrderConfirmationPopup
+        }
+      />
     </>
   );
 };

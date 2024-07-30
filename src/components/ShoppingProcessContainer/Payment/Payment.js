@@ -11,7 +11,6 @@ import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 
 import { PaymentInformation } from "./PaymentInformation/PaymentInformation";
 
-import styles from "./Payment.module.css";
 
 export const Payment = () => {
   const { userId } = useAuthenticationContext();
