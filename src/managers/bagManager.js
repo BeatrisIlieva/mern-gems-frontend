@@ -7,7 +7,7 @@ const {
   DEFAULT_MIN_QUANTITY,
 } = require("../constants/bag");
 
-const getOne = async ({ userId, jewelryId, sizeId }) => {
+exports.getOne = async ({ userId, jewelryId, sizeId }) => {
   const bagItem = await Bag.findOne({
     user: userId,
     jewelry: jewelryId,
@@ -17,7 +17,7 @@ const getOne = async ({ userId, jewelryId, sizeId }) => {
   return bagItem;
 };
 
-const create = async ({
+exports.create = async ({
   userId,
   jewelryId,
   sizeId,
@@ -37,7 +37,7 @@ const create = async ({
   );
 };
 
-const decrease = async (bagId) => {
+exports.decrease = async (bagId) => {
   let bagItem = await Bag.findById(bagId);
 
   const bagQuantity = bagItem.quantity;
@@ -47,7 +47,7 @@ const decrease = async (bagId) => {
   await update(bagId, updatedQuantity);
 };
 
-const increase = async (bagId) => {
+exports.increase = async (bagId) => {
   let bagItem = await Bag.findById(bagId);
 
   const bagQuantity = bagItem.quantity;
@@ -106,37 +106,37 @@ const update = async (bagItemId, updatedQuantity) => {
   }
 };
 
-const deleteBag = async (bagItemId) => {
-  const bagItem = await Bag.findById(bagItemId);
+// const deleteBag = async (bagItemId) => {
+//   const bagItem = await Bag.findById(bagItemId);
 
-  const sizeId = Number(bagItem.size);
+//   const sizeId = Number(bagItem.size);
 
-  const alreadyAddedQuantity = bagItem.quantity;
+//   const alreadyAddedQuantity = bagItem.quantity;
 
-  const jewelryId = Number(bagItem.jewelry);
+//   const jewelryId = Number(bagItem.jewelry);
 
-  const inventoryItem = await Inventory.findOne({
-    jewelry: jewelryId,
-    size: sizeId,
-  });
+//   const inventoryItem = await Inventory.findOne({
+//     jewelry: jewelryId,
+//     size: sizeId,
+//   });
 
-  const quantity = inventoryItem.quantity || 0;
+//   const quantity = inventoryItem.quantity || 0;
 
-  const availableQuantity = quantity + alreadyAddedQuantity;
+//   const availableQuantity = quantity + alreadyAddedQuantity;
 
-  await Inventory.findOneAndUpdate(
-    { jewelry: jewelryId, size: sizeId },
-    { quantity: availableQuantity },
-    { new: true }
-  );
+//   await Inventory.findOneAndUpdate(
+//     { jewelry: jewelryId, size: sizeId },
+//     { quantity: availableQuantity },
+//     { new: true }
+//   );
 
-  await bagItem.deleteOne();
-};
+//   await bagItem.deleteOne();
+// };
 
-const getAll = async (userId) => {
+exports.getAll = async (userId) => {
   const user = await UserLoginDetails.findById(userId);
 
-  let result = await Bag.aggregate([
+  let jewelries = await Bag.aggregate([
     {
       $match: {
         user: user._id,
@@ -266,15 +266,15 @@ const getAll = async (userId) => {
     },
   ]);
 
-  return result;
+  return jewelries;
 };
 
-module.exports = {
-  getOne,
-  getAll,
-  create,
-  decrease,
-  increase,
-  update,
-  delete: deleteBag,
-};
+// module.exports = {
+//   getOne,
+//   getAll,
+//   create,
+//   decrease,
+//   increase,
+//   update,
+//   delete: deleteBag,
+// };

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const paymentManager = require("../managers/paymentManager");
-const orderConfirmationManager = require("../managers/orderManager");
+const orderManager = require("../managers/orderManager");
 
 router.post("/:userId", async (req, res) => {
   const userId = req.params.userId;
@@ -20,7 +20,7 @@ router.post("/:userId", async (req, res) => {
       expiryDate
     );
 
-    const order = await orderConfirmationManager.create(userId);
+    const order = await orderManager.create(userId);
 
     res.status(201).json({ order });
   } catch (err) {

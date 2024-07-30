@@ -2,7 +2,7 @@ const Order = require("../models/Order");
 const bagManager = require("./bagManager");
 
 exports.create = async (userId) => {
-  const orderData = await bagManager.findAll(userId);
+  const orderData = await bagManager.getAll(userId);
 
   const order = await Order.create({
     user: userId,

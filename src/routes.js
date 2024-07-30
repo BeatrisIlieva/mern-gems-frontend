@@ -4,7 +4,7 @@ const userController = require("./controllers/userController");
 const jewelryController = require("./controllers/jewelryController");
 const bagController = require("./controllers/bagController");
 const paymentController = require("./controllers/paymentController");
-const orderController = require("./controllers/paymentController");
+const orderController = require("./controllers/orderController");
 
 router.use("/users", userController);
 router.use("/jewelries", jewelryController);

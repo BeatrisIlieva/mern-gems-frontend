@@ -102,9 +102,9 @@ router.put("/decrease/:bagId", async (req, res) => {
   const bagId = req.params.bagId;
 
   try {
-    const result = await bagManager.decrease(bagId);
+    await bagManager.decrease(bagId);
 
-    res.status(200).json({ result });
+    res.status(204).json();
   } catch (err) {
     res.status(401).json({
       message: err.message,
@@ -130,18 +130,18 @@ router.put("/increase/:bagId", async (req, res) => {
   }
 });
 
-router.delete("/delete/:bagId", async (req, res) => {
-  const bagId = req.params.bagId;
+// router.delete("/delete/:bagId", async (req, res) => {
+//   const bagId = req.params.bagId;
 
-  try {
-    const result = await bagManager.delete(bagId);
+//   try {
+//     const result = await bagManager.delete(bagId);
 
-    res.status(200).json({ result });
-  } catch (err) {
-    res.status(401).json({
-      message: err.message,
-    });
-  }
-});
+//     res.status(200).json({ result });
+//   } catch (err) {
+//     res.status(401).json({
+//       message: err.message,
+//     });
+//   }
+// });
 
 module.exports = router;
