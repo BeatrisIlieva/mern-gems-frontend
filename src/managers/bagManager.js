@@ -106,32 +106,7 @@ const update = async (bagItemId, updatedQuantity) => {
   }
 };
 
-// const deleteBag = async (bagItemId) => {
-//   const bagItem = await Bag.findById(bagItemId);
 
-//   const sizeId = Number(bagItem.size);
-
-//   const alreadyAddedQuantity = bagItem.quantity;
-
-//   const jewelryId = Number(bagItem.jewelry);
-
-//   const inventoryItem = await Inventory.findOne({
-//     jewelry: jewelryId,
-//     size: sizeId,
-//   });
-
-//   const quantity = inventoryItem.quantity || 0;
-
-//   const availableQuantity = quantity + alreadyAddedQuantity;
-
-//   await Inventory.findOneAndUpdate(
-//     { jewelry: jewelryId, size: sizeId },
-//     { quantity: availableQuantity },
-//     { new: true }
-//   );
-
-//   await bagItem.deleteOne();
-// };
 
 exports.getAll = async (userId) => {
   const user = await UserLoginDetails.findById(userId);
@@ -269,12 +244,4 @@ exports.getAll = async (userId) => {
   return jewelries;
 };
 
-// module.exports = {
-//   getOne,
-//   getAll,
-//   create,
-//   decrease,
-//   increase,
-//   update,
-//   delete: deleteBag,
-// };
+
