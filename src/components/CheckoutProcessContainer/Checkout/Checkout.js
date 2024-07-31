@@ -1,13 +1,13 @@
-import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
+import { CheckoutProcessContainer } from "../CheckoutProcessContainer";
 
 import { ShippingDetailsForm } from "./ShippingDetailsForm/ShippingDetailsForm"
 import { OrderSummary } from "../../OrderSummary/OrderSummary"; 
 
 export const Checkout = () => {
   return (
-    <ShoppingProcessContainer title={"Checkout"}>
+    <CheckoutProcessContainer title={"Checkout"}>
       <ShippingDetailsForm />
       {/* <OrderSummary /> */}
-    </ShoppingProcessContainer>
+    </CheckoutProcessContainer>
   );
 };

@@ -9,13 +9,13 @@ import { OrderSummary } from "../OrderSummary/OrderSummary";
 
 import { BagList } from "../BagList/BagList";
 
-import styles from "./ShoppingProcessContainer.module.css";
+import styles from "./CheckoutProcessContainer.module.css";
 
-export const ShoppingProcessContainer = ({ children, title }) => {
+export const CheckoutProcessContainer = ({ children, title }) => {
   const childrenArray = Children.toArray(children);
 
   return (
-    <section className={styles["shopping-bag-process-container"]}>
+    <section className={styles["checkout-process-container"]}>
       <div className={styles["top"]}>
         <LargeTitle title={title} variant={"large-title"} />
         <div className={styles["delivery"]}>

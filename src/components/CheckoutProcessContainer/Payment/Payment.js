@@ -5,7 +5,7 @@ import { useAuthenticationContext } from "../../../contexts/AuthenticationContex
 import { useService } from "../../../hooks/useService";
 import { userServiceFactory } from "../../../services/userService";
 
-import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
+import { CheckoutProcessContainer } from "../CheckoutProcessContainer";
 
 import { ShippingInformation } from "../ShippingInformation/ShippingInformation";
 
@@ -33,11 +33,9 @@ export const Payment = () => {
 
 
   return (
-    <ShoppingProcessContainer title={"Payment"}>
+    <CheckoutProcessContainer title={"Payment"}>
       <ShippingInformation userInformation={userInformation} />
       <PaymentForm/>
-      {/* <OrderSummary/> */}
-      {/* <BagList/> */}
-    </ShoppingProcessContainer>
+    </CheckoutProcessContainer>
   );
 };
