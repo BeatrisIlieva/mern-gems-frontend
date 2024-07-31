@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
@@ -13,10 +15,24 @@ import { Icon } from "../Icon/Icon";
 
 import { SpanTitle } from "../SpanTitle/SpanTitle";
 
+import { Account } from "../Account/Account";
+import { Bag } from "../Bag/Bag";
+
 import styles from "./Header.module.css";
 
 export const Header = () => {
   const { bagTotalQuantityIntoState } = useBagContext();
+
+  const [displayAccountPopup, setDisplayAccountPopup] = useState(false);
+  const [displayBagPopup, setDisplayBagPopup] = useState(false);
+
+  const toggleDisplayAccountPopup = () => {
+    setDisplayAccountPopup((displayAccountPopup) => !displayAccountPopup);
+  };
+
+  const toggleDisplayBagPopup = () => {
+    setDisplayBagPopup((displayBagPopup) => !displayBagPopup);
+  };
 
   return (
     <header className={styles["header"]}>
@@ -47,27 +63,26 @@ export const Header = () => {
         />
         <nav>
           <ul className={styles["icon-list"]} role="list">
-            <li>
-              <Link
-                className={`${styles["icon-bar-item"]} ${styles["icon-bar-item-bag"]}`}
-                to={"/users/shopping-bag"}
-              >
-                <Icon icon={faBagShopping} variant={"header"} />
-                <SpanTitle title={"My Bag"} />
-                {bagTotalQuantityIntoState > 0 && (
-                  <span
-                    className={`${styles["count-span"]} ${styles["pulse"]}`}
-                  >
-                    {bagTotalQuantityIntoState}
-                  </span>
-                )}
-              </Link>
+            <li onClick={toggleDisplayBagPopup}>
+              <Icon icon={faBagShopping} variant={"header"} />
+              <SpanTitle title={"My Bag"} />
+              {bagTotalQuantityIntoState > 0 && (
+                <span className={`${styles["count-span"]} ${styles["pulse"]}`}>
+                  {bagTotalQuantityIntoState}
+                </span>
+              )}
+              {displayBagPopup && (
+                <Bag toggleDisplayBagPopup={toggleDisplayBagPopup} />
+              )}
             </li>
-            <li>
-              <Link className={styles["icon-bar-item"]} to="/users/account">
-                <Icon icon={faUser} variant={"header"} />
-                <SpanTitle title={"Account"} />
-              </Link>
+            <li onClick={toggleDisplayAccountPopup}>
+              <Icon icon={faUser} variant={"header"} />
+              <SpanTitle title={"Account"} />
+              {displayAccountPopup && (
+                <Account
+                  toggleDisplayAccountPopup={toggleDisplayAccountPopup}
+                />
+              )}
             </li>
           </ul>
         </nav>

@@ -13,8 +13,6 @@ import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
 import { JewelryItem } from "./components/JewelryItem/JewelryItem";
-import { Account } from "./components/Account/Account";
-import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
 import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
 import { OrderConfirmation } from "./components/ShoppingProcessContainer/OrderConfirmation/OrderConfirmation";
@@ -33,7 +31,7 @@ function App() {
 
     const timer = setTimeout(() => {
       setShowFooter(true);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [location]);
@@ -83,22 +81,6 @@ function App() {
             element={
               <RouteGuard>
                 <JewelryItem />
-              </RouteGuard>
-            }
-          />
-          <Route
-            path="/users/account"
-            element={
-              <RouteGuard>
-                <Account />
-              </RouteGuard>
-            }
-          />
-          <Route
-            path="/users/shopping-bag"
-            element={
-              <RouteGuard>
-                <Bag />
               </RouteGuard>
             }
           />

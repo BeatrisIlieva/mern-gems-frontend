@@ -1,4 +1,4 @@
-.overlay {
+/* .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,11 @@
 
 .overlay.visible {
   display: flex;
-  /* justify-content: flex-end; */
+}
+
+.overlay.visible-right {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .modal,
@@ -49,34 +53,113 @@
 .authentication {
   width: fit-content;
   height: fit-content;
-  /* width: 34vw;
-  height: 90vh; */
 }
 
 .delete-account {
   width: fit-content;
   height: fit-content;
-  /* width: 34vw;
-  height: 36vh; */
 }
 
 .shipping-details {
   width: 64vw;
-  /* width: 94vw; */
+
   height: 80vh;
 }
-
 
 .order-confirmation {
   width: fit-content;
   height: fit-content;
-  /* width: 34vw;
-  height: fit-content; */
+}
+.icon {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+} */
+
+.overlay,
+.overlay-top,
+.overlay-right {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-top {
+  display: flex;
+}
+
+.overlay-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal,
+.authentication,
+.delete-account,
+.shipping-details,
+.order-confirmation,
+.account,
+.bag {
+  background-color: var(--white);
+  border-inline-start: 1px solid var(--medium-pink);
+  border-inline-end: 1px solid var(--medium-pink);
+  border-block-end: 1px solid var(--medium-pink);
+  border-block-start: 1px solid var(--medium-pink);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: slideIn 1s forwards;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  padding: 30px;
+}
+
+@keyframes slideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.account,
+.bag {
+  width: 30vw;
+  height: 100vh;
+}
+
+.authentication {
+  width: fit-content;
+  height: fit-content;
+}
+
+.delete-account {
+  width: fit-content;
+  height: fit-content;
+}
+
+.shipping-details {
+  width: 64vw;
+
+  height: 80vh;
+}
+
+.order-confirmation {
+  width: fit-content;
+  height: fit-content;
 }
 .icon {
   position: absolute;
   top: 8px;
   right: 12px;
 }
-
 

@@ -10,13 +10,16 @@ import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import { PinkButton } from "../PinkButton/PinkButton";
 
-import { BagList } from "./Bag/BagList/BagList";
 
 import { useBagContext } from "../../contexts/BagContext";
 
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 import { useService } from "../../hooks/useService";
 import { orderServiceFactory } from "../../services/orderService";
+
+import { OrderSummary } from "../OrderSummary/OrderSummary";
+
+import { BagList } from "../BagList/BagList";
 
 import styles from "./ShoppingProcessContainer.module.css";
 
@@ -26,8 +29,9 @@ export const ShoppingProcessContainer = ({ children, title}) => {
   // const childrenArray = Children.toArray(children);
 
   const childrenArray = Children.toArray(children);
+  console.log(childrenArray)
 
-  const lastChild = childrenArray[childrenArray.length - 1];
+  // const lastChild = childrenArray[childrenArray.length - 1];
 
   const location = useLocation();
 
@@ -48,19 +52,21 @@ export const ShoppingProcessContainer = ({ children, title}) => {
       </div>
       <div className={styles["bottom"]}>
         <div className={styles["left"]}>
-          {/* {childrenArray.map((child, index) => (
-            <div key={index} className={styles["child"]}>
-              {child}
-            </div>
-          ))} */}
-          {childrenArray.slice(0, -1).map((child, index) => (
+          {childrenArray.map((child, index) => (
             <div key={index} className={styles["child"]}>
               {child}
             </div>
           ))}
+          {/* {childrenArray.slice(0, -1).map((child, index) => (
+            <div key={index} className={styles["child"]}>
+              {child}
+            </div>
+          ))} */}
         </div>
         <div className={styles["right"]}>
-          <MediumTitle title={"Order Summary"} />
+          <OrderSummary/>
+          <BagList/>
+          {/* <MediumTitle title={"Order Summary"} />
           <div className={styles["right-sub-container"]}>
             <SmallTitle title={"Subtotal"} />
             <SmallTitle title={`$ ${totalPrice}`} />
@@ -74,7 +80,7 @@ export const ShoppingProcessContainer = ({ children, title}) => {
             <SmallTitle title={"Total"} />
             <SmallTitle title={`$ ${totalPrice}`} />
           </div>
-          {lastChild}
+          {lastChild} */}
         </div>
       </div>
     </section>

@@ -11,7 +11,9 @@ import { ShippingInformation } from "../ShippingInformation/ShippingInformation"
 
 import { PaymentForm } from "./PaymentForm/PaymentForm";
 
-import { OrderSummary } from "../OrderSummary/OrderSummary";
+import { OrderSummary } from "../../OrderSummary/OrderSummary"; 
+
+import { BagList } from "../../BagList/BagList";
 
 
 export const Payment = () => {
@@ -33,10 +35,9 @@ export const Payment = () => {
   return (
     <ShoppingProcessContainer title={"Payment"}>
       <ShippingInformation userInformation={userInformation} />
-      <PaymentForm
-        // updateTransactionIsSuccessful={updateTransactionIsSuccessful}
-      />
-      <OrderSummary/>
+      <PaymentForm/>
+      {/* <OrderSummary/> */}
+      {/* <BagList/> */}
     </ShoppingProcessContainer>
   );
 };

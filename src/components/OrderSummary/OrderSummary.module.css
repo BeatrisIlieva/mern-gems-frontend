@@ -1,0 +1,10 @@
+.order-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+}

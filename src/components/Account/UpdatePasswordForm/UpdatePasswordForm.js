@@ -1,23 +1,23 @@
 import { useState, useEffect } from "react";
 
-import { useService } from "../../../../hooks/useService";
+import { useService } from "../../../hooks/useService";
 
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext"; 
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext"; 
 
-import { useForm } from "../../../../hooks/useForm"; 
+import { useForm } from "../../../hooks/useForm"; 
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
+import { DynamicForm } from "../../DynamicForm/DynamicForm";
 
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred"; 
+import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred"; 
 
-import { getPasswordMismatchErrorMessage } from "../../../../utils/getPasswordMismatchErrorMessage";
+import { getPasswordMismatchErrorMessage } from "../../../utils/getPasswordMismatchErrorMessage";
 
-import { SUCCESS_MESSAGES } from "../../../../mappers/successMessages"
+import { SUCCESS_MESSAGES } from "../../../mappers/successMessages"
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { userServiceFactory } from "../../../../services/userService";
+import { userServiceFactory } from "../../../services/userService";
 
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 
 import styles from "./UpdatePasswordForm.module.css";
 

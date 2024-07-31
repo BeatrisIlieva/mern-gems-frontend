@@ -74,10 +74,10 @@ export const OrderConfirmation = () => {
         <MediumTitle
           title={`A confirmation email has been sent to: ${userLoginInformation.email}`}
         />
-        <h3>
+        {/* <h3>
           You can track your order status and find detailed order information in
           your <Link to={"/users/account"}>Account</Link>
-        </h3>
+        </h3> */}
       </section>
     </>
   );

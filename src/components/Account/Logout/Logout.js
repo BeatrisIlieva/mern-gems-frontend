@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useService } from "../../../../hooks/useService";
+import { useService } from "../../../hooks/useService";
 import { Button } from "../Button/Button";
 
-import { userServiceFactory } from "../../../../services/userService";
+import { userServiceFactory } from "../../../services/userService";
 
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 const LogoutButtonTitle = "Logout";
 

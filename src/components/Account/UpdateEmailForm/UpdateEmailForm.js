@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
 
-import { useService } from "../../../../hooks/useService";
+import { useService } from "../../../hooks/useService";
 
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-import { useForm } from "../../../../hooks/useForm";
+import { useForm } from "../../../hooks/useForm";
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
+import { DynamicForm } from "../../DynamicForm/DynamicForm";
 
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred"; 
+import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred"; 
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { userServiceFactory } from "../../../../services/userService";
+import { userServiceFactory } from "../../../services/userService";
 
 import styles from "./UpdateEmailForm.module.css";
 
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 
 const ButtonTitle = "Save";
 
