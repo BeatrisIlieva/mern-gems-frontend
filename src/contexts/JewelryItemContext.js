@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createContext, useContext } from "react";
 
 export const JewelryItemContext = createContext();
@@ -43,14 +43,13 @@ export const JewelryItemProvider = ({ children }) => {
   };
 
   const increaseSizeQuantity = (sizeId) => {
-    console.log(sizeId)
+    console.log(sizeId);
     setSizes((prevSizes) =>
       prevSizes.map((size) =>
         size._id === sizeId ? { ...size, quantity: size.quantity + 1 } : size
       )
     );
   };
-
 
   const context = {
     sizes,
