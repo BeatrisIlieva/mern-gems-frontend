@@ -7,7 +7,6 @@ import { jewelryServiceFactory } from "../services/jewelryService";
 
 import { EARRING_ID } from "../constants/earringId";
 
-
 export const useJewelryItem = () => {
   const [sizes, setSizes] = useState([]);
 
@@ -22,8 +21,6 @@ export const useJewelryItem = () => {
   const { jewelryId } = useParams();
 
   const [jewelry, setJewelry] = useState([]);
-
-
 
   useEffect(() => {
     setLoading(true);
