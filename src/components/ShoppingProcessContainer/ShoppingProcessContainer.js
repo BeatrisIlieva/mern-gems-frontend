@@ -10,7 +10,6 @@ import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import { PinkButton } from "../PinkButton/PinkButton";
 
-
 import { useBagContext } from "../../contexts/BagContext";
 
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
@@ -23,23 +22,9 @@ import { BagList } from "../BagList/BagList";
 
 import styles from "./ShoppingProcessContainer.module.css";
 
-export const ShoppingProcessContainer = ({ children, title}) => {
-  const { totalPrice } = useBagContext();
-
-  // const childrenArray = Children.toArray(children);
-
+export const ShoppingProcessContainer = ({ children, title }) => {
   const childrenArray = Children.toArray(children);
-  console.log(childrenArray)
-
-  // const lastChild = childrenArray[childrenArray.length - 1];
-
-  const location = useLocation();
-
-  const locationIsShoppingBag = location.pathname === "/users/shopping-bag";
-
-  const locationIsPayment = location.pathname === "/users/payment";
-
-  const { bagItems } = useBagContext();
+  console.log(childrenArray);
 
   return (
     <section className={styles["shopping-bag-process-container"]}>
@@ -57,30 +42,10 @@ export const ShoppingProcessContainer = ({ children, title}) => {
               {child}
             </div>
           ))}
-          {/* {childrenArray.slice(0, -1).map((child, index) => (
-            <div key={index} className={styles["child"]}>
-              {child}
-            </div>
-          ))} */}
         </div>
         <div className={styles["right"]}>
-          <OrderSummary/>
-          <BagList/>
-          {/* <MediumTitle title={"Order Summary"} />
-          <div className={styles["right-sub-container"]}>
-            <SmallTitle title={"Subtotal"} />
-            <SmallTitle title={`$ ${totalPrice}`} />
-          </div>
-          <div className={styles["right-sub-container"]}>
-            <SpanTitle title={"Shipping"} />
-            <SpanTitle title={"Complimentary"} />
-          </div>
-          <HorizontalLine variant={"large"} />
-          <div className={styles["right-bottom-sub-container"]}>
-            <SmallTitle title={"Total"} />
-            <SmallTitle title={`$ ${totalPrice}`} />
-          </div>
-          {lastChild} */}
+          <OrderSummary />
+          <BagList />
         </div>
       </div>
     </section>
