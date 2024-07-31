@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { createContext, useContext } from "react";
 
+import { SIZE_FORM_KEY } from "../constants/sizeFormKey"; 
+
 export const JewelryItemContext = createContext();
 
 export const JewelryItemProvider = ({ children }) => {
   const [sizes, setSizes] = useState([]);
 
   const [sizeIsSelected, setSizeIsSelected] = useState(false);
+
+  const [selectedSize, setSelectedSize] = useState({ [SIZE_FORM_KEY.Size]: 0 });
 
   const [isSoldOut, setIsSoldOut] = useState(false);
 
@@ -25,6 +29,10 @@ export const JewelryItemProvider = ({ children }) => {
   const updateSizeIsSelected = (isSelected) => {
     setSizeIsSelected(isSelected);
   };
+
+  const updateSelectedSize = (e) => {
+    setSelectedSize((state) => ({ ...state, [e.target.name]: e.target.value }));
+  }
 
   const updateIsSoldOut = (isSoldOut) => {
     setIsSoldOut(isSoldOut);
@@ -64,6 +72,8 @@ export const JewelryItemProvider = ({ children }) => {
     toggleIsLoading,
     decreaseSizeQuantity,
     increaseSizeQuantity,
+    selectedSize,
+updateSelectedSize
   };
 
   return (

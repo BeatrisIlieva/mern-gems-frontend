@@ -14,24 +14,40 @@ import { SIZE_ERROR_MESSAGE } from "../../../constants/sizeErrorMessage";
 import { EARRING_ID } from "../../../constants/earringId";
 import { useBagContext } from "../../../contexts/BagContext";
 
-export const Form = ({toggleDisplayBagPopup}) => {
+export const Form = ({ toggleDisplayBagPopup }) => {
+  // const {
+  //   sizes,
+  //   isSoldOut,
+  //   jewelry,
+  //   decreaseSizeQuantity,
+  //   sizeIsSelected,
+  //   updateSizeIsSelected,
+  // } = useJewelryItemContext();
+
   const {
     sizes,
-    isSoldOut,
-    jewelry,
-    decreaseSizeQuantity,
+    updateSizes,
     sizeIsSelected,
     updateSizeIsSelected,
+    isSoldOut,
+    updateIsSoldOut,
+    isLoading,
+    jewelry,
+    updateJewelry,
+    toggleIsLoading,
+    decreaseSizeQuantity,
+    increaseSizeQuantity,
+    selectedSize,
+    updateSelectedSize,
   } = useJewelryItemContext();
 
   const { updateBagTotalQuantityIntoState } = useBagContext();
 
   const bagService = useService(bagServiceFactory);
 
-  const [selectedSize, setSelectedSize] = useState({ [SIZE_FORM_KEY.Size]: 0 });
+  // const [selectedSize, setSelectedSize] = useState({ [SIZE_FORM_KEY.Size]: 0 });
 
   const [errorMessage, setErrorMessage] = useState("");
-
 
   const addToBagHandler = async (data, jewelryId) => {
     await bagService.create(data, jewelryId);
@@ -40,13 +56,15 @@ export const Form = ({toggleDisplayBagPopup}) => {
 
     decreaseSizeQuantity(sizeId);
 
-    updateBagTotalQuantityIntoState(+1)
+    updateBagTotalQuantityIntoState(+1);
 
     toggleDisplayBagPopup();
   };
 
   const changeHandler = (e) => {
-    setSelectedSize((state) => ({ ...state, [e.target.name]: e.target.value }));
+    updateSelectedSize(e);
+    updateSizeIsSelected(true);
+    setErrorMessage("");
   };
 
   const onSubmit = async (e) => {
@@ -86,10 +104,6 @@ export const Form = ({toggleDisplayBagPopup}) => {
                   checked={
                     Number(selectedSize[SIZE_FORM_KEY.Size]) === item._id
                   }
-                  onClick={() => {
-                    updateSizeIsSelected();
-                    setErrorMessage("");
-                  }}
                   disabled={!Number(item.quantity) > 0}
                 />
                 <label className={styles["label"]} htmlFor={item._id}>
