@@ -33,7 +33,7 @@ export const CheckoutProcessContainer = ({ children, title }) => {
         </div>
         <div className={styles["right"]}>
           <OrderSummary />
-          <BagList />
+          <BagList variant={"checkout-process-container"} />
         </div>
       </div>
     </section>

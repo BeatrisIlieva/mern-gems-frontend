@@ -61,7 +61,7 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
     <Popup
       overlayVariant={"overlay-right"}
       modalVariant={"account"}
-      closePopupHandler={toggleDisplayAccountPopup}
+      popupCloseHandler={toggleDisplayAccountPopup}
     >
       <section className={styles["account-management"]}>
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />

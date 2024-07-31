@@ -10,6 +10,7 @@ export const JewelryCard = ({
   categoryTitle,
   jewelryTitle,
   isSoldOut,
+  variant,
 }) => {
   const slugifiedCategoryTitle = slugify(categoryTitle);
   const slugifiedJewelryTitle = slugify(jewelryTitle);
@@ -19,7 +20,7 @@ export const JewelryCard = ({
       <Link
         to={`/${slugifiedCategoryTitle}/${slugifiedJewelryTitle}/${jewelryId}`}
       >
-        <div className={styles["thumbnail"]}>
+        <div className={styles[variant]}>
           <img
             src={firstImageUrl}
             alt={slugifiedJewelryTitle}

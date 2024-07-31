@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 import { useBagContext } from "../../contexts/BagContext";
 
-export const BagList = () => {
+export const BagList = ({ variant }) => {
   const location = useLocation();
 
   const locationIsCheckout = location.pathname === "/checkout";
@@ -16,15 +16,16 @@ export const BagList = () => {
   const { bagItems } = useBagContext();
 
   return (
-    <ul role="list" className={styles["bag-list"]}>
+    <ul role="list" className={styles[variant]}>
       {bagItems.map((item) => (
-        <li key={item.bagId}>
+        <li key={item.bagId} className={styles["wrapper"]}>
           <JewelryCard
             jewelryId={item.jewelryId}
             firstImageUrl={item.firstImageUrl}
             isSoldOut={item.isSoldOut}
             categoryTitle={item.categoryTitle}
             jewelryTitle={item.jewelryTitle}
+            variant={"bag-list"}
           />
           <div className={styles["middle-container"]}>
             <div className={styles["left"]}>

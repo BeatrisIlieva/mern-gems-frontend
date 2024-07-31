@@ -33,14 +33,17 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { Icon } from "../Icon/Icon";
 
-export const Popup = ({ isVisible, children, overlayVariant, modalVariant, popupCloseHandler }) => {
-
+export const Popup = ({
+  isVisible,
+  children,
+  overlayVariant,
+  modalVariant,
+  popupCloseHandler,
+}) => {
   return (
     <section
-    className={styles[overlayVariant]}
-      // className={`${
-      //   variant === "right" ? styles["overlay-right"] : styles["overlay-top"]
-      // }`}
+      // className={`${styles[overlayVariant]} ${isVisible ? styles[modalVariant] : ""}`.trim()}
+      className={styles[overlayVariant]}
     >
       <div className={styles[modalVariant]}>
         <div className={styles["icon"]}>

@@ -16,13 +16,11 @@ export const Bag = ({ toggleDisplayBagPopup }) => {
     <Popup
       overlayVariant={"overlay-right"}
       modalVariant={"bag"}
-      closePopupHandler={toggleDisplayBagPopup}
+      popupCloseHandler={toggleDisplayBagPopup}
     >
       <section className={styles["bag"]}>
         <LargeTitle title={"My Bag"} />
-
-        <BagList />
-
+        <BagList variant={"bag"} />
         <OrderSummary />
         <Link to={"/checkout"}>
           <PinkButton title={"Continue Checkout"} buttonIsDisabled={false} />

@@ -14,6 +14,5 @@ export const bagServiceFactory = (token) => {
 
     decrease: (bagId) => request.put(`${baseUrl}/decrease/${bagId}`),
 
-    increase: (bagId) => request.put(`${baseUrl}/increase/${bagId}`),
   };
 };

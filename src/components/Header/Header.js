@@ -63,30 +63,30 @@ export const Header = () => {
         />
         <nav>
           <ul className={styles["icon-list"]} role="list">
-            <li onClick={toggleDisplayBagPopup}>
-              <Icon icon={faBagShopping} variant={"header"} />
-              <SpanTitle title={"My Bag"} />
+            <li>
+              <button onClick={toggleDisplayBagPopup}>
+                <Icon icon={faBagShopping} variant={"header"} />
+                <SpanTitle title={"My Bag"} />
+              </button>
               {bagTotalQuantityIntoState > 0 && (
                 <span className={`${styles["count-span"]} ${styles["pulse"]}`}>
                   {bagTotalQuantityIntoState}
                 </span>
               )}
-              {displayBagPopup && (
-                <Bag toggleDisplayBagPopup={toggleDisplayBagPopup} />
-              )}
             </li>
-            <li onClick={toggleDisplayAccountPopup}>
-              <Icon icon={faUser} variant={"header"} />
-              <SpanTitle title={"Account"} />
-              {displayAccountPopup && (
-                <Account
-                  toggleDisplayAccountPopup={toggleDisplayAccountPopup}
-                />
-              )}
+            <li>
+              <button onClick={toggleDisplayAccountPopup}>
+                <Icon icon={faUser} variant={"header"} />
+                <SpanTitle title={"Account"} />
+              </button>
             </li>
           </ul>
         </nav>
       </div>
+      {displayBagPopup && <Bag toggleDisplayBagPopup={toggleDisplayBagPopup} />}
+      {displayAccountPopup && (
+        <Account toggleDisplayAccountPopup={toggleDisplayAccountPopup} />
+      )}
       <HorizontalLine variant={"large"} position={"absolute"} />
     </header>
   );

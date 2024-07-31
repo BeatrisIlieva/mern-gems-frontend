@@ -80,36 +80,26 @@ export const BagProvider = ({ children }) => {
     setBagTotalQuantityIntoState(bagTotalQuantityIntoState + delta);
   };
 
-  const updateBagItemQuantityIntoState = (bagId, delta) => {
-    setBagItems((state) => {
-      const updatedItems = state.map((item) =>
-        item.bagId === bagId 
-          ? {
-              ...item,
-              quantity: item.quantity + delta,
-              inventoryQuantity: item.inventoryQuantity - delta,
-            }
-          : item
-      );
-
-      return updatedItems.filter((item) => item.quantity > 0);
-    });
+  const removeBagItem = (bagId) => {
+    setBagItems((prevBagItems) =>
+      prevBagItems.filter((item) => item._id !== bagId)
+    );
   };
 
   const clearShoppingBag = () => {
     localStorage.setItem("bagTotalQuantity", 0);
 
-    setBagTotalQuantityIntoState(0)
+    setBagTotalQuantityIntoState(0);
   };
 
   const context = {
     bagTotalQuantityIntoState,
     updateBagTotalQuantityIntoState,
     bagItems,
-    updateBagItemQuantityIntoState,
     totalPrice,
     bagIsEmpty,
     clearShoppingBag,
+    removeBagItem,
   };
 
   return <BagContext.Provider value={context}>{children}</BagContext.Provider>;
