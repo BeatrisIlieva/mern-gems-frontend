@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useService } from "../../../hooks/useService";
 import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
@@ -9,7 +8,7 @@ import { useAuthenticationContext } from "../../../contexts/AuthenticationContex
 
 const LogoutButtonTitle = "Logout";
 
-export const Logout = () => {
+export const Logout = ({ popupCloseHandler }) => {
   const userService = useService(userServiceFactory);
   const { clearToken } = useAuthenticationContext();
 
@@ -20,8 +19,15 @@ export const Logout = () => {
 
     await clearToken();
 
+    popupCloseHandler();
+
     navigate("/");
   };
 
-  return <UnderlinedButton title={LogoutButtonTitle} callBackFunction={logoutHandler} />;
+  return (
+    <UnderlinedButton
+      title={LogoutButtonTitle}
+      callBackFunction={logoutHandler}
+    />
+  );
 };

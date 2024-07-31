@@ -66,7 +66,7 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
             title={UpdatePasswordButtonTitle}
             callBackFunction={onUpdatePasswordClick}
           />
-          <Logout />
+          <Logout popupCloseHandler={toggleDisplayAccountPopup}/>
         </div>
         {showUpdateEmail && <UpdateEmailForm />}
         {showUpdatePassword && <UpdatePasswordForm />}
