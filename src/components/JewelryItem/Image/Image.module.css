@@ -1,6 +1,14 @@
-.jewelry-images {
+.jewelry-images,
+.no-second-image-available {
   position: relative;
+}
+
+.jewelry-images {
   cursor: pointer;
+}
+
+.no-second-image-available {
+  cursor: default;
 }
 
 .image {

@@ -4,8 +4,6 @@ import { CircleIcon } from "../CircleIcon/CircleIcon";
 
 import styles from "./Image.module.css";
 
-// import { useJewelryItem } from "../../../hooks/useJewelryItem";
-
 import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 
 export const Image = () => {
@@ -25,19 +23,21 @@ export const Image = () => {
         <img
           src={leftIsSelected ? jewelry.firstImageUrl : jewelry.secondImageUrl}
           alt={jewelry.title}
-          onClick={toggleSelected}
+          onClick={jewelry.secondImageUrl ? toggleSelected : null}
           className={
             leftIsSelected
-              ? styles[`${"left-image"}`]
-              : styles[`${"right-image"}`]
+              ? (jewelry.secondImageUrl ? styles["left-image"] : styles["no-second-image-available"]) 
+              : styles["right-image"]
           }
         />
         {isSoldOut && <span className={styles["sold-out-span"]}>SOLD OUT</span>}
       </div>
-      <div className={styles["circles-container"]}>
-        <CircleIcon isSelected={leftIsSelected} />
-        <CircleIcon isSelected={rightIsSelected} />
-      </div>
+      {jewelry.secondImageUrl && (
+        <div className={styles["circles-container"]}>
+          <CircleIcon isSelected={leftIsSelected} />
+          <CircleIcon isSelected={rightIsSelected} />
+        </div>
+      )}
     </div>
   );
 };
