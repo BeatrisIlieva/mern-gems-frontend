@@ -1,6 +1,6 @@
 import styles from "./PinkButton.module.css";
 
-export const PinkButton = ({ title, buttonIsDisabled }) => {
+export const PinkButton = ({ title, buttonIsDisabled, callBackFunction }) => {
   return (
     <button
       className={
@@ -9,6 +9,7 @@ export const PinkButton = ({ title, buttonIsDisabled }) => {
           : `${styles["button-disabled"]}`
       }
       disabled={buttonIsDisabled}
+      onClick={callBackFunction}
     >
       {title}
     </button>

@@ -8,3 +8,7 @@
   overflow-y: auto;
   height: 40vh;
 }
+
+.no-decoration {
+  text-decoration: none;
+}

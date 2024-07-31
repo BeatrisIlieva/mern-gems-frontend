@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useService } from "../../../hooks/useService";
-import { Button } from "../Button/Button";
+import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 
 import { userServiceFactory } from "../../../services/userService";
 
@@ -23,5 +23,5 @@ export const Logout = () => {
     navigate("/");
   };
 
-  return <Button title={LogoutButtonTitle} callbackFunction={logoutHandler} />;
+  return <UnderlinedButton title={LogoutButtonTitle} callBackFunction={logoutHandler} />;
 };

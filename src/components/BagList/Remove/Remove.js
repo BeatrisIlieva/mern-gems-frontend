@@ -3,6 +3,8 @@ import { bagServiceFactory } from "../../../services/bagService";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
+import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
+
 export const Remove = ({ bagId }) => {
   const { removeBagItem } = useBagContext();
 
@@ -14,5 +16,5 @@ export const Remove = ({ bagId }) => {
     removeBagItem(bagId);
   };
 
-  return <button onClick={removeItem}>Remove</button>;
+  return <UnderlinedButton callBackFunction={removeItem} title={"Remove"}/>
 };

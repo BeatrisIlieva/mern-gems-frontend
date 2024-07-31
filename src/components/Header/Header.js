@@ -63,19 +63,19 @@ export const Header = () => {
         />
         <nav>
           <ul className={styles["icon-list"]} role="list">
-            <li>
-              <button onClick={toggleDisplayBagPopup}>
+            <li className={styles["icon-bar-item"]}>
+              <button onClick={toggleDisplayBagPopup} className={styles["button"]}>
                 <Icon icon={faBagShopping} variant={"header"} />
                 <SpanTitle title={"My Bag"} />
-              </button>
-              {bagTotalQuantityIntoState > 0 && (
+                {bagTotalQuantityIntoState > 0 && (
                 <span className={`${styles["count-span"]} ${styles["pulse"]}`}>
                   {bagTotalQuantityIntoState}
                 </span>
               )}
+              </button>
             </li>
-            <li>
-              <button onClick={toggleDisplayAccountPopup}>
+            <li className={styles["icon-bar-item"]}>
+              <button onClick={toggleDisplayAccountPopup} className={styles["button"]}>
                 <Icon icon={faUser} variant={"header"} />
                 <SpanTitle title={"Account"} />
               </button>

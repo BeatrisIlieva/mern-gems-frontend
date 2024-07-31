@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import { Popup } from "../Popup/Popup";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
-import { Button } from "./Button/Button";
+import { UnderlinedButton } from "../UnderlinedButton/UnderlinedButton";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { Logout } from "./Logout/Logout";
-import { DeleteAccount } from "./DeleteAccount/DeleteAccount";
 
 import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
@@ -19,7 +18,6 @@ import styles from "./Account.module.css";
 
 const UpdateEmailButtonTitle = "Update Email Address";
 const UpdatePasswordButtonTitle = "Change Password";
-const DeleteAccountButtonTitle = "Delete Account";
 
 const LargeTitleContent = "Account Management";
 
@@ -49,13 +47,6 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
     setShowUpdatePassword(true);
     setShowUpdateEmail(false);
   };
-  const [displayDeleteAccountPopup, setDeleteAccountPopup] = useState(false);
-
-  const toggleDeleteAccountPopup = () => {
-    setDeleteAccountPopup(
-      (displayDeleteAccountPopup) => !displayDeleteAccountPopup
-    );
-  };
 
   return (
     <Popup
@@ -67,24 +58,15 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />
         <SmallTitle title={userData.email} />
         <div className={styles["button-container"]}>
-          <Button
+          <UnderlinedButton
             title={UpdateEmailButtonTitle}
-            callbackFunction={onUpdateEmailClick}
+            callBackFunction={onUpdateEmailClick}
           />
-          <Button
+          <UnderlinedButton
             title={UpdatePasswordButtonTitle}
-            callbackFunction={onUpdatePasswordClick}
+            callBackFunction={onUpdatePasswordClick}
           />
           <Logout />
-          <Button
-            title={DeleteAccountButtonTitle}
-            callbackFunction={toggleDeleteAccountPopup}
-          />
-          {displayDeleteAccountPopup && (
-            <DeleteAccount
-              toggleDeleteAccountPopup={toggleDeleteAccountPopup}
-            />
-          )}
         </div>
         {showUpdateEmail && <UpdateEmailForm />}
         {showUpdatePassword && <UpdatePasswordForm />}

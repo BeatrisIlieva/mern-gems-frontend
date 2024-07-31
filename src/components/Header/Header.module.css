@@ -89,3 +89,12 @@
   text-underline-offset: 4px;
   color: var(--gray);
 }
+
+.button {
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--white);
+  outline: none;
+  padding: 0px;
+}

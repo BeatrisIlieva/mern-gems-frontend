@@ -22,8 +22,12 @@ export const Bag = ({ toggleDisplayBagPopup }) => {
         <LargeTitle title={"My Bag"} />
         <BagList variant={"bag"} />
         <OrderSummary />
-        <Link to={"/checkout"}>
-          <PinkButton title={"Continue Checkout"} buttonIsDisabled={false} />
+        <Link to={"/checkout"} className={styles["no-decoration"]}>
+          <PinkButton
+            title={"Continue Checkout"}
+            buttonIsDisabled={false}
+            callBackFunction={toggleDisplayBagPopup}
+          />
         </Link>
       </section>
     </Popup>
