@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { useBagContext } from "../../contexts/BagContext";
-
 import { Popup } from "../Popup/Popup";
 import { BagList } from "../BagList/BagList";
 
@@ -14,8 +12,6 @@ import { PinkButton } from "../PinkButton/PinkButton";
 import styles from "./Bag.module.css";
 
 export const Bag = ({ toggleDisplayBagPopup }) => {
-  const { bagItems } = useBagContext();
-
   return (
     <Popup
       overlayVariant={"overlay-right"}
@@ -25,16 +21,7 @@ export const Bag = ({ toggleDisplayBagPopup }) => {
       <section className={styles["bag"]}>
         <LargeTitle title={"My Bag"} />
 
-          <BagList />
-
-
-        {/* <ul role="list" className={styles["bag-list"]}>
-          {bagItems.map((item) => (
-            <li key={item.bagId}>
-              <BagList {...item} />
-            </li>
-          ))}
-        </ul> */}
+        <BagList />
 
         <OrderSummary />
         <Link to={"/checkout"}>
