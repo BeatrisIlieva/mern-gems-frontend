@@ -10,7 +10,6 @@ import styles from "./Form.module.css";
 
 import { SIZE_FORM_KEY } from "../../../constants/sizeFormKey";
 import { SIZE_ERROR_MESSAGE } from "../../../constants/sizeErrorMessage";
-import { BAG_ACTIONS } from "../../../mappers/bagActions";
 
 import { EARRING_ID } from "../../../constants/earringId";
 import { useBagContext } from "../../../contexts/BagContext";
@@ -47,7 +46,7 @@ export const Form = ({toggleDisplayBagPopup}) => {
 
     // setSelectedSize({ [SIZE_FORM_KEY.Size]: 0 })
 
-    // toggleDisplayBagPopup();
+    toggleDisplayBagPopup();
   };
 
   const changeHandler = (e) => {

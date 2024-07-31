@@ -11,6 +11,8 @@ import { useJewelryItem } from "../../hooks/useJewelryItem";
 
 import { EARRING_ID } from "../../constants/earringId";
 
+import { Bag } from "../Bag/Bag";
+
 import styles from "./JewelryItem.module.css";
 
 export const JewelryItem = () => {
@@ -28,9 +30,9 @@ export const JewelryItem = () => {
         <LoadingSpinner />
       ) : (
         <>
-          {/* {displayBagPopup && (
+          {displayBagPopup && (
             <Bag toggleDisplayBagPopup={toggleDisplayBagPopup} />
-          )} */}
+          )}
           <section className={styles["jewelry-wrapper"]}>
             <div className={styles["left-container"]}>
               <Image />
