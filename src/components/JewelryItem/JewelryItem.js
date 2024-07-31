@@ -98,36 +98,3 @@ export const JewelryItem = () => {
       )}
     </>
   );
-
-  // return (
-  //   <>
-  //     {loading ? (
-  //       <LoadingSpinner />
-  //     ) : (
-  //       <>
-  //         {displayBagPopup && (
-  //           <Bag toggleDisplayBagPopup={toggleDisplayBagPopup} />
-  //         )}
-  //         <section className={styles["jewelry-wrapper"]}>
-  //           <div className={styles["left-container"]}>
-  //             <Image />
-  //           </div>
-  //           <div className={styles["right-container"]}>
-  //             <LargeTitle title={jewelry.title} variant={"large-title"} />
-  //             <p className={styles["description"]}>
-  //               {jewelry.description}.{" "}
-  //               {jewelry.sizes &&
-  //                 jewelry.category === EARRING_ID &&
-  //                 jewelry.sizes[0].measurement}
-  //             </p>
-  //             {jewelry.category !== EARRING_ID && (
-  //               <SmallTitle title={"Size:"} />
-  //             )}
-  //             <Form toggleDisplayBagPopup={toggleDisplayBagPopup} />
-  //           </div>
-  //         </section>
-  //       </>
-  //     )}
-  //   </>
-  // );
-};
