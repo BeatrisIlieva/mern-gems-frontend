@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useService } from "../../../hooks/useService";
 import { bagServiceFactory } from "../../../services/bagService";
 
 import { PinkButton } from "../../PinkButton/PinkButton";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
-// import { useJewelryItem } from "../../../hooks/useJewelryItem";
 import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 import styles from "./Form.module.css";
 
@@ -42,10 +41,6 @@ export const Form = ({toggleDisplayBagPopup}) => {
     decreaseSizeQuantity(sizeId);
 
     updateBagTotalQuantityIntoState(+1)
-
-    // updateBagQuantity(BAG_ACTIONS.Add);
-
-    // setSelectedSize({ [SIZE_FORM_KEY.Size]: 0 })
 
     toggleDisplayBagPopup();
   };
