@@ -11,11 +11,6 @@ import { ShippingInformation } from "../ShippingInformation/ShippingInformation"
 
 import { PaymentForm } from "./PaymentForm/PaymentForm";
 
-import { OrderSummary } from "../../OrderSummary/OrderSummary"; 
-
-import { BagList } from "../../BagList/BagList";
-
-
 export const Payment = () => {
   const { userId } = useAuthenticationContext();
 
@@ -31,11 +26,10 @@ export const Payment = () => {
       });
   }, [userId, userService]);
 
-
   return (
     <CheckoutProcessContainer title={"Payment"}>
       <ShippingInformation userInformation={userInformation} />
-      <PaymentForm/>
+      <PaymentForm />
     </CheckoutProcessContainer>
   );
 };
