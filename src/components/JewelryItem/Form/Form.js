@@ -15,37 +15,21 @@ import { EARRING_ID } from "../../../constants/earringId";
 import { useBagContext } from "../../../contexts/BagContext";
 
 export const Form = ({ toggleDisplayBagPopup }) => {
-  // const {
-  //   sizes,
-  //   isSoldOut,
-  //   jewelry,
-  //   decreaseSizeQuantity,
-  //   sizeIsSelected,
-  //   updateSizeIsSelected,
-  // } = useJewelryItemContext();
-
   const {
     sizes,
-    updateSizes,
     sizeIsSelected,
     updateSizeIsSelected,
     isSoldOut,
-    updateIsSoldOut,
-    isLoading,
     jewelry,
-    updateJewelry,
-    toggleIsLoading,
     decreaseSizeQuantity,
-    increaseSizeQuantity,
     selectedSize,
     updateSelectedSize,
+    removeSelectedSize,
   } = useJewelryItemContext();
 
   const { updateBagTotalQuantityIntoState } = useBagContext();
 
   const bagService = useService(bagServiceFactory);
-
-  // const [selectedSize, setSelectedSize] = useState({ [SIZE_FORM_KEY.Size]: 0 });
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -83,6 +67,8 @@ export const Form = ({ toggleDisplayBagPopup }) => {
       } else {
         await addToBagHandler(selectedSize, jewelry._id);
       }
+      removeSelectedSize();
+      updateSizeIsSelected(false);
     } catch (err) {
       console.log(err.message);
     }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createContext, useContext } from "react";
 
-import { SIZE_FORM_KEY } from "../constants/sizeFormKey"; 
+import { SIZE_FORM_KEY } from "../constants/sizeFormKey";
 
 export const JewelryItemContext = createContext();
 
@@ -32,7 +32,11 @@ export const JewelryItemProvider = ({ children }) => {
 
   const updateSelectedSize = (e) => {
     setSelectedSize((state) => ({ ...state, [e.target.name]: e.target.value }));
-  }
+  };
+
+  const removeSelectedSize = () => {
+    setSelectedSize({ [SIZE_FORM_KEY.Size]: 0 });
+  };
 
   const updateIsSoldOut = (isSoldOut) => {
     setIsSoldOut(isSoldOut);
@@ -73,7 +77,8 @@ export const JewelryItemProvider = ({ children }) => {
     decreaseSizeQuantity,
     increaseSizeQuantity,
     selectedSize,
-updateSelectedSize
+    updateSelectedSize,
+    removeSelectedSize,
   };
 
   return (
