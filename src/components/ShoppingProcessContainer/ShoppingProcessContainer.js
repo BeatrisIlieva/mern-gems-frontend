@@ -1,20 +1,9 @@
 import { Children } from "react";
 
-import { Link, useLocation } from "react-router-dom";
-
 import { LargeTitle } from "../LargeTitle/LargeTitle";
-import { SmallTitle } from "../SmallTitle/SmallTitle";
-import { MediumTitle } from "../MediumTitle/MediumTitle";
-import { SpanTitle } from "../SpanTitle/SpanTitle";
+
 import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
-import { PinkButton } from "../PinkButton/PinkButton";
-
-import { useBagContext } from "../../contexts/BagContext";
-
-import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
-import { useService } from "../../hooks/useService";
-import { orderServiceFactory } from "../../services/orderService";
 
 import { OrderSummary } from "../OrderSummary/OrderSummary";
 
@@ -24,7 +13,6 @@ import styles from "./ShoppingProcessContainer.module.css";
 
 export const ShoppingProcessContainer = ({ children, title }) => {
   const childrenArray = Children.toArray(children);
-  console.log(childrenArray);
 
   return (
     <section className={styles["shopping-bag-process-container"]}>
