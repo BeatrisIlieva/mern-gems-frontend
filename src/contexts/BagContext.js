@@ -8,6 +8,10 @@ import { bagServiceFactory } from "../services/bagService";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
+import { useParams } from "react-router-dom";
+
+import { useJewelryItemContext } from "./JewelryItemContext";
+
 export const BagContext = createContext();
 
 export const BagProvider = ({ children }) => {
@@ -23,6 +27,10 @@ export const BagProvider = ({ children }) => {
   const bagIsEmpty = bagItems.length < 1;
 
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const { jewelryId } = useParams();
+
+  const { increaseSizeQuantity } = useJewelryItemContext();
 
   useEffect(() => {
     setTotalPrice(
@@ -56,6 +64,13 @@ export const BagProvider = ({ children }) => {
     setBagItems((prevBagItems) =>
       prevBagItems.filter((item) => item._id !== bagId)
     );
+
+    const bag = bagItems.filter((item) => item._id === bagId);
+    if (bag.jewelryId === jewelryId) {
+      const sizeId = bag[0].sizeId;
+
+      increaseSizeQuantity(sizeId);
+    }
   };
 
   const clearShoppingBag = () => {

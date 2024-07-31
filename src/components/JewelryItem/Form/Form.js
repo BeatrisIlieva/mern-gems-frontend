@@ -5,7 +5,8 @@ import { bagServiceFactory } from "../../../services/bagService";
 
 import { PinkButton } from "../../PinkButton/PinkButton";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
-import { useJewelryItem } from "../../../hooks/useJewelryItem";
+// import { useJewelryItem } from "../../../hooks/useJewelryItem";
+import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 import styles from "./Form.module.css";
 
 import { SIZE_FORM_KEY } from "../../../constants/sizeFormKey";
@@ -22,7 +23,7 @@ export const Form = ({toggleDisplayBagPopup}) => {
     decreaseSizeQuantity,
     sizeIsSelected,
     updateSizeIsSelected,
-  } = useJewelryItem();
+  } = useJewelryItemContext();
 
   const { updateBagTotalQuantityIntoState } = useBagContext();
 

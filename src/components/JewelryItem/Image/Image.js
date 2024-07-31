@@ -4,10 +4,12 @@ import { CircleIcon } from "../CircleIcon/CircleIcon";
 
 import styles from "./Image.module.css";
 
-import { useJewelryItem } from "../../../hooks/useJewelryItem";
+// import { useJewelryItem } from "../../../hooks/useJewelryItem";
+
+import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 
 export const Image = () => {
-  const { jewelry, isSoldOut } = useJewelryItem();
+  const { jewelry, isSoldOut } = useJewelryItemContext();
 
   const [leftIsSelected, setLeftIsSelected] = useState(true);
   const [rightIsSelected, setRightIsSelected] = useState(false);

@@ -13,11 +13,13 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthenticationProvider>
+      <JewelryItemProvider>
         <BagProvider>
-          <JewelryItemProvider>
+
             <App />
-          </JewelryItemProvider>
+
         </BagProvider>
+        </JewelryItemProvider>
       </AuthenticationProvider>
     </Router>
   </React.StrictMode>
