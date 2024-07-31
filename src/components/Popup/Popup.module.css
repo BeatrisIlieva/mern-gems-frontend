@@ -1,6 +1,3 @@
-
-
-.overlay,
 .overlay-top,
 .overlay-right {
   position: fixed;
@@ -38,12 +35,30 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: slideIn 1s forwards;
   transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 30px;
 }
 
-@keyframes slideIn {
+.account,
+.bag {
+  width: 30vw;
+  height: 100vh;
+  animation: slideInRight 1s forwards;
+}
+
+.authentication {
+  width: fit-content;
+  height: fit-content;
+  animation: slideInTop 1s forwards;
+}
+
+.icon {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+}
+
+@keyframes slideInTop {
   from {
     top: -100%;
   }
@@ -52,19 +67,11 @@
   }
 }
 
-.account,
-.bag {
-  width: 30vw;
-  height: 100vh;
-}
-
-.authentication {
-  width: fit-content;
-  height: fit-content;
-}
-
-.icon {
-  position: absolute;
-  top: 8px;
-  right: 12px;
+@keyframes slideInRight {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
 }
