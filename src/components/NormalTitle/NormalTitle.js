@@ -1,5 +1,5 @@
 import styles from "./NormalTitle.module.css";
 
-export const NormalTitle = ({ title }) => {
-  return <h3 className={styles["normal-title"]}>{title}</h3>;
+export const NormalTitle = ({ title, variant }) => {
+  return <h3 className={styles[`normal-title-${variant}`]}>{title}</h3>;
 };

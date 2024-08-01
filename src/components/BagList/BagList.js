@@ -1,7 +1,6 @@
 import { JewelryCard } from "../JewelryCard/JewelryCard";
-import {NormalTitle} from "../NormalTitle/NormalTitle"
-import { SmallTitle } from "../SmallTitle/SmallTitle";
-import { MediumTitle } from "../MediumTitle/MediumTitle";
+import { NormalTitle } from "../NormalTitle/NormalTitle";
+
 import { Remove } from "./Remove/Remove";
 
 import styles from "./BagList.module.css";
@@ -12,7 +11,8 @@ import { useBagContext } from "../../contexts/BagContext";
 export const BagList = ({ variant }) => {
   const location = useLocation();
 
-  const locationIsCheckout = location.pathname === "/checkout" || location.pathname === "/payment";
+  const locationIsCheckout =
+    location.pathname === "/checkout" || location.pathname === "/payment";
 
   const { bagItems } = useBagContext();
 
@@ -30,17 +30,20 @@ export const BagList = ({ variant }) => {
           />
           <div className={styles["middle-container"]}>
             <div className={styles["left"]}>
-              <NormalTitle title={item.jewelryTitle} />
-              <SmallTitle title={`Size: ${item.size}`} />
+              <NormalTitle title={item.jewelryTitle} variant={"bolded"} />
+              <NormalTitle title={`Size: ${item.size}`} variant={"regular"} />
             </div>
             <div className={styles["right"]}>
-              <MediumTitle title={`$ ${item.totalPrice}`} />
+              <NormalTitle title={`$ ${item.totalPrice}`} variant={"bolded"} />
               {!locationIsCheckout ? (
                 <div className={styles["button-wrapper"]}>
                   <Remove bagId={item.bagId} />
                 </div>
               ) : (
-                `Qty ${item.quantity}`
+                <NormalTitle
+                  title={`Qty ${item.quantity}`}
+                  variant={"regular"}
+                />
               )}
             </div>
           </div>
