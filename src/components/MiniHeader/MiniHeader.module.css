@@ -1,0 +1,23 @@
+.mini-header {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  padding: 10px 80px;
+  align-items: center;
+  background-color: var(--white);
+  z-index: 100;
+  border-bottom: 0.1px solid var(--pink);
+}
+
+.wrapper {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 60px;
+}

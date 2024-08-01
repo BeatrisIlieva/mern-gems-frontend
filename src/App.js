@@ -9,6 +9,7 @@ import { Authentication } from "./components/Authentication/Authentication";
 import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
+import { MiniHeader } from "./components/MiniHeader/MiniHeader";
 import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
@@ -24,6 +25,9 @@ import styles from "./App.css";
 function App() {
   const [showFooter, setShowFooter] = useState(false);
   const location = useLocation();
+
+  const isCheckoutOrPaymentLocation =
+    location.pathname === "/checkout" || location.pathname === "/payment";
 
   const { isAuthenticated } = useAuthenticationContext();
 
@@ -41,7 +45,8 @@ function App() {
     <div className={styles["app"]}>
       {!isAuthenticated && <Authentication />}
       <ScrollToTop />
-      <Header />
+      {isCheckoutOrPaymentLocation ? <MiniHeader /> : <Header />}
+
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
