@@ -1,4 +1,5 @@
-import { MediumTitle } from "../../../MediumTitle/MediumTitle";
+import { LargeTitle } from "../../../LargeTitle/LargeTitle";
+
 import { NormalTitle } from "../../../NormalTitle/NormalTitle";
 
 import styles from "./ShippingInformation.module.css";
@@ -10,28 +11,32 @@ export const ShippingInformation = ({
   return (
     <section>
       <div className={styles["top-container"]}>
-        <MediumTitle title={"Shipping Information"} />
+        <LargeTitle title={"Shipping Information"} />
         <NormalTitle title={userLoginInformation.email} variant={"bolded"} />
       </div>
       <ul role="list">
         <li className={styles["list-item"]}>
-          {userShippingInformation.firstName} {userShippingInformation.lastName}
+          <NormalTitle
+            title={`${userShippingInformation.firstName} ${userShippingInformation.lastName}`}
+          />
         </li>
         <li className={styles["list-item"]}>
-          {userShippingInformation.phoneNumber}
+          <NormalTitle title={userShippingInformation.phoneNumber} />
         </li>
         <li className={styles["list-item"]}>
-          {userShippingInformation.country}
+          <NormalTitle title={userShippingInformation.country} />
         </li>
         <li className={styles["list-item"]}>
-          {userShippingInformation.city}, {userShippingInformation.zipCode}
+          <NormalTitle
+            title={`${userShippingInformation.city} ${userShippingInformation.zipCode}`}
+          />
         </li>
         <li className={styles["list-item"]}>
-          {userShippingInformation.street} St.
+          <NormalTitle title={`${userShippingInformation.street} St.`} />
         </li>
         {userShippingInformation.apartment && (
           <li className={styles["list-item"]}>
-            Apt. {userShippingInformation.apartment}
+            <NormalTitle title={`Apt. ${userShippingInformation.apartment}`} />
           </li>
         )}
       </ul>
