@@ -1,0 +1,10 @@
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.list-item {
+  font-weight: 900;
+  margin-bottom: 10px;
+}

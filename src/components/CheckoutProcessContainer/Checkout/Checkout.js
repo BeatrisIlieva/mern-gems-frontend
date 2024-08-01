@@ -11,7 +11,7 @@ export const Checkout = () => {
     <CheckoutProcessContainer title={"Checkout"}>
       <section className={styles["shipping-details"]}>
         <div className={styles["top-container"]}>
-          <MediumTitle title={"Shipping Details"} />
+          <MediumTitle title={"Shipping Information"} />
         </div>
         <ShippingDetailsForm />
       </section>
