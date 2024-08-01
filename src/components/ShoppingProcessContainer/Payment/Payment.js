@@ -11,14 +11,12 @@ import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 
 import { PaymentForm } from "./PaymentForm/PaymentForm";
 
-import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
 import { LeftSide } from "../LeftSide/LeftSide";
 import { RightSide } from "../RightSide/RightSide";
 import { OrderSummary } from "../OrderSummary/OrderSummary";
 import { BagList } from "../../BagList/BagList";
 
-import styles from "./Payment.module.css";
 
 export const Payment = () => {
   const { userId } = useAuthenticationContext();
@@ -52,12 +50,7 @@ export const Payment = () => {
           userShippingInformation={userShippingInformation}
           userLoginInformation={userLoginInformation}
         />
-        {/* <section className={styles["payment-information"]}>
-          <div className={styles["top-container"]}>
-            <LargeTitle title={"Payment"} />
-          </div> */}
-          <PaymentForm />
-        {/* </section> */}
+        <PaymentForm />
       </LeftSide>
       <RightSide>
         <OrderSummary />
