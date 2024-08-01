@@ -52,12 +52,12 @@ export const Payment = () => {
           userShippingInformation={userShippingInformation}
           userLoginInformation={userLoginInformation}
         />
-        <section className={styles["payment-information"]}>
+        {/* <section className={styles["payment-information"]}>
           <div className={styles["top-container"]}>
             <LargeTitle title={"Payment"} />
-          </div>
+          </div> */}
           <PaymentForm />
-        </section>
+        {/* </section> */}
       </LeftSide>
       <RightSide>
         <OrderSummary />

@@ -15,12 +15,12 @@ export const Checkout = () => {
   return (
     <ShoppingProcessContainer title={"Checkout"}>
       <LeftSide>
-        <section className={styles["shipping-details"]}>
+        {/* <section className={styles["shipping-details"]}>
           <div className={styles["top-container"]}>
             <LargeTitle title={"Shipping Information"} />
-          </div>
+          </div> */}
           <ShippingDetailsForm />
-        </section>
+        {/* </section> */}
       </LeftSide>
       <RightSide>
         <OrderSummary />
