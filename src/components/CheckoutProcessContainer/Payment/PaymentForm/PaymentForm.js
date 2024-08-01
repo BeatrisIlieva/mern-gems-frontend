@@ -1,5 +1,3 @@
-
-
 import { useForm } from "../../../../hooks/useForm";
 import { useService } from "../../../../hooks/useService";
 import { paymentServiceFactory } from "../../../../services/paymentService";
@@ -9,8 +7,6 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-
-import { MediumTitle } from "../../../MediumTitle/MediumTitle";
 
 import { checkIfCardHasExpired } from "./checkIfCardHasExpired";
 
@@ -38,9 +34,9 @@ export const PaymentForm = () => {
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
 
-  const {clearShoppingBag} = useBagContext()
+  const { clearShoppingBag } = useBagContext();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -93,19 +89,16 @@ export const PaymentForm = () => {
   const ButtonTitle = "Place Order Total Price";
 
   return (
-    <section className={styles["payment-information"]}>
-      <MediumTitle title={"Payment"} />
-      <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
-        <DynamicForm
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          buttonTitle={ButtonTitle}
-        />
-      </form>
-    </section>
+    <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        buttonTitle={ButtonTitle}
+      />
+    </form>
   );
 };

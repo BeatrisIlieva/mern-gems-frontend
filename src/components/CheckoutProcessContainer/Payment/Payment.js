@@ -11,6 +11,10 @@ import { ShippingInformation } from "../ShippingInformation/ShippingInformation"
 
 import { PaymentForm } from "./PaymentForm/PaymentForm";
 
+import { MediumTitle } from "../../MediumTitle/MediumTitle";
+
+import styles from "./Payment.module.css";
+
 export const Payment = () => {
   const { userId } = useAuthenticationContext();
 
@@ -29,7 +33,12 @@ export const Payment = () => {
   return (
     <CheckoutProcessContainer title={"Payment"}>
       <ShippingInformation userInformation={userInformation} />
-      <PaymentForm />
+      <section className={styles["payment-information"]}>
+        <div className={styles["top-container"]}>
+          <MediumTitle title={"Payment"} />
+        </div>
+        <PaymentForm />
+      </section>
     </CheckoutProcessContainer>
   );
 };
