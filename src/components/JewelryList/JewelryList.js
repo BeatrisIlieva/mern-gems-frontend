@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Navigation } from "./Navigation/Navigation";
-
 import { useLocation } from "react-router-dom";
 import { useJewelryList } from "../../hooks/useJewelryList";
 
@@ -13,7 +11,16 @@ import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 import { COLLECTIONS_BY_ID } from "../../mappers/collectionsById";
 import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
 
+import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
+
 import styles from "./JewelryList.module.css";
+
+const navItems = [
+  { to: "bracelets", label: "Bracelets" },
+  { to: "earrings", label: "Earrings" },
+  { to: "necklaces", label: "Necklaces & Pendants" },
+  { to: "rings", label: "Rings" },
+];
 
 export const JewelryList = () => {
   const location = useLocation();
@@ -35,7 +42,7 @@ export const JewelryList = () => {
 
   return (
     <section className={styles["jewelries"]}>
-      <Navigation />
+      <NavLinkItem items={navItems} variant={"jewelry-list"} ><span>1</span></NavLinkItem>
       <Routes>
         <Route path="/bracelets" />
         <Route path="/earrings" />

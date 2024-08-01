@@ -137,3 +137,8 @@ input[type="radio"] {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--pink);
 }
+
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 0px;
+}

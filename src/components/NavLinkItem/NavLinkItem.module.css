@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  gap: 30px;
+}
+
+.selected {
+  text-decoration-color: var(--violet);
+  text-underline-offset: 4px;
+  color: var(--gray);
+}
+
+.not-selected {
+  text-decoration: none;
+}
+
+.header,
+.jewelry-list {
+  transition: transform 0.4s ease-in-out;
+}
+
+.header:hover,
+.jewelry-list:hover {
+  transform: scale(1.2);
+}
+
+.jewelry-list {
+  margin-bottom: 30px;
+}

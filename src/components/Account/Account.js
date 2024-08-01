@@ -50,7 +50,7 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
 
   return (
     <Popup
-      overlayVariant={"overlay-right"}
+      overlayVariant={"overlay-top"}
       modalVariant={"account"}
       popupCloseHandler={toggleDisplayAccountPopup}
     >
@@ -66,7 +66,7 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
             title={UpdatePasswordButtonTitle}
             callBackFunction={onUpdatePasswordClick}
           />
-          <Logout popupCloseHandler={toggleDisplayAccountPopup}/>
+          <Logout popupCloseHandler={toggleDisplayAccountPopup} />
         </div>
         {showUpdateEmail && <UpdateEmailForm />}
         {showUpdatePassword && <UpdatePasswordForm />}
