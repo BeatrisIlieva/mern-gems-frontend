@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { SpanTitle } from "../SpanTitle/SpanTitle";
+import { MediumTitle } from "../MediumTitle/MediumTitle";
 
 import styles from "./NavLinkItem.module.css";
 
@@ -20,7 +20,7 @@ export const NavLinkItem = ({ children, items, variant }) => {
                 to={item.to}
               >
                 {children}
-                <SpanTitle title={item.label} />
+                <MediumTitle title={item.label} />
               </NavLink>
             </li>
             {variant === "jewelry-list" && (

@@ -1,5 +1,6 @@
-.medium-title  {
-    text-decoration: none;
-    font-size: var(--medium);
-    font-family: var(--bold-italic-font-family);
-  }
+.medium-title {
+  display: inline;
+  font-size: var(--medium);
+  color: var(--gray);
+  text-decoration: none;
+}

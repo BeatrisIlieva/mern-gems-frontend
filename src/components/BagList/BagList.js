@@ -1,5 +1,6 @@
 import { JewelryCard } from "../JewelryCard/JewelryCard";
 import { SpanTitle } from "../SpanTitle/SpanTitle";
+import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { MediumTitle } from "../MediumTitle/MediumTitle";
 import { Remove } from "./Remove/Remove";
 
@@ -11,7 +12,7 @@ import { useBagContext } from "../../contexts/BagContext";
 export const BagList = ({ variant }) => {
   const location = useLocation();
 
-  const locationIsCheckout = location.pathname === "/checkout";
+  const locationIsCheckout = location.pathname === "/checkout" || location.pathname === "/payment";
 
   const { bagItems } = useBagContext();
 
@@ -29,7 +30,7 @@ export const BagList = ({ variant }) => {
           />
           <div className={styles["middle-container"]}>
             <div className={styles["left"]}>
-              <MediumTitle title={item.jewelryTitle} />
+              <SmallTitle title={item.jewelryTitle} />
               <SpanTitle title={`Size: ${item.size}`} />
             </div>
             <div className={styles["right"]}>
