@@ -15,14 +15,9 @@ import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
 
 import { SmallTitle } from "../SmallTitle/SmallTitle";
 
-import styles from "./JewelryList.module.css";
+import { transformUrlSegment } from "../../utils/transformUrlSegment";
 
-const navItems = [
-  { to: "bracelets", label: "Bracelets" },
-  { to: "earrings", label: "Earrings" },
-  { to: "necklaces", label: "Necklaces & Pendants" },
-  { to: "rings", label: "Rings" },
-];
+import styles from "./JewelryList.module.css";
 
 export const JewelryList = () => {
   const location = useLocation();
@@ -32,6 +27,22 @@ export const JewelryList = () => {
 
   const collectionId = COLLECTIONS_BY_ID[collectionName];
   const categoryId = CATEGORIES_BY_ID[categoryName];
+
+  const transformedCollectionName = transformUrlSegment(collectionName);
+
+  const navItems = [
+    { to: "bracelets", label: "Bracelets" },
+    { to: "earrings", label: "Earrings" },
+    { to: "necklaces", label: "Necklaces & Pendants" },
+    { to: "rings", label: "Rings" },
+  ];
+
+  const navCollection = [
+    {
+      to: `/${collectionName}`,
+      label: `${transformedCollectionName} Collection`,
+    },
+  ];
 
   const {
     loading,
@@ -45,14 +56,18 @@ export const JewelryList = () => {
   return (
     <section className={styles["jewelries"]}>
       <div className={styles["nav-wrapper"]}>
-        <SmallTitle title={"Filter By:"} />
-        <NavLinkItem items={navItems} variant={"jewelry-list"} />
+        <div className={styles["nav-filter"]}>
+          <SmallTitle title={"Filter By:"} />
+          <NavLinkItem items={navItems} variant={"jewelry-list"} />
+        </div>
+        <NavLinkItem items={navCollection} variant={"jewelry-list"} />
       </div>
       <Routes>
         <Route path="/bracelets" />
         <Route path="/earrings" />
         <Route path="/necklaces" />
         <Route path="/rings" />
+        <Route path={`/${collectionName}`} />
       </Routes>
       <div className={styles["jewelries-count"]}>
         Showing 1 -{" "}

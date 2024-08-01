@@ -37,7 +37,7 @@ export const useJewelryList = (collectionId, categoryId) => {
         setShowLoadMore(false);
         setTimeout(() => {
           setShowLoadMore(true);
-        }, 2000);
+        }, 1000);
       });
   }, [collectionId, categoryId, page]);
 

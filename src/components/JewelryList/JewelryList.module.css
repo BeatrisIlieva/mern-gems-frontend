@@ -1,8 +1,13 @@
 .nav-wrapper {
-  display: flex;
-  gap: 30px;
   border-bottom: 0.1px solid var(--light-gray);
   margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-filter {
+  display: flex;
+  gap: 30px;
 }
 
 .jewelries {
