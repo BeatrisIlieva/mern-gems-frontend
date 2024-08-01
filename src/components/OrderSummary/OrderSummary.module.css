@@ -4,7 +4,12 @@
   gap: 10px;
 }
 
-.sub-container {
+.sub-container,
+.bottom-sub-container {
   display: flex;
   justify-content: space-between;
+}
+
+.bottom-sub-container {
+  margin-bottom: 15px;
 }
