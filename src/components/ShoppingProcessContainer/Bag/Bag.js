@@ -2,12 +2,9 @@ import { Link } from "react-router-dom";
 
 import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
 
-import { Popup } from "../../Popup/Popup";
 import { BagList } from "../../BagList/BagList";
 
 import { OrderSummary } from "../OrderSummary/OrderSummary";
-
-import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
 import { PinkButton } from "../../PinkButton/PinkButton";
 
