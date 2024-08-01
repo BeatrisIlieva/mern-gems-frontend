@@ -10,7 +10,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faGem } from "@fortawesome/free-regular-svg-icons";
 import { Icon } from "../Icon/Icon";
 
-import { SpanTitle } from "../SpanTitle/SpanTitle";
+import { MediumTitle } from "../MediumTitle/MediumTitle";
 
 import { Account } from "../Account/Account";
 import { Bag } from "../Bag/Bag";
@@ -55,7 +55,7 @@ export const Header = () => {
               className={styles["button"]}
             >
               <Icon icon={faBagShopping} variant={"header"} />
-              <SpanTitle title={"My Bag"} />
+              <MediumTitle title={"My Bag"} />
               {bagTotalQuantityIntoState > 0 && (
                 <span className={`${styles["count-span"]} ${styles["pulse"]}`}>
                   {bagTotalQuantityIntoState}
@@ -69,7 +69,7 @@ export const Header = () => {
               className={styles["button"]}
             >
               <Icon icon={faUser} variant={"header"} />
-              <SpanTitle title={"Account"} />
+              <MediumTitle title={"Account"} />
             </button>
           </li>
         </ul>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link} from "react-router-dom";
+
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -9,7 +9,8 @@ import { userServiceFactory } from "../../../services/userService";
 
 import { MediumTitle } from "../../MediumTitle/MediumTitle";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
-import { SpanTitle } from "../../SpanTitle/SpanTitle";
+import { NormalTitle } from "../../NormalTitle/NormalTitle";
+
 
 import { convertToReadableDate } from "../../../utils/convertToReadableDate";
 import styles from "./OrderConfirmation.module.css";
@@ -67,17 +68,13 @@ export const OrderConfirmation = () => {
           title={`Thank you for your purchase, ${userShippingInformation.firstName}!`}
         />
         <SmallTitle title={"Your order has been successfully placed"} />
-        <SpanTitle title={`Order Number: ${orderItems._id}`} />
-        <SpanTitle title={`Order Date: ${readableDate}`} />
-        <SpanTitle title={`Status: ${orderItems.status}`} />
+        <NormalTitle title={`Order Number: ${orderItems._id}`} />
+        <NormalTitle title={`Order Date: ${readableDate}`} />
+        <NormalTitle title={`Status: ${orderItems.status}`} />
 
         <MediumTitle
           title={`A confirmation email has been sent to: ${userLoginInformation.email}`}
         />
-        {/* <h3>
-          You can track your order status and find detailed order information in
-          your <Link to={"/users/account"}>Account</Link>
-        </h3> */}
       </section>
     </>
   );

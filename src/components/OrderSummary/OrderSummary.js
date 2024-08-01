@@ -2,7 +2,6 @@ import { useBagContext } from "../../contexts/BagContext";
 
 import { MediumTitle } from "../MediumTitle/MediumTitle";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
-import { SpanTitle } from "../SpanTitle/SpanTitle";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 
 import styles from "./OrderSummary.module.css";
@@ -19,8 +18,8 @@ export const OrderSummary = () => {
         <SmallTitle title={`$ ${totalPrice}`} />
       </div>
       <div className={styles["sub-container"]}>
-        <SpanTitle title={"Shipping"} />
-        <SpanTitle title={"Complimentary"} />
+        <MediumTitle title={"Shipping"} />
+        <MediumTitle title={"Complimentary"} />
       </div>
       <HorizontalLine variant={"large"} />
       <div className={styles["sub-container"]}>

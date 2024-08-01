@@ -1,5 +1,5 @@
 import { JewelryCard } from "../JewelryCard/JewelryCard";
-import { SpanTitle } from "../SpanTitle/SpanTitle";
+import {NormalTitle} from "../NormalTitle/NormalTitle"
 import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { MediumTitle } from "../MediumTitle/MediumTitle";
 import { Remove } from "./Remove/Remove";
@@ -30,8 +30,8 @@ export const BagList = ({ variant }) => {
           />
           <div className={styles["middle-container"]}>
             <div className={styles["left"]}>
-              <SmallTitle title={item.jewelryTitle} />
-              <SpanTitle title={`Size: ${item.size}`} />
+              <NormalTitle title={item.jewelryTitle} />
+              <SmallTitle title={`Size: ${item.size}`} />
             </div>
             <div className={styles["right"]}>
               <MediumTitle title={`$ ${item.totalPrice}`} />

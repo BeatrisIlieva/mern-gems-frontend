@@ -1,6 +1,6 @@
 .small-title {
   text-decoration: none;
-  font-size: var(--normal);
+  font-size: var(--small);
   font-family: var(--bold-italic-font-family);
   color: var(--gray);
 }
