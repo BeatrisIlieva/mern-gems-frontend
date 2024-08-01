@@ -20,9 +20,20 @@
 
 .header:hover,
 .jewelry-list:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .jewelry-list {
-  margin-bottom: 30px;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.vertical-line {
+  display: inline;
+  border-right: 0.1px solid var(--medium-gray);
+  height: 22px;
+}
+
+.vertical-line:last-of-type {
+  display: none;
 }

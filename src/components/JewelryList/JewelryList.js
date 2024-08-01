@@ -13,6 +13,8 @@ import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
 
+import { SmallTitle } from "../SmallTitle/SmallTitle";
+
 import styles from "./JewelryList.module.css";
 
 const navItems = [
@@ -42,7 +44,10 @@ export const JewelryList = () => {
 
   return (
     <section className={styles["jewelries"]}>
-      <NavLinkItem items={navItems} variant={"jewelry-list"} ><span>1</span></NavLinkItem>
+      <div className={styles["nav-wrapper"]}>
+        <SmallTitle title={"Filter By:"} />
+        <NavLinkItem items={navItems} variant={"jewelry-list"} />
+      </div>
       <Routes>
         <Route path="/bracelets" />
         <Route path="/earrings" />
