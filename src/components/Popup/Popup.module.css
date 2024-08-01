@@ -36,7 +36,7 @@
   align-items: center;
   flex-direction: column;
   transition: opacity 0.8s ease, transform 0.8s ease;
-  padding: 30px;
+  padding: 40px;
 }
 
 .account {
@@ -46,7 +46,7 @@
 }
 
 .mini-bag {
-  width: 40%;
+  width: fit-content;
   height: 100vh;
   animation: slideInRight 1s forwards;
 }
