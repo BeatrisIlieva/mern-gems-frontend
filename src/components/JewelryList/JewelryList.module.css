@@ -1,3 +1,8 @@
+.jewelries {
+  margin: 40px 80px 40px 80px;
+  position: relative;
+}
+
 .nav-wrapper {
   border-bottom: 0.1px solid var(--light-gray);
   margin-bottom: 22px;
@@ -8,11 +13,6 @@
 .nav-filter {
   display: flex;
   gap: 30px;
-}
-
-.jewelries {
-  margin: 40px 80px 40px 80px;
-  position: relative;
 }
 
 .jewelry-grid {

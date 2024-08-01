@@ -11,10 +11,12 @@ import { SmallTitle } from "../SmallTitle/SmallTitle";
 
 import { PinkButton } from "../PinkButton/PinkButton";
 
+import { BagCount } from "../BagCount/BagCount";
+
 import styles from "./MiniBag.module.css";
 
 export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
-  const { totalPrice, bagTotalQuantityIntoState } = useBagContext();
+  const { totalPrice } = useBagContext();
 
   return (
     <Popup
@@ -25,13 +27,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       <section className={styles["mini-bag"]}>
         <div className={styles["title"]}>
           <LargeTitle title={"My Bag"} />
-          <NormalTitle
-            title={
-              bagTotalQuantityIntoState > 1
-                ? `(${bagTotalQuantityIntoState}) items`
-                : `(${bagTotalQuantityIntoState}) item`
-            }
-          />
+          <BagCount/>
         </div>
         <BagList variant={"mini-bag"} />
         <div className={styles["total-price-wrapper"]}>
