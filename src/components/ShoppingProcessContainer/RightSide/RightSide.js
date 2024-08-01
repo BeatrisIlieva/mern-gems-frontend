@@ -8,7 +8,7 @@ export const RightSide = ({ children }) => {
   return (
     <div className={styles["right"]}>
       {childrenArray.map((child, index) => (
-        <div key={index} className={styles["child"]}>
+        <div key={index}>
           {child}
         </div>
       ))}

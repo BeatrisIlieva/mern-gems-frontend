@@ -1,12 +1,11 @@
 .right {
   position: sticky;
   width: 50%;
-  height: 300px;
   height: fit-content;
   top: 200px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
     rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
-  padding: 30px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 10px;

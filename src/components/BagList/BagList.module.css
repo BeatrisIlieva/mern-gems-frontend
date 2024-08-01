@@ -4,7 +4,6 @@
   flex-direction: column;
   margin-bottom: 30px;
   gap: 30px;
-
 }
 
 .bag {
@@ -16,7 +15,6 @@
   display: flex;
   gap: 30px;
 }
-
 
 .middle-container {
   display: flex;
