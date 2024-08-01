@@ -1,12 +1,12 @@
-.bag {
+.mini-bag {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.bag-list {
-  overflow-y: auto;
-  height: 40vh;
+.title {
+  height: 24px;
 }
 
 .no-decoration {

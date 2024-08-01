@@ -4,6 +4,10 @@
   gap: 10px;
 }
 
+.title {
+  margin-bottom: 20px;
+}
+
 .sub-container,
 .bottom-sub-container {
   display: flex;
@@ -11,5 +15,5 @@
 }
 
 .bottom-sub-container {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }

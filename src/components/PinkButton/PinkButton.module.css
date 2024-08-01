@@ -1,6 +1,6 @@
 .button,
 .button-disabled {
-  padding: 18px;
+  padding: 12px;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
   border: none;

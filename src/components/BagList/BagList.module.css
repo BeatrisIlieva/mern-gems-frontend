@@ -1,4 +1,4 @@
-.bag,
+.mini-bag,
 .shopping-process-container {
   display: flex;
   flex-direction: column;
@@ -6,9 +6,9 @@
   gap: 30px;
 }
 
-.bag {
+.mini-bag {
   overflow-y: auto;
-  height: 40vh;
+  height: calc(100vh - 240px);
 }
 
 .wrapper {

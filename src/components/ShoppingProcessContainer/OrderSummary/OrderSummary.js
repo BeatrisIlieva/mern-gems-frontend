@@ -12,7 +12,9 @@ export const OrderSummary = () => {
 
   return (
     <section className={styles["order-summary"]}>
-      <LargeTitle title={"Order Summary"} />
+      <div className={styles["title"]}>
+        <LargeTitle title={"Order Summary"} />
+      </div>
       <div className={styles["sub-container"]}>
         <NormalTitle title={"Subtotal"} variant={"bolded"} />
         <NormalTitle title={`$ ${totalPrice}`} variant={"bolded"} />

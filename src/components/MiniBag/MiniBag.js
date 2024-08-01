@@ -18,12 +18,14 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
   return (
     <Popup
       overlayVariant={"overlay-right"}
-      modalVariant={"bag"}
+      modalVariant={"mini-bag"}
       popupCloseHandler={toggleDisplayMiniBagPopup}
     >
-      <section className={styles["bag"]}>
+      <section className={styles["mini-bag"]}>
+        <div className={styles["title"]}>
         <LargeTitle title={"My Bag"} />
-        <BagList variant={"bag"} />
+        </div>
+        <BagList variant={"mini-bag"} />
         <div className={styles["total-price-wrapper"]}>
           <NormalTitle title={"Total"} variant={"bolded"} />
           <NormalTitle title={`$ ${totalPrice}`} variant={"bolded"} />

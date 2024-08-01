@@ -5,6 +5,10 @@
   width: 50%;
 }
 
+.title {
+  margin-bottom: 30px;
+}
+
 .child {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 8px 32px -12px,
     rgba(0, 0, 0, 0.3) 0px 6px 12px -18px;
@@ -14,8 +18,4 @@
 .child:last-child {
   position: sticky;
   top: 200px;
-}
-
-.title {
-  margin-bottom: 30px;
 }

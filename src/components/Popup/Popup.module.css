@@ -24,7 +24,7 @@
 .modal,
 .authentication,
 .account,
-.bag {
+.mini-bag {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -45,7 +45,7 @@
   animation: slideInTop 1s forwards;
 }
 
-.bag {
+.mini-bag {
   width: 40%;
   height: 100vh;
   animation: slideInRight 1s forwards;
