@@ -119,3 +119,21 @@ input[type="radio"]:checked + label {
 input[type="radio"] {
   display: none;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-pink);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--medium-pink);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink);
+}

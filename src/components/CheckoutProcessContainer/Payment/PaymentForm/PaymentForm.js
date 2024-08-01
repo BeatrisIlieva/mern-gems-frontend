@@ -81,8 +81,6 @@ export const PaymentForm = () => {
 
         updateForm();
 
-        // updateTransactionIsSuccessful();
-
         clearShoppingBag();
 
         navigate("/order-confirmation");

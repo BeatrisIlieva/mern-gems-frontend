@@ -49,6 +49,7 @@ export const useForm = (INITIAL_FORM_VALUES) => {
       ...prevValues,
       [fieldKey]: { ...prevValues[fieldKey], fieldValue: newValue },
     }));
+
     updateForm();
   };
 
@@ -64,6 +65,7 @@ export const useForm = (INITIAL_FORM_VALUES) => {
         field.regexPattern
       );
     });
+    
     updateForm();
   };
 
