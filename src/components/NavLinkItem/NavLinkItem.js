@@ -13,6 +13,7 @@ export const NavLinkItem = ({ children, items, variant }) => {
             <li className={styles[variant]}>
               <NavLink
                 key={item.to}
+                end
                 className={({ isActive }) =>
                   isActive ? styles["selected"] : styles["not-selected"]
                 }
