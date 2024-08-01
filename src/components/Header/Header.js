@@ -13,7 +13,7 @@ import { Icon } from "../Icon/Icon";
 import { MediumTitle } from "../MediumTitle/MediumTitle";
 
 import { Account } from "../Account/Account";
-import { Bag } from "../Bag/Bag";
+import { MiniBag } from "../MiniBag/MiniBag";
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
 
@@ -25,14 +25,14 @@ export const Header = () => {
   const { bagTotalQuantityIntoState } = useBagContext();
 
   const [displayAccountPopup, setDisplayAccountPopup] = useState(false);
-  const [displayBagPopup, setDisplayBagPopup] = useState(false);
+  const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
 
   const toggleDisplayAccountPopup = () => {
     setDisplayAccountPopup((displayAccountPopup) => !displayAccountPopup);
   };
 
-  const toggleDisplayBagPopup = () => {
-    setDisplayBagPopup((displayBagPopup) => !displayBagPopup);
+  const toggleDisplayMiniBagPopup = () => {
+    setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
   };
 
   return (
@@ -51,7 +51,7 @@ export const Header = () => {
         <ul className={styles["icon-list"]} role="list">
           <li className={styles["icon-bar-item"]}>
             <button
-              onClick={toggleDisplayBagPopup}
+              onClick={toggleDisplayMiniBagPopup}
               className={styles["button"]}
             >
               <Icon icon={faBagShopping} variant={"header"} />
@@ -74,7 +74,9 @@ export const Header = () => {
           </li>
         </ul>
       </div>
-      {displayBagPopup && <Bag toggleDisplayBagPopup={toggleDisplayBagPopup} />}
+      {displayMiniBagPopup && (
+        <MiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
+      )}
       {displayAccountPopup && (
         <Account toggleDisplayAccountPopup={toggleDisplayAccountPopup} />
       )}

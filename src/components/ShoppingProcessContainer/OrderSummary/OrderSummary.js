@@ -1,9 +1,9 @@
-import { useBagContext } from "../../contexts/BagContext";
+import { useBagContext } from "../../../contexts/BagContext";
 
-import { LargeTitle } from "../LargeTitle/LargeTitle";
+import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
-import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
-import { NormalTitle } from "../NormalTitle/NormalTitle";
+import { HorizontalLine } from "../../HorizontalLine/HorizontalLine";
+import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
 import styles from "./OrderSummary.module.css";
 

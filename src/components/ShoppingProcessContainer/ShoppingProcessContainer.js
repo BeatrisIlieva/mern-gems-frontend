@@ -6,17 +6,22 @@ import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
 import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 
-import { OrderSummary } from "../OrderSummary/OrderSummary";
+import { OrderSummary } from "./OrderSummary/OrderSummary";
 
 import { BagList } from "../BagList/BagList";
 
-import styles from "./CheckoutProcessContainer.module.css";
+import { useLocation } from "react-router-dom";
 
-export const CheckoutProcessContainer = ({ children, title }) => {
-  const childrenArray = Children.toArray(children);
+import { LeftSide } from "./LeftSide/LeftSide";
+import { RightSide } from "./RightSide/RightSide";
+
+import styles from "./ShoppingProcessContainer.module.css";
+
+export const ShoppingProcessContainer = ({children, title}) => {
+
 
   return (
-    <section className={styles["checkout-process-container"]}>
+    <section className={styles["shopping-process-container"]}>
       <div className={styles["top"]}>
         <XLargeTitle title={title} variant={"large-title"} />
         <div className={styles["delivery"]}>
@@ -25,17 +30,9 @@ export const CheckoutProcessContainer = ({ children, title }) => {
         </div>
       </div>
       <div className={styles["bottom"]}>
-        <div className={styles["left"]}>
-          {childrenArray.map((child, index) => (
-            <div key={index} className={styles["child"]}>
-              {child}
-            </div>
-          ))}
-        </div>
-        <div className={styles["right"]}>
-          <OrderSummary />
-          <BagList variant={"checkout-process-container"} />
-        </div>
+        {children}
+        {/* <LeftSide />
+        <RightSide /> */}
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ import { useJewelryItemContext } from "../../contexts/JewelryItemContext";
 
 import { EARRING_ID } from "../../constants/earringId";
 
-import { Bag } from "../Bag/Bag";
+import { MiniBag } from "../MiniBag/MiniBag";
 
 import styles from "./JewelryItem.module.css";
 
@@ -55,10 +55,10 @@ export const JewelryItem = () => {
       });
   }, [jewelryId]);
 
-  const [displayBagPopup, setDisplayBagPopup] = useState(false);
+  const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
 
-  const toggleDisplayBagPopup = () => {
-    setDisplayBagPopup((displayBagPopup) => !displayBagPopup);
+  const toggleDisplayMiniBagPopup = () => {
+    setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
   };
 
   useEffect(() => {
@@ -71,8 +71,8 @@ export const JewelryItem = () => {
     <>
       {jewelry ? (
         <>
-          {displayBagPopup && (
-            <Bag toggleDisplayBagPopup={toggleDisplayBagPopup} />
+          {displayMiniBagPopup && (
+            <MiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
           )}
           <section className={styles["jewelry-wrapper"]}>
             <div className={styles["left-container"]}>
@@ -89,7 +89,7 @@ export const JewelryItem = () => {
               {jewelry.category !== EARRING_ID && (
                 <SmallTitle title={"Size:"} />
               )}
-              <Form toggleDisplayBagPopup={toggleDisplayBagPopup} />
+              <Form toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
             </div>
           </section>
         </>

@@ -14,7 +14,7 @@ import { SIZE_ERROR_MESSAGE } from "../../../constants/sizeErrorMessage";
 import { EARRING_ID } from "../../../constants/earringId";
 import { useBagContext } from "../../../contexts/BagContext";
 
-export const Form = ({ toggleDisplayBagPopup }) => {
+export const Form = ({ toggleDisplayMiniBagPopup }) => {
   const {
     sizes,
     sizeIsSelected,
@@ -42,7 +42,7 @@ export const Form = ({ toggleDisplayBagPopup }) => {
 
     updateBagTotalQuantityIntoState(+1);
 
-    toggleDisplayBagPopup();
+    toggleDisplayMiniBagPopup();
   };
 
   const changeHandler = (e) => {

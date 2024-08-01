@@ -13,9 +13,10 @@ import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
 import { JewelryItem } from "./components/JewelryItem/JewelryItem";
-import { Checkout } from "./components/CheckoutProcessContainer/Checkout/Checkout";
-import { Payment } from "./components/CheckoutProcessContainer/Payment/Payment";
-import { OrderConfirmation } from "./components/CheckoutProcessContainer/OrderConfirmation/OrderConfirmation";
+import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
+import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
+import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
+import { OrderConfirmation } from "./components/ShoppingProcessContainer/OrderConfirmation/OrderConfirmation";
 
 import "normalize.css";
 import styles from "./App.css";
@@ -81,6 +82,14 @@ function App() {
             element={
               <RouteGuard>
                 <JewelryItem />
+              </RouteGuard>
+            }
+          />
+          <Route
+            path="/users/shopping-bag"
+            element={
+              <RouteGuard>
+                <Bag />
               </RouteGuard>
             }
           />

@@ -1,0 +1,19 @@
+.bag {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bag-list {
+  overflow-y: auto;
+  height: 40vh;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.total-price-wrapper {
+  display: flex;
+  justify-content: space-between;
+}

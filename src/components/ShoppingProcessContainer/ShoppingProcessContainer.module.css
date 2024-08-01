@@ -1,0 +1,20 @@
+.shopping-process-container {
+  margin: 40px 80px 40px 80px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.delivery {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.bottom {
+  display: flex;
+  gap: 40px;
+}

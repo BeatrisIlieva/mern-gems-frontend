@@ -8,10 +8,6 @@
   padding: 0px;
 }
 
-.underlined-button:last-child {
-  padding-bottom: 20px;
-}
-
 .underlined-button:hover {
   font-family: var(--bold-font-family);
 }

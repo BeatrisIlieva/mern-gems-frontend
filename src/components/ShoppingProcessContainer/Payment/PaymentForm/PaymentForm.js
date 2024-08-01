@@ -23,6 +23,8 @@ import styles from "./PaymentForm.module.css";
 
 export const PaymentForm = () => {
   const { userId } = useAuthenticationContext();
+  const { totalPrice } = useBagContext();
+
   const paymentService = useService(paymentServiceFactory);
   const {
     values,
@@ -86,7 +88,7 @@ export const PaymentForm = () => {
     }
   };
 
-  const ButtonTitle = "Place Order Total Price";
+  const ButtonTitle = `Place Order $ ${totalPrice}`;
 
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
