@@ -11,7 +11,7 @@ import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 
 import { PaymentForm } from "./PaymentForm/PaymentForm";
 
-import { MediumTitle } from "../../MediumTitle/MediumTitle";
+import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
 import styles from "./Payment.module.css";
 
@@ -48,7 +48,7 @@ export const Payment = () => {
       />
       <section className={styles["payment-information"]}>
         <div className={styles["top-container"]}>
-          <MediumTitle title={"Payment"} />
+          <LargeTitle title={"Payment"} />
         </div>
         <PaymentForm />
       </section>

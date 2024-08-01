@@ -18,25 +18,39 @@ export const ShippingInformation = ({
         <li className={styles["list-item"]}>
           <NormalTitle
             title={`${userShippingInformation.firstName} ${userShippingInformation.lastName}`}
+            variant={"regular"}
           />
         </li>
         <li className={styles["list-item"]}>
-          <NormalTitle title={userShippingInformation.phoneNumber} />
+          <NormalTitle
+            title={userShippingInformation.phoneNumber}
+            variant={"regular"}
+          />
         </li>
         <li className={styles["list-item"]}>
-          <NormalTitle title={userShippingInformation.country} />
+          <NormalTitle
+            title={userShippingInformation.country}
+            variant={"regular"}
+          />
         </li>
         <li className={styles["list-item"]}>
           <NormalTitle
             title={`${userShippingInformation.city} ${userShippingInformation.zipCode}`}
+            variant={"regular"}
           />
         </li>
         <li className={styles["list-item"]}>
-          <NormalTitle title={`${userShippingInformation.street} St.`} />
+          <NormalTitle
+            title={`${userShippingInformation.street} St.`}
+            variant={"regular"}
+          />
         </li>
         {userShippingInformation.apartment && (
           <li className={styles["list-item"]}>
-            <NormalTitle title={`Apt. ${userShippingInformation.apartment}`} />
+            <NormalTitle
+              title={`Apt. ${userShippingInformation.apartment}`}
+              variant={"regular"}
+            />
           </li>
         )}
       </ul>
