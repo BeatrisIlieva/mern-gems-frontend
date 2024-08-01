@@ -1,0 +1,5 @@
+.xlarge-title {
+  text-decoration: none;
+  font-size: var(--xlarge);
+  font-family: var(--bold-italic-font-family);
+}

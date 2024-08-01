@@ -1,7 +1,7 @@
 import { useBagContext } from "../../contexts/BagContext";
 
-import { MediumTitle } from "../MediumTitle/MediumTitle";
-import { SmallTitle } from "../SmallTitle/SmallTitle";
+import { LargeTitle } from "../LargeTitle/LargeTitle";
+
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 
@@ -12,7 +12,7 @@ export const OrderSummary = () => {
 
   return (
     <section className={styles["order-summary"]}>
-      <MediumTitle title={"Order Summary"} />
+      <LargeTitle title={"Order Summary"} />
       <div className={styles["sub-container"]}>
         <NormalTitle title={"Subtotal"} variant={"bolded"} />
         <NormalTitle title={`$ ${totalPrice}`} variant={"bolded"} />

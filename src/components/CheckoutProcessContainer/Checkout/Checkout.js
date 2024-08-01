@@ -2,7 +2,7 @@ import { CheckoutProcessContainer } from "../CheckoutProcessContainer";
 
 import { ShippingDetailsForm } from "./ShippingDetailsForm/ShippingDetailsForm";
 
-import { MediumTitle } from "../../MediumTitle/MediumTitle";
+import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
 import styles from "./Checkout.module.css";
 
@@ -11,7 +11,7 @@ export const Checkout = () => {
     <CheckoutProcessContainer title={"Checkout"}>
       <section className={styles["shipping-details"]}>
         <div className={styles["top-container"]}>
-          <MediumTitle title={"Shipping Information"} />
+          <LargeTitle title={"Shipping Information"} />
         </div>
         <ShippingDetailsForm />
       </section>
