@@ -24,25 +24,21 @@
 .modal,
 .authentication,
 .account,
-.mini-bag,
-.address-book {
+.mini-bag {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
   border-block-end: 1px solid var(--medium-pink);
   border-block-start: 1px solid var(--medium-pink);
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 40px;
 }
 
 .account {
-  width: fit-content;
-  height: fit-content;
+  width: 700px;
+  height: 600px;
+  overflow-y: auto;
   animation: slideInTop 1s forwards;
 }
 
@@ -56,12 +52,6 @@
   width: 340px;
   height: fit-content;
   animation: slideInTop 1s forwards;
-}
-
-.address-book {
-  width: 700px;
-  height: fit-content;
-  overflow-y: auto;
 }
 
 .icon {

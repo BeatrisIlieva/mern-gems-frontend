@@ -6,7 +6,7 @@ export const AddressBookPopup = ({ toggleDisplayAddressBookPopup }) => {
   return (
     <Popup
       overlayVariant={"overlay-top"}
-      modalVariant={"address-book"}
+      modalVariant={"account"}
       popupCloseHandler={toggleDisplayAddressBookPopup}
     >
       <PopupTitle title={"Address Book"} />

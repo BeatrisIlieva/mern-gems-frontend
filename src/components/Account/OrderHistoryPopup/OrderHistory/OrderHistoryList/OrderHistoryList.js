@@ -21,7 +21,7 @@ export const OrderHistoryList = ({
           title={`Created at: ${readableDate}`}
           variant={"regular"}
         />
-        <NormalTitle title={`Total: ${totalPrice}`} variant={"regular"} />
+        <NormalTitle title={`Total: $ ${totalPrice}`} variant={"regular"} />
       </div>
       <ul className={styles["jewelries"]} role="list">
         {jewelries.map((item) => (

@@ -6,7 +6,7 @@ export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
   return (
     <Popup
       overlayVariant={"overlay-top"}
-      modalVariant={"address-book"}
+      modalVariant={"account"}
       popupCloseHandler={toggleDisplayOrderHistoryPopup}
     >
       <PopupTitle title={"Order History"} />
