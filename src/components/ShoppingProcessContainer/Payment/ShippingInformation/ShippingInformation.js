@@ -29,9 +29,13 @@ export const ShippingInformation = ({
           callBackFunction={toggleDisplayAddressBookPopup}
         />
       </div>
+      <div className={styles["top"]}>
+        <NormalTitle title={"Email Address"} variant={"bolded"} />
+        <NormalTitle title={userLoginInformation.email} variant={"regular"} />
+      </div>
       <ul role="list">
         <li className={styles["list-item"]}>
-          <NormalTitle title={userLoginInformation.email} variant={"bolded"} />
+          <NormalTitle title={"Shipping Address"} variant={"bolded"} />
         </li>
         <li className={styles["list-item"]}>
           <NormalTitle

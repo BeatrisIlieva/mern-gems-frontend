@@ -1,15 +1,19 @@
-.top-container {
+.shipping-information {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .list-item {
@@ -19,4 +23,3 @@
 .list-item:last-child {
   margin-bottom: 30px;
 }
-
