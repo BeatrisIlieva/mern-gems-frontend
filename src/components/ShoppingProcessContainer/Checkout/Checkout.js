@@ -1,6 +1,6 @@
 import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
 
-import { ShippingDetailsForm } from "./ShippingDetailsForm/ShippingDetailsForm";
+import { ShippingDetailsForm } from "../../Account/AddressBookPopup/ShippingDetailsForm/ShippingDetailsForm";
 
 import { LeftSide } from "../LeftSide/LeftSide";
 import { RightSide } from "../RightSide/RightSide";

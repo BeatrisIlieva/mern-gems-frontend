@@ -6,6 +6,7 @@ import { UnderlinedButton } from "../UnderlinedButton/UnderlinedButton";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { Logout } from "./Logout/Logout";
+import { AddressBookPopup } from "./AddressBookPopup/AddressBookPopup";
 
 import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
@@ -23,6 +24,7 @@ const LargeTitleContent = "Account Management";
 export const Account = ({ toggleDisplayAccountPopup }) => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
+  const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
 
   const { userId } = useAuthenticationContext();
 
@@ -47,23 +49,37 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
     setShowUpdateEmail(false);
   };
 
+  const toggleDisplayAddressBookPopup = () => {
+    setDisplayAddressBookPopup(
+      (displayAddressBookPopup) => !displayAddressBookPopup
+    );
+  };
+
   return (
-    <section className={styles["account-management"]}>
-      <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-      <SmallTitle title={userData.email} />
-      <div className={styles["button-container"]}>
-        <UnderlinedButton
-          title={UpdateEmailButtonTitle}
-          callBackFunction={onUpdateEmailClick}
-        />
-        <UnderlinedButton
-          title={UpdatePasswordButtonTitle}
-          callBackFunction={onUpdatePasswordClick}
-        />
-        <Logout popupCloseHandler={toggleDisplayAccountPopup} />
+    <section className={styles["account"]}>
+      <div className={styles["left-container"]}></div>
+      <div className={styles["right-container"]}>
+        <LargeTitle title={LargeTitleContent} variant={"large-title"} />
+        <SmallTitle title={userData.email} />
+        <div className={styles["button-container"]}>
+          <UnderlinedButton
+            title={UpdateEmailButtonTitle}
+            callBackFunction={onUpdateEmailClick}
+          />
+          <UnderlinedButton
+            title={UpdatePasswordButtonTitle}
+            callBackFunction={onUpdatePasswordClick}
+          />
+          <Logout popupCloseHandler={toggleDisplayAccountPopup} />
+        </div>
+        {showUpdateEmail && <UpdateEmailForm />}
+        {showUpdatePassword && <UpdatePasswordForm />}
       </div>
-      {showUpdateEmail && <UpdateEmailForm />}
-      {showUpdatePassword && <UpdatePasswordForm />}
+      {displayAddressBookPopup && (
+        <AddressBookPopup
+          toggleDisplayAddressBookPopup={toggleDisplayAddressBookPopup}
+        />
+      )}
     </section>
   );
 };
