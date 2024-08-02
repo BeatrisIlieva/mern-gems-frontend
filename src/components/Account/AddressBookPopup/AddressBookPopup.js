@@ -1,7 +1,6 @@
 import { Popup } from "../../Popup/Popup";
 import { ShippingDetailsForm } from "./ShippingDetailsForm/ShippingDetailsForm";
-import { LargeTitle } from "../../LargeTitle/LargeTitle";
-import styles from "./AddressBookPopup.module.css";
+import { PopupTitle } from "../PopupTitle/PopupTitle";
 
 export const AddressBookPopup = ({ toggleDisplayAddressBookPopup }) => {
   return (
@@ -11,9 +10,7 @@ export const AddressBookPopup = ({ toggleDisplayAddressBookPopup }) => {
       popupCloseHandler={toggleDisplayAddressBookPopup}
     >
       <section className={styles["address-book-popup"]}>
-        <div className={styles["title"]}>
-          <LargeTitle title={"Address Book"} variant={"large-title"} />
-        </div>
+        <PopupTitle title={"Address Book"} />
         <ShippingDetailsForm
           toggleDisplayShippingDetailsPopup={toggleDisplayAddressBookPopup}
         />
