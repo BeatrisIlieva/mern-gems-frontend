@@ -116,29 +116,10 @@ import { NormalTitle } from "../NormalTitle/NormalTitle";
 import { convertToReadableDate } from "../../utils/convertToReadableDate";
 import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 import { LoginInformation } from "./LoginInformation/LoginInformation";
+import { OrderInformation } from "./OrderInformation/OrderInformation";
 import styles from "./OrderConfirmation.module.css";
 
 export const OrderConfirmation = () => {
-  const { userId } = useAuthenticationContext();
-
-  const [userLoginInformation, setUserLoginInformation] = useState([]);
-  const [orderItems, setOrderItems] = useState([]);
-  const orderService = useService(orderServiceFactory);
-  const userService = useService(userServiceFactory);
-
-  useEffect(() => {
-    orderService
-      .confirm(userId)
-      .then((data) => {
-        setOrderItems(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [orderService, userId]);
-
-  const readableDate = convertToReadableDate(orderItems.createdAt);
-
   return (
     <section className={styles["order-confirmation"]}>
       <div className={styles["info"]}>
@@ -147,26 +128,13 @@ export const OrderConfirmation = () => {
           title={"Your order has been successfully placed."}
           variant={"bolded"}
         />
-        <NormalTitle
-          title={`Order Number: ${orderItems._id}`}
-          variant={"regular"}
-        />
-        <NormalTitle
-          title={`Order Date: ${readableDate}`}
-          variant={"regular"}
-        />
-        <NormalTitle
-          title={`Status: ${orderItems.status}`}
-          variant={"regular"}
-        />
         <LoginInformation />
-
+        <OrderInformation />
         <div className={styles["link-to-account"]}>
           <NormalTitle
             title={"You can track your order status in your"}
             variant={"bolded"}
           />
-
           <Link to={"/users/account"} className={styles["link"]}>
             Account
           </Link>
