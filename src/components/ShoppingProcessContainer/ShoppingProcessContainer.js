@@ -14,7 +14,7 @@ import { useLocation } from "react-router-dom";
 
 import { LeftSide } from "./LeftSide/LeftSide";
 import { RightSide } from "./RightSide/RightSide";
-
+import { BagCount } from "../BagCount/BagCount";
 import styles from "./ShoppingProcessContainer.module.css";
 
 export const ShoppingProcessContainer = ({children, title}) => {
@@ -27,6 +27,7 @@ export const ShoppingProcessContainer = ({children, title}) => {
         <div className={styles["delivery"]}>
           <Icon icon={faTruck} variant={"icon"} />
           <XLargeTitle title={"Delivery"} variant={"large-title"} />
+          <BagCount/>
         </div>
       </div>
       <div className={styles["bottom"]}>

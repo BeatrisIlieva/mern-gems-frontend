@@ -46,7 +46,7 @@
 }
 
 .mini-bag {
-  width: fit-content;
+  width: 40vw;
   height: 100vh;
   animation: slideInRight 1s forwards;
 }
