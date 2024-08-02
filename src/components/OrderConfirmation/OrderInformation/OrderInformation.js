@@ -35,7 +35,10 @@ export const OrderInformation = () => {
         variant={"regular"}
       />
       <NormalTitle title={`Order Date: ${readableDate}`} variant={"regular"} />
-      <NormalTitle title={`Status: ${orderInformation.status}`} variant={"regular"} />
+      <NormalTitle
+        title={`Status: ${orderInformation.status}`}
+        variant={"regular"}
+      />
     </>
   );
 };
