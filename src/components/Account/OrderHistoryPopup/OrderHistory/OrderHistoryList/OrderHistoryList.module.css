@@ -1,6 +1,9 @@
 .order-history-list {
   display: flex;
+  flex-direction: column;
   gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 0.1px solid var(--pink);
 }
 
 .jewelries {
