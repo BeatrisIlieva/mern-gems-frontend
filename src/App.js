@@ -18,7 +18,7 @@ import { Account } from "./components/Account/Account";
 import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
 import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
-import { OrderConfirmation } from "./components/ShoppingProcessContainer/OrderConfirmation/OrderConfirmation";
+import { OrderConfirmation } from "./components/OrderConfirmation/OrderConfirmation";
 
 import "normalize.css";
 import styles from "./App.css";

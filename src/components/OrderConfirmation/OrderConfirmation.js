@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
-import { useService } from "../../../hooks/useService";
-import { orderServiceFactory } from "../../../services/orderService";
-import { userServiceFactory } from "../../../services/userService";
-import { XLargeTitle } from "../../XLargeTitle/XLargeTitle";
-import { MediumTitle } from "../../MediumTitle/MediumTitle";
-import { SmallTitle } from "../../SmallTitle/SmallTitle";
-import { NormalTitle } from "../../NormalTitle/NormalTitle";
+import { useService } from "../../hooks/useService";
+import { orderServiceFactory } from "../../services/orderService";
+import { userServiceFactory } from "../../services/userService";
+import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
+import { MediumTitle } from "../MediumTitle/MediumTitle";
+import { SmallTitle } from "../SmallTitle/SmallTitle";
+import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 import { Link } from "react-router-dom";
 
-import { convertToReadableDate } from "../../../utils/convertToReadableDate";
+import { convertToReadableDate } from "../../utils/convertToReadableDate";
 import styles from "./OrderConfirmation.module.css";
 
 export const OrderConfirmation = () => {
