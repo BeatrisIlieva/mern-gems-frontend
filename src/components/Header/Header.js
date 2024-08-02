@@ -26,6 +26,7 @@ export const Header = () => {
 
   const [displayAccountPopup, setDisplayAccountPopup] = useState(false);
   const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
+  const [displayEmptyBagMessage, setDisplayEmptyBagMessage] = useState(false);
 
   const toggleDisplayAccountPopup = () => {
     setDisplayAccountPopup((displayAccountPopup) => !displayAccountPopup);
@@ -33,6 +34,22 @@ export const Header = () => {
 
   const toggleDisplayMiniBagPopup = () => {
     setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
+  };
+
+  const toggleDisplayEmptyBagMessage = () => {
+    setDisplayEmptyBagMessage(true);
+
+    setTimeout(() => {
+      setDisplayEmptyBagMessage(false);
+    }, 3000);
+  };
+
+  const viewBagClickHandler = () => {
+    if (bagTotalQuantityIntoState > 0) {
+      toggleDisplayMiniBagPopup();
+    } else {
+      toggleDisplayEmptyBagMessage();
+    }
   };
 
   return (
@@ -50,15 +67,17 @@ export const Header = () => {
         />
         <ul className={styles["icon-list"]} role="list">
           <li className={styles["icon-bar-item"]}>
-            <button
-              onClick={toggleDisplayMiniBagPopup}
-              className={styles["button"]}
-            >
+            <button onClick={viewBagClickHandler} className={styles["button"]}>
               <Icon icon={faBagShopping} variant={"header"} />
               <MediumTitle title={"My Bag"} />
               {bagTotalQuantityIntoState > 0 && (
                 <span className={`${styles["count-span"]} ${styles["pulse"]}`}>
                   {bagTotalQuantityIntoState}
+                </span>
+              )}
+              {displayEmptyBagMessage && (
+                <span className={`${styles["empty-bag-span"]} ${displayEmptyBagMessage ? styles.show : ''}`.trim()}>
+                  Your Bag Is Empty
                 </span>
               )}
             </button>

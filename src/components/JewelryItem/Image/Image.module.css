@@ -1,7 +1,7 @@
 .jewelry-images,
 .no-second-image-available {
   position: relative;
-  /* height: calc(100vh - 240px); */
+  height: calc(100vh - 240px);
 }
 
 .jewelry-images {

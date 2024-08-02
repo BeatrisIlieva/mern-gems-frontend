@@ -17,7 +17,6 @@ export const Authentication = () => {
   };
 
   return (
-    // <Popup isVisible={true} variant={"authentication"}>
     <Popup overlayVariant={"overlay-top"} modalVariant={"authentication"}>
       {currentPopup === SwitchOptions.Login && (
         <Login

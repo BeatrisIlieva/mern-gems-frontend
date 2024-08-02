@@ -32,6 +32,12 @@ function App() {
   const { isAuthenticated } = useAuthenticationContext();
 
   useEffect(() => {
+    if (isAuthenticated) {
+      document.body.style.overflow = "visible";
+    }
+  });
+
+  useEffect(() => {
     setShowFooter(false);
 
     const timer = setTimeout(() => {

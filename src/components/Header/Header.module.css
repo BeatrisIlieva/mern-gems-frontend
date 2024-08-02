@@ -52,6 +52,21 @@
   color: var(--pink);
 }
 
+.empty-bag-span {
+  position: absolute;
+  top: -24px;
+  right: -30px;
+  color: var(--violet);
+  width: 130px;
+  font-size: var(--medium);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.empty-bag-span.show {
+  opacity: 1;
+}
+
 .button {
   border: none;
   cursor: pointer;

@@ -10,6 +10,14 @@ export const Popup = ({
   modalVariant,
   popupCloseHandler,
 }) => {
+  document.body.style.overflow = "hidden";
+
+  const closeClickHandler = () => {
+    document.body.style.overflow = "visible";
+
+    popupCloseHandler();
+  };
+
   return (
     <section className={styles[overlayVariant]}>
       <div className={styles[modalVariant]}>
@@ -18,7 +26,7 @@ export const Popup = ({
             <Icon
               icon={faXmark}
               variant={"popup"}
-              callBackFunction={popupCloseHandler}
+              callBackFunction={closeClickHandler}
             />
           )}
         </div>
