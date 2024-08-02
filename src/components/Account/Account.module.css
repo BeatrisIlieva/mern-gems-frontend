@@ -45,7 +45,7 @@
 }
 
 .right-container {
-  width: 300px;
+  width: 360px;
   height: fit-content;
   display: flex;
   flex-direction: column;

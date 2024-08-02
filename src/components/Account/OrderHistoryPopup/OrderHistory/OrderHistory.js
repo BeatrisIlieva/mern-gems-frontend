@@ -6,7 +6,7 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 
 import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
 
-import styles from "./OrderHistory.module.css"
+import styles from "./OrderHistory.module.css";
 
 export const OrderHistory = () => {
   const { userId } = useAuthenticationContext();

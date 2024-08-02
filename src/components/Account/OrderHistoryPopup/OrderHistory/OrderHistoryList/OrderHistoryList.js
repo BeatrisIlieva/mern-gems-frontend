@@ -5,7 +5,6 @@ import { convertToReadableDate } from "../../../../../utils/convertToReadableDat
 
 import styles from "./OrderHistoryList.module.css";
 export const OrderHistoryList = ({
-  _id,
   status,
   createdAt,
   totalPrice,

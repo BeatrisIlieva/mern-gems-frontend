@@ -10,7 +10,7 @@ export const Popup = ({
   modalVariant,
   popupCloseHandler,
 }) => {
-  // document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
 
   const closeClickHandler = () => {
     document.body.style.overflow = "visible"; 
