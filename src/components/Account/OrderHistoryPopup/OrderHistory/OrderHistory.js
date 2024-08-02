@@ -23,7 +23,7 @@ export const OrderHistory = () => {
         console.log(err.message);
       });
   }, [orderService, userId]);
-console.log(orderItems)
+
   return (
     <ul role="list">
       {orderItems.map((item) => (
