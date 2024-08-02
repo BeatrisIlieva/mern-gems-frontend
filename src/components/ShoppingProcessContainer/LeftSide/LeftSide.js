@@ -6,7 +6,6 @@ import styles from "./LeftSide.module.css";
 
 const ChildrenByTitles = {
   PaymentForm: "Payment",
-  ShippingInformation: "Shipping Information",
   ShippingDetailsForm: "Shipping Information",
 };
 
@@ -17,11 +16,11 @@ export const LeftSide = ({ children }) => {
     <div className={styles["left"]}>
       {childrenArray.map((child, index) => (
         <div key={index} className={styles["child"]}>
-          {/* <div className={styles["title"]}>
+          <div className={styles["title"]}>
             <LargeTitle
               title={ChildrenByTitles[child.props.name || child.type.name]}
             />
-          </div> */}
+          </div>
           {child}
         </div>
       ))}
