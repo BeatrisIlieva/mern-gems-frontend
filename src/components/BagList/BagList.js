@@ -11,8 +11,8 @@ import { useBagContext } from "../../contexts/BagContext";
 export const BagList = ({ variant }) => {
   const location = useLocation();
 
-  const locationIsCheckout =
-    location.pathname === "/checkout" || location.pathname === "/payment";
+  const showRemoveButton =
+    location.pathname !== "/checkout" && location.pathname !== "/payment";
 
   const { bagItems } = useBagContext();
 
@@ -35,7 +35,7 @@ export const BagList = ({ variant }) => {
             </div>
             <div className={styles["right"]}>
               <NormalTitle title={`$ ${item.totalPrice}`} variant={"bolded"} />
-              {!locationIsCheckout ? (
+              {showRemoveButton ? (
                 <div className={styles["button-wrapper"]}>
                   <Remove bagId={item.bagId} />
                 </div>
