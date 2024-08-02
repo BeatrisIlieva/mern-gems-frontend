@@ -16,21 +16,23 @@ import { Account } from "../Account/Account";
 import { MiniBag } from "../MiniBag/MiniBag";
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
+import { useLocation } from "react-router-dom";
 
 import styles from "./Header.module.css";
 
-const navItems = [{ to: "/", label: "Collections" }];
+const navItemCollections = [{ to: "/", label: "Collections" }];
+const navItemAccount = [{ to: "/users/account", label: "My Account" }];
+const navItemBag = [{ to: "/users/shopping-bag", label: "My Bag" }];
 
 export const Header = () => {
+  const location = useLocation();
+
+  const locationIsShoppingBag = location.pathname === "/users/shopping-bag";
   const { bagTotalQuantityIntoState } = useBagContext();
 
-  const [displayAccountPopup, setDisplayAccountPopup] = useState(false);
   const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
   const [displayEmptyBagMessage, setDisplayEmptyBagMessage] = useState(false);
 
-  const toggleDisplayAccountPopup = () => {
-    setDisplayAccountPopup((displayAccountPopup) => !displayAccountPopup);
-  };
 
   const toggleDisplayMiniBagPopup = () => {
     setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
@@ -55,7 +57,7 @@ export const Header = () => {
   return (
     <header className={styles["header"]}>
       <div className={styles["wrapper"]}>
-        <NavLinkItem items={navItems} variant={"header"}>
+        <NavLinkItem items={navItemCollections} variant={"header"}>
           <Icon icon={faGem} variant={"header"} />
         </NavLinkItem>
         <img
@@ -66,38 +68,44 @@ export const Header = () => {
           alt="logo-image"
         />
         <ul className={styles["icon-list"]} role="list">
-          <li className={styles["icon-bar-item"]}>
-            <button onClick={viewBagClickHandler} className={styles["button"]}>
+          {locationIsShoppingBag ? (
+            <NavLinkItem items={navItemBag} variant={"header"}>
               <Icon icon={faBagShopping} variant={"header"} />
-              <MediumTitle title={"My Bag"} />
-              {bagTotalQuantityIntoState > 0 && (
-                <span className={`${styles["count-span"]} ${styles["pulse"]}`}>
-                  {bagTotalQuantityIntoState}
-                </span>
-              )}
-              {displayEmptyBagMessage && (
-                <span className={`${styles["empty-bag-span"]} ${displayEmptyBagMessage ? styles.show : ''}`.trim()}>
-                  Your Bag Is Empty
-                </span>
-              )}
-            </button>
-          </li>
-          <li className={styles["icon-bar-item"]}>
-            <button
-              onClick={toggleDisplayAccountPopup}
-              className={styles["button"]}
-            >
-              <Icon icon={faUser} variant={"header"} />
-              <MediumTitle title={"Account"} />
-            </button>
-          </li>
+            </NavLinkItem>
+          ) : (
+            <li className={styles["icon-bar-item"]}>
+              <button
+                onClick={viewBagClickHandler}
+                className={styles["button"]}
+              >
+                <Icon icon={faBagShopping} variant={"header"} />
+                <MediumTitle title={"My Bag"} />
+                {bagTotalQuantityIntoState > 0 && (
+                  <span
+                    className={`${styles["count-span"]} ${styles["pulse"]}`}
+                  >
+                    {bagTotalQuantityIntoState}
+                  </span>
+                )}
+                {displayEmptyBagMessage && (
+                  <span
+                    className={`${styles["empty-bag-span"]} ${
+                      displayEmptyBagMessage ? styles.show : ""
+                    }`.trim()}
+                  >
+                    Your Bag Is Empty
+                  </span>
+                )}
+              </button>
+            </li>
+          )}
+          <NavLinkItem items={navItemAccount} variant={"header"}>
+            <Icon icon={faUser} variant={"header"} />
+          </NavLinkItem>
         </ul>
       </div>
       {displayMiniBagPopup && (
         <MiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
-      )}
-      {displayAccountPopup && (
-        <Account toggleDisplayAccountPopup={toggleDisplayAccountPopup} />
       )}
       <HorizontalLine variant={"large"} position={"absolute"} />
     </header>

@@ -14,6 +14,7 @@ import { Home } from "./components/Home/Home";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
 import { JewelryItem } from "./components/JewelryItem/JewelryItem";
+import { Account } from "./components/Account/Account";
 import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
 import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
@@ -93,6 +94,14 @@ function App() {
             element={
               <RouteGuard>
                 <JewelryItem />
+              </RouteGuard>
+            }
+          />
+          <Route
+            path="/users/account"
+            element={
+              <RouteGuard>
+                <Account />
               </RouteGuard>
             }
           />

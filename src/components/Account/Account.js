@@ -49,11 +49,11 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
   };
 
   return (
-    <Popup
-      overlayVariant={"overlay-top"}
-      modalVariant={"account"}
-      popupCloseHandler={toggleDisplayAccountPopup}
-    >
+    // <Popup
+    //   overlayVariant={"overlay-top"}
+    //   modalVariant={"account"}
+    //   popupCloseHandler={toggleDisplayAccountPopup}
+    // >
       <section className={styles["account-management"]}>
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />
         <SmallTitle title={userData.email} />
@@ -71,6 +71,6 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
         {showUpdateEmail && <UpdateEmailForm />}
         {showUpdatePassword && <UpdatePasswordForm />}
       </section>
-    </Popup>
+    // </Popup>
   );
 };
