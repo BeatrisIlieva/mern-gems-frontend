@@ -1,0 +1,6 @@
+.order-history-popup {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

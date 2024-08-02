@@ -6,6 +6,7 @@ import { UnderlinedButton } from "../UnderlinedButton/UnderlinedButton";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { Logout } from "./Logout/Logout";
 import { AddressBookPopup } from "./AddressBookPopup/AddressBookPopup";
+import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
 import { Icon } from "../Icon/Icon";
 
 import { NormalTitle } from "../NormalTitle/NormalTitle";
@@ -30,6 +31,8 @@ export const Account = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
   const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
+  const [displayOrderHistoryPopup, setDisplayOrderHistoryPopup] =
+    useState(false);
 
   const { userId } = useAuthenticationContext();
 
@@ -60,6 +63,12 @@ export const Account = () => {
     );
   };
 
+  const toggleDisplayOrderHistoryPopup = () => {
+    setDisplayOrderHistoryPopup(
+      (displayOrderHistoryPopup) => !displayOrderHistoryPopup
+    );
+  };
+
   return (
     <section className={styles["account"]}>
       <div className={styles["left-container"]}>
@@ -80,7 +89,7 @@ export const Account = () => {
             <LargeTitle title={"Order History"} variant={"large-title"} />
           </div>
           <button
-            onClick={toggleDisplayAddressBookPopup}
+            onClick={toggleDisplayOrderHistoryPopup}
             className={styles["button-container"]}
           >
             <Icon icon={faClockRotateLeft} variant={"address-book"} />
@@ -108,6 +117,11 @@ export const Account = () => {
       {displayAddressBookPopup && (
         <AddressBookPopup
           toggleDisplayAddressBookPopup={toggleDisplayAddressBookPopup}
+        />
+      )}
+      {displayOrderHistoryPopup && (
+        <OrderHistoryPopup
+          toggleDisplayOrderHistoryPopup={toggleDisplayOrderHistoryPopup}
         />
       )}
     </section>
