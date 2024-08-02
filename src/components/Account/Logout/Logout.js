@@ -8,7 +8,7 @@ import { useAuthenticationContext } from "../../../contexts/AuthenticationContex
 
 const LogoutButtonTitle = "Logout";
 
-export const Logout = ({ popupCloseHandler }) => {
+export const Logout = () => {
   const userService = useService(userServiceFactory);
   const { clearToken } = useAuthenticationContext();
 
@@ -18,8 +18,6 @@ export const Logout = ({ popupCloseHandler }) => {
     await userService.logout();
 
     await clearToken();
-
-    popupCloseHandler();
 
     navigate("/");
   };

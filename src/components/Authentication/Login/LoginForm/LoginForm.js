@@ -76,16 +76,15 @@ export const LoginForm = () => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        buttonTitle={ButtonTitle}
-      />
-    </form>
+    <DynamicForm
+      values={values}
+      formKeys={FORM_KEYS}
+      clickHandler={clickHandler}
+      blurHandler={blurHandler}
+      changeHandler={changeHandler}
+      initialFormValues={INITIAL_FORM_VALUES}
+      buttonTitle={ButtonTitle}
+      onSubmit={onSubmit}
+    />
   );
 };

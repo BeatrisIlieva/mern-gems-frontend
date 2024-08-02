@@ -19,7 +19,6 @@ import { useBagContext } from "../../../../contexts/BagContext";
 
 import { useNavigate } from "react-router-dom";
 
-import styles from "./PaymentForm.module.css";
 
 export const PaymentForm = () => {
   const { userId } = useAuthenticationContext();
@@ -91,16 +90,15 @@ export const PaymentForm = () => {
   const ButtonTitle = `Place Order $ ${totalPrice}`;
 
   return (
-    <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        buttonTitle={ButtonTitle}
-      />
-    </form>
+    <DynamicForm
+      values={values}
+      formKeys={FORM_KEYS}
+      clickHandler={clickHandler}
+      blurHandler={blurHandler}
+      changeHandler={changeHandler}
+      initialFormValues={INITIAL_FORM_VALUES}
+      buttonTitle={ButtonTitle}
+      onSubmit={onSubmit}
+    />
   );
 };

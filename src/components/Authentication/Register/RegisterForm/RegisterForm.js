@@ -57,7 +57,6 @@ export const RegisterForm = () => {
         await updateAuthentication(result);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-        
       } catch (err) {
         if (err.message === EMAIL_ALREADY_EXISTS_ERROR_MESSAGE) {
           setValues((prevValues) => ({
@@ -75,16 +74,15 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        buttonTitle={ButtonTitle}
-      />
-    </form>
+    <DynamicForm
+      values={values}
+      formKeys={FORM_KEYS}
+      clickHandler={clickHandler}
+      blurHandler={blurHandler}
+      changeHandler={changeHandler}
+      initialFormValues={INITIAL_FORM_VALUES}
+      buttonTitle={ButtonTitle}
+      onSubmit={onSubmit}
+    />
   );
 };

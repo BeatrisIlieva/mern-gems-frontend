@@ -24,7 +24,8 @@
 .modal,
 .authentication,
 .account,
-.mini-bag {
+.mini-bag,
+.address-book {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -52,9 +53,15 @@
 }
 
 .authentication {
-  width: fit-content;
+  width: 340px;
   height: fit-content;
   animation: slideInTop 1s forwards;
+}
+
+.address-book{
+  width: 680px;
+  height: 96vh;
+  overflow-y: auto;
 }
 
 .icon {

@@ -14,6 +14,7 @@ export const DynamicForm = ({
   initialFormValues,
   userInformation,
   buttonTitle,
+  onSubmit
 }) => {
   const location = useLocation();
 
@@ -28,7 +29,7 @@ export const DynamicForm = ({
   };
 
   return (
-    <>
+    <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
       {Object.entries(formKeys).map(([key, value]) => (
         <div key={key} className={styles["field-box"]}>
           {key === "Email" && location.pathname !== "/users/account" && (
@@ -93,6 +94,6 @@ export const DynamicForm = ({
       <button className={styles["button"]} type="submit">
         {buttonTitle}
       </button>
-    </>
+    </form>
   );
 };

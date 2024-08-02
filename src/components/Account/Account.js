@@ -21,7 +21,7 @@ const UpdatePasswordButtonTitle = "Change Password";
 
 const LargeTitleContent = "Account Management";
 
-export const Account = ({ toggleDisplayAccountPopup }) => {
+export const Account = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
   const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
@@ -57,7 +57,9 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
 
   return (
     <section className={styles["account"]}>
-      <div className={styles["left-container"]}></div>
+      <div className={styles["left-container"]}>
+        <button onClick={toggleDisplayAddressBookPopup}>address book</button>
+      </div>
       <div className={styles["right-container"]}>
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />
         <SmallTitle title={userData.email} />
@@ -70,7 +72,7 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
             title={UpdatePasswordButtonTitle}
             callBackFunction={onUpdatePasswordClick}
           />
-          <Logout popupCloseHandler={toggleDisplayAccountPopup} />
+          <Logout />
         </div>
         {showUpdateEmail && <UpdateEmailForm />}
         {showUpdatePassword && <UpdatePasswordForm />}

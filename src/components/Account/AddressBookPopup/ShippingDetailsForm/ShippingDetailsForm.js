@@ -14,7 +14,6 @@ import { useService } from "../../../../hooks/useService";
 
 import { userServiceFactory } from "../../../../services/userService";
 
-import styles from "./ShippingDetailsForm.module.css";
 
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const userService = useService(userServiceFactory);
@@ -96,17 +95,16 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit} className={styles[["form"]]}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        userInformation={userInformation}
-        buttonTitle={ButtonTitle}
-      />
-    </form>
+    <DynamicForm
+      values={values}
+      formKeys={FORM_KEYS}
+      clickHandler={clickHandler}
+      blurHandler={blurHandler}
+      changeHandler={changeHandler}
+      initialFormValues={INITIAL_FORM_VALUES}
+      userInformation={userInformation}
+      buttonTitle={ButtonTitle}
+      onSubmit={onSubmit}
+    />
   );
 };
