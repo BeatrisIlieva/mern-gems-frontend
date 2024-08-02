@@ -12,7 +12,6 @@ import { Icon } from "../Icon/Icon";
 
 import { MediumTitle } from "../MediumTitle/MediumTitle";
 
-import { Account } from "../Account/Account";
 import { MiniBag } from "../MiniBag/MiniBag";
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
@@ -21,7 +20,7 @@ import { useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 
 const navItemCollections = [{ to: "/", label: "Collections" }];
-const navItemAccount = [{ to: "/users/account", label: "My Account" }];
+const navItemAccount = [{ to: "/users/account", label: "Account" }];
 const navItemBag = [{ to: "/users/shopping-bag", label: "My Bag" }];
 
 export const Header = () => {

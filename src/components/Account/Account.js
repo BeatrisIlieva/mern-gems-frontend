@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import { Popup } from "../Popup/Popup";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 import { UnderlinedButton } from "../UnderlinedButton/UnderlinedButton";
@@ -49,28 +48,22 @@ export const Account = ({ toggleDisplayAccountPopup }) => {
   };
 
   return (
-    // <Popup
-    //   overlayVariant={"overlay-top"}
-    //   modalVariant={"account"}
-    //   popupCloseHandler={toggleDisplayAccountPopup}
-    // >
-      <section className={styles["account-management"]}>
-        <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-        <SmallTitle title={userData.email} />
-        <div className={styles["button-container"]}>
-          <UnderlinedButton
-            title={UpdateEmailButtonTitle}
-            callBackFunction={onUpdateEmailClick}
-          />
-          <UnderlinedButton
-            title={UpdatePasswordButtonTitle}
-            callBackFunction={onUpdatePasswordClick}
-          />
-          <Logout popupCloseHandler={toggleDisplayAccountPopup} />
-        </div>
-        {showUpdateEmail && <UpdateEmailForm />}
-        {showUpdatePassword && <UpdatePasswordForm />}
-      </section>
-    // </Popup>
+    <section className={styles["account-management"]}>
+      <LargeTitle title={LargeTitleContent} variant={"large-title"} />
+      <SmallTitle title={userData.email} />
+      <div className={styles["button-container"]}>
+        <UnderlinedButton
+          title={UpdateEmailButtonTitle}
+          callBackFunction={onUpdateEmailClick}
+        />
+        <UnderlinedButton
+          title={UpdatePasswordButtonTitle}
+          callBackFunction={onUpdatePasswordClick}
+        />
+        <Logout popupCloseHandler={toggleDisplayAccountPopup} />
+      </div>
+      {showUpdateEmail && <UpdateEmailForm />}
+      {showUpdatePassword && <UpdatePasswordForm />}
+    </section>
   );
 };
