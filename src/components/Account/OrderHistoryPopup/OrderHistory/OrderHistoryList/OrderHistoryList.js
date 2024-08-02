@@ -1,6 +1,9 @@
-import styles from "./OrderHistoryList.module.css";
 import { JewelryCard } from "../../../../JewelryCard/JewelryCard";
+import { NormalTitle } from "../../../../NormalTitle/NormalTitle";
 
+import { convertToReadableDate } from "../../../../../utils/convertToReadableDate";
+
+import styles from "./OrderHistoryList.module.css";
 export const OrderHistoryList = ({
   _id,
   status,
@@ -8,19 +11,17 @@ export const OrderHistoryList = ({
   totalPrice,
   jewelries,
 }) => {
-  const date = createdAt.split("T")[0];
+  const readableDate = convertToReadableDate(createdAt);
+
   return (
     <section className={styles["order-history-list"]}>
       <div className={styles["order-info"]}>
-        <div className={styles["status"]}>
-          <span className={styles["bolded"]}>Status:</span> {status}
-        </div>
-        <div className={styles["created-at"]}>
-          <span className={styles["bolded"]}>Created At:</span> {date}
-        </div>
-        <div className={styles["total-price"]}>
-          <span className={styles["bolded"]}>Total:</span> ${totalPrice}
-        </div>
+        <NormalTitle title={`Status: ${status}`} variant={"regular"} />
+        <NormalTitle
+          title={`Created at: ${readableDate}`}
+          variant={"regular"}
+        />
+        <NormalTitle title={`Total: ${totalPrice}`} variant={"regular"} />
       </div>
       <ul className={styles["jewelries"]} role="list">
         {jewelries.map((item) => (
