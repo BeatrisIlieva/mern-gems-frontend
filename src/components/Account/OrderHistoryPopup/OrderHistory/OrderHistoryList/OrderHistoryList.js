@@ -5,7 +5,7 @@ export const OrderHistoryList = ({
   _id,
   status,
   createdAt,
-  subTotal,
+  totalPrice,
   jewelries,
 }) => {
   const date = createdAt.split("T")[0];
@@ -15,7 +15,7 @@ export const OrderHistoryList = ({
         <ul className={styles["jewelries"]} role="list">
           {jewelries.map((item) => (
             <li key={item._id} className={styles["jewelry-item"]}>
-              <JewelryCard {...item} />
+              <JewelryCard {...item} variant={"bag-list"} />
             </li>
           ))}
         </ul>
@@ -27,7 +27,7 @@ export const OrderHistoryList = ({
             <span className={styles["bolded"]}>Created At:</span> {date}
           </div>
           <div className={styles["total-price"]}>
-            <span className={styles["bolded"]}>Total:</span> ${subTotal}
+            <span className={styles["bolded"]}>Total:</span> ${totalPrice}
           </div>
         </div>
       </div>

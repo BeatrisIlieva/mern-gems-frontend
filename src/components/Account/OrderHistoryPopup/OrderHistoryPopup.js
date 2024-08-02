@@ -1,6 +1,8 @@
 import { Popup } from "../../Popup/Popup";
 import { LargeTitle } from "../../LargeTitle/LargeTitle";
+import { OrderHistory } from "./OrderHistory/OrderHistory";
 import styles from "./OrderHistoryPopup.module.css";
+
 
 export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
   return (
@@ -13,6 +15,7 @@ export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
         <div className={styles["title"]}>
           <LargeTitle title={"Order History"} variant={"large-title"} />
         </div>
+        <OrderHistory/>
         {/* <ShippingDetailsForm
           toggleDisplayShippingDetailsPopup={toggleDisplayOrderHistoryPopup}
         /> */}

@@ -17,13 +17,13 @@ export const OrderHistory = () => {
     orderService
       .getAll(userId)
       .then((data) => {
-        setOrders(data);
+        setOrderItems(data);
       })
       .catch((err) => {
         console.log(err.message);
       });
   }, [orderService, userId]);
-
+console.log(orderItems)
   return (
     <ul role="list">
       {orderItems.map((item) => (
