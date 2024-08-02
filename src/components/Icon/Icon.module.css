@@ -1,24 +1,15 @@
 .icon,
-.add-address-book,
-.header{
+.shopping-process-container,
+.header {
   color: var(--pink);
   height: var(--medium);
   cursor: pointer;
 }
 
-.add-address-book {
-  background-color: var(--pink);
-  color: var(--white);
-  padding: 4px 6px;
-  border-radius: 32px;
+.shopping-process-container {
+  height: var(--large);
 }
 
 .header {
   padding-right: 4px;
-}
-
-.disabled {
-  height: var(--medium);
-  color: var(--light-gray);
-  cursor: not-allowed;
 }

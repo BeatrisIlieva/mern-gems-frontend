@@ -25,7 +25,7 @@ export const ShoppingProcessContainer = ({children, title}) => {
       <div className={styles["top"]}>
         <XLargeTitle title={title} variant={"large-title"} />
         <div className={styles["delivery"]}>
-          <Icon icon={faTruck} variant={"icon"} />
+          <Icon icon={faTruck} variant={"shopping-process-container"} />
           <XLargeTitle title={"Delivery"} variant={"large-title"} />
           <BagCount/>
         </div>
