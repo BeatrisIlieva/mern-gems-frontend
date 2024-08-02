@@ -9,7 +9,7 @@ import { jewelryServiceFactory } from "../../services/jewelryService";
 import { Image } from "./Image/Image";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 
-import { SmallTitle } from "../SmallTitle/SmallTitle";
+import { NormalTitle } from "../NormalTitle/NormalTitle";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { Form } from "./Form/Form";
 
@@ -87,7 +87,7 @@ export const JewelryItem = () => {
                   jewelry.sizes[0].measurement}
               </p>
               {jewelry.category !== EARRING_ID && (
-                <SmallTitle title={"Size:"} />
+                <NormalTitle title={"Size:"} variant={"bolded"} />
               )}
               <Form toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
             </div>

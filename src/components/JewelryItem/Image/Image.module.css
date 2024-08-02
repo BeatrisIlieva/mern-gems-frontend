@@ -1,7 +1,7 @@
 .jewelry-images,
 .no-second-image-available {
   position: relative;
-  height: calc(100vh - 240px);
+  width: calc(100vh - 240px);
 }
 
 .jewelry-images {
@@ -51,14 +51,14 @@
   display: flex;
   gap: 10px;
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .sold-out-span {
   position: absolute;
-  color: var(--medium-gray);
+  color: var(--gray);
   font-family: var(--bold-italic-font-family);
   top: 0;
   right: 0;

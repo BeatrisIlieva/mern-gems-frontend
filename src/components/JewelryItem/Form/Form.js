@@ -4,7 +4,7 @@ import { useService } from "../../../hooks/useService";
 import { bagServiceFactory } from "../../../services/bagService";
 
 import { Button } from "../../Button/Button";
-import { SmallTitle } from "../../SmallTitle/SmallTitle";
+import { NormalTitle } from "../../NormalTitle/NormalTitle";
 import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 import styles from "./Form.module.css";
 
@@ -101,7 +101,9 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
           <div className={styles["error-message"]}>{errorMessage}</div>
         </div>
       )}
-      <SmallTitle title={`$ ${jewelry.price}`} />
+      <div className={styles["add-margin"]}>
+        <NormalTitle title={`$ ${jewelry.price}`} variant={"bolded"} />
+      </div>
       <Button
         title={"Add To Bag"}
         buttonIsDisabled={isSoldOut}

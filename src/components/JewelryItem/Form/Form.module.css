@@ -9,7 +9,6 @@
   padding: 12px;
   margin-right: 6px;
   margin-top: 6px;
-  width: 96px;
   justify-content: center;
 }
 
@@ -43,4 +42,8 @@ input[type="radio"] {
     box-shadow: none;
     cursor: not-allowed;
   }
+}
+
+.add-margin {
+  margin-bottom: 10px;
 }
