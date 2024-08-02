@@ -5,6 +5,13 @@
   align-items: center;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
 .list-item {
   margin-bottom: 10px;
 }
@@ -12,3 +19,4 @@
 .list-item:last-child {
   margin-bottom: 30px;
 }
+

@@ -88,6 +88,9 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
 
           updateForm();
         }
+
+        document.body.style.overflow = "visible";
+        
       } catch (err) {
         console.log(err.message);
       }
