@@ -5,7 +5,7 @@ import { MediumTitle } from "../MediumTitle/MediumTitle";
 
 import styles from "./NavLinkItem.module.css";
 
-export const NavLinkItem = ({ children, items, variant }) => {
+export const NavLinkItem = ({ items, variant }) => {
   return (
     <nav>
       <ul className={styles["list"]} role="list">
@@ -19,7 +19,7 @@ export const NavLinkItem = ({ children, items, variant }) => {
                 }
                 to={item.to}
               >
-                {children}
+                {item.icon}
                 <MediumTitle title={item.label} />
               </NavLink>
             </li>
