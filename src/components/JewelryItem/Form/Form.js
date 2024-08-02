@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useService } from "../../../hooks/useService";
 import { bagServiceFactory } from "../../../services/bagService";
 
-import { PinkButton } from "../../PinkButton/PinkButton";
+import { Button } from "../../Button/Button";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 import styles from "./Form.module.css";
@@ -102,7 +102,12 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
         </div>
       )}
       <SmallTitle title={`$ ${jewelry.price}`} />
-      <PinkButton title={"Add To Bag"} buttonIsDisabled={isSoldOut} />
+      <Button
+        title={"Add To Bag"}
+        buttonIsDisabled={isSoldOut}
+        variant={"pink-button"}
+        variantDisabled={"pink-button-disabled"}
+      />
     </form>
   );
 };
