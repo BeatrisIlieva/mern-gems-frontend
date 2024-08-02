@@ -1,25 +1,12 @@
-import { Children } from "react";
-
-import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
 
 import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 
-import { OrderSummary } from "./OrderSummary/OrderSummary";
-
-import { BagList } from "../BagList/BagList";
-
-import { useLocation } from "react-router-dom";
-
-import { LeftSide } from "./LeftSide/LeftSide";
-import { RightSide } from "./RightSide/RightSide";
 import { BagCount } from "../BagCount/BagCount";
 import styles from "./ShoppingProcessContainer.module.css";
 
-export const ShoppingProcessContainer = ({children, title}) => {
-
-
+export const ShoppingProcessContainer = ({ children, title }) => {
   return (
     <section className={styles["shopping-process-container"]}>
       <div className={styles["top"]}>
@@ -27,14 +14,10 @@ export const ShoppingProcessContainer = ({children, title}) => {
         <div className={styles["delivery"]}>
           <Icon icon={faTruck} variant={"shopping-process-container"} />
           <XLargeTitle title={"Delivery"} variant={"large-title"} />
-          <BagCount/>
+          <BagCount />
         </div>
       </div>
-      <div className={styles["bottom"]}>
-        {children}
-        {/* <LeftSide />
-        <RightSide /> */}
-      </div>
+      <div className={styles["bottom"]}>{children}</div>
     </section>
   );
 };
