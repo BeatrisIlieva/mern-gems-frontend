@@ -14,7 +14,7 @@ export const AddressBookPopup = ({ toggleDisplayAddressBookPopup }) => {
         <div className={styles["title"]}>
           <LargeTitle title={"Address Book"} variant={"large-title"} />
         </div>
-        <ShippingDetailsForm />
+        <ShippingDetailsForm toggleDisplayShippingDetailsPopup={toggleDisplayAddressBookPopup}/>
       </section>
     </Popup>
   );

@@ -7,12 +7,17 @@ import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { Logout } from "./Logout/Logout";
 import { AddressBookPopup } from "./AddressBookPopup/AddressBookPopup";
+import { Icon } from "../Icon/Icon";
+
+import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
 import { useService } from "../../hooks/useService";
 
 import { userServiceFactory } from "../../services/userService";
+
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Account.module.css";
 
@@ -58,12 +63,35 @@ export const Account = () => {
   return (
     <section className={styles["account"]}>
       <div className={styles["left-container"]}>
-        <button onClick={toggleDisplayAddressBookPopup}>address book</button>
+        <div className={styles["left-sub-container"]}>
+          <div className={styles["title"]}>
+            <LargeTitle title={"Address Book"} variant={"large-title"} />
+          </div>
+          <button
+            onClick={toggleDisplayAddressBookPopup}
+            className={styles["button-container"]}
+          >
+            <Icon icon={faPlus} variant={"address-book"} />
+            Add a New Address
+          </button>
+        </div>
+        <div className={styles["left-sub-container"]}>
+          <div className={styles["title"]}>
+            <LargeTitle title={"Address Book"} variant={"large-title"} />
+          </div>
+          <button
+            onClick={toggleDisplayAddressBookPopup}
+            className={styles["button-container"]}
+          >
+            <Icon icon={faPlus} variant={"address-book"} />
+            Add a New Address
+          </button>
+        </div>
       </div>
       <div className={styles["right-container"]}>
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-        <SmallTitle title={userData.email} />
-        <div className={styles["button-container"]}>
+        <NormalTitle title={userData.email} variant={"bolded"} />
+        <div className={styles["buttons-container"]}>
           <UnderlinedButton
             title={UpdateEmailButtonTitle}
             callBackFunction={onUpdateEmailClick}
