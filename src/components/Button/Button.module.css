@@ -21,6 +21,12 @@
 
 .pink-button {
   background: var(--medium-pink);
+  transition: background-color 300ms linear, color 300ms;
+}
+
+.gray-button {
+  background: var(--medium-gray);
+  transition: background-color 300ms linear, color 300ms;
 }
 
 .pink-button:hover {

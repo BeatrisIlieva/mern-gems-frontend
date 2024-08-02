@@ -6,7 +6,7 @@ import { BagList } from "../../BagList/BagList";
 
 import { OrderSummary } from "../OrderSummary/OrderSummary";
 
-import { PinkButton } from "../../PinkButton/PinkButton";
+import { Button } from "../../Button/Button";
 
 import styles from "./Bag.module.css";
 
@@ -22,7 +22,11 @@ export const Bag = () => {
       <RightSide>
         <OrderSummary />
         <Link to={"/checkout"} className={styles["no-decoration"]}>
-          <PinkButton title={"Continue Checkout"} buttonIsDisabled={false} />
+          <Button
+            title={"Continue Checkout"}
+            buttonIsDisabled={false}
+            variant={"pink-button"}
+          />
         </Link>
       </RightSide>
     </ShoppingProcessContainer>
