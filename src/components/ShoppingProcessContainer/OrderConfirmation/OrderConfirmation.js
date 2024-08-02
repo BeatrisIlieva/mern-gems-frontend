@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 
-
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../hooks/useService";
 import { orderServiceFactory } from "../../../services/orderService";
 import { userServiceFactory } from "../../../services/userService";
-
+import { XLargeTitle } from "../../XLargeTitle/XLargeTitle";
 import { MediumTitle } from "../../MediumTitle/MediumTitle";
 import { SmallTitle } from "../../SmallTitle/SmallTitle";
 import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
+import { Link } from "react-router-dom";
 
 import { convertToReadableDate } from "../../../utils/convertToReadableDate";
 import styles from "./OrderConfirmation.module.css";
-
 
 export const OrderConfirmation = () => {
   const { userId } = useAuthenticationContext();
@@ -24,13 +23,11 @@ export const OrderConfirmation = () => {
   const orderService = useService(orderServiceFactory);
   const userService = useService(userServiceFactory);
 
-
   useEffect(() => {
     orderService
       .confirm(userId)
       .then((data) => {
         setOrderItems(data);
-
       })
       .catch((err) => {
         console.log(err.message);
@@ -62,20 +59,30 @@ export const OrderConfirmation = () => {
   const readableDate = convertToReadableDate(orderItems.createdAt);
 
   return (
-    <>
-      <section className={styles["order-confirmation"]}>
-        <MediumTitle
-          title={`Thank you for your purchase, ${userShippingInformation.firstName}!`}
-        />
-        <SmallTitle title={"Your order has been successfully placed"} />
-        <NormalTitle title={`Order Number: ${orderItems._id}`} />
-        <NormalTitle title={`Order Date: ${readableDate}`} />
-        <NormalTitle title={`Status: ${orderItems.status}`} />
-
-        <MediumTitle
-          title={`A confirmation email has been sent to: ${userLoginInformation.email}`}
-        />
-      </section>
-    </>
+    <section className={styles["order-confirmation"]}>
+      <XLargeTitle
+        title={`Thank you for your purchase, ${userShippingInformation.firstName}!`}
+      />
+      <NormalTitle
+        title={"Your order has been successfully placed"}
+        variant={"bolded"}
+      />
+      <NormalTitle
+        title={`Order Number: ${orderItems._id}`}
+        variant={"regular"}
+      />
+      <NormalTitle title={`Order Date: ${readableDate}`} variant={"regular"} />
+      <NormalTitle title={`Status: ${orderItems.status}`} variant={"regular"} />
+      <NormalTitle
+        title={`A confirmation email has been sent to: ${userLoginInformation.email}`}
+        variant={"bolded"}
+      />
+      <NormalTitle
+        title={`You can track your order status in your: ${(
+          <Link to={"/users/account"}>Account</Link>
+        )}`}
+        variant={"bolded"}
+      />
+    </section>
   );
 };
