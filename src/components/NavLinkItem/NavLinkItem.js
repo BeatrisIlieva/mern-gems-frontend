@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Fragment } from "react";
 
 import { MediumTitle } from "../MediumTitle/MediumTitle";
 
@@ -8,11 +9,10 @@ export const NavLinkItem = ({ children, items, variant }) => {
   return (
     <nav>
       <ul className={styles["list"]} role="list">
-        {items.map((item) => (
-          <>
+        {items.map((item, index) => (
+          <Fragment key={`${item.label}-${item.to}-${index}`}>
             <li className={styles[variant]}>
               <NavLink
-                key={item.to}
                 end
                 className={({ isActive }) =>
                   isActive ? styles["selected"] : styles["not-selected"]
@@ -26,7 +26,7 @@ export const NavLinkItem = ({ children, items, variant }) => {
             {variant === "jewelry-list" && (
               <div className={styles["vertical-line"]}></div>
             )}
-          </>
+          </Fragment>
         ))}
       </ul>
     </nav>

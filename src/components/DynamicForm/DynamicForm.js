@@ -34,7 +34,7 @@ export const DynamicForm = ({
         <div key={key} className={styles["field-box"]}>
           {key === "Email" && location.pathname !== "/users/account" && (
             <span>
-              <>{hoveredQuestionMark && <QuestionMark />}</>
+              {hoveredQuestionMark && <QuestionMark />}
               <FontAwesomeIcon
                 icon={faQuestion}
                 className={styles["icon"]}

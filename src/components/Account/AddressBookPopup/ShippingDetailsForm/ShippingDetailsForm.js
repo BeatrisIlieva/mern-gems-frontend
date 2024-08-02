@@ -14,7 +14,6 @@ import { useService } from "../../../../hooks/useService";
 
 import { userServiceFactory } from "../../../../services/userService";
 
-
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const userService = useService(userServiceFactory);
 
@@ -48,7 +47,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userInformation]);
+  }, [userInformation, userId, userService, updateForm]);
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -90,7 +89,6 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
         }
 
         document.body.style.overflow = "visible";
-        
       } catch (err) {
         console.log(err.message);
       }

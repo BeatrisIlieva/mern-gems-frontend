@@ -6,8 +6,6 @@ import { useService } from "../../hooks/useService";
 import { orderServiceFactory } from "../../services/orderService";
 import { userServiceFactory } from "../../services/userService";
 import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
-import { MediumTitle } from "../MediumTitle/MediumTitle";
-import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 import { Link } from "react-router-dom";

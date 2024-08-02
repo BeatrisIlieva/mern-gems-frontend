@@ -1,6 +1,6 @@
 .animated-button {
   position: relative;
-  padding: 16px 48px;
+  padding: 16px 64px;
   font-size: var(--medium-font-size);
   border: none;
   cursor: pointer;
