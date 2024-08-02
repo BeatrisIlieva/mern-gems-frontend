@@ -58,9 +58,9 @@
   animation: slideInTop 1s forwards;
 }
 
-.address-book{
-  width: 680px;
-  height: 96vh;
+.address-book {
+  width: 700px;
+  height: fit-content;
   overflow-y: auto;
 }
 

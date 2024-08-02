@@ -14,7 +14,7 @@ export const DynamicForm = ({
   initialFormValues,
   userInformation,
   buttonTitle,
-  onSubmit
+  onSubmit,
 }) => {
   const location = useLocation();
 

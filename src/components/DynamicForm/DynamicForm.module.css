@@ -1,7 +1,8 @@
 .form {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  column-gap: 40px;
+  align-items: center;
 }
 
 .field-box {
@@ -67,22 +68,22 @@
 }
 
 .button {
-  padding: 16px 48px;
-  font-size: var(--medium-font-size);
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  background: none;
-  background: var(--white);
-  color: var(--medium-gray);
-  font-family: var(--bold-italic-font-family);
-  outline: none;
+  padding: 12px;
   margin: 20px 0px;
-  width: 100%;
-  background-color: var(--pink);
+  font-size: var(--medium);
+  font-family: var(--bold-italic-font-family);
+  border: none;
+  overflow: hidden;
   color: var(--white);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  background: var(--medium-pink);
+  transition: background-color 300ms linear, color 300ms;
 }
 
 .button:hover {
-  background-color: var(--medium-pink);
+  background: var(--pink);
 }

@@ -2,8 +2,6 @@ import { PopupHeader } from "../PopupHeader/PopupHeader";
 import { SwitchButton } from "../SwitchButton/SwitchButton";
 import { LoginForm } from "./LoginForm/LoginForm";
 
-
-
 export const Login = ({ switchPopupHandler, switchOptions }) => {
   return (
     <>

@@ -1,4 +1,6 @@
-.address-book-popup{
+.address-book-popup {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
-
-.title {}
