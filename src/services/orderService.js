@@ -8,5 +8,7 @@ export const orderServiceFactory = (token) => {
 
   return {
     confirm: (userId) => request.get(`${baseUrl}/confirm/${userId}`),
+
+    getAll: (userId) => request.get(`${baseUrl}/${userId}`),
   };
 };
