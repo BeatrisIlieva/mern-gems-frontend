@@ -9,7 +9,7 @@ const orderSchema = new mongoose.Schema({
   jewelries: {
     type: Object,
   },
-  subTotal: {
+  totalPrice: {
     type: Number,
   },
   createdAt: {

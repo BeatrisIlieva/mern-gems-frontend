@@ -5,7 +5,6 @@ const Bag = require("../models/Bag");
 // const { sendOrderConfirmationEmail } = require("../../mailer");
 const UserLoginDetails = require("../models/UserLoginDetails");
 const UserShippingDetails = require("../models/UserShippingDetails");
-const Order = require("../models/Order")
 
 router.get("/confirm/:userId", async (req, res) => {
   const userId = req.params.userId;
@@ -40,7 +39,7 @@ router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const result = await orderController.getAll(userId);
+    const result = await orderManager.getAll(userId);
 
     res.status(200).json(result);
   } catch (err) {
