@@ -9,12 +9,10 @@ export const AddressBookPopup = ({ toggleDisplayAddressBookPopup }) => {
       modalVariant={"address-book"}
       popupCloseHandler={toggleDisplayAddressBookPopup}
     >
-      <section className={styles["address-book-popup"]}>
-        <PopupTitle title={"Address Book"} />
-        <ShippingDetailsForm
-          toggleDisplayShippingDetailsPopup={toggleDisplayAddressBookPopup}
-        />
-      </section>
+      <PopupTitle title={"Address Book"} />
+      <ShippingDetailsForm
+        toggleDisplayShippingDetailsPopup={toggleDisplayAddressBookPopup}
+      />
     </Popup>
   );
 };

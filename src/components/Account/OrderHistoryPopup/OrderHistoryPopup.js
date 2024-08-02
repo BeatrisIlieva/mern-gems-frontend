@@ -1,7 +1,6 @@
 import { Popup } from "../../Popup/Popup";
-import { LargeTitle } from "../../LargeTitle/LargeTitle";
 import { OrderHistory } from "./OrderHistory/OrderHistory";
-import styles from "./OrderHistoryPopup.module.css";
+import { PopupTitle } from "../PopupTitle/PopupTitle";
 
 export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
   return (
@@ -10,12 +9,8 @@ export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
       modalVariant={"address-book"}
       popupCloseHandler={toggleDisplayOrderHistoryPopup}
     >
-      <section className={styles["order-history-popup"]}>
-        <div className={styles["title"]}>
-          <LargeTitle title={"Order History"} variant={"large-title"} />
-        </div>
-        <OrderHistory />
-      </section>
+      <PopupTitle title={"Order History"} />
+      <OrderHistory />
     </Popup>
   );
 };
