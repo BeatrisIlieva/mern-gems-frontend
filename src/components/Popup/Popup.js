@@ -17,7 +17,7 @@ export const Popup = ({
           {modalVariant !== "authentication" && (
             <Icon
               icon={faXmark}
-              variant={"icon"}
+              variant={"popup"}
               callBackFunction={popupCloseHandler}
             />
           )}

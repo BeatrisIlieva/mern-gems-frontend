@@ -1,9 +1,20 @@
 .icon,
 .shopping-process-container,
+.header,
+.popup {
+  cursor: pointer;
+}
+
+.icon,
+.shopping-process-container,
 .header {
   color: var(--pink);
   height: var(--medium);
-  cursor: pointer;
+}
+
+.popup {
+  height: var(--large);
+  color: var(--medium-gray);
 }
 
 .shopping-process-container {
