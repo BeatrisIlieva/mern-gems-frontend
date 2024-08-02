@@ -60,29 +60,46 @@ export const OrderConfirmation = () => {
 
   return (
     <section className={styles["order-confirmation"]}>
-      <XLargeTitle
-        title={`Thank you for your purchase, ${userShippingInformation.firstName}!`}
-      />
-      <NormalTitle
-        title={"Your order has been successfully placed"}
-        variant={"bolded"}
-      />
-      <NormalTitle
-        title={`Order Number: ${orderItems._id}`}
-        variant={"regular"}
-      />
-      <NormalTitle title={`Order Date: ${readableDate}`} variant={"regular"} />
-      <NormalTitle title={`Status: ${orderItems.status}`} variant={"regular"} />
-      <NormalTitle
-        title={`A confirmation email has been sent to: ${userLoginInformation.email}`}
-        variant={"bolded"}
-      />
-      <NormalTitle
-        title={`You can track your order status in your: ${(
-          <Link to={"/users/account"}>Account</Link>
-        )}`}
-        variant={"bolded"}
-      />
+      <div className={styles["info"]}>
+        <XLargeTitle
+          title={`Thank you for your purchase, ${userShippingInformation.firstName}!`}
+        />
+        <NormalTitle
+          title={"Your order has been successfully placed."}
+          variant={"bolded"}
+        />
+        <NormalTitle
+          title={`Order Number: ${orderItems._id}`}
+          variant={"regular"}
+        />
+        <NormalTitle
+          title={`Order Date: ${readableDate}`}
+          variant={"regular"}
+        />
+        <NormalTitle
+          title={`Status: ${orderItems.status}`}
+          variant={"regular"}
+        />
+        <NormalTitle
+          title={`A confirmation email has been sent to: ${userLoginInformation.email}`}
+          variant={"bolded"}
+        />
+        <div className={styles["link-to-account"]}>
+          <NormalTitle
+            title={"You can track your order status in your"}
+            variant={"bolded"}
+          />
+
+          <Link to={"/users/account"} className={styles["link"]}>Account</Link>
+        </div>
+      </div>
+      <div className={styles["image"]}>
+        <img
+          src="https://res.cloudinary.com/deztgvefu/image/upload/v1718984589/template_images/sbs_lp_forgetmenot_whetr3.jpg"
+          alt="image"
+          className={styles["img"]}
+        />
+      </div>
     </section>
   );
 };

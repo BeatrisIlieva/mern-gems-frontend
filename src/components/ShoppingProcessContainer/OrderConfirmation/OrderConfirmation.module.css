@@ -1,8 +1,39 @@
 .order-confirmation {
   margin: 40px 80px 40px 80px;
   display: flex;
+  justify-content: space-evenly;
+}
+
+.info {
+  display: flex;
   flex-direction: column;
   gap: 30px;
   justify-content: center;
   align-items: center;
+}
+
+.link-to-account {
+  display: flex;
+  gap: 6px;
+}
+
+.link {
+  color: var(--violet);
+  text-decoration: none;
+  font-size: var(--normal);
+  font-family: var(--bold-font-family);
+}
+
+.link:hover {
+  color: var(--dark-violet);
+}
+
+.image {
+  width: calc(100vh - 240px);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
