@@ -4,7 +4,6 @@ import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 import { UnderlinedButton } from "../UnderlinedButton/UnderlinedButton";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
-import { SmallTitle } from "../SmallTitle/SmallTitle";
 import { Logout } from "./Logout/Logout";
 import { AddressBookPopup } from "./AddressBookPopup/AddressBookPopup";
 import { Icon } from "../Icon/Icon";
@@ -18,6 +17,7 @@ import { useService } from "../../hooks/useService";
 import { userServiceFactory } from "../../services/userService";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Account.module.css";
 
@@ -77,14 +77,14 @@ export const Account = () => {
         </div>
         <div className={styles["left-sub-container"]}>
           <div className={styles["title"]}>
-            <LargeTitle title={"Address Book"} variant={"large-title"} />
+            <LargeTitle title={"Order History"} variant={"large-title"} />
           </div>
           <button
             onClick={toggleDisplayAddressBookPopup}
             className={styles["button-container"]}
           >
-            <Icon icon={faPlus} variant={"address-book"} />
-            Add a New Address
+            <Icon icon={faClockRotateLeft} variant={"address-book"} />
+            View Order History
           </button>
         </div>
       </div>
