@@ -9,7 +9,7 @@ import { NormalTitle } from "../NormalTitle/NormalTitle";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { SmallTitle } from "../SmallTitle/SmallTitle";
 
-import { PinkButton } from "../PinkButton/PinkButton";
+import { PinkButton } from "../Button/Button";
 
 import { BagCount } from "../BagCount/BagCount";
 

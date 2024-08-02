@@ -1,10 +1,11 @@
-.button,
-.button-disabled {
+.pink-button,
+.gray-button,
+.pink-button-disabled,
+.gray-button-disabled {
   padding: 12px;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
   border: none;
-  background: var(--medium-pink);
   overflow: hidden;
   color: var(--white);
   outline: none;
@@ -13,14 +14,24 @@
   width: 100%;
 }
 
-.button {
+.pink-button,
+.gray-button {
   cursor: pointer;
 }
 
-.button:hover {
+.pink-button {
+  background: var(--medium-pink);
+}
+
+.pink-button:hover {
   background: var(--pink);
 }
 
-.button-disabled {
+.gray-button:hover {
+  background: var(--gray);
+}
+
+.pink-button-disabled {
   cursor: not-allowed;
+  background: var(--light-gray);
 }
