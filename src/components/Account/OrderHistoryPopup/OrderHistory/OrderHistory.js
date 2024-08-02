@@ -6,6 +6,8 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 
 import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
 
+import styles from "./OrderHistory.module.css"
+
 export const OrderHistory = () => {
   const { userId } = useAuthenticationContext();
 
@@ -25,7 +27,7 @@ export const OrderHistory = () => {
   }, [orderService, userId]);
 
   return (
-    <ul role="list">
+    <ul role="list" className={styles["order-history"]}>
       {orderItems.map((item) => (
         <li key={item._id}>
           <OrderHistoryList {...item} />

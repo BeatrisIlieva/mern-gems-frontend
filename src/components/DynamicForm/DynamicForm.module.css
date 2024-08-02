@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   column-gap: 40px;
   align-items: center;
+  justify-content: center;
 }
 
 .field-box {
@@ -78,7 +79,7 @@
   outline: none;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 280px;
   cursor: pointer;
   background: var(--medium-pink);
   transition: background-color 300ms linear, color 300ms;

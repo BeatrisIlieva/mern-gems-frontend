@@ -1,4 +1,15 @@
-.order-history {
-    display: flex;
-    gap: 30px;
+.order-history-list {
+  display: flex;
+  gap: 30px;
+}
+
+.jewelries {
+  display: flex;
+  gap: 10px;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

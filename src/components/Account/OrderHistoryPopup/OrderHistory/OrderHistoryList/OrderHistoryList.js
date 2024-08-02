@@ -10,7 +10,7 @@ export const OrderHistoryList = ({
 }) => {
   const date = createdAt.split("T")[0];
   return (
-    <section className={styles["order-history"]}>
+    <section className={styles["order-history-list"]}>
       <ul className={styles["jewelries"]} role="list">
         {jewelries.map((item) => (
           <li key={item._id} className={styles["jewelry-item"]}>
