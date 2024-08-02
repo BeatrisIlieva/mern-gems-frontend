@@ -12,11 +12,12 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 40%;
+  height: 480px;
 }
 
 .left-sub-container {
-  height: 30vh;
+  height: 220px;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
