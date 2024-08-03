@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
@@ -8,14 +8,6 @@ import { Logout } from "./Logout/Logout";
 import { AddressBookPopup } from "./AddressBookPopup/AddressBookPopup";
 import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
 import { Icon } from "../Icon/Icon";
-
-import { NormalTitle } from "../NormalTitle/NormalTitle";
-
-import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
-
-import { useService } from "../../hooks/useService";
-
-import { userServiceFactory } from "../../services/userService";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
