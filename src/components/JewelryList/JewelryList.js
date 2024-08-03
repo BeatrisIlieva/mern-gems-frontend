@@ -33,10 +33,25 @@ export const JewelryList = () => {
   const transformedCollectionName = transformUrlSegment(collectionName);
 
   const navItems = [
-    { to: "bracelets", label: "Bracelets", icon: faFilter },
-    { to: "earrings", label: "Earrings", icon: faFilter },
-    { to: "necklaces", label: "Necklaces & Pendants", icon: faFilter },
-    { to: "rings", label: "Rings", icon: faFilter },
+    {
+      to: "bracelets",
+      label: "Bracelets",
+      icon: faFilter,
+      iconVariant: "filter",
+    },
+    {
+      to: "earrings",
+      label: "Earrings",
+      icon: faFilter,
+      iconVariant: "filter",
+    },
+    {
+      to: "necklaces",
+      label: "Necklaces & Pendants",
+      icon: faFilter,
+      iconVariant: "filter",
+    },
+    { to: "rings", label: "Rings", icon: faFilter, iconVariant: "filter" },
   ];
 
   const navCollection = [
@@ -44,6 +59,7 @@ export const JewelryList = () => {
       to: `/${collectionName}`,
       label: `${transformedCollectionName} Collection`,
       icon: faFilterCircleXmark,
+      iconVariant: "filter",
     },
   ];
 
@@ -60,9 +76,9 @@ export const JewelryList = () => {
     <section className={styles["jewelries"]}>
       <div className={styles["nav-wrapper"]}>
         <div className={styles["nav-filter"]}>
-          <NavLinkItem items={navItems} variant={"jewelry-list"} />
+          <NavLinkItem items={navItems} />
         </div>
-        <NavLinkItem items={navCollection} variant={"jewelry-list"} />
+        <NavLinkItem items={navCollection} />
       </div>
       <Routes>
         <Route path="/bracelets" />

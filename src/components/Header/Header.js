@@ -136,6 +136,7 @@ const navItemsLeft = [
     to: "/",
     label: "Collections",
     icon: faGem,
+    iconVariant: "header"
   },
 ];
 const navItemsRight = [
@@ -143,11 +144,13 @@ const navItemsRight = [
     to: "/users/shopping-bag",
     label: "My Bag",
     icon: faBagShopping,
+    iconVariant: "header"
   },
   {
     to: "/users/account",
     label: "Account",
     icon: faUser,
+    iconVariant: "header"
   },
 ];
 
@@ -155,7 +158,7 @@ export const Header = () => {
   return (
     <header className={styles["header"]}>
       <div className={styles["wrapper"]}>
-        <NavLinkItem items={navItemsLeft} variant={"header"} />
+        <NavLinkItem items={navItemsLeft} />
         <img
           className={styles["logo-image"]}
           src={
@@ -163,7 +166,7 @@ export const Header = () => {
           }
           alt="logo-image"
         />
-        <NavLinkItem items={navItemsRight} variant={"header"} />
+        <NavLinkItem items={navItemsRight} />
       </div>
       <HorizontalLine variant={"large"} position={"absolute"} />
     </header>

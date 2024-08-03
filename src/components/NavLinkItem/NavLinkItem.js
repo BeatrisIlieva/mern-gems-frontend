@@ -7,13 +7,13 @@ import { Icon } from "../Icon/Icon";
 
 import styles from "./NavLinkItem.module.css";
 
-export const NavLinkItem = ({ items, variant }) => {
+export const NavLinkItem = ({ items }) => {
   return (
-    <nav>
+    <nav className={styles["nav"]}>
       <ul className={styles["list"]} role="list">
         {items.map((item, index) => (
           <Fragment key={`${item.label}-${item.to}-${index}`}>
-            <li className={styles[variant]}>
+            <li className={styles["list-item"]}>
               <NavLink
                 end
                 className={({ isActive }) =>
@@ -21,14 +21,10 @@ export const NavLinkItem = ({ items, variant }) => {
                 }
                 to={item.to}
               >
-                <Icon icon={item.icon} variant={"header"} />
-                {/* {item.icon} */}
+                <Icon icon={item.icon} variant={item.iconVariant} />
                 <MediumTitle title={item.label} />
               </NavLink>
             </li>
-            {variant === "jewelry-list" && (
-              <div className={styles["vertical-line"]}></div>
-            )}
           </Fragment>
         ))}
       </ul>
