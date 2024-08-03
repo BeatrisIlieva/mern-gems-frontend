@@ -18,7 +18,7 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { userServiceFactory } from "../../../services/userService";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
-import { useLoginInformation } from "../../../hooks/useLoginInformation";
+import { useLoginInformation } from "../../../hooks/useUserLoginDetails";
 
 import styles from "./UpdatePasswordForm.module.css";
 

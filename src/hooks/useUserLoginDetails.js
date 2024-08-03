@@ -6,8 +6,8 @@ import { useService } from "./useService";
 
 import { userServiceFactory } from "../services/userService";
 
-export const useLoginInformation = () => {
-  const [userInformation, setUserInformation] = useState([]);
+export const useUserLoginDetails = () => {
+  const [userLoginDetails, setUserLoginDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
 
@@ -17,12 +17,12 @@ export const useLoginInformation = () => {
     userService
       .getUserLoginDetails(userId)
       .then((data) => {
-        setUserInformation(data);
+        setUserLoginDetails(data);
       })
       .catch((err) => {
         console.log(err.message);
       });
   }, [userService, userId]);
 
-  return { userInformation };
+  return { userLoginDetails };
 };

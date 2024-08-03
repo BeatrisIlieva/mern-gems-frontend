@@ -1,4 +1,4 @@
-import { useLoginInformation } from "../../hooks/useLoginInformation";
+import { useLoginInformation } from "../../hooks/useUserLoginDetails";
 
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 

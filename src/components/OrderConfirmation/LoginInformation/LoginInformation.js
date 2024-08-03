@@ -1,6 +1,6 @@
 import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
-import { useLoginInformation } from "../../../hooks/useLoginInformation";
+import { useLoginInformation } from "../../../hooks/useUserLoginDetails";
 
 export const LoginInformation = () => {
   const { userInformation } = useLoginInformation();

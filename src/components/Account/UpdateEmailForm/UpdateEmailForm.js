@@ -18,7 +18,7 @@ import styles from "./UpdateEmailForm.module.css";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 
-import { useLoginInformation } from "../../../hooks/useLoginInformation";
+import { useLoginInformation } from "../../../hooks/useUserLoginDetails";
 
 const ButtonTitle = "Save";
 
