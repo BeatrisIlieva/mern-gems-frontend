@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { useService } from "../../hooks/useService";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 import { jewelryServiceFactory } from "../../services/jewelryService";
 
@@ -19,8 +19,6 @@ import { EARRING_ID } from "../../constants/earringId";
 
 import { MiniBag } from "../MiniBag/MiniBag";
 
-import { useLocation } from "react-router-dom";
-
 import { transformUrlSegment } from "../../utils/transformUrlSegment";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "../Icon/Icon";
@@ -30,15 +28,10 @@ import styles from "./JewelryItem.module.css";
 export const JewelryItem = () => {
   const location = useLocation();
   const pathname = location.pathname;
-
-  // Remove leading slash and split the pathname
   const pathSegments = pathname.replace(/^\/+/, "").split("/");
 
-  // Extract the segments you need
   const collection = pathSegments[0];
   const category = pathSegments[1];
-  const title = pathSegments[2];
-  const id = pathSegments[3];
 
   const {
     sizes,
@@ -97,9 +90,15 @@ export const JewelryItem = () => {
           )}
           <section className={styles["jewelry-item"]}>
             <nav className={styles["nav"]}>
-              <Link to={`/${collection}`} className={styles["nav-item"]}>{`${collectionTitle}`}</Link>
+              <Link
+                to={`/${collection}`}
+                className={styles["nav-item"]}
+              >{`${collectionTitle}`}</Link>
               <Icon icon={faCircle} variant={"jewelry-item"} />
-              <Link to={`/${collection}/${category}`} className={styles["nav-item"]}>{`${categoryTitle}`}</Link>
+              <Link
+                to={`/${collection}/${category}`}
+                className={styles["nav-item"]}
+              >{`${categoryTitle}`}</Link>
             </nav>
             <div className={styles["jewelry-wrapper"]}>
               <div className={styles["left-container"]}>
