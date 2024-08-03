@@ -19,6 +19,7 @@ import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
 import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
 import { OrderConfirmation } from "./components/OrderConfirmation/OrderConfirmation";
+import { Page404 } from "./components/Page404/Page404";
 
 import "normalize.css";
 import styles from "./App.css";
@@ -137,6 +138,7 @@ function App() {
               </RouteGuard>
             }
           />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </main>
       {showFooter && <Footer />}
