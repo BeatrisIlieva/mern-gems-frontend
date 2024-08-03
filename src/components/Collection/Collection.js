@@ -4,8 +4,6 @@ import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 
 import { collectionItems } from "./collectionItems";
 
-import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
-
 import styles from "./Collection.module.css";
 
 export const Collection = () => {
@@ -34,9 +32,6 @@ export const Collection = () => {
                 />
               </div>
             </div>
-            {/* {index < collectionItems.length - 1 && (
-              <HorizontalLine key={`line-${index}`} variant={"small"} />
-            )} */}
           </Link>
         </div>
       ))}

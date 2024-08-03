@@ -8,7 +8,6 @@
 
 .no-decoration {
   text-decoration: none;
-
 }
 
 .hero-box,
@@ -16,11 +15,6 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 30px;
-
-  /* column-gap: 30px;  */
-  /* flex-direction: column; */
-  /* height: 30vh; */
-  /* margin: 30px 0px; */
 }
 
 .hero-box-reverse {
@@ -29,7 +23,6 @@
 
 .hero-img-container {
   width: calc(50vw - 82px);
-  /* height: 40vh; */
 }
 .hero-img {
   width: 100%;
@@ -44,7 +37,6 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  /* margin: 0px 30px; */
 }
 
 .title {
@@ -61,5 +53,3 @@
   text-align: center;
   color: var(--gray);
 }
-
-
