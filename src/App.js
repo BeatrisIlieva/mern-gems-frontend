@@ -91,7 +91,7 @@ function App() {
             }
           />
           <Route
-            path="/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:jewelryId"
+            path="/:slugifiedCollectionTitle/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:jewelryId"
             element={
               <RouteGuard>
                 <JewelryItem />

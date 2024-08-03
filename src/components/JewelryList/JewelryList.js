@@ -45,7 +45,7 @@ export const JewelryList = () => {
       iconVariant: "filter",
     },
     {
-      to: "necklaces&pendants",
+      to: "necklaces-pendants",
       label: "Necklaces & Pendants",
       icon: faFilter,
       iconVariant: "filter",
@@ -82,7 +82,7 @@ export const JewelryList = () => {
       <Routes>
         <Route path="/bracelets" />
         <Route path="/earrings" />
-        <Route path="/necklaces" />
+        <Route path="/necklaces-pendants" />
         <Route path="/rings" />
         <Route path={`/${collectionName}`} />
       </Routes>

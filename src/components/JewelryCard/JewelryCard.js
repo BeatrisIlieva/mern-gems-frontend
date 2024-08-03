@@ -8,17 +8,20 @@ export const JewelryCard = ({
   firstImageUrl,
   jewelryId,
   categoryTitle,
+  collectionTitle,
   jewelryTitle,
   isSoldOut,
   variant,
 }) => {
+  console.log(categoryTitle)
+  const slugifiedCollectionTitle = slugify(collectionTitle);
   const slugifiedCategoryTitle = slugify(categoryTitle);
   const slugifiedJewelryTitle = slugify(jewelryTitle);
 
   return (
     <article className={styles["jewelry-card"]}>
       <Link
-        to={`/${slugifiedCategoryTitle}/${slugifiedJewelryTitle}/${jewelryId}`}
+        to={`/${slugifiedCollectionTitle}/${slugifiedCategoryTitle}/${slugifiedJewelryTitle}/${jewelryId}`}
       >
         <div className={styles[variant]}>
           <img
