@@ -8,12 +8,12 @@ import { AddressBookPopup } from "../../../Account/AddressBookPopup/AddressBookP
 
 import { UserEmail } from "../../../UserEmail/UserEmail";
 
-import { useUserShippingDetails } from "../../../../hooks/useUserShipingDetails";
+import { useUserShippingDetails } from "../../../../hooks/useUserShippingDetails";
 
 import styles from "./ShippingInformation.module.css";
 
 export const ShippingInformation = () => {
-  const {userShippingDetails} = useUserShippingDetails()
+  const { userShippingDetails } = useUserShippingDetails();
   const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
 
   const toggleDisplayAddressBookPopup = () => {
@@ -33,7 +33,7 @@ export const ShippingInformation = () => {
       </div>
       <div className={styles["top"]}>
         <NormalTitle title={"Email Address"} variant={"bolded"} />
-        <UserEmail/>
+        <UserEmail />
       </div>
       <ul role="list">
         <li className={styles["list-item"]}>
