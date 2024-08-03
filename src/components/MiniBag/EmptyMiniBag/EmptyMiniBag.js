@@ -1,12 +1,12 @@
-import { LargeTitle } from "../../../LargeTitle/LargeTitle";
+import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
-import { NormalTitle } from "../../../NormalTitle/NormalTitle";
+import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
-import { Collection } from "../../../Collection/Collection";
+import { Collection } from "../../Collection/Collection";
 
-import styles from "./EmptyBag.module.css";
+import styles from "./EmptyMiniBag.module.css";
 
-export const EmptyBag = () => {
+export const EmptyMiniBag = () => {
   return (
     <section>
       <div className={styles["top-container"]}>

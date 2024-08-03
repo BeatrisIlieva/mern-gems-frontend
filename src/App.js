@@ -10,7 +10,7 @@ import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
 import { MiniHeader } from "./components/MiniHeader/MiniHeader";
-import { Home } from "./components/Home/Home";
+import { Collection } from "./components/Collection/Collection";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
 import { JewelryItem } from "./components/JewelryItem/JewelryItem";
@@ -56,7 +56,7 @@ function App() {
 
       <main className={styles["main"]}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Collection />} />
           <Route
             path="/forget-me-not/*"
             element={
