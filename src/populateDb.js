@@ -21,7 +21,7 @@ async function populateDb() {
   });
 
   await Category.create({
-    title: "Necklace & Pendants",
+    title: "Necklaces-Pendants",
   });
 
   await Category.create({

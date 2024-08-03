@@ -88,6 +88,14 @@ exports.getAll = async (userId) => {
     },
     {
       $lookup: {
+        as: "jewelrycollections",
+        from: "jewelrycollections",
+        foreignField: "_id",
+        localField: "jewelries.jewelryCollection",
+      },
+    },
+    {
+      $lookup: {
         as: "categories",
         from: "categories",
         foreignField: "_id",
@@ -178,6 +186,9 @@ exports.getAll = async (userId) => {
         categoryTitle: {
           $first: "$categories.title",
         },
+        collectionTitle: {
+          $first: "$jewelrycollections.title",
+        },
       },
     },
     {
@@ -197,6 +208,7 @@ exports.getAll = async (userId) => {
         quantity: 1,
         maxQuantity: 1,
         categoryTitle: 1,
+        collectionTitle: 1,
         inventoryQuantity: 1,
         price: 1,
       },
