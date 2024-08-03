@@ -90,14 +90,14 @@ function App() {
               </RouteGuard>
             }
           />
-          {/* <Route
+          <Route
             path="/:slugifiedCollectionTitle/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:jewelryId"
             element={
               <RouteGuard>
                 <JewelryItem />
               </RouteGuard>
             }
-          /> */}
+          />
           <Route
             path="/users/account"
             element={

@@ -35,3 +35,8 @@
   color: var(--medium-gray);
   height: var(--normal);
 }
+
+.jewelry-item {
+  height: 4px;
+  color: var(--medium-gray);
+}

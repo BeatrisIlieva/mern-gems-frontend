@@ -196,14 +196,7 @@ export const JewelryList = () => {
         </div>
         <NavLinkItem items={navCollection} />
       </div>
-      <Routes>
-        <Route path="/bracelets*" />
-        <Route path="/earrings*" />
-        <Route path="/necklaces-pendants*" />
-        <Route path="/rings*" />
-        <Route path={`/${collectionName}`} />
-        <Route path="/:slugifiedJewelryTitle/:jewelryId" element={<JewelryItem />} />
-      </Routes>
+
       <div className={styles["jewelries-count"]}>
         Showing 1 -{" "}
         {totalCount >= jewelries.length ? jewelries.length : totalCount} of{" "}
@@ -217,7 +210,7 @@ export const JewelryList = () => {
       ) : (
         <div className={styles["jewelry-grid"]}>
           {jewelries.map((j) => (
-            <JewelryListItem key={j._id} {...j} />
+            <JewelryListItem key={j._id} {...j}/>
           ))}
         </div>
       )}
