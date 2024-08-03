@@ -27,7 +27,7 @@
 //   const location = useLocation();
 
 //   const locationIsShoppingBag = location.pathname === "/users/shopping-bag";
-//   const { bagTotalQuantityIntoState } = useBagContext();
+//   const { bagTotalQuantity } = useBagContext();
 
 //   const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
 //   const [displayEmptyBagMessage, setDisplayEmptyBagMessage] = useState(false);
@@ -45,7 +45,7 @@
 //   };
 
 //   const viewBagClickHandler = () => {
-//     if (bagTotalQuantityIntoState > 0) {
+//     if (bagTotalQuantity > 0) {
 //       toggleDisplayMiniBagPopup();
 //     } else {
 //       toggleDisplayEmptyBagMessage();
@@ -78,11 +78,11 @@
 //               >
 //                 <Icon icon={faBagShopping} variant={"header"} />
 //                 <MediumTitle title={"My Bag"} />
-//                 {bagTotalQuantityIntoState > 0 && (
+//                 {bagTotalQuantity > 0 && (
 //                   <span
 //                     className={`${styles["count-span"]} ${styles["pulse"]}`}
 //                   >
-//                     {bagTotalQuantityIntoState}
+//                     {bagTotalQuantity}
 //                   </span>
 //                 )}
 //                 {displayEmptyBagMessage && (

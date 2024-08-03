@@ -6,7 +6,7 @@ import { useBagContext } from "../../../contexts/BagContext";
 import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 
 export const Remove = ({ bagId }) => {
-  const { removeBagItem, updateBagTotalQuantityIntoState } = useBagContext();
+  const { removeBagItem, updateBagTotalQuantity } = useBagContext();
 
   const bagService = useService(bagServiceFactory);
 
@@ -15,7 +15,7 @@ export const Remove = ({ bagId }) => {
 
     removeBagItem(bagId);
 
-    updateBagTotalQuantityIntoState(-1);
+    updateBagTotalQuantity(-1);
   };
 
   return <UnderlinedButton callBackFunction={removeItem} title={"Remove"} />;

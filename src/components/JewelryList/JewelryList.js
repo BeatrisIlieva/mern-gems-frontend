@@ -45,7 +45,7 @@ export const JewelryList = () => {
       iconVariant: "filter",
     },
     {
-      to: "necklaces",
+      to: "necklaces&pendants",
       label: "Necklaces & Pendants",
       icon: faFilter,
       iconVariant: "filter",

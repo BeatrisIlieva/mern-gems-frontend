@@ -5,15 +5,15 @@ import { useBagContext } from "../../contexts/BagContext";
 import styles from "./BagCount.module.css";
 
 export const BagCount = () => {
-  const { bagTotalQuantityIntoState } = useBagContext();
+  const { bagTotalQuantity } = useBagContext();
 
   return (
     <div className={styles["bag-count"]}>
       <NormalTitle
         title={
-          bagTotalQuantityIntoState > 1
-            ? `(${bagTotalQuantityIntoState}) items`
-            : `(${bagTotalQuantityIntoState}) item`
+          bagTotalQuantity > 1
+            ? `(${bagTotalQuantity}) items`
+            : `(${bagTotalQuantity}) item`
         }
       />
     </div>

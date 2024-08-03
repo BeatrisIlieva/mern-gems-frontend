@@ -6,7 +6,7 @@ import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { Popup } from "../Popup/Popup";
 
 export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
-  const { bagTotalQuantityIntoState } = useBagContext();
+  const { bagTotalQuantity } = useBagContext();
 
   return (
     <Popup
@@ -14,7 +14,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       modalVariant={"mini-bag"}
       popupCloseHandler={toggleDisplayMiniBagPopup}
     >
-      {bagTotalQuantityIntoState > 0 ? (
+      {bagTotalQuantity > 0 ? (
         <NonEmptyMiniBag
           toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
         />

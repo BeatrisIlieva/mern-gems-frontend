@@ -15,8 +15,10 @@ import { useJewelryItemContext } from "./JewelryItemContext";
 export const BagContext = createContext();
 
 export const BagProvider = ({ children }) => {
-  const [bagTotalQuantityIntoState, setBagTotalQuantityIntoState] =
-    useLocalStorage("bagTotalQuantity", 0);
+  const [bagTotalQuantity, setBagTotalQuantity] = useLocalStorage(
+    "bagTotalQuantity",
+    0
+  );
 
   const bagService = useService(bagServiceFactory);
 
@@ -56,8 +58,8 @@ export const BagProvider = ({ children }) => {
       });
   }, [userId, bagService]);
 
-  const updateBagTotalQuantityIntoState = (delta) => {
-    setBagTotalQuantityIntoState(bagTotalQuantityIntoState + delta);
+  const updateBagTotalQuantity = (delta) => {
+    setBagTotalQuantity(bagTotalQuantity + delta);
   };
 
   const removeBagItem = (bagId) => {
@@ -66,6 +68,7 @@ export const BagProvider = ({ children }) => {
     );
 
     const bag = bagItems.filter((item) => item._id === bagId);
+    
     if (bag.jewelryId === jewelryId) {
       const sizeId = bag[0].sizeId;
 
@@ -76,12 +79,12 @@ export const BagProvider = ({ children }) => {
   const clearShoppingBag = () => {
     localStorage.setItem("bagTotalQuantity", 0);
 
-    setBagTotalQuantityIntoState(0);
+    setBagTotalQuantity(0);
   };
 
   const context = {
-    bagTotalQuantityIntoState,
-    updateBagTotalQuantityIntoState,
+    bagTotalQuantity,
+    updateBagTotalQuantity,
     bagItems,
     totalPrice,
     bagIsEmpty,
