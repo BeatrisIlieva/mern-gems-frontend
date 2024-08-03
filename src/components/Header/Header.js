@@ -110,24 +110,14 @@
 //   );
 // };
 
-import { useState } from "react";
-
-import { useBagContext } from "../../contexts/BagContext";
-
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import { faGem } from "@fortawesome/free-regular-svg-icons";
-import { Icon } from "../Icon/Icon";
-
-import { MediumTitle } from "../MediumTitle/MediumTitle";
-
-import { MiniBag } from "../MiniBag/MiniBag";
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
-import { useLocation } from "react-router-dom";
 
 import styles from "./Header.module.css";
 
