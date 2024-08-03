@@ -1,4 +1,10 @@
-.top-container {
+/* .title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+} */
+
+.title {
   display: flex;
   flex-direction: column;
   justify-content: center;
