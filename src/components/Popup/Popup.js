@@ -13,7 +13,7 @@ export const Popup = ({
   document.body.style.overflow = "hidden";
 
   const closeClickHandler = () => {
-    document.body.style.overflow = "visible"; 
+    document.body.style.overflow = "visible";
 
     popupCloseHandler();
   };

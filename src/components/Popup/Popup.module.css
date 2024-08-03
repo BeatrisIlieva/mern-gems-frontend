@@ -43,15 +43,10 @@
   animation: slideInTop 1s forwards;
 }
 
-.empty-mini-bag,
 .mini-bag {
   width: 40vw;
   height: 100vh;
   animation: slideInRight 1s forwards;
-}
-
-.empty-mini-bag {
-  overflow-y: auto;
 }
 
 .authentication {
