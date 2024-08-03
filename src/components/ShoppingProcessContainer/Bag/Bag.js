@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { useBagContext } from "../../../contexts/BagContext";
+
 import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
 
 import { BagList } from "../../BagList/BagList";
@@ -13,22 +15,12 @@ import styles from "./Bag.module.css";
 import { LeftSide } from "../LeftSide/LeftSide";
 import { RightSide } from "../RightSide/RightSide";
 
+import { NonEmptyBag } from "./NonEmptyBag/NonEmptyBag";
+
+import { EmptyBag } from "./EmptyBag/EmptyBag";
+
 export const Bag = () => {
-  return (
-    <ShoppingProcessContainer title={"Bag"}>
-      <LeftSide>
-        <BagList variant={"shopping-process-container"} />
-      </LeftSide>
-      <RightSide>
-        <OrderSummary />
-        <Link to={"/checkout"} className={styles["no-decoration"]}>
-          <Button
-            title={"Continue Checkout"}
-            buttonIsDisabled={false}
-            variant={"pink-button"}
-          />
-        </Link>
-      </RightSide>
-    </ShoppingProcessContainer>
-  );
+  const { bagTotalQuantityIntoState } = useBagContext();
+
+  return <>{bagTotalQuantityIntoState > 0 ? <NonEmptyBag /> : <EmptyBag />}</>;
 };

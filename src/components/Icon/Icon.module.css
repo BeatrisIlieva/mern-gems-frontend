@@ -3,7 +3,7 @@
 .header,
 .popup,
 .address-book,
-filter {
+.filter {
   cursor: pointer;
 }
 

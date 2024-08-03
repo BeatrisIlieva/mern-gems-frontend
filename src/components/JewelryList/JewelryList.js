@@ -17,7 +17,6 @@ import { transformUrlSegment } from "../../utils/transformUrlSegment";
 
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { faFilterCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "../Icon/Icon";
 
 import styles from "./JewelryList.module.css";
 

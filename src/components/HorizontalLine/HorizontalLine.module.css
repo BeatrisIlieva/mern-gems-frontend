@@ -1,7 +1,6 @@
 .flex-container-line,
 .flex-container-line-absolute {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -34,28 +33,4 @@
   width: 26px;
   vertical-align: middle;
   margin: 0px 4px;
-
-  -webkit-animation: pulse 800ms infinite alternate;
-  animation: pulse 800ms infinite alternate;
-}
-
-.pulse {
-  -webkit-animation: pulse 800ms infinite alternate;
-  animation: pulse 800ms infinite alternate;
-}
-@-webkit-keyframes pulse {
-  0% {
-    width: 26px;
-  }
-  100% {
-    width: 29px;
-  }
-}
-@keyframes pulse {
-  0% {
-    width: 26px;
-  }
-  100% {
-    width: 29px;
-  }
 }
