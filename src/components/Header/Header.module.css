@@ -33,25 +33,4 @@
   }
 }
 
-.pulse {
-  -webkit-animation: pulse 800ms infinite alternate;
-  animation: pulse 800ms infinite alternate;
-}
-@-webkit-keyframes pulse {
-  0% {
-    color: var(--violet);
-  }
-  100% {
-    color: var(--pink);
-    font-size: 20px;
-  }
-}
-@keyframes pulse {
-  0% {
-    color: var(--pink);
-  }
-  100% {
-    color: var(--violet);
-    font-size: 20px;
-  }
-}
+
