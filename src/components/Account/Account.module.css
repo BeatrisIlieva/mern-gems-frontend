@@ -1,7 +1,7 @@
 .account {
   display: flex;
   justify-content: space-evenly;
-  margin: 40px 80px 40px 80px;
+  margin: 40px;
 }
 .left-sub-container,
 .right-container {
@@ -17,7 +17,7 @@
 
 .left-sub-container {
   height: 220px;
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
