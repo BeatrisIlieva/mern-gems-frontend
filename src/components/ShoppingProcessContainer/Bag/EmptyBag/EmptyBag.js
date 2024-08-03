@@ -1,11 +1,14 @@
 import { Collection } from "../../../Collection/Collection";
 
-import { EmptyBagHeader } from "../../../EmptyBagHeader/EmptyBagHeader";
+import { InfoMessage } from "../../../InfoMessage/InfoMessage";
 
 export const EmptyBag = () => {
   return (
     <>
-      <EmptyBagHeader />
+      <InfoMessage
+        title={"Your Shopping Bag is Empty."}
+        subtitle={"Explore and add something you love."}
+      />
       <Collection />
     </>
   );

@@ -1,4 +1,4 @@
-import { EmptyBagHeader } from "../../EmptyBagHeader/EmptyBagHeader";
+import { InfoMessage } from "../../InfoMessage/InfoMessage";
 
 import { Collection } from "../../Collection/Collection";
 
@@ -8,7 +8,10 @@ export const EmptyMiniBag = () => {
   return (
     <section className={styles["empty-mini-bag"]}>
       <div className={styles["header"]}>
-        <EmptyBagHeader />
+        <InfoMessage
+          title={"Your Shopping Bag is Empty."}
+          subtitle={"Explore and add something you love."}
+        />
       </div>
       <div className={styles["collection"]}>
         <Collection />
