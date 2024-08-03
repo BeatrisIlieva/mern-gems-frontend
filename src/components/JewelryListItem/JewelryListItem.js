@@ -8,7 +8,6 @@ export const JewelryListItem = ({
   firstImageUrl,
   isSoldOut,
 }) => {
-
   return (
     <JewelryCard
       jewelryId={_id}

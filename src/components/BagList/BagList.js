@@ -24,6 +24,7 @@ export const BagList = ({ variant }) => {
             jewelryId={item.jewelryId}
             firstImageUrl={item.firstImageUrl}
             isSoldOut={item.isSoldOut}
+            collectionTitle={item.collectionTitle}
             categoryTitle={item.categoryTitle}
             jewelryTitle={item.jewelryTitle}
             variant={"bag-list"}

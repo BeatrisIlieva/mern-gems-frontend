@@ -13,7 +13,6 @@ export const JewelryCard = ({
   isSoldOut,
   variant,
 }) => {
-  console.log(categoryTitle)
   const slugifiedCollectionTitle = slugify(collectionTitle);
   const slugifiedCategoryTitle = slugify(categoryTitle);
   const slugifiedJewelryTitle = slugify(jewelryTitle);
