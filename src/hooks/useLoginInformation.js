@@ -22,7 +22,7 @@ export const useLoginInformation = () => {
       .catch((err) => {
         console.log(err.message);
       });
-  });
+  }, [userService, userId, userInformation]);
 
   return { userInformation };
 };

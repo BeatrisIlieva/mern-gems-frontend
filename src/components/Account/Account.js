@@ -36,19 +36,6 @@ export const Account = () => {
   const [displayOrderHistoryPopup, setDisplayOrderHistoryPopup] =
     useState(false);
 
-  // const { userId } = useAuthenticationContext();
-
-  // const [userData, setUserData] = useState([]);
-
-  // const userService = useService(userServiceFactory);
-
-  // useEffect(() => {
-  //   userService
-  //     .getUserLoginDetails(userId)
-  //     .then((data) => setUserData(data))
-  //     .catch((err) => console.log(err.message));
-  // }, [userData]);
-
   const onUpdateEmailClick = async () => {
     setShowUpdateEmail(true);
     setShowUpdatePassword(false);
@@ -101,7 +88,7 @@ export const Account = () => {
       </div>
       <div className={styles["right-container"]}>
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-        <UserEmail/>
+        <UserEmail />
         <div className={styles["buttons-container"]}>
           <UnderlinedButton
             title={UpdateEmailButtonTitle}
