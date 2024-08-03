@@ -12,7 +12,7 @@ export const Collection = () => {
   return (
     <section className={styles["collection"]}>
       {collectionItems.map((item, index) => (
-        <div key={item.imageUrl}>
+        <div key={item.imageUrl} className={styles["wrapper"]}>
           <Link to={item.path} className={styles["no-decoration"]}>
             <div
               className={
@@ -34,10 +34,10 @@ export const Collection = () => {
                 />
               </div>
             </div>
+            {/* {index < collectionItems.length - 1 && (
+              <HorizontalLine key={`line-${index}`} variant={"small"} />
+            )} */}
           </Link>
-          {index < collectionItems.length - 1 && (
-            <HorizontalLine key={`line-${index}`} variant={"small"} />
-          )}
         </div>
       ))}
     </section>

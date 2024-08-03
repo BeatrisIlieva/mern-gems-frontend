@@ -11,7 +11,9 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
   return (
     <Popup
       overlayVariant={"overlay-right"}
-      modalVariant={"mini-bag"}
+      modalVariant={
+        bagTotalQuantityIntoState > 0 ? "mini-bag" : "empty-mini-bag"
+      }
       popupCloseHandler={toggleDisplayMiniBagPopup}
     >
       {bagTotalQuantityIntoState > 0 ? (
