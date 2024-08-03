@@ -8,11 +8,12 @@ import { AddressBookPopup } from "../../../Account/AddressBookPopup/AddressBookP
 
 import { UserEmail } from "../../../UserEmail/UserEmail";
 
+import { useUserShippingDetails } from "../../../../hooks/useUserShipingDetails";
+
 import styles from "./ShippingInformation.module.css";
 
-export const ShippingInformation = ({
-  userShippingInformation,
-}) => {
+export const ShippingInformation = () => {
+  const {userShippingDetails} = useUserShippingDetails()
   const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
 
   const toggleDisplayAddressBookPopup = () => {
@@ -40,38 +41,38 @@ export const ShippingInformation = ({
         </li>
         <li className={styles["list-item"]}>
           <NormalTitle
-            title={`${userShippingInformation.firstName} ${userShippingInformation.lastName}`}
+            title={`${userShippingDetails.firstName} ${userShippingDetails.lastName}`}
             variant={"regular"}
           />
         </li>
         <li className={styles["list-item"]}>
           <NormalTitle
-            title={userShippingInformation.phoneNumber}
+            title={userShippingDetails.phoneNumber}
             variant={"regular"}
           />
         </li>
         <li className={styles["list-item"]}>
           <NormalTitle
-            title={userShippingInformation.country}
+            title={userShippingDetails.country}
             variant={"regular"}
           />
         </li>
         <li className={styles["list-item"]}>
           <NormalTitle
-            title={`${userShippingInformation.city} ${userShippingInformation.zipCode}`}
+            title={`${userShippingDetails.city} ${userShippingDetails.zipCode}`}
             variant={"regular"}
           />
         </li>
         <li className={styles["list-item"]}>
           <NormalTitle
-            title={`${userShippingInformation.street} St.`}
+            title={`${userShippingDetails.street} St.`}
             variant={"regular"}
           />
         </li>
-        {userShippingInformation.apartment && (
+        {userShippingDetails.apartment && (
           <li className={styles["list-item"]}>
             <NormalTitle
-              title={`Apt. ${userShippingInformation.apartment}`}
+              title={`Apt. ${userShippingDetails.apartment}`}
               variant={"regular"}
             />
           </li>

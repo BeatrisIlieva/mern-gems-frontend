@@ -14,12 +14,14 @@ import { useService } from "../../../../hooks/useService";
 
 import { userServiceFactory } from "../../../../services/userService";
 
+import { useUserShippingDetails } from "../../../../hooks/useUserShipingDetails";
+
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const userService = useService(userServiceFactory);
 
   const { userId } = useAuthenticationContext();
 
-  const [userInformation, setUserInformation] = useState([]);
+  const { userShippingDetails } = useUserShippingDetails();
 
   const location = useLocation();
 
@@ -37,17 +39,10 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
 
+
   useEffect(() => {
-    userService
-      .getUserShippingDetails(userId)
-      .then((data) => {
-        setUserInformation(data);
-        updateForm();
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userInformation, userId, userService, updateForm]);
+    updateForm();
+  }, [userShippingDetails]);
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -103,7 +98,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
       blurHandler={blurHandler}
       changeHandler={changeHandler}
       initialFormValues={INITIAL_FORM_VALUES}
-      userInformation={userInformation}
+      userInformation={userShippingDetails}
       buttonTitle={ButtonTitle}
       onSubmit={onSubmit}
     />

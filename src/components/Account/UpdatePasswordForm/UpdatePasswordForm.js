@@ -18,15 +18,16 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { userServiceFactory } from "../../../services/userService";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
+import { useLoginInformation } from "../../../hooks/useLoginInformation";
 
 import styles from "./UpdatePasswordForm.module.css";
 
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-  const { userId } = useAuthenticationContext();
+  const { userInformation } = useLoginInformation();
 
-  const [userInformation, setUserInformation] = useState([]);
+  const { userId } = useAuthenticationContext();
 
   const userService = useService(userServiceFactory);
 
@@ -41,16 +42,8 @@ export const UpdatePasswordForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    userService
-      .getUserLoginDetails(userId)
-      .then((data) => {
-        setUserInformation(data);
-        updateForm();
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userInformation]);
+    updateForm();
+  }, []);
 
   const onSubmit = async (e) => {
     submitHandler(e);
