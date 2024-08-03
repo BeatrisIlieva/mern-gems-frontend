@@ -12,6 +12,14 @@ exports.getOne = async (jewelryId) => {
     },
     {
       $lookup: {
+        from: "collections",
+        localField: "collection",
+        foreignField: "_id",
+        as: "collections",
+      },
+    },
+    {
+      $lookup: {
         from: "inventories",
         localField: "_id",
         foreignField: "jewelry",
@@ -94,6 +102,7 @@ exports.getOne = async (jewelryId) => {
         description: 1,
         sizes: 1,
         category: 1,
+        collection: 1,
         isSoldOut: 1,
       },
     },
@@ -124,6 +133,14 @@ exports.getAll = async ({ collectionId, categoryId, skip, limit }) => {
       },
     },
     {
+      $lookup: {
+        as: "jewelrycollections",
+        from: "jewelrycollections",
+        foreignField: "_id",
+        localField: "jewelryCollection",
+      },
+    },
+    {
       $match: {
         jewelryCollection: collectionId,
       },
@@ -137,6 +154,8 @@ exports.getAll = async ({ collectionId, categoryId, skip, limit }) => {
         jewelryIds: { $push: "$_id" },
         categoryTitle: { $addToSet: "$categories.title" },
         categoryId: { $addToSet: "$categories._id" },
+        collectionTitle: { $addToSet: "$jewelrycollections.title" },
+        collectionId: { $addToSet: "$jewelrycollections._id" },
         jewelryTitle: { $addToSet: "$title" },
         inventories: { $push: "$inventories" },
       },
@@ -176,6 +195,8 @@ exports.getAll = async ({ collectionId, categoryId, skip, limit }) => {
         jewelryIds: 1,
         categoryTitle: 1,
         categoryId: 1,
+        collectionTitle: 1,
+        collectionId: 1,
         jewelryTitle: 1,
         isSoldOut: 1,
       },
