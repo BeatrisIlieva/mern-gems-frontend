@@ -1,3 +1,9 @@
+.title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .mini-bag {
   display: flex;
   flex-direction: column;
