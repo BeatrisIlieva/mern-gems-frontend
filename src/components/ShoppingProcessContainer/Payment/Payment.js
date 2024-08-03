@@ -23,7 +23,6 @@ export const Payment = () => {
 
   const userService = useService(userServiceFactory);
   const [userShippingInformation, setUserShippingInformation] = useState([]);
-  const [userLoginInformation, setUserLoginInformation] = useState([]);
 
   useEffect(() => {
     userService
@@ -34,21 +33,12 @@ export const Payment = () => {
       });
   }, [userId, userService]);
 
-  useEffect(() => {
-    userService
-      .getUserLoginDetails(userId)
-      .then((data) => setUserLoginInformation(data))
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userId, userService]);
 
   return (
     <ShoppingProcessContainer title={"Payment"}>
       <LeftSide>
         <ShippingInformation
           userShippingInformation={userShippingInformation}
-          userLoginInformation={userLoginInformation}
         />
         <PaymentForm />
       </LeftSide>

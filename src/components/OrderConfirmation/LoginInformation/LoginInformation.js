@@ -1,28 +1,9 @@
-import { useState, useEffect } from "react";
-
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
-
-import { useService } from "../../../hooks/useService";
-
-import { userServiceFactory } from "../../../services/userService";
-
 import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
-export const LoginInformation = () => {
-  const { userId } = useAuthenticationContext();
-  const userService = useService(userServiceFactory);
-  const [userInformation, setUserInformation] = useState([]);
+import { useLoginInformation } from "../../../hooks/useLoginInformation";
 
-  useEffect(() => {
-    userService
-      .getUserLoginDetails(userId)
-      .then((data) => {
-        setUserInformation(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userService, userId]);
+export const LoginInformation = () => {
+  const { userInformation } = useLoginInformation();
 
   return (
     <NormalTitle

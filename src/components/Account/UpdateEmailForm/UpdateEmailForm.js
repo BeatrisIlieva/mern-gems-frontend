@@ -8,7 +8,7 @@ import { useForm } from "../../../hooks/useForm";
 
 import { DynamicForm } from "../../DynamicForm/DynamicForm";
 
-import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred"; 
+import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
@@ -21,8 +21,8 @@ import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormV
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
-  const { userId, token } = useAuthenticationContext();
-  
+  const { userId } = useAuthenticationContext();
+
   const [userInformation, setUserInformation] = useState([]);
 
   const userService = useService(userServiceFactory);
@@ -38,7 +38,8 @@ export const UpdateEmailForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    userService.getUserLoginDetails(userId)
+    userService
+      .getUserLoginDetails(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();
@@ -51,6 +52,8 @@ export const UpdateEmailForm = () => {
   const onSubmit = async (e) => {
     submitHandler(e);
 
+    console.log("here sub");
+
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
@@ -59,13 +62,11 @@ export const UpdateEmailForm = () => {
 
       const data = { email, password };
       try {
-
-        await userService.updateEmail(userId, data, token);
+        await userService.updateEmail(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       } catch (err) {
         console.log(err.message);
-
 
         setValues((prevValues) => ({
           ...prevValues,
@@ -82,18 +83,17 @@ export const UpdateEmailForm = () => {
 
   return (
     <div className={styles["slideIn"]}>
-      <form method="POST" onSubmit={onSubmit}>
-        <DynamicForm
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          userInformation={userInformation}
-          buttonTitle={ButtonTitle}
-        />
-      </form>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userInformation}
+        buttonTitle={ButtonTitle}
+        onSubmit={onSubmit}
+      />
     </div>
   );
 };

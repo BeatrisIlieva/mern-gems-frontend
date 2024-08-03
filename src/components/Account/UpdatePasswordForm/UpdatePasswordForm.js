@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 
 import { useService } from "../../../hooks/useService";
 
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext"; 
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-import { useForm } from "../../../hooks/useForm"; 
+import { useForm } from "../../../hooks/useForm";
 
 import { DynamicForm } from "../../DynamicForm/DynamicForm";
 
-import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred"; 
+import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
 
 import { getPasswordMismatchErrorMessage } from "../../../utils/getPasswordMismatchErrorMessage";
 
-import { SUCCESS_MESSAGES } from "../../../mappers/successMessages"
+import { SUCCESS_MESSAGES } from "../../../mappers/successMessages";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import { userServiceFactory } from "../../../services/userService";
@@ -24,8 +24,7 @@ import styles from "./UpdatePasswordForm.module.css";
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-
-  const { userId, token } = useAuthenticationContext();
+  const { userId } = useAuthenticationContext();
 
   const [userInformation, setUserInformation] = useState([]);
 
@@ -42,7 +41,8 @@ export const UpdatePasswordForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    userService.getUserLoginDetails(userId)
+    userService
+      .getUserLoginDetails(userId)
       .then((data) => {
         setUserInformation(data);
         updateForm();
@@ -82,7 +82,7 @@ export const UpdatePasswordForm = () => {
 
       const data = { password, newPassword };
       try {
-        await userService.updatePassword(userId, data, token);
+        await userService.updatePassword(userId, data);
 
         setValues((prevValues) => ({
           ...prevValues,
@@ -114,18 +114,17 @@ export const UpdatePasswordForm = () => {
 
   return (
     <div className={styles["slideIn"]}>
-      <form method="POST" onSubmit={onSubmit}>
-        <DynamicForm
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          userInformation={userInformation}
-          buttonTitle={ButtonTitle}
-        />
-      </form>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userInformation}
+        buttonTitle={ButtonTitle}
+        onSubmit={onSubmit}
+      />
     </div>
   );
 };

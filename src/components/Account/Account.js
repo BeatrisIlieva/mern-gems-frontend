@@ -20,6 +20,8 @@ import { userServiceFactory } from "../../services/userService";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
+import { UserEmail } from "../UserEmail/UserEmail";
+
 import styles from "./Account.module.css";
 
 const UpdateEmailButtonTitle = "Update Email Address";
@@ -34,18 +36,18 @@ export const Account = () => {
   const [displayOrderHistoryPopup, setDisplayOrderHistoryPopup] =
     useState(false);
 
-  const { userId } = useAuthenticationContext();
+  // const { userId } = useAuthenticationContext();
 
-  const [userData, setUserData] = useState([]);
+  // const [userData, setUserData] = useState([]);
 
-  const userService = useService(userServiceFactory);
+  // const userService = useService(userServiceFactory);
 
-  useEffect(() => {
-    userService
-      .getUserLoginDetails(userId)
-      .then((data) => setUserData(data))
-      .catch((err) => console.log(err.message));
-  }, [userData]);
+  // useEffect(() => {
+  //   userService
+  //     .getUserLoginDetails(userId)
+  //     .then((data) => setUserData(data))
+  //     .catch((err) => console.log(err.message));
+  // }, [userData]);
 
   const onUpdateEmailClick = async () => {
     setShowUpdateEmail(true);
@@ -99,7 +101,7 @@ export const Account = () => {
       </div>
       <div className={styles["right-container"]}>
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-        <NormalTitle title={userData.email} variant={"bolded"} />
+        <UserEmail/>
         <div className={styles["buttons-container"]}>
           <UnderlinedButton
             title={UpdateEmailButtonTitle}

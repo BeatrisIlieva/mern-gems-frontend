@@ -6,11 +6,12 @@ import { UnderlinedButton } from "../../../UnderlinedButton/UnderlinedButton";
 
 import { AddressBookPopup } from "../../../Account/AddressBookPopup/AddressBookPopup";
 
+import { UserEmail } from "../../../UserEmail/UserEmail";
+
 import styles from "./ShippingInformation.module.css";
 
 export const ShippingInformation = ({
   userShippingInformation,
-  userLoginInformation,
 }) => {
   const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
 
@@ -31,7 +32,7 @@ export const ShippingInformation = ({
       </div>
       <div className={styles["top"]}>
         <NormalTitle title={"Email Address"} variant={"bolded"} />
-        <NormalTitle title={userLoginInformation.email} variant={"regular"} />
+        <UserEmail/>
       </div>
       <ul role="list">
         <li className={styles["list-item"]}>
