@@ -33,11 +33,11 @@
   border-block-start: 1px solid var(--medium-pink);
   position: relative;
   transition: opacity 0.8s ease, transform 0.8s ease;
-  padding: 40px;
+  padding: 20px;
 }
 
 .account {
-  width: 700px;
+  width: 810px;
   height: 600px;
   overflow-y: auto;
   animation: slideInTop 1s forwards;
