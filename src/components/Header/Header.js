@@ -135,19 +135,19 @@ const navItemsLeft = [
   {
     to: "/",
     label: "Collections",
-    icon: <Icon icon={faGem} variant={"header"} />,
+    icon: faGem,
   },
 ];
 const navItemsRight = [
   {
     to: "/users/shopping-bag",
     label: "My Bag",
-    icon: <Icon icon={faBagShopping} variant={"header"} />,
+    icon: faBagShopping,
   },
   {
     to: "/users/account",
     label: "Account",
-    icon: <Icon icon={faUser} variant={"header"} />,
+    icon: faUser,
   },
 ];
 

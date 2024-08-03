@@ -13,8 +13,11 @@ import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
 
-
 import { transformUrlSegment } from "../../utils/transformUrlSegment";
+
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faFilterCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { Icon } from "../Icon/Icon";
 
 import styles from "./JewelryList.module.css";
 
@@ -30,16 +33,17 @@ export const JewelryList = () => {
   const transformedCollectionName = transformUrlSegment(collectionName);
 
   const navItems = [
-    { to: "bracelets", label: "Bracelets" },
-    { to: "earrings", label: "Earrings" },
-    { to: "necklaces", label: "Necklaces & Pendants" },
-    { to: "rings", label: "Rings" },
+    { to: "bracelets", label: "Bracelets", icon: faFilter },
+    { to: "earrings", label: "Earrings", icon: faFilter },
+    { to: "necklaces", label: "Necklaces & Pendants", icon: faFilter },
+    { to: "rings", label: "Rings", icon: faFilter },
   ];
 
   const navCollection = [
     {
       to: `/${collectionName}`,
       label: `${transformedCollectionName} Collection`,
+      icon: faFilterCircleXmark,
     },
   ];
 

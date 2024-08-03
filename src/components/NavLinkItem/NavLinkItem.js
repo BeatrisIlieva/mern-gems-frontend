@@ -3,6 +3,8 @@ import { Fragment } from "react";
 
 import { MediumTitle } from "../MediumTitle/MediumTitle";
 
+import { Icon } from "../Icon/Icon";
+
 import styles from "./NavLinkItem.module.css";
 
 export const NavLinkItem = ({ items, variant }) => {
@@ -19,7 +21,8 @@ export const NavLinkItem = ({ items, variant }) => {
                 }
                 to={item.to}
               >
-                {item.icon}
+                <Icon icon={item.icon} variant={"header"} />
+                {/* {item.icon} */}
                 <MediumTitle title={item.label} />
               </NavLink>
             </li>
