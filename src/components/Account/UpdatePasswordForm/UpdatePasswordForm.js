@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { useService } from "../../../hooks/useService";
 
@@ -18,14 +18,14 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { userServiceFactory } from "../../../services/userService";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
-import { useLoginInformation } from "../../../hooks/useUserLoginDetails";
+import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 
 import styles from "./UpdatePasswordForm.module.css";
 
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-  const { userInformation } = useLoginInformation();
+  const { userLoginDetails } = useUserLoginDetails();
 
   const { userId } = useAuthenticationContext();
 
@@ -114,7 +114,7 @@ export const UpdatePasswordForm = () => {
         blurHandler={blurHandler}
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
-        userInformation={userInformation}
+        userInformation={userLoginDetails}
         buttonTitle={ButtonTitle}
         onSubmit={onSubmit}
       />

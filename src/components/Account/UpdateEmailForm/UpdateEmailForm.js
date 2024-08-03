@@ -18,14 +18,14 @@ import styles from "./UpdateEmailForm.module.css";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 
-import { useLoginInformation } from "../../../hooks/useUserLoginDetails";
+import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
   const { userId } = useAuthenticationContext();
 
-  const { userInformation } = useLoginInformation();
+  const { userLoginDetails } = useUserLoginDetails();
 
   const userService = useService(userServiceFactory);
 
@@ -41,7 +41,7 @@ export const UpdateEmailForm = () => {
 
   useEffect(() => {
     updateForm();
-  }, [userInformation]);
+  }, [userLoginDetails]);
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -82,7 +82,7 @@ export const UpdateEmailForm = () => {
         blurHandler={blurHandler}
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
-        userInformation={userInformation}
+        userInformation={userLoginDetails}
         buttonTitle={ButtonTitle}
         onSubmit={onSubmit}
       />
