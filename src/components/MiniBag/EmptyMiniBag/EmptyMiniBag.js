@@ -4,8 +4,6 @@ import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
 import { Collection } from "../../Collection/Collection";
 
-import styles from "./EmptyMiniBag.module.css";
-
 export const EmptyMiniBag = () => {
   return (
     <section>
