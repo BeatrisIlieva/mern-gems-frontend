@@ -14,7 +14,7 @@ import { useService } from "../../../../hooks/useService";
 
 import { userServiceFactory } from "../../../../services/userService";
 
-import { useUserShippingDetails } from "../../../../hooks/useUserShipingDetails";
+import { useUserShippingDetails } from "../../../../hooks/useUserShippingDetails";
 
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const userService = useService(userServiceFactory);
@@ -38,7 +38,6 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
     changeHandler,
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
-
 
   useEffect(() => {
     updateForm();

@@ -6,27 +6,30 @@ import { useService } from "../../../hooks/useService";
 
 import { userServiceFactory } from "../../../services/userService";
 
+import { useUserShippingDetails } from "../../../hooks/useUserShippingDetails";
+
 import { XLargeTitle } from "../../XLargeTitle/XLargeTitle";
 
 export const ShippingInformation = () => {
-  const { userId } = useAuthenticationContext();
-  const userService = useService(userServiceFactory);
-  const [userInformation, setUserInformation] = useState([]);
+  const {userShippingDetails} = useUserShippingDetails();
+  // const { userId } = useAuthenticationContext();
+  // const userService = useService(userServiceFactory);
+  // const [userInformation, setUserInformation] = useState([]);
 
-  useEffect(() => {
-    userService
-      .getUserShippingDetails(userId)
-      .then((data) => {
-        setUserInformation(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userService, userId]);
+  // useEffect(() => {
+  //   userService
+  //     .getUserShippingDetails(userId)
+  //     .then((data) => {
+  //       setUserInformation(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     });
+  // }, [userService, userId]);
 
   return (
     <XLargeTitle
-      title={`Thank you for your purchase, ${userInformation.firstName}!`}
+      title={`Thank you for your purchase, ${userShippingDetails  .firstName}!`}
     />
   );
 };

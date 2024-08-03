@@ -1,9 +1,9 @@
-import { useLoginInformation } from "../../hooks/useUserLoginDetails";
+import { useUserLoginDetails } from "../../hooks/useUserLoginDetails";
 
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 export const UserEmail = () => {
-  const { userInformation } = useLoginInformation();
+  const { userLoginDetails } = useUserLoginDetails();
 
-  return <NormalTitle title={userInformation.email} variant={"regular"} />;
+  return <NormalTitle title={userLoginDetails.email} variant={"regular"} />;
 };

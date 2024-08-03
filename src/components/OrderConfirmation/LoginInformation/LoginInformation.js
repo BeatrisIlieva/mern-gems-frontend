@@ -1,13 +1,13 @@
 import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
-import { useLoginInformation } from "../../../hooks/useUserLoginDetails";
+import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 
 export const LoginInformation = () => {
-  const { userInformation } = useLoginInformation();
+  const { userLoginDetails } = useUserLoginDetails();
 
   return (
     <NormalTitle
-      title={`A confirmation email has been sent to: ${userInformation.email}`}
+      title={`A confirmation email has been sent to: ${userLoginDetails.email}`}
       variant={"bolded"}
     />
   );
