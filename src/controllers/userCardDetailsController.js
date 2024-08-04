@@ -9,7 +9,7 @@ router.put("/:userId", async (req, res) => {
   const data = { ...req.body };
 
   try {
-    await userCardDetailsManager.findByIdAndUpdate(userId, data);
+    await userCardDetailsManager.update(userId, data);
 
     const order = await orderManager.create(userId);
 
@@ -29,7 +29,7 @@ router.get("/:userId", async (req, res) => {
   try {
     const result = await userCardDetailsManager.getOne(userId);
 
-    res.status(200).json({ result });
+    res.status(200).json(result);
   } catch (err) {
     console.log(err);
     res.status(401).json({

@@ -44,29 +44,32 @@ const userCardDetailsSchema = new mongoose.Schema({
   expiryDate: {
     type: String,
     match: [EXPIRY_DATE_PATTERN, EXPIRY_DATE_PATTERN_ERROR_MESSAGE],
-    validate: {
-      validator: function (value) {
-        return checkIfCardHasExpired(value);
+    validate: [
+      {
+        validator: function (value) {
+          return checkIfCardHasExpired(value);
+        },
+        message: CARD_HAS_EXPIRED_ERROR_MESSAGE,
       },
-      message: CARD_HAS_EXPIRED_ERROR_MESSAGE,
-    },
+    ],
   },
 });
 
 function checkIfCardHasExpired(expirationDate) {
+  console.log("exp", expirationDate);
   const [month, year] = expirationDate
     .split("/")
     .map((val) => parseInt(val, 10));
 
-  const expiration = new Date("20" + year + "-" + month + "-01");
+  const expiration = new Date(`20${year}-${month}-01`);
 
   const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
 
-  if (expiration < currentDate) {
-    return true;
-  } else {
-    return false;
-  }
+  console.log("expiration", expiration);
+  console.log("currentDate", currentDate);
+
+  return expiration >= currentDate;
 }
 
 userCardDetailsSchema.pre("save", async function () {
