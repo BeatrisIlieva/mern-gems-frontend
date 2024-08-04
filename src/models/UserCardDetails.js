@@ -1,51 +1,51 @@
 const mongoose = require("mongoose");
-const { NAME_PATTERN, NAME_ERROR_MESSAGE } = require("../constants/name");
-const { PHONE_PATTERN, PHONE_ERROR_MESSAGE } = require("../constants/phone");
-const { STREET_PATTERN, STREET_ERROR_MESSAGE } = require("../constants/street");
+
 const {
-  APARTMENT_PATTERN,
-  APARTMENT_ERROR_MESSAGE,
-} = require("../constants/apartment");
+  CARD_HOLDER_NAME_PATTERN,
+  CARD_HOLDER_NAME_PATTERN_ERROR_MESSAGE,
+} = require("../constants/cardHolder");
+
 const {
-  ZIP_CODE_PATTERN,
-  ZIP_CODE_ERROR_MESSAGE,
-} = require("../constants/zipCode");
+  LONG_CARD_NUMBER_PATTERN,
+  LONG_CARD_NUMBER_PATTERN_ERROR_MESSAGE,
+} = require("../constants/cardNumber");
+
+const {
+  CVV_CODE_PATTERN,
+  CVV_CODE_PATTERN_ERROR_MESSAGE,
+} = require("../constants/cVVCode");
+
+const {
+  EXPIRY_DATE_PATTERN,
+  EXPIRY_DATE_PATTERN_ERROR_MESSAGE,
+  CARD_HAS_EXPIRED_ERROR_MESSAGE,
+} = require("../constants/expiryDate");
 
 const userCardDetailsSchema = new mongoose.Schema({
   _id: {
     type: String,
   },
+  cardHolder: {
+    type: String,
+    match: [CARD_HOLDER_NAME_PATTERN, CARD_HOLDER_NAME_PATTERN_ERROR_MESSAGE],
+  },
+
   longCardNumber: {
     type: String,
-    match: [NAME_PATTERN, NAME_ERROR_MESSAGE],
+    match: [LONG_CARD_NUMBER_PATTERN, LONG_CARD_NUMBER_PATTERN_ERROR_MESSAGE],
   },
-  lastName: {
+
+  cVVCode: {
     type: String,
-    match: [NAME_PATTERN, NAME_ERROR_MESSAGE],
+    match: [CVV_CODE_PATTERN, CVV_CODE_PATTERN_ERROR_MESSAGE],
   },
-  phoneNumber: {
+  expiryDate: {
     type: String,
-    match: [PHONE_PATTERN, PHONE_ERROR_MESSAGE],
-  },
-  country: {
-    type: String,
-    match: [NAME_PATTERN, NAME_ERROR_MESSAGE],
-  },
-  city: {
-    type: String,
-    match: [NAME_PATTERN, NAME_ERROR_MESSAGE],
-  },
-  street: {
-    type: String,
-    match: [STREET_PATTERN, STREET_ERROR_MESSAGE],
-  },
-  apartment: {
-    type: String,
-    match: [APARTMENT_PATTERN, APARTMENT_ERROR_MESSAGE],
-  },
-  zipCode: {
-    type: String,
-    match: [ZIP_CODE_PATTERN, ZIP_CODE_ERROR_MESSAGE],
+    match: [
+      EXPIRY_DATE_PATTERN,
+      EXPIRY_DATE_PATTERN_ERROR_MESSAGE,
+      CARD_HAS_EXPIRED_ERROR_MESSAGE,
+    ],
   },
 });
 
