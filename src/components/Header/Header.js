@@ -126,7 +126,7 @@ import styles from "./Header.module.css";
 const navItemsLeft = [
   {
     to: "/",
-    label: <MediumTitle title={"Collections"}/>,
+    label: <MediumTitle title={"Collections"} />,
     icon: faGem,
     iconVariant: "header",
   },
@@ -134,13 +134,13 @@ const navItemsLeft = [
 const navItemsRight = [
   {
     to: "/users/shopping-bag",
-    label: <MediumTitle title={"My Bag"}/>,
+    label: <MediumTitle title={"My Bag"} />,
     icon: faBagShopping,
     iconVariant: "header",
   },
   {
     to: "/users/account",
-    label: <MediumTitle title={"Account"}/>,
+    label: <MediumTitle title={"Account"} />,
     icon: faUser,
     iconVariant: "header",
   },
@@ -151,13 +151,15 @@ export const Header = () => {
     <header className={styles["header"]}>
       <div className={styles["wrapper"]}>
         <NavLinkItem items={navItemsLeft} />
-        <img
-          className={styles["logo-image"]}
-          src={
-            "https://res.cloudinary.com/deztgvefu/image/upload/v1719057213/template_images/Screenshot_2024-06-22_at_14.52.43_xrdvgt.png"
-          }
-          alt="logo-image"
-        />
+        <div className={styles["thumbnail"]}>
+          <img
+            className={styles["logo-image"]}
+            src={
+              "https://res.cloudinary.com/deztgvefu/image/upload/v1719057213/template_images/Screenshot_2024-06-22_at_14.52.43_xrdvgt.png"
+            }
+            alt="logo-image"
+          />
+        </div>
         <NavLinkItem items={navItemsRight} />
       </div>
       <HorizontalLine variant={"large"} position={"absolute"} />

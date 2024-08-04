@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Fragment } from "react";
 
-import { MediumTitle } from "../MediumTitle/MediumTitle";
-
 import { Icon } from "../Icon/Icon";
 
 import styles from "./NavLinkItem.module.css";
@@ -22,7 +20,7 @@ export const NavLinkItem = ({ items }) => {
                 to={item.to}
               >
                 <Icon icon={item.icon} variant={item.iconVariant} />
-                {item.label} 
+                {item.label}
               </NavLink>
             </li>
           </Fragment>
