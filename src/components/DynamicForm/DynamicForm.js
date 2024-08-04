@@ -16,6 +16,7 @@ export const DynamicForm = ({
   buttonTitle,
   onSubmit,
 }) => {
+
   const location = useLocation();
 
   const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);

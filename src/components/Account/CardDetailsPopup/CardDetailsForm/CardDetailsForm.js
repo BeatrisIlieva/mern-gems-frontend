@@ -17,9 +17,11 @@ import { useUserCardDetails } from "../../../../hooks/useUserCardDetails";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-export const CardDetailsForm = () => {
+export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
 
   const { userCardDetails, updateUserCardDetails } = useUserCardDetails();
+
+
 
   const { totalPrice } = useBagContext();
 
@@ -81,9 +83,11 @@ export const CardDetailsForm = () => {
 
         updateForm();
 
-        clearShoppingBag();
+        toggleDisplayCardDetailsPopup();
 
-        navigate("/order-confirmation");
+        // clearShoppingBag();
+
+        // navigate("/order-confirmation");
       } catch (err) {
         console.log(err.message);
       }
@@ -99,8 +103,8 @@ export const CardDetailsForm = () => {
       clickHandler={clickHandler}
       blurHandler={blurHandler}
       changeHandler={changeHandler}
-      userInformation={userCardDetails}
       initialFormValues={INITIAL_FORM_VALUES}
+      userInformation={userCardDetails}
       buttonTitle={ButtonTitle}
       onSubmit={onSubmit}
     />
