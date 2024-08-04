@@ -2,11 +2,11 @@ const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
 
-const { checkIfItemIsAvailable } = require("../utils/checkIfItemIsAvailable");
-
 const {
   getAllBagItemsByUserId,
 } = require("../aggregations/getAllBagItemsByUserId");
+
+const { checkIfItemIsAvailable } = require("../utils/checkIfItemIsAvailable");
 
 const {
   DEFAULT_ADD_QUANTITY,
