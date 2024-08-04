@@ -34,16 +34,6 @@ exports.create = async ({ userId, jewelryId, sizeId }) => {
   );
 };
 
-exports.getOne = async ({ userId, jewelryId, sizeId }) => {
-  const bagItem = await Bag.findOne({
-    user: userId,
-    jewelry: jewelryId,
-    size: sizeId,
-  });
-
-  return bagItem;
-};
-
 exports.getAll = async (userId) => {
   const user = await UserLoginDetails.findById(userId);
 
