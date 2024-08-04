@@ -10,3 +10,9 @@ exports.update = async (userId, data) => {
     new: true,
   });
 };
+
+exports.getOne = async (userId) => {
+  const result = await UserCardDetails.findById(userId);
+
+  return result;
+};
