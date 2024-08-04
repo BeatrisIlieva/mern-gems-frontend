@@ -4,25 +4,31 @@ import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
 import { useService } from "./useService";
 
-import { userServiceFactory } from "../services/userService";
+import { userShippingDetailsServiceFactory } from "../services/userShippingDetailsService";
 
 export const useUserShippingDetails = () => {
   const [userShippingDetails, setUserShippingDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
 
-  const userService = useService(userServiceFactory);
+  const userShippingDetailsService = useService(
+    userShippingDetailsServiceFactory
+  );
 
   useEffect(() => {
-    userService
-      .getUserShippingDetails(userId)
+    userShippingDetailsService
+      .getOne(userId)
       .then((data) => {
         setUserShippingDetails(data);
       })
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userService, userId]);
+  }, [userShippingDetailsService, userId]);
 
-  return { userShippingDetails };
+  const updateUserShippingDetails = async (data) => {
+    await userShippingDetailsService.update(userId, data);
+  };
+
+  return { userShippingDetails, updateUserShippingDetails };
 };
