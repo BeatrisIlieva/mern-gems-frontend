@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useForm } from "../../../../hooks/useForm";
 import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
@@ -10,18 +10,13 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
-import { useService } from "../../../../hooks/useService";
-
-import { userServiceFactory } from "../../../../services/userService";
-
 import { useUserShippingDetails } from "../../../../hooks/useUserShippingDetails";
 
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
-  const userService = useService(userServiceFactory);
-
   const { userId } = useAuthenticationContext();
 
-  const { userShippingDetails } = useUserShippingDetails();
+  const { userShippingDetails, updateUserShippingDetails } =
+    useUserShippingDetails();
 
   const location = useLocation();
 
@@ -70,7 +65,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
       };
 
       try {
-        await userService.updateShippingDetails(userId, data);
+        await updateUserShippingDetails(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
