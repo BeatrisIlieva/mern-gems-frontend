@@ -7,6 +7,6 @@ export const paymentServiceFactory = (token) => {
   const request = requestFactory(token);
 
   return {
-    create: (userId, data) => request.post(`${baseUrl}/${userId}`, data),
+    create: (userId, data) => request.put(`${baseUrl}/${userId}`, data),
   };
 };

@@ -14,14 +14,16 @@ import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFo
 import { useBagContext } from "../../../../contexts/BagContext";
 
 import { useUserCardDetails } from "../../../../hooks/useUserCardDetails";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-
+import { useService } from "../../../../hooks/useService";
+import { paymentServiceFactory } from "../../../../services/paymentService";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
+  const { userId } = useAuthenticationContext();
+  const paymentService = useService(paymentServiceFactory);
 
   const { userCardDetails, updateUserCardDetails } = useUserCardDetails();
-
-
 
   const { totalPrice } = useBagContext();
 
@@ -40,6 +42,10 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
   }, [userCardDetails]);
 
   const { clearShoppingBag } = useBagContext();
+
+  const location = useLocation();
+
+  const locationIsPayment = location.pathname === "/payment";
 
   const navigate = useNavigate();
 
@@ -76,18 +82,21 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
       };
 
       try {
+        if (locationIsPayment) {
+          await paymentService.create(userId, data);
 
-        await updateUserCardDetails(data);
+          clearShoppingBag();
 
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+          navigate("/order-confirmation");
+        } else {
+          await updateUserCardDetails(data);
 
-        updateForm();
+          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        toggleDisplayCardDetailsPopup();
+          updateForm();
 
-        // clearShoppingBag();
-
-        // navigate("/order-confirmation");
+          toggleDisplayCardDetailsPopup();
+        }
       } catch (err) {
         console.log(err.message);
       }

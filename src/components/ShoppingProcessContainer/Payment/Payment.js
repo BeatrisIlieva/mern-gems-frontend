@@ -2,7 +2,9 @@ import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
 
 import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 
-import { PaymentForm } from "./PaymentForm/PaymentForm";
+
+import { CardDetailsForm } from "../../Account/CardDetailsPopup/CardDetailsForm/CardDetailsForm";
+
 
 import { LeftSide } from "../LeftSide/LeftSide";
 import { RightSide } from "../RightSide/RightSide";
@@ -14,7 +16,7 @@ export const Payment = () => {
     <ShoppingProcessContainer title={"Payment"}>
       <LeftSide>
         <ShippingInformation />
-        <PaymentForm />
+        <CardDetailsForm />
       </LeftSide>
       <RightSide>
         <OrderSummary />

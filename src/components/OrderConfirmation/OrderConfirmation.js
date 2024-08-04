@@ -10,15 +10,15 @@ import { useLoading } from "../../hooks/useLoading";
 import styles from "./OrderConfirmation.module.css";
 
 export const OrderConfirmation = () => {
-  const { isLoading, toggleIsLoading } = useLoading();
+  // const { isLoading, toggleIsLoading } = useLoading();
 
-  toggleIsLoading();
+  // toggleIsLoading();
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <LoadingSpinner />
-      ) : (
+      ) : ( */}
         <section className={styles["order-confirmation"]}>
           <div className={styles["info"]}>
             <ShippingInformation />
@@ -46,7 +46,7 @@ export const OrderConfirmation = () => {
             />
           </div>
         </section>
-      )}
+      {/* )} */}
     </>
   );
 };
