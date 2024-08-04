@@ -2,16 +2,20 @@ const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
 
-const { updateBagQuantity } = require("../utils/updateBagQuantity");
+const { checkIfItemIsAvailable } = require("../utils/checkIfItemIsAvailable");
 
-const { DEFAULT_ADD_QUANTITY } = require("../constants/bag");
+const {
+  DEFAULT_ADD_QUANTITY,
+  SOLD_OUT_JEWELRY_ERROR_MESSAGE,
+} = require("../constants/bag");
 
-exports.create = async ({
-  userId,
-  jewelryId,
-  sizeId,
-  quantity: DEFAULT_ADD_QUANTITY,
-}) => {
+exports.create = async ({ userId, jewelryId, sizeId }) => {
+  const isAvailable = await checkIfItemIsAvailable(jewelryId, sizeId);
+
+  if (!isAvailable) {
+    throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
+  }
+
   await Bag.create({
     user: userId,
     jewelry: jewelryId,
@@ -24,36 +28,6 @@ exports.create = async ({
     { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
     { new: true }
   );
-};
-
-exports.decrease = async (bagId) => {
-  const bagItem = await Bag.findById(bagId);
-
-  const bagQuantity = bagItem.quantity;
-
-  const updatedQuantity = bagQuantity - DEFAULT_ADD_QUANTITY;
-
-  await updateBagQuantity(bagId, updatedQuantity);
-};
-
-exports.increase = async (bagId) => {
-  const bagItem = await Bag.findById(bagId);
-
-  const bagQuantity = bagItem.quantity;
-
-  const updatedQuantity = bagQuantity + DEFAULT_ADD_QUANTITY;
-
-  await updateBagQuantity(bagId, updatedQuantity);
-};
-
-exports.checkAvailability = async (jewelryId, size) => {
-  const result = await Inventory.findOne({
-    jewelry: jewelryId,
-    size: Number(size),
-    quantity: { $gt: 0 },
-  });
-
-  return result;
 };
 
 exports.getOne = async ({ userId, jewelryId, sizeId }) => {
@@ -216,4 +190,22 @@ exports.getAll = async (userId) => {
   ]);
 
   return jewelries;
+};
+
+exports.delete = async (bagId) => {
+  const bagItem = await Bag.findById(bagId);
+
+  const jewelryId = bagItem.jewelry;
+
+  const sizeId = bagItem.size;
+
+  const bagQuantity = bagItem.quantity;
+
+  await bagItem.deleteOne();
+
+  await Inventory.findOneAndUpdate(
+    { jewelry: jewelryId, size: sizeId },
+    { $inc: { quantity: + bagQuantity } },
+    { new: true }
+  );
 };
