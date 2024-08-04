@@ -12,7 +12,7 @@ import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorH
 import { INVALID_CREDENTIALS_ERROR_MESSAGE } from "../../../../constants/email";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { userServiceFactory } from "../../../../services/userService";
+import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
 
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 
@@ -21,7 +21,7 @@ const ButtonTitle = "Sign In";
 export const LoginForm = () => {
   const { updateAuthentication } = useAuthenticationContext();
 
-  const userService = useService(userServiceFactory);
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   let {
     values,
@@ -54,7 +54,7 @@ export const LoginForm = () => {
       const data = { email, password };
 
       try {
-        const result = await userService.login(data);
+        const result = await userLoginDetailsService.login(data);
 
         await updateAuthentication(result);
 
