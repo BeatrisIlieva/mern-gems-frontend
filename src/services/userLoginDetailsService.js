@@ -9,10 +9,10 @@ export const userLoginDetailsServiceFactory = (token) => {
 
   return {
     register: (data) => request.post(`${baseUrl}/register`, data),
+    
+    getOne: (userId) => request.get(`${baseUrl}/${userId}`),
 
     login: (data) => request.post(`${baseUrl}/login`, data),
-
-    getOne: (userId) => request.get(`${baseUrl}/${userId}`),
 
     updateEmail: (userId, data) =>
       request.put(`${baseUrl}/email/${userId}`, data),
