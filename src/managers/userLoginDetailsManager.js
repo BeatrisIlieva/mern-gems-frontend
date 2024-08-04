@@ -90,4 +90,3 @@ exports.updatePassword = async (userId, data) => {
     return user;
   }
 };
-

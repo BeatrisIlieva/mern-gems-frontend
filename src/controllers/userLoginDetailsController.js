@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const userLoginDetailsManager = require("../managers/userLoginDetailsManager");
+const userShippingDetailsManager = require("../managers/userShippingDetailsManager");
 const userCardDetailsManager = require("../managers/userCardDetailsManager");
 
 router.post("/register", async (req, res) => {
@@ -12,7 +13,7 @@ router.post("/register", async (req, res) => {
       password,
     });
 
-    await userLoginDetailsManager.createUserShippingDetails({ _id: userId });
+    await userShippingDetailsManager.create({ _id: userId });
 
     await userCardDetailsManager.create({ _id: userId });
 
