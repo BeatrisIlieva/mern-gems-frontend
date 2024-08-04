@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import { useService } from "../../../hooks/useService";
-
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { useForm } from "../../../hooks/useForm";
@@ -11,8 +9,6 @@ import { DynamicForm } from "../../DynamicForm/DynamicForm";
 import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-
-import { userServiceFactory } from "../../../services/userService";
 
 import styles from "./UpdateEmailForm.module.css";
 
@@ -25,9 +21,7 @@ const ButtonTitle = "Save";
 export const UpdateEmailForm = () => {
   const { userId } = useAuthenticationContext();
 
-  const { userLoginDetails } = useUserLoginDetails();
-
-  const userService = useService(userServiceFactory);
+  const { userLoginDetails, updateUserEmail } = useUserLoginDetails();
 
   const {
     values,
@@ -54,7 +48,7 @@ export const UpdateEmailForm = () => {
 
       const data = { email, password };
       try {
-        await userService.updateEmail(userId, data);
+        await updateUserEmail(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       } catch (err) {
