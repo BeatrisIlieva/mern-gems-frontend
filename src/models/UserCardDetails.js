@@ -56,7 +56,6 @@ const userCardDetailsSchema = new mongoose.Schema({
 });
 
 function checkIfCardHasExpired(expirationDate) {
-  console.log("exp", expirationDate);
   const [month, year] = expirationDate
     .split("/")
     .map((val) => parseInt(val, 10));
@@ -65,9 +64,6 @@ function checkIfCardHasExpired(expirationDate) {
 
   const currentDate = new Date();
   currentDate.setHours(0, 0, 0, 0);
-
-  console.log("expiration", expiration);
-  console.log("currentDate", currentDate);
 
   return expiration >= currentDate;
 }
