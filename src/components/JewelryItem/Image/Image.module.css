@@ -1,7 +1,7 @@
 .jewelry-images,
 .no-second-image-available {
   position: relative;
-  width: calc(100vh - 240px);
+  width: calc(100vh - 280px);
 }
 
 .jewelry-images {
@@ -12,7 +12,7 @@
   cursor: default;
 }
 
-.image {
+.thumbnail {
   animation: slideIn 0.5s forwards;
   display: inline-block;
 }
