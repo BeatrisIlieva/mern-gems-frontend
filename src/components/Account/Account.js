@@ -7,6 +7,7 @@ import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { Logout } from "./Logout/Logout";
 import { AddressBookPopup } from "./AddressBookPopup/AddressBookPopup";
 import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
+import { CardDetailsPopup } from "./CardDetailsPopup/CardDetailsPopup";
 import { Icon } from "../Icon/Icon";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -25,6 +26,7 @@ export const Account = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
   const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
+  const [displayCardDetailsPopup, setDisplayCardDetailsPopup] = useState(false);
   const [displayOrderHistoryPopup, setDisplayOrderHistoryPopup] =
     useState(false);
 
@@ -41,6 +43,12 @@ export const Account = () => {
   const toggleDisplayAddressBookPopup = () => {
     setDisplayAddressBookPopup(
       (displayAddressBookPopup) => !displayAddressBookPopup
+    );
+  };
+
+  const toggleDisplayCardDetailsPopup = () => {
+    setDisplayCardDetailsPopup(
+      (displayCardDetailsPopup) => !displayCardDetailsPopup
     );
   };
 
@@ -77,6 +85,18 @@ export const Account = () => {
             View Order History
           </button>
         </div>
+        <div className={styles["left-sub-container"]}>
+          <div className={styles["title"]}>
+            <LargeTitle title={"Card Details"} variant={"large-title"} />
+          </div>
+          <button
+            onClick={toggleDisplayCardDetailsPopup}
+            className={styles["button-container"]}
+          >
+            <Icon icon={faPlus} variant={"address-book"} />
+            Card Details
+          </button>
+        </div>
       </div>
       <div className={styles["right-container"]}>
         <LargeTitle title={LargeTitleContent} variant={"large-title"} />
@@ -103,6 +123,11 @@ export const Account = () => {
       {displayOrderHistoryPopup && (
         <OrderHistoryPopup
           toggleDisplayOrderHistoryPopup={toggleDisplayOrderHistoryPopup}
+        />
+      )}
+      {displayCardDetailsPopup && (
+        <CardDetailsPopup
+          toggleDisplayCardDetailsPopup={toggleDisplayCardDetailsPopup}
         />
       )}
     </section>

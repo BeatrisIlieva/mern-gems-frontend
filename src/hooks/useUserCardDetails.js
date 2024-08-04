@@ -24,5 +24,9 @@ export const useUserCardDetails = () => {
       });
   }, [userCardDetailsService, userId]);
 
-  return { userCardDetails };
+  const updateUserCardDetails = async (data) => {
+    await userCardDetailsService.update(userId, data);
+  };
+
+  return { userCardDetails, updateUserCardDetails };
 };
