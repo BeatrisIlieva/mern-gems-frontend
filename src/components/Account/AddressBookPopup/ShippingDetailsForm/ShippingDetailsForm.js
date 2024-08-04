@@ -12,7 +12,13 @@ import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
 import { useUserShippingDetails } from "../../../../hooks/useUserShippingDetails";
 
+import { useLoading } from "../../../../hooks/useLoading";
+
+import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
+
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
+  const { isLoading, toggleIsLoading } = useLoading();
+
   const { userId } = useAuthenticationContext();
 
   const { userShippingDetails, updateUserShippingDetails } =
@@ -39,6 +45,8 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   }, [userShippingDetails]);
 
   const onSubmit = async (e) => {
+    toggleIsLoading();
+
     submitHandler(e);
 
     const errorOccurred = checkIfFormErrorHasOccurred(values);
@@ -80,21 +88,26 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
         document.body.style.overflow = "visible";
       } catch (err) {
         console.log(err.message);
+      } finally {
+        toggleIsLoading();
       }
     }
   };
 
   return (
-    <DynamicForm
-      values={values}
-      formKeys={FORM_KEYS}
-      clickHandler={clickHandler}
-      blurHandler={blurHandler}
-      changeHandler={changeHandler}
-      initialFormValues={INITIAL_FORM_VALUES}
-      userInformation={userShippingDetails}
-      buttonTitle={ButtonTitle}
-      onSubmit={onSubmit}
-    />
+    <>
+      {isLoading && <LoadingSpinner />}
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userShippingDetails}
+        buttonTitle={ButtonTitle}
+        onSubmit={onSubmit}
+      />
+    </>
   );
 };
