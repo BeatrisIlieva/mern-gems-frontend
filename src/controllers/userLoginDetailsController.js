@@ -97,7 +97,7 @@ router.put("/password/:userId", async (req, res) => {
   }
 });
 
-router.get("/logout", (req, res) => {
+router.get("/logout/:userId", (req, res) => {
   res.status(204).json();
 });
 

@@ -1,3 +1,5 @@
+const UserShippingDetails = require("../models/UserShippingDetails");
+
 exports.create = async (data) => {
   await UserShippingDetails.create(data);
 };
