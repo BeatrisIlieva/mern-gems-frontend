@@ -19,7 +19,14 @@ import { useEffect } from "react";
 import { useService } from "../../../../hooks/useService";
 import { paymentServiceFactory } from "../../../../services/paymentService";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+
+import { useLoading } from "../../../../hooks/useLoading";
+
+import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
+
 export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
+  const { isLoading, toggleIsLoading } = useLoading();
+
   const { userId } = useAuthenticationContext();
   const paymentService = useService(paymentServiceFactory);
 
@@ -50,6 +57,8 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
+    toggleIsLoading();
+
     submitHandler(e);
 
     const errorOccurred = checkIfFormErrorHasOccurred(values);
@@ -99,6 +108,8 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
         }
       } catch (err) {
         console.log(err.message);
+      } finally {
+        toggleIsLoading();
       }
     }
   };
@@ -106,16 +117,19 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
   const ButtonTitle = `Place Order $ ${totalPrice}`;
 
   return (
-    <DynamicForm
-      values={values}
-      formKeys={FORM_KEYS}
-      clickHandler={clickHandler}
-      blurHandler={blurHandler}
-      changeHandler={changeHandler}
-      initialFormValues={INITIAL_FORM_VALUES}
-      userInformation={userCardDetails}
-      buttonTitle={ButtonTitle}
-      onSubmit={onSubmit}
-    />
+    <>
+      {isLoading && <LoadingSpinner />}
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userCardDetails}
+        buttonTitle={ButtonTitle}
+        onSubmit={onSubmit}
+      />
+    </>
   );
 };

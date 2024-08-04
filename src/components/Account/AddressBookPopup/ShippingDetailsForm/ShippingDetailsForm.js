@@ -19,7 +19,6 @@ import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const { isLoading, toggleIsLoading } = useLoading();
 
-  const { userId } = useAuthenticationContext();
 
   const { userShippingDetails, updateUserShippingDetails } =
     useUserShippingDetails();
