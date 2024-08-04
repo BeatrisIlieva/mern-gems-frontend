@@ -11,6 +11,7 @@ router.get("/:jewelryId", async (req, res) => {
     res.status(200).json(result);
   } catch (err) {
     console.log(err);
+
     res.status(401).json({
       message: err.message,
     });
@@ -34,6 +35,7 @@ router.get("/:collectionId/:categoryId/:skip/:limit", async (req, res) => {
     res.status(200).json(result);
   } catch (err) {
     console.log(err);
+    
     res.status(401).json({
       message: err.message,
     });
