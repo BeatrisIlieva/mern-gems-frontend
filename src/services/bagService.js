@@ -1,4 +1,5 @@
 import { requestFactory } from "./requester";
+
 import { HOST } from "../constants/host";
 
 const baseUrl = `${HOST}/bags`;
@@ -12,7 +13,6 @@ export const bagServiceFactory = (token) => {
 
     getAll: (userId) => request.get(`${baseUrl}/${userId}`),
 
-    decrease: (bagId) => request.put(`${baseUrl}/decrease/${bagId}`),
-
+    delete: (bagId) => request.delete(`${baseUrl}/delete/${bagId}`),
   };
 };

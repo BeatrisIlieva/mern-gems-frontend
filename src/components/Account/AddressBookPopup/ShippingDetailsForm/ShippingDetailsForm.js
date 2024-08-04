@@ -65,7 +65,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
       };
 
       try {
-        await updateUserShippingDetails(userId, data);
+        await updateUserShippingDetails(data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 

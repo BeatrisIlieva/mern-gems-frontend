@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import { useService } from "../../../hooks/useService";
-
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { useForm } from "../../../hooks/useForm";
@@ -15,8 +13,6 @@ import { getPasswordMismatchErrorMessage } from "../../../utils/getPasswordMisma
 import { SUCCESS_MESSAGES } from "../../../mappers/successMessages";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { userServiceFactory } from "../../../services/userService";
-
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 
@@ -25,11 +21,9 @@ import styles from "./UpdatePasswordForm.module.css";
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-  const { userLoginDetails } = useUserLoginDetails();
+  const { userLoginDetails, updateUserPassword } = useUserLoginDetails();
 
   const { userId } = useAuthenticationContext();
-
-  const userService = useService(userServiceFactory);
 
   const {
     values,
@@ -75,7 +69,7 @@ export const UpdatePasswordForm = () => {
 
       const data = { password, newPassword };
       try {
-        await userService.updatePassword(userId, data);
+        await updateUserPassword(data);
 
         setValues((prevValues) => ({
           ...prevValues,

@@ -20,6 +20,6 @@ export const userLoginDetailsServiceFactory = (token) => {
     updatePassword: (userId, data) =>
       request.put(`${baseUrl}/password/${userId}`, data),
 
-    logout: () => request.get(`${baseUrl}/logout`),
+    logout: (userId) => request.get(`${baseUrl}/logout/${userId}`),
   };
 };

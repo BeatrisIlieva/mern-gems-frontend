@@ -11,7 +11,7 @@ export const Remove = ({ bagId }) => {
   const bagService = useService(bagServiceFactory);
 
   const removeItem = async () => {
-    await bagService.decrease(bagId);
+    await bagService.delete(bagId);
 
     removeBagItem(bagId);
 

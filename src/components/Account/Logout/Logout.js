@@ -10,12 +10,12 @@ const LogoutButtonTitle = "Logout";
 
 export const Logout = () => {
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
-  const { clearToken } = useAuthenticationContext();
+  const { userId, clearToken } = useAuthenticationContext();
 
   const navigate = useNavigate();
 
   const logoutHandler = async () => {
-    await userLoginDetailsService.logout();
+    await userLoginDetailsService.logout(userId);
 
     await clearToken();
 

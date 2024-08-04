@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect } from "react";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
-import { userServiceFactory } from "../services/userService";
+import { userLoginDetailsServiceFactory } from "../services/userLoginDetailsService";
 
 export const AuthenticationContext = createContext();
 
@@ -12,7 +12,9 @@ export const AuthenticationProvider = ({ children }) => {
     {}
   );
 
-  const userService = userServiceFactory(authentication.accessToken);
+  const userLoginDetailsService = userLoginDetailsServiceFactory(
+    authentication.accessToken
+  );
 
   const resetTimer = () => {
     if (authentication.accessToken) {
@@ -23,7 +25,7 @@ export const AuthenticationProvider = ({ children }) => {
 
         localStorage.removeItem("authentication");
         //600000
-        await userService.logout();
+        await userLoginDetailsService.logout();
       }, 60000000);
     }
   };

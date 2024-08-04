@@ -48,7 +48,7 @@ export const UpdateEmailForm = () => {
 
       const data = { email, password };
       try {
-        await updateUserEmail(userId, data);
+        await updateUserEmail(data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       } catch (err) {
