@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
-
 import { useForm } from "../../../hooks/useForm";
 
 import { DynamicForm } from "../../DynamicForm/DynamicForm";
@@ -19,8 +17,6 @@ import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
-  const { userId } = useAuthenticationContext();
-
   const { userLoginDetails, updateUserEmail } = useUserLoginDetails();
 
   const {
