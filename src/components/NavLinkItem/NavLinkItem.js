@@ -22,7 +22,7 @@ export const NavLinkItem = ({ items }) => {
                 to={item.to}
               >
                 <Icon icon={item.icon} variant={item.iconVariant} />
-                <MediumTitle title={item.label} />
+                {item.label} 
               </NavLink>
             </li>
           </Fragment>

@@ -119,12 +119,14 @@ import { faGem } from "@fortawesome/free-regular-svg-icons";
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
 
+import { MediumTitle } from "../MediumTitle/MediumTitle";
+
 import styles from "./Header.module.css";
 
 const navItemsLeft = [
   {
     to: "/",
-    label: "Collections",
+    label: <MediumTitle title={"Collections"}/>,
     icon: faGem,
     iconVariant: "header",
   },
@@ -132,13 +134,13 @@ const navItemsLeft = [
 const navItemsRight = [
   {
     to: "/users/shopping-bag",
-    label: "My Bag",
+    label: <MediumTitle title={"My Bag"}/>,
     icon: faBagShopping,
     iconVariant: "header",
   },
   {
     to: "/users/account",
-    label: "Account",
+    label: <MediumTitle title={"Account"}/>,
     icon: faUser,
     iconVariant: "header",
   },

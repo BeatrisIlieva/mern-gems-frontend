@@ -16,6 +16,8 @@ import { transformUrlSegment } from "../../utils/transformUrlSegment";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { faFilterCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
+import { NormalTitle } from "../NormalTitle/NormalTitle";
+
 import styles from "./JewelryList.module.css";
 
 export const JewelryList = () => {
@@ -32,29 +34,39 @@ export const JewelryList = () => {
   const navItems = [
     {
       to: "bracelets",
-      label: "Bracelets",
+      label: <NormalTitle title={"Bracelets"} variant={"regular"} />,
       icon: faFilter,
       iconVariant: "filter",
     },
     {
       to: "earrings",
-      label: "Earrings",
+      label: <NormalTitle title={"Earrings"} variant={"regular"} />,
       icon: faFilter,
       iconVariant: "filter",
     },
     {
       to: "necklaces-pendants",
-      label: "Necklaces & Pendants",
+      label: <NormalTitle title={"Necklaces & Pendants"} variant={"regular"} />,
       icon: faFilter,
       iconVariant: "filter",
     },
-    { to: "rings", label: "Rings", icon: faFilter, iconVariant: "filter" },
+    {
+      to: "rings",
+      label: <NormalTitle title={"Rings"} variant={"regular"} />,
+      icon: faFilter,
+      iconVariant: "filter",
+    },
   ];
 
   const navCollection = [
     {
       to: `/${collectionName}`,
-      label: `${transformedCollectionName} Collection`,
+      label: (
+        <NormalTitle
+          title={`${transformedCollectionName} Collection`}
+          variant={"regular"}
+        />
+      ),
       icon: faFilterCircleXmark,
       iconVariant: "filter",
     },
