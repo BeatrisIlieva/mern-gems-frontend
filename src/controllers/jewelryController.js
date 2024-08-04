@@ -20,11 +20,13 @@ router.get("/:jewelryId", async (req, res) => {
 
 router.get("/:collectionId/:categoryId/:skip/:limit", async (req, res) => {
   const collectionId = Number(req.params.collectionId);
+
   const categoryId = req.params.categoryId
     ? Number(req.params.categoryId)
     : null;
 
   const skip = Number(req.params.skip);
+
   const limit = Number(req.params.limit);
 
   const data = { collectionId, categoryId, skip, limit };
@@ -35,7 +37,7 @@ router.get("/:collectionId/:categoryId/:skip/:limit", async (req, res) => {
     res.status(200).json(result);
   } catch (err) {
     console.log(err);
-    
+
     res.status(401).json({
       message: err.message,
     });
