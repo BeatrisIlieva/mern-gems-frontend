@@ -1,6 +1,5 @@
 const router = require("express").Router();
 
-const orderManager = require("../managers/orderManager");
 const userCardDetailsManager = require("../managers/userCardDetailsManager");
 
 router.put("/:userId", async (req, res) => {
@@ -11,9 +10,7 @@ router.put("/:userId", async (req, res) => {
   try {
     await userCardDetailsManager.update(userId, data);
 
-    const order = await orderManager.create(userId);
-
-    res.status(201).json({ order });
+    res.status(204).json();
   } catch (err) {
     console.log(err);
 
