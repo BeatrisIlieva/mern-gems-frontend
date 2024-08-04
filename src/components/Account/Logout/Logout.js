@@ -2,20 +2,20 @@ import { useNavigate } from "react-router-dom";
 import { useService } from "../../../hooks/useService";
 import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 
-import { userServiceFactory } from "../../../services/userService";
+import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 const LogoutButtonTitle = "Logout";
 
 export const Logout = () => {
-  const userService = useService(userServiceFactory);
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
   const { clearToken } = useAuthenticationContext();
 
   const navigate = useNavigate();
 
   const logoutHandler = async () => {
-    await userService.logout();
+    await userLoginDetailsService.logout();
 
     await clearToken();
 
