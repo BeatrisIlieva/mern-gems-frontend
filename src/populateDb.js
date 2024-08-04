@@ -13,11 +13,11 @@ async function populateDb() {
   await mongoose.connect("mongodb://127.0.0.1:27017/mern-gems");
 
   await Category.create({
-    title: "Bracelet",
+    title: "Bracelets",
   });
 
   await Category.create({
-    title: "Earring",
+    title: "Earrings",
   });
 
   await Category.create({
@@ -25,7 +25,7 @@ async function populateDb() {
   });
 
   await Category.create({
-    title: "Ring",
+    title: "Rings",
   });
 
   await JewelryCollection.create({

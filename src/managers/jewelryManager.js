@@ -12,14 +12,6 @@ exports.getOne = async (jewelryId) => {
     },
     {
       $lookup: {
-        from: "collections",
-        localField: "collection",
-        foreignField: "_id",
-        as: "collections",
-      },
-    },
-    {
-      $lookup: {
         from: "inventories",
         localField: "_id",
         foreignField: "jewelry",
@@ -102,7 +94,6 @@ exports.getOne = async (jewelryId) => {
         description: 1,
         sizes: 1,
         category: 1,
-        collection: 1,
         isSoldOut: 1,
       },
     },
