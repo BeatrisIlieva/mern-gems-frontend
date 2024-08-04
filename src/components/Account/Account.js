@@ -75,6 +75,18 @@ export const Account = () => {
         </div>
         <div className={styles["left-sub-container"]}>
           <div className={styles["title"]}>
+            <LargeTitle title={"Saved Credit Card"} variant={"large-title"} />
+          </div>
+          <button
+            onClick={toggleDisplayCardDetailsPopup}
+            className={styles["button-container"]}
+          >
+            <Icon icon={faPlus} variant={"address-book"} />
+            Add a New Credit Card
+          </button>
+        </div>
+        <div className={styles["left-sub-container"]}>
+          <div className={styles["title"]}>
             <LargeTitle title={"Order History"} variant={"large-title"} />
           </div>
           <button
@@ -85,35 +97,25 @@ export const Account = () => {
             View Order History
           </button>
         </div>
-        <div className={styles["left-sub-container"]}>
-          <div className={styles["title"]}>
-            <LargeTitle title={"Card Details"} variant={"large-title"} />
-          </div>
-          <button
-            onClick={toggleDisplayCardDetailsPopup}
-            className={styles["button-container"]}
-          >
-            <Icon icon={faPlus} variant={"address-book"} />
-            Card Details
-          </button>
-        </div>
       </div>
       <div className={styles["right-container"]}>
-        <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-        <UserEmail />
-        <div className={styles["buttons-container"]}>
-          <UnderlinedButton
-            title={UpdateEmailButtonTitle}
-            callBackFunction={onUpdateEmailClick}
-          />
-          <UnderlinedButton
-            title={UpdatePasswordButtonTitle}
-            callBackFunction={onUpdatePasswordClick}
-          />
-          <Logout />
+        <div className={styles["right-sub-container"]}>
+          <LargeTitle title={LargeTitleContent} variant={"large-title"} />
+          <UserEmail />
+          <div className={styles["buttons-container"]}>
+            <UnderlinedButton
+              title={UpdateEmailButtonTitle}
+              callBackFunction={onUpdateEmailClick}
+            />
+            <UnderlinedButton
+              title={UpdatePasswordButtonTitle}
+              callBackFunction={onUpdatePasswordClick}
+            />
+            <Logout />
+          </div>
+          {showUpdateEmail && <UpdateEmailForm />}
+          {showUpdatePassword && <UpdatePasswordForm />}
         </div>
-        {showUpdateEmail && <UpdateEmailForm />}
-        {showUpdatePassword && <UpdatePasswordForm />}
       </div>
       {displayAddressBookPopup && (
         <AddressBookPopup

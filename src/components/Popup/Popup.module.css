@@ -25,7 +25,8 @@
 .authentication,
 .account,
 .mini-bag,
-.empty-mini-bag {
+.empty-mini-bag,
+.credit-card {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -38,7 +39,14 @@
 
 .account {
   width: 810px;
-  height: 600px;
+  height: 590px;
+  overflow-y: auto;
+  animation: slideInTop 1s forwards;
+}
+
+.credit-card {
+  width: 810px;
+  height: fit-content;
   overflow-y: auto;
   animation: slideInTop 1s forwards;
 }

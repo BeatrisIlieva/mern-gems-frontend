@@ -14,9 +14,15 @@ import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormV
 
 import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 
+import { useLoading } from "../../../hooks/useLoading";
+
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
+
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
+  const { isLoading, toggleIsLoading } = useLoading();
+
   const { userLoginDetails, updateUserEmail } = useUserLoginDetails();
 
   const {
@@ -39,11 +45,14 @@ export const UpdateEmailForm = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
+
       const email = values.email.fieldValue;
       const password = values.password.fieldValue;
 
       const data = { email, password };
       try {
+        toggleIsLoading();
+        
         await updateUserEmail(data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
@@ -59,23 +68,28 @@ export const UpdateEmailForm = () => {
         }));
 
         updateForm();
+      } finally {
+        toggleIsLoading();
       }
     }
   };
 
   return (
-    <div className={styles["slideIn"]}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        userInformation={userLoginDetails}
-        buttonTitle={ButtonTitle}
-        onSubmit={onSubmit}
-      />
-    </div>
+    <>
+      {isLoading && <LoadingSpinner />}
+      <div className={styles["slideIn"]}>
+        <DynamicForm
+          values={values}
+          formKeys={FORM_KEYS}
+          clickHandler={clickHandler}
+          blurHandler={blurHandler}
+          changeHandler={changeHandler}
+          initialFormValues={INITIAL_FORM_VALUES}
+          userInformation={userLoginDetails}
+          buttonTitle={ButtonTitle}
+          onSubmit={onSubmit}
+        />
+      </div>
+    </>
   );
 };

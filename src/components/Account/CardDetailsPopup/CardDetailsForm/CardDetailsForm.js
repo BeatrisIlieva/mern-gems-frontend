@@ -57,8 +57,6 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
   const navigate = useNavigate();
 
   const onSubmit = async (e) => {
-    toggleIsLoading();
-
     submitHandler(e);
 
     const errorOccurred = checkIfFormErrorHasOccurred(values);
@@ -91,6 +89,8 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
       };
 
       try {
+        toggleIsLoading();
+
         if (locationIsPayment) {
           await paymentService.create(userId, data);
 

@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
-
 import { useForm } from "../../../hooks/useForm";
 
 import { DynamicForm } from "../../DynamicForm/DynamicForm";
@@ -16,14 +14,18 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 
+import { useLoading } from "../../../hooks/useLoading";
+
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
+
 import styles from "./UpdatePasswordForm.module.css";
 
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-  const { userLoginDetails, updateUserPassword } = useUserLoginDetails();
+  const { isLoading, toggleIsLoading } = useLoading();
 
-  const { userId } = useAuthenticationContext();
+  const { userLoginDetails, updateUserPassword } = useUserLoginDetails();
 
   const {
     values,
@@ -68,7 +70,10 @@ export const UpdatePasswordForm = () => {
       const newPassword = values.newPassword.fieldValue;
 
       const data = { password, newPassword };
+
       try {
+        toggleIsLoading();
+
         await updateUserPassword(data);
 
         setValues((prevValues) => ({
@@ -94,24 +99,28 @@ export const UpdatePasswordForm = () => {
         }));
 
         updateForm();
+      } finally {
+        toggleIsLoading();
       }
     }
-    values[FORM_KEYS.NewPassword].successMessage = "";
   };
 
   return (
-    <div className={styles["slideIn"]}>
-      <DynamicForm
-        values={values}
-        formKeys={FORM_KEYS}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={INITIAL_FORM_VALUES}
-        userInformation={userLoginDetails}
-        buttonTitle={ButtonTitle}
-        onSubmit={onSubmit}
-      />
-    </div>
+    <>
+      {isLoading && <LoadingSpinner />}
+      <div className={styles["slideIn"]}>
+        <DynamicForm
+          values={values}
+          formKeys={FORM_KEYS}
+          clickHandler={clickHandler}
+          blurHandler={blurHandler}
+          changeHandler={changeHandler}
+          initialFormValues={INITIAL_FORM_VALUES}
+          userInformation={userLoginDetails}
+          buttonTitle={ButtonTitle}
+          onSubmit={onSubmit}
+        />
+      </div>
+    </>
   );
 };

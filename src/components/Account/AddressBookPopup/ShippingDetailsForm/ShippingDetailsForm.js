@@ -19,7 +19,6 @@ import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const { isLoading, toggleIsLoading } = useLoading();
 
-
   const { userShippingDetails, updateUserShippingDetails } =
     useUserShippingDetails();
 
@@ -44,8 +43,6 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   }, [userShippingDetails]);
 
   const onSubmit = async (e) => {
-    toggleIsLoading();
-
     submitHandler(e);
 
     const errorOccurred = checkIfFormErrorHasOccurred(values);
@@ -72,6 +69,8 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
       };
 
       try {
+        toggleIsLoading();
+
         await updateUserShippingDetails(data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);

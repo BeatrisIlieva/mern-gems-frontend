@@ -5,7 +5,9 @@ import { orderServiceFactory } from "../../../../services/orderService";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
+import { InfoMessage } from "../../../InfoMessage/InfoMessage";
 
+import { Collection } from "../../../Collection/Collection";
 import styles from "./OrderHistory.module.css";
 
 export const OrderHistory = () => {
@@ -27,12 +29,21 @@ export const OrderHistory = () => {
   }, [orderService, userId]);
 
   return (
-    <ul role="list" className={styles["order-history"]}>
-      {orderItems.map((item) => (
-        <li key={item._id}>
-          <OrderHistoryList {...item} />
-        </li>
-      ))}
-    </ul>
+    <>
+      {orderItems.length < 1 ? (
+        <div>
+          <InfoMessage title={"You have no orders"} subtitle={"Explore and add something you love."} />
+          <Collection />
+        </div>
+      ) : (
+        <ul role="list" className={styles["order-history"]}>
+          {orderItems.map((item) => (
+            <li key={item._id}>
+              <OrderHistoryList {...item} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
