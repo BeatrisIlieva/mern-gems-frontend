@@ -3,29 +3,7 @@ const router = require("express").Router();
 const userManager = require("../managers/userManager");
 const userCardDetailsManager = require("../managers/userCardDetailsManager");
 
-router.post("/register", async (req, res) => {
-  const { email, password } = req.body;
 
-  try {
-    const { token, userId } = await userManager.register({
-      email,
-      password,
-    });
-
-    await userManager.createUserShippingDetails({ _id: userId });
-
-    await userCardDetailsManager.create({ _id: userId });
-
-    // sendRegistrationEmail(email);
-
-    res.status(201).json({ token, userId });
-  } catch (err) {
-    console.log(err);
-    res.status(401).json({
-      message: err.message,
-    });
-  }
-});
 
 router.post("/login", async (req, res) => {
   const { email, password } = { ...req.body };

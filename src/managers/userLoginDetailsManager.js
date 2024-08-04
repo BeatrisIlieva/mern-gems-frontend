@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const { generateToken } = require("../lib/generateToken");
 
 const UserLoginDetails = require("../models/UserLoginDetails");
+
 const {
   EMAIL_PATTERN,
   EMAIL_ERROR_MESSAGE,
@@ -90,10 +91,3 @@ exports.updatePassword = async (userId, data) => {
   }
 };
 
-exports.delete = async (userId) => {
-  const result = await UserLoginDetails.findByIdAndDelete(userId);
-
-  await UserShippingDetails.findByIdAndDelete(userId);
-
-  return result;
-};
