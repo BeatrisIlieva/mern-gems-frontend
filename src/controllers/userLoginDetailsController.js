@@ -1,5 +1,8 @@
 const router = require("express").Router();
 
+const userLoginDetailsManager = require("../managers/userLoginDetailsManager");
+const userCardDetailsManager = require("../managers/userCardDetailsManager");
+
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
 
@@ -16,6 +19,21 @@ router.post("/register", async (req, res) => {
     // sendRegistrationEmail(email);
 
     res.status(201).json({ token, userId });
+  } catch (err) {
+    console.log(err);
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
+
+router.get("/:userId", async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
+    const result = await userManager.getUserLoginDetails(userId);
+
+    res.status(200).json(result);
   } catch (err) {
     console.log(err);
     res.status(401).json({
