@@ -52,7 +52,7 @@ exports.login = async (data) => {
 };
 
 exports.updateEmail = async (userId, data) => {
-  console.log("here")
+
   let user = await UserLoginDetails.findById(userId);
 
   const isPasswordValid = await bcrypt.compare(data.password, user.password);
