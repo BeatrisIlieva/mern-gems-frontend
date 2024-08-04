@@ -1,12 +1,14 @@
 const router = require("express").Router();
 
+const userShippingDetailsManager = require("../managers/userShippingDetailsManager");
+
 router.put("/:userId", async (req, res) => {
   const userId = req.params.userId;
 
   const data = { ...req.body };
 
   try {
-    const result = await userManager.updateShippingDetails(userId, data);
+    const result = await userShippingDetailsManager.update(userId, data);
 
     res.status(200).json(result);
   } catch (err) {
@@ -22,7 +24,7 @@ router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const result = await userManager.getUserShippingDetails(userId);
+    const result = await userShippingDetailsManager.getOne(userId);
 
     res.status(200).json(result);
   } catch (err) {
