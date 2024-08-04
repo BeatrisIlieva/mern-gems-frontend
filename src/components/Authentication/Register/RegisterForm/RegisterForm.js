@@ -10,7 +10,7 @@ import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorH
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import { EMAIL_ALREADY_EXISTS_ERROR_MESSAGE } from "../../../../constants/email";
 
-import { userServiceFactory } from "../../../../services/userService";
+import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
 
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 
@@ -19,7 +19,7 @@ const ButtonTitle = "Sign Up";
 export const RegisterForm = () => {
   const { updateAuthentication } = useAuthenticationContext();
 
-  const userService = useService(userServiceFactory);
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   let {
     values,
@@ -52,7 +52,7 @@ export const RegisterForm = () => {
       const data = { email, password };
 
       try {
-        const result = await userService.register(data);
+        const result = await userLoginDetailsService.register(data);
 
         await updateAuthentication(result);
 
