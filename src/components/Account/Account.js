@@ -123,7 +123,7 @@ export const Account = () => {
       <div className={styles["right-container"]}>
         <div className={styles["right-sub-container"]}>
           <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-          <NormalTitle title={userLoginDetails.email} variant={"bolded"} />;
+          <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
           <div className={styles["buttons-container"]}>
             <UnderlinedButton
               title={UpdateEmailButtonTitle}

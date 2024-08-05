@@ -19,7 +19,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
 
   const { userId } = useAuthenticationContext();
 
-  const [userShippingDetails, setUserShippingDetails] = useState([]);
+  const [userShippingDetails, setUserShippingDetails] = useState(null);
 
   const userShippingDetailsService = useService(
     userShippingDetailsServiceFactory
@@ -106,7 +106,7 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
+      {(isLoading || !userShippingDetails)&& <LoadingSpinner />}
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}

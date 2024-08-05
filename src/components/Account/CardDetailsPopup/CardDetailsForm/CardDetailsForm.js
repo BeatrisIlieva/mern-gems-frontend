@@ -27,7 +27,7 @@ import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
   const [isLoading, setIsLoading] = useState(false);
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
-  const [userCardDetails, setUserCardDetails] = useState([]);
+  const [userCardDetails, setUserCardDetails] = useState(null);
 
   const { userId } = useAuthenticationContext();
   const paymentService = useService(paymentServiceFactory);
@@ -127,7 +127,7 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
+      {(isLoading || !userCardDetails) && <LoadingSpinner />}
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
