@@ -1,5 +1,6 @@
 .account {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 40px;
   gap: 40px;
@@ -16,16 +17,6 @@
   padding: 25px;
 }
 
-.left-container {
-  height: calc(100%);
-  width: 480px;
-}
-
-.left-sub-container {
-  max-height: calc(100vh);
-  overflow-y: auto;
-}
-
 .right-container {
   display: flex;
   flex-direction: column;
@@ -40,9 +31,40 @@
   gap: 20px;
 }
 
+.left-container {
+  height: calc(100%);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.left-sub-container {
+  height: fit-content;
+  width: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .buttons-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: flex-start;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--white);
+  outline: none;
+  padding: 0px;
 }

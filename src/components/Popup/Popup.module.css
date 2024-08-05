@@ -22,7 +22,8 @@
 }
 
 .authentication,
-.mini-bag {
+.mini-bag,
+.order-history {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
   border-inline-end: 1px solid var(--medium-pink);
@@ -42,6 +43,13 @@
 .authentication {
   width: 340px;
   height: fit-content;
+  animation: slideInTop 1s forwards;
+}
+
+.order-history {
+  width: 810px;
+  height: 590px;
+  overflow-y: auto;
   animation: slideInTop 1s forwards;
 }
 

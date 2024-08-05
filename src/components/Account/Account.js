@@ -14,24 +14,30 @@ import { useService } from "../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../services/userLoginDetailsService";
 
+import { Icon } from "../Icon/Icon";
+import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./Account.module.css";
 
-import { OrderHistory } from "./OrderHistory/OrderHistory";
-
-const UpdateEmailButtonTitle = "Update Email Address";
-const UpdatePasswordButtonTitle = "Change Password";
-
-const LargeTitleContent = "Account Management";
+import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
 
 export const Account = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
+  const [displayOrderHistoryPopup, setDisplayOrderHistoryPopup] =
+    useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
 
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
+
+  const toggleDisplayOrderHistoryPopup = () => {
+    setDisplayOrderHistoryPopup(
+      (displayOrderHistoryPopup) => !displayOrderHistoryPopup
+    );
+  };
 
   useEffect(() => {
     userLoginDetailsService
@@ -58,21 +64,29 @@ export const Account = () => {
     <section className={styles["account"]}>
       <div className={styles["left-container"]}>
         <div className={styles["left-sub-container"]}>
-        <LargeTitle title={"Orders History"} variant={"large-title"} />
-          <OrderHistory />
+          <div className={styles["title"]}>
+            <LargeTitle title={"Order History"} variant={"large-title"} />
+          </div>
+          <button
+            onClick={toggleDisplayOrderHistoryPopup}
+            className={styles["button-container"]}
+          >
+            <Icon icon={faClockRotateLeft} variant={"address-book"} />
+            View Order History
+          </button>
         </div>
       </div>
       <div className={styles["right-container"]}>
         <div className={styles["right-sub-container"]}>
-          <LargeTitle title={LargeTitleContent} variant={"large-title"} />
+          <LargeTitle title={"Account Management"} variant={"large-title"} />
           <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
           <div className={styles["buttons-container"]}>
             <UnderlinedButton
-              title={UpdateEmailButtonTitle}
+              title={"Update Email Address"}
               callBackFunction={onUpdateEmailClick}
             />
             <UnderlinedButton
-              title={UpdatePasswordButtonTitle}
+              title={"Change Password"}
               callBackFunction={onUpdatePasswordClick}
             />
             <Logout />
@@ -81,6 +95,11 @@ export const Account = () => {
           {showUpdatePassword && <UpdatePasswordForm />}
         </div>
       </div>
+      {displayOrderHistoryPopup && (
+        <OrderHistoryPopup
+          toggleDisplayOrderHistoryPopup={toggleDisplayOrderHistoryPopup}
+        />
+      )}
     </section>
   );
 };
