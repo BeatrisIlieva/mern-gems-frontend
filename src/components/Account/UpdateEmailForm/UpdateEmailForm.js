@@ -19,6 +19,8 @@ import { useAuthenticationContext } from "../../../contexts/AuthenticationContex
 
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
+import { getData } from "./getData";
+
 export const UpdateEmailForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -57,10 +59,7 @@ export const UpdateEmailForm = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
-      const newEmail = values.email.fieldValue;
-      const password = values.password.fieldValue;
-
-      const data = { email: newEmail, password };
+      const data = getData(values);
 
       try {
         setIsLoading(true);

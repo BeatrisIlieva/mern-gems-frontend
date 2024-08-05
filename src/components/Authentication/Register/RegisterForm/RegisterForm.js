@@ -14,6 +14,7 @@ import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDe
 
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 
+import { getData } from "./getData";
 
 export const RegisterForm = () => {
   const { updateAuthentication } = useAuthenticationContext();
@@ -40,14 +41,13 @@ export const RegisterForm = () => {
     const updatedValues = { ...values };
 
     setValues(updatedValues);
-    
+
     updateForm();
 
     const errorOccurred = checkIfFormErrorHasOccurred(updatedValues);
 
     if (!errorOccurred) {
-
-
+      const data = getData(values);
       try {
         const result = await userLoginDetailsService.register(data);
 
