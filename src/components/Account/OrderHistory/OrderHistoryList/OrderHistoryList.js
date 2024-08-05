@@ -1,7 +1,7 @@
-import { JewelryCard } from "../../../../JewelryCard/JewelryCard";
-import { NormalTitle } from "../../../../NormalTitle/NormalTitle";
+import { JewelryCard } from "../../../JewelryCard/JewelryCard";
+import { NormalTitle } from "../../../NormalTitle/NormalTitle";
 
-import { convertToReadableDate } from "../../../../../utils/convertToReadableDate";
+import { convertToReadableDate } from "../../../../utils/convertToReadableDate";
 
 import styles from "./OrderHistoryList.module.css";
 export const OrderHistoryList = ({

@@ -1,0 +1,16 @@
+.order-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-history-item {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 0.1px solid var(--pink);
+}
+
+.order-history-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+}

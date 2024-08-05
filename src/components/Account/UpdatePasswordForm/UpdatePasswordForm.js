@@ -16,6 +16,7 @@ import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormV
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 import { useService } from "../../../hooks/useService";
 import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
+
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
 import styles from "./UpdatePasswordForm.module.css";
@@ -100,8 +101,6 @@ export const UpdatePasswordForm = () => {
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
         updateForm();
-
-        setIsLoading(false);
       } catch (err) {
         console.log(err.message);
 
@@ -118,7 +117,7 @@ export const UpdatePasswordForm = () => {
         }));
 
         updateForm();
-
+      } finally {
         setIsLoading(false);
       }
     }

@@ -59,10 +59,10 @@ export const UpdateEmailForm = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
-      const email = values.email.fieldValue;
+      const newEmail = values.email.fieldValue;
       const password = values.password.fieldValue;
 
-      const data = { email, password };
+      const data = { email: newEmail, password };
 
       try {
         setIsLoading(true);
@@ -73,7 +73,10 @@ export const UpdateEmailForm = () => {
 
         updateForm();
 
-        setIsLoading(false);
+        setUserLoginDetails((state) => ({
+          ...state,
+          email: newEmail,
+        }));
       } catch (err) {
         console.log(err.message);
 
@@ -86,7 +89,7 @@ export const UpdateEmailForm = () => {
         }));
 
         updateForm();
-
+      } finally {
         setIsLoading(false);
       }
     }

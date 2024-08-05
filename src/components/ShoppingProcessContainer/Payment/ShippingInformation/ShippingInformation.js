@@ -47,9 +47,7 @@ export const ShippingInformation = () => {
 
   return (
     <section className={styles["shipping-information"]}>
-      <div className={styles["wrapper"]}>
-        <LargeTitle title={"Shipping Information"} />
-      </div>
+      <LargeTitle title={"Shipping Information"} />
       <div className={styles["top"]}>
         <NormalTitle title={"Email Address"} variant={"bolded"} />
         <NormalTitle title={userLoginDetails.email} variant={"regular"} />

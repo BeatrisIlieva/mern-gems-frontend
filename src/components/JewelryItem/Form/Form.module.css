@@ -6,10 +6,12 @@
   display: flex;
   gap: 1px;
   border: 1px solid var(--medium-pink);
-  padding: 12px;
+  width: 72px;
+  height: 36px;
   margin-right: 6px;
   margin-top: 6px;
   justify-content: center;
+  align-items: center;
 }
 
 .selected {

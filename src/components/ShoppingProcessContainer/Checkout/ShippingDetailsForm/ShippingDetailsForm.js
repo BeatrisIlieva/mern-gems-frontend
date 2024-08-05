@@ -16,6 +16,8 @@ import { userShippingDetailsServiceFactory } from "../../../../services/userShip
 
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
+import { FormTitle } from "../../FormTitle/FormTitle";
+
 export const ShippingDetailsForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -85,6 +87,7 @@ export const ShippingDetailsForm = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
+      <FormTitle title={"Shipping Information"} />
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
