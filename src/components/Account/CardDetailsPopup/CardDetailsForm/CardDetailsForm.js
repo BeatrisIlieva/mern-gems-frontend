@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import { useForm } from "../../../../hooks/useForm";
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
@@ -13,24 +15,22 @@ import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 import { useBagContext } from "../../../../contexts/BagContext";
 
-import { useUserCardDetails } from "../../../../hooks/useUserCardDetails";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+
 import { useService } from "../../../../hooks/useService";
 import { paymentServiceFactory } from "../../../../services/paymentService";
+import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
-
-import { useLoading } from "../../../../hooks/useLoading";
 
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
 export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
-  const { isLoading, toggleIsLoading } = useLoading();
+  const [isLoading, setIsLoading] = useState(false);
+  const userCardDetailsService = useService(userCardDetailsServiceFactory);
+  const [userCardDetails, setUserCardDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
   const paymentService = useService(paymentServiceFactory);
-
-  const { userCardDetails, updateUserCardDetails } = useUserCardDetails();
 
   const { totalPrice } = useBagContext();
 
@@ -45,8 +45,17 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    updateForm();
-  }, [userCardDetails]);
+    userCardDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserCardDetails(data);
+
+        updateForm();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userCardDetailsService, userId, updateForm]);
 
   const { clearShoppingBag } = useBagContext();
 
@@ -89,7 +98,7 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
       };
 
       try {
-        toggleIsLoading();
+        setIsLoading(true);
 
         if (locationIsPayment) {
           await paymentService.create(userId, data);
@@ -98,18 +107,18 @@ export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
 
           navigate("/order-confirmation");
         } else {
-          await updateUserCardDetails(data);
+          await userCardDetailsService.update(userId, data);
 
           clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
           updateForm();
 
+          setIsLoading(false);
+
           toggleDisplayCardDetailsPopup();
         }
       } catch (err) {
         console.log(err.message);
-      } finally {
-        toggleIsLoading();
       }
     }
   };

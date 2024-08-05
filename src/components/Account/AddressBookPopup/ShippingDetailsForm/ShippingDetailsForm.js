@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "../../../../hooks/useForm";
 import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
@@ -10,24 +10,20 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
-import { useUserShippingDetails } from "../../../../hooks/useUserShippingDetails";
-
-import { useLoading } from "../../../../hooks/useLoading";
-
+import { useService } from "../../../../hooks/useService";
+import { userShippingDetailsServiceFactory } from "../../../../services/userShippingDetailsService";
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
-  const { isLoading, toggleIsLoading } = useLoading();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { userShippingDetails, updateUserShippingDetails } =
-    useUserShippingDetails();
+  const { userId } = useAuthenticationContext();
 
-  const location = useLocation();
+  const [userShippingDetails, setUserShippingDetails] = useState([]);
 
-  const navigate = useNavigate();
-
-  const ButtonTitle =
-    location.pathname === "/checkout" ? "Continue Checkout" : "Save";
+  const userShippingDetailsService = useService(
+    userShippingDetailsServiceFactory
+  );
 
   const {
     values,
@@ -39,8 +35,24 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    updateForm();
-  }, [userShippingDetails]);
+    userShippingDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserShippingDetails(data);
+
+        updateForm();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userShippingDetailsService, userId, updateForm]);
+
+  const location = useLocation();
+
+  const navigate = useNavigate();
+
+  const ButtonTitle =
+    location.pathname === "/checkout" ? "Continue Checkout" : "Save";
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -69,25 +81,25 @@ export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
       };
 
       try {
-        toggleIsLoading();
+        setIsLoading(true);
 
-        await updateUserShippingDetails(data);
+        await userShippingDetailsService.update(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
         if (location.pathname === "/checkout") {
           navigate("/payment");
         } else {
-          toggleDisplayShippingDetailsPopup();
-
           updateForm();
+
+          setIsLoading(false);
+
+          toggleDisplayShippingDetailsPopup();
         }
 
         document.body.style.overflow = "visible";
       } catch (err) {
         console.log(err.message);
-      } finally {
-        toggleIsLoading();
       }
     }
   };

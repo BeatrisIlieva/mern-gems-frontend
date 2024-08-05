@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useForm } from "../../../hooks/useForm";
 
@@ -12,18 +12,23 @@ import styles from "./UpdateEmailForm.module.css";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 
-import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
+import { useService } from "../../../hooks/useService";
 
-import { useLoading } from "../../../hooks/useLoading";
+import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
 const ButtonTitle = "Save";
 
 export const UpdateEmailForm = () => {
-  const { isLoading, toggleIsLoading } = useLoading();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { userLoginDetails, updateUserEmail } = useUserLoginDetails();
+  const [userLoginDetails, setUserLoginDetails] = useState([]);
+
+  const { userId } = useAuthenticationContext();
+
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   const {
     values,
@@ -36,8 +41,17 @@ export const UpdateEmailForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    updateForm();
-  }, [userLoginDetails]);
+    userLoginDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserLoginDetails(data);
+
+        updateForm();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userLoginDetailsService, userId, updateForm]);
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -45,17 +59,21 @@ export const UpdateEmailForm = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
-
       const email = values.email.fieldValue;
       const password = values.password.fieldValue;
 
       const data = { email, password };
+
       try {
-        toggleIsLoading();
-        
-        await updateUserEmail(data);
+        setIsLoading(true);
+
+        await userLoginDetailsService.updateEmail(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+
+        updateForm();
+
+        setIsLoading(false);
       } catch (err) {
         console.log(err.message);
 
@@ -68,8 +86,8 @@ export const UpdateEmailForm = () => {
         }));
 
         updateForm();
-      } finally {
-        toggleIsLoading();
+
+        setIsLoading(false);
       }
     }
   };

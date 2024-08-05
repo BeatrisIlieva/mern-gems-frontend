@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useForm } from "../../../hooks/useForm";
 
@@ -12,10 +12,10 @@ import { SUCCESS_MESSAGES } from "../../../mappers/successMessages";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
-import { useUserLoginDetails } from "../../../hooks/useUserLoginDetails";
 
-import { useLoading } from "../../../hooks/useLoading";
-
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+import { useService } from "../../../hooks/useService";
+import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
 import styles from "./UpdatePasswordForm.module.css";
@@ -23,9 +23,13 @@ import styles from "./UpdatePasswordForm.module.css";
 const ButtonTitle = "Save";
 
 export const UpdatePasswordForm = () => {
-  const { isLoading, toggleIsLoading } = useLoading();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const { userLoginDetails, updateUserPassword } = useUserLoginDetails();
+  const [userLoginDetails, setUserLoginDetails] = useState([]);
+
+  const { userId } = useAuthenticationContext();
+
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   const {
     values,
@@ -38,8 +42,17 @@ export const UpdatePasswordForm = () => {
   } = useForm(INITIAL_FORM_VALUES);
 
   useEffect(() => {
-    updateForm();
-  }, []);
+    userLoginDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserLoginDetails(data);
+
+        updateForm();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userLoginDetailsService, userId, updateForm]);
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -72,9 +85,9 @@ export const UpdatePasswordForm = () => {
       const data = { password, newPassword };
 
       try {
-        toggleIsLoading();
+        setIsLoading(true);
 
-        await updateUserPassword(data);
+        await userLoginDetailsService.updatePassword(userId, data);
 
         setValues((prevValues) => ({
           ...prevValues,
@@ -87,6 +100,8 @@ export const UpdatePasswordForm = () => {
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
         updateForm();
+
+        setIsLoading(false);
       } catch (err) {
         console.log(err.message);
 
@@ -96,11 +111,15 @@ export const UpdatePasswordForm = () => {
             ...prevValues[FORM_KEYS.Password],
             errorMessage: err.message,
           },
+          [FORM_KEYS.NewPassword]: {
+            ...prevValues[FORM_KEYS.NewPassword],
+            successMessage: "",
+          },
         }));
 
         updateForm();
-      } finally {
-        toggleIsLoading();
+
+        setIsLoading(false);
       }
     }
   };

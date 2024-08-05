@@ -4,6 +4,5 @@ export const clearInitialFormValuesMessages = (
 ) => {
   Object.keys(FORM_KEYS).forEach((key) => {
     INITIAL_FORM_VALUES[FORM_KEYS[key]].errorMessage = "";
-    INITIAL_FORM_VALUES[FORM_KEYS[key]].successMessage = "";
   });
 };
