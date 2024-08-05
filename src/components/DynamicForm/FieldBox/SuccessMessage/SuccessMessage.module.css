@@ -1,0 +1,7 @@
+.success-message {
+  font-size: var(--normal);
+  color: var(--green);
+  padding-top: 4px;
+  margin: 0px;
+  padding-bottom: 0px;
+}

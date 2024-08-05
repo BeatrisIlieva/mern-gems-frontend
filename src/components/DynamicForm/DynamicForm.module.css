@@ -1,4 +1,4 @@
-.form {
+/* .form {
   display: flex;
   flex-wrap: wrap;
   column-gap: 40px;
@@ -56,8 +56,6 @@
   font-size: var(--small);
 }
 
-
-
 .button {
   padding: 12px;
   margin: 20px 0px;
@@ -77,4 +75,19 @@
 
 .button:hover {
   background: var(--pink);
+} */
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  align-items: center;
+  justify-content: center;
 }
+
+.custom-placeholder::placeholder {
+  color: var(--pink);
+  opacity: 1;
+}
+
+

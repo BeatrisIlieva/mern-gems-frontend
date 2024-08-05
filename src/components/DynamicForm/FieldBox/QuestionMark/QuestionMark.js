@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 import { Text } from "./Text/Text";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,8 +8,6 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import styles from "./QuestionMark.module.css";
 
 export const QuestionMark = () => {
-
-
   const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
 
   const onHoverQuestionMark = () => {

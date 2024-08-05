@@ -99,9 +99,9 @@
 //   );
 // };
 
-import { useLocation } from "react-router-dom";
+import { FieldBox } from "./FieldBox/FieldBox";
 
-import { QuestionMark } from "./QuestionMark/QuestionMark";
+import { Button } from "./Button/Button";
 
 import styles from "./DynamicForm.module.css";
 
@@ -116,66 +116,21 @@ export const DynamicForm = ({
   buttonTitle,
   onSubmit,
 }) => {
-  const location = useLocation();
-
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
       {Object.entries(formKeys).map(([key, value]) => (
-        <div key={key} className={styles["field-box"]}>
-          {key === "Email" && location.pathname !== "/users/account" && (
-            <QuestionMark />
-          )}
-          <div
-            className={`${styles["field-container"]} ${
-              values[value].errorMessage !== "" ? styles["error"] : ""
-            }`.trim()}
-            onClick={() => clickHandler(value)}
-            onBlur={() => blurHandler(value)}
-          >
-            <input
-              type={values[value].fieldType}
-              name={value}
-              id={value}
-              defaultValue={
-                key !== "Password"
-                  ? userInformation
-                    ? userInformation[value]
-                    : values[key]
-                  : ""
-              }
-              onChange={(e) => changeHandler(value, e.target.value)}
-              onFocus={() => clickHandler(value)}
-            />
-            <label
-              htmlFor={value}
-              className={`${styles["label"]} ${
-                values[value].isFocused === true ? styles["isFocused"] : ""
-              }`.trim()}
-            >
-              {initialFormValues[value].fieldLabel}
-            </label>
-          </div>
-          {values[value].errorMessage && (
-            <div
-              className={styles["error-message"]}
-              data-testid={`${value}-error`}
-            >
-              {values[value].errorMessage}
-            </div>
-          )}
-          {values[value].successMessage && (
-            <div
-              className={styles["success-message"]}
-              data-testid={`${value}-success`}
-            >
-              {values[value].successMessage}
-            </div>
-          )}
-        </div>
+        <FieldBox
+          changeHandler={changeHandler}
+          clickHandler={clickHandler}
+          blurHandler={blurHandler}
+          userInformation={userInformation}
+          values={values}
+          value={value}
+          currentKey={key}
+          initialFormValues={initialFormValues}
+        />
       ))}
-      <button className={styles["button"]} type="submit">
-        {buttonTitle}
-      </button>
+      <Button buttonTitle={buttonTitle} />
     </form>
   );
 };

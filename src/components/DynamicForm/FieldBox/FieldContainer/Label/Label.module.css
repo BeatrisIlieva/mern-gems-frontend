@@ -1,0 +1,11 @@
+.label {
+  color: var(--medium-gray);
+  position: absolute;
+  left: 0;
+}
+
+.isFocused {
+  top: -12px;
+  left: 0;
+  font-size: var(--small);
+}

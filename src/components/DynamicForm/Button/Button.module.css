@@ -1,0 +1,20 @@
+.button {
+  padding: 12px;
+  margin: 20px 0px;
+  font-size: var(--medium);
+  font-family: var(--bold-italic-font-family);
+  border: none;
+  overflow: hidden;
+  color: var(--white);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  width: 360px;
+  cursor: pointer;
+  background: var(--medium-pink);
+  transition: background-color 300ms linear, color 300ms;
+}
+
+.button:hover {
+  background: var(--pink);
+}
