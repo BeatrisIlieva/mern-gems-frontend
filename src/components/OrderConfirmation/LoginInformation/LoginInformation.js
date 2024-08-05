@@ -6,23 +6,27 @@ import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetai
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 import { NormalTitle } from "../../NormalTitle/NormalTitle";
 
-export const LoginInformation = () => {
-  const [userLoginDetails, setUserLoginDetails] = useState([]);
+export const LoginInformation = ({ userLoginDetails}) => {
+  // const [userLoginDetails, setUserLoginDetails] = useState([]);
 
-  const { userId } = useAuthenticationContext();
+  // const { userId } = useAuthenticationContext();
 
-  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
+  // const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
-  useEffect(() => {
-    userLoginDetailsService
-      .getOne(userId)
-      .then((data) => {
-        setUserLoginDetails(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userLoginDetailsService, userId]);
+  // useEffect(() => {
+  //   toggleIsLoading();
+  //   userLoginDetailsService
+  //     .getOne(userId)
+  //     .then((data) => {
+  //       setUserLoginDetails(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     })
+  //     .finally(() => {
+  //       toggleIsLoading();
+  //     });
+  // }, [userLoginDetailsService, userId, toggleIsLoading]);
 
   return (
     <NormalTitle

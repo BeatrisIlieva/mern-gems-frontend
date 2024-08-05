@@ -6,25 +6,29 @@ import { useService } from "../../../hooks/useService";
 import { userShippingDetailsServiceFactory } from "../../../services/userShippingDetailsService";
 import { XLargeTitle } from "../../XLargeTitle/XLargeTitle";
 
-export const ShippingInformation = () => {
-  const [userShippingDetails, setUserShippingDetails] = useState([]);
+export const ShippingInformation = ({ userShippingDetails }) => {
+  // const [userShippingDetails, setUserShippingDetails] = useState([]);
 
-  const { userId } = useAuthenticationContext();
+  // const { userId } = useAuthenticationContext();
 
-  const userShippingDetailsService = useService(
-    userShippingDetailsServiceFactory
-  );
+  // const userShippingDetailsService = useService(
+  //   userShippingDetailsServiceFactory
+  // );
 
-  useEffect(() => {
-    userShippingDetailsService
-      .getOne(userId)
-      .then((data) => {
-        setUserShippingDetails(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userShippingDetailsService, userId]);
+  // useEffect(() => {
+  //   // toggleIsLoading();
+
+  //   userShippingDetailsService
+  //     .getOne(userId)
+  //     .then((data) => {
+  //       setUserShippingDetails(data);
+
+  //       // toggleIsLoading();
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     });
+  // }, [userShippingDetailsService, userId]);
 
   return (
     <XLargeTitle
