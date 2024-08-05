@@ -16,7 +16,7 @@ import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDe
 
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 
-const ButtonTitle = "Sign In";
+import { BUTTON_TITLE } from "./buttonTitle";
 
 export const LoginForm = () => {
   const { updateAuthentication } = useAuthenticationContext();
@@ -83,7 +83,7 @@ export const LoginForm = () => {
       blurHandler={blurHandler}
       changeHandler={changeHandler}
       initialFormValues={INITIAL_FORM_VALUES}
-      buttonTitle={ButtonTitle}
+      buttonTitle={BUTTON_TITLE}
       onSubmit={onSubmit}
     />
   );
