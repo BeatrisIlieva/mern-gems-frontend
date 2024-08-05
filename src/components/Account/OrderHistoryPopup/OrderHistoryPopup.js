@@ -1,6 +1,6 @@
 import { Popup } from "../../Popup/Popup";
 import { OrderHistory } from "./OrderHistory/OrderHistory";
-// import { PopupTitle } from "../PopupTitle/PopupTitle";
+import { ContainerTitle } from "../../ContainerTitle/ContainerTitle";
 
 export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
   return (
@@ -9,7 +9,7 @@ export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
       modalVariant={"order-history"}
       popupCloseHandler={toggleDisplayOrderHistoryPopup}
     >
-      {/* <PopupTitle title={"Order History"} /> */}
+      <ContainerTitle title={"Order History"} />
       <OrderHistory />
     </Popup>
   );

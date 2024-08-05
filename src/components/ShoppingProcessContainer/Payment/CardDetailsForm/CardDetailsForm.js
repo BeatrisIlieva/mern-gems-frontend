@@ -21,7 +21,7 @@ import { useService } from "../../../../hooks/useService";
 
 import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
-import { FormTitle } from "../../FormTitle/FormTitle";
+import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
 import { getData } from "./getData";
@@ -94,7 +94,7 @@ export const CardDetailsForm = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <FormTitle title={"Payment"} />
+      <ContainerTitle title={"Payment"} />
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}

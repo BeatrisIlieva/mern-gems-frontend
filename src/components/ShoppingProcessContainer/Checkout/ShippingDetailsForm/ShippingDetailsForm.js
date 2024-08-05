@@ -18,7 +18,7 @@ import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
 import { getData } from "./getData";
 
-import { FormTitle } from "../../FormTitle/FormTitle";
+import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
 
 export const ShippingDetailsForm = () => {
   const navigate = useNavigate();
@@ -69,7 +69,7 @@ export const ShippingDetailsForm = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <FormTitle title={"Shipping Information"} />
+      <ContainerTitle title={"Shipping Information"} />
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
