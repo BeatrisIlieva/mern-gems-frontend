@@ -19,7 +19,7 @@ import { useAuthenticationContext } from "../../../contexts/AuthenticationContex
 
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
-const ButtonTitle = "Save";
+import { BUTTON_TITLE } from "./buttonTitle";
 
 export const UpdateEmailForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -72,11 +72,6 @@ export const UpdateEmailForm = () => {
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
         updateForm();
-
-        setUserLoginDetails((state) => ({
-          ...state,
-          email: newEmail,
-        }));
       } catch (err) {
         console.log(err.message);
 
@@ -107,7 +102,7 @@ export const UpdateEmailForm = () => {
           changeHandler={changeHandler}
           initialFormValues={INITIAL_FORM_VALUES}
           userInformation={userLoginDetails}
-          buttonTitle={ButtonTitle}
+          buttonTitle={BUTTON_TITLE}
           onSubmit={onSubmit}
         />
       </div>

@@ -54,7 +54,6 @@ function App() {
       {!isAuthenticated && <Authentication />}
       <ScrollToTop />
       {isCheckoutOrPaymentLocation ? <MiniHeader /> : <Header />}
-
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Collection />} />
