@@ -18,7 +18,6 @@ import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
 import { FormTitle } from "../../FormTitle/FormTitle";
 
-import { BUTTON_TITLE } from "./buttonTitle";
 
 export const ShippingDetailsForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -95,7 +94,7 @@ export const ShippingDetailsForm = () => {
         blurHandler={blurHandler}
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
-        buttonTitle={BUTTON_TITLE}
+        buttonTitle={"Continue Checkout"}
         onSubmit={onSubmit}
       />
     </>

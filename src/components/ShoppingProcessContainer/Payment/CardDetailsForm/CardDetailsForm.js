@@ -24,8 +24,6 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 import { FormTitle } from "../../FormTitle/FormTitle";
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
-import { BUTTON_TITLE } from "./buttonTitle";
-
 export const CardDetailsForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -101,8 +99,6 @@ export const CardDetailsForm = () => {
     }
   };
 
-  const ButtonTitle = `${BUTTON_TITLE} ${totalPrice}`;
-
   return (
     <>
       {isLoading && <LoadingSpinner />}
@@ -114,7 +110,7 @@ export const CardDetailsForm = () => {
         blurHandler={blurHandler}
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
-        buttonTitle={ButtonTitle}
+        buttonTitle={`Place Order $ ${totalPrice}`}
         onSubmit={onSubmit}
       />
     </>

@@ -1,6 +1,5 @@
 .account {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   margin: 40px;
   gap: 40px;

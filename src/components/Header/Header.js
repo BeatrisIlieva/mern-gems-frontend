@@ -112,45 +112,23 @@
 
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 
-import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-import { faGem } from "@fortawesome/free-regular-svg-icons";
+
+
 
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
 
-import { MediumTitle } from "../MediumTitle/MediumTitle";
+
 
 import styles from "./Header.module.css";
 
-const navItemsLeft = [
-  {
-    to: "/",
-    label: <MediumTitle title={"Collections"} />,
-    icon: faGem,
-    iconVariant: "header",
-  },
-];
-const navItemsRight = [
-  {
-    to: "/users/shopping-bag",
-    label: <MediumTitle title={"My Bag"} />,
-    icon: faBagShopping,
-    iconVariant: "header",
-  },
-  {
-    to: "/users/account",
-    label: <MediumTitle title={"Account"} />,
-    icon: faUser,
-    iconVariant: "header",
-  },
-];
+import { LEFT_NAV_ITEMS, RIGHT_NAV_ITEMS } from "./navItems"; 
 
 export const Header = () => {
   return (
     <header className={styles["header"]}>
       <div className={styles["wrapper"]}>
-        <NavLinkItem items={navItemsLeft} />
+        <NavLinkItem items={LEFT_NAV_ITEMS} />
         <div className={styles["thumbnail"]}>
           <img
             className={styles["logo-image"]}
@@ -160,7 +138,7 @@ export const Header = () => {
             alt="logo-image"
           />
         </div>
-        <NavLinkItem items={navItemsRight} />
+        <NavLinkItem items={RIGHT_NAV_ITEMS} />
       </div>
       <HorizontalLine variant={"large"} position={"absolute"} />
     </header>
