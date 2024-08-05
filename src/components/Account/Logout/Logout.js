@@ -6,8 +6,6 @@ import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetai
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-const LogoutButtonTitle = "Logout";
-
 export const Logout = () => {
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
   const { userId, clearToken } = useAuthenticationContext();
@@ -22,10 +20,5 @@ export const Logout = () => {
     navigate("/");
   };
 
-  return (
-    <UnderlinedButton
-      title={LogoutButtonTitle}
-      callBackFunction={logoutHandler}
-    />
-  );
+  return <UnderlinedButton title={"Logout"} callBackFunction={logoutHandler} />;
 };

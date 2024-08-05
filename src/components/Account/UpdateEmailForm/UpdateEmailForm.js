@@ -19,8 +19,6 @@ import { useAuthenticationContext } from "../../../contexts/AuthenticationContex
 
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
-import { BUTTON_TITLE } from "./buttonTitle";
-
 export const UpdateEmailForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -102,7 +100,7 @@ export const UpdateEmailForm = () => {
           changeHandler={changeHandler}
           initialFormValues={INITIAL_FORM_VALUES}
           userInformation={userLoginDetails}
-          buttonTitle={BUTTON_TITLE}
+          buttonTitle={"Save"}
           onSubmit={onSubmit}
         />
       </div>
