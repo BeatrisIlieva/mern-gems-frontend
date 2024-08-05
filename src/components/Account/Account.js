@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
@@ -9,11 +9,16 @@ import { AddressBookPopup } from "./AddressBookPopup/AddressBookPopup";
 import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
 import { CardDetailsPopup } from "./CardDetailsPopup/CardDetailsPopup";
 import { Icon } from "../Icon/Icon";
+import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
-import { UserEmail } from "../UserEmail/UserEmail";
+import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
+
+import { useService } from "../../hooks/useService";
+
+import { userLoginDetailsServiceFactory } from "../../services/userLoginDetailsService";
 
 import styles from "./Account.module.css";
 
@@ -29,6 +34,23 @@ export const Account = () => {
   const [displayCardDetailsPopup, setDisplayCardDetailsPopup] = useState(false);
   const [displayOrderHistoryPopup, setDisplayOrderHistoryPopup] =
     useState(false);
+
+  const [userLoginDetails, setUserLoginDetails] = useState([]);
+
+  const { userId } = useAuthenticationContext();
+
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
+
+  useEffect(() => {
+    userLoginDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserLoginDetails(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userLoginDetailsService, userId]);
 
   const onUpdateEmailClick = async () => {
     setShowUpdateEmail(true);
@@ -101,7 +123,7 @@ export const Account = () => {
       <div className={styles["right-container"]}>
         <div className={styles["right-sub-container"]}>
           <LargeTitle title={LargeTitleContent} variant={"large-title"} />
-          <UserEmail />
+          <NormalTitle title={userLoginDetails.email} variant={"bolded"} />;
           <div className={styles["buttons-container"]}>
             <UnderlinedButton
               title={UpdateEmailButtonTitle}

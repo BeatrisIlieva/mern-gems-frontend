@@ -6,7 +6,6 @@ import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 import { LoginInformation } from "./LoginInformation/LoginInformation";
 import { OrderInformation } from "./OrderInformation/OrderInformation";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
-import { useLoading } from "../../hooks/useLoading";
 import styles from "./OrderConfirmation.module.css";
 
 export const OrderConfirmation = () => {

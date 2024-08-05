@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { NormalTitle } from "../../../NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../LargeTitle/LargeTitle";
@@ -6,14 +6,48 @@ import { UnderlinedButton } from "../../../UnderlinedButton/UnderlinedButton";
 
 import { AddressBookPopup } from "../../../Account/AddressBookPopup/AddressBookPopup";
 
-import { UserEmail } from "../../../UserEmail/UserEmail";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
-import { useUserShippingDetails } from "../../../../hooks/useUserShippingDetails";
-
+import { useService } from "../../../../hooks/useService";
+import { userShippingDetailsServiceFactory } from "../../../../services/userShippingDetailsService";
+import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
 import styles from "./ShippingInformation.module.css";
 
 export const ShippingInformation = () => {
-  const { userShippingDetails } = useUserShippingDetails();
+  const [userShippingDetails, setUserShippingDetails] = useState([]);
+
+  const { userId } = useAuthenticationContext();
+
+  const userShippingDetailsService = useService(
+    userShippingDetailsServiceFactory
+  );
+
+  useEffect(() => {
+    userShippingDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserShippingDetails(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userShippingDetailsService, userId]);
+
+  const [userLoginDetails, setUserLoginDetails] = useState([]);
+
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
+
+  useEffect(() => {
+    userLoginDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserLoginDetails(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userLoginDetailsService, userId]);
+
   const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
 
   const toggleDisplayAddressBookPopup = () => {
@@ -33,7 +67,7 @@ export const ShippingInformation = () => {
       </div>
       <div className={styles["top"]}>
         <NormalTitle title={"Email Address"} variant={"bolded"} />
-        <UserEmail />
+        <NormalTitle title={userLoginDetails.email} variant={"regular"} />
       </div>
       <ul role="list">
         <li className={styles["list-item"]}>
