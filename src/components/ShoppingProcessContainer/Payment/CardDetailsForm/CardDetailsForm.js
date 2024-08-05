@@ -24,6 +24,8 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 import { FormTitle } from "../../FormTitle/FormTitle";
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
+import { getData } from "./getData";
+
 export const CardDetailsForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -67,17 +69,7 @@ export const CardDetailsForm = () => {
     }
 
     if (!errorOccurred) {
-      const longCardNumber = values.longCardNumber.fieldValue;
-      const cardHolder = values.cardHolder.fieldValue;
-      const cVVCode = values.cVVCode.fieldValue;
-      const expiryDate = values.expiryDate.fieldValue;
-
-      const data = {
-        longCardNumber,
-        cardHolder,
-        cVVCode,
-        expiryDate,
-      };
+      const data = getData(values);
 
       try {
         setIsLoading(true);

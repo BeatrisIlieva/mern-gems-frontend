@@ -46,10 +46,7 @@ export const LoginForm = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
-      const email = values.email.fieldValue;
-      const password = values.password.fieldValue;
 
-      const data = { email, password };
 
       try {
         const result = await userLoginDetailsService.login(data);

@@ -95,13 +95,13 @@ export const Account = () => {
           {showUpdatePassword && <UpdatePasswordForm />}
         </div>
       </div>
-      <div className={styles["bottom-container"]}>
+      {/* <div className={styles["bottom-container"]}>
         <img
         className={styles["image"]}
           src="https://res.cloudinary.com/deztgvefu/image/upload/v1717917440/collections/herolarged_l2_bri24_sp_wdj_hero_dl66ao.webp"
           alt="image"
         />
-      </div>
+      </div> */}
       {displayOrderHistoryPopup && (
         <OrderHistoryPopup
           toggleDisplayOrderHistoryPopup={toggleDisplayOrderHistoryPopup}

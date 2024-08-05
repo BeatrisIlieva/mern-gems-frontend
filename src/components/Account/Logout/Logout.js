@@ -6,9 +6,12 @@ import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetai
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
+import { useBagContext } from "../../../contexts/BagContext";
+
 export const Logout = () => {
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
   const { userId, clearToken } = useAuthenticationContext();
+  const { clearShoppingBag } = useBagContext();
 
   const navigate = useNavigate();
 
@@ -16,6 +19,8 @@ export const Logout = () => {
     await userLoginDetailsService.logout(userId);
 
     await clearToken();
+
+    await clearShoppingBag();
 
     navigate("/");
   };

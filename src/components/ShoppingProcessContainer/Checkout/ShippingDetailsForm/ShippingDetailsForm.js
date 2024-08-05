@@ -16,10 +16,13 @@ import { userShippingDetailsServiceFactory } from "../../../../services/userShip
 
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
+import { getData } from "./getData";
+
 import { FormTitle } from "../../FormTitle/FormTitle";
 
-
 export const ShippingDetailsForm = () => {
+  const navigate = useNavigate();
+
   const [isLoading, setIsLoading] = useState(false);
 
   const { userId } = useAuthenticationContext();
@@ -37,33 +40,13 @@ export const ShippingDetailsForm = () => {
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
 
-  const navigate = useNavigate();
-
   const onSubmit = async (e) => {
     submitHandler(e);
 
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
-      const firstName = values.firstName.fieldValue;
-      const lastName = values.lastName.fieldValue;
-      const phoneNumber = values.phoneNumber.fieldValue;
-      const country = values.country.fieldValue;
-      const city = values.city.fieldValue;
-      const street = values.street.fieldValue;
-      const apartment = values.apartment.fieldValue;
-      const zipCode = values.zipCode.fieldValue;
-
-      const data = {
-        firstName,
-        lastName,
-        phoneNumber,
-        country,
-        city,
-        street,
-        apartment,
-        zipCode,
-      };
+      const data = getData(values);
 
       try {
         setIsLoading(true);

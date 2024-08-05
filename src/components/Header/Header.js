@@ -1,10 +1,9 @@
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
-
 import { NavLinkItem } from "../NavLinkItem/NavLinkItem";
 
-import styles from "./Header.module.css";
-
 import { LEFT_NAV_ITEMS, RIGHT_NAV_ITEMS } from "./navItems";
+
+import styles from "./Header.module.css";
 
 export const Header = () => {
   return (
