@@ -1,10 +1,35 @@
+import { useState } from "react";
+
+
+import { Text } from "./Text/Text";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./QuestionMark.module.css";
 
 export const QuestionMark = () => {
+
+
+  const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
+
+  const onHoverQuestionMark = () => {
+    setHoveredQuestionMark(true);
+  };
+
+  const onUnhoverQuestionMark = () => {
+    setHoveredQuestionMark(false);
+  };
+
   return (
-    <div className={styles["question-mark-text"]}>
-      Please enter your email address so that we can contact you with important
-      information regarding your order.
-    </div>
+    <span>
+      {hoveredQuestionMark && <Text />}
+      <FontAwesomeIcon
+        icon={faQuestion}
+        className={styles["icon"]}
+        onMouseEnter={() => onHoverQuestionMark()}
+        onMouseLeave={() => onUnhoverQuestionMark()}
+      />
+    </span>
   );
 };
