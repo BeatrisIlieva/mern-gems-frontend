@@ -10,8 +10,6 @@ router.get("/confirm/:userId", async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const result = await orderManager.getOne(userId);
-
     await Bag.deleteMany({ user: userId });
 
     const userLoginDetails = await UserLoginDetails.findById(userId);

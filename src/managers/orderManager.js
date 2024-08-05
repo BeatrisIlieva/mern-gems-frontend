@@ -1,4 +1,6 @@
 const Order = require("../models/Order");
+const Bag = require("../models/Bag");
+
 const bagManager = require("../managers/bagManager");
 
 exports.create = async (userId) => {
@@ -18,12 +20,21 @@ exports.create = async (userId) => {
 
   order.save();
 
-  return order;
-};
+  await Bag.deleteMany({ user: userId });
 
-exports.getOne = async (userId) => {
-  const result = await Order.findOne({ user: userId }).sort({ createdAt: -1 });
-  return result;
+  // const userLoginDetails = await UserLoginDetails.findById(userId);
+
+  // const email = UserLoginDetails.email;
+
+  // const userShippingDetails = await UserShippingDetails.findById(
+  //   userId
+  // );
+
+  // const firstName = UserShippingDetails.firstName;
+
+  // sendOrderConfirmationEmail(email, firstName);
+
+  return order;
 };
 
 exports.getAll = async (userId) => {
