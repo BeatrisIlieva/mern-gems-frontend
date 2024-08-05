@@ -46,10 +46,7 @@ export const RegisterForm = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(updatedValues);
 
     if (!errorOccurred) {
-      const email = values.email.fieldValue;
-      const password = values.password.fieldValue;
 
-      const data = { email, password };
 
       try {
         const result = await userLoginDetailsService.register(data);
