@@ -21,7 +21,7 @@ import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
 import styles from "./UpdatePasswordForm.module.css";
 
-const ButtonTitle = "Save";
+import { BUTTON_TITLE } from "./buttonTitle";
 
 export const UpdatePasswordForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -135,7 +135,7 @@ export const UpdatePasswordForm = () => {
           changeHandler={changeHandler}
           initialFormValues={INITIAL_FORM_VALUES}
           userInformation={userLoginDetails}
-          buttonTitle={ButtonTitle}
+          buttonTitle={BUTTON_TITLE}
           onSubmit={onSubmit}
         />
       </div>
