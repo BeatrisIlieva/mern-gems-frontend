@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import { useForm } from "../../../../hooks/useForm";
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
+import { useForm } from "../../hooks/useForm";
+import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
+import { DynamicForm } from "../DynamicForm/DynamicForm";
 
-import { useService } from "../../../../hooks/useService";
-import { userShippingDetailsServiceFactory } from "../../../../services/userShippingDetailsService";
-import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
+import { useService } from "../../hooks/useService";
+import { userShippingDetailsServiceFactory } from "../../services/userShippingDetailsService";
+import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 
 export const ShippingDetailsForm = ({ toggleDisplayShippingDetailsPopup }) => {
   const [isLoading, setIsLoading] = useState(false);

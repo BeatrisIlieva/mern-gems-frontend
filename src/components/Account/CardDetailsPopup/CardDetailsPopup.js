@@ -1,5 +1,5 @@
 import { Popup } from "../../Popup/Popup";
-import { CardDetailsForm } from "./CardDetailsForm/CardDetailsForm";
+import { CardDetailsForm } from "../../CardDetailsForm/CardDetailsForm";
 import { PopupTitle } from "../PopupTitle/PopupTitle";
 
 export const CardDetailsPopup = ({ toggleDisplayCardDetailsPopup }) => {

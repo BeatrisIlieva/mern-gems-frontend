@@ -1,5 +1,5 @@
 import { Popup } from "../../Popup/Popup";
-import { ShippingDetailsForm } from "./ShippingDetailsForm/ShippingDetailsForm";
+import { ShippingDetailsForm } from "../../ShippingDetailsForm/ShippingDetailsForm";
 import { PopupTitle } from "../PopupTitle/PopupTitle";
 
 export const AddressBookPopup = ({ toggleDisplayAddressBookPopup }) => {

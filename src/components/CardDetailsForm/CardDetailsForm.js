@@ -1,28 +1,28 @@
 import { useState, useEffect } from "react";
 
-import { useForm } from "../../../../hooks/useForm";
+import { useForm } from "../../hooks/useForm";
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
+import { DynamicForm } from "../DynamicForm/DynamicForm"; 
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { checkIfCardHasExpired } from "./checkIfCardHasExpired";
+import { checkIfCardHasExpired } from "./checkIfCardHasExpired" 
 
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
+import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";  
 
-import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate";
+import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../constants/expiryDate";
 
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
-import { useBagContext } from "../../../../contexts/BagContext";
+import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages"; 
+import { useBagContext } from "../../contexts/BagContext"; 
 
 import { useNavigate, useLocation } from "react-router-dom";
 
-import { useService } from "../../../../hooks/useService";
-import { paymentServiceFactory } from "../../../../services/paymentService";
-import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { useService } from "../../hooks/useService";
+import { paymentServiceFactory } from "../../services/paymentService"; 
+import { userCardDetailsServiceFactory } from "../../services/userCardDetailsService" 
+import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
-import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner"; 
 
 export const CardDetailsForm = ({ toggleDisplayCardDetailsPopup }) => {
   const [isLoading, setIsLoading] = useState(false);

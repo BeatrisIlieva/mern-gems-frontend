@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 
 import { NormalTitle } from "../../../NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../LargeTitle/LargeTitle";
-import { UnderlinedButton } from "../../../UnderlinedButton/UnderlinedButton";
-
-import { AddressBookPopup } from "../../../Account/AddressBookPopup/AddressBookPopup";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
@@ -48,22 +45,10 @@ export const ShippingInformation = () => {
       });
   }, [userLoginDetailsService, userId]);
 
-  const [displayAddressBookPopup, setDisplayAddressBookPopup] = useState(false);
-
-  const toggleDisplayAddressBookPopup = () => {
-    setDisplayAddressBookPopup(
-      (displayAddressBookPopup) => !displayAddressBookPopup
-    );
-  };
-
   return (
     <section className={styles["shipping-information"]}>
       <div className={styles["wrapper"]}>
         <LargeTitle title={"Shipping Information"} />
-        <UnderlinedButton
-          title={"Edit"}
-          callBackFunction={toggleDisplayAddressBookPopup}
-        />
       </div>
       <div className={styles["top"]}>
         <NormalTitle title={"Email Address"} variant={"bolded"} />
@@ -112,11 +97,6 @@ export const ShippingInformation = () => {
           </li>
         )}
       </ul>
-      {displayAddressBookPopup && (
-        <AddressBookPopup
-          toggleDisplayAddressBookPopup={toggleDisplayAddressBookPopup}
-        />
-      )}
     </section>
   );
 };
