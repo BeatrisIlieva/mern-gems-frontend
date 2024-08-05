@@ -19,6 +19,8 @@ import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetai
 
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
+import { getData } from "./getData";
+
 import styles from "./UpdatePasswordForm.module.css";
 
 export const UpdatePasswordForm = () => {
@@ -78,10 +80,7 @@ export const UpdatePasswordForm = () => {
     const errorOccurred = checkIfFormErrorHasOccurred(values);
 
     if (!errorOccurred) {
-      const password = values.password.fieldValue;
-      const newPassword = values.newPassword.fieldValue;
-
-      const data = { password, newPassword };
+      const data = getData(values);
 
       try {
         setIsLoading(true);
