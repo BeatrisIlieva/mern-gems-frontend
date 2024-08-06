@@ -3,21 +3,20 @@ import { useEffect, useState } from "react";
 import { DynamicForm } from "../../DynamicForm/DynamicForm";
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+
 import { useForm } from "../../../hooks/useForm";
+import { useService } from "../../../hooks/useService";
+
+import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
 
 import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
+import { setWrongPasswordErrorMessage } from "../../../utils/setWrongPasswordErrorMessage";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import styles from "./UpdateEmailForm.module.css";
-
-import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
-import { setWrongPasswordErrorMessage } from "../../../utils/setWrongPasswordErrorMessage";
-
-import { useService } from "../../../hooks/useService";
-
-import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { getData } from "./helpers/getData";
 
