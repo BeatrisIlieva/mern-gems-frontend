@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "./LeftSubContainer.module.css";
+import styles from "./SectionContainer.module.css";
 
-export const LeftSubContainer = ({
+export const SectionContainer = ({
   title,
   callBackFunction,
   icon,

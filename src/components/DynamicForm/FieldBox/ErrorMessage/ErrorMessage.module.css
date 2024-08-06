@@ -1,5 +1,5 @@
 .error-message {
-  font-size: var(--normal);
+  font-size: var(--small);
   color: var(--red);
   padding-top: 4px;
   margin: 0px;

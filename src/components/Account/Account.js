@@ -5,7 +5,6 @@ import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 import { UnderlinedButton } from "../UnderlinedButton/UnderlinedButton";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { Logout } from "./Logout/Logout";
-
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
@@ -22,6 +21,8 @@ import styles from "./Account.module.css";
 import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
 import { ShippingDetailsPopup } from "../ShippingDetailsPopup/ShippingDetailsPopup";
 import { CardDetailsPopup } from "./CardDetailsPopup/CardDetailsPopup";
+
+import { Section } from "./SectionContainer/SectionContainer";
 
 export const Account = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
