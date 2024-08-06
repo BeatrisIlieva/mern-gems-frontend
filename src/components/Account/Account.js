@@ -137,16 +137,15 @@ export const Account = () => {
           {showUpdatePassword && <UpdatePasswordForm />}
         </div>
       </div>
-      {displayOrderHistoryPopup && (
-        <OrderHistoryPopup
-          toggleDisplayOrderHistoryPopup={toggleDisplayOrderHistoryPopup}
-        />
-      )}
-      {displayShippingDetailsPopup && (
-        <ShippingDetailsPopup
-          popupCloseHandler={toggleDisplayShippingDetailsPopup}
-        />
-      )}
+      <OrderHistoryPopup
+        popupCloseHandler={toggleDisplayOrderHistoryPopup}
+        displayOrderHistoryPopup={displayOrderHistoryPopup}
+      />
+
+      <ShippingDetailsPopup
+        displayShippingDetailsPopup={displayShippingDetailsPopup}
+        popupCloseHandler={toggleDisplayShippingDetailsPopup}
+      />
       {displayCardDetailsPopup && (
         <CardDetailsPopup popupCloseHandler={toggleDisplayCardDetailsPopup} />
       )}

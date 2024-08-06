@@ -2,15 +2,22 @@ import { Popup } from "../../Popup/Popup";
 import { OrderHistory } from "./OrderHistory/OrderHistory";
 import { ContainerTitle } from "../../ContainerTitle/ContainerTitle";
 
-export const OrderHistoryPopup = ({ toggleDisplayOrderHistoryPopup }) => {
+export const OrderHistoryPopup = ({
+  displayOrderHistoryPopup,
+  popupCloseHandler,
+}) => {
   return (
-    <Popup
-      overlayVariant={"overlay-top"}
-      modalVariant={"order-history"}
-      popupCloseHandler={toggleDisplayOrderHistoryPopup}
-    >
-      <ContainerTitle title={"Order History"} />
-      <OrderHistory />
-    </Popup>
+    <>
+      {displayOrderHistoryPopup && (
+        <Popup
+          overlayVariant={"overlay-top"}
+          modalVariant={"order-history"}
+          popupCloseHandler={popupCloseHandler}
+        >
+          <ContainerTitle title={"Order History"} />
+          <OrderHistory />
+        </Popup>
+      )}
+    </>
   );
 };
