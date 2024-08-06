@@ -1,31 +1,27 @@
 import { useState, useEffect } from "react";
-
-import { useForm } from "../../../../hooks/useForm";
-
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
-
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-
-import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
-
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
-
-import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate";
-
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
-import { useBagContext } from "../../../../contexts/BagContext";
-
 import { useNavigate } from "react-router-dom";
 
-import { useService } from "../../../../hooks/useService";
-import { paymentServiceFactory } from "../../../../services/paymentService";
-
-import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
+import { useBagContext } from "../../../../contexts/BagContext";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+
+import { useService } from "../../../../hooks/useService";
+import { useForm } from "../../../../hooks/useForm";
+
+import { paymentServiceFactory } from "../../../../services/paymentService";
+import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
+
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { setCardHasExpiredErrorMessage } from "../../../../utils/setCardHasExpiredErrorMessage";
+
+import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
 import { getData } from "./helpers/getData";
+
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 export const CardDetailsForm = () => {
   const [userCardDetails, setUserCardDetails] = useState([]);
@@ -34,7 +30,7 @@ export const CardDetailsForm = () => {
 
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
 
-  const paymentService = useService(paymentServiceFactory)
+  const paymentService = useService(paymentServiceFactory);
 
   const { userId } = useAuthenticationContext();
 
@@ -75,13 +71,11 @@ export const CardDetailsForm = () => {
     const cardHasExpired = checkIfCardHasExpired(values.expiryDate.fieldValue);
 
     if (cardHasExpired) {
-      setValues((prevValues) => ({
-        ...prevValues,
-        [FORM_KEYS.ExpiryDate]: {
-          ...prevValues[FORM_KEYS.ExpiryDate],
-          errorMessage: CARD_HAS_EXPIRED_ERROR_MESSAGE,
-        },
-      }));
+      let spreadValues = { ...values };
+
+      spreadValues = setCardHasExpiredErrorMessage(spreadValues, FORM_KEYS);
+
+      setValues(spreadValues);
 
       return;
     }

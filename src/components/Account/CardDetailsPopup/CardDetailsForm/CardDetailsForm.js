@@ -4,20 +4,20 @@ import { useForm } from "../../../../hooks/useForm";
 
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
 
 import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
-import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../../constants/expiryDate";
-
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { setCardHasExpiredErrorMessage } from "../../../../utils/setCardHasExpiredErrorMessage";
 
 import { useService } from "../../../../hooks/useService";
 
 import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { getData } from "./helpers/getData";
 
@@ -59,13 +59,11 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
     const cardHasExpired = checkIfCardHasExpired(values.expiryDate.fieldValue);
 
     if (cardHasExpired) {
-      setValues((prevValues) => ({
-        ...prevValues,
-        [FORM_KEYS.ExpiryDate]: {
-          ...prevValues[FORM_KEYS.ExpiryDate],
-          errorMessage: CARD_HAS_EXPIRED_ERROR_MESSAGE,
-        },
-      }));
+      let spreadValues = { ...values };
+
+      spreadValues = setCardHasExpiredErrorMessage(spreadValues, FORM_KEYS);
+
+      setValues(spreadValues);
 
       return;
     }
