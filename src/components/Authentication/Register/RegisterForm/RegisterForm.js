@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 
 import { useService } from "../../../../hooks/useService";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
@@ -14,7 +14,7 @@ import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDe
 
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 
-import { getData } from "./getData";
+import { getData } from "./helpers/getData";
 
 export const RegisterForm = () => {
   const { updateAuthentication } = useAuthenticationContext();
@@ -24,16 +24,11 @@ export const RegisterForm = () => {
   let {
     values,
     setValues,
-    updateForm,
     clickHandler,
     blurHandler,
     changeHandler,
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
-
-  useEffect(() => {
-    updateForm();
-  }, []);
 
   const onSubmit = async (e) => {
     submitHandler(e);
@@ -41,8 +36,6 @@ export const RegisterForm = () => {
     const updatedValues = { ...values };
 
     setValues(updatedValues);
-
-    updateForm();
 
     const errorOccurred = checkIfFormErrorHasOccurred(updatedValues);
 
@@ -63,8 +56,6 @@ export const RegisterForm = () => {
               errorMessage: err.message,
             },
           }));
-
-          updateForm();
         }
       }
     }
