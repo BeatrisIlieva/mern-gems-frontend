@@ -1,9 +1,13 @@
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 import { DynamicForm } from "../../DynamicForm/DynamicForm";
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
+
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+
 import { useFetchUserLoginDetails } from "../../../hooks/useFetchUserLoginDetails";
 import { useUpdatePasswordForm } from "../../../hooks/useUpdatePasswordForm/useUpdatePasswordForm";
+
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+
 import styles from "./UpdatePasswordForm.module.css";
 
 export const UpdatePasswordForm = () => {
