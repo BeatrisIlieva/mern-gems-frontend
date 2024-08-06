@@ -6,6 +6,7 @@ import { userLoginDetailsServiceFactory } from "../services/userLoginDetailsServ
 
 export const useFetchUserLoginDetails = (userId) => {
   const [userLoginDetails, setUserLoginDetails] = useState([]);
+  
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   useEffect(() => {

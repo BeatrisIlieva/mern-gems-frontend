@@ -21,6 +21,7 @@ import {
 
 export const useUpdatePasswordForm = (userId) => {
   const [isLoading, setIsLoading] = useState(false);
+  
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   const {

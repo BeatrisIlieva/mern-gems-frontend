@@ -12,7 +12,9 @@ import styles from "./UpdatePasswordForm.module.css";
 
 export const UpdatePasswordForm = () => {
   const { userId } = useAuthenticationContext();
+
   const userLoginDetails = useFetchUserLoginDetails(userId);
+  
   const {
     values,
     clickHandler,
