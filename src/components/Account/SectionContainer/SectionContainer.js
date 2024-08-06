@@ -1,17 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import styles from "./SectionContainer.module.css";
 
 export const SectionContainer = ({
-  title,
+  sectionTitle,
   callBackFunction,
   icon,
   buttonTitle,
 }) => {
   return (
-    <section className={styles["left-sub-container"]}>
-      <div className={styles["title"]}>
-        <h2>{title}</h2>
+    <section className={styles["section-container"]}>
+      <div className={styles["section-title"]}>
+        <h2>{sectionTitle}</h2>
       </div>
       <button onClick={callBackFunction} className={styles["button"]}>
         <FontAwesomeIcon icon={icon} className={styles["icon"]} />

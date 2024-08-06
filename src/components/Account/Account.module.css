@@ -1,5 +1,6 @@
 .account {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 40px;
   gap: 40px;
@@ -13,7 +14,7 @@
 .left-sub-container,
 .right-sub-container {
   border: 0.1px solid var(--pink);
-  padding: 25px;
+  padding: 20px;
 }
 
 .right-container {
@@ -23,7 +24,7 @@
 }
 
 .right-sub-container {
-  width: 410px;
+  width: 280px;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -39,7 +40,7 @@
 
 .left-sub-container {
   height: fit-content;
-  width: 440px;
+  width: 280px;
   display: flex;
   justify-content: center;
   align-items: center;

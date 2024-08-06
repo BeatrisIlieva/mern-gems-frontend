@@ -5,13 +5,10 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./CardDetailsPopup.module.css";
 
-export const CardDetailsPopup = ({
-  displayCardDetailsPopup,
-  popupCloseHandler,
-}) => {
+export const CardDetailsPopup = ({ displayPopup, popupCloseHandler }) => {
   return (
     <>
-      {displayCardDetailsPopup && (
+      {displayPopup && (
         <section className={styles["overlay"]}>
           <div className={styles["modal"]}>
             <FontAwesomeIcon
