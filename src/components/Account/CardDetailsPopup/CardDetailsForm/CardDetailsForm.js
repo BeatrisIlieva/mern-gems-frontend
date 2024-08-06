@@ -1,25 +1,21 @@
 import { useState, useEffect } from "react";
 
-import { useForm } from "../../../../hooks/useForm";
-
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-
-import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
-
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
-
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
-import { setCardHasExpiredErrorMessage } from "../../../../utils/setCardHasExpiredErrorMessage";
-
+import { useForm } from "../../../../hooks/useForm";
 import { useService } from "../../../../hooks/useService";
 
 import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
 
-import { getData } from "./helpers/getData";
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { setCardHasExpiredErrorMessage } from "../../../../utils/setCardHasExpiredErrorMessage";
+import { getCardDetailsFormData } from "../../../../utils/getCardDetailsFormData";
+import { checkIfCardHasExpired } from "../../../../utils/checkIfCardHasExpired";
+
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 export const CardDetailsForm = ({ popupCloseHandler }) => {
   const [userCardDetails, setUserCardDetails] = useState([]);
@@ -69,7 +65,7 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
     }
 
     if (!errorOccurred) {
-      const data = getData(values);
+      const data = getCardDetailsFormData(values);
 
       try {
         await userCardDetailsService.update(userId, data);

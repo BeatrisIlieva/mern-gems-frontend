@@ -16,10 +16,9 @@ import { userCardDetailsServiceFactory } from "../../../../services/userCardDeta
 
 import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { checkIfCardHasExpired } from "../../../../utils/checkIfCardHasExpired";
 import { setCardHasExpiredErrorMessage } from "../../../../utils/setCardHasExpiredErrorMessage";
-
-import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
-import { getData } from "./helpers/getData";
+import { getCardDetailsFormData } from "../../../../utils/getCardDetailsFormData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
@@ -81,7 +80,7 @@ export const CardDetailsForm = () => {
     }
 
     if (!errorOccurred) {
-      const data = getData(values);
+      const data = getCardDetailsFormData(values);
 
       try {
         setIsLoading(true);

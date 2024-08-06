@@ -1,4 +1,4 @@
-export const getData = (values) => {
+export const getCardDetailsFormData = (values) => {
   const longCardNumber = values.longCardNumber.fieldValue;
   const cardHolder = values.cardHolder.fieldValue;
   const cVVCode = values.cVVCode.fieldValue;
