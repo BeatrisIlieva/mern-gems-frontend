@@ -141,14 +141,14 @@ export const Account = () => {
         popupCloseHandler={toggleDisplayOrderHistoryPopup}
         displayOrderHistoryPopup={displayOrderHistoryPopup}
       />
-
       <ShippingDetailsPopup
         displayShippingDetailsPopup={displayShippingDetailsPopup}
         popupCloseHandler={toggleDisplayShippingDetailsPopup}
       />
-
-        <CardDetailsPopup popupCloseHandler={toggleDisplayCardDetailsPopup} />
-      )}
+      <CardDetailsPopup
+        displayCardDetailsPopup={displayCardDetailsPopup}
+        popupCloseHandler={toggleDisplayCardDetailsPopup}
+      />
     </section>
   );
 };
