@@ -12,11 +12,11 @@ import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetai
 
 import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
+import { setWrongPasswordErrorMessage } from "../../../utils/setWrongPasswordErrorMessage";
 
 import { getData } from "./helpers/getData";
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
 import { setSuccessMessage } from "./helpers/setSuccessMessage";
-import { setWrongPasswordErrorMessage } from "../../../utils/setWrongPasswordErrorMessage";
 import { removeSuccessMessage } from "./helpers/removeSuccessMessage";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
