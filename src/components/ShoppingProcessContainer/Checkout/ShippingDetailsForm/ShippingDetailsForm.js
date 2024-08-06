@@ -33,7 +33,6 @@ export const ShippingDetailsForm = () => {
 
   const {
     values,
-    updateForm,
     clickHandler,
     blurHandler,
     changeHandler,
@@ -54,8 +53,6 @@ export const ShippingDetailsForm = () => {
         await userShippingDetailsService.update(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-
-        updateForm();
 
         navigate("/payment");
       } catch (err) {
