@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { useForm } from "../../../hooks/useForm";
-
 import { DynamicForm } from "../../DynamicForm/DynamicForm";
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
+
+import { useForm } from "../../../hooks/useForm";
 
 import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
 
@@ -11,15 +12,14 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 import styles from "./UpdateEmailForm.module.css";
 
 import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
+import { setWrongPasswordErrorMessage } from "../../../utils/setWrongPasswordErrorMessage";
 
 import { useService } from "../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
-
-import { getData } from "./getData";
+import { getData } from "./helpers/getData";
 
 export const UpdateEmailForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -67,20 +67,18 @@ export const UpdateEmailForm = () => {
         await userLoginDetailsService.updateEmail(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-
-        updateForm();
       } catch (err) {
         console.log(err.message);
 
-        setValues((prevValues) => ({
-          ...prevValues,
-          [FORM_KEYS.Password]: {
-            ...prevValues[FORM_KEYS.Password],
-            errorMessage: err.message,
-          },
-        }));
+        let spreadValues = { ...values };
 
-        updateForm();
+        spreadValues = setWrongPasswordErrorMessage(
+          spreadValues,
+          FORM_KEYS,
+          err.message
+        );
+
+        setValues(spreadValues);
       } finally {
         setIsLoading(false);
       }
