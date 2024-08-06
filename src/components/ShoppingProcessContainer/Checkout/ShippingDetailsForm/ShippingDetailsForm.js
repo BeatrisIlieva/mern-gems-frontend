@@ -1,24 +1,23 @@
 import { useState } from "react";
-
-import { useForm } from "../../../../hooks/useForm";
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
-import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
-
 import { useNavigate } from "react-router-dom";
+
+import { DynamicForm } from "../../../DynamicForm/DynamicForm";
+import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
+import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
-
+import { useForm } from "../../../../hooks/useForm";
 import { useService } from "../../../../hooks/useService";
+
 import { userShippingDetailsServiceFactory } from "../../../../services/userShippingDetailsService";
 
-import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 
-import { getData } from "./getData";
+import { getData } from "./helpers/getData";
 
-import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
+import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
 
 export const ShippingDetailsForm = () => {
   const navigate = useNavigate();
@@ -31,13 +30,8 @@ export const ShippingDetailsForm = () => {
     userShippingDetailsServiceFactory
   );
 
-  const {
-    values,
-    clickHandler,
-    blurHandler,
-    changeHandler,
-    submitHandler,
-  } = useForm(INITIAL_FORM_VALUES);
+  const { values, clickHandler, blurHandler, changeHandler, submitHandler } =
+    useForm(INITIAL_FORM_VALUES);
 
   const onSubmit = async (e) => {
     submitHandler(e);
