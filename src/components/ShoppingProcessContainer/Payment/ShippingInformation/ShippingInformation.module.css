@@ -4,12 +4,35 @@
   gap: 30px;
 }
 
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--large);
+  font-family: var(--bold-font-family);
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--white);
+  outline: none;
+  text-decoration: underline;
+  padding: 0px;
+}
+
+.button:hover {
+  font-family: var(--bold-font-family);
+}
+
 .top {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 
 .list-item {
   margin-bottom: 10px;

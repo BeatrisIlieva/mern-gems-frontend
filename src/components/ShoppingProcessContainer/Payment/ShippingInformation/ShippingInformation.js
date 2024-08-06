@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { NormalTitle } from "../../../NormalTitle/NormalTitle";
-import { LargeTitle } from "../../../LargeTitle/LargeTitle";
+import { ShippingDetailsPopup } from "../../../ShippingDetailsPopup/ShippingDetailsPopup";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
@@ -34,6 +34,14 @@ export const ShippingInformation = () => {
 
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
+  const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
+    useState(false);
+  const toggleDisplayShippingDetailsPopup = () => {
+    setDisplayShippingDetailsPopup(
+      (displayShippingDetailsPopup) => !displayShippingDetailsPopup
+    );
+  };
+
   useEffect(() => {
     userLoginDetailsService
       .getOne(userId)
@@ -47,7 +55,15 @@ export const ShippingInformation = () => {
 
   return (
     <section className={styles["shipping-information"]}>
-      <LargeTitle title={"Shipping Information"} />
+      <div className={styles["header-wrapper"]}>
+        <h2 className={styles["title"]}>Shipping Information</h2>
+        <button
+          className={styles["button"]}
+          onClick={toggleDisplayShippingDetailsPopup}
+        >
+          Edit
+        </button>
+      </div>
       <div className={styles["top"]}>
         <NormalTitle title={"Email Address"} variant={"bolded"} />
         <NormalTitle title={userLoginDetails.email} variant={"regular"} />
@@ -95,6 +111,11 @@ export const ShippingInformation = () => {
           </li>
         )}
       </ul>
+      {displayShippingDetailsPopup && (
+        <ShippingDetailsPopup
+          popupCloseHandler={toggleDisplayShippingDetailsPopup}
+        />
+      )}
     </section>
   );
 };

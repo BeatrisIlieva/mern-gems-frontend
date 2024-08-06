@@ -21,6 +21,7 @@ import styles from "./Account.module.css";
 
 import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
 import { ShippingDetailsPopup } from "../ShippingDetailsPopup/ShippingDetailsPopup";
+import { CardDetailsPopup } from "./CardDetailsPopup/CardDetailsPopup";
 
 export const Account = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
@@ -29,6 +30,8 @@ export const Account = () => {
     useState(false);
   const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
     useState(false);
+
+  const [displayCardDetailsPopup, setDisplayCardDetailsPopup] = useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
@@ -45,6 +48,12 @@ export const Account = () => {
   const toggleDisplayShippingDetailsPopup = () => {
     setDisplayShippingDetailsPopup(
       (displayShippingDetailsPopup) => !displayShippingDetailsPopup
+    );
+  };
+
+  const toggleDisplayCardDetailsPopup = () => {
+    setDisplayCardDetailsPopup(
+      (displayCardDetailsPopup) => !displayCardDetailsPopup
     );
   };
 
@@ -82,6 +91,18 @@ export const Account = () => {
           >
             {/* <Icon icon={faPlus} variant={"address-book"} /> */}
             Add a New Address
+          </button>
+        </div>
+        <div className={styles["left-sub-container"]}>
+          <div className={styles["title"]}>
+            <LargeTitle title={"Saved Credit Card"} variant={"large-title"} />
+          </div>
+          <button
+            onClick={toggleDisplayCardDetailsPopup}
+            className={styles["button-container"]}
+          >
+            {/* <Icon icon={faPlus} variant={"address-book"} /> */}
+            Add a New Credit Card
           </button>
         </div>
         <div className={styles["left-sub-container"]}>
@@ -125,6 +146,9 @@ export const Account = () => {
         <ShippingDetailsPopup
           popupCloseHandler={toggleDisplayShippingDetailsPopup}
         />
+      )}
+      {displayCardDetailsPopup && (
+        <CardDetailsPopup popupCloseHandler={toggleDisplayCardDetailsPopup} />
       )}
     </section>
   );
