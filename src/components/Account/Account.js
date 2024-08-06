@@ -20,11 +20,14 @@ import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Account.module.css";
 
 import { OrderHistoryPopup } from "./OrderHistoryPopup/OrderHistoryPopup";
+import { ShippingDetailsPopup } from "../ShippingDetailsPopup/ShippingDetailsPopup";
 
 export const Account = () => {
   const [showUpdateEmail, setShowUpdateEmail] = useState(false);
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
   const [displayOrderHistoryPopup, setDisplayOrderHistoryPopup] =
+    useState(false);
+  const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
     useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -36,6 +39,12 @@ export const Account = () => {
   const toggleDisplayOrderHistoryPopup = () => {
     setDisplayOrderHistoryPopup(
       (displayOrderHistoryPopup) => !displayOrderHistoryPopup
+    );
+  };
+
+  const toggleDisplayShippingDetailsPopup = () => {
+    setDisplayShippingDetailsPopup(
+      (displayShippingDetailsPopup) => !displayShippingDetailsPopup
     );
   };
 
@@ -63,6 +72,18 @@ export const Account = () => {
   return (
     <section className={styles["account"]}>
       <div className={styles["left-container"]}>
+        <div className={styles["left-sub-container"]}>
+          <div className={styles["title"]}>
+            <LargeTitle title={"Address Book"} variant={"large-title"} />
+          </div>
+          <button
+            onClick={toggleDisplayShippingDetailsPopup}
+            className={styles["button-container"]}
+          >
+            {/* <Icon icon={faPlus} variant={"address-book"} /> */}
+            Add a New Address
+          </button>
+        </div>
         <div className={styles["left-sub-container"]}>
           <div className={styles["title"]}>
             <LargeTitle title={"Order History"} variant={"large-title"} />
@@ -95,16 +116,14 @@ export const Account = () => {
           {showUpdatePassword && <UpdatePasswordForm />}
         </div>
       </div>
-      {/* <div className={styles["bottom-container"]}>
-        <img
-        className={styles["image"]}
-          src="https://res.cloudinary.com/deztgvefu/image/upload/v1717917440/collections/herolarged_l2_bri24_sp_wdj_hero_dl66ao.webp"
-          alt="image"
-        />
-      </div> */}
       {displayOrderHistoryPopup && (
         <OrderHistoryPopup
           toggleDisplayOrderHistoryPopup={toggleDisplayOrderHistoryPopup}
+        />
+      )}
+      {displayShippingDetailsPopup && (
+        <ShippingDetailsPopup
+          popupCloseHandler={toggleDisplayShippingDetailsPopup}
         />
       )}
     </section>

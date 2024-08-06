@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { useForm } from "../../../../hooks/useForm";
 
@@ -6,7 +6,7 @@ import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import { checkIfCardHasExpired } from "./checkIfCardHasExpired";
+import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
 
 import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
@@ -18,18 +18,23 @@ import { useBagContext } from "../../../../contexts/BagContext";
 import { useNavigate } from "react-router-dom";
 
 import { useService } from "../../../../hooks/useService";
+import { paymentServiceFactory } from "../../../../services/paymentService";
 
 import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
 import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
 
-import { getData } from "./getData";
+import { getData } from "./helpers/getData";
 
 export const CardDetailsForm = () => {
+  const [userCardDetails, setUserCardDetails] = useState([]);
+
   const [isLoading, setIsLoading] = useState(false);
 
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
+
+  const paymentService = useService(paymentServiceFactory)
 
   const { userId } = useAuthenticationContext();
 
@@ -38,12 +43,25 @@ export const CardDetailsForm = () => {
   const {
     values,
     setValues,
-    updateForm,
     clickHandler,
     blurHandler,
+    updateForm,
     changeHandler,
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
+
+  useEffect(() => {
+    userCardDetailsService
+      .getOne(userId)
+      .then((data) => {
+        setUserCardDetails(data);
+
+        updateForm();
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [userCardDetailsService, userId, updateForm]);
 
   const { clearShoppingBag } = useBagContext();
 
@@ -76,11 +94,11 @@ export const CardDetailsForm = () => {
 
         await userCardDetailsService.update(userId, data);
 
+        await paymentService.create(userId, data);
+
         clearShoppingBag();
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-
-        updateForm();
 
         navigate("/order-confirmation");
       } catch (err) {
@@ -102,6 +120,7 @@ export const CardDetailsForm = () => {
         blurHandler={blurHandler}
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userCardDetails}
         buttonTitle={`Place Order $ ${totalPrice}`}
         onSubmit={onSubmit}
       />

@@ -1,6 +1,6 @@
 .button {
   padding: 12px;
-  margin: 20px 0px;
+  margin: 20px 0px 0px 0px;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
   border: none;
