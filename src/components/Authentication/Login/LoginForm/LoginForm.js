@@ -1,21 +1,21 @@
-import { useService } from "../../../../hooks/useService";
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
-
 import { DynamicForm } from "../../../DynamicForm/DynamicForm";
 
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+
+import { useService } from "../../../../hooks/useService";
 import { useForm } from "../../../../hooks/useForm";
 
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
-
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
-
 import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
+
+import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
 
 import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
 
 import { getData } from "./helpers/getData";
 
 import { setInvalidCredentialsErrorMessage } from "./helpers/setInvalidCredentialsErrorMessage";
+
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 export const LoginForm = () => {
   const { updateAuthentication } = useAuthenticationContext();
