@@ -1,18 +1,23 @@
 import { useState } from "react";
-import { useForm } from "../../hooks/useForm";
+
+import { useForm } from "../useForm";
+import { useService } from "../useService";
+
+import { userLoginDetailsServiceFactory } from "../../services/userLoginDetailsService";
+
 import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
 import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
+
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
 import { setSuccessMessage } from "./helpers/setSuccessMessage";
 import { setWrongPasswordErrorMessage } from "./helpers/setWrongPasswordErrorMessage";
 import { removeSuccessMessage } from "./helpers/removeSuccessMessage";
 import { getData } from "./helpers/getData";
+
 import {
   INITIAL_FORM_VALUES,
   FORM_KEYS,
 } from "../../components/Account/UpdatePasswordForm/initialFormValues";
-import { useService } from "../useService";
-import { userLoginDetailsServiceFactory } from "../../services/userLoginDetailsService";
 
 export const useUpdatePasswordForm = (userId) => {
   const [isLoading, setIsLoading] = useState(false);
