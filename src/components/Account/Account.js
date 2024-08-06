@@ -146,7 +146,7 @@ export const Account = () => {
         displayShippingDetailsPopup={displayShippingDetailsPopup}
         popupCloseHandler={toggleDisplayShippingDetailsPopup}
       />
-      {displayCardDetailsPopup && (
+
         <CardDetailsPopup popupCloseHandler={toggleDisplayCardDetailsPopup} />
       )}
     </section>
