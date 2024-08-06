@@ -65,7 +65,7 @@ export const useForm = (INITIAL_FORM_VALUES) => {
         field.regexPattern
       );
     });
-    
+
     updateForm();
   };
 
