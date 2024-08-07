@@ -9,7 +9,7 @@
   outline: none;
   display: flex;
   justify-content: center;
-  width: 360px;
+  width:  240px;
   cursor: pointer;
   background: var(--medium-pink);
   transition: background-color 300ms linear, color 300ms;

@@ -2,14 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 40px;
+  margin: 40px 80px;
   gap: 40px;
 }
 
-.title {
-  padding: 0px 30px 10px 30px;
-  border-bottom: 0.1px solid var(--medium-gray);
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
+
 
 .left-sub-container,
 .right-sub-container {
@@ -24,11 +26,12 @@
 }
 
 .right-sub-container {
-  width: 280px;
+  width: 320px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 40px;
 }
 
 .left-container {
@@ -38,17 +41,7 @@
   gap: 40px;
 }
 
-.left-sub-container {
-  height: fit-content;
-  width: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
+
 
 .buttons-container {
   display: flex;
@@ -57,14 +50,4 @@
   align-items: flex-start;
 }
 
-.button-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: var(--white);
-  outline: none;
-  padding: 0px;
-}
+

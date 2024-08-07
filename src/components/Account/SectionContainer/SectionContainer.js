@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import styles from "./SectionContainer.module.css";
 
 export const SectionContainer = ({

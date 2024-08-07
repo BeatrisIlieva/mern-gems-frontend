@@ -1,12 +1,11 @@
 import { useState } from "react";
 
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { CardDetailsPopup } from "./CardDetailsPopup/CardDetailsPopup";
-
+import { ShippingDetailsPopup } from "../../ShippingDetailsPopup/ShippingDetailsPopup";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-export const CardDetails = () => {
+export const ShippingDetails = () => {
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {
@@ -16,12 +15,12 @@ export const CardDetails = () => {
   return (
     <>
       <SectionContainer
-        sectionTitle={"Saved Credit Card"}
+        sectionTitle={"Address Book"}
         callBackFunction={toggleDisplayPopup}
         icon={faPlus}
-        buttonTitle={"Add a New Credit Card"}
+        buttonTitle={"Add a New Address"}
       />
-      <CardDetailsPopup
+      <ShippingDetailsPopup
         displayPopup={displayPopup}
         popupCloseHandler={toggleDisplayPopup}
       />

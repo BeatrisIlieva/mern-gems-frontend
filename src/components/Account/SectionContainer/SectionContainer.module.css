@@ -1,0 +1,35 @@
+.title {
+  border-bottom: 0.1px solid var(--medium-gray);
+}
+
+.section-container {
+  height: 120px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border: 0.1px solid var(--pink);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--white);
+  outline: none;
+  padding: 0px;
+}
+
+.icon {
+  color: var(--white);
+  background-color: var(--pink);
+  padding: 6px;
+  border-radius: 32px;
+}

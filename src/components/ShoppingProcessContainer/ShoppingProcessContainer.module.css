@@ -1,5 +1,5 @@
 .shopping-process-container {
-  margin: 40px;
+  margin: 40px 80px;
 }
 
 .top {
@@ -16,5 +16,7 @@
 
 .bottom {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
 }

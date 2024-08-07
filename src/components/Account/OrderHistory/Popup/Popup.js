@@ -1,14 +1,11 @@
-import { ShippingDetailsForm } from "./ShippingDetailsForm/ShippingDetailsForm";
+import { Content } from "./Content/Content";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./ShippingDetailsPopup.module.css";
+import styles from "./Popup.module.css";
 
-export const ShippingDetailsPopup = ({
-  displayPopup,
-  popupCloseHandler,
-}) => {
+export const Popup = ({ displayPopup, popupCloseHandler }) => {
   return (
     <>
       {displayPopup && (
@@ -19,8 +16,8 @@ export const ShippingDetailsPopup = ({
               className={styles["x-mark"]}
               onClick={popupCloseHandler}
             />
-            <h2 className={styles["title"]}>Shipping Address</h2>
-            <ShippingDetailsForm popupCloseHandler={popupCloseHandler} />
+            <h2 className={styles["title"]}>Order History</h2>
+            <Content />
           </div>
         </section>
       )}
