@@ -10,7 +10,7 @@ export const ShoppingProcessContainer = ({ children, title }) => {
   return (
     <section className={styles["shopping-process-container"]}>
       <div className={styles["top"]}>
-        <XLargeTitle title={title} variant={"large-title"} />
+        <h2 className={styles["title"]}>{title}</h2>
         <div className={styles["delivery"]}>
           <Icon icon={faTruck} variant={"shopping-process-container"} />
           <XLargeTitle title={"Delivery"} variant={"large-title"} />
