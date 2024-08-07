@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Button } from "../Button/Button";
+import { UpdateEmailForm } from "../../UpdateEmailForm/UpdateEmailForm";
 
 export const UpdateEmail = () => {
   const [displayForm, setDisplayForm] = useState(false);
@@ -11,12 +12,11 @@ export const UpdateEmail = () => {
 
   return (
     <>
-      {displayForm && (
-        <Button
-          title={"Update Email Address"}
-          callBackFunction={toggleDisplayForm}
-        />
-      )}
+      <Button
+        title={"Update Email Address"}
+        callBackFunction={toggleDisplayForm}
+      />
+      {displayForm && <UpdateEmailForm />}
     </>
   );
 };

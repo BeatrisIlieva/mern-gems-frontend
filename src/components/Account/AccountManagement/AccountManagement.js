@@ -1,5 +1,12 @@
-export const AccountManagement = () => {
+import { useState, useEffect } from "react";
 
+import { useService } from "../../../hooks/useService";
+
+import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
+
+import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
+
+export const AccountManagement = () => {
   const [showUpdatePassword, setShowUpdatePassword] = useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -19,7 +26,6 @@ export const AccountManagement = () => {
       });
   }, [userLoginDetailsService, userId]);
 
-
   const onUpdatePasswordClick = async () => {
     setShowUpdatePassword(true);
     setShowUpdateEmail(false);
@@ -30,14 +36,14 @@ export const AccountManagement = () => {
       <LargeTitle title={"Account Management"} variant={"large-title"} />
       <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
-
+        <UpdateEmail />
         <UnderlinedButton
           title={"Change Password"}
           callBackFunction={onUpdatePasswordClick}
         />
         <Logout />
       </div>
-      {showUpdateEmail && <UpdateEmailForm />}
+
       {showUpdatePassword && <UpdatePasswordForm />}
     </div>
   );
