@@ -22,9 +22,8 @@
   transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 10px 10px 30px 10px;
   animation: slideInTop 1s forwards;
-  width: 780px;
+  max-width: 540px;
   max-height: 90vh;
-  /* height: fit-content; */
 }
 
 .x-mark {

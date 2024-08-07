@@ -46,8 +46,8 @@ export const AccountManagement = () => {
 
   return (
     <section className={styles["account-management"]}>
-      <h3>Account Management</h3>
-      <h4>{userLoginDetails.email}</h4>
+      <h2 className={styles["title"]}>Account Management</h2>
+      <h3 className={styles["email"]}>{userLoginDetails.email}</h3>
       <div className={styles["buttons-container"]}>
         <UpdateEmail
           updateEmailClickHandler={updateEmailClickHandler}

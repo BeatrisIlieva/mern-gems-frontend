@@ -23,7 +23,7 @@
   padding: 20px 20px 30px 20px;
   animation: slideInTop 1s forwards;
   width: 540px;
-  height: 540px;
+  max-height: 90vh;
   overflow-y: auto;
 }
 
