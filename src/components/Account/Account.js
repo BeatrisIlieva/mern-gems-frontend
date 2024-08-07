@@ -158,7 +158,7 @@ import { useState, useEffect } from "react";
 
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
-import { UnderlinedButton } from "../UnderlinedButton/UnderlinedButton";
+import { UnderlinedButton } from "./AccountManagement/Button/Button";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { Logout } from "./Logout/Logout";
 import { NormalTitle } from "../NormalTitle/NormalTitle";
@@ -175,35 +175,7 @@ import { userLoginDetailsServiceFactory } from "../../services/userLoginDetailsS
 import styles from "./Account.module.css";
 
 export const Account = () => {
-  const [showUpdateEmail, setShowUpdateEmail] = useState(false);
-  const [showUpdatePassword, setShowUpdatePassword] = useState(false);
 
-  const [userLoginDetails, setUserLoginDetails] = useState([]);
-
-  const { userId } = useAuthenticationContext();
-
-  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
-
-  useEffect(() => {
-    userLoginDetailsService
-      .getOne(userId)
-      .then((data) => {
-        setUserLoginDetails(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userLoginDetailsService, userId]);
-
-  const onUpdateEmailClick = async () => {
-    setShowUpdateEmail(true);
-    setShowUpdatePassword(false);
-  };
-
-  const onUpdatePasswordClick = async () => {
-    setShowUpdatePassword(true);
-    setShowUpdateEmail(false);
-  };
 
   return (
     <section className={styles["account"]}>
@@ -213,23 +185,7 @@ export const Account = () => {
         <CardDetails />
       </div>
       <div className={styles["right-container"]}>
-        <div className={styles["right-sub-container"]}>
-          <LargeTitle title={"Account Management"} variant={"large-title"} />
-          <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
-          <div className={styles["buttons-container"]}>
-            <UnderlinedButton
-              title={"Update Email Address"}
-              callBackFunction={onUpdateEmailClick}
-            />
-            <UnderlinedButton
-              title={"Change Password"}
-              callBackFunction={onUpdatePasswordClick}
-            />
-            <Logout />
-          </div>
-          {showUpdateEmail && <UpdateEmailForm />}
-          {showUpdatePassword && <UpdatePasswordForm />}
-        </div>
+
       </div>
     </section>
   );

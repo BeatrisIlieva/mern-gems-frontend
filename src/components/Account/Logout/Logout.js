@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useService } from "../../../hooks/useService";
-import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
+import { UnderlinedButton } from "../AccountManagement/Button/Button";
 
 import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
 

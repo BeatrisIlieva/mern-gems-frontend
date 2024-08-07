@@ -1,4 +1,4 @@
-.underlined-button {
+.button {
   border: none;
   cursor: pointer;
   overflow: hidden;
@@ -8,6 +8,6 @@
   padding: 0px;
 }
 
-.underlined-button:hover {
+.button:hover {
   font-family: var(--bold-font-family);
 }
