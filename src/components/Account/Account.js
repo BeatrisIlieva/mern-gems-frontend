@@ -154,29 +154,14 @@
 //   );
 // };
 
-import { useState, useEffect } from "react";
-
-import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
-import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
-import { UnderlinedButton } from "./AccountManagement/Button/Button";
-import { LargeTitle } from "../LargeTitle/LargeTitle";
-import { Logout } from "./Logout/Logout";
-import { NormalTitle } from "../NormalTitle/NormalTitle";
 import { OrderHistory } from "./OrderHistory/OrderHistory";
 import { ShippingDetails } from "./ShippingDetails/ShippingDetails";
 import { CardDetails } from "./CardDetails/CardDetails";
-
-import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
-
-import { useService } from "../../hooks/useService";
-
-import { userLoginDetailsServiceFactory } from "../../services/userLoginDetailsService";
+import { AccountManagement } from "./AccountManagement/AccountManagement";
 
 import styles from "./Account.module.css";
 
 export const Account = () => {
-
-
   return (
     <section className={styles["account"]}>
       <div className={styles["flex-container"]}>
@@ -185,7 +170,7 @@ export const Account = () => {
         <CardDetails />
       </div>
       <div className={styles["right-container"]}>
-
+        <AccountManagement />
       </div>
     </section>
   );

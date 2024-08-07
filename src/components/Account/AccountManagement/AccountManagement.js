@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 
+import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
+import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
+import { Logout } from "./Logout/Logout";
+
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+
 import { useService } from "../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
 
-import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
+import styles from "./AccountManagement.module.css";
 
 export const AccountManagement = () => {
-  const [showUpdatePassword, setShowUpdatePassword] = useState(false);
-
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
@@ -26,25 +30,15 @@ export const AccountManagement = () => {
       });
   }, [userLoginDetailsService, userId]);
 
-  const onUpdatePasswordClick = async () => {
-    setShowUpdatePassword(true);
-    setShowUpdateEmail(false);
-  };
-
   return (
     <div className={styles["right-sub-container"]}>
-      <LargeTitle title={"Account Management"} variant={"large-title"} />
-      <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
+      <h3>Account Management</h3>
+      <h4>{userLoginDetails.email}</h4>
       <div className={styles["buttons-container"]}>
         <UpdateEmail />
-        <UnderlinedButton
-          title={"Change Password"}
-          callBackFunction={onUpdatePasswordClick}
-        />
+        <UpdatePassword />
         <Logout />
       </div>
-
-      {showUpdatePassword && <UpdatePasswordForm />}
     </div>
   );
 };

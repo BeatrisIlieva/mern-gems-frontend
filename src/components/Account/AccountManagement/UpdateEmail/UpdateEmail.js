@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Button } from "../Button/Button";
-import { UpdateEmailForm } from "../../UpdateEmailForm/UpdateEmailForm";
+import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 
 export const UpdateEmail = () => {
   const [displayForm, setDisplayForm] = useState(false);

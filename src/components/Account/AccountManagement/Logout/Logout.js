@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { useService } from "../../../hooks/useService";
-import { UnderlinedButton } from "../AccountManagement/Button/Button";
+import { useService } from "../../../../hooks/useService";
+import { Button } from "../Button/Button";
 
-import { userLoginDetailsServiceFactory } from "../../../services/userLoginDetailsService";
+import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
 
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
-import { useBagContext } from "../../../contexts/BagContext";
+import { useBagContext } from "../../../../contexts/BagContext";
 
 export const Logout = () => {
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
@@ -25,5 +25,5 @@ export const Logout = () => {
     navigate("/");
   };
 
-  return <UnderlinedButton title={"Logout"} callBackFunction={logoutHandler} />;
+  return <Button title={"Logout"} callBackFunction={logoutHandler} />;
 };
