@@ -10,9 +10,7 @@ export const SectionContainer = ({
 }) => {
   return (
     <section className={styles["section-container"]}>
-      <div className={styles["section-title"]}>
-        <h2>{sectionTitle}</h2>
-      </div>
+      <h2 className={styles["title"]}>{sectionTitle}</h2>
       <button onClick={callBackFunction} className={styles["button"]}>
         <FontAwesomeIcon icon={icon} className={styles["icon"]} />
         {buttonTitle}

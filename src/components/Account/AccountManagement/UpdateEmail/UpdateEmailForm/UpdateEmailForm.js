@@ -14,11 +14,11 @@ import { checkIfFormErrorHasOccurred } from "../../../../../utils/checkIfFormErr
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 import { setWrongPasswordErrorMessage } from "../../../../../utils/setWrongPasswordErrorMessage";
 
+import { getData } from "./helpers/getData";
+
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 import styles from "./UpdateEmailForm.module.css";
-
-import { getData } from "./helpers/getData";
 
 export const UpdateEmailForm = () => {
   const [isLoading, setIsLoading] = useState(false);

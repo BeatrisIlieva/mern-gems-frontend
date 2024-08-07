@@ -1,19 +1,17 @@
-import { useState } from "react";
-
 import { Button } from "../Button/Button";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 
-export const UpdatePassword = () => {
-  const [displayForm, setDisplayForm] = useState(false);
-
-  const toggleDisplayForm = () => {
-    setDisplayForm((displayForm) => !displayForm);
-  };
-
+export const UpdatePassword = ({
+  updatePasswordClickHandler,
+  displayUpdatePassword,
+}) => {
   return (
     <>
-      <Button title={"Change Password"} callBackFunction={toggleDisplayForm} />
-      {displayForm && <UpdatePasswordForm />}
+      <Button
+        title={"Change Password"}
+        callBackFunction={updatePasswordClickHandler}
+      />
+      {displayUpdatePassword && <UpdatePasswordForm />}
     </>
   );
 };

@@ -30,15 +30,36 @@ export const AccountManagement = () => {
       });
   }, [userLoginDetailsService, userId]);
 
+  const [displayUpdateEmail, setDisplayUpdateEmailForm] = useState(false);
+
+  const [displayUpdatePassword, setDisplayUpdatePasswordForm] = useState(false);
+
+  const updateEmailClickHandler = () => {
+    setDisplayUpdateEmailForm(true);
+    setDisplayUpdatePasswordForm(false);
+  };
+
+  const updatePasswordClickHandler = () => {
+    setDisplayUpdatePasswordForm(true);
+    setDisplayUpdateEmailForm(false);
+  };
+
   return (
-    <div className={styles["right-sub-container"]}>
+    <section className={styles["account-management"]}>
       <h3>Account Management</h3>
       <h4>{userLoginDetails.email}</h4>
       <div className={styles["buttons-container"]}>
-        <UpdateEmail />
-        <UpdatePassword />
+        <UpdateEmail
+          updateEmailClickHandler={updateEmailClickHandler}
+          displayUpdateEmail={displayUpdateEmail}
+        />
+        <UpdatePassword
+          updatePasswordClickHandler={updatePasswordClickHandler}
+          displayUpdatePassword={displayUpdatePassword}
+        />
         <Logout />
       </div>
-    </div>
+    </section>
   );
 };
+

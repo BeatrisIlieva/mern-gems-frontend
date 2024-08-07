@@ -1,22 +1,17 @@
-import { useState } from "react";
-
 import { Button } from "../Button/Button";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 
-export const UpdateEmail = () => {
-  const [displayForm, setDisplayForm] = useState(false);
-
-  const toggleDisplayForm = () => {
-    setDisplayForm((displayForm) => !displayForm);
-  };
-
+export const UpdateEmail = ({
+  updateEmailClickHandler,
+  displayUpdateEmail,
+}) => {
   return (
     <>
       <Button
         title={"Update Email Address"}
-        callBackFunction={toggleDisplayForm}
+        callBackFunction={updateEmailClickHandler}
       />
-      {displayForm && <UpdateEmailForm />}
+      {displayUpdateEmail && <UpdateEmailForm />}
     </>
   );
 };

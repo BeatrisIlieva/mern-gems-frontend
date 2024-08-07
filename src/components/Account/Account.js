@@ -169,9 +169,7 @@ export const Account = () => {
         <ShippingDetails />
         <CardDetails />
       </div>
-      <div className={styles["right-container"]}>
-        <AccountManagement />
-      </div>
+      <AccountManagement />
     </section>
   );
 };
