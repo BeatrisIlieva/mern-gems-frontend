@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { CardDetailsPopup } from "./CardDetailsPopup/CardDetailsPopup";
-import { CardDetailsForm } from "./CardDetailsPopup/CardDetailsForm/CardDetailsForm";
+import { CardDetailsForm } from "./CardDetailsForm/CardDetailsForm";
 
 import { Popup } from "../Popup/Popup";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -27,10 +26,6 @@ export const CardDetails = () => {
           <CardDetailsForm />
         </Popup>
       )}
-      {/* <CardDetailsPopup
-        displayPopup={displayPopup}
-        popupCloseHandler={toggleDisplayPopup}
-      /> */}
     </>
   );
 };
