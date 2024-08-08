@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { NormalTitle } from "../../../NormalTitle/NormalTitle";
 import { Popup } from "../../../Popup/Popup";
 import { ShippingDetailsForm } from "../../../ShippingDetailsForm/ShippingDetailsForm";
-import { UnderlinedButton } from "../../../UnderlinedButton/UnderlinedButton";
+import { Button } from "../../../Button/Button";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
@@ -59,9 +59,10 @@ export const ShippingInformation = () => {
     <section className={styles["shipping-information"]}>
       <div className={styles["header-wrapper"]}>
         <h2 className={styles["title"]}>Shipping Information</h2>
-        <UnderlinedButton
+        <Button
           title={"Edit"}
           callBackFunction={toggleDisplayShippingDetailsPopup}
+          variant={"underlined"}
         />
       </div>
       <div className={styles["top"]}>
