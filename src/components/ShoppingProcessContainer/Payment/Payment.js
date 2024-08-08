@@ -2,7 +2,7 @@ import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
 
 import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 
-import { CardDetailsForm } from "./CardDetailsForm/CardDetailsForm";
+import { CardDetailsForm } from "../../CardDetailsForm/CardDetailsForm";
 
 import { LeftSide } from "../LeftSide/LeftSide";
 import { RightSide } from "../RightSide/RightSide";

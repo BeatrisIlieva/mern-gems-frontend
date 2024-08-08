@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { CardDetailsForm } from "./CardDetailsForm/CardDetailsForm";
+import { CardDetailsForm } from "../../CardDetailsForm/CardDetailsForm";
 
 import { Popup } from "../Popup/Popup";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -27,7 +27,7 @@ export const CardDetails = () => {
           title={"Add a New Card"}
           variant={"large"}
         >
-          <CardDetailsForm />
+          <CardDetailsForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>
       )}
     </>

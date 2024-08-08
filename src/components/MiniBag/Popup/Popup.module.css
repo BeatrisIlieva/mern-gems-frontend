@@ -24,6 +24,7 @@
   padding: 20px;
   animation: slideIn 1s forwards;
   height: 100vh;
+  width: 540px;
 }
 
 .x-mark {

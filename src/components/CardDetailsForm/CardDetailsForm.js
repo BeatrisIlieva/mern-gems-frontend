@@ -1,28 +1,30 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
-import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
-import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
+import { DynamicForm } from "../DynamicForm/DynamicForm";
+import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
+import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 
-import { useBagContext } from "../../../../contexts/BagContext";
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { useBagContext } from "../../contexts/BagContext";
+import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
-import { useService } from "../../../../hooks/useService";
-import { useForm } from "../../../../hooks/useForm";
+import { useService } from "../../hooks/useService";
+import { useForm } from "../../hooks/useForm";
 
-import { paymentServiceFactory } from "../../../../services/paymentService";
-import { userCardDetailsServiceFactory } from "../../../../services/userCardDetailsService";
+import { paymentServiceFactory } from "../../services/paymentService";
+import { userCardDetailsServiceFactory } from "../../services/userCardDetailsService";
 
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
-import { checkIfCardHasExpired } from "../../../../utils/checkIfCardHasExpired";
-import { setCardHasExpiredErrorMessage } from "../../../../utils/setCardHasExpiredErrorMessage";
-import { getCardDetailsFormData } from "../../../../utils/getCardDetailsFormData";
+import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
+import { checkIfCardHasExpired } from "../../utils/checkIfCardHasExpired";
+import { setCardHasExpiredErrorMessage } from "../../utils/setCardHasExpiredErrorMessage";
+import { getCardDetailsFormData } from "../../utils/getCardDetailsFormData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-export const CardDetailsForm = () => {
+export const CardDetailsForm = ({ popupCloseHandler }) => {
+  const location = useLocation();
+
   const [userCardDetails, setUserCardDetails] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -62,6 +64,12 @@ export const CardDetailsForm = () => {
 
   const navigate = useNavigate();
 
+  const locationIsPayment = location.pathname === "/payment";
+
+  const buttonTitle = locationIsPayment
+    ? `Place Order $ ${totalPrice}`
+    : "Save";
+
   const onSubmit = async (e) => {
     submitHandler(e);
 
@@ -87,13 +95,17 @@ export const CardDetailsForm = () => {
 
         await userCardDetailsService.update(userId, data);
 
-        await paymentService.create(userId, data);
+        if (locationIsPayment) {
+          await paymentService.create(userId, data);
 
-        clearShoppingBag();
+          clearShoppingBag();
+
+          navigate("/order-confirmation");
+        } else {
+          popupCloseHandler();
+        }
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-
-        navigate("/order-confirmation");
       } catch (err) {
         console.log(err.message);
       } finally {
@@ -114,7 +126,7 @@ export const CardDetailsForm = () => {
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
         userInformation={userCardDetails}
-        buttonTitle={`Place Order $ ${totalPrice}`}
+        buttonTitle={buttonTitle}
         onSubmit={onSubmit}
       />
     </>
