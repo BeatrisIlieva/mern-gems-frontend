@@ -1,19 +1,20 @@
 import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
 
-import { Icon } from "../Icon/Icon";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 
 import { BagCount } from "../BagCount/BagCount";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import styles from "./ShoppingProcessContainer.module.css";
 
 export const ShoppingProcessContainer = ({ children, title }) => {
   return (
     <section className={styles["shopping-process-container"]}>
       <div className={styles["top"]}>
-        <h2 className={styles["title"]}>{title}</h2>
+        <XLargeTitle title={title} variant={"italic"} />
         <div className={styles["delivery"]}>
-          <Icon icon={faTruck} variant={"shopping-process-container"} />
-          <XLargeTitle title={"Delivery"} variant={"large-title"} />
+          <FontAwesomeIcon icon={faTruck} className={styles["icon"]} />
+          <XLargeTitle title={"Delivery"} variant={"italic"} />
           <BagCount />
         </div>
       </div>

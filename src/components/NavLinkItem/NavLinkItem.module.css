@@ -32,3 +32,17 @@
 .not-selected {
   text-decoration: none;
 }
+
+.icon {
+  cursor: pointer;
+}
+
+.icon.header {
+  color: var(--pink);
+  height: var(--medium);
+}
+
+.icon.filter {
+  color: var(--medium-gray);
+  height: var(--normal);
+}

@@ -21,3 +21,7 @@
 .logo-image {
   height: 60px;
 }
+
+.icon {
+  color: var(--pink);
+}

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Fragment } from "react";
 
-import { Icon } from "../Icon/Icon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./NavLinkItem.module.css";
 
@@ -19,7 +19,10 @@ export const NavLinkItem = ({ items }) => {
                 }
                 to={item.to}
               >
-                <Icon icon={item.icon} variant={item.iconVariant} />
+                <FontAwesomeIcon
+                  icon={item.icon}
+                  className={`${styles["icon"]} ${styles[item.variant]}`}
+                />
                 {item.label}
               </NavLink>
             </li>

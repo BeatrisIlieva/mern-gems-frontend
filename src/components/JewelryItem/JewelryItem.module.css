@@ -22,6 +22,11 @@
   color: var(--gray);
 }
 
+.icon {
+  color: var(--light-gray);
+  font-size: 4px;
+}
+
 .jewelry-wrapper {
   display: flex;
   justify-content: space-around;

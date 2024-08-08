@@ -3,19 +3,6 @@
   position: relative;
 }
 
-.nav-wrapper {
-  border-bottom: 0.1px solid var(--light-gray);
-  margin-top: 60px;
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-filter {
-  display: flex;
-  gap: 30px;
-}
-
 .jewelry-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

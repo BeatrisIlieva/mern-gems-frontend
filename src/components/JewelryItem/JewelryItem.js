@@ -21,7 +21,8 @@ import { MiniBag } from "../MiniBag/MiniBag";
 
 import { transformUrlSegment } from "../../utils/transformUrlSegment";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { Icon } from "../Icon/Icon";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./JewelryItem.module.css";
 
@@ -94,7 +95,7 @@ export const JewelryItem = () => {
                 to={`/${collection}`}
                 className={styles["nav-item"]}
               >{`${collectionTitle}`}</Link>
-              <Icon icon={faCircle} variant={"jewelry-item"} />
+              <FontAwesomeIcon icon={faCircle} className={styles["icon"]} />
               <Link
                 to={`/${collection}/${category}`}
                 className={styles["nav-item"]}
