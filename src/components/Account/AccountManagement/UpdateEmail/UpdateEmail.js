@@ -18,7 +18,7 @@ export const UpdateEmail = () => {
         callBackFunction={toggleDisplayPopup}
       />
       {displayPopup && (
-        <Popup popupCloseHandler={toggleDisplayPopup} title={"Update Email"}>
+        <Popup popupCloseHandler={toggleDisplayPopup} title={"Update Email"} variant={"small"}>
           <UpdateEmailForm />
         </Popup>
       )}

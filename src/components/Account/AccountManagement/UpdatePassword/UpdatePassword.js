@@ -1,17 +1,28 @@
+import { useState } from "react";
+
+import { Popup } from "../../Popup/Popup";
+
 import { Button } from "../Button/Button";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 
-export const UpdatePassword = ({
-  updatePasswordClickHandler,
-  displayUpdatePassword,
-}) => {
+export const UpdatePassword = () => {
+  const [displayPopup, setDisplayPopup] = useState(false);
+
+  const toggleDisplayPopup = () => {
+    setDisplayPopup((displayPopup) => !displayPopup);
+  };
+
   return (
     <>
       <Button
         title={"Change Password"}
-        callBackFunction={updatePasswordClickHandler}
+        callBackFunction={toggleDisplayPopup}
       />
-      {displayUpdatePassword && <UpdatePasswordForm />}
+      {displayPopup && (
+        <Popup popupCloseHandler={toggleDisplayPopup} title={"Change Password"} variant={"small"}>
+          <UpdatePasswordForm />
+        </Popup>
+      )}
     </>
   );
 };

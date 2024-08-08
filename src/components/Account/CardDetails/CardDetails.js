@@ -22,7 +22,11 @@ export const CardDetails = () => {
         buttonTitle={"Add a New Credit Card"}
       />
       {displayPopup && (
-        <Popup popupCloseHandler={toggleDisplayPopup} title={"Update Email"}>
+        <Popup
+          popupCloseHandler={toggleDisplayPopup}
+          title={"Add a New Card"}
+          variant={"large"}
+        >
           <CardDetailsForm />
         </Popup>
       )}

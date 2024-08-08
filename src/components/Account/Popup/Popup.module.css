@@ -20,10 +20,18 @@
   border-block-start: 1px solid var(--medium-pink);
   position: relative;
   transition: opacity 0.8s ease, transform 0.8s ease;
-  padding: 10px 10px 30px 10px;
+  padding: 20px;
   animation: slideInTop 1s forwards;
-  max-width: 540px;
   max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal.large {
+  width: 560px;
+}
+
+.modal.small {
+  width: 280px;
 }
 
 .x-mark {

@@ -1,0 +1,33 @@
+.content {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in {
+  animation: slideIn 0.8s forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.8s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    right: -100%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+    opacity: 1;
+  }
+  to {
+    right: 100%;
+    opacity: 0;
+  }
+}

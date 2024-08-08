@@ -1,6 +1,6 @@
-import styles from "./PopupHeader.module.css";
+import styles from "./Header.module.css";
 
-export const PopupHeader = ({ title }) => {
+export const Header = ({ title }) => {
   return (
     <section className={styles["header"]}>
       <img

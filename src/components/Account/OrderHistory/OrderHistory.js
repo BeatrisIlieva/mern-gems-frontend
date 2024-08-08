@@ -1,10 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+
+import { useService } from "../../../hooks/useService";
+
+import { orderServiceFactory } from "../../../services/orderService";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { Popup } from "./Popup/Popup";
+import { Popup } from "../Popup/Popup"
+
+import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
+import { Collection } from "../../Collection/Collection";
+import { InfoMessage } from "../../InfoMessage/InfoMessage";
 
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
+import styles from "./OrderHistory.module.css";
+
 export const OrderHistory = () => {
+  const { userId } = useAuthenticationContext();
+
+  const orderService = useService(orderServiceFactory);
+
+  const [orderItems, setOrderItems] = useState([]);
+
+  useEffect(() => {
+    orderService
+      .getAll(userId)
+      .then((data) => {
+        setOrderItems(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [orderService, userId]);
+
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {
@@ -19,10 +48,31 @@ export const OrderHistory = () => {
         icon={faClockRotateLeft}
         buttonTitle={"View Order History"}
       />
-      <Popup
+      {displayPopup && (
+        <Popup popupCloseHandler={toggleDisplayPopup} title={"Order History"} variant={"large"}>
+          {orderItems.length < 1 ? (
+            <div>
+              <InfoMessage
+                title={"You have no orders"}
+                subtitle={"Explore and add something you love."}
+              />
+              <Collection />
+            </div>
+          ) : (
+            <ul role="list" className={styles["order-history"]}>
+              {orderItems.map((item) => (
+                <li key={item._id}>
+                  <OrderHistoryList {...item} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </Popup>
+      )}
+      {/* <Popup
         displayPopup={displayPopup}
         popupCloseHandler={toggleDisplayPopup}
-      />
+      /> */}
     </>
   );
 };
