@@ -8,15 +8,15 @@ import { NormalTitle } from "../../../NormalTitle/NormalTitle";
 import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 import styles from "./Form.module.css";
 
-import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
 import { EARRING_ID } from "../../../../constants/earringId";
 import { useBagContext } from "../../../../contexts/BagContext";
 
+import { Sizes } from "./Sizes/Sizes";
+
 export const Form = ({ toggleDisplayMiniBagPopup }) => {
   const {
-    sizes,
     sizeIsSelected,
     updateSizeIsSelected,
     isSoldOut,
@@ -77,31 +77,7 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
 
   return (
     <form method="POST" onSubmit={onSubmit}>
-      {jewelry.category !== EARRING_ID && jewelry.sizes && (
-        <div className={styles["size-wrapper"]}>
-          <div className={styles["radio-container"]}>
-            {sizes.map((item) => (
-              <div key={item._id}>
-                <input
-                  type="radio"
-                  name={SIZE_FORM_KEY.Size}
-                  id={item._id}
-                  value={item._id}
-                  onChange={changeHandler}
-                  checked={
-                    Number(selectedSize[SIZE_FORM_KEY.Size]) === item._id
-                  }
-                  disabled={!Number(item.quantity) > 0}
-                />
-                <label className={styles["label"]} htmlFor={item._id}>
-                  {item.measurement}
-                </label>
-              </div>
-            ))}
-          </div>
-          <div className={styles["error-message"]}>{errorMessage}</div>
-        </div>
-      )}
+      <Sizes errorMessage={errorMessage} changeHandler={changeHandler} />
       <div className={styles["add-margin"]}>
         <NormalTitle title={`$ ${jewelry.price}`} variant={"bolded"} />
       </div>
