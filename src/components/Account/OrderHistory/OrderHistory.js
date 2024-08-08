@@ -6,7 +6,7 @@ import { useService } from "../../../hooks/useService";
 
 import { orderServiceFactory } from "../../../services/orderService";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { Popup } from "../Popup/Popup"
+import { Popup } from "../../Popup/Popup"
 
 import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
 import { Collection } from "../../Collection/Collection";

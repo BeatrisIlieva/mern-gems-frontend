@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { SectionContainer } from "../SectionContainer/SectionContainer";
 import { ShippingDetailsForm } from "../../ShippingDetailsForm/ShippingDetailsForm";
-import { Popup } from "../Popup/Popup";
+import { Popup } from "../../Popup/Popup";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 

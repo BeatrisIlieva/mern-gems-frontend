@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Button } from "../Button/Button";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
-import { Popup } from "../../Popup/Popup";
+import { Popup } from "../../../Popup/Popup";
 
 export const UpdateEmail = () => {
   const [displayPopup, setDisplayPopup] = useState(false);

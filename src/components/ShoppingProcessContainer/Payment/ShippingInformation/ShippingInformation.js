@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { NormalTitle } from "../../../NormalTitle/NormalTitle";
-import { Popup } from "../../../Account/Popup/Popup";
+import { Popup } from "../../../Popup/Popup";
 import { ShippingDetailsForm } from "../../../ShippingDetailsForm/ShippingDetailsForm";
 import { UnderlinedButton } from "../../../UnderlinedButton/UnderlinedButton";
 
