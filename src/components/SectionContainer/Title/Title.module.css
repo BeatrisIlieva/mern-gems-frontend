@@ -1,5 +1,6 @@
 .title {
   font-size: var(--normal);
+  max-width: 60%;
 }
 
 .title.regular {

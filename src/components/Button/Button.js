@@ -9,7 +9,9 @@ export const Button = ({
   return (
     <button
       className={
-        !buttonIsDisabled ? `${styles["button"]} ${styles[variant]}` : `${styles["button"]} ${styles[variant]} ${styles["disabled"]}`
+        !buttonIsDisabled
+          ? `${styles["button"]} ${styles[variant]}`
+          : `${styles["button"]} ${styles[variant]} ${styles["disabled"]}`
       }
       disabled={buttonIsDisabled}
       onClick={callBackFunction}

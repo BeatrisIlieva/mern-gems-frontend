@@ -22,8 +22,33 @@
 }
 
 .button.pink,
-.button.gray {
+.button.gray,
+.button.animated {
   cursor: pointer;
+}
+
+.button.animated {
+  position: relative;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  color: var(--medium-gray);
+  width: 30%;
+}
+
+.button.animated:before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--light-gray);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.button.animated:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 .button.pink:hover {

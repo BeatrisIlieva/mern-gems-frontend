@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
-
+import { Button } from "../Button/Button";
 import { collectionItems } from "./collectionItems";
 
 import styles from "./Collection.module.css";
@@ -22,7 +21,7 @@ export const Collection = () => {
               <div className={styles["hero-text"]}>
                 <h2 className={styles["title"]}>{item.title} Collection</h2>
                 <p className={styles["paragraph"]}>{item.description}</p>
-                <AnimatedButton title={"Discover"} />
+                <Button title={"Discover"} variant={"animated"} />
               </div>
               <div className={styles["hero-img-container"]}>
                 <img

@@ -35,6 +35,7 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
+
             <SectionContainer
               firstTitle={`Size: ${item.size}`}
               secondTitle={
