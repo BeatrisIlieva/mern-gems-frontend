@@ -3,17 +3,3 @@
   flex-direction: column;
   gap: 10px;
 }
-
-.title {
-  margin-bottom: 20px;
-}
-
-.sub-container,
-.bottom-sub-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.bottom-sub-container {
-  margin-bottom: 30px;
-}

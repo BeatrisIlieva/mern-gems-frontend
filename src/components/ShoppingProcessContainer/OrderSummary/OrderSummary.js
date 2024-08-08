@@ -1,10 +1,9 @@
 import { useBagContext } from "../../../contexts/BagContext";
 
-import { LargeTitle } from "../../LargeTitle/LargeTitle";
-
 import { HorizontalLine } from "../../HorizontalLine/HorizontalLine";
 import { NormalTitle } from "../../NormalTitle/NormalTitle";
-
+import { ContainerTitle } from "../../ContainerTitle/ContainerTitle";
+import { SectionContainer } from "./SectionContainer/SectionContainer";
 import styles from "./OrderSummary.module.css";
 
 export const OrderSummary = () => {
@@ -12,10 +11,11 @@ export const OrderSummary = () => {
 
   return (
     <section className={styles["order-summary"]}>
-      <div className={styles["title"]}>
-        <LargeTitle title={"Order Summary"} />
-      </div>
-      <div className={styles["sub-container"]}>
+      <ContainerTitle title={"Order Summary"} />
+      <SectionContainer firstTitle={"Subtotal"} secondTitle={`$ ${totalPrice}`} variant={"bolded"}/>
+      <SectionContainer firstTitle={"Shipping"} secondTitle={"Complimentary"} variant={"regular"}/>
+      <SectionContainer firstTitle={"Total"} secondTitle={`$ ${totalPrice}`} variant={"bolded"}/>
+      {/* <div className={styles["sub-container"]}>
         <NormalTitle title={"Subtotal"} variant={"bolded"} />
         <NormalTitle title={`$ ${totalPrice}`} variant={"bolded"} />
       </div>
@@ -27,7 +27,7 @@ export const OrderSummary = () => {
       <div className={styles["bottom-sub-container"]}>
         <NormalTitle title={"Total"} variant={"bolded"} />
         <NormalTitle title={`$ ${totalPrice}`} variant={"bolded"} />
-      </div>
+      </div> */}
     </section>
   );
 };
