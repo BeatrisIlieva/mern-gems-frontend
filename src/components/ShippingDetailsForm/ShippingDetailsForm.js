@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../../../LoadingSpinner/LoadingSpinner";
-import { ContainerTitle } from "../../../ContainerTitle/ContainerTitle";
+import { DynamicForm } from "../DynamicForm/DynamicForm";
+import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
+import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
 
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
-import { useForm } from "../../../../hooks/useForm";
-import { useService } from "../../../../hooks/useService";
+import { useForm } from "../../hooks/useForm";
+import { useService } from "../../hooks/useService";
 
-import { userShippingDetailsServiceFactory } from "../../../../services/userShippingDetailsService";
+import { userShippingDetailsServiceFactory } from "../../services/userShippingDetailsService";
 
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
 
 import { getData } from "./helpers/getData";
 

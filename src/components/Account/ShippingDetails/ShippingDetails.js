@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { ShippingDetailsPopup } from "../../ShippingDetailsPopup/ShippingDetailsPopup";
+import { ShippingDetailsForm } from "../../ShippingDetailsForm/ShippingDetailsForm";
+import { Popup } from "../Popup/Popup";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,10 +21,15 @@ export const ShippingDetails = () => {
         icon={faPlus}
         buttonTitle={"Add a New Address"}
       />
-      <ShippingDetailsPopup
-        displayPopup={displayPopup}
-        popupCloseHandler={toggleDisplayPopup}
-      />
+      {displayPopup && (
+        <Popup
+          popupCloseHandler={toggleDisplayPopup}
+          title={"Add a New Address"}
+          variant={"large"}
+        >
+          <ShippingDetailsForm popupCloseHandler={toggleDisplayPopup} />
+        </Popup>
+      )}
     </>
   );
 };

@@ -1,8 +1,8 @@
-import { PHONE_PATTERN } from "../../../constants/phone";
-import { ZIP_CODE_PATTERN } from "../../../constants/zipCode";
-import { NAME_PATTERN } from "../../../constants/name";
-import { STREET_PATTERN } from "../../../constants/street";
-import { APARTMENT_PATTERN } from "../../../constants/apartment";
+import { PHONE_PATTERN } from "../../constants/phone";
+import { ZIP_CODE_PATTERN } from "../../constants/zipCode";
+import { NAME_PATTERN } from "../../constants/name";
+import { STREET_PATTERN } from "../../constants/street";
+import { APARTMENT_PATTERN } from "../../constants/apartment";
 
 const FORM_KEYS = {
   FirstName: "firstName",
