@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 
 import { NormalTitle } from "../../../NormalTitle/NormalTitle";
-import { ShippingDetailsPopup } from "../../../ShippingDetailsPopup/ShippingDetailsPopup";
+import { Popup } from "../../../Account/Popup/Popup";
+import { ShippingDetailsForm } from "../../../ShippingDetailsForm/ShippingDetailsForm";
+import { UnderlinedButton } from "../../../UnderlinedButton/UnderlinedButton";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
@@ -57,12 +59,10 @@ export const ShippingInformation = () => {
     <section className={styles["shipping-information"]}>
       <div className={styles["header-wrapper"]}>
         <h2 className={styles["title"]}>Shipping Information</h2>
-        <button
-          className={styles["button"]}
-          onClick={toggleDisplayShippingDetailsPopup}
-        >
-          Edit
-        </button>
+        <UnderlinedButton
+          title={"Edit"}
+          callBackFunction={toggleDisplayShippingDetailsPopup}
+        />
       </div>
       <div className={styles["top"]}>
         <NormalTitle title={"Email Address"} variant={"bolded"} />
@@ -112,9 +112,15 @@ export const ShippingInformation = () => {
         )}
       </ul>
       {displayShippingDetailsPopup && (
-        <ShippingDetailsPopup
+        <Popup
           popupCloseHandler={toggleDisplayShippingDetailsPopup}
-        />
+          title={"Edit Shipping Address"}
+          variant={"large"}
+        >
+          <ShippingDetailsForm
+            popupCloseHandler={toggleDisplayShippingDetailsPopup}
+          />
+        </Popup>
       )}
     </section>
   );

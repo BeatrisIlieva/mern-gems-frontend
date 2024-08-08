@@ -14,20 +14,6 @@
   font-family: var(--bold-font-family);
 }
 
-.button {
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: var(--white);
-  outline: none;
-  text-decoration: underline;
-  padding: 0px;
-}
-
-.button:hover {
-  font-family: var(--bold-font-family);
-}
-
 .top {
   display: flex;
   flex-direction: column;

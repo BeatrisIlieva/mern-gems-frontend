@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../DynamicForm/DynamicForm";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
-import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
 
 import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
 
@@ -81,7 +80,6 @@ export const ShippingDetailsForm = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <ContainerTitle title={"Shipping Information"} />
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
