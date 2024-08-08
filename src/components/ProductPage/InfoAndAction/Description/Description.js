@@ -1,5 +1,7 @@
 import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 
+import styles from "./Description.module.css";
+
 export const Description = () => {
   const { jewelry, categoryIsEarring } = useJewelryItemContext();
 
