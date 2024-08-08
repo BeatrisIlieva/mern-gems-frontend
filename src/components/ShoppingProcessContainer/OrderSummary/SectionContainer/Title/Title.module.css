@@ -1,5 +1,11 @@
-.title {}
+.title {
+  font-size: var(--normal);
+  color: var(--gray);
+}
 
-.title.regular{}
+.title.regular {
+}
 
-.title.bolded{}
+.title.bolded {
+    font-family: var(--bold-font-family);
+}
