@@ -1,5 +1,5 @@
 import { JewelryCard } from "../JewelryCard/JewelryCard";
-import { NormalTitle } from "../NormalTitle/NormalTitle";
+import { SectionContainer } from "../SectionContainer/SectionContainer";
 
 import { Remove } from "./Remove/Remove";
 
@@ -29,24 +29,23 @@ export const BagList = ({ variant }) => {
             jewelryTitle={item.jewelryTitle}
             variant={"bag-list"}
           />
-          <div className={styles["middle-container"]}>
-            <div className={styles["left"]}>
-              <NormalTitle title={item.jewelryTitle} variant={"bolded"} />
-              <NormalTitle title={`Size: ${item.size}`} variant={"regular"} />
-            </div>
-            <div className={styles["right"]}>
-              <NormalTitle title={`$ ${item.totalPrice}`} variant={"bolded"} />
-              {showRemoveButton ? (
-                <div className={styles["button-wrapper"]}>
+          <div className={styles["info"]}>
+            <SectionContainer
+              firstTitle={item.jewelryTitle}
+              secondTitle={`$ ${item.totalPrice}`}
+              variant={"bolded"}
+            />
+            <SectionContainer
+              firstTitle={`Size: ${item.size}`}
+              secondTitle={
+                showRemoveButton ? (
                   <Remove bagId={item.bagId} />
-                </div>
-              ) : (
-                <NormalTitle
-                  title={`Qty ${item.quantity}`}
-                  variant={"regular"}
-                />
-              )}
-            </div>
+                ) : (
+                  `Qty ${item.quantity}`
+                )
+              }
+              variant={"regular"}
+            />
           </div>
         </li>
       ))}

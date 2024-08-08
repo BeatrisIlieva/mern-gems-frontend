@@ -1,11 +1,17 @@
+import { useLocation } from "react-router-dom";
+
 import { useBagContext } from "../../../contexts/BagContext";
 
 import { HorizontalLine } from "../../HorizontalLine/HorizontalLine";
 import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
-import { SectionContainer } from "./SectionContainer/SectionContainer";
+import { SectionContainer } from "../../SectionContainer/SectionContainer";
 import styles from "./OrderSummary.module.css";
 
 export const OrderSummary = () => {
+  const location = useLocation();
+
+  const locationIsBag = location.pathname === "/users/shopping-bag";
+
   const { totalPrice } = useBagContext();
 
   return (
@@ -21,12 +27,13 @@ export const OrderSummary = () => {
         secondTitle={"Complimentary"}
         variant={"regular"}
       />
-      <HorizontalLine variant={"large"} />
+      {locationIsBag && <HorizontalLine variant={"large"} />}
       <SectionContainer
         firstTitle={"Total"}
         secondTitle={`$ ${totalPrice}`}
         variant={"bolded"}
       />
+      {!locationIsBag && <HorizontalLine variant={"large"} />}
     </section>
   );
 };

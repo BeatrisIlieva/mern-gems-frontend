@@ -2,7 +2,3 @@
   display: flex;
   justify-content: space-between;
 }
-
-.wrapper:last-child {
-  margin-bottom: 40px;
-}

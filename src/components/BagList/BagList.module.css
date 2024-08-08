@@ -16,25 +16,9 @@
   gap: 30px;
 }
 
-.middle-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.left {
+.info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
-}
-
-.right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.quantity {
-  font-size: var(--medium);
+  flex-grow: 1;
 }
