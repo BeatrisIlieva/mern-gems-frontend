@@ -1,5 +1,7 @@
 import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 
+import { Button } from "../../Button/Button";
+
 import { useBagContext } from "../../../contexts/BagContext";
 
 import { useService } from "../../../hooks/useService";
@@ -19,5 +21,6 @@ export const Remove = ({ bagId }) => {
     updateBagTotalQuantity(-1);
   };
 
-  return <UnderlinedButton title={"Remove"} callBackFunction={removeItem} />;
+  return <Button title={"Remove"} callBackFunction={removeItem} variant={"underlined"}/>;
+  // return <UnderlinedButton title={"Remove"} callBackFunction={removeItem} />;
 };

@@ -1,14 +1,8 @@
 .button {
-  padding: 12px;
-  font-size: var(--medium);
-  font-family: var(--bold-italic-font-family);
   border: none;
   overflow: hidden;
   color: var(--white);
   outline: none;
-  display: flex;
-  justify-content: center;
-  width: 100%;
 }
 
 .button.pink {
@@ -25,6 +19,12 @@
 .button.gray,
 .button.animated {
   cursor: pointer;
+  font-size: var(--medium);
+  font-family: var(--bold-italic-font-family);
+  padding: 12px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
 }
 
 .button.animated {
@@ -62,4 +62,16 @@
 .button.pink.disabled {
   cursor: not-allowed;
   background: var(--light-gray);
+}
+
+.button.underlined {
+  background-color: var(--white);
+  text-decoration: underline;
+  font-size: var(--normal);
+  color: var(--gray);
+  padding: 0px;
+}
+
+.button.underlined:hover {
+  font-family: var(--bold-font-family);
 }
