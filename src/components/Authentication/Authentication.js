@@ -21,13 +21,7 @@ export const Authentication = () => {
   };
 
   return (
-    <Popup
-      // title={
-      //   currentPopup === SwitchOptions.Login
-      //     ? "Sign In to Shop"
-      //     : "Become a Member"
-      // }
-    >
+    <Popup>
       <section
         key={currentPopup}
         className={`${styles["content"]} ${
