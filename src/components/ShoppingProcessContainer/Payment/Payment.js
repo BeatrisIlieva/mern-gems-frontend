@@ -16,7 +16,6 @@ export const Payment = () => {
     <ShoppingProcessContainer title={"Payment"}>
       <LeftSide>
         <ShippingInformation />
-
         <>
           <ContainerTitle title={"Payment"} />
           <CardDetailsForm />

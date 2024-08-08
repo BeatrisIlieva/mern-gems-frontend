@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { DynamicForm } from "../DynamicForm/DynamicForm";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
@@ -18,10 +18,12 @@ import { getData } from "./helpers/getData";
 
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
 
-export const ShippingDetailsForm = () => {
+export const ShippingDetailsForm = ({ popupCloseHandler }) => {
   const [userShippingDetails, setUserShippingDetails] = useState([]);
 
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -68,7 +70,11 @@ export const ShippingDetailsForm = () => {
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        navigate("/payment");
+        if (locationIsCheckout) {
+          navigate("/payment");
+        } else {
+          popupCloseHandler();
+        }
       } catch (err) {
         console.log(err.message);
       } finally {
@@ -76,6 +82,10 @@ export const ShippingDetailsForm = () => {
       }
     }
   };
+
+  const locationIsCheckout = location.pathname === "/checkout";
+
+  const buttonTitle = locationIsCheckout ? "Continue Checkout" : "Save";
 
   return (
     <>
@@ -88,7 +98,7 @@ export const ShippingDetailsForm = () => {
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
         userInformation={userShippingDetails}
-        buttonTitle={"Continue Checkout"}
+        buttonTitle={buttonTitle}
         onSubmit={onSubmit}
       />
     </>
