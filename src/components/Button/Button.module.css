@@ -30,7 +30,7 @@
   background: var(--pink);
 }
 
-.button.gray {
+.button.gray:hover {
   background: var(--gray);
 }
 
@@ -38,47 +38,3 @@
   cursor: not-allowed;
   background: var(--light-gray);
 }
-
-/* .pink-button,
-.gray-button,
-.pink-button-disabled,
-.gray-button-disabled {
-  padding: 12px;
-  font-size: var(--medium);
-  font-family: var(--bold-italic-font-family);
-  border: none;
-  overflow: hidden;
-  color: var(--white);
-  outline: none;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.pink-button,
-.gray-button {
-  cursor: pointer;
-}
-
-.pink-button {
-  background: var(--medium-pink);
-  transition: background-color 300ms linear, color 300ms;
-}
-
-.gray-button {
-  background: var(--medium-gray);
-  transition: background-color 300ms linear, color 300ms;
-}
-
-.pink-button:hover {
-  background: var(--pink);
-}
-
-.gray-button:hover {
-  background: var(--gray);
-}
-
-.pink-button-disabled {
-  cursor: not-allowed;
-  background: var(--light-gray);
-} */

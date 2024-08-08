@@ -32,7 +32,7 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
           title={"View Bag"}
           buttonIsDisabled={false}
           callBackFunction={toggleDisplayMiniBagPopup}
-          variant={"pink-button"}
+          variant={"pink"}
         />
       </Link>
       <Link to={"/checkout"} className={styles["no-decoration"]}>
@@ -40,7 +40,7 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
           title={"Continue Checkout"}
           buttonIsDisabled={false}
           callBackFunction={toggleDisplayMiniBagPopup}
-          variant={"gray-button"}
+          variant={"gray"}
         />
       </Link>
     </section>
