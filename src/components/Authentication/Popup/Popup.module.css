@@ -35,9 +35,9 @@
 
 @keyframes slideIn {
   from {
-    right: -100%;
+    top: -100%;
   }
   to {
-    right: 0;
+    top: 0;
   }
 }
