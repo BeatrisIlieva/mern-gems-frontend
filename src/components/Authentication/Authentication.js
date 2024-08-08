@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import { Popup } from "./Popup/Popup";
 import { Login } from "./Login/Login";
 import { Register } from "./Register/Register";
-import styles from "./Authentication.module.css";
 
-const SwitchOptions = {
-  Login: "login",
-  Register: "register",
-};
+import { SwitchOptions } from "./switchOptions";
+
+import styles from "./Authentication.module.css";
 
 export const Authentication = () => {
   const [currentPopup, setCurrentPopup] = useState(SwitchOptions.Login);
@@ -23,11 +22,11 @@ export const Authentication = () => {
 
   return (
     <Popup
-      title={
-        currentPopup === SwitchOptions.Login
-          ? "Sign In to Shop"
-          : "Become a Member"
-      }
+      // title={
+      //   currentPopup === SwitchOptions.Login
+      //     ? "Sign In to Shop"
+      //     : "Become a Member"
+      // }
     >
       <section
         key={currentPopup}
