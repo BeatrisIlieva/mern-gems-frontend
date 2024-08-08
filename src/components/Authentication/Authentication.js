@@ -17,7 +17,7 @@ export const Authentication = () => {
     setTimeout(() => {
       setCurrentPopup(option);
       setIsTransitioning(false);
-    }, 800);
+    }, 400);
   };
 
   return (
