@@ -3,7 +3,7 @@ import { useJewelryList } from "../../hooks/useJewelryList";
 
 import { JewelryListItem } from "../JewelryListItem/JewelryListItem";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
-import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
+import { Button } from "../Button/Button";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
 import { COLLECTIONS_BY_ID } from "../../mappers/collectionsById";
@@ -108,7 +108,7 @@ export const JewelryList = () => {
       )}
       {loadMore && showLoadMore && (
         <div className={styles["button"]} onClick={handleLoadMore}>
-          <AnimatedButton title={"Load More"} />
+          <Button title={"Load More"} variant={"animated"} />
         </div>
       )}
     </section>
