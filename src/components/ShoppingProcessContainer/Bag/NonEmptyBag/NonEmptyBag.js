@@ -25,7 +25,7 @@ export const NonEmptyBag = () => {
           <Button
             title={"Continue Checkout"}
             buttonIsDisabled={false}
-            variant={"pink-button"}
+            variant={"pink"}
           />
         </Link>
       </RightSide>

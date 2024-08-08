@@ -108,8 +108,7 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
       <Button
         title={"Add To Bag"}
         buttonIsDisabled={isSoldOut}
-        variant={"pink-button"}
-        variantDisabled={"pink-button-disabled"}
+        variant={"pink"}
       />
     </form>
   );

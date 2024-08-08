@@ -5,12 +5,11 @@ export const Button = ({
   buttonIsDisabled,
   callBackFunction,
   variant,
-  variantDisabled,
 }) => {
   return (
     <button
       className={
-        !buttonIsDisabled ? `${styles[variant]}` : `${styles[variantDisabled]}`
+        !buttonIsDisabled ? `${styles["button"]} ${styles[variant]}` : `${styles["button"]} ${styles[variant]} ${styles["disabled"]}`
       }
       disabled={buttonIsDisabled}
       onClick={callBackFunction}

@@ -1,4 +1,45 @@
-.pink-button,
+.button {
+  padding: 12px;
+  font-size: var(--medium);
+  font-family: var(--bold-italic-font-family);
+  border: none;
+  overflow: hidden;
+  color: var(--white);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button.pink {
+  background: var(--medium-pink);
+  transition: background-color 300ms linear, color 300ms;
+}
+
+.button.gray {
+  background: var(--medium-gray);
+  transition: background-color 300ms linear, color 300ms;
+}
+
+.button.pink,
+.button.gray {
+  cursor: pointer;
+}
+
+.button.pink:hover {
+  background: var(--pink);
+}
+
+.button.gray {
+  background: var(--gray);
+}
+
+.button.pink.disabled {
+  cursor: not-allowed;
+  background: var(--light-gray);
+}
+
+/* .pink-button,
 .gray-button,
 .pink-button-disabled,
 .gray-button-disabled {
@@ -40,4 +81,4 @@
 .pink-button-disabled {
   cursor: not-allowed;
   background: var(--light-gray);
-}
+} */
