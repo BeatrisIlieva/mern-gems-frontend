@@ -16,9 +16,9 @@ import { userCardDetailsServiceFactory } from "../../services/userCardDetailsSer
 
 import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
 import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
-import { checkIfCardHasExpired } from "../../utils/checkIfCardHasExpired";
-import { setCardHasExpiredErrorMessage } from "../../utils/setCardHasExpiredErrorMessage";
-import { getCardDetailsFormData } from "../../utils/getCardDetailsFormData";
+import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
+import { setCardHasExpiredErrorMessage } from "./helpers/setCardHasExpiredErrorMessage";
+import { getData } from "./helpers/getData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
@@ -88,7 +88,7 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
     }
 
     if (!errorOccurred) {
-      const data = getCardDetailsFormData(values);
+      const data = getData(values);
 
       try {
         setIsLoading(true);
