@@ -1,11 +1,10 @@
-.normal-title-regular,
-.normal-title-bolded {
+.title {
   display: inline;
   font-size: var(--normal);
   color: var(--gray);
   text-decoration: none;
 }
 
-.normal-title-bolded {
+.title.bolded {
   font-family: var(--bold-font-family);
 }

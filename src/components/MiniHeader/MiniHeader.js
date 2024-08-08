@@ -12,7 +12,7 @@ export const MiniHeader = () => {
     <header className={styles["mini-header"]}>
       <Link to={"/users/shopping-bag"} className={styles["wrapper"]}>
         <FontAwesomeIcon icon={faArrowLeftLong} className={styles["icon"]} />
-        <NormalTitle title={"Go To Bag"} variant={"regular"} />
+        <NormalTitle title={"Go To Bag"} />
       </Link>
       <div>
         <img

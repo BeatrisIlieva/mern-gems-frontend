@@ -1,5 +1,5 @@
 .collection {
-  margin: 40px;
+  margin: 40px 80px;
 }
 
 .wrapper {
@@ -22,7 +22,7 @@
 }
 
 .hero-img-container {
-  width: calc(50vw - 42px);
+  width: calc(50vw - 82px);
 }
 .hero-img {
   width: 100%;
@@ -31,7 +31,7 @@
 }
 
 .hero-text {
-  width: calc(50vw - 42px);
+  width: calc(50vw - 82px);
   display: flex;
   flex-direction: column;
   align-items: center;

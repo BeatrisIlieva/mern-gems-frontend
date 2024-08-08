@@ -11,25 +11,25 @@ export const NavItems = ({ collectionName, transformedCollectionName }) => {
   const LEFT_NAV_ITEMS = [
     {
       to: "bracelets",
-      label: <NormalTitle title={"Bracelets"} variant={"regular"} />,
+      label: <NormalTitle title={"Bracelets"} />,
       icon: faFilter,
       variant: "filter",
     },
     {
       to: "earrings",
-      label: <NormalTitle title={"Earrings"} variant={"regular"} />,
+      label: <NormalTitle title={"Earrings"} />,
       icon: faFilter,
       variant: "filter",
     },
     {
       to: "necklaces-pendants",
-      label: <NormalTitle title={"Necklaces & Pendants"} variant={"regular"} />,
+      label: <NormalTitle title={"Necklaces & Pendants"} />,
       icon: faFilter,
       variant: "filter",
     },
     {
       to: "rings",
-      label: <NormalTitle title={"Rings"} variant={"regular"} />,
+      label: <NormalTitle title={"Rings"} />,
       icon: faFilter,
       variant: "filter",
     },
@@ -38,12 +38,7 @@ export const NavItems = ({ collectionName, transformedCollectionName }) => {
   const RIGHT_NAV_ITEMS = [
     {
       to: `/${collectionName}`,
-      label: (
-        <NormalTitle
-          title={`${transformedCollectionName} Collection`}
-          variant={"regular"}
-        />
-      ),
+      label: <NormalTitle title={`${transformedCollectionName} Collection`} />,
       icon: faFilterCircleXmark,
       variant: "filter",
     },

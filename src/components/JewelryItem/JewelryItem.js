@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { useService } from "../../hooks/useService";
 
-import { Link, useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 import { jewelryServiceFactory } from "../../services/jewelryService";
 
@@ -19,10 +19,9 @@ import { EARRING_ID } from "../../constants/earringId";
 
 import { MiniBag } from "../MiniBag/MiniBag";
 
-import { transformUrlSegment } from "../../utils/transformUrlSegment";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import { Nav } from "./Nav/Nav";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 import styles from "./JewelryItem.module.css";
 
@@ -79,9 +78,6 @@ export const JewelryItem = () => {
     updateIsSoldOut(allZero);
   }, [sizes]);
 
-  const collectionTitle = transformUrlSegment(collection);
-  const categoryTitle = transformUrlSegment(category);
-
   return (
     <>
       {jewelry ? (
@@ -90,17 +86,7 @@ export const JewelryItem = () => {
             <MiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
           )}
           <section className={styles["jewelry-item"]}>
-            <nav className={styles["nav"]}>
-              <Link
-                to={`/${collection}`}
-                className={styles["nav-item"]}
-              >{`${collectionTitle}`}</Link>
-              <FontAwesomeIcon icon={faCircle} className={styles["icon"]} />
-              <Link
-                to={`/${collection}/${category}`}
-                className={styles["nav-item"]}
-              >{`${categoryTitle}`}</Link>
-            </nav>
+            <Nav collection={collection} category={category} />
             <div className={styles["jewelry-wrapper"]}>
               <div className={styles["left-container"]}>
                 <Image />
