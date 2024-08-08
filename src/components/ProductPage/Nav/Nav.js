@@ -5,7 +5,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "./Nav.module.css"
+import styles from "./Nav.module.css";
 
 export const Nav = ({ collection, category }) => {
   const collectionTitle = transformUrlSegment(collection);

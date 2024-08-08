@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-import { CircleIcon } from "../CircleIcon/CircleIcon";
+import { CircleIcon } from "./CircleIcon/CircleIcon";
 
-import styles from "./Image.module.css";
+import styles from "./Images.module.css";
 
 import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 
-export const Image = () => {
+export const Images = () => {
   const { jewelry, isSoldOut } = useJewelryItemContext();
 
   const [leftIsSelected, setLeftIsSelected] = useState(true);

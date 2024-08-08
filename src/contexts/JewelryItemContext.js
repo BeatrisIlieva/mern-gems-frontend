@@ -18,8 +18,14 @@ export const JewelryItemProvider = ({ children }) => {
 
   const [jewelry, setJewelry] = useState([]);
 
+  const [categoryIsEarring, setCategoryIsEarring] = useState(false);
+
   const updateJewelry = (jewelry) => {
     setJewelry(jewelry);
+  };
+
+  const updateCategoryIsEarring = (categoryIsEarring) => {
+    setCategoryIsEarring(categoryIsEarring);
   };
 
   const updateSizes = (sizes) => {
@@ -78,6 +84,8 @@ export const JewelryItemProvider = ({ children }) => {
     selectedSize,
     updateSelectedSize,
     removeSelectedSize,
+    categoryIsEarring,
+    updateCategoryIsEarring,
   };
 
   return (

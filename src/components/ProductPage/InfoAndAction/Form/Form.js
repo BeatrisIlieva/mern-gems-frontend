@@ -1,18 +1,18 @@
 import { useState } from "react";
 
-import { useService } from "../../../hooks/useService";
-import { bagServiceFactory } from "../../../services/bagService";
+import { useService } from "../../../../hooks/useService";
+import { bagServiceFactory } from "../../../../services/bagService";
 
-import { Button } from "../../Button/Button";
-import { NormalTitle } from "../../NormalTitle/NormalTitle";
-import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
+import { Button } from "../../../Button/Button";
+import { NormalTitle } from "../../../NormalTitle/NormalTitle";
+import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 import styles from "./Form.module.css";
 
-import { SIZE_FORM_KEY } from "../../../constants/sizeFormKey";
-import { SIZE_ERROR_MESSAGE } from "../../../constants/sizeErrorMessage";
+import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
+import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
-import { EARRING_ID } from "../../../constants/earringId";
-import { useBagContext } from "../../../contexts/BagContext";
+import { EARRING_ID } from "../../../../constants/earringId";
+import { useBagContext } from "../../../../contexts/BagContext";
 
 export const Form = ({ toggleDisplayMiniBagPopup }) => {
   const {

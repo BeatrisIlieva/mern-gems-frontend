@@ -6,12 +6,10 @@ import { useParams, useLocation } from "react-router-dom";
 
 import { jewelryServiceFactory } from "../../services/jewelryService";
 
-import { Image } from "./Image/Image";
+import { Images } from "./Images/Images";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 
-import { NormalTitle } from "../NormalTitle/NormalTitle";
-import { LargeTitle } from "../LargeTitle/LargeTitle";
-import { Form } from "./Form/Form";
+import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
 
 import { useJewelryItemContext } from "../../contexts/JewelryItemContext";
 
@@ -21,11 +19,9 @@ import { MiniBag } from "../MiniBag/MiniBag";
 
 import { Nav } from "./Nav/Nav";
 
+import styles from "./ProductPage.module.css";
 
-
-import styles from "./JewelryItem.module.css";
-
-export const JewelryItem = () => {
+export const ProductPage = () => {
   const location = useLocation();
   const pathname = location.pathname;
   const pathSegments = pathname.replace(/^\/+/, "").split("/");
@@ -36,11 +32,12 @@ export const JewelryItem = () => {
   const {
     sizes,
     updateSizeIsSelected,
-    jewelry,
     updateJewelry,
     updateSizes,
     toggleIsLoading,
     updateIsSoldOut,
+    updateCategoryIsEarring,
+    isLoading,
   } = useJewelryItemContext();
 
   const jewelryService = useService(jewelryServiceFactory);
@@ -55,6 +52,8 @@ export const JewelryItem = () => {
         updateJewelry(data[0]);
 
         updateSizes(data[0].sizes);
+
+        updateCategoryIsEarring(data[0].category === EARRING_ID);
 
         updateSizeIsSelected(data[0].category === EARRING_ID);
       })
@@ -80,7 +79,9 @@ export const JewelryItem = () => {
 
   return (
     <>
-      {jewelry ? (
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
         <>
           {displayMiniBagPopup && (
             <MiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
@@ -89,26 +90,14 @@ export const JewelryItem = () => {
             <Nav collection={collection} category={category} />
             <div className={styles["jewelry-wrapper"]}>
               <div className={styles["left-container"]}>
-                <Image />
+                <Images />
               </div>
-              <div className={styles["right-container"]}>
-                <LargeTitle title={jewelry.title} variant={"large-title"} />
-                <p className={styles["description"]}>
-                  {jewelry.description}.{" "}
-                  {jewelry.sizes &&
-                    jewelry.category === EARRING_ID &&
-                    jewelry.sizes[0].measurement}
-                </p>
-                {jewelry.category !== EARRING_ID && (
-                  <NormalTitle title={"Size:"} variant={"bolded"} />
-                )}
-                <Form toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
-              </div>
+              <InfoAndAction
+                toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+              />
             </div>
           </section>
         </>
-      ) : (
-        <LoadingSpinner />
       )}
     </>
   );
