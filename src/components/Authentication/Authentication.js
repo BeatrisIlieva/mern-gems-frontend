@@ -22,6 +22,15 @@ export const Authentication = () => {
 
   return (
     <Popup>
+      <div className={styles["image"]}>
+        <img
+          className={styles["img"]}
+          src={
+            "https://res.cloudinary.com/deztgvefu/image/upload/v1714938396/template_images/Screenshot_2024-05-05_at_22.42.20-removebg-preview_xfkrvq.png"
+          }
+          alt="logo"
+        />
+      </div>
       <section
         key={currentPopup}
         className={`${styles["content"]} ${
