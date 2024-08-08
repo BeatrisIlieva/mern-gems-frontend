@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import { DynamicForm } from "../DynamicForm/DynamicForm";
-import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 
 import { useBagContext } from "../../contexts/BagContext";
@@ -117,7 +116,6 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <ContainerTitle title={"Payment"} />
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
