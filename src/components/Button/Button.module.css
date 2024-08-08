@@ -5,16 +5,6 @@
   outline: none;
 }
 
-.button.pink {
-  background: var(--medium-pink);
-  transition: background-color 300ms linear, color 300ms;
-}
-
-.button.gray {
-  background: var(--medium-gray);
-  transition: background-color 300ms linear, color 300ms;
-}
-
 .button.pink,
 .button.gray,
 .button.animated {
@@ -25,6 +15,32 @@
   width: 100%;
   justify-content: center;
   display: flex;
+}
+
+.button.pink,
+.button.gray {
+  transition: background-color 300ms linear, color 300ms;
+}
+
+.button.pink {
+  background: var(--medium-pink);
+}
+
+.button.pink:hover {
+  background: var(--pink);
+}
+
+.button.pink.disabled {
+  cursor: not-allowed;
+  background: var(--light-gray);
+}
+
+.button.gray {
+  background: var(--medium-gray);
+}
+
+.button.gray:hover {
+  background: var(--gray);
 }
 
 .button.animated {
@@ -49,19 +65,6 @@
 .button.animated:hover::before {
   width: 100%;
   left: 0;
-}
-
-.button.pink:hover {
-  background: var(--pink);
-}
-
-.button.gray:hover {
-  background: var(--gray);
-}
-
-.button.pink.disabled {
-  cursor: not-allowed;
-  background: var(--light-gray);
 }
 
 .button.underlined {
