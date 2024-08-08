@@ -1,7 +1,7 @@
 import { useBagContext } from "../../../contexts/BagContext";
 
 import { HorizontalLine } from "../../HorizontalLine/HorizontalLine";
-import { ContainerTitle } from "../../ContainerTitle/ContainerTitle";
+import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
 import { SectionContainer } from "./SectionContainer/SectionContainer";
 import styles from "./OrderSummary.module.css";
 

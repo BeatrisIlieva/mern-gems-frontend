@@ -25,6 +25,8 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
 
   const location = useLocation();
 
+  const locationIsCheckout = location.pathname === "/checkout";
+
   const [isLoading, setIsLoading] = useState(false);
 
   const { userId } = useAuthenticationContext();
@@ -82,8 +84,6 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
       }
     }
   };
-
-  const locationIsCheckout = location.pathname === "/checkout";
 
   const buttonTitle = locationIsCheckout ? "Continue Checkout" : "Save";
 
