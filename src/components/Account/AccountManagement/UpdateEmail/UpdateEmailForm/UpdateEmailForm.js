@@ -18,8 +18,6 @@ import { getData } from "./helpers/getData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import styles from "./UpdateEmailForm.module.css";
-
 export const UpdateEmailForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -87,19 +85,17 @@ export const UpdateEmailForm = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <div className={styles["slideIn"]}>
-        <DynamicForm
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          userInformation={userLoginDetails}
-          buttonTitle={"Save"}
-          onSubmit={onSubmit}
-        />
-      </div>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userLoginDetails}
+        buttonTitle={"Save"}
+        onSubmit={onSubmit}
+      />
     </>
   );
 };

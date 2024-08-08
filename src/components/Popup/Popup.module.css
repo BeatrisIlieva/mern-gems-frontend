@@ -22,7 +22,7 @@
   transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 20px;
   animation: slideInTop 1s forwards;
-  max-height: 90vh;
+  max-height: 96vh;
   overflow-y: auto;
 }
 
@@ -47,7 +47,7 @@
   font-size: var(--large);
   text-align: center;
   font-family: var(--bold-font-family);
-  margin: 30px 0px 60px 0px;
+  margin: 20px 0px 40px 0px;
 }
 
 @keyframes slideInTop {

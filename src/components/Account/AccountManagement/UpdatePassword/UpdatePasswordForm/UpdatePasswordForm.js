@@ -21,8 +21,6 @@ import { removeSuccessMessage } from "./helpers/removeSuccessMessage";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-import styles from "./UpdatePasswordForm.module.css";
-
 export const UpdatePasswordForm = () => {
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
@@ -104,19 +102,17 @@ export const UpdatePasswordForm = () => {
   return (
     <>
       {isLoading && <LoadingSpinner />}
-      <div className={styles["slideIn"]}>
-        <DynamicForm
-          values={values}
-          formKeys={FORM_KEYS}
-          clickHandler={clickHandler}
-          blurHandler={blurHandler}
-          changeHandler={changeHandler}
-          initialFormValues={INITIAL_FORM_VALUES}
-          userInformation={userLoginDetails}
-          buttonTitle={"Save"}
-          onSubmit={onSubmit}
-        />
-      </div>
+      <DynamicForm
+        values={values}
+        formKeys={FORM_KEYS}
+        clickHandler={clickHandler}
+        blurHandler={blurHandler}
+        changeHandler={changeHandler}
+        initialFormValues={INITIAL_FORM_VALUES}
+        userInformation={userLoginDetails}
+        buttonTitle={"Save"}
+        onSubmit={onSubmit}
+      />
     </>
   );
 };
