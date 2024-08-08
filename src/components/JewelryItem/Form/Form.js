@@ -66,9 +66,10 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
         await addToBagHandler({ size: sizeId }, jewelry._id);
       } else {
         await addToBagHandler(selectedSize, jewelry._id);
+
+        updateSizeIsSelected(false);
       }
       removeSelectedSize();
-      updateSizeIsSelected(false);
     } catch (err) {
       console.log(err.message);
     }

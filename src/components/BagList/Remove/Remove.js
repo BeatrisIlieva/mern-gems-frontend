@@ -1,9 +1,10 @@
-import { useService } from "../../../hooks/useService";
-import { bagServiceFactory } from "../../../services/bagService";
+import { UnderlinedButton } from "../../UnderlinedButton/UnderlinedButton";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
-import styles from "./Remove.module.css";
+import { useService } from "../../../hooks/useService";
+
+import { bagServiceFactory } from "../../../services/bagService";
 
 export const Remove = ({ bagId }) => {
   const { removeBagItem, updateBagTotalQuantity } = useBagContext();
@@ -18,9 +19,5 @@ export const Remove = ({ bagId }) => {
     updateBagTotalQuantity(-1);
   };
 
-  return (
-    <button className={styles["button"]} onClick={removeItem}>
-      Remove
-    </button>
-  );
+  return <UnderlinedButton title={"Remove"} callBackFunction={removeItem} />;
 };

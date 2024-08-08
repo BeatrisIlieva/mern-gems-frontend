@@ -55,7 +55,6 @@ export const JewelryItemProvider = ({ children }) => {
   };
 
   const increaseSizeQuantity = (sizeId) => {
-    console.log(sizeId);
     setSizes((prevSizes) =>
       prevSizes.map((size) =>
         size._id === sizeId ? { ...size, quantity: size.quantity + 1 } : size
