@@ -26,13 +26,6 @@
   height: fit-content;
 }
 
-.title {
-  font-size: var(--large);
-  text-align: center;
-  font-family: var(--bold-font-family);
-  margin: 30px 0px 60px 0px;
-}
-
 @keyframes slideIn {
   from {
     top: -100%;

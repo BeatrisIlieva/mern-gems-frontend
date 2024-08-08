@@ -1,0 +1,14 @@
+.button {
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--white);
+  outline: none;
+  text-decoration: underline;
+  padding: 0px;
+  min-width: 60px;
+}
+
+.button:hover {
+  font-family: var(--bold-font-family);
+}
