@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button } from "../Button/Button";
+import { Button } from "../../../Button/Button";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { Popup } from "../../../Popup/Popup";
 
@@ -16,9 +16,14 @@ export const UpdateEmail = () => {
       <Button
         title={"Update Email Address"}
         callBackFunction={toggleDisplayPopup}
+        variant={"underlined"}
       />
       {displayPopup && (
-        <Popup popupCloseHandler={toggleDisplayPopup} title={"Update Email"} variant={"small"}>
+        <Popup
+          popupCloseHandler={toggleDisplayPopup}
+          title={"Update Email"}
+          variant={"small"}
+        >
           <UpdateEmailForm />
         </Popup>
       )}
