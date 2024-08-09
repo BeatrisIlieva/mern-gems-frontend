@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
 import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
+import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistory";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
 import { Popup } from "../../Popup/Popup";
 
@@ -12,8 +12,6 @@ import { useService } from "../../../hooks/useService";
 import { orderServiceFactory } from "../../../services/orderService";
 
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
-
-import styles from "./OrderHistory.module.css";
 
 export const OrderHistory = () => {
   const { userId } = useAuthenticationContext();
@@ -56,13 +54,7 @@ export const OrderHistory = () => {
           {orderItems.length < 1 ? (
             <EmptyOrderHistory />
           ) : (
-            <ul role="list" className={styles["order-history"]}>
-              {orderItems.map((item) => (
-                <li key={item._id}>
-                  <OrderHistoryList {...item} />
-                </li>
-              ))}
-            </ul>
+            <NonEmptyOrderHistory orderItems={orderItems} />
           )}
         </Popup>
       )}
