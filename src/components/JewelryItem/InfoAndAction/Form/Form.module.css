@@ -1,22 +1,5 @@
-
-
-.selected {
-  background-color: var(--light-pink) !important;
-}
-
-.size-form {
+.form {
   display: flex;
   flex-direction: column;
-}
-
-.size-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-}
-
-
-
-.add-margin {
-  margin-bottom: 10px;
+  gap: 20px;
 }

@@ -25,6 +25,7 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
     selectedSize,
     updateSelectedSize,
     removeSelectedSize,
+    categoryIsEarring,
   } = useJewelryItemContext();
 
   const { updateBagTotalQuantity } = useBagContext();
@@ -47,7 +48,9 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
 
   const changeHandler = (e) => {
     updateSelectedSize(e);
+
     updateSizeIsSelected(true);
+    
     setErrorMessage("");
   };
 
@@ -69,6 +72,7 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
 
         updateSizeIsSelected(false);
       }
+
       removeSelectedSize();
     } catch (err) {
       console.log(err.message);
@@ -76,13 +80,12 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit}>
-      <Sizes errorMessage={errorMessage} changeHandler={changeHandler} />
-      <div className={styles["add-margin"]}>
-        <NormalTitle title={`$ ${jewelry.price}`} variant={"bolded"} />
-      </div>
+    <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
+      {!categoryIsEarring && jewelry.sizes && (
+        <Sizes errorMessage={errorMessage} changeHandler={changeHandler} />
+      )}
       <Button
-        title={"Add To Bag"}
+        title={`Add To Bag $ ${jewelry.price}`}
         buttonIsDisabled={isSoldOut}
         variant={"pink"}
       />

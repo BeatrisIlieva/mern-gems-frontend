@@ -13,7 +13,6 @@ export const InfoAndAction = ({ toggleDisplayMiniBagPopup }) => {
     <section className={styles["info-and-action"]}>
       <LargeTitle title={jewelry.title} />
       <Description/>
-      {categoryIsEarring && <NormalTitle title={"Size:"} variant={"bolded"} />}
       <Form toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
     </section>
   );
