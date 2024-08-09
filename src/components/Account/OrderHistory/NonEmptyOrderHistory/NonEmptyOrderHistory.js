@@ -1,4 +1,8 @@
-export const NonEmptyOrderHistory = () => {
+import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
+
+import styles from "./NonEmptyOrderHistory.module.css";
+
+export const NonEmptyOrderHistory = ({ orderItems }) => {
   return (
     <ul role="list" className={styles["order-history"]}>
       {orderItems.map((item) => (
