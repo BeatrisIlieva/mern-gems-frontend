@@ -1,9 +1,9 @@
 .header {
-  height: 10vh;
+  height: calc(10vh);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 0.1px solid var(--pink);
+  margin-top: 20px;
 }
 
 .collection {

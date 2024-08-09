@@ -1,8 +1,11 @@
-.title {
+.info-message {
+  margin: 40px 0px;
+}
+
+.message {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin: 40px 0px 60px 0px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
