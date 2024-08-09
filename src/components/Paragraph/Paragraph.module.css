@@ -1,4 +1,5 @@
 .paragraph {
   text-align: center;
   color: var(--gray);
+  margin: 0px 40px;
 }
