@@ -1,12 +1,11 @@
-.mini-bag,
-.shopping-process-container {
+.bag-list {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   gap: 20px;
 }
 
-.mini-bag {
+.bag-list.mini {
   overflow-y: auto;
   height: calc(100vh - 280px);
 }

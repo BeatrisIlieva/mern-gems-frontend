@@ -1,12 +1,11 @@
+import { useLocation } from "react-router-dom";
+import { useBagContext } from "../../contexts/BagContext";
+
 import { JewelryCard } from "../JewelryCard/JewelryCard";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-
 import { Remove } from "./Remove/Remove";
 
 import styles from "./BagList.module.css";
-import { useLocation } from "react-router-dom";
-
-import { useBagContext } from "../../contexts/BagContext";
 
 export const BagList = ({ variant }) => {
   const location = useLocation();
@@ -17,7 +16,7 @@ export const BagList = ({ variant }) => {
   const { bagItems } = useBagContext();
 
   return (
-    <ul role="list" className={styles[variant]}>
+    <ul role="list" className={`${styles["bag-list"]} ${styles[variant]}`}>
       {bagItems.map((item) => (
         <li key={item.bagId} className={styles["wrapper"]}>
           <JewelryCard

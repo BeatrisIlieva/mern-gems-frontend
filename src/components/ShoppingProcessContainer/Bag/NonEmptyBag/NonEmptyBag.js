@@ -17,7 +17,7 @@ export const NonEmptyBag = () => {
   return (
     <ShoppingProcessContainer title={"Bag"}>
       <LeftSide>
-        <BagList variant={"shopping-process-container"} />
+        <BagList />
       </LeftSide>
       <RightSide>
         <OrderSummary />

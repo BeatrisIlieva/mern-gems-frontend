@@ -22,7 +22,7 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
         <LargeTitle title={"My Bag"} />
         <BagCount />
       </div>
-      <BagList variant={"mini-bag"} />
+      <BagList variant={"mini"} />
       <div className={styles["total-price-wrapper"]}>
         <NormalTitle title={"Total"} variant={"bolded"} />
         <NormalTitle title={`$ ${totalPrice}`} variant={"bolded"} />
