@@ -1,7 +1,7 @@
 .jewelry-images,
 .no-second-image-available {
   position: relative;
-  width: calc(100vh - 240px);
+  width: 40vw;
 }
 
 .jewelry-images {
@@ -15,6 +15,13 @@
 .thumbnail {
   animation: slideIn 0.5s forwards;
   display: inline-block;
+}
+
+.left-image,
+.right-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .left-image {

@@ -1,14 +1,19 @@
 import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 
-import styles from "./Description.module.css";
+import { Paragraph } from "../../../Paragraph/Paragraph";
 
 export const Description = () => {
   const { jewelry, categoryIsEarring } = useJewelryItemContext();
 
-  return (
-    <p className={styles["description"]}>
-      {jewelry.description}.{" "}
-      {jewelry.sizes && categoryIsEarring && jewelry.sizes[0].measurement}
-    </p>
-  );
+  let earringSize;
+
+  if (categoryIsEarring) {
+    earringSize = jewelry.sizes[0].measurement;
+  }
+
+  const text = earringSize
+    ? `${jewelry.description}. ${earringSize}`
+    : `${jewelry.description}.`;
+
+  return <Paragraph text={text} />;
 };

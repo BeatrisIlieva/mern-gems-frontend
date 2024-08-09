@@ -10,11 +10,11 @@ export const InfoAndAction = ({ toggleDisplayMiniBagPopup }) => {
   const { jewelry, categoryIsEarring } = useJewelryItemContext();
 
   return (
-    <div className={styles["right-container"]}>
+    <section className={styles["info-and-action"]}>
       <LargeTitle title={jewelry.title} />
       <Description/>
       {categoryIsEarring && <NormalTitle title={"Size:"} variant={"bolded"} />}
       <Form toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
-    </div>
+    </section>
   );
 };
