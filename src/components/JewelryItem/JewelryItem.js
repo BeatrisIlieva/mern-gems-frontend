@@ -89,9 +89,7 @@ export const JewelryItem = () => {
           <section className={styles["jewelry-item"]}>
             <Nav collection={collection} category={category} />
             <div className={styles["jewelry-wrapper"]}>
-              <div className={styles["left-container"]}>
-                <Images />
-              </div>
+              <Images />
               <InfoAndAction
                 toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
               />

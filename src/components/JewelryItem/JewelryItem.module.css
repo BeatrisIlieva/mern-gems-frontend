@@ -1,23 +1,10 @@
 .jewelry-item {
   margin: 20px 80px 40px 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
 }
 
 .jewelry-wrapper {
   display: flex;
   justify-content: space-around;
-  gap: 30px;
-}
-
-.left-container {
-  width: 40%;
-  position: relative;
-}
-
-
-
-.description {
-  margin-bottom: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
