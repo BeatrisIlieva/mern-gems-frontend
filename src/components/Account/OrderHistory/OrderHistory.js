@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
+import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
+import { Collection } from "../../Collection/Collection";
+import { InfoMessage } from "../../InfoMessage/InfoMessage";
+import { SectionContainer } from "../SectionContainer/SectionContainer";
+import { Popup } from "../../Popup/Popup";
+
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../hooks/useService";
 
 import { orderServiceFactory } from "../../../services/orderService";
-import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { Popup } from "../../Popup/Popup"
-
-import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
-import { Collection } from "../../Collection/Collection";
-import { InfoMessage } from "../../InfoMessage/InfoMessage";
 
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -49,7 +49,11 @@ export const OrderHistory = () => {
         buttonTitle={"View Order History"}
       />
       {displayPopup && (
-        <Popup popupCloseHandler={toggleDisplayPopup} title={"Order History"} variant={"large"}>
+        <Popup
+          popupCloseHandler={toggleDisplayPopup}
+          title={"Order History"}
+          variant={"large"}
+        >
           {orderItems.length < 1 ? (
             <div>
               <InfoMessage
@@ -69,10 +73,6 @@ export const OrderHistory = () => {
           )}
         </Popup>
       )}
-      {/* <Popup
-        displayPopup={displayPopup}
-        popupCloseHandler={toggleDisplayPopup}
-      /> */}
     </>
   );
 };
