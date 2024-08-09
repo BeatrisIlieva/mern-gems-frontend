@@ -1,0 +1,32 @@
+.radio-container {
+  display: flex;
+}
+
+.label {
+  display: flex;
+  gap: 1px;
+  border: 1px solid var(--medium-pink);
+  width: 72px;
+  height: 36px;
+  margin-right: 6px;
+  margin-top: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  color: var(--red);
+}
+
+input[type="radio"] {
+  display: none;
+  &:not(:disabled) ~ label {
+    cursor: pointer;
+  }
+  &:disabled ~ label {
+    color: var(--medium-gray);
+    border: 1px solid var(--medium-gray);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
