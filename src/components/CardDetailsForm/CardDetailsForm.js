@@ -15,6 +15,7 @@ import { userCardDetailsServiceFactory } from "../../services/userCardDetailsSer
 
 import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
 import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
+
 import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
 import { setCardHasExpiredErrorMessage } from "./helpers/setCardHasExpiredErrorMessage";
 import { getData } from "./helpers/getData";
@@ -28,13 +29,13 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const userCardDetailsService = useService(userCardDetailsServiceFactory);
-
-  const paymentService = useService(paymentServiceFactory);
-
   const { userId } = useAuthenticationContext();
 
   const { totalPrice } = useBagContext();
+
+  const userCardDetailsService = useService(userCardDetailsServiceFactory);
+
+  const paymentService = useService(paymentServiceFactory);
 
   const {
     values,
