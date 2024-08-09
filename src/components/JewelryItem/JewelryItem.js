@@ -19,9 +19,9 @@ import { MiniBag } from "../MiniBag/MiniBag";
 
 import { Nav } from "./Nav/Nav";
 
-import styles from "./ProductPage.module.css";
+import styles from "./JewelryItem.module.css";
 
-export const ProductPage = () => {
+export const JewelryItem = () => {
   const location = useLocation();
   const pathname = location.pathname;
   const pathSegments = pathname.replace(/^\/+/, "").split("/");

@@ -13,7 +13,7 @@ import { MiniHeader } from "./components/MiniHeader/MiniHeader";
 import { Collection } from "./components/Collection/Collection";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
-import { ProductPage } from "./components/ProductPage/ProductPage";
+import { JewelryItem } from "./components/JewelryItem/JewelryItem";
 import { Account } from "./components/Account/Account";
 import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
@@ -93,7 +93,7 @@ function App() {
             path="/:slugifiedCollectionTitle/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:jewelryId"
             element={
               <RouteGuard>
-                <ProductPage />
+                <JewelryItem />
               </RouteGuard>
             }
           />
