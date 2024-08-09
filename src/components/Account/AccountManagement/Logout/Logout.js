@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { Button } from "../Button/Button";
+import { Button } from "../../../Button/Button";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 import { useBagContext } from "../../../../contexts/BagContext";
@@ -28,5 +28,11 @@ export const Logout = () => {
     navigate("/");
   };
 
-  return <Button title={"Logout"} callBackFunction={logoutHandler} />;
+  return (
+    <Button
+      title={"Logout"}
+      callBackFunction={logoutHandler}
+      variant={"underlined"}
+    />
+  );
 };
