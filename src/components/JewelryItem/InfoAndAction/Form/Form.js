@@ -4,7 +4,7 @@ import { useService } from "../../../../hooks/useService";
 import { bagServiceFactory } from "../../../../services/bagService";
 
 import { Button } from "../../../Button/Button";
-import { NormalTitle } from "../../../NormalTitle/NormalTitle";
+
 import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 import styles from "./Form.module.css";
 
