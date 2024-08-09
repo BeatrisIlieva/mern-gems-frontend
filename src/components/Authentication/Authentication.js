@@ -10,10 +10,12 @@ import styles from "./Authentication.module.css";
 
 export const Authentication = () => {
   const [currentPopup, setCurrentPopup] = useState(SwitchOptions.Login);
+
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const switchPopupHandler = (option) => {
     setIsTransitioning(true);
+
     setTimeout(() => {
       setCurrentPopup(option);
       setIsTransitioning(false);
