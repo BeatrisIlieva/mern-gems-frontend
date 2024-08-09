@@ -6,15 +6,7 @@
   flex-direction: column;
   gap: 20px;
   border: 0.1px solid var(--pink);
-}
-
-.title {
-  font-size: var(--large);
-  font-family: var(--bold-italic-font-family);
-}
-.email {
-  font-family: var(--bold-font-family);
-  font-size: var(--normal);
+  align-items: flex-start;
 }
 
 .buttons-container {

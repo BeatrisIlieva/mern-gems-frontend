@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
 import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
 import { Logout } from "./Logout/Logout";
+import { NormalTitle } from "../../NormalTitle/NormalTitle";
+import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -46,8 +48,8 @@ export const AccountManagement = () => {
 
   return (
     <section className={styles["account-management"]}>
-      <h2 className={styles["title"]}>Account Management</h2>
-      <h3 className={styles["email"]}>{userLoginDetails.email}</h3>
+      <LargeTitle title={"Account Management"} />
+      <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
         <UpdateEmail
           updateEmailClickHandler={updateEmailClickHandler}
@@ -62,4 +64,3 @@ export const AccountManagement = () => {
     </section>
   );
 };
-
