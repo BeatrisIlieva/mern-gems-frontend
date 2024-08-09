@@ -37,19 +37,5 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-}
-
-.title {
-  margin-bottom: 10px;
-  text-decoration: none;
-  font-size: var(--large);
-  font-family: var(--bold-italic-font-family);
-  text-align: center;
-  color: var(--gray);
-}
-
-.paragraph {
-  margin: 0px 30px 30px 30px;
-  text-align: center;
-  color: var(--gray);
+  gap: 20px;
 }

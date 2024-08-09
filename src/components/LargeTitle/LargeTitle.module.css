@@ -3,4 +3,5 @@
   font-size: var(--large);
   font-family: var(--bold-italic-font-family);
   text-align: center;
+  color: var(--gray);
 }

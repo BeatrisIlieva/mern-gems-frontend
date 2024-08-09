@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import { Paragraph } from "../Paragraph/Paragraph";
+import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { Button } from "../Button/Button";
 import { collectionItems } from "./collectionItems";
 
@@ -19,8 +20,8 @@ export const Collection = () => {
               }
             >
               <div className={styles["hero-text"]}>
-                <h2 className={styles["title"]}>{item.title} Collection</h2>
-                <p className={styles["paragraph"]}>{item.description}</p>
+                <LargeTitle title={`${item.title} Collection`} />
+                <Paragraph text={item.description} />
                 <Button title={"Discover"} variant={"animated"} />
               </div>
               <div className={styles["hero-img-container"]}>
