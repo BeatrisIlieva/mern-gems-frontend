@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { OrderHistoryList } from "./OrderHistoryList/OrderHistoryList";
-import { Collection } from "../../Collection/Collection";
-import { InfoMessage } from "../../InfoMessage/InfoMessage";
+import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
 import { Popup } from "../../Popup/Popup";
 
@@ -55,13 +54,7 @@ export const OrderHistory = () => {
           variant={"large"}
         >
           {orderItems.length < 1 ? (
-            <div>
-              <InfoMessage
-                title={"You have no orders"}
-                subtitle={"Explore and add something you love."}
-              />
-              <Collection />
-            </div>
+            <EmptyOrderHistory />
           ) : (
             <ul role="list" className={styles["order-history"]}>
               {orderItems.map((item) => (
