@@ -14,11 +14,11 @@ import { orderServiceFactory } from "../../../services/orderService";
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 export const OrderHistory = () => {
+  const [orderItems, setOrderItems] = useState([]);
+
   const { userId } = useAuthenticationContext();
 
   const orderService = useService(orderServiceFactory);
-
-  const [orderItems, setOrderItems] = useState([]);
 
   useEffect(() => {
     orderService
