@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
-import { useBagContext } from "../../contexts/BagContext";
 
 import { JewelryCard } from "../JewelryCard/JewelryCard";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
 import { Remove } from "./Remove/Remove";
+
+import { useBagContext } from "../../contexts/BagContext";
 
 import styles from "./BagList.module.css";
 
@@ -34,7 +35,6 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
-
             <SectionContainer
               firstTitle={`Size: ${item.size}`}
               secondTitle={
