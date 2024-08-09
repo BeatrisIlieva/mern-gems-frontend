@@ -1,5 +1,11 @@
+import { LargeTitle } from "../../LargeTitle/LargeTitle";
+
 import styles from "./Header.module.css";
 
 export const Header = ({ title }) => {
-  return <h2 className={styles["title"]}>{title}</h2>;
+  return (
+    <div className={styles["header"]}>
+      <LargeTitle title={title} />
+    </div>
+  );
 };
