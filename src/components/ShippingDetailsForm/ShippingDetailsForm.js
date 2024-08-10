@@ -19,6 +19,7 @@ import { getData } from "./helpers/getData";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
 
 export const ShippingDetailsForm = ({ popupCloseHandler }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [userShippingDetails, setUserShippingDetails] = useState([]);
 
   const navigate = useNavigate();
@@ -26,8 +27,6 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
   const location = useLocation();
 
   const locationIsCheckout = location.pathname === "/checkout";
-
-  const [isLoading, setIsLoading] = useState(false);
 
   const { userId } = useAuthenticationContext();
 
