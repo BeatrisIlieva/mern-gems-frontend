@@ -1,6 +1,5 @@
 .right {
   position: sticky;
-  /* width: calc(50% - 20px); */
   width: 540px;
   height: fit-content;
   top: 200px;
