@@ -9,7 +9,10 @@ export const OrderConfirmation = () => {
   return (
     <section className={styles["order-confirmation"]}>
       <div className={styles["info"]}>
-        <XLargeTitle title={"Thank you for your purchase!"} variant={"italic"}/>
+        <XLargeTitle
+          title={"Thank you for your purchase!"}
+          variant={"italic"}
+        />
         <NormalTitle
           title={"Your order has been successfully placed."}
           variant={"bolded"}
