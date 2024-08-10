@@ -21,7 +21,7 @@ export const Header = () => {
         </div>
         <NavLinkItem items={RIGHT_NAV_ITEMS} />
       </div>
-      <HorizontalLine variant={"large"} position={"absolute"} />
+      <HorizontalLine variantHorizontalLine={"header"} variantHr={"large"}/>
     </header>
   );
 };
