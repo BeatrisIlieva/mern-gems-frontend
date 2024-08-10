@@ -27,13 +27,13 @@ export const OrderSummary = () => {
         secondTitle={"Complimentary"}
         variant={"regular"}
       />
-      {locationIsBag && <HorizontalLine variant={"large"} />}
+      {locationIsBag && <HorizontalLine  variantHr={"large"}/>}
       <SectionContainer
         firstTitle={"Total"}
         secondTitle={`$ ${totalPrice}`}
         variant={"bolded"}
       />
-      {!locationIsBag && <HorizontalLine variant={"large"} />}
+      {!locationIsBag && <HorizontalLine variantHr={"large"} />}
     </section>
   );
 };

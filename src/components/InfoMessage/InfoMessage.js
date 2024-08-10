@@ -8,10 +8,10 @@ export const InfoMessage = ({ title, subtitle }) => {
   return (
     <section className={styles["info-message"]}>
       <div className={styles["message"]}>
-      <XLargeTitle title={title} variant={"regular"} />
-      <NormalTitle title={subtitle} variant={"bolded"} />
+        <XLargeTitle title={title} variant={"regular"} />
+        <NormalTitle title={subtitle} variant={"bolded"} />
       </div>
-      <HorizontalLine variant={"small"}/>
+      <HorizontalLine variantHr={"small"} />
     </section>
   );
 };
