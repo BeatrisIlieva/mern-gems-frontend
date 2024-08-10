@@ -1,10 +1,11 @@
 import { useLocation } from "react-router-dom";
 
-import { useBagContext } from "../../../contexts/BagContext";
-
 import { HorizontalLine } from "../../HorizontalLine/HorizontalLine";
 import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
 import { SectionContainer } from "../../SectionContainer/SectionContainer";
+
+import { useBagContext } from "../../../contexts/BagContext";
+
 import styles from "./OrderSummary.module.css";
 
 export const OrderSummary = () => {
@@ -27,7 +28,7 @@ export const OrderSummary = () => {
         secondTitle={"Complimentary"}
         variant={"regular"}
       />
-      {locationIsBag && <HorizontalLine  variantHr={"large"}/>}
+      {locationIsBag && <HorizontalLine variantHr={"large"} />}
       <SectionContainer
         firstTitle={"Total"}
         secondTitle={`$ ${totalPrice}`}
