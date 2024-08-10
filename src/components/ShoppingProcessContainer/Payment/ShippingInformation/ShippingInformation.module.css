@@ -14,8 +14,4 @@
   font-family: var(--bold-font-family);
 }
 
-.top {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+

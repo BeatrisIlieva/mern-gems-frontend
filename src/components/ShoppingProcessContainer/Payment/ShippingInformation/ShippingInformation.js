@@ -1,40 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import { NormalTitle } from "../../../NormalTitle/NormalTitle";
 import { Popup } from "../../../Popup/Popup";
 import { ShippingDetailsForm } from "../../../ShippingDetailsForm/ShippingDetailsForm";
 import { Button } from "../../../Button/Button";
 import { UserShippingDetails } from "./UserShippingDetails/UserShippingDetails";
-
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
-
-import { useService } from "../../../../hooks/useService";
-
-import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
+import { UserLoginDetails } from "./UserLoginDetails/UserLoginDetails";
 
 import styles from "./ShippingInformation.module.css";
 
 export const ShippingInformation = () => {
-  const [userLoginDetails, setUserLoginDetails] = useState([]);
-
   const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
     useState(false);
-
-  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
-
-
-  const { userId } = useAuthenticationContext();
-
-  useEffect(() => {
-    userLoginDetailsService
-      .getOne(userId)
-      .then((data) => {
-        setUserLoginDetails(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userLoginDetailsService, userId]);
 
   const toggleDisplayShippingDetailsPopup = () => {
     setDisplayShippingDetailsPopup(
@@ -52,10 +28,7 @@ export const ShippingInformation = () => {
           variant={"underlined"}
         />
       </div>
-      <div className={styles["top"]}>
-        <NormalTitle title={"Email Address"} variant={"bolded"} />
-        <NormalTitle title={userLoginDetails.email} variant={"regular"} />
-      </div>
+      <UserLoginDetails />
       <UserShippingDetails />
       {displayShippingDetailsPopup && (
         <Popup
