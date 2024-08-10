@@ -1,8 +1,7 @@
 import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
+import { BagCount } from "../BagCount/BagCount";
 
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
-
-import { BagCount } from "../BagCount/BagCount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./ShoppingProcessContainer.module.css";
