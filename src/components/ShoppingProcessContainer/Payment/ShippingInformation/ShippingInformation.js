@@ -8,18 +8,27 @@ import { Button } from "../../../Button/Button";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../hooks/useService";
+
 import { userShippingDetailsServiceFactory } from "../../../../services/userShippingDetailsService";
 import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
+
 import styles from "./ShippingInformation.module.css";
 
 export const ShippingInformation = () => {
   const [userShippingDetails, setUserShippingDetails] = useState([]);
+
+  const [userLoginDetails, setUserLoginDetails] = useState([]);
+
+  const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
+    useState(false);
 
   const { userId } = useAuthenticationContext();
 
   const userShippingDetailsService = useService(
     userShippingDetailsServiceFactory
   );
+
+  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   useEffect(() => {
     userShippingDetailsService
@@ -32,18 +41,6 @@ export const ShippingInformation = () => {
       });
   }, [userShippingDetailsService, userId]);
 
-  const [userLoginDetails, setUserLoginDetails] = useState([]);
-
-  const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
-
-  const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
-    useState(false);
-  const toggleDisplayShippingDetailsPopup = () => {
-    setDisplayShippingDetailsPopup(
-      (displayShippingDetailsPopup) => !displayShippingDetailsPopup
-    );
-  };
-
   useEffect(() => {
     userLoginDetailsService
       .getOne(userId)
@@ -54,6 +51,12 @@ export const ShippingInformation = () => {
         console.log(err.message);
       });
   }, [userLoginDetailsService, userId]);
+
+  const toggleDisplayShippingDetailsPopup = () => {
+    setDisplayShippingDetailsPopup(
+      (displayShippingDetailsPopup) => !displayShippingDetailsPopup
+    );
+  };
 
   return (
     <section className={styles["shipping-information"]}>
