@@ -1,20 +1,23 @@
-import { useEffect, useState } from "react";
-import { createContext, useContext } from "react";
-
-import { useAuthenticationContext } from "./AuthenticationContext";
-
-import { useService } from "../hooks/useService";
-import { bagServiceFactory } from "../services/bagService";
-
-import { useLocalStorage } from "../hooks/useLocalStorage";
-
+import { useEffect, useState, createContext, useContext } from "react";
 import { useParams } from "react-router-dom";
 
+import { useAuthenticationContext } from "./AuthenticationContext";
 import { useJewelryItemContext } from "./JewelryItemContext";
+
+import { useService } from "../hooks/useService";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+
+import { bagServiceFactory } from "../services/bagService";
 
 export const BagContext = createContext();
 
 export const BagProvider = ({ children }) => {
+  const [bagItems, setBagItems] = useState([]);
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const { jewelryId } = useParams();
+
   const [bagTotalQuantity, setBagTotalQuantity] = useLocalStorage(
     "bagTotalQuantity",
     0
@@ -24,15 +27,9 @@ export const BagProvider = ({ children }) => {
 
   const { userId } = useAuthenticationContext();
 
-  const [bagItems, setBagItems] = useState([]);
+  const { increaseSizeQuantity } = useJewelryItemContext();
 
   const bagIsEmpty = bagItems.length < 1;
-
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  const { jewelryId } = useParams();
-
-  const { increaseSizeQuantity } = useJewelryItemContext();
 
   useEffect(() => {
     setTotalPrice(
@@ -68,7 +65,7 @@ export const BagProvider = ({ children }) => {
     );
 
     const bag = bagItems.filter((item) => item._id === bagId);
-    
+
     if (bag.jewelryId === jewelryId) {
       const sizeId = bag[0].sizeId;
 
