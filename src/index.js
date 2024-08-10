@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
-import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
+
+import reportWebVitals from "./reportWebVitals";
+
+import App from "./App";
+
 import { AuthenticationProvider } from "./contexts/AuthenticationContext";
 import { BagProvider } from "./contexts/BagContext";
 import { JewelryItemProvider } from "./contexts/JewelryItemContext";
