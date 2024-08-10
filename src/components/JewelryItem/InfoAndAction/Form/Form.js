@@ -1,19 +1,20 @@
 import { useState } from "react";
 
-import { useService } from "../../../../hooks/useService";
-import { bagServiceFactory } from "../../../../services/bagService";
-
 import { Button } from "../../../Button/Button";
+import { Sizes } from "./Sizes/Sizes";
 
 import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
+import { useBagContext } from "../../../../contexts/BagContext";
+
+import { useService } from "../../../../hooks/useService";
+
+import { bagServiceFactory } from "../../../../services/bagService";
+
 import styles from "./Form.module.css";
 
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
 import { EARRING_ID } from "../../../../constants/earringId";
-import { useBagContext } from "../../../../contexts/BagContext";
-
-import { Sizes } from "./Sizes/Sizes";
 
 export const Form = ({ toggleDisplayMiniBagPopup }) => {
   const {
@@ -28,11 +29,11 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
     categoryIsEarring,
   } = useJewelryItemContext();
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const { updateBagTotalQuantity } = useBagContext();
 
   const bagService = useService(bagServiceFactory);
-
-  const [errorMessage, setErrorMessage] = useState("");
 
   const addToBagHandler = async (data, jewelryId) => {
     await bagService.create(data, jewelryId);
@@ -50,7 +51,7 @@ export const Form = ({ toggleDisplayMiniBagPopup }) => {
     updateSelectedSize(e);
 
     updateSizeIsSelected(true);
-    
+
     setErrorMessage("");
   };
 
