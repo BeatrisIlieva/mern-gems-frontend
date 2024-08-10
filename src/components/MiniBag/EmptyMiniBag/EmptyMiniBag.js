@@ -1,5 +1,4 @@
 import { InfoMessage } from "../../InfoMessage/InfoMessage";
-
 import { Collection } from "../../Collection/Collection";
 
 import styles from "./EmptyMiniBag.module.css";
