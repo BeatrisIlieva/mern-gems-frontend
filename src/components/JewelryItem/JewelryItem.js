@@ -23,9 +23,13 @@ export const JewelryItem = () => {
   const { jewelryId } = useParams();
 
   const location = useLocation();
+
   const pathname = location.pathname;
+
   const pathSegments = pathname.replace(/^\/+/, "").split("/");
+
   const collection = pathSegments[0];
+
   const category = pathSegments[1];
 
   const {
