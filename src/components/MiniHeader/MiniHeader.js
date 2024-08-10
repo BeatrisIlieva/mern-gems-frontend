@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import styles from "./MiniHeader.module.css";
 
 export const MiniHeader = () => {
