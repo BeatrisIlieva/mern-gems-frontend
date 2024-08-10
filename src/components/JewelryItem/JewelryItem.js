@@ -1,31 +1,30 @@
 import { useState, useEffect } from "react";
-
-import { useService } from "../../hooks/useService";
-
 import { useParams, useLocation } from "react-router-dom";
-
-import { jewelryServiceFactory } from "../../services/jewelryService";
 
 import { Images } from "./Images/Images";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
-
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
+import { MiniBag } from "../MiniBag/MiniBag";
+import { Nav } from "./Nav/Nav";
 
 import { useJewelryItemContext } from "../../contexts/JewelryItemContext";
 
+import { useService } from "../../hooks/useService";
+
+import { jewelryServiceFactory } from "../../services/jewelryService";
+
 import { EARRING_ID } from "../../constants/earringId";
-
-import { MiniBag } from "../MiniBag/MiniBag";
-
-import { Nav } from "./Nav/Nav";
 
 import styles from "./JewelryItem.module.css";
 
 export const JewelryItem = () => {
+  const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
+
+  const { jewelryId } = useParams();
+
   const location = useLocation();
   const pathname = location.pathname;
   const pathSegments = pathname.replace(/^\/+/, "").split("/");
-
   const collection = pathSegments[0];
   const category = pathSegments[1];
 
@@ -41,7 +40,6 @@ export const JewelryItem = () => {
   } = useJewelryItemContext();
 
   const jewelryService = useService(jewelryServiceFactory);
-  const { jewelryId } = useParams();
 
   useEffect(() => {
     toggleIsLoading();
@@ -65,17 +63,15 @@ export const JewelryItem = () => {
       });
   }, [jewelryId]);
 
-  const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
-
-  const toggleDisplayMiniBagPopup = () => {
-    setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
-  };
-
   useEffect(() => {
     const allZero = sizes.every((size) => size.quantity === 0);
 
     updateIsSoldOut(allZero);
   }, [sizes]);
+
+  const toggleDisplayMiniBagPopup = () => {
+    setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
+  };
 
   return (
     <>
