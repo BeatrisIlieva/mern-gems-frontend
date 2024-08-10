@@ -1,16 +1,17 @@
 import { useLocation } from "react-router-dom";
-import { COLLECTIONS_BY_ID } from "../../mappers/collectionsById";
-import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
-import { transformUrlSegment } from "../../utils/transformUrlSegment";
-
-import { useJewelryList } from "../../hooks/useJewelryList";
 
 import { JewelryListItem } from "../JewelryListItem/JewelryListItem";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 import { Button } from "../Button/Button";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
-
 import { NavItems } from "./NavItems/NavItems";
+
+import { useJewelryList } from "../../hooks/useJewelryList";
+
+import { transformUrlSegment } from "../../utils/transformUrlSegment";
+
+import { COLLECTIONS_BY_ID } from "../../mappers/collectionsById";
+import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
 
 import styles from "./JewelryList.module.css";
 
@@ -18,9 +19,11 @@ export const JewelryList = () => {
   const location = useLocation();
 
   const pathname = location.pathname.substring(1);
+
   const [collectionName, categoryName] = pathname.split("/");
 
   const collectionId = COLLECTIONS_BY_ID[collectionName];
+
   const categoryId = CATEGORIES_BY_ID[categoryName];
 
   const transformedCollectionName = transformUrlSegment(collectionName);
