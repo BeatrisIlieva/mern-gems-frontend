@@ -1,11 +1,7 @@
-import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import { useAuthenticationContext } from "./contexts/AuthenticationContext";
-
 import { Authentication } from "./components/Authentication/Authentication";
-
 import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
@@ -21,17 +17,20 @@ import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
 import { OrderConfirmation } from "./components/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "./components/Page404/Page404";
 
+import { useAuthenticationContext } from "./contexts/AuthenticationContext";
+
 import "normalize.css";
 import styles from "./App.css";
 
 function App() {
   const [showFooter, setShowFooter] = useState(false);
+
   const location = useLocation();
+
+  const { isAuthenticated } = useAuthenticationContext();
 
   const isCheckoutOrPaymentLocation =
     location.pathname === "/checkout" || location.pathname === "/payment";
-
-  const { isAuthenticated } = useAuthenticationContext();
 
   useEffect(() => {
     if (isAuthenticated) {
