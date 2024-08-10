@@ -22,7 +22,7 @@ export const JewelryCard = ({
       <NavLink
         to={`/${slugifiedCollectionTitle}/${slugifiedCategoryTitle}/${slugifiedJewelryTitle}/${jewelryId}`}
       >
-        <div className={styles[variant]}>
+        <div className={`${variant ? `${styles[variant]}` : ""}`.trim()}>
           <img
             src={firstImageUrl}
             alt={slugifiedJewelryTitle}
