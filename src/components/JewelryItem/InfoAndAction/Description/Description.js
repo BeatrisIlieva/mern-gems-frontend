@@ -1,6 +1,6 @@
-import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
-
 import { Paragraph } from "../../../Paragraph/Paragraph";
+
+import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 
 export const Description = () => {
   const { jewelry, categoryIsEarring } = useJewelryItemContext();
