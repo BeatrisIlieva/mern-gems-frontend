@@ -1,7 +1,6 @@
 import styles from "./HorizontalLine.module.css";
 
 export const HorizontalLine = ({ variantHorizontalLine, variantHr }) => {
-
   return (
     <div
       className={
