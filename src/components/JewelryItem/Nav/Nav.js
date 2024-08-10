@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 import { transformUrlSegment } from "../../../utils/transformUrlSegment";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./Nav.module.css";
