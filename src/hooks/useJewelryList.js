@@ -1,14 +1,22 @@
 import { useState, useEffect } from "react";
-import { ITEMS_PER_PAGE } from "../constants/pagination";
+
 import { useService } from "./useService";
+
 import { jewelryServiceFactory } from "../services/jewelryService";
+
+import { ITEMS_PER_PAGE } from "../constants/pagination";
 
 export const useJewelryList = (collectionId, categoryId) => {
   const [loading, setLoading] = useState(true);
+
   const [page, setPage] = useState(0);
+
   const [loadMore, setLoadMore] = useState(true);
+
   const [jewelries, setJewelries] = useState([]);
+
   const [totalCount, setTotalCount] = useState(0);
+
   const [showLoadMore, setShowLoadMore] = useState(false);
 
   const jewelryService = useService(jewelryServiceFactory);
