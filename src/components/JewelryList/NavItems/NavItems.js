@@ -1,9 +1,8 @@
+import { NormalTitle } from "../../NormalTitle/NormalTitle";
+import { NavLinkItem } from "../../NavLinkItem/NavLinkItem";
+
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { faFilterCircleXmark } from "@fortawesome/free-solid-svg-icons";
-
-import { NormalTitle } from "../../NormalTitle/NormalTitle";
-
-import { NavLinkItem } from "../../NavLinkItem/NavLinkItem";
 
 import styles from "./NavItems.module.css";
 
