@@ -14,7 +14,7 @@ import { Account } from "./components/pages/Account/Account";
 import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
 import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
-import { OrderConfirmation } from "./components/OrderConfirmation/OrderConfirmation";
+import { OrderConfirmation } from "./components/pages/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "./components/Page404/Page404";
 
 import { useAuthenticationContext } from "./contexts/AuthenticationContext";
