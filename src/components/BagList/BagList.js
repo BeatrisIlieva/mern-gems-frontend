@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 
 import { JewelryCard } from "../JewelryCard/JewelryCard";
-import { SectionContainer } from "../SectionContainer/SectionContainer";
+import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { Remove } from "./Remove/Remove";
 
 import { useBagContext } from "../../contexts/BagContext";

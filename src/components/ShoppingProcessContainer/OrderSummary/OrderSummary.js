@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 
 import { HorizontalLine } from "../../reusable/HorizontalLine/HorizontalLine";
 import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
-import { SectionContainer } from "../../SectionContainer/SectionContainer";
+import { SectionContainer } from "../../reusable/SectionContainer/SectionContainer";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
