@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button } from "../../../Button/Button";
+import { Button } from "../../../reusable/Button/Button";
 import { Sizes } from "./Sizes/Sizes";
 
 import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
