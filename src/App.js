@@ -6,7 +6,7 @@ import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
 import { MiniHeader } from "./components/MiniHeader/MiniHeader";
-import { Collection } from "./components/Collection/Collection";
+import { Collection } from "./components/reusable/Collection/Collection";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
 import { JewelryItem } from "./components/JewelryItem/JewelryItem";
