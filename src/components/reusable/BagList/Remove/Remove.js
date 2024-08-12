@@ -1,10 +1,10 @@
 import { Button } from "../../Button/Button";
 
-import { useBagContext } from "../../../contexts/BagContext";
+import { useBagContext } from "../../../../contexts/BagContext";
 
-import { useService } from "../../../hooks/useService";
+import { useService } from "../../../../hooks/useService";
 
-import { bagServiceFactory } from "../../../services/bagService";
+import { bagServiceFactory } from "../../../../services/bagService";
 
 export const Remove = ({ bagId }) => {
   const { removeBagItem, updateBagTotalQuantity } = useBagContext();
