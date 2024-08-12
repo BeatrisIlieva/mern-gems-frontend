@@ -1,5 +1,5 @@
-import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
-import { Collection } from "../../../reusable/Collection/Collection";
+import { InfoMessage } from "../../../../reusable/InfoMessage/InfoMessage";
+import { Collection } from "../../../../reusable/Collection/Collection";
 
 export const EmptyOrderHistory = () => {
   return (
