@@ -9,7 +9,7 @@ import { MiniHeader } from "./components/MiniHeader/MiniHeader";
 import { Collection } from "./components/reusable/Collection/Collection";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
-import { JewelryItem } from "./components/JewelryItem/JewelryItem";
+import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
 import { Account } from "./components/pages/Account/Account";
 import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
