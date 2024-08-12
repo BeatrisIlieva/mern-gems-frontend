@@ -1,5 +1,5 @@
 import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
-import { NavLinkItem } from "../../NavLinkItem/NavLinkItem";
+import { NavLinkItem } from "../../reusable/NavLinkItem/NavLinkItem";
 
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { faFilterCircleXmark } from "@fortawesome/free-solid-svg-icons";
