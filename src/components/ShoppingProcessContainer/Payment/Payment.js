@@ -5,7 +5,7 @@ import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
 import { LeftSide } from "../LeftSide/LeftSide";
 import { RightSide } from "../RightSide/RightSide";
 import { OrderSummary } from "../OrderSummary/OrderSummary";
-import { BagList } from "../../BagList/BagList";
+import { BagList } from "../../reusable/BagList/BagList";
 
 export const Payment = () => {
   return (
