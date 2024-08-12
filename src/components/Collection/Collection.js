@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { Paragraph } from "../Paragraph/Paragraph";
 import { LargeTitle } from "../LargeTitle/LargeTitle";
-import { Button } from "../Button/Button";
+import { Button } from "../reusable/Button/Button";
 import { collectionItems } from "./collectionItems";
 
 import styles from "./Collection.module.css";
