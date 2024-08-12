@@ -1,17 +1,17 @@
 import { useLocation } from "react-router-dom";
 
 import { JewelryListItem } from "./JewelryListItem/JewelryListItem";
-import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
-import { Button } from "../reusable/Button/Button";
-import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
+import { Button } from "../../reusable/Button/Button";
+import { CardSkeleton } from "../../CardSkeleton/CardSkeleton";
 import { NavItems } from "./NavItems/NavItems";
 
-import { useJewelryList } from "../../hooks/useJewelryList";
+import { useJewelryList } from "../../../hooks/useJewelryList";
 
-import { transformUrlSegment } from "../../utils/transformUrlSegment";
+import { transformUrlSegment } from "../../../utils/transformUrlSegment";
 
-import { COLLECTIONS_BY_ID } from "../../mappers/collectionsById";
-import { CATEGORIES_BY_ID } from "../../mappers/categoriesById";
+import { COLLECTIONS_BY_ID } from "../../../mappers/collectionsById";
+import { CATEGORIES_BY_ID } from "../../../mappers/categoriesById";
 
 import styles from "./JewelryList.module.css";
 
