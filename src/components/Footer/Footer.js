@@ -1,4 +1,4 @@
-import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
+import { HorizontalLine } from "../reusable/HorizontalLine/HorizontalLine";
 
 import styles from "./Footer.module.css";
 
