@@ -1,4 +1,4 @@
-import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
+import { XLargeTitle } from "../reusable/XLargeTitle/XLargeTitle";
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 

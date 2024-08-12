@@ -1,4 +1,4 @@
-import { Paragraph } from "../../../Paragraph/Paragraph";
+import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 
 import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 

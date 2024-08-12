@@ -1,4 +1,4 @@
-import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
+import { XLargeTitle } from "../reusable/XLargeTitle/XLargeTitle";
 import { BagCount } from "../BagCount/BagCount";
 
 import { faTruck } from "@fortawesome/free-solid-svg-icons";

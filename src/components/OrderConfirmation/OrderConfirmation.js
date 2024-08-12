@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
+import { XLargeTitle } from "../reusable/XLargeTitle/XLargeTitle";
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 
 import styles from "./OrderConfirmation.module.css";
