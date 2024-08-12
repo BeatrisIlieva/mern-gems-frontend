@@ -1,4 +1,4 @@
-import { InfoMessage } from "../../../InfoMessage/InfoMessage";
+import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
 import { Collection } from "../../../reusable/Collection/Collection";
 
 export const EmptyOrderHistory = () => {

@@ -1,5 +1,5 @@
 import { Collection } from "../reusable/Collection/Collection";
-import { InfoMessage } from "../InfoMessage/InfoMessage";
+import { InfoMessage } from "../reusable/InfoMessage/InfoMessage";
 
 export const Page404 = () => {
   return (
