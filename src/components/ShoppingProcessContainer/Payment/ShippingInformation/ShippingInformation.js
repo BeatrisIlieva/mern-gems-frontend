@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Popup } from "../../../Popup/Popup";
 import { ShippingDetailsForm } from "../../../ShippingDetailsForm/ShippingDetailsForm";
-import { Button } from "../../../Button/Button";
+import { Button } from "../../../reusable/Button/Button";
 import { UserShippingDetails } from "./UserShippingDetails/UserShippingDetails";
 import { UserLoginDetails } from "./UserLoginDetails/UserLoginDetails";
 
