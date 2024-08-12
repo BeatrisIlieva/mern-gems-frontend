@@ -1,7 +1,7 @@
 import { JewelryCard } from "../../../../../reusable/JewelryCard/JewelryCard";
 import { NormalTitle } from "../../../../../reusable/NormalTitle/NormalTitle";
 
-import { convertToReadableDate } from "../../../../../utils/convertToReadableDate";
+import { convertToReadableDate } from "../../../../../../utils/convertToReadableDate";
 
 import styles from "./OrderHistoryList.module.css";
 

@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
 import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistory";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { Popup } from "../../reusable/Popup/Popup";
+import { Popup } from "../../../reusable/Popup/Popup";
 
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
-import { useService } from "../../../hooks/useService";
+import { useService } from "../../../../hooks/useService";
 
-import { orderServiceFactory } from "../../../services/orderService";
+import { orderServiceFactory } from "../../../../services/orderService";
 
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
