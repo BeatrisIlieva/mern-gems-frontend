@@ -2,18 +2,18 @@ import { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 
 import { Images } from "./Images/Images";
-import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
-import { MiniBag } from "../MiniBag/MiniBag";
+import { MiniBag } from "../../MiniBag/MiniBag";
 import { Nav } from "./Nav/Nav";
 
-import { useJewelryItemContext } from "../../contexts/JewelryItemContext";
+import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
 
-import { useService } from "../../hooks/useService";
+import { useService } from "../../../hooks/useService";
 
-import { jewelryServiceFactory } from "../../services/jewelryService";
+import { jewelryServiceFactory } from "../../../services/jewelryService";
 
-import { EARRING_ID } from "../../constants/earringId";
+import { EARRING_ID } from "../../../constants/earringId";
 
 import styles from "./JewelryItem.module.css";
 
