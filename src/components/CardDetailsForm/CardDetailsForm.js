@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-import { DynamicForm } from "../DynamicForm/DynamicForm";
+import { DynamicForm } from "../reusable/DynamicForm/DynamicForm";
 import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 
 import { useBagContext } from "../../contexts/BagContext";

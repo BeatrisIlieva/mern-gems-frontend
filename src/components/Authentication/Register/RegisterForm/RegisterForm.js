@@ -1,4 +1,4 @@
-import { DynamicForm } from "../../../DynamicForm/DynamicForm";
+import { DynamicForm } from "../../../reusable/DynamicForm/DynamicForm";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
