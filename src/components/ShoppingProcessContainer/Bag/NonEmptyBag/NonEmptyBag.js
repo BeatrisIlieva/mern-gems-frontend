@@ -13,7 +13,7 @@ import styles from "./NonEmptyBag.module.css";
 import { LeftSide } from "../../LeftSide/LeftSide";
 import { RightSide } from "../../RightSide/RightSide";
 
-export const NonEmptyBag = () => {
+export const NonEmptyBag = () => {pnon
   return (
     <ShoppingProcessContainer title={"Bag"}>
       <LeftSide>
