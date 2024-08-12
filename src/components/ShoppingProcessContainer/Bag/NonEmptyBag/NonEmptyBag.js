@@ -6,7 +6,7 @@ import { BagList } from "../../../BagList/BagList";
 
 import { OrderSummary } from "../../OrderSummary/OrderSummary";
 
-import { Button } from "../../../Button/Button";
+import { Button } from "../../../reusable/Button/Button";
 
 import styles from "./NonEmptyBag.module.css";
 
