@@ -1,6 +1,6 @@
-import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
+import { Paragraph } from "../../../../reusable/Paragraph/Paragraph";
 
-import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
+import { useJewelryItemContext } from "../../../../../contexts/JewelryItemContext";
 
 export const Description = () => {
   const { jewelry, categoryIsEarring } = useJewelryItemContext();

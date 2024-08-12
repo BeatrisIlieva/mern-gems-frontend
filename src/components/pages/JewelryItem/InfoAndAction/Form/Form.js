@@ -1,20 +1,20 @@
 import { useState } from "react";
 
-import { Button } from "../../../reusable/Button/Button";
+import { Button } from "../../../../reusable/Button/Button";
 import { Sizes } from "./Sizes/Sizes";
 
-import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
-import { useBagContext } from "../../../../contexts/BagContext";
+import { useJewelryItemContext } from "../../../../../contexts/JewelryItemContext";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
-import { useService } from "../../../../hooks/useService";
+import { useService } from "../../../../../hooks/useService";
 
-import { bagServiceFactory } from "../../../../services/bagService";
+import { bagServiceFactory } from "../../../../../services/bagService";
 
 import styles from "./Form.module.css";
 
-import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
+import { SIZE_ERROR_MESSAGE } from "../../../../../constants/sizeErrorMessage";
 
-import { EARRING_ID } from "../../../../constants/earringId";
+import { EARRING_ID } from "../../../../../constants/earringId";
 
 export const Form = ({ toggleDisplayMiniBagPopup }) => {
   const {

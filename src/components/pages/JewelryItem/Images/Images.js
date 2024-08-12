@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { CircleIcon } from "./CircleIcon/CircleIcon";
 
-import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
+import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 
 import styles from "./Images.module.css";
 

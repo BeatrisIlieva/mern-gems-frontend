@@ -1,8 +1,8 @@
-import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
+import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Form } from "./Form/Form";
 import { Description } from "./Description/Description";
 
-import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";
+import { useJewelryItemContext } from "../../../../contexts/JewelryItemContext";
 
 import styles from "./InfoAndAction.module.css";
 

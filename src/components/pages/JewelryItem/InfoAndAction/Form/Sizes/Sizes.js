@@ -1,6 +1,6 @@
-import { useJewelryItemContext } from "../../../../../contexts/JewelryItemContext";
+import { useJewelryItemContext } from "../../../../../../contexts/JewelryItemContext";
 
-import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
+import { SIZE_FORM_KEY } from "../../../../../../constants/sizeFormKey";
 
 import styles from "./Sizes.module.css";
 
