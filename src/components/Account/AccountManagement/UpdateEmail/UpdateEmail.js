@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button } from "../../../Button/Button";
+import { Button } from "../../../reusable/Button/Button";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { Popup } from "../../../Popup/Popup";
 
