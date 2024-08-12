@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { slugify } from "../../utils/slugify";
+import { slugify } from "../../../utils/slugify";
 
 import styles from "./JewelryCard.module.css";
 
