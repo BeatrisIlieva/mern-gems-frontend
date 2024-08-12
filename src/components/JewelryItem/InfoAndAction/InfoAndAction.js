@@ -1,4 +1,4 @@
-import { LargeTitle } from "../../LargeTitle/LargeTitle";
+import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { Form } from "./Form/Form";
 import { Description } from "./Description/Description";
 
