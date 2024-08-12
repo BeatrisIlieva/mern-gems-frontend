@@ -10,7 +10,7 @@ import { Collection } from "./components/reusable/Collection/Collection";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/JewelryList/JewelryList";
 import { JewelryItem } from "./components/JewelryItem/JewelryItem";
-import { Account } from "./components/Account/Account";
+import { Account } from "./components/pages/Account/Account";
 import { Bag } from "./components/ShoppingProcessContainer/Bag/Bag";
 import { Checkout } from "./components/ShoppingProcessContainer/Checkout/Checkout";
 import { Payment } from "./components/ShoppingProcessContainer/Payment/Payment";
