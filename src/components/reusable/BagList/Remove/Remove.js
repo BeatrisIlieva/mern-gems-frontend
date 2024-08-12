@@ -1,4 +1,4 @@
-import { Button } from "../../reusable/Button/Button";
+import { Button } from "../../Button/Button";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
