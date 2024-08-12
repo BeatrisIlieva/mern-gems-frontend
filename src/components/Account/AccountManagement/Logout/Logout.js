@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { Button } from "../../../Button/Button";
+import { Button } from "../../../reusable/Button/Button";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 import { useBagContext } from "../../../../contexts/BagContext";
