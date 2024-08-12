@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { ShoppingProcessContainer } from "../../ShoppingProcessContainer";
 
-import { BagList } from "../../../BagList/BagList";
+import { BagList } from "../../../reusable/BagList/BagList";
 
 import { OrderSummary } from "../../OrderSummary/OrderSummary";
 

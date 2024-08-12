@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { BagList } from "../../BagList/BagList";
+import { BagList } from "../../reusable/BagList/BagList";
 import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { Button } from "../../reusable/Button/Button";
