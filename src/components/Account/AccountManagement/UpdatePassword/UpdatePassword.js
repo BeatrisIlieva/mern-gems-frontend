@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Popup } from "../../../Popup/Popup";
-import { Button } from "../../../Button/Button";
+import { Button } from "../../../reusable/Button/Button";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 
 export const UpdatePassword = () => {
