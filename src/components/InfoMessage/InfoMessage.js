@@ -1,5 +1,5 @@
 import { XLargeTitle } from "../reusable/XLargeTitle/XLargeTitle";
-import { NormalTitle } from "../NormalTitle/NormalTitle";
+import { NormalTitle } from "../reusable/NormalTitle/NormalTitle";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 
 import styles from "./InfoMessage.module.css";

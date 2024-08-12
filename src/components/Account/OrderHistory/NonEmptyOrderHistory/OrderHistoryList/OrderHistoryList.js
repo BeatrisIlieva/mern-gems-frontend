@@ -1,5 +1,5 @@
 import { JewelryCard } from "../../../../JewelryCard/JewelryCard";
-import { NormalTitle } from "../../../../NormalTitle/NormalTitle";
+import { NormalTitle } from "../../../../reusable/NormalTitle/NormalTitle";
 
 import { convertToReadableDate } from "../../../../../utils/convertToReadableDate";
 

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
 import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
 import { Logout } from "./Logout/Logout";
-import { NormalTitle } from "../../NormalTitle/NormalTitle";
+import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../LargeTitle/LargeTitle";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";

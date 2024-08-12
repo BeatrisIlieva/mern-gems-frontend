@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { BagList } from "../../BagList/BagList";
-import { NormalTitle } from "../../NormalTitle/NormalTitle";
+import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../LargeTitle/LargeTitle";
 import { Button } from "../../reusable/Button/Button";
 import { BagCount } from "../../BagCount/BagCount";

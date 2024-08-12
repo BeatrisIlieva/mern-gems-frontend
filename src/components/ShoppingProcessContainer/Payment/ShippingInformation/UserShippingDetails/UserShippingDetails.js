@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { NormalTitle } from "../../../../NormalTitle/NormalTitle";
+import { NormalTitle } from "../../../../reusable/NormalTitle/NormalTitle";
 
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 

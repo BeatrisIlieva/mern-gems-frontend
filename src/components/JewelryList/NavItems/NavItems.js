@@ -1,4 +1,4 @@
-import { NormalTitle } from "../../NormalTitle/NormalTitle";
+import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
 import { NavLinkItem } from "../../NavLinkItem/NavLinkItem";
 
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
