@@ -1,4 +1,4 @@
-import { JewelryCard } from "../JewelryCard/JewelryCard";
+import { JewelryCard } from "../../JewelryCard/JewelryCard";
 
 export const JewelryListItem = ({
   _id,
