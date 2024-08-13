@@ -49,7 +49,7 @@ export const OrderHistory = () => {
         <Popup
           popupCloseHandler={toggleDisplayPopup}
           title={"Order History"}
-          variant={"large"}
+          modalVariant={"large"}
         >
           {orderItems.length < 1 ? (
             <EmptyOrderHistory />

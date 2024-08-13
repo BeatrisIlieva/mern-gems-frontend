@@ -25,7 +25,7 @@ export const ShippingDetails = () => {
         <Popup
           popupCloseHandler={toggleDisplayPopup}
           title={"Add a New Address"}
-          variant={"large"}
+          modalVariant={"large"}
         >
           <ShippingDetailsForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>

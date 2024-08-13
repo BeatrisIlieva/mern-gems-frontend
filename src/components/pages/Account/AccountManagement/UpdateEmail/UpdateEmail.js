@@ -22,7 +22,7 @@ export const UpdateEmail = () => {
         <Popup
           popupCloseHandler={toggleDisplayPopup}
           title={"Update Email"}
-          variant={"small"}
+          modalVariant={"small"}
         >
           <UpdateEmailForm />
         </Popup>
