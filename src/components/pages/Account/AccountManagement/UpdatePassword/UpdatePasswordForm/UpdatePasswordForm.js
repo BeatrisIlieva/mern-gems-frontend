@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../../../../../LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../../../../../common/LoadingSpinner/LoadingSpinner";
 
 import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
