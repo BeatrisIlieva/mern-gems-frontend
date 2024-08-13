@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
-import { Header } from "./components/Header/Header";
+import { Header } from "./components/common/Header/Header";
 import { Home } from "./components/pages/Home/Home";
 import { Footer } from "./components/common/Footer/Footer";
 import { JewelryList } from "./components/pages/JewelryList/JewelryList";
