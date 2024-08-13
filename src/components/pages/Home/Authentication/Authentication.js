@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Popup } from "./Popup/Popup";
+import { Popup } from "../../../reusable/Popup/Popup";
 import { Login } from "./Login/Login";
 import { Register } from "./Register/Register";
 
@@ -23,7 +23,7 @@ export const Authentication = () => {
   };
 
   return (
-    <Popup>
+    <Popup overlayVariant={"authentication"} modalVariant={"authentication"}>
       <div className={styles["image"]}>
         <img
           className={styles["img"]}

@@ -44,7 +44,8 @@
 }
 
 .modal.authentication {
-
+  width: 280px;
+  height: fit-content;
 }
 
 .modal.mini-bag {

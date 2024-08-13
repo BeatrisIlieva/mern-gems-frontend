@@ -1,6 +1,5 @@
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
-
 import { Popup } from "../../../reusable/Popup/Popup";
 
 import { useBagContext } from "../../../../contexts/BagContext";
