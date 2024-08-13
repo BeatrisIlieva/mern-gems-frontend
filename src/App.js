@@ -19,17 +19,7 @@ import "normalize.css";
 import styles from "./App.css";
 
 function App() {
-  const [showFooter, setShowFooter] = useState(false);
 
-  // useEffect(() => {
-  //   setShowFooter(false);
-
-  //   const timer = setTimeout(() => {
-  //     setShowFooter(true);
-  //   }, 1000);
-
-  //   return () => clearTimeout(timer);
-  // }, [location]);
 
   return (
     <div className={styles["app"]}>
@@ -121,7 +111,7 @@ function App() {
           <Route path="*" element={<Page404 />} />
         </Routes>
       </main>
-      {showFooter && <Footer />}
+      <Footer />
     </div>
   );
 }

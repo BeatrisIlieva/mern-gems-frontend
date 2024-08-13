@@ -1,6 +1,4 @@
 .app {
-  display: flex;
-  flex-direction: column;
   padding: 0;
   line-height: 1.5;
   letter-spacing: 1.2;
@@ -26,10 +24,6 @@ h4,
 p {
   margin: 0;
   padding: 0;
-}
-
-.main {
-  min-height: 100vh;
 }
 
 :root {
