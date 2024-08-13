@@ -1,5 +1,5 @@
-import { HorizontalLine } from "../../reusable/HorizontalLine/HorizontalLine";
-import { NavLinkItem } from "../../reusable/NavLinkItem/NavLinkItem";
+import { HorizontalLine } from "../../../reusable/HorizontalLine/HorizontalLine";
+import { NavLinkItem } from "../../../reusable/NavLinkItem/NavLinkItem";
 
 import { LEFT_NAV_ITEMS, RIGHT_NAV_ITEMS } from "./navItems";
 
