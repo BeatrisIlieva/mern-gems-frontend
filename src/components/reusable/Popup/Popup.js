@@ -3,10 +3,10 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Popup.module.css";
 
-export const Popup = ({ popupCloseHandler, title, children, variant, overlayVariant }) => {
+export const Popup = ({ popupCloseHandler, title, children, modalVariant, overlayVariant }) => {
   return (
     <section className={`${styles["overlay"]} ${styles[overlayVariant]}`}>
-      <div className={`${styles["modal"]} ${styles[variant]}`}>
+      <div className={`${styles["modal"]} ${styles[modalVariant]}`}>
         <FontAwesomeIcon
           icon={faXmark}
           className={styles["x-mark"]}
