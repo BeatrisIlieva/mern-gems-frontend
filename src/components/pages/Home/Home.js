@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { Authentication } from "./Authentication/Authentication";
-import { Collection } from "../../reusable/Collection/Collection";
+import { Collection } from "../../common/Collection/Collection";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 

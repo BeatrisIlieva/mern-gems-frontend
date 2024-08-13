@@ -1,4 +1,4 @@
-import { Collection } from "../../../../reusable/Collection/Collection";
+import { Collection } from "../../../../common/Collection/Collection";
 
 import { InfoMessage } from "../../../../reusable/InfoMessage/InfoMessage";
 
