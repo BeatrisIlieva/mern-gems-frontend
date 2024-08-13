@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../../common/LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 

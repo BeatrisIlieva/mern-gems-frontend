@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import { RouteGuard } from "./components/RouteGuard/RouteGuard";
-import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
-import { Header } from "./components/common/Header/Header";
+import { RouteGuard } from "./components/utils/RouteGuard/RouteGuard";
+import { ScrollToTop } from "./components/utils/ScrollToTop/ScrollToTop";
+import { Header } from "./components/layout/Header/Header";
 import { Home } from "./components/pages/Home/Home";
-import { Footer } from "./components/common/Footer/Footer";
+import { Footer } from "./components/layout/Footer/Footer";
 import { JewelryList } from "./components/pages/JewelryList/JewelryList";
 import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
 import { Account } from "./components/pages/Account/Account";
