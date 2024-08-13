@@ -12,6 +12,10 @@
   display: flex;
 }
 
+.overlay.mini-bag {
+  justify-content: flex-end;
+}
+
 .modal {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
@@ -21,9 +25,14 @@
   position: relative;
   transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 20px;
-  animation: slideInTop 1s forwards;
+}
+
+.modal.large,
+.modal.small,
+.modal.authentication {
   max-height: 96vh;
   overflow-y: auto;
+  animation: slideInTop 1s forwards;
 }
 
 .modal.large {
@@ -32,6 +41,16 @@
 
 .modal.small {
   width: 280px;
+}
+
+.modal.authentication {
+
+}
+
+.modal.mini-bag {
+  height: 100vh;
+  width: 540px;
+  animation: slideInRight 1s forwards;
 }
 
 .x-mark {
@@ -56,5 +75,14 @@
   }
   to {
     top: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
   }
 }
