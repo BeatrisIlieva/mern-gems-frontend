@@ -4,4 +4,5 @@
   font-family: var(--bold-italic-font-family);
   text-align: center;
   color: var(--gray);
+  margin-bottom: 30px;
 }

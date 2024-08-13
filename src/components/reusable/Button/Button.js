@@ -5,9 +5,11 @@ export const Button = ({
   buttonIsDisabled,
   callBackFunction,
   variant,
+  type,
 }) => {
   return (
     <button
+      type={type}
       className={
         !buttonIsDisabled
           ? `${styles["button"]} ${styles[variant]}`
