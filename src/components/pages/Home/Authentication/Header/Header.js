@@ -1,4 +1,4 @@
-import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
+import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 
 import styles from "./Header.module.css";
 

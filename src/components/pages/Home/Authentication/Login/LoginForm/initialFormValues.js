@@ -1,5 +1,5 @@
-import { EMAIL_PATTERN } from "../../../../constants/email";
-import { PASSWORD_PATTERN } from "../../../../constants/password";
+import { EMAIL_PATTERN } from "../../../../../../constants/email";
+import { PASSWORD_PATTERN } from "../../../../../../constants/password";
 
 const FORM_KEYS = {
   Email: "email",

@@ -1,21 +1,21 @@
-import { DynamicForm } from "../../../reusable/DynamicForm/DynamicForm";
+import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
 
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
-import { useService } from "../../../../hooks/useService";
-import { useForm } from "../../../../hooks/useForm";
+import { useService } from "../../../../../../hooks/useService";
+import { useForm } from "../../../../../../hooks/useForm";
 
-import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
+import { userLoginDetailsServiceFactory } from "../../../../../../services/userLoginDetailsService";
 
-import { checkIfFormErrorHasOccurred } from "../../../../utils/checkIfFormErrorHasOccurred";
-import { clearInitialFormValuesMessages } from "../../../../utils/clearInitialFormValuesMessages";
+import { checkIfFormErrorHasOccurred } from "../../../../../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../../../../../utils/clearInitialFormValuesMessages";
 
 import { getData } from "./helpers/getData";
-import { setInvalidCredentialsErrorMessage } from "./helpers/setInvalidCredentialsErrorMessage";
+import { setEmailAlreadyExistsErrorMessage } from "./helpers/setEmailAlreadyExistsErrorMessage";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
   const { updateAuthentication } = useAuthenticationContext();
 
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
@@ -38,7 +38,7 @@ export const LoginForm = () => {
       const data = getData(values);
 
       try {
-        const result = await userLoginDetailsService.login(data);
+        const result = await userLoginDetailsService.register(data);
 
         await updateAuthentication(result);
 
@@ -46,7 +46,7 @@ export const LoginForm = () => {
       } catch (err) {
         let spreadValues = { ...values };
 
-        spreadValues = setInvalidCredentialsErrorMessage(
+        spreadValues = setEmailAlreadyExistsErrorMessage(
           spreadValues,
           FORM_KEYS
         );
@@ -64,7 +64,7 @@ export const LoginForm = () => {
       blurHandler={blurHandler}
       changeHandler={changeHandler}
       initialFormValues={INITIAL_FORM_VALUES}
-      buttonTitle={"Sign In"}
+      buttonTitle={"Sign Up"}
       onSubmit={onSubmit}
     />
   );

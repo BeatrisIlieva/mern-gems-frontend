@@ -1,12 +1,11 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import { Authentication } from "./components/Authentication/Authentication";
 import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
 import { MiniHeader } from "./components/MiniHeader/MiniHeader";
-import { Collection } from "./components/reusable/Collection/Collection";
+import { Home } from "./components/pages/Home/Home";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/pages/JewelryList/JewelryList";
 import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
@@ -17,8 +16,6 @@ import { Payment } from "./components/pages/ShoppingProcessContainer/Payment/Pay
 import { OrderConfirmation } from "./components/pages/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "./components/pages/Page404/Page404";
 
-import { useAuthenticationContext } from "./contexts/AuthenticationContext";
-
 import "normalize.css";
 import styles from "./App.css";
 
@@ -27,16 +24,8 @@ function App() {
 
   const location = useLocation();
 
-  const { isAuthenticated } = useAuthenticationContext();
-
   const isCheckoutOrPaymentLocation =
     location.pathname === "/checkout" || location.pathname === "/payment";
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      document.body.style.overflow = "visible";
-    }
-  });
 
   useEffect(() => {
     setShowFooter(false);
@@ -50,12 +39,11 @@ function App() {
 
   return (
     <div className={styles["app"]}>
-      {!isAuthenticated && <Authentication />}
       <ScrollToTop />
       {isCheckoutOrPaymentLocation ? <MiniHeader /> : <Header />}
       <main className={styles["main"]}>
         <Routes>
-          <Route path="/" element={<Collection />} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/forget-me-not/*"
             element={
