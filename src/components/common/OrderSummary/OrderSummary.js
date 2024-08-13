@@ -1,10 +1,10 @@
 import { useLocation } from "react-router-dom";
 
-import { HorizontalLine } from "../../../../reusable/HorizontalLine/HorizontalLine";
-import { ContainerTitle } from "../../reusable/ContainerTitle/ContainerTitle"; 
-import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
+import { HorizontalLine } from "../../reusable/HorizontalLine/HorizontalLine";
+import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 
-import { useBagContext } from "../../../../../contexts/BagContext";
+import { useBagContext } from "../../../contexts/BagContext";
 
 import styles from "./OrderSummary.module.css";
 
@@ -17,7 +17,7 @@ export const OrderSummary = () => {
 
   return (
     <section className={styles["order-summary"]}>
-      <ContainerTitle title={"Order Summary"} />
+      <LargeTitle title={"Order Summary"} />
       <DualTitleSection
         firstTitle={"Subtotal"}
         secondTitle={`$ ${totalPrice}`}

@@ -1,6 +1,6 @@
-import { Collection } from "../../../../common/Collection/Collection";
+import { Collection } from "../../../common/Collection/Collection";
 
-import { InfoMessage } from "../../../../reusable/InfoMessage/InfoMessage";
+import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
 
 export const EmptyBag = () => {
   return (

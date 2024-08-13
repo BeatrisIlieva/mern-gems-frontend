@@ -8,9 +8,9 @@ import { Footer } from "./components/layout/Footer/Footer";
 import { JewelryList } from "./components/pages/JewelryList/JewelryList";
 import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
 import { Account } from "./components/pages/Account/Account";
-import { Bag } from "./components/pages/ShoppingProcessContainer/Bag/Bag";
-import { Checkout } from "./components/pages/ShoppingProcessContainer/Checkout/Checkout";
-import { Payment } from "./components/pages/ShoppingProcessContainer/Payment/Payment";
+import { Bag } from "./components/pages/Bag/Bag";
+import { Checkout } from "./components/pages/Checkout/Checkout";
+import { Payment } from "./components/pages/Payment/Payment";
 import { OrderConfirmation } from "./components/pages/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "./components/pages/Page404/Page404";
 

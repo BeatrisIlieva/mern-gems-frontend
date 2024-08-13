@@ -1,24 +1,20 @@
 import { Link } from "react-router-dom";
 
-import { ShoppingProcessContainer } from "../../ShoppingProcessContainer";
-
-import { BagList } from "../../../../reusable/BagList/BagList";
-
-import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
-
-import { Button } from "../../../../reusable/Button/Button";
+import { ShoppingProcessContainer } from "../../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
+import { ChildWrapper } from "../../../reusable/ChildWrapper/ChildWrapper";
+import { BagList } from "../../../reusable/BagList/BagList";
+import { OrderSummary } from "../../../common/OrderSummary/OrderSummary";
+import { Button } from "../../../reusable/Button/Button";
 
 import styles from "./NonEmptyBag.module.css";
-
-import { SectionContainer } from "../../reusable/SectionContainer/SectionContainer";
 
 export const NonEmptyBag = () => {
   return (
     <ShoppingProcessContainer title={"Bag"}>
-      <SectionContainer>
+      <ChildWrapper>
         <BagList />
-      </SectionContainer>
-      <SectionContainer>
+      </ChildWrapper>
+      <ChildWrapper>
         <>
           <OrderSummary />
           <Link to={"/checkout"} className={styles["no-decoration"]}>
@@ -29,7 +25,7 @@ export const NonEmptyBag = () => {
             />
           </Link>
         </>
-      </SectionContainer>
+      </ChildWrapper>
     </ShoppingProcessContainer>
   );
 };
