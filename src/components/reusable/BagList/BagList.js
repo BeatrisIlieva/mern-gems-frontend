@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 
 import { JewelryCard } from "../JewelryCard/JewelryCard";
-import { SectionContainer } from "../SectionContainer/SectionContainer";
+import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
 
 import { useBagContext } from "../../../contexts/BagContext";
@@ -30,12 +30,12 @@ export const BagList = ({ variant }) => {
             variant={"bag-list"}
           />
           <div className={styles["info"]}>
-            <SectionContainer
+            <DualTitleSection
               firstTitle={item.jewelryTitle}
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
-            <SectionContainer
+            <DualTitleSection
               firstTitle={`Size: ${item.size}`}
               secondTitle={
                 showRemoveButton ? (

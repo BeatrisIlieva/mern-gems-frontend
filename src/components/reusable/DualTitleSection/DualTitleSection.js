@@ -1,8 +1,8 @@
 import { Title } from "./Title/Title";
 
-import styles from "./SectionContainer.module.css";
+import styles from "./DualTitleSection.module.css";
 
-export const SectionContainer = ({ firstTitle, secondTitle, variant }) => {
+export const DualTitleSection = ({ firstTitle, secondTitle, variant }) => {
   return (
     <div className={styles["wrapper"]}>
       <Title title={firstTitle} variant={variant} />

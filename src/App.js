@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 import { RouteGuard } from "./components/utils/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/utils/ScrollToTop/ScrollToTop";
@@ -19,8 +18,6 @@ import "normalize.css";
 import styles from "./App.css";
 
 function App() {
-
-
   return (
     <div className={styles["app"]}>
       <ScrollToTop />
