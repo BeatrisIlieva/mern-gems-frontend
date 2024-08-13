@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { NormalTitle } from "../reusable/NormalTitle/NormalTitle";
+import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
 
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

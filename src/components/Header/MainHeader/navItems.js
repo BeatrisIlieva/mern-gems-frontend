@@ -1,4 +1,4 @@
-import { MediumTitle } from "../reusable/MediumTitle/MediumTitle";
+import { MediumTitle } from "../../reusable/MediumTitle/MediumTitle";
 
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../../../../reusable/Button/Button";
 
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
-import { useBagContext } from "../../../../../contexts/BagContext";
 
 import { useService } from "../../../../../hooks/useService";
 
@@ -14,16 +13,12 @@ export const Logout = () => {
 
   const { userId, clearToken } = useAuthenticationContext();
 
-  const { clearShoppingBag } = useBagContext();
-
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   const logoutHandler = async () => {
     await userLoginDetailsService.logout(userId);
 
     await clearToken();
-
-    await clearShoppingBag();
 
     navigate("/");
   };

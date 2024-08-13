@@ -1,10 +1,9 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
-import { MiniHeader } from "./components/MiniHeader/MiniHeader";
 import { Home } from "./components/pages/Home/Home";
 import { Footer } from "./components/Footer/Footer";
 import { JewelryList } from "./components/pages/JewelryList/JewelryList";
@@ -22,25 +21,20 @@ import styles from "./App.css";
 function App() {
   const [showFooter, setShowFooter] = useState(false);
 
-  const location = useLocation();
+  // useEffect(() => {
+  //   setShowFooter(false);
 
-  const isCheckoutOrPaymentLocation =
-    location.pathname === "/checkout" || location.pathname === "/payment";
+  //   const timer = setTimeout(() => {
+  //     setShowFooter(true);
+  //   }, 1000);
 
-  useEffect(() => {
-    setShowFooter(false);
-
-    const timer = setTimeout(() => {
-      setShowFooter(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [location]);
+  //   return () => clearTimeout(timer);
+  // }, [location]);
 
   return (
     <div className={styles["app"]}>
       <ScrollToTop />
-      {isCheckoutOrPaymentLocation ? <MiniHeader /> : <Header />}
+      <Header />
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
