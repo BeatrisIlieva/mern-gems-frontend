@@ -5,7 +5,7 @@ import { RouteGuard } from "./components/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/pages/Home/Home";
-import { Footer } from "./components/Footer/Footer";
+import { Footer } from "./components/common/Footer/Footer";
 import { JewelryList } from "./components/pages/JewelryList/JewelryList";
 import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
 import { Account } from "./components/pages/Account/Account";
