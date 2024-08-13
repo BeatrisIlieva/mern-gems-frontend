@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import { DynamicForm } from "../reusable/DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
+import { DynamicForm } from "../DynamicForm/DynamicForm";
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
-import { useBagContext } from "../../contexts/BagContext";
-import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
+import { useBagContext } from "../../../contexts/BagContext";
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-import { useService } from "../../hooks/useService";
-import { useForm } from "../../hooks/useForm";
+import { useService } from "../../../hooks/useService";
+import { useForm } from "../../../hooks/useForm";
 
-import { paymentServiceFactory } from "../../services/paymentService";
-import { userCardDetailsServiceFactory } from "../../services/userCardDetailsService";
+import { paymentServiceFactory } from "../../../services/paymentService";
+import { userCardDetailsServiceFactory } from "../../../services/userCardDetailsService";
 
-import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
-import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
+import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 
 import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
 import { setCardHasExpiredErrorMessage } from "./helpers/setCardHasExpiredErrorMessage";
@@ -23,7 +23,7 @@ import { getData } from "./helpers/getData";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 export const CardDetailsForm = ({ popupCloseHandler }) => {
-  const location = useLocation();
+  const navigate = useNavigate();
 
   const [userCardDetails, setUserCardDetails] = useState([]);
 
@@ -31,7 +31,7 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
   const { userId } = useAuthenticationContext();
 
-  const { totalPrice } = useBagContext();
+  const { totalPrice, clearShoppingBag } = useBagContext();
 
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
 
@@ -60,16 +60,6 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
       });
   }, [userCardDetailsService, userId, updateForm]);
 
-  const { clearShoppingBag } = useBagContext();
-
-  const navigate = useNavigate();
-
-  const locationIsPayment = location.pathname === "/payment";
-
-  const buttonTitle = locationIsPayment
-    ? `Place Order $ ${totalPrice}`
-    : "Save";
-
   const onSubmit = async (e) => {
     submitHandler(e);
 
@@ -95,14 +85,14 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
         await userCardDetailsService.update(userId, data);
 
-        if (locationIsPayment) {
+        if (popupCloseHandler) {
+          popupCloseHandler();
+        } else {
           await paymentService.create(userId, data);
 
           clearShoppingBag();
 
           navigate("/order-confirmation");
-        } else {
-          popupCloseHandler();
         }
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
@@ -113,6 +103,10 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
       }
     }
   };
+
+  const buttonTitle = popupCloseHandler
+    ? "Save"
+    : `Place Order $ ${totalPrice}`;
 
   return (
     <>

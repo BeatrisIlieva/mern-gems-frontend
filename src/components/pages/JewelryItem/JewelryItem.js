@@ -4,7 +4,7 @@ import { useParams, useLocation } from "react-router-dom";
 import { Images } from "./Images/Images";
 import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
-import { MiniBag } from "../../MiniBag/MiniBag";
+import { MiniBag } from "./MiniBag/MiniBag";
 import { Nav } from "./Nav/Nav";
 
 import { useJewelryItemContext } from "../../../contexts/JewelryItemContext";

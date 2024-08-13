@@ -1,7 +1,7 @@
 import "react-loading-skeleton/dist/skeleton.css";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
-import { ITEMS_PER_PAGE } from "../../constants/pagination";
+import { ITEMS_PER_PAGE } from "../../../../constants/pagination";
 
 import styles from "./CardSkeleton.module.css";
 

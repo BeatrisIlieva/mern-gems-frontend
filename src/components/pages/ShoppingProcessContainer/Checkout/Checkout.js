@@ -1,24 +1,25 @@
 import { ShoppingProcessContainer } from "../ShoppingProcessContainer";
-import { ShippingDetailsForm } from "../../ShippingDetailsForm/ShippingDetailsForm";
-import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
-import { LeftSide } from "../LeftSide/LeftSide";
-import { RightSide } from "../RightSide/RightSide";
-import { OrderSummary } from "../OrderSummary/OrderSummary";
-import { BagList } from "../../reusable/BagList/BagList";
+import { ShippingDetailsForm } from "../../../reusable/ShippingDetailsForm/ShippingDetailsForm";
+import { ContainerTitle } from "../reusable/ContainerTitle/ContainerTitle";
+import { OrderSummary } from "../common/OrderSummary/OrderSummary";
+import { BagList } from "../../../reusable/BagList/BagList";
+import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 
 export const Checkout = () => {
   return (
     <ShoppingProcessContainer title={"Checkout"}>
-      <LeftSide>
+      <SectionContainer>
         <>
           <ContainerTitle title={"Shipping Address"} />
           <ShippingDetailsForm />
         </>
-      </LeftSide>
-      <RightSide>
-        <OrderSummary />
-        <BagList variant={"shopping-process-container"} />
-      </RightSide>
+      </SectionContainer>
+      <SectionContainer>
+        <>
+          <OrderSummary />
+          <BagList variant={"shopping-process-container"} />
+        </>
+      </SectionContainer>
     </ShoppingProcessContainer>
   );
 };

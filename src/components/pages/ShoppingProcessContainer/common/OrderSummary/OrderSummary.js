@@ -1,10 +1,10 @@
 import { useLocation } from "react-router-dom";
 
-import { HorizontalLine } from "../../reusable/HorizontalLine/HorizontalLine";
-import { ContainerTitle } from "../ContainerTitle/ContainerTitle";
-import { SectionContainer } from "../../reusable/SectionContainer/SectionContainer";
+import { HorizontalLine } from "../../../../reusable/HorizontalLine/HorizontalLine";
+import { ContainerTitle } from "../../reusable/ContainerTitle/ContainerTitle"; 
+import { SectionContainer } from "../../../../reusable/SectionContainer/SectionContainer";
 
-import { useBagContext } from "../../../contexts/BagContext";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
 import styles from "./OrderSummary.module.css";
 

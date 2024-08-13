@@ -1,5 +1,5 @@
-import { XLargeTitle } from "../reusable/XLargeTitle/XLargeTitle";
-import { BagCount } from "../BagCount/BagCount";
+import { XLargeTitle } from "../../reusable/XLargeTitle/XLargeTitle";
+import { BagCount } from "../../BagCount/BagCount";
 
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,7 +17,7 @@ export const ShoppingProcessContainer = ({ children, title }) => {
           <BagCount />
         </div>
       </div>
-      <div className={styles["bottom"]}>{children}</div>
+      <div className={styles["children"]}>{children}</div>
     </section>
   );
 };

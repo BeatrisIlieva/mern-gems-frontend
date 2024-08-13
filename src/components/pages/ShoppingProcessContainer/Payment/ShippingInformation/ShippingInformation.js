@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { Popup } from "../../../reusable/Popup/Popup";
-import { ShippingDetailsForm } from "../../../ShippingDetailsForm/ShippingDetailsForm";
-import { Button } from "../../../reusable/Button/Button";
+import { Popup } from "../../../../reusable/Popup/Popup";
+import { ShippingDetailsForm } from "../../../../reusable/ShippingDetailsForm/ShippingDetailsForm";
+import { Button } from "../../../../reusable/Button/Button";
 import { UserShippingDetails } from "./UserShippingDetails/UserShippingDetails";
 import { UserLoginDetails } from "./UserLoginDetails/UserLoginDetails";
 

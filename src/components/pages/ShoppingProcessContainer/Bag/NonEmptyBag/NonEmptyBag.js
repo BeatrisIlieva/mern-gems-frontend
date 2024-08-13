@@ -2,33 +2,34 @@ import { Link } from "react-router-dom";
 
 import { ShoppingProcessContainer } from "../../ShoppingProcessContainer";
 
-import { BagList } from "../../../reusable/BagList/BagList";
+import { BagList } from "../../../../reusable/BagList/BagList";
 
-import { OrderSummary } from "../../OrderSummary/OrderSummary";
+import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 
-import { Button } from "../../../reusable/Button/Button";
+import { Button } from "../../../../reusable/Button/Button";
 
 import styles from "./NonEmptyBag.module.css";
 
-import { LeftSide } from "../../LeftSide/LeftSide";
-import { RightSide } from "../../RightSide/RightSide";
+import { SectionContainer } from "../../reusable/SectionContainer/SectionContainer";
 
 export const NonEmptyBag = () => {
   return (
     <ShoppingProcessContainer title={"Bag"}>
-      <LeftSide>
+      <SectionContainer>
         <BagList />
-      </LeftSide>
-      <RightSide>
-        <OrderSummary />
-        <Link to={"/checkout"} className={styles["no-decoration"]}>
-          <Button
-            title={"Continue Checkout"}
-            buttonIsDisabled={false}
-            variant={"pink"}
-          />
-        </Link>
-      </RightSide>
+      </SectionContainer>
+      <SectionContainer>
+        <>
+          <OrderSummary />
+          <Link to={"/checkout"} className={styles["no-decoration"]}>
+            <Button
+              title={"Continue Checkout"}
+              buttonIsDisabled={false}
+              variant={"pink"}
+            />
+          </Link>
+        </>
+      </SectionContainer>
     </ShoppingProcessContainer>
   );
 };

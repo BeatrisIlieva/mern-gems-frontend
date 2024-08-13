@@ -27,7 +27,7 @@
   font-size: var(--large);
 }
 
-.bottom {
+.children {
   display: flex;
   justify-content: space-evenly;
   display: flex;

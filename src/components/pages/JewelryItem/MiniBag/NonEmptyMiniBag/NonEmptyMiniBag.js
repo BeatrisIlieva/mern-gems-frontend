@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-import { BagList } from "../../reusable/BagList/BagList";
-import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
-import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
-import { Button } from "../../reusable/Button/Button";
-import { BagCount } from "../../BagCount/BagCount";
+import { BagList } from "../../../../reusable/BagList/BagList";
+import { NormalTitle } from "../../../../reusable/NormalTitle/NormalTitle";
+import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
+import { Button } from "../../../../reusable/Button/Button";
+import { BagCount } from "../../../../BagCount/BagCount";
 
-import { useBagContext } from "../../../contexts/BagContext";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
 import styles from "./NonEmptyMiniBag.module.css";
 

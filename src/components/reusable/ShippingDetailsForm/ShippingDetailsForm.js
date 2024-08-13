@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import { DynamicForm } from "../reusable/DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
+import { DynamicForm } from "../DynamicForm/DynamicForm";
+import { LoadingSpinner } from "../../LoadingSpinner/LoadingSpinner";
 
-import { useAuthenticationContext } from "../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-import { useForm } from "../../hooks/useForm";
-import { useService } from "../../hooks/useService";
+import { useForm } from "../../../hooks/useForm";
+import { useService } from "../../../hooks/useService";
 
-import { userShippingDetailsServiceFactory } from "../../services/userShippingDetailsService";
+import { userShippingDetailsServiceFactory } from "../../../services/userShippingDetailsService";
 
-import { checkIfFormErrorHasOccurred } from "../../utils/checkIfFormErrorHasOccurred";
-import { clearInitialFormValuesMessages } from "../../utils/clearInitialFormValuesMessages";
+import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
+import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormValuesMessages";
 
 import { getData } from "./helpers/getData";
 
@@ -20,13 +20,10 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
 
 export const ShippingDetailsForm = ({ popupCloseHandler }) => {
   const [isLoading, setIsLoading] = useState(false);
+  
   const [userShippingDetails, setUserShippingDetails] = useState([]);
 
   const navigate = useNavigate();
-
-  const location = useLocation();
-
-  const locationIsCheckout = location.pathname === "/checkout";
 
   const { userId } = useAuthenticationContext();
 
@@ -71,10 +68,10 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        if (locationIsCheckout) {
-          navigate("/payment");
-        } else {
+        if (popupCloseHandler) {
           popupCloseHandler();
+        } else {
+          navigate("/payment");
         }
       } catch (err) {
         console.log(err.message);
@@ -84,7 +81,7 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
     }
   };
 
-  const buttonTitle = locationIsCheckout ? "Continue Checkout" : "Save";
+  const buttonTitle = popupCloseHandler ? "Save" : "Continue Checkout";
 
   return (
     <>

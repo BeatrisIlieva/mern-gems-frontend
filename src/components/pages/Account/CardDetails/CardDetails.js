@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { SectionContainer } from "../SectionContainer/SectionContainer";
-import { CardDetailsForm } from "../../../CardDetailsForm/CardDetailsForm";
+import { CardDetailsForm } from "../../../reusable/CardDetailsForm/CardDetailsForm";
 import { Popup } from "../../../reusable/Popup/Popup";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
