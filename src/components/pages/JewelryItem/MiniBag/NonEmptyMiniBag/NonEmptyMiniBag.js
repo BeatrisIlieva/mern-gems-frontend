@@ -18,6 +18,7 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
       modalVariant={"mini-bag"}
       overlayVariant={"mini-bag"}
       title={"My Bag"}
+      textAlight={"align-left"}
     >
       <section className={styles["mini-bag"]}>
         <BagList variant={"mini"} />

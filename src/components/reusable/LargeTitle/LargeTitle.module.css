@@ -2,7 +2,14 @@
   text-decoration: none;
   font-size: var(--large);
   font-family: var(--bold-italic-font-family);
-  text-align: center;
   color: var(--gray);
   margin-bottom: 30px;
+}
+
+.title.align-left {
+  text-align: left;
+}
+
+.title.align-center {
+  text-align: center;
 }

@@ -8,6 +8,7 @@ import styles from "./Popup.module.css";
 export const Popup = ({
   popupCloseHandler,
   title,
+  textAlign,
   children,
   modalVariant,
   overlayVariant,
@@ -24,7 +25,7 @@ export const Popup = ({
             onClick={popupCloseHandler}
           />
         )}
-        <LargeTitle title={title}/>
+        <LargeTitle title={title} textAlight={textAlign}/>
         {children}
       </div>
     </section>
