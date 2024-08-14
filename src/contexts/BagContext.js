@@ -18,10 +18,7 @@ export const BagProvider = ({ children }) => {
 
   const { jewelryId } = useParams();
 
-  const [bagTotalQuantity, setBagTotalQuantity] = useLocalStorage(
-    "bagTotalQuantity",
-    0
-  );
+  const [bagTotalQuantity, setBagTotalQuantity] = useState(0);
 
   const bagService = useService(bagServiceFactory);
 
@@ -49,6 +46,8 @@ export const BagProvider = ({ children }) => {
         }));
 
         setBagItems(modifiedData);
+
+        setBagTotalQuantity(modifiedData.length())
       })
       .catch((err) => {
         console.log(err.message);
@@ -74,7 +73,6 @@ export const BagProvider = ({ children }) => {
   };
 
   const clearShoppingBag = () => {
-    localStorage.setItem("bagTotalQuantity", 0);
 
     setBagTotalQuantity(0);
   };
