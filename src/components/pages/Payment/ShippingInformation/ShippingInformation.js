@@ -1,16 +1,10 @@
-import { useState } from "react";
-
-
 import { Button } from "../../../reusable/Button/Button";
 import { UserShippingDetails } from "./UserShippingDetails/UserShippingDetails";
 import { UserLoginDetails } from "./UserLoginDetails/UserLoginDetails";
 
 import styles from "./ShippingInformation.module.css";
 
-
-export const ShippingInformation = ({toggleDisplayShippingDetailsPopup}) => {
-
-
+export const ShippingInformation = ({ toggleDisplayShippingDetailsPopup }) => {
   return (
     <section className={styles["shipping-information"]}>
       <div className={styles["header-wrapper"]}>
