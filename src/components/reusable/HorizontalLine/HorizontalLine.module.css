@@ -35,3 +35,15 @@
   vertical-align: middle;
   margin: 0px 2px;
 }
+
+@media (min-width: 340px) and (max-width: 569px) {
+  .horizontal-line-header {
+    top: 60px;
+  }
+
+  .line-img {
+    width: 20px;
+    vertical-align: middle;
+    margin: 0px 2px;
+  }
+}

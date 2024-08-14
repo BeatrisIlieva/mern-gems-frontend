@@ -39,3 +39,19 @@
     top: 0;
   }
 }
+
+@media (max-width: 569px) {
+  .wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color: var(--white);
+    margin: 0px 20px;
+  }
+
+  .thumbnail {
+    height: 60px;
+    margin-left: 56px;
+    margin-top: 3px;
+  }
+}
