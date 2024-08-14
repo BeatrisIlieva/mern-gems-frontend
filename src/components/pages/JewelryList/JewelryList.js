@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { JewelryListItem } from "./JewelryListItem/JewelryListItem";
-import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "./LoadingSpinner/LoadingSpinner";
 import { Button } from "../../reusable/Button/Button";
 import { CardSkeleton } from "./CardSkeleton/CardSkeleton";
 import { NavItems } from "./NavItems/NavItems";
