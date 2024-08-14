@@ -1,5 +1,3 @@
-import { LargeTitle } from "../LargeTitle/LargeTitle";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -13,6 +11,13 @@ export const Popup = ({
 }) => {
   const showXMark = modalVariant !== "authentication";
 
+  document.body.style.overflow = "hidden";
+
+  const closeHandler = () => {
+    document.body.style.overflow = "visible";
+
+    popupCloseHandler();
+  };
   return (
     <section className={`${styles["overlay"]} ${styles[overlayVariant]}`}>
       <div className={`${styles["modal"]} ${styles[modalVariant]}`}>
@@ -20,7 +25,7 @@ export const Popup = ({
           <FontAwesomeIcon
             icon={faXmark}
             className={styles["x-mark"]}
-            onClick={popupCloseHandler}
+            onClick={closeHandler}
           />
         )}
         {children}
