@@ -11,7 +11,7 @@ export const InfoAndAction = ({ toggleDisplayMiniBagPopup }) => {
 
   return (
     <section className={styles["info-and-action"]}>
-      <LargeTitle title={jewelry.title} />
+      <LargeTitle title={jewelry.title} textAlign={"align-center"} />
       <Description />
       <Form toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
     </section>
