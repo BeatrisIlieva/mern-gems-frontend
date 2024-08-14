@@ -15,12 +15,6 @@
   transform: scale(1.1);
 }
 
-@media (min-width: 340px) and (max-width: 569px) {
-  .list-item.label {
-    display: none;
-  }
-}
-
 .selected,
 .not-selected {
   display: flex;
@@ -51,4 +45,10 @@
 .icon.filter {
   color: var(--medium-gray);
   height: var(--normal);
+}
+
+@media (min-width: 340px) and (max-width: 569px) {
+  .list-item.label {
+    display: none;
+  }
 }
