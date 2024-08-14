@@ -67,7 +67,10 @@
   font-size: var(--large);
   text-align: center;
   font-family: var(--bold-font-family);
-  margin: 20px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0px 0px 40px 0px;
 }
 
 @keyframes slideInTop {

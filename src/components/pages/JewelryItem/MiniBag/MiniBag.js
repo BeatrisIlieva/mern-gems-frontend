@@ -8,11 +8,12 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
   const { bagTotalQuantity } = useBagContext();
 
   return (
-    <Popup
-      popupCloseHandler={toggleDisplayMiniBagPopup}
-      modalVariant={"mini-bag"}
-      overlayVariant={"mini-bag"}
-    >
+    // <Popup
+    //   popupCloseHandler={toggleDisplayMiniBagPopup}
+    //   modalVariant={"mini-bag"}
+    //   overlayVariant={"mini-bag"}
+    // >
+    <>
       {bagTotalQuantity > 0 ? (
         <NonEmptyMiniBag
           toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
@@ -20,6 +21,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       ) : (
         <EmptyMiniBag />
       )}
-    </Popup>
+    </>
+    // </Popup>
   );
 };
