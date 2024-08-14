@@ -5,7 +5,6 @@ import { useAuthenticationContext } from "./AuthenticationContext";
 import { useJewelryItemContext } from "./JewelryItemContext";
 
 import { useService } from "../hooks/useService";
-import { useLocalStorage } from "../hooks/useLocalStorage";
 
 import { bagServiceFactory } from "../services/bagService";
 
@@ -47,7 +46,7 @@ export const BagProvider = ({ children }) => {
 
         setBagItems(modifiedData);
 
-        setBagTotalQuantity(modifiedData.length())
+        setBagTotalQuantity(modifiedData.length());
       })
       .catch((err) => {
         console.log(err.message);
@@ -73,7 +72,6 @@ export const BagProvider = ({ children }) => {
   };
 
   const clearShoppingBag = () => {
-
     setBagTotalQuantity(0);
   };
 
