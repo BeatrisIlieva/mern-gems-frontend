@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { SectionContainer } from "../SectionContainer/SectionContainer";
+import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { ShippingDetailsForm } from "../../../reusable/ShippingDetailsForm/ShippingDetailsForm";
 import { Popup } from "../../../reusable/Popup/Popup";
 

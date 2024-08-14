@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
 import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistory";
-import { SectionContainer } from "../SectionContainer/SectionContainer";
+import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { Popup } from "../../../reusable/Popup/Popup";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";

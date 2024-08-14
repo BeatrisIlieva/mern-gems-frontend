@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
-import { SectionContainer } from "../SectionContainer/SectionContainer";
+import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { CardDetailsForm } from "../../../reusable/CardDetailsForm/CardDetailsForm";
 import { Popup } from "../../../reusable/Popup/Popup";
 
