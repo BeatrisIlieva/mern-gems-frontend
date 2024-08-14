@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../../../../../utils/LoadingSpinner/LoadingSpinner";
 
 import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
@@ -21,7 +20,7 @@ import { removeSuccessMessage } from "./helpers/removeSuccessMessage";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-export const UpdatePasswordForm = () => {
+export const UpdatePasswordForm = ({ popupCloseHandler }) => {
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -81,6 +80,8 @@ export const UpdatePasswordForm = () => {
         setValues(spreadValues);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+
+        popupCloseHandler();
       } catch (err) {
         console.log(err.message);
 
@@ -101,7 +102,6 @@ export const UpdatePasswordForm = () => {
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
@@ -112,6 +112,7 @@ export const UpdatePasswordForm = () => {
         userInformation={userLoginDetails}
         buttonTitle={"Save"}
         onSubmit={onSubmit}
+        isLoading={isLoading}
       />
     </>
   );

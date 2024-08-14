@@ -22,7 +22,7 @@ export const UpdatePassword = () => {
       {displayPopup && (
         <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
           <LargeTitle title={"Change Password"} textAlign={"align-center"} />
-          <UpdatePasswordForm />
+          <UpdatePasswordForm popupCloseHandler={toggleDisplayPopup}/>
         </Popup>
       )}
     </>
