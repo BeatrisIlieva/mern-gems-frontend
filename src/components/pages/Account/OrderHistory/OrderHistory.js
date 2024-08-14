@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
 import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistory";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
@@ -46,12 +47,8 @@ export const OrderHistory = () => {
         buttonTitle={"View Order History"}
       />
       {displayPopup && (
-        <Popup
-          popupCloseHandler={toggleDisplayPopup}
-          title={"Order History"}
-          textAlign={"align-center"}
-          modalVariant={"large"}
-        >
+        <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"large"}>
+          <LargeTitle title={"Order History"} textAlign={"align-center"} />
           {orderItems.length < 1 ? (
             <EmptyOrderHistory />
           ) : (

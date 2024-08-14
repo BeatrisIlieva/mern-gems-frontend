@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 import { Popup } from "../../../../reusable/Popup/Popup";
 import { Button } from "../../../../reusable/Button/Button";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
@@ -19,12 +20,8 @@ export const UpdatePassword = () => {
         variant={"underlined"}
       />
       {displayPopup && (
-        <Popup
-          popupCloseHandler={toggleDisplayPopup}
-          title={"Change Password"}
-          textAlign={"align-center"}
-          modalVariant={"small"}
-        >
+        <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
+          <LargeTitle title={"Change Password"} textAlign={"align-center"} />
           <UpdatePasswordForm />
         </Popup>
       )}

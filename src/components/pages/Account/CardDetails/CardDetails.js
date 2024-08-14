@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { SectionContainer } from "../SectionContainer/SectionContainer";
 import { CardDetailsForm } from "../../../reusable/CardDetailsForm/CardDetailsForm";
 import { Popup } from "../../../reusable/Popup/Popup";
@@ -22,12 +23,8 @@ export const CardDetails = () => {
         buttonTitle={"Add a New Credit Card"}
       />
       {displayPopup && (
-        <Popup
-          popupCloseHandler={toggleDisplayPopup}
-          title={"Add a New Card"}
-          textAlign={"align-center"}
-          modalVariant={"large"}
-        >
+        <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"large"}>
+          <LargeTitle title={"Add a New Card"} textAlign={"align-center"} />
           <CardDetailsForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>
       )}
