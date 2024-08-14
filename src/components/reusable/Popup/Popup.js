@@ -1,3 +1,5 @@
+import { LargeTitle } from "../LargeTitle/LargeTitle";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,7 +24,7 @@ export const Popup = ({
             onClick={popupCloseHandler}
           />
         )}
-        <h2 className={styles["title"]}>{title}</h2>
+        <LargeTitle title={title}/>
         {children}
       </div>
     </section>
