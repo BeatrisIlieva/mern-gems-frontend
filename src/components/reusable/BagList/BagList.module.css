@@ -7,7 +7,7 @@
 
 .bag-list.mini {
   overflow-y: auto;
-  height: calc(100vh - 280px);
+  height: calc(100vh - 230px);
 }
 
 .wrapper {
