@@ -15,6 +15,8 @@ export const Payment = () => {
     useState(false);
 
   const toggleDisplayShippingDetailsPopup = () => {
+    document.body.style.overflow = "visible";
+
     setDisplayShippingDetailsPopup(
       (displayShippingDetailsPopup) => !displayShippingDetailsPopup
     );
