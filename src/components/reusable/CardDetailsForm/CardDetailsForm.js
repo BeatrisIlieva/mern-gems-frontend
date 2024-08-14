@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
 
 import { useBagContext } from "../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
@@ -110,7 +109,6 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
@@ -121,6 +119,7 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
         userInformation={userCardDetails}
         buttonTitle={buttonTitle}
         onSubmit={onSubmit}
+        isLoading={isLoading}
       />
     </>
   );
