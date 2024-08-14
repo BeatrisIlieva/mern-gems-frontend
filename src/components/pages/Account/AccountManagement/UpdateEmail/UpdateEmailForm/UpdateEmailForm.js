@@ -17,7 +17,7 @@ import { getData } from "./helpers/getData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-export const UpdateEmailForm = () => {
+export const UpdateEmailForm = ({ toggleDisplayPopup }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -63,6 +63,8 @@ export const UpdateEmailForm = () => {
         await userLoginDetailsService.updateEmail(userId, data);
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+
+        toggleDisplayPopup();
       } catch (err) {
         console.log(err.message);
 

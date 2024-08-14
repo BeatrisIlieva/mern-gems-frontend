@@ -22,7 +22,7 @@ export const UpdateEmail = () => {
       {displayPopup && (
         <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
           <LargeTitle title={"Update Email"} textAlign={"align-center"} />
-          <UpdateEmailForm />
+          <UpdateEmailForm popupCloseHandler={toggleDisplayPopup}/>
         </Popup>
       )}
     </>
