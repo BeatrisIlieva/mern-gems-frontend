@@ -17,7 +17,7 @@ import { getData } from "./helpers/getData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-export const UpdateEmailForm = ({ toggleDisplayPopup }) => {
+export const UpdateEmailForm = ({ popupCloseHandler }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -64,7 +64,7 @@ export const UpdateEmailForm = ({ toggleDisplayPopup }) => {
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        toggleDisplayPopup();
+        popupCloseHandler();
       } catch (err) {
         console.log(err.message);
 
