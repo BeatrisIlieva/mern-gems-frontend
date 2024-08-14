@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -20,7 +19,7 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
 
 export const ShippingDetailsForm = ({ popupCloseHandler }) => {
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const [userShippingDetails, setUserShippingDetails] = useState([]);
 
   const navigate = useNavigate();
@@ -85,7 +84,6 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
@@ -96,6 +94,7 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
         userInformation={userShippingDetails}
         buttonTitle={buttonTitle}
         onSubmit={onSubmit}
+        isLoading={isLoading}
       />
     </>
   );

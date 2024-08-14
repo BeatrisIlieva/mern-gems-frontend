@@ -13,6 +13,7 @@ export const DynamicForm = ({
   userInformation,
   buttonTitle,
   onSubmit,
+  isLoading
 }) => {
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
@@ -28,7 +29,7 @@ export const DynamicForm = ({
           initialFormValues={initialFormValues}
         />
       ))}
-      <Button title={buttonTitle} type={"submit"} variant={"pink"}/>
+      <Button title={buttonTitle} isLoading={isLoading} type={"submit"} variant={"pink"}/>
     </form>
   );
 };

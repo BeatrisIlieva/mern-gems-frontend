@@ -6,6 +6,7 @@ export const Button = ({
   callBackFunction,
   variant,
   type,
+  isLoading
 }) => {
   return (
     <button
@@ -18,7 +19,7 @@ export const Button = ({
       disabled={buttonIsDisabled}
       onClick={callBackFunction}
     >
-      {title}
+      {isLoading ? "Processing..." : title}
     </button>
   );
 };
