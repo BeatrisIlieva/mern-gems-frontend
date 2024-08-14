@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
-import { LoadingSpinner } from "../../../../../utils/LoadingSpinner/LoadingSpinner";
 
 import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
@@ -84,7 +83,6 @@ export const UpdateEmailForm = () => {
 
   return (
     <>
-      {isLoading && <LoadingSpinner />}
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
@@ -95,6 +93,7 @@ export const UpdateEmailForm = () => {
         userInformation={userLoginDetails}
         buttonTitle={"Save"}
         onSubmit={onSubmit}
+        isLoading={isLoading}
       />
     </>
   );
