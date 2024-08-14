@@ -1,11 +1,11 @@
-import { Header } from "../Header/Header";
+import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 import { SwitchButton } from "../SwitchButton/SwitchButton";
 import { LoginForm } from "./LoginForm/LoginForm";
 
 export const Login = ({ switchPopupHandler, switchOptions }) => {
   return (
     <>
-      <Header title={"Sign In to Shop"} />
+      <LargeTitle title={"Sign In to Shop"} textAlign={"align-center"}/>
       <LoginForm />
       <SwitchButton
         text={"Not a member?"}

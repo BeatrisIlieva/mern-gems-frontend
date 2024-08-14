@@ -25,6 +25,7 @@ export const CardDetails = () => {
         <Popup
           popupCloseHandler={toggleDisplayPopup}
           title={"Add a New Card"}
+          textAlign={"align-center"}
           modalVariant={"large"}
         >
           <CardDetailsForm popupCloseHandler={toggleDisplayPopup} />
