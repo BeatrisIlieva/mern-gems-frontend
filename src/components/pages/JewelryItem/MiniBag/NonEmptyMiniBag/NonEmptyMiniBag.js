@@ -13,6 +13,12 @@ import styles from "./NonEmptyMiniBag.module.css";
 export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
   const { totalPrice } = useBagContext();
 
+  const buttonClickHandler = () => {
+    document.body.style.overflow = "visible";
+
+    toggleDisplayMiniBagPopup();
+  };
+
   return (
     <Popup
       popupCloseHandler={toggleDisplayMiniBagPopup}
@@ -32,7 +38,7 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
             <Button
               title={"View Bag"}
               buttonIsDisabled={false}
-              callBackFunction={toggleDisplayMiniBagPopup}
+              callBackFunction={buttonClickHandler}
               variant={"pink"}
             />
           </Link>
@@ -40,7 +46,7 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
             <Button
               title={"Continue Checkout"}
               buttonIsDisabled={false}
-              callBackFunction={toggleDisplayMiniBagPopup}
+              callBackFunction={buttonClickHandler}
               variant={"gray"}
             />
           </Link>

@@ -18,6 +18,7 @@ export const Popup = ({
 
     popupCloseHandler();
   };
+  
   return (
     <section className={`${styles["overlay"]} ${styles[overlayVariant]}`}>
       <div className={`${styles["modal"]} ${styles[modalVariant]}`}>

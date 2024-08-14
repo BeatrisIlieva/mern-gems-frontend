@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
-import { Popup } from "../../../reusable/Popup/Popup";
-import { ShippingDetailsForm } from "../../../reusable/ShippingDetailsForm/ShippingDetailsForm";
+
 import { Button } from "../../../reusable/Button/Button";
 import { UserShippingDetails } from "./UserShippingDetails/UserShippingDetails";
 import { UserLoginDetails } from "./UserLoginDetails/UserLoginDetails";
@@ -10,15 +8,8 @@ import { UserLoginDetails } from "./UserLoginDetails/UserLoginDetails";
 import styles from "./ShippingInformation.module.css";
 
 
-export const ShippingInformation = () => {
-  const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
-    useState(false);
+export const ShippingInformation = ({toggleDisplayShippingDetailsPopup}) => {
 
-  const toggleDisplayShippingDetailsPopup = () => {
-    setDisplayShippingDetailsPopup(
-      (displayShippingDetailsPopup) => !displayShippingDetailsPopup
-    );
-  };
 
   return (
     <section className={styles["shipping-information"]}>
@@ -32,20 +23,6 @@ export const ShippingInformation = () => {
       </div>
       <UserLoginDetails />
       <UserShippingDetails />
-      {displayShippingDetailsPopup && (
-        <Popup
-          popupCloseHandler={toggleDisplayShippingDetailsPopup}
-          modalVariant={"large"}
-        >
-          <LargeTitle
-            title={"Edit Shipping Address"}
-            textAlign={"align-center"}
-          />
-          <ShippingDetailsForm
-            popupCloseHandler={toggleDisplayShippingDetailsPopup}
-          />
-        </Popup>
-      )}
     </section>
   );
 };
