@@ -13,7 +13,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
           toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
         />
       ) : (
-        <EmptyMiniBag />
+        <EmptyMiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
       )}
     </>
   );
