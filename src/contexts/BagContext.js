@@ -21,7 +21,7 @@ export const BagProvider = ({ children }) => {
 
   const bagService = useService(bagServiceFactory);
 
-  const { userId, isAuthenticated } = useAuthenticationContext();
+  const { userId } = useAuthenticationContext();
 
   const { increaseSizeQuantity } = useJewelryItemContext();
 
@@ -45,13 +45,11 @@ export const BagProvider = ({ children }) => {
         }));
 
         setBagItems(modifiedData);
-
-        setBagTotalQuantity(modifiedData.length());
       })
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userId, bagService, isAuthenticated]);
+  }, [userId, bagService]);
 
   const updateBagTotalQuantity = (delta) => {
     setBagTotalQuantity(bagTotalQuantity + delta);

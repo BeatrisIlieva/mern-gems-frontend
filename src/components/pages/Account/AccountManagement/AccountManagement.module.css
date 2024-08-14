@@ -4,9 +4,12 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   border: 0.1px solid var(--pink);
   align-items: flex-start;
+}
+
+.wrapper {
+  margin-bottom: 20px;
 }
 
 .buttons-container {
