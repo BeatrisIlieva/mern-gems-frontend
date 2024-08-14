@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 import { BagList } from "../../../../reusable/BagList/BagList";
-import { NormalTitle } from "../../../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 import { Button } from "../../../../reusable/Button/Button";
 import { BagCount } from "../../../../common/BagCount/BagCount";
+import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 
@@ -20,10 +20,11 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
         <BagCount />
       </div>
       <BagList variant={"mini"} />
-      <div className={styles["total-price-wrapper"]}>
-        <NormalTitle title={"Total"} variant={"bolded"} />
-        <NormalTitle title={`$ ${totalPrice}`} variant={"bolded"} />
-      </div>
+      <DualTitleSection
+        firstTitle={"Total"}
+        secondTitle={`$ ${totalPrice}`}
+        variant={"bolded"}
+      />
       <Link to={"/users/shopping-bag"} className={styles["no-decoration"]}>
         <Button
           title={"View Bag"}
