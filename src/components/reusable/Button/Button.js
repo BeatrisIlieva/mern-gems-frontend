@@ -12,7 +12,7 @@ export const Button = ({
     <button
       type={type}
       className={
-        !buttonIsDisabled
+        !buttonIsDisabled && !isLoading
           ? `${styles["button"]} ${styles[variant]}`
           : `${styles["button"]} ${styles[variant]} ${styles["disabled"]}`
       }
