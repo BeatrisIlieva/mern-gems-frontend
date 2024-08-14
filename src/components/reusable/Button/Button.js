@@ -6,7 +6,7 @@ export const Button = ({
   callBackFunction,
   variant,
   type,
-  isLoading
+  isLoading,
 }) => {
   return (
     <button

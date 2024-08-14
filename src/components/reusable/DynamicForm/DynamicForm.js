@@ -1,5 +1,5 @@
 import { FieldBox } from "./FieldBox/FieldBox";
-import {Button} from "../../reusable/Button/Button"
+import { Button } from "../../reusable/Button/Button";
 
 import styles from "./DynamicForm.module.css";
 
@@ -13,7 +13,7 @@ export const DynamicForm = ({
   userInformation,
   buttonTitle,
   onSubmit,
-  isLoading
+  isLoading,
 }) => {
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
@@ -29,7 +29,12 @@ export const DynamicForm = ({
           initialFormValues={initialFormValues}
         />
       ))}
-      <Button title={buttonTitle} isLoading={isLoading} type={"submit"} variant={"pink"}/>
+      <Button
+        title={buttonTitle}
+        isLoading={isLoading}
+        type={"submit"}
+        variant={"pink"}
+      />
     </form>
   );
 };
