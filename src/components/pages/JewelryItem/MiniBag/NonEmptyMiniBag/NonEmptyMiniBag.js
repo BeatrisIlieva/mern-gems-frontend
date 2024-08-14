@@ -4,6 +4,7 @@ import { BagList } from "../../../../reusable/BagList/BagList";
 import { Button } from "../../../../reusable/Button/Button";
 import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { Popup } from "../../../../reusable/Popup/Popup";
+import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 
@@ -17,10 +18,9 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
       popupCloseHandler={toggleDisplayMiniBagPopup}
       modalVariant={"mini-bag"}
       overlayVariant={"mini-bag"}
-      title={"My Bag"}
-      textAlight={"align-left"}
     >
       <section className={styles["mini-bag"]}>
+        <LargeTitle title={"My Bag"} textAlight={"align-left"} />
         <BagList variant={"mini"} />
         <div className={styles["bottom-container"]}>
           <DualTitleSection
