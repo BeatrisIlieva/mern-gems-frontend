@@ -7,31 +7,27 @@ import { useService } from "../../../../../hooks/useService";
 
 import { jewelryServiceFactory } from "../../../../../services/jewelryService";
 
+import { CATEGORIES_BY_ID } from "../../../../../mappers/categoriesById";
+
 export const Bracelets = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [bracelets, setBracelets] = useState([]);
 
   const jewelryService = useService(jewelryServiceFactory);
 
   useEffect(() => {
-    setIsLoading(true);
-
     jewelryService
-      .getAll(1)
+      .getAll(CATEGORIES_BY_ID.bracelets)
       .then((data) => {
         setBracelets(data);
       })
       .catch((err) => {
         console.log(err.message);
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
   }, []);
 
   return (
     <>
-      {isLoading || bracelets.length < 1 ? (
+      {bracelets.length < 1 ? (
         <CardSkeleton />
       ) : (
         <CategoryCard entity={bracelets} />
