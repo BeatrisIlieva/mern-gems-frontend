@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 
+import { CategoryCard } from "../reusable/CategoryCard/CategoryCard";
+import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
+
 import { useService } from "../../../../../hooks/useService";
 
 import { jewelryServiceFactory } from "../../../../../services/jewelryService";
-
-import { CategoryCard } from "../reusable/CategoryCard/CategoryCard";
-
-import { LoadingSpinner } from "../../../JewelryList/LoadingSpinner/LoadingSpinner";
-
-import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
 export const Bracelets = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,9 +32,9 @@ export const Bracelets = () => {
   return (
     <>
       {isLoading || bracelets.length < 1 ? (
-                  <CardSkeleton />
+        <CardSkeleton />
       ) : (
-        <CategoryCard entity={bracelets}/>
+        <CategoryCard entity={bracelets} />
       )}
     </>
   );
