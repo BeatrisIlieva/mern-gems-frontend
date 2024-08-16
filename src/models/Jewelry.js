@@ -29,7 +29,7 @@ const jewelrySchema = new mongoose.Schema({
     required: true,
   },
   
-  miniImageUrl: {
+  miniImage: {
     type: Number,
     ref: "MiniImage",
     required: true,

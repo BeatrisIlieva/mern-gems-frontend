@@ -2,11 +2,11 @@ const router = require("express").Router();
 
 const jewelryManager = require("../managers/jewelryManager");
 
-router.get("/:jewelryId", async (req, res) => {
-  const jewelryId = Number(req.params.jewelryId);
+router.get("/:categoryId", async (req, res) => {
+  const categoryId = Number(req.params.categoryId);
 
   try {
-    const result = await jewelryManager.getOne(jewelryId);
+    const result = await jewelryManager.getAll(categoryId);
 
     res.status(200).json(result);
   } catch (err) {
@@ -18,30 +18,46 @@ router.get("/:jewelryId", async (req, res) => {
   }
 });
 
-router.get("/:collectionId/:categoryId/:skip/:limit", async (req, res) => {
-  const collectionId = Number(req.params.collectionId);
+// router.get("/:jewelryId", async (req, res) => {
+//   const jewelryId = Number(req.params.jewelryId);
 
-  const categoryId = req.params.categoryId
-    ? Number(req.params.categoryId)
-    : null;
+//   try {
+//     const result = await jewelryManager.getOne(jewelryId);
 
-  const skip = Number(req.params.skip);
+//     res.status(200).json(result);
+//   } catch (err) {
+//     console.log(err);
 
-  const limit = Number(req.params.limit);
+//     res.status(401).json({
+//       message: err.message,
+//     });
+//   }
+// });
 
-  const data = { collectionId, categoryId, skip, limit };
+// router.get("/:collectionId/:categoryId/:skip/:limit", async (req, res) => {
+//   const collectionId = Number(req.params.collectionId);
 
-  try {
-    let result = await jewelryManager.getAll(data);
+//   const categoryId = req.params.categoryId
+//     ? Number(req.params.categoryId)
+//     : null;
 
-    res.status(200).json(result);
-  } catch (err) {
-    console.log(err);
+//   const skip = Number(req.params.skip);
 
-    res.status(401).json({
-      message: err.message,
-    });
-  }
-});
+//   const limit = Number(req.params.limit);
+
+//   const data = { collectionId, categoryId, skip, limit };
+
+//   try {
+//     let result = await jewelryManager.getAll(data);
+
+//     res.status(200).json(result);
+//   } catch (err) {
+//     console.log(err);
+
+//     res.status(401).json({
+//       message: err.message,
+//     });
+//   }
+// });
 
 module.exports = router;
