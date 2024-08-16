@@ -1,8 +1,8 @@
 .category-card {
-  width: 20vw;
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  width: 18rem;
 }
 
 .category-card.hovered {
