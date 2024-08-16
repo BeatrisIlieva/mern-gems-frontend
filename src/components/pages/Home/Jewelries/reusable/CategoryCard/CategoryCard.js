@@ -9,8 +9,15 @@ export const CategoryCard = ({ entity }) => {
   const [imageIsHovered, setImageIsHovered] = useState(false);
 
   return (
-    <article         onMouseEnter={() => setArticleIsHovered(true)}
-    onMouseLeave={() => setArticleIsHovered(false)} className={articleIsHovered ? `${styles["category-card"]} ${styles["hovered"]}` : styles["category-card"]}>
+    <article
+      onMouseEnter={() => setArticleIsHovered(true)}
+      onMouseLeave={() => setArticleIsHovered(false)}
+      className={
+        articleIsHovered
+          ? `${styles["category-card"]} ${styles["hovered"]}`
+          : styles["category-card"]
+      }
+    >
       <div
         className={`${styles["category-card"]} ${styles["thumbnail"]}`}
         onMouseEnter={() => setImageIsHovered(true)}
