@@ -7,7 +7,7 @@ import styles from "./NavLinkItem.module.css";
 
 export const NavLinkItem = ({ items }) => {
   return (
-    <nav className={styles["nav"]}>
+    <nav>
       <ul className={styles["list"]} role="list">
         {items.map((item, index) => (
           <Fragment key={`${item.label}-${item.to}-${index}`}>

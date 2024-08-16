@@ -40,18 +40,17 @@
   }
 }
 
-@media (max-width: 569px) {
+@media (min-width: 340px) and (max-width: 569px) {
+  .header {
+    height: 68px;
+  }
+
   .wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    background-color: var(--white);
     margin: 0px 20px;
   }
 
   .thumbnail {
     height: 60px;
     margin-left: 40px;
-    margin-top: 3px;
   }
 }

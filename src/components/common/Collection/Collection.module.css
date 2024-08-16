@@ -4,20 +4,17 @@
 
 .wrapper {
   margin-bottom: 30px;
-}
-
-.no-decoration {
   text-decoration: none;
 }
 
-.hero-box,
-.hero-box-reverse {
+
+
+.hero-box {
   display: flex;
-  flex-wrap: wrap;
-  row-gap: 30px;
+  gap: 30px;
 }
 
-.hero-box-reverse {
+.hero-box.reversed {
   flex-direction: row-reverse;
 }
 
@@ -37,4 +34,15 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+}
+
+@media (min-width: 340px) and (max-width: 569px) {
+  .hero-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-box.reversed {
+    flex-direction: unset;
+  }
 }

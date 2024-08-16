@@ -11,30 +11,28 @@ export const Collection = () => {
   return (
     <section className={styles["collection"]}>
       {collectionItems.map((item, index) => (
-        <div key={item.imageUrl} className={styles["wrapper"]}>
-          <Link to={item.path} className={styles["no-decoration"]}>
-            <div
-              className={
-                index % 2 === 0
-                  ? styles["hero-box"]
-                  : styles["hero-box-reverse"]
-              }
-            >
-              <div className={styles["hero-text"]}>
-                <LargeTitle title={`${item.title} Collection`} />
-                <Paragraph text={item.description} />
-                <Button title={"Discover"} variant={"animated"} />
-              </div>
-              <div className={styles["hero-img-container"]}>
-                <img
-                  className={styles["hero-img"]}
-                  src={item.imageUrl}
-                  alt={item.title}
-                />
-              </div>
+        <Link to={item.path} key={item.imageUrl} className={styles["wrapper"]}>
+          <div
+            className={
+              index % 2 === 0
+                ? styles["hero-box"]
+                : `${styles["hero-box"]} ${styles["reversed"]}`
+            }
+          >
+            <div className={styles["hero-text"]}>
+              <LargeTitle title={`${item.title} Collection`} />
+              <Paragraph text={item.description} />
+              <Button title={"Discover"} variant={"animated"} />
             </div>
-          </Link>
-        </div>
+            <div className={styles["hero-img-container"]}>
+              <img
+                className={styles["hero-img"]}
+                src={item.imageUrl}
+                alt={item.title}
+              />
+            </div>
+          </div>
+        </Link>
       ))}
     </section>
   );
