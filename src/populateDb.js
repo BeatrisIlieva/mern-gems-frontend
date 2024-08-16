@@ -93,7 +93,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Sapphire and Diamond Bracelet",
+    title: "Forget-Me-Not Blue Sapphire and Diamond Bracelet",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_1_fokzrw.webp",
     secondImageUrl:
@@ -129,7 +129,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Sapphire and Diamond Drop Earrings",
+    title: "Forget-Me-Not Blue Sapphire and Diamond Drop Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-1_zx2cga.webp",
     secondImageUrl:
@@ -165,7 +165,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me Not Sapphire and Diamond Lariat Necklace",
+    title: "Forget-Me Not Blue Sapphire and Diamond Lariat Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_1_p2uxlj.webp",
     secondImageUrl:
@@ -201,7 +201,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Sapphire and Diamond Ring",
+    title: "Forget-Me-Not Blue Sapphire and Diamond Ring",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_1_pm9u6t.avif",
     secondImageUrl:
@@ -243,5 +243,235 @@ async function populateDb() {
   });
 
   const allJewelries = await Jewelry.find();
+
+  await Inventory.insertMany([
+    {
+      jewelry: allJewelries[0],
+      size: allSizes[0],
+      quantity: 2,
+      price: 33000,
+    },
+    {
+      jewelry: allJewelries[0],
+      size: allSizes[1],
+      quantity: 2,
+      price: 34000,
+    },
+    {
+      jewelry: allJewelries[0],
+      size: allSizes[2],
+      quantity: 2,
+      price: 35000,
+    },
+
+    {
+      jewelry: allJewelries[1],
+      size: allSizes[0],
+      quantity: 2,
+      price: 33000,
+    },
+    {
+      jewelry: allJewelries[1],
+      size: allSizes[1],
+      quantity: 2,
+      price: 34000,
+    },
+    {
+      jewelry: allJewelries[1],
+      size: allSizes[2],
+      quantity: 2,
+      price: 35000,
+    },
+
+    {
+      jewelry: allJewelries[2],
+      size: allSizes[0],
+      quantity: 2,
+      price: 33000,
+    },
+    {
+      jewelry: allJewelries[2],
+      size: allSizes[1],
+      quantity: 2,
+      price: 34000,
+    },
+    {
+      jewelry: allJewelries[2],
+      size: allSizes[2],
+      quantity: 2,
+      price: 35000,
+    },
+
+    {
+      jewelry: allJewelries[3],
+      size: allSizes[3],
+      quantity: 2,
+      price: 43000,
+    },
+    {
+      jewelry: allJewelries[3],
+      size: allSizes[4],
+      quantity: 2,
+      price: 44000,
+    },
+    {
+      jewelry: allJewelries[3],
+      size: allSizes[5],
+      quantity: 2,
+      price: 45000,
+    },
+
+    {
+      jewelry: allJewelries[4],
+      size: allSizes[3],
+      quantity: 2,
+      price: 43000,
+    },
+    {
+      jewelry: allJewelries[4],
+      size: allSizes[4],
+      quantity: 2,
+      price: 44000,
+    },
+    {
+      jewelry: allJewelries[4],
+      size: allSizes[5],
+      quantity: 2,
+      price: 45000,
+    },
+
+    {
+      jewelry: allJewelries[5],
+      size: allSizes[3],
+      quantity: 2,
+      price: 43000,
+    },
+    {
+      jewelry: allJewelries[5],
+      size: allSizes[4],
+      quantity: 2,
+      price: 44000,
+    },
+    {
+      jewelry: allJewelries[5],
+      size: allSizes[5],
+      quantity: 2,
+      price: 45000,
+    },
+
+    {
+      jewelry: allJewelries[6],
+      size: allSizes[6],
+      quantity: 2,
+      price: 53000,
+    },
+    {
+      jewelry: allJewelries[6],
+      size: allSizes[7],
+      quantity: 2,
+      price: 54000,
+    },
+    {
+      jewelry: allJewelries[6],
+      size: allSizes[8],
+      quantity: 2,
+      price: 55000,
+    },
+
+    {
+      jewelry: allJewelries[7],
+      size: allSizes[6],
+      quantity: 2,
+      price: 53000,
+    },
+    {
+      jewelry: allJewelries[7],
+      size: allSizes[7],
+      quantity: 2,
+      price: 54000,
+    },
+    {
+      jewelry: allJewelries[7],
+      size: allSizes[8],
+      quantity: 2,
+      price: 55000,
+    },
+
+    {
+      jewelry: allJewelries[8],
+      size: allSizes[6],
+      quantity: 2,
+      price: 53000,
+    },
+    {
+      jewelry: allJewelries[8],
+      size: allSizes[7],
+      quantity: 2,
+      price: 54000,
+    },
+    {
+      jewelry: allJewelries[8],
+      size: allSizes[8],
+      quantity: 2,
+      price: 55000,
+    },
+
+    {
+      jewelry: allJewelries[9],
+      size: allSizes[9],
+      quantity: 2,
+      price: 23000,
+    },
+    {
+      jewelry: allJewelries[9],
+      size: allSizes[10],
+      quantity: 2,
+      price: 24000,
+    },
+    {
+      jewelry: allJewelries[9],
+      size: allSizes[11],
+      quantity: 2,
+      price: 25000,
+    },
+
+    {
+      jewelry: allJewelries[10],
+      size: allSizes[9],
+      quantity: 2,
+      price: 23000,
+    },
+    {
+      jewelry: allJewelries[10],
+      size: allSizes[10],
+      quantity: 2,
+      price: 24000,
+    },
+    {
+      jewelry: allJewelries[10],
+      size: allSizes[11],
+      quantity: 2,
+      price: 25000,
+    },
+
+    {
+      jewelry: allJewelries[11],
+      size: allSizes[9],
+      quantity: 2,
+      price: 23000,
+    },
+    {
+      jewelry: allJewelries[11],
+      size: allSizes[10],
+      quantity: 2,
+      price: 24000,
+    },
+    {
+      jewelry: allJewelries[11],
+      size: allSizes[11],
+      quantity: 2,
+      price: 25000,
+    },
+  ])
 }
 populateDb();
