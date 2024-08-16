@@ -5,7 +5,8 @@
 }
 
 .category-card.hovered {
-    border: .1px solid var(--light-gray);
+  display: inline-block;
+  box-shadow: 0 0 0 1px var(--light-gray);
 }
 
 .category-card.thumbnail {
@@ -23,6 +24,3 @@
   bottom: 0;
   z-index: 10;
 }
-
-
-

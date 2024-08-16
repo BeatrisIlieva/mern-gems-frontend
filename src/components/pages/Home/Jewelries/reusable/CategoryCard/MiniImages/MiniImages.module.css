@@ -16,11 +16,12 @@
 
 .image-object.image.title {
   position: absolute;
-  bottom: -36px;
+  top: -14px;
   text-align: center;
   background-color: var(--very-light-gray);
   border-radius: 16px;
   padding: 8px;
   height: fit-content;
   width: fit-content;
+  z-index: 100;
 }
