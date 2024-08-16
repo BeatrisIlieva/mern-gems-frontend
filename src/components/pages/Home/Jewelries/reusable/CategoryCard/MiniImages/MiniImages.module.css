@@ -15,12 +15,12 @@
 }
 
 .image-object.image.title {
-position: absolute;
-bottom: -36px;
-text-align: center;
-background-color: var(--very-light-gray);
-border-radius: 16px;
-padding: 8px;
-height: fit-content;
-width: fit-content;
+  position: absolute;
+  bottom: -36px;
+  text-align: center;
+  background-color: var(--very-light-gray);
+  border-radius: 16px;
+  padding: 8px;
+  height: fit-content;
+  width: fit-content;
 }

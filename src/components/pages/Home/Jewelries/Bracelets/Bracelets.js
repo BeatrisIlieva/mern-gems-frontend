@@ -8,7 +8,7 @@ import { CategoryCard } from "../reusable/CategoryCard/CategoryCard";
 
 import { LoadingSpinner } from "../../../JewelryList/LoadingSpinner/LoadingSpinner";
 
-import styles from "./Bracelets.module.css";
+import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
 export const Bracelets = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +35,7 @@ export const Bracelets = () => {
   return (
     <>
       {isLoading || bracelets.length < 1 ? (
-        <LoadingSpinner />
+                  <CardSkeleton />
       ) : (
         <CategoryCard entity={bracelets}/>
       )}

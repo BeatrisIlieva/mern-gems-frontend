@@ -5,10 +5,12 @@ import { MiniImages } from "./MiniImages/MiniImages";
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({ entity }) => {
+  const [articleIsHovered, setArticleIsHovered] = useState(false);
   const [imageIsHovered, setImageIsHovered] = useState(false);
 
   return (
-    <article className={styles["category-card"]}>
+    <article         onMouseEnter={() => setArticleIsHovered(true)}
+    onMouseLeave={() => setArticleIsHovered(false)} className={articleIsHovered ? `${styles["category-card"]} ${styles["hovered"]}` : styles["category-card"]}>
       <div
         className={`${styles["category-card"]} ${styles["thumbnail"]}`}
         onMouseEnter={() => setImageIsHovered(true)}
@@ -34,5 +36,3 @@ export const CategoryCard = ({ entity }) => {
     </article>
   );
 };
-
-// className={`${styles["image"]} ${styles["category-card"]} ${styles["mini-images-list"]} ${styles["mini-image"]}`}
