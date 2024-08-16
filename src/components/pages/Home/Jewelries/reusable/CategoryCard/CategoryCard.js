@@ -18,12 +18,15 @@ export const CategoryCard = ({ entity }) => {
           : styles["category-card"]
       }
     >
-      <div
-        className={`${styles["category-card"]} ${styles["thumbnail"]}`}
-        onMouseEnter={() => setImageIsHovered(true)}
-        onMouseLeave={() => setImageIsHovered(false)}
-      >
+      <div className={`${styles["category-card"]} ${styles["thumbnail"]}`}>
         <img
+          onMouseEnter={() => setImageIsHovered(true)}
+          onMouseLeave={() => setImageIsHovered(false)}
+          className={`${styles["category-card"]} ${styles["thumbnail"]} ${
+            styles["image"]
+          } ${
+            imageIsHovered ? styles["slide-in-right"] : styles["slide-in-left"]
+          }`}
           src={
             imageIsHovered ? entity[0].secondImageUrl : entity[0].firstImageUrl
           }
