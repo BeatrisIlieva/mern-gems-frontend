@@ -68,7 +68,9 @@ exports.updateEmail = async (userId, data) => {
   } else if (!isEmailValid) {
     throw new Error(EMAIL_ERROR_MESSAGE);
   } else {
-    await UserLoginDetails.findByIdAndUpdate(userId, { email: data.email });
+    user = await UserLoginDetails.findByIdAndUpdate(userId, {
+      email: data.email,
+    });
 
     return user;
   }

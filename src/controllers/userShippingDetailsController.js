@@ -5,7 +5,6 @@ const userShippingDetailsManager = require("../managers/userShippingDetailsManag
 router.put("/:userId", async (req, res) => {
   const userId = req.params.userId;
 
-
   const data = { ...req.body };
 
   try {

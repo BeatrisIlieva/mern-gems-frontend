@@ -5,6 +5,7 @@ const userShippingDetailsController = require("./controllers/userShippingDetails
 const userCardDetailsController = require("./controllers/userCardDetailsController");
 const jewelryController = require("./controllers/jewelryController");
 const bagController = require("./controllers/bagController");
+const paymentController = require("./controllers/paymentController");
 const orderController = require("./controllers/orderController");
 
 router.use("/users-login-details", userLoginDetailsController);
@@ -12,6 +13,7 @@ router.use("/users-shipping-details", userShippingDetailsController);
 router.use("/users-card-details", userCardDetailsController);
 router.use("/jewelries", jewelryController);
 router.use("/bags", bagController);
+router.use("/payments", paymentController);
 router.use("/orders", orderController);
 
 module.exports = router;

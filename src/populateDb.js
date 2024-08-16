@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Jewelry = require("./models/Jewelry");
 const Category = require("./models/Category");
-const JewelryCollection = require("./models/JewelryCollection");
 const Size = require("./models/Size");
+const MiniImage = require("./models/MiniImage");
 const Inventory = require("./models/Inventory");
 
 // async function populateDb() {
@@ -21,23 +21,11 @@ async function populateDb() {
   });
 
   await Category.create({
-    title: "Necklaces-Pendants",
+    title: "Necklaces",
   });
 
   await Category.create({
     title: "Rings",
-  });
-
-  await JewelryCollection.create({
-    title: "Diamond Loop",
-  });
-
-  await JewelryCollection.create({
-    title: "Sparkling Cluster",
-  });
-
-  await JewelryCollection.create({
-    title: "Forget-Me-Not",
   });
 
   await Size.create({
@@ -53,11 +41,11 @@ async function populateDb() {
   });
 
   await Size.create({
-    measurement: "2.05 cm",
+    measurement: "4.05 cm",
   });
 
   await Size.create({
-    measurement: "3.95 cm",
+    measurement: "4.98 cm",
   });
 
   await Size.create({
@@ -89,225 +77,17 @@ async function populateDb() {
   });
 
   const allCategories = await Category.find();
-  const allJewelryCollections = await JewelryCollection.find();
   const allSizes = await Size.find();
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Diamond Bracelet",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968212/mern-gems/diamond-loop/bracelets/diamond_loop_full_motif_diamond_bracelet_brdprp1ml4c_e-1_bscok2.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968229/mern-gems/diamond-loop/bracelets/diamond_loop_full_motif_diamond_bracelet_brdprp1ml4c_e-2_nynjvd.avif",
-    category: allCategories[0],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "Four pear-shaped and 81 round brilliant diamonds weighing a total of approximately 4.41 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Diamond Earrings",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968209/mern-gems/diamond-loop/earrings/diamond_loop_earrings_diamond_eadprpmel4c_e-1_hybfgc.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968228/mern-gems/diamond-loop/earrings/diamond_loop_earrings_diamond_eadprpmel4c_e-2_sefdlv.webp",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "8 pear-shaped and 58 round brilliant diamonds weighing a total of approximately 3.80 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Yellow Sapphire and Diamond Earrings",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968209/mern-gems/diamond-loop/earrings/diamond_loop_earrings_full_motif_yellow_sapphire_diamond_eaysprpmel4c_e-1_sqhzlo.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968210/mern-gems/diamond-loop/earrings/diamond_loop_earrings_full_motif_yellow_sapphire_diamond_eaysprpmel4c_e-2_qaklcf.webp",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "8 pear-shaped yellow sapphires weighing a total of approximately 1.66 carats and 58 round brilliant diamonds weighing a total of approximately 2.66 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Black Spinel and Diamond Earrings",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968227/mern-gems/diamond-loop/earrings/diamond_loop_earrings_full_motif_black_spinel_diamond_eabsprpmel4c_e-1_uk2rnr.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968210/mern-gems/diamond-loop/earrings/diamond_loop_earrings_full_motif_black_spinel_diamond_eabsprpmel4c_e-2_wre6xg.webp",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "8 pear-shaped black spinels weighing a total of 1.61 carats and 58 round brilliant diamonds weighing a total of 2.66 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Ruby and Diamond Earrings",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968213/mern-gems/diamond-loop/earrings/diamond_loop_earrings_full_motif_ruby_and_diamond_earprpmel4c_e-1_m4hjan.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968219/mern-gems/diamond-loop/earrings/diamond_loop_earrings_full_motif_ruby_and_diamond_earprpmel4c_e-2_etnepk.webp",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "8 pear-shaped rubies weighing a total of approximately 1.83 carats and 58 round brilliant diamonds weighing a total of approximately 2.66 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Diamond Pendant",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968225/mern-gems/diamond-loop/necklaces/diamond_loop_full_motif_diamond_pendant_pedprpmel4c_e-1h_evwkpx.webp",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "4 pear-shaped and 29 round brilliant diamonds weighing a total of approximately 1.89 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Yellow Sapphire and Diamond Pendant",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968212/mern-gems/diamond-loop/necklaces/diamond_loop_pendant_full_motif_yellow_sapphire_diamond_peysprpmel4c_e-2_chvti2.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968207/mern-gems/diamond-loop/necklaces/diamond_loop_pendant_full_motif_yellow_sapphire_diamond_peysprpmel4c_e-3_bzzgt1.avif",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "4 pear-shaped yellow sapphires weighing a total of approximately 0.85 carats and 29 round brilliant diamonds weighing a total of approximately 1.33 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Black Spinel and Diamond Pendant",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968234/mern-gems/diamond-loop/necklaces/diamond_loop_pendant_full_motif_black_spinel_diamond_pebsprpmel4c_e-2_i1p2kj.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968221/mern-gems/diamond-loop/necklaces/diamond_loop_pendant_full_motif_black_spinel_diamond_pebsprpmel4c_e-3_crpvpw.avif",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "4 pear-shaped black spinels weighing a total of approximately 0.80 carats and 29 round brilliant diamonds weighing a total of approximately 1.33 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Ruby and Diamond Pendant",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968211/mern-gems/diamond-loop/necklaces/diamond_loop_pendant_full_motif_ruby_and_diamond_perprpmel4c_e-1_ucqur0.avif",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "4 pear-shaped rubies weighing a total of approximately 0.91 carats and 29 round brilliant diamonds weighing a total of approximately 1.33 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Diamond Loop Full Motif Diamond Ring",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968225/mern-gems/diamond-loop/rings/diamond_loop_ring_diamond_frdprp1ml4c_e-1_skpl4z.avif",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968208/mern-gems/diamond-loop/rings/diamond_loop_ring_diamond_frdprp1ml4c_e-2_eisdp0.avif",
-    category: allCategories[3],
-    jewelryCollection: allJewelryCollections[0],
-    description:
-      "4 pear-shaped and 29 round brilliant diamonds weighing a total of approximately 1.08 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Diamond Bracelet",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968236/mern-gems/sparkling-cluster/bracelets/sparkling_cluster_bracelet_diamond_brdpclrfspc_e-1_zamdun.webp",
-    category: allCategories[0],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "55 round brilliant and 4 pear-shaped diamonds weighing a total of approximately 10.17 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Sapphire, Aquamarine and Diamond Bracelet",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968233/mern-gems/sparkling-cluster/bracelets/sparkling_cluster_sap_aqua_and_diamond_bracelet_brsaqpclrfspc_e-1h_fvznzu.webp",
-    category: allCategories[0],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "10 round and pear-shaped sapphires weighing a total of approximately 3.39 carats, 10 round aquamarines weighing a total of approximately 1.98 carats, and 39 round brilliant and pear-shaped diamonds weighing a total of approximately 5.74 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Diamond Earrings",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968222/mern-gems/sparkling-cluster/earrings/sparkling_cluster_earrings_diamond_eadppsdrspc_e-1_tmt7ck.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968236/mern-gems/sparkling-cluster/earrings/sparkling_cluster__earrings_diamond_eadppsdrspc_e-2_p9kvkv.webp",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "16 round brilliant and 4 pear-shaped diamonds weighing a total of 4.27 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Sapphire, Aquamarine and Diamond Earrings",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718971268/mern-gems/sparkling-cluster/earrings/sparkling_cluster_sap_aqua_and_diamond_earrings_easaqpclrfspc_e-1_1_wklyow.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718971293/mern-gems/sparkling-cluster/earrings/sparkling_cluster_sap_aqua_and_diamond_earrings_easaqpclrfspc_e-2_qhmuex.webp",
-    category: allCategories[1],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "2 round and 2 pear-shaped sapphires weighing a total of approximately 1.90 carats, 4 round aquamarines weighing a total of approximately 1.00 carat, and 12 round brilliant and pear-shaped diamonds weighing a total of approximately 1.79 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Diamond Necklace",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968217/mern-gems/sparkling-cluster/necklaces/sparkling_cluster_necklace_diamond_nkdpclrfspc_e-1_ormxd7.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968217/mern-gems/sparkling-cluster/necklaces/sparkling_cluster_necklace_diamond_nkdpclrfspc_e-2_swk28b.webp",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "148 round brilliant and 3 pear-shaped diamonds weighing a total of approximately 15.18 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Sapphire, Aquamarine and Diamond Necklace",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968232/mern-gems/sparkling-cluster/necklaces/sparkling_cluster_sap_aqua_and_diamond_necklace_nksaqpclrfspc_e-1_dinyfd.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968222/mern-gems/sparkling-cluster/necklaces/sparkling_cluster_sap_aqua_and_diamond_necklace_nksaqpclrfspc_e-2_fk1lcy.webp",
-    category: allCategories[2],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "25 round and pear-shaped sapphires weighing a total of approximately 4.45 carats, 23 round aquamarines weighing a total of approximately 2.80 carats, and 130 round brilliant and pear-shaped diamonds weighing a total of approximately 8.73 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Diamond Ring",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968218/mern-gems/sparkling-cluster/rings/sparkling_cluster_ring_diamond_frdpclrfspc_e-1_ltonka.avif",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968224/mern-gems/sparkling-cluster/rings/sparkling_cluster_ring_diamond_frdpclrfspc_e-2_iohlrf.webp",
-    category: allCategories[3],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "10 round brilliant and 2 pear-shaped diamonds weighing a total of approximately 2.34 carats, set in platinum",
-  });
-
-  await Jewelry.create({
-    title: "Sparkling Cluster Sapphire, Aquamarine and Diamond Ring",
-    firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968224/mern-gems/sparkling-cluster/rings/sparkling_cluster_sap_aqua_and_diamond_ring_frsaqpclrfspc_e-1h_y2f9x1.webp",
-    secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968226/mern-gems/sparkling-cluster/rings/sparkling_cluster_sap_aqua_and_diamond_ring_frsaqpclrfspc_e-2h_tej58c.webp",
-    category: allCategories[3],
-    jewelryCollection: allJewelryCollections[1],
-    description:
-      "1 pear-shaped and 2 round sapphires weighing a total of approximately 1.08 carats, 2 round aquamarines weighing a total of approximately 0.38 carats, and 7 round brilliant and pear-shaped diamonds weighing a total of approximately 1.19 carats, set in platinum",
-  });
+  const allMiniImages = await MiniImage.find();
 
   await Jewelry.create({
     title: "Forget-Me-Not Pink Sapphire and Diamond Bracelet",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968216/mern-gems/forget-me-not/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_1_g7x7pw.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_1_vz9pv4.avif",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968231/mern-gems/forget-me-not/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_2_tur12a.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_2_kdpnm6.avif",
     category: allCategories[0],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[0],
     description:
       "45 pear-shaped and round brilliant pink sapphires weighing a total of approximately 4.36 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum",
   });
@@ -315,35 +95,35 @@ async function populateDb() {
   await Jewelry.create({
     title: "Forget-Me-Not Sapphire and Diamond Bracelet",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968223/mern-gems/forget-me-not/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_1_b2jjc0.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_1_fokzrw.webp",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968216/mern-gems/forget-me-not/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_2_kzqmdk.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714895/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_2_ojfbze.avif",
     category: allCategories[0],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[1],
     description:
       "45 pear-shaped and round brilliant sapphires weighing a total of approximately 4.17 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum",
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Ruby and Diamond Bracelet",
+    title: "Forget-Me-Not Diamond Bracelet",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968238/mern-gems/forget-me-not/bracelets/forget-me-not_bracelet_ruby_and_diamond_brrprfflrfmn_e-1_ovmtsf.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/bracelets/forget_me_not_diamond_bracelet_brdprfflrfmn_e-1_muieri.avif",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968233/mern-gems/forget-me-not/bracelets/forget-me-not_bracelet_ruby_and_diamond_brrprfflrfmn_e-2_ipo6o1.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_2_1_pvbpcb.png",
     category: allCategories[0],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[2],
     description:
-      "45 pear-shaped and round rubies weighing a total of approximately 4.43 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.37 carats, set in platinum",
+      "78 pear-shaped, marquise, and round brilliant diamonds, weighing a total of approximately 7.46 carats, set in platinum",
   });
 
   await Jewelry.create({
     title: "Forget-Me-Not Pink Sapphire and Diamond Drop Earrings",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968219/mern-gems/forget-me-not/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-1_aoajvf.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-1_zzaw4q.webp",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968235/mern-gems/forget-me-not/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-2_dskvau.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-2_p9jicb.webp",
     category: allCategories[1],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[0],
     description:
       "28 pear-shaped and round brilliant pink sapphires weighing a total of approximately 3.20 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum",
   });
@@ -351,33 +131,35 @@ async function populateDb() {
   await Jewelry.create({
     title: "Forget-Me-Not Sapphire and Diamond Drop Earrings",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968220/mern-gems/forget-me-not/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-1_keujzm.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-1_zx2cga.webp",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968235/mern-gems/forget-me-not/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-2_j9zbhi.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-2_vtkyhb.webp",
     category: allCategories[1],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[1],
     description:
       "28 pear-shaped and round brilliant sapphires weighing a total of approximately 3.00 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum",
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Ruby and Diamond Earrings",
+    title: "Forget-Me-Not Diamond Drop Earrings",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968227/mern-gems/forget-me-not/earrings/forget-me-not_winstonearrings_ruby_and_diamond_earp1mflrfmn_e-1_q4kqfv.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/earrings/forget_me_not_diamond_drop_earrings_eadpdrflrfmn_ee-1_knlt2u.webp",
+    secondImageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_diamond_drop_earrings_eadpdrflrfmn_ee-2_sksk7o.webp",
     category: allCategories[1],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[2],
     description:
-      "12 pear-shaped rubies weighing a total of approximately 2.37 carats and 2 round brilliant diamonds weighing a total of approximately 0.07 carats, set in platinum",
+      "A medley of marquise, pear-shaped, and round brilliant diamonds, weighing a total of approximately 4.38 carats, set in platinum",
   });
 
   await Jewelry.create({
     title: "Forget-Me-Not Pink Sapphire and Diamond Lariat Necklace",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968214/mern-gems/forget-me-not/necklaces/forget_me_not_lariat_necklace_diamond_and_pink_sapphire_nkpspltflrfmn_e_1_akpqmp.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_pink_sapphire_nkpspltflrfmn_e_1_kuxbds.webp",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968215/mern-gems/forget-me-not/necklaces/forget_me_not_lariat_necklace_diamond_and_pink_sapphire_nkpspltflrfmn_e_2_cnvjjj.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_pink_sapphire_nkpspltflrfmn_e_2_d2fc78.webp",
     category: allCategories[2],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[0],
     description:
       "78 pear-shaped and round brilliant pink sapphires weighing a total of approximately 8.61 carats and 99 marquise and round brilliant diamonds weighing a total of approximately 8.60 carats, set in platinum",
   });
@@ -385,496 +167,81 @@ async function populateDb() {
   await Jewelry.create({
     title: "Forget-Me Not Sapphire and Diamond Lariat Necklace",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968229/mern-gems/forget-me-not/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_1_tbhoxg.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_1_p2uxlj.webp",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968214/mern-gems/forget-me-not/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_2_ukdknd.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_2_hxgdcy.avif",
     category: allCategories[2],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[1],
     description:
       "78 pear-shaped and round brilliant sapphires weighing a total of approximately 8.61 carats and 99 marquise and round brilliant diamonds weighing a total of approximately 8.37 carats, set in platinum",
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Ruby and Diamond Pendant",
+    title: "Forget-Me-Not Diamond Lariat Necklace",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718973931/mern-gems/forget-me-not/necklaces/forget-me-not_pendant_ruby_and_diamond_perprfflrfmn_e-1_i4jze5.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/necklaces/forget_me_not_lariat_diamond_necklace_nkdpltflrfmn_e-1_u0gwpv.avif",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718973937/mern-gems/forget-me-not/necklaces/forget-me-not_pendant_ruby_and_diamond_perprfflrfmn_e-2_qfa4h7.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/necklaces/forget_me_not_lariat_diamond_necklace_nkdpltflrfmn_e-2_tuh8ru.webp",
     category: allCategories[2],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[2],
     description:
-      "6 pear-shaped rubies weighing a total of approximately 1.68 carats and 1 round brilliant diamond weighing a total of approximately 0.04 carats, set in platinum",
+      "177 pear-shaped, marquise, and round brilliant diamonds, weighing a total of approximately 15.35 carats, set in platinum",
   });
 
   await Jewelry.create({
     title: "Forget-Me-Not Pink Sapphire and Diamond Ring",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968232/mern-gems/forget-me-not/rings/forget_me_not_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_1_ahlwli.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714892/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_1_qfumu3.webp",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968231/mern-gems/forget-me-not/rings/forget_me_not_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_2_v5ldlf.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714892/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_2_k7nhpe.avif",
     category: allCategories[3],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[0],
     description:
       "6 pear-shaped pink sapphires weighing a total of approximately 2.22 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum",
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Blue Sapphire and Diamond Ring",
+    title: "Forget-Me-Not Sapphire and Diamond Ring",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968220/mern-gems/forget-me-not/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_1_rqfflx.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_1_pm9u6t.avif",
     secondImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968237/mern-gems/forget-me-not/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_2_yw3vpw.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_2_ucppcd.avif",
     category: allCategories[3],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[1],
     description:
       "6 pear-shaped sapphires weighing a total of approximately 2.15 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum",
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Ruby and Diamond Twin Ring",
+    title: "Forget-Me-Not Diamond Ring",
     firstImageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1718968238/mern-gems/forget-me-not/rings/forget-me-not_twin_ring_ruby_and_diamond_frrptnflfmn_e-1_m6nye0.avif",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/rings/forget_me_not_diamond_ring_frdprfflrfmn_e-1h_yueh2k.webp",
+    secondImageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/rings/forget_me_not_diamond_ring_frdprfflrfmn_e-2h_mktny9.webp",
     category: allCategories[3],
-    jewelryCollection: allJewelryCollections[2],
+    miniImageURL: allMiniImages[2],
     description:
-      "6 pear-shaped rubies weighing a total of approximately 0.95 carats and 8 pear-shaped and round brilliant diamonds weighing a total of approximately 1.17 carats, set in platinum",
+      "6 pear-shaped and 1 round brilliant diamond, weighing a total of approximately 1.66 carats, set in platinum",
+  });
+
+  await MiniImage.create({
+    title: "Pink Sapphire",
+    imageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_earrings_diamond_and_pink_sapphire_eapsp1mflrfmn_ee-1_k5iyct.webp",
+  });
+
+  await MiniImage.create({
+    title: "Blue Sapphire",
+    imageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_no_earrings_diamond_and_sapphire_easp1mflrfmn_ee-1_fp320u.webp",
+  });
+
+  await MiniImage.create({
+    title: "Diamond",
+    imageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_diamond_earrings_eadp1mflrfmn_ee-1_s3apwm.webp",
   });
 
   const allJewelries = await Jewelry.find();
-
-  await Inventory.insertMany([
-    {
-      jewelry: allJewelries[0],
-      size: allSizes[0],
-      quantity: 100,
-      price: 32000,
-    },
-    {
-      jewelry: allJewelries[0],
-      size: allSizes[1],
-      quantity: 1,
-      price: 32000,
-    },
-    {
-      jewelry: allJewelries[0],
-      size: allSizes[2],
-      quantity: 1,
-      price: 32000,
-    },
-    {
-      jewelry: allJewelries[1],
-      size: allSizes[3],
-      quantity: 1,
-      price: 23000,
-    },
-    {
-      jewelry: allJewelries[2],
-      size: allSizes[3],
-      quantity: 1,
-      price: 21000,
-    },
-    {
-      jewelry: allJewelries[3],
-      size: allSizes[3],
-      quantity: 1,
-      price: 18000,
-    },
-    {
-      jewelry: allJewelries[4],
-      size: allSizes[3],
-      quantity: 1,
-      price: 20000,
-    },
-    {
-      jewelry: allJewelries[5],
-      size: allSizes[6],
-      quantity: 1,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[5],
-      size: allSizes[7],
-      quantity: 1,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[5],
-      size: allSizes[8],
-      quantity: 1,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[6],
-      size: allSizes[6],
-      quantity: 1,
-      price: 39000,
-    },
-    {
-      jewelry: allJewelries[6],
-      size: allSizes[7],
-      quantity: 1,
-      price: 39000,
-    },
-    {
-      jewelry: allJewelries[6],
-      size: allSizes[8],
-      quantity: 1,
-      price: 39000,
-    },
-    {
-      jewelry: allJewelries[7],
-      size: allSizes[6],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[7],
-      size: allSizes[7],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[7],
-      size: allSizes[8],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[8],
-      size: allSizes[6],
-      quantity: 1,
-      price: 38000,
-    },
-    {
-      jewelry: allJewelries[8],
-      size: allSizes[7],
-      quantity: 1,
-      price: 38000,
-    },
-    {
-      jewelry: allJewelries[8],
-      size: allSizes[8],
-      quantity: 1,
-      price: 38000,
-    },
-    {
-      jewelry: allJewelries[9],
-      size: allSizes[9],
-      quantity: 1,
-      price: 14000,
-    },
-    {
-      jewelry: allJewelries[9],
-      size: allSizes[10],
-      quantity: 1,
-      price: 14000,
-    },
-    {
-      jewelry: allJewelries[9],
-      size: allSizes[11],
-      quantity: 1,
-      price: 14000,
-    },
-    {
-      jewelry: allJewelries[10],
-      size: allSizes[0],
-      quantity: 1,
-      price: 39000,
-    },
-    {
-      jewelry: allJewelries[10],
-      size: allSizes[1],
-      quantity: 1,
-      price: 39000,
-    },
-    {
-      jewelry: allJewelries[10],
-      size: allSizes[2],
-      quantity: 1,
-      price: 39000,
-    },
-    {
-      jewelry: allJewelries[11],
-      size: allSizes[0],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[11],
-      size: allSizes[1],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[11],
-      size: allSizes[2],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[12],
-      size: allSizes[4],
-      quantity: 1,
-      price: 28000,
-    },
-    {
-      jewelry: allJewelries[13],
-      size: allSizes[4],
-      quantity: 1,
-      price: 26000,
-    },
-    {
-      jewelry: allJewelries[14],
-      size: allSizes[6],
-      quantity: 1,
-      price: 44000,
-    },
-    {
-      jewelry: allJewelries[14],
-      size: allSizes[7],
-      quantity: 1,
-      price: 44000,
-    },
-    {
-      jewelry: allJewelries[14],
-      size: allSizes[8],
-      quantity: 1,
-      price: 44000,
-    },
-    {
-      jewelry: allJewelries[15],
-      size: allSizes[6],
-      quantity: 1,
-      price: 42000,
-    },
-    {
-      jewelry: allJewelries[15],
-      size: allSizes[7],
-      quantity: 1,
-      price: 42000,
-    },
-    {
-      jewelry: allJewelries[15],
-      size: allSizes[8],
-      quantity: 1,
-      price: 42000,
-    },
-    {
-      jewelry: allJewelries[16],
-      size: allSizes[9],
-      quantity: 1,
-      price: 15000,
-    },
-    {
-      jewelry: allJewelries[16],
-      size: allSizes[10],
-      quantity: 1,
-      price: 15000,
-    },
-    {
-      jewelry: allJewelries[16],
-      size: allSizes[11],
-      quantity: 1,
-      price: 15000,
-    },
-    {
-      jewelry: allJewelries[17],
-      size: allSizes[9],
-      quantity: 1,
-      price: 13000,
-    },
-    {
-      jewelry: allJewelries[17],
-      size: allSizes[10],
-      quantity: 1,
-      price: 13000,
-    },
-    {
-      jewelry: allJewelries[17],
-      size: allSizes[11],
-      quantity: 1,
-      price: 13000,
-    },
-    {
-      jewelry: allJewelries[18],
-      size: allSizes[0],
-      quantity: 1,
-      price: 35000,
-    },
-    {
-      jewelry: allJewelries[18],
-      size: allSizes[1],
-      quantity: 1,
-      price: 35000,
-    },
-    {
-      jewelry: allJewelries[18],
-      size: allSizes[2],
-      quantity: 1,
-      price: 35000,
-    },
-    {
-      jewelry: allJewelries[19],
-      size: allSizes[0],
-      quantity: 1,
-      price: 36000,
-    },
-    {
-      jewelry: allJewelries[19],
-      size: allSizes[1],
-      quantity: 1,
-      price: 36000,
-    },
-    {
-      jewelry: allJewelries[19],
-      size: allSizes[2],
-      quantity: 1,
-      price: 36000,
-    },
-    {
-      jewelry: allJewelries[20],
-      size: allSizes[0],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[20],
-      size: allSizes[1],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[20],
-      size: allSizes[2],
-      quantity: 1,
-      price: 37000,
-    },
-    {
-      jewelry: allJewelries[21],
-      size: allSizes[5],
-      quantity: 1,
-      price: 27000,
-    },
-    {
-      jewelry: allJewelries[22],
-      size: allSizes[5],
-      quantity: 1,
-      price: 28000,
-    },
-    {
-      jewelry: allJewelries[23],
-      size: allSizes[3],
-      quantity: 1,
-      price: 21000,
-    },
-    {
-      jewelry: allJewelries[24],
-      size: allSizes[6],
-      quantity: 1,
-      price: 47000,
-    },
-    {
-      jewelry: allJewelries[24],
-      size: allSizes[7],
-      quantity: 1,
-      price: 47000,
-    },
-    {
-      jewelry: allJewelries[24],
-      size: allSizes[8],
-      quantity: 1,
-      price: 47000,
-    },
-    {
-      jewelry: allJewelries[25],
-      size: allSizes[6],
-      quantity: 1,
-      price: 48000,
-    },
-    {
-      jewelry: allJewelries[25],
-      size: allSizes[7],
-      quantity: 1,
-      price: 48000,
-    },
-    {
-      jewelry: allJewelries[25],
-      size: allSizes[8],
-      quantity: 1,
-      price: 48000,
-    },
-    {
-      jewelry: allJewelries[26],
-      size: allSizes[6],
-      quantity: 1,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[26],
-      size: allSizes[7],
-      quantity: 1,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[26],
-      size: allSizes[8],
-      quantity: 1,
-      price: 41000,
-    },
-    {
-      jewelry: allJewelries[27],
-      size: allSizes[9],
-      quantity: 1,
-      price: 17000,
-    },
-    {
-      jewelry: allJewelries[27],
-      size: allSizes[10],
-      quantity: 1,
-      price: 17000,
-    },
-    {
-      jewelry: allJewelries[27],
-      size: allSizes[11],
-      quantity: 1,
-      price: 17000,
-    },
-    {
-      jewelry: allJewelries[28],
-      size: allSizes[9],
-      quantity: 1,
-      price: 17000,
-    },
-    {
-      jewelry: allJewelries[28],
-      size: allSizes[10],
-      quantity: 1,
-      price: 17000,
-    },
-    {
-      jewelry: allJewelries[28],
-      size: allSizes[11],
-      quantity: 1,
-      price: 17000,
-    },
-    {
-      jewelry: allJewelries[29],
-      size: allSizes[9],
-      quantity: 1,
-      price: 18000,
-    },
-    {
-      jewelry: allJewelries[29],
-      size: allSizes[10],
-      quantity: 1,
-      price: 18000,
-    },
-    {
-      jewelry: allJewelries[29],
-      size: allSizes[11],
-      quantity: 1,
-      price: 18000,
-    },
-  ]);
 }
 populateDb();

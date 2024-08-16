@@ -7,28 +7,34 @@ const jewelrySchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  
   title: {
     type: String,
     required: true,
   },
+  
   firstImageUrl: {
     type: String,
     required: true,
   },
+  
   secondImageUrl: {
     type: String,
     required: false,
   },
+  
   category: {
     type: Number,
     ref: "Category",
     required: true,
   },
-  jewelryCollection: {
+  
+  miniImageUrl: {
     type: Number,
-    ref: "JewelryCollection",
+    ref: "MiniImage",
     required: true,
   },
+  
   description: {
     type: String,
     required: [true, "Description is required"],
