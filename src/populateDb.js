@@ -76,6 +76,24 @@ async function populateDb() {
     measurement: "5.05 cm",
   });
 
+  await MiniImage.create({
+    title: "Pink Sapphire",
+    imageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_earrings_diamond_and_pink_sapphire_eapsp1mflrfmn_ee-1_k5iyct.webp",
+  });
+
+  await MiniImage.create({
+    title: "Blue Sapphire",
+    imageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_no_earrings_diamond_and_sapphire_easp1mflrfmn_ee-1_fp320u.webp",
+  });
+
+  await MiniImage.create({
+    title: "Diamond",
+    imageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_diamond_earrings_eadp1mflrfmn_ee-1_s3apwm.webp",
+  });
+
   const allCategories = await Category.find();
   const allSizes = await Size.find();
   const allMiniImages = await MiniImage.find();
@@ -222,24 +240,6 @@ async function populateDb() {
     miniImageURL: allMiniImages[2],
     description:
       "6 pear-shaped and 1 round brilliant diamond, weighing a total of approximately 1.66 carats, set in platinum",
-  });
-
-  await MiniImage.create({
-    title: "Pink Sapphire",
-    imageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_earrings_diamond_and_pink_sapphire_eapsp1mflrfmn_ee-1_k5iyct.webp",
-  });
-
-  await MiniImage.create({
-    title: "Blue Sapphire",
-    imageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_no_earrings_diamond_and_sapphire_easp1mflrfmn_ee-1_fp320u.webp",
-  });
-
-  await MiniImage.create({
-    title: "Diamond",
-    imageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_diamond_earrings_eadp1mflrfmn_ee-1_s3apwm.webp",
   });
 
   const allJewelries = await Jewelry.find();
@@ -472,6 +472,6 @@ async function populateDb() {
       quantity: 2,
       price: 25000,
     },
-  ])
+  ]);
 }
 populateDb();

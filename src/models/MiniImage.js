@@ -5,6 +5,12 @@ const miniImageSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+
+  title: {
+    type: String,
+    required: true,
+  },
+
   imageUrl: {
     type: String,
     required: true,
