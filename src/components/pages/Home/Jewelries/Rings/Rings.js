@@ -26,12 +26,6 @@ export const Rings = () => {
   }, []);
 
   return (
-    <>
-      {rings.length < 1 ? (
-        <CardSkeleton />
-      ) : (
-        <CategoryCard entity={rings} />
-      )}
-    </>
+    <>{rings.length < 1 ? <CardSkeleton /> : <CategoryCard entity={rings} />}</>
   );
 };
