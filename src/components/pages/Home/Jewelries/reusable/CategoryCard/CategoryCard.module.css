@@ -1,11 +1,11 @@
 .category-card {
   width: 20vw;
-  position: relative;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .category-card.hovered {
-  display: inline-block;
   box-shadow: 0 0 0 1px var(--light-gray);
 }
 
@@ -17,10 +17,7 @@
 
 .category-card.image.mini-images-list {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 4px;
-  position: absolute;
-  bottom: 0;
+  flex-direction: row;
   z-index: 10;
+  justify-content: center;
 }
