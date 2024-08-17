@@ -18,13 +18,6 @@ export const CategoryCard = ({ entity }) => {
           : styles["category-card"]
       }
     >
-            <ul className={styles["mini-images-list"]} role="list">
-        {entity.map((item) => (
-          <li key={item._id}>
-            <MiniImages imageObject={item.miniImage} />
-          </li>
-        ))}
-      </ul>
       <div className={styles["thumbnail"]}>
         <img
           onMouseEnter={() => setImageIsHovered(true)}
@@ -38,6 +31,13 @@ export const CategoryCard = ({ entity }) => {
           alt={entity[0].title}
         />
       </div>
+      <ul className={styles["mini-images-list"]} role="list">
+        {entity.map((item) => (
+          <li key={item._id}>
+            <MiniImages imageObject={item.miniImage} />
+          </li>
+        ))}
+      </ul>
     </article>
   );
 };

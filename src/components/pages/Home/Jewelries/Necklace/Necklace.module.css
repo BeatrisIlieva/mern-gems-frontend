@@ -1,20 +1,14 @@
 #necklace {
-    display: flex;
-    gap: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.necklace-card {
-}
-
 .thumbnail {
-    width: 52vw;
+  width: 50vw;
 }
 
 .image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.paragraph {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

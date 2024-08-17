@@ -1,31 +1,9 @@
 #bracelet {
   display: flex;
   justify-content: space-between;
-}
-
-.bracelet-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.title {
-  margin-bottom: 1rem;
-}
-
-.paragraph {
-  text-align: center;
-  margin-bottom: 2rem;
-  margin: 0 6rem 2rem 6rem;
-}
-
-.info,
 .thumbnail {
   width: 50vw;
 }

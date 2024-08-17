@@ -5,8 +5,8 @@ import styles from "./Necklace.module.css";
 export const Necklace = () => {
   return (
     <section id={styles["necklace"]}>
-              <Necklaces />
-      <article className={styles["necklace-card"]}>
+      <Necklaces />
+      {/* <article className={styles["necklace-card"]}> */}
         <div className={styles["thumbnail"]}>
           <img
             className={styles["image"]}
@@ -18,7 +18,7 @@ export const Necklace = () => {
           An enchanting medley of round brilliant, pear-shaped and marquise
           stones that together reveal a beautiful flower.
         </p> */}
-      </article>
+      {/* </article> */}
     </section>
   );
 };
