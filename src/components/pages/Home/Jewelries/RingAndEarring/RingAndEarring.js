@@ -1,5 +1,5 @@
-import { Rings } from "../Rings/Rings";
-import { Earrings } from "../Earrings/Earrings";
+import { Rings } from "./Rings/Rings";
+import { Earrings } from "./Earrings/Earrings";
 
 import styles from "./RingAndEarring.module.css";
 
