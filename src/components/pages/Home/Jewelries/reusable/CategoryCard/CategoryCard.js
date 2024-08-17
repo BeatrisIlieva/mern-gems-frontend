@@ -18,11 +18,11 @@ export const CategoryCard = ({ entity }) => {
           : styles["category-card"]
       }
     >
-      <div className={`${styles["category-card"]} ${styles["thumbnail"]}`}>
+      <div className={styles["thumbnail"]}>
         <img
           onMouseEnter={() => setImageIsHovered(true)}
           onMouseLeave={() => setImageIsHovered(false)}
-          className={`${styles["category-card"]} ${styles["thumbnail"]} ${
+          className={`${
             styles["image"]
           } ${
             imageIsHovered ? styles["slide-in-right"] : styles["slide-in-left"]
@@ -34,7 +34,7 @@ export const CategoryCard = ({ entity }) => {
         />
       </div>
       <ul
-        className={`${styles["category-card"]} ${styles["image"]} ${styles["mini-images-list"]}`}
+        className={styles["mini-images-list"]}
         role="list"
       >
         {entity.map((item) => (

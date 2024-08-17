@@ -1,0 +1,32 @@
+#bracelet{
+display: flex;
+gap: 8rem;
+}
+
+.bracelet-card{
+display: flex;
+flex-direction: column;
+
+}
+
+.info {
+
+}
+.title{
+
+
+}
+
+.paragraph{
+
+}
+
+.thumbnail{
+  width: 42rem;
+}
+
+.image{
+width: 100%;
+height: 100%;
+object-fit: contain;
+}

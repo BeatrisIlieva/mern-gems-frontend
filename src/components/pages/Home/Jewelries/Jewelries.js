@@ -1,4 +1,4 @@
-import { CollectionContainer } from "./CollectionContainer/CollectionContainer";
+import { Bracelet } from "./Bracelet/Bracelet";
 import { RingAndEarring } from "./RingAndEarring/RingAndEarring";
 import { Necklace } from "./Necklace/Necklace";
 
@@ -7,9 +7,9 @@ import styles from "./Jewelries.module.css";
 export const Jewelries = () => {
   return (
     <section className={styles["jewelries"]}>
-      <CollectionContainer />
-      <RingAndEarring />
-      <Necklace/>
+      <Bracelet />
+      {/* <RingAndEarring />
+      <Necklace/> */}
     </section>
   );
 };
