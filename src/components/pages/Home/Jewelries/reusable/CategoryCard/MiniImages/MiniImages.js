@@ -2,7 +2,13 @@ import { useState } from "react";
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ imageObject }) => {
+const COLORS_BY_INDEX = {
+  0: "pink",
+  1: "blue",
+  2: "gray"
+}
+
+export const MiniImages = ({ imageObject, index }) => {
   const [showTitle, setShowTitle] = useState(false);
 
   return (
@@ -18,7 +24,7 @@ export const MiniImages = ({ imageObject }) => {
       />
       {showTitle && (
         <span
-          className={`${styles["image-object"]} ${styles["image"]} ${styles["title"]}`}
+          className={`${styles["image-object"]} ${styles["image"]} ${styles["title"]} ${styles[COLORS_BY_INDEX[index]]}`}
         >
           {imageObject[0].title}
         </span>

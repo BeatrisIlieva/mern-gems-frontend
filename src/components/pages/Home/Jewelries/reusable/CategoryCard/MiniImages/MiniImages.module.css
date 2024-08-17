@@ -24,3 +24,17 @@
   width: fit-content;
   cursor: default;
 }
+
+.image-object.image.title.pink {
+  color: var(--pink);
+}
+
+.image-object.image.title.blue{
+  color: var(--blue);
+}
+
+.image-object.image.title.gray {
+  color: var(--medium-gray);
+}
+
+

@@ -33,18 +33,21 @@ p {
 :root {
   --white: #ffffff;
   --black: #000000;
-  --pink: #fc8eac;
-  --medium-pink: #fda5bd;
+  --pink: #e48cb0;
+  /* --pink: #fc8eac; */
+  --medium-pink: #f7b6d6;
+  /* --medium-pink: #fda5bd; */
   --light-pink: #fff4f7;
   --violet: #cb9bf7;
   --dark-violet: #a27cc6;
+  --blue: #2334a3;
   --red: #fa2a55;
   --medium-red: #fb3f66;
   --green: #5daa68;
   --gray: #4c4a49;
   --medium-gray: #878685;
   --light-gray: #cbc9c9;
-  --very-light-gray: #ededed;
+  --very-light-gray: #ededed69;
 }
 
 @font-face {

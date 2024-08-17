@@ -4,6 +4,12 @@ import { MiniImages } from "./MiniImages/MiniImages";
 
 import styles from "./CategoryCard.module.css";
 
+const COLORS_BY_INDEX = {
+  0: "pink",
+  1: "blue",
+  2: "gray"
+}
+
 export const CategoryCard = ({ entity, entityIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
   const [imageIsHovered, setImageIsHovered] = useState(false);
@@ -34,9 +40,14 @@ export const CategoryCard = ({ entity, entityIndex }) => {
         />
       </div>
       <ul className={styles["mini-images-list"]} role="list">
-        {entity.map((item) => (
-          <li key={item._id}>
-            <MiniImages imageObject={item.miniImage} />
+        {entity.map((item, index) => (
+          <li
+            key={item._id}
+            className={`${
+              entityIndex === index ? `${styles["active-mini-image"]} ${styles[COLORS_BY_INDEX[index]]}` : ""
+            }`.trim()}
+          >
+            <MiniImages imageObject={item.miniImage} index={index}/>
           </li>
         ))}
       </ul>
