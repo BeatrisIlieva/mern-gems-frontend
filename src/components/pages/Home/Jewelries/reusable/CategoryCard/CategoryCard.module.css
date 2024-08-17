@@ -2,7 +2,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 18%;
+  width: 20%;
 }
 
 .category-card.hovered {

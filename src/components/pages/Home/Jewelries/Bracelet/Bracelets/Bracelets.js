@@ -32,8 +32,7 @@ export const Bracelets = () => {
       ) : (
         <CategoryCard
           entity={bracelets}
-          firstImageUrl={bracelets[0].firstImageUrl}
-          secondImageUrl={bracelets[0].secondImageUrl}
+          entityIndex={0}
         />
       )}
     </>
