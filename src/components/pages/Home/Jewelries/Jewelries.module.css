@@ -1,6 +1,9 @@
-.jewelries {
+#jewelries {
   margin: 3rem 6rem;
+}
+
+.wrapper {
   display: flex;
-  gap: 3rem;
+  gap: 6rem;
   flex-direction: column;
 }

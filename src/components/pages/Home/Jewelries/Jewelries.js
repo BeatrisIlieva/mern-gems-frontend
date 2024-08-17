@@ -7,11 +7,13 @@ import styles from "./Jewelries.module.css";
 
 export const Jewelries = () => {
   return (
-    <section className={styles["jewelries"]}>
-      <HeroBanner/>
-      <Bracelet />
-      <RingAndEarring />
-      <Necklace/>
+    <section id={styles["jewelries"]}>
+      <HeroBanner />
+      <div className={styles["wrapper"]}>
+        {/* <Bracelet /> */}
+        <RingAndEarring />
+        <Necklace />
+      </div>
     </section>
   );
 };

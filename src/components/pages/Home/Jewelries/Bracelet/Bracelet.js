@@ -1,4 +1,5 @@
 import { Bracelets } from "./Bracelets/Bracelets";
+import { Earrings } from "../RingAndEarring/Earrings/Earrings";
 
 import styles from "./Bracelet.module.css";
 
@@ -12,7 +13,7 @@ export const Bracelet = () => {
           alt="Forget-Me-Not Collection"
         />
       </div>
-      <Bracelets />
+      <Earrings />
     </section>
   );
 };
