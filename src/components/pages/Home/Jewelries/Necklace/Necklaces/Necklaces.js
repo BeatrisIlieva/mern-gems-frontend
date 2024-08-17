@@ -30,11 +30,7 @@ export const Necklaces = () => {
       {necklaces.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard
-          entity={necklaces}
-          firstImageUrl={necklaces[2].firstImageUrl}
-          secondImageUrl={necklaces[2].secondImageUrl}
-        />
+        <CategoryCard entity={necklaces} entityIndex={2} />
       )}
     </>
   );
