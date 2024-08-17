@@ -4,6 +4,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: transform 0.4s ease-in-out;
+}
+
+.image-object:hover {
+  transform: scale(1.1);
 }
 
 .image-object.image {
@@ -15,11 +20,8 @@
 
 .image-object.image.title {
   position: absolute;
-  top: -14px;
+  top: -6px;
   text-align: center;
-  background-color: var(--very-light-gray);
-  border-radius: 16px;
-  padding: 8px;
   height: fit-content;
   width: fit-content;
   cursor: default;
@@ -29,12 +31,10 @@
   color: var(--pink);
 }
 
-.image-object.image.title.blue{
+.image-object.image.title.blue {
   color: var(--blue);
 }
 
 .image-object.image.title.gray {
   color: var(--medium-gray);
 }
-
-
