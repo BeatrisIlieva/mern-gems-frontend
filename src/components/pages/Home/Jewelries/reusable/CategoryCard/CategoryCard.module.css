@@ -2,8 +2,8 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 20rem;
-  height: 24rem;
+  width: calc(40vw - 7rem);
+  /* height: 24rem; */
 }
 
 .category-card.hovered {
@@ -19,8 +19,8 @@
 }
 
 .category-card.thumbnail.image {
-  width: 18rem;
-  height: 18rem;
+  /* width: 18rem;
+  height: 18rem; */
   object-fit: contain;
 }
 
@@ -45,7 +45,7 @@
 
 @keyframes slideInLeft {
   from {
-    transform: translateX(-1.4rem);
+    transform: translateX(-1rem);
   }
   to {
     transform: translateX(0);
@@ -54,7 +54,7 @@
 
 @keyframes slideInRight {
   from {
-    transform: translateX(1.4rem);
+    transform: translateX(1rem);
   }
   to {
     transform: translateX(0);

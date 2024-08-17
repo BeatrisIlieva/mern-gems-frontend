@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-import { CategoryCard } from "../reusable/CategoryCard/CategoryCard";
-import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
+import { CategoryCard } from "../../reusable/CategoryCard/CategoryCard";
+import { CardSkeleton } from "../../CardSkeleton/CardSkeleton";
 
-import { useService } from "../../../../../hooks/useService";
+import { useService } from "../../../../../../hooks/useService";
 
-import { jewelryServiceFactory } from "../../../../../services/jewelryService";
+import { jewelryServiceFactory } from "../../../../../../services/jewelryService";
 
-import { CATEGORIES_BY_ID } from "../../../../../mappers/categoriesById";
+import { CATEGORIES_BY_ID } from "../../../../../../mappers/categoriesById";
 
 export const Bracelets = () => {
   const [bracelets, setBracelets] = useState([]);

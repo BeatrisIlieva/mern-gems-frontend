@@ -1,0 +1,17 @@
+#ring-and-earring {
+  display: flex;
+  gap: 8rem;
+  
+}
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.thumbnail {
+    width: calc(60vw - 7rem);
+}
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

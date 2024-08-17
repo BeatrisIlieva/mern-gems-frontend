@@ -70,9 +70,9 @@ p {
 :root {
   --small: 13px;
   --normal: 14px;
-  --medium: 16px;
-  --large: 22px;
-  --xlarge: 28px;
+  --medium: 1rem;
+  --large: 1.375rem;
+  --xlarge: 1.75rem;
   --xxlarge: 38px;
 }
 
