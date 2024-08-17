@@ -1,7 +1,5 @@
 .app {
   padding: 0;
-  line-height: 1.5;
-  letter-spacing: 1.2;
   font-family: var(--main-font-family);
   font-size: var(--normal);
   color: var(--gray);
@@ -13,9 +11,11 @@ body {
   color: var(--gray);
 }
 
-/* html {
-  font-size: 62.5%
-} */
+html {
+  line-height: 1.5;
+  letter-spacing: 1px;
+  /* font-size: 62.5% */
+}
 
 h1,
 h2,
@@ -24,6 +24,10 @@ h4,
 p {
   margin: 0;
   padding: 0;
+}
+
+p {
+  letter-spacing: 1.2px;
 }
 
 :root {

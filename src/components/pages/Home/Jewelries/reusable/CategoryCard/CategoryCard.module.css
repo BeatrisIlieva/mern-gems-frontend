@@ -2,7 +2,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 24vw;
+  width: 20%;
 }
 
 .category-card.hovered {
@@ -22,6 +22,7 @@
 }
 
 .mini-images-list {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
