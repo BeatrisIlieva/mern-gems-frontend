@@ -30,10 +30,7 @@ export const Bracelets = () => {
       {bracelets.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard
-          entity={bracelets}
-          entityIndex={0}
-        />
+        <CategoryCard entity={bracelets} entityIndex={0} />
       )}
     </>
   );

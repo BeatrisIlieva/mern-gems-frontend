@@ -4,7 +4,7 @@ import { MiniImages } from "./MiniImages/MiniImages";
 
 import styles from "./CategoryCard.module.css";
 
-export const CategoryCard = ({ entity, entityIndex}) => {
+export const CategoryCard = ({ entity, entityIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
   const [imageIsHovered, setImageIsHovered] = useState(false);
 
@@ -26,7 +26,9 @@ export const CategoryCard = ({ entity, entityIndex}) => {
             imageIsHovered ? styles["slide-in-right"] : styles["slide-in-left"]
           }`}
           src={
-            imageIsHovered ? entity[entityIndex].secondImageUrl : entity[entityIndex].firstImageUrl
+            imageIsHovered
+              ? entity[entityIndex].secondImageUrl
+              : entity[entityIndex].firstImageUrl
           }
           alt={entity[entityIndex].title}
         />
