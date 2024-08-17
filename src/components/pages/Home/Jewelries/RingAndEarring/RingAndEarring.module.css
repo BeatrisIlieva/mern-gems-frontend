@@ -1,17 +1,19 @@
 #ring-and-earring {
   display: flex;
   gap: 8rem;
-  
 }
 .cards-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 }
 .thumbnail {
-    width: calc(60vw - 7rem);
+  width: calc(68vw - 20rem);
+  display: flex;
+  justify-content: flex-end;
 }
 .image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

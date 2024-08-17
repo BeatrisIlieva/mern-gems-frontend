@@ -1,12 +1,13 @@
 #necklace {
-  display: flex;
+    display: flex;
+    gap: 8rem;
 }
 
 .necklace-card {
 }
 
 .thumbnail {
-    width: calc(60vw - 7rem);
+    width: calc(68vw - 20rem);
 }
 
 .image {

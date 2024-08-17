@@ -12,7 +12,7 @@ export const RingAndEarring = () => {
       </div>
       <div className={styles["thumbnail"]}>
         <img
-          lassName={styles["image"]}
+          className={styles["image"]}
           src="https://res.cloudinary.com/deztgvefu/image/upload/v1723886288/discover/sbs_lp_forgetmenot_h1qc12.jpg"
           alt="Forget-Me-Not-Collection"
         />

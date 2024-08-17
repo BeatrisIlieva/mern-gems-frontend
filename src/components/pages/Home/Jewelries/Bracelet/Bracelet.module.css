@@ -1,8 +1,6 @@
 #bracelet {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8rem;
+  justify-content: space-between;
 }
 
 .bracelet-card {
@@ -26,9 +24,10 @@
   margin-bottom: 2rem;
   margin: 0 6rem 2rem 6rem;
 }
+
 .info,
 .thumbnail {
-  width: calc(60vw - 7rem);
+  width: 50vw;
 }
 
 .image {

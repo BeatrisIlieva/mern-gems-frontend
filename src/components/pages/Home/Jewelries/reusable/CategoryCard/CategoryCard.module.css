@@ -2,12 +2,12 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: calc(40vw - 7rem);
-  /* height: 24rem; */
+  width: 30vw;
+  /* width: calc(36vw - 7rem); */
 }
 
 .category-card.hovered {
-  box-shadow: 0 0 0 1px var(--light-gray);
+  /* box-shadow: 0 0 0 1px var(--light-gray); */
 }
 
 .thumbnail {
@@ -19,8 +19,6 @@
 }
 
 .image {
-  /* width: 18rem;
-  height: 18rem; */
   object-fit: contain;
 }
 

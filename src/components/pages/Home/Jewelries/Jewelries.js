@@ -8,8 +8,8 @@ export const Jewelries = () => {
   return (
     <section className={styles["jewelries"]}>
       <Bracelet />
-      {/* <RingAndEarring />
-      <Necklace/> */}
+      <RingAndEarring />
+      <Necklace/>
     </section>
   );
 };
