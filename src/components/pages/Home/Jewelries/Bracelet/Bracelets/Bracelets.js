@@ -30,7 +30,11 @@ export const Bracelets = () => {
       {bracelets.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard entity={bracelets} />
+        <CategoryCard
+          entity={bracelets}
+          firstImageUrl={bracelets[0].firstImageUrl}
+          secondImageUrl={bracelets[0].secondImageUrl}
+        />
       )}
     </>
   );

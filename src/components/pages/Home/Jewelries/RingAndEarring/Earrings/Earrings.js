@@ -30,7 +30,7 @@ export const Earrings = () => {
       {earrings.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard entity={earrings} />
+        <CategoryCard entity={earrings} firstImageUrl={earrings[1].firstImageUrl} secondImageUrl={earrings[1].secondImageUrl}/>
       )}
     </>
   );
