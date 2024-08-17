@@ -30,11 +30,7 @@ export const Rings = () => {
       {rings.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard
-          entity={rings}
-          firstImageUrl={rings[0].firstImageUrl}
-          secondImageUrl={rings[0].secondImageUrl}
-        />
+        <CategoryCard entity={rings} entityIndex={0} />
       )}
     </>
   );
