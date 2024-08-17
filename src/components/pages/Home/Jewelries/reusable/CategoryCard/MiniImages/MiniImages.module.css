@@ -1,6 +1,6 @@
 .image-object {
-  width: 6rem;
-  height: 6rem;
+  width: 8vw;
+  /* height: 6rem; */
   position: relative;
   display: flex;
   justify-content: center;

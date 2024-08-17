@@ -2,7 +2,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 42rem;
+  width: calc(40vw - 7rem);
   /* height: 24rem; */
 }
 
