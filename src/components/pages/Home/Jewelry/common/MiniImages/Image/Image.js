@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
 
 import styles from "./Image.module.css";
@@ -11,8 +9,6 @@ export const Image = ({
   updateColorIndex,
   isActive,
 }) => {
-  const [showTitle, setShowTitle] = useState(false);
-
   const color = COLORS_BY_INDEX[index];
 
   const clickHandler = () => {
