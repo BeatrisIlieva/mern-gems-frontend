@@ -5,10 +5,11 @@
   align-items: center;
   flex-direction: column;
   transition: transform 0.4s ease-in-out;
+  margin-top: 1.2rem;
 }
 
-.image-object:hover {
-  transform: scale(1.1);
+.thumbnail {
+  width: 60%;
 }
 
 .image {
@@ -20,7 +21,7 @@
 
 .title {
   position: absolute;
-  top: -6px;
+  top: -1.6rem;
   text-align: center;
   height: fit-content;
   width: fit-content;

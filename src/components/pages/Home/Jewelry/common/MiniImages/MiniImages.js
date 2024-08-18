@@ -1,6 +1,6 @@
 import { Image } from "./Image/Image";
 
-import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
+import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
 
 import styles from "./MiniImages.module.css";
 
@@ -29,6 +29,7 @@ export const MiniImages = ({
             index={index}
             updateActiveMiniImage={updateActiveMiniImage}
             updateColorIndex={updateColorIndex}
+            isActive={activeMiniImage === index}
           />
         </li>
       ))}

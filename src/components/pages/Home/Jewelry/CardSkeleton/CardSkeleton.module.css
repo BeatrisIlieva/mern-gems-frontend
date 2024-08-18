@@ -1,6 +1,6 @@
 .card-skeleton {
   border: 0.1px solid var(--light-gray);
-  width: 20vw;
+  width: 20%;
   aspect-ratio: 1;
   z-index: 0;
   position: relative;

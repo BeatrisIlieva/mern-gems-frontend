@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
-import { CircleIcon } from "./CircleIcon/CircleIcon";
-import { LargeImages } from "./LargeImages/LargeImages";
-import { MiniImages } from "./MiniImages/MiniImages";
+import { CircleIcon } from "../../common/CircleIcon/CircleIcon";
+import { LargeImages } from "../../common/LargeImages/LargeImages";
+import { MiniImages } from "../../common/MiniImages/MiniImages";
 
 import { checkIfItemsHasBeenSoldOut } from "./helpers/checkIfItemsHasBeenSoldOut";
 

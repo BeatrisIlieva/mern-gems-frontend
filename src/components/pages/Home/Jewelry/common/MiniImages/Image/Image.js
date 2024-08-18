@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { COLORS_BY_INDEX } from "../../../../constants/colorsByIndex";
+import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
 
 import styles from "./Image.module.css";
 
@@ -9,6 +9,7 @@ export const Image = ({
   index,
   updateActiveMiniImage,
   updateColorIndex,
+  isActive,
 }) => {
   const [showTitle, setShowTitle] = useState(false);
 
@@ -20,18 +21,16 @@ export const Image = ({
   };
 
   return (
-    <div
-      className={styles["image-object"]}
-      onMouseEnter={() => setShowTitle(true)}
-      onMouseLeave={() => setShowTitle(false)}
-    >
-      <img
-        className={styles["image"]}
-        src={imageObject[0].imageUrl}
-        alt={imageObject[0].title}
-        onClick={clickHandler}
-      />
-      {showTitle && (
+    <div className={styles["image-object"]}>
+      <div className={styles["thumbnail"]}>
+        <img
+          className={styles["image"]}
+          src={imageObject[0].imageUrl}
+          alt={imageObject[0].title}
+          onClick={clickHandler}
+        />
+      </div>
+      {isActive && (
         <span className={`${styles["title"]} ${styles[color]}`}>
           {imageObject[0].title}
         </span>

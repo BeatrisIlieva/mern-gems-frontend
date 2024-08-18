@@ -7,8 +7,9 @@
 }
 
 .active-mini-image {
-  padding-bottom: 16px;
-  border-radius: 64px;
+  padding-bottom: 1rem;
+  border-bottom-left-radius: 50rem;
+  border-bottom-right-radius: 50rem;
 }
 
 .active-mini-image.pink {
