@@ -19,4 +19,11 @@ export const IMAGE_BY_URL_AND_VARIANT = {
     variant: "left",
     waveEffect: "wave-effect-3",
   },
+
+  butterfly: {
+    imageUrl:
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723986117/forget-me-not-collection/miniImages/1042750_d9d98_vfqzme.gif",
+    variant: "butterfly",
+    waveEffect: "wave-effect-butterfly",
+  },
 };
