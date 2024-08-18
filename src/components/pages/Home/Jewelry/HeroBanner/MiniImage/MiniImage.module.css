@@ -20,81 +20,18 @@
   right: 100px;
 }
 
-/* Base styling for all wave effects */
 .wave-effect {
-    display: block;
-    width: 300px; /* Adjust size as needed */
-    height: auto;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  
-  /* First wave effect */
-  .wave-effect-1 {
-    animation: wave1 4s infinite linear;
-  }
-  
-  @keyframes wave1 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  /* Second wave effect - faster, smaller wave */
-  .wave-effect-2 {
-    animation: wave2 3s infinite ease-in-out;
-  }
-  
-  @keyframes wave2 {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-5px);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-    75% {
-      transform: translateY(-5px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  /* Third wave effect - slower, larger wave */
-  .wave-effect-3 {
-    animation: wave3 6s infinite ease;
-  }
-  
-  @keyframes wave3 {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px) rotate(-2deg);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-
-/* .wave-effect {
   display: block;
-  width: 300px;
+  width: 300px; 
   height: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  animation: wave 4s infinite linear;
 }
 
-@keyframes wave {
+.wave-effect-1 {
+  animation: wave1 4s infinite linear;
+}
+
+@keyframes wave1 {
   0% {
     transform: translateY(0);
   }
@@ -104,4 +41,42 @@
   100% {
     transform: translateY(0);
   }
-} */
+}
+
+.wave-effect-2 {
+  animation: wave2 3s infinite ease-in-out;
+}
+
+@keyframes wave2 {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.wave-effect-3 {
+  animation: wave3 6s infinite ease;
+}
+
+@keyframes wave3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
