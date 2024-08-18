@@ -9,6 +9,8 @@ import { jewelryServiceFactory } from "../../../../../../services/jewelryService
 
 import { CATEGORIES_BY_ID } from "../../../../../../mappers/categoriesById";
 
+import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
+
 export const Rings = () => {
   const [rings, setRings] = useState([]);
 
@@ -30,7 +32,7 @@ export const Rings = () => {
       {rings.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard entity={rings} entityIndex={0} />
+        <CategoryCard entity={rings} entityIndex={COLORS_BY_INDEX.pink} />
       )}
     </>
   );

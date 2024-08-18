@@ -9,11 +9,15 @@ import { jewelryServiceFactory } from "../../../../../../services/jewelryService
 
 import { CATEGORIES_BY_ID } from "../../../../../../mappers/categoriesById";
 
+import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
+
 export const Earrings = () => {
   const [earrings, setEarrings] = useState([]);
   const [activeEntityIndex, setActiveEntityIndex] = useState(CATEGORIES_BY_ID.earrings)
 
   const jewelryService = useService(jewelryServiceFactory);
+
+  const updateEntityIndex = (index) => {}
 
   useEffect(() => {
     jewelryService
@@ -31,7 +35,7 @@ export const Earrings = () => {
       {earrings.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard entity={earrings} entityIndex={activeEntityIndex} />
+        <CategoryCard entity={earrings} entityIndex={COLORS_BY_INDEX.blue} />
       )}
     </>
   );

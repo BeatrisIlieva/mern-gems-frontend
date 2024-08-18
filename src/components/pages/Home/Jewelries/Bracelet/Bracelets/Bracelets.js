@@ -9,6 +9,8 @@ import { jewelryServiceFactory } from "../../../../../../services/jewelryService
 
 import { CATEGORIES_BY_ID } from "../../../../../../mappers/categoriesById";
 
+import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
+
 export const Bracelets = () => {
   const [bracelets, setBracelets] = useState([]);
 
@@ -30,7 +32,7 @@ export const Bracelets = () => {
       {bracelets.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard entity={bracelets} entityIndex={0} />
+        <CategoryCard entity={bracelets} entityIndex={COLORS_BY_INDEX.pink} />
       )}
     </>
   );

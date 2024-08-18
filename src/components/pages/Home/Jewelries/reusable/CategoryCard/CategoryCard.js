@@ -3,6 +3,8 @@ import { useState } from "react";
 import { CircleIcon } from "./CircleIcon/CircleIcon";
 import { MiniImages } from "./MiniImages/MiniImages";
 
+import { getColorByIndex } from "../../helpers/getColorByIndex";
+
 import styles from "./CategoryCard.module.css";
 
 
@@ -22,7 +24,7 @@ export const CategoryCard = ({ entity, entityIndex }) => {
     setActiveLargeImage(image);
   };
 
-  const updateEntityIndex = (index) => {}
+const color = getColorByIndex(entityIndex);
 
   return (
     <article
@@ -70,7 +72,7 @@ export const CategoryCard = ({ entity, entityIndex }) => {
             className={`${
               activeMiniImage === index
                 ? `${styles["active-mini-image"]} ${
-                    styles[COLORS_BY_INDEX[index]]
+                    styles[color]
                   }`
                 : ""
             }`.trim()}

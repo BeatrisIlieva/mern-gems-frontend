@@ -1,15 +1,13 @@
 import { useState } from "react";
 
-import styles from "./MiniImages.module.css";
+import { getColorByIndex } from "../../../helpers/getColorByIndex";
 
-const COLORS_BY_INDEX = {
-  0: "pink",
-  1: "blue",
-  2: "gray"
-}
+import styles from "./MiniImages.module.css";
 
 export const MiniImages = ({ imageObject, index, updateActiveMiniImage }) => {
   const [showTitle, setShowTitle] = useState(false);
+
+  const color = getColorByIndex(index);
 
   return (
     <div
@@ -18,14 +16,14 @@ export const MiniImages = ({ imageObject, index, updateActiveMiniImage }) => {
       onMouseLeave={() => setShowTitle(false)}
     >
       <img
-        className={`${styles["image-object"]} ${styles["image"]}`}
+        className={styles["image"]}
         src={imageObject[0].imageUrl}
         alt={imageObject[0].title}
         onClick={() => updateActiveMiniImage(index)}
       />
       {showTitle && (
         <span
-          className={`${styles["image-object"]} ${styles["image"]} ${styles["title"]} ${styles[COLORS_BY_INDEX[index]]}`}
+          className={`${styles["title"]} ${styles[color]}`}
         >
           {imageObject[0].title}
         </span>

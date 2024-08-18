@@ -11,14 +11,14 @@
   transform: scale(1.1);
 }
 
-.image-object.image {
+.image {
   width: 100%;
   height: 100%;
   object-fit: contain;
   cursor: pointer;
 }
 
-.image-object.image.title {
+.title {
   position: absolute;
   top: -6px;
   text-align: center;
@@ -27,14 +27,14 @@
   cursor: default;
 }
 
-.image-object.image.title.pink {
+.title.pink {
   color: var(--pink);
 }
 
-.image-object.image.title.blue {
+.title.blue {
   color: var(--blue);
 }
 
-.image-object.image.title.gray {
+.title.gray {
   color: var(--medium-gray);
 }

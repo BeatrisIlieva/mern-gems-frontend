@@ -2,6 +2,7 @@ import { Necklaces } from "./Necklaces/Necklaces";
 
 import styles from "./Necklace.module.css";
 
+
 export const Necklace = () => {
   return (
     <section id={styles["necklace"]}>
