@@ -1,10 +1,9 @@
-#jewelries {
+#jewelry {
   margin: 0;
 }
 
 .wrapper {
   margin: 2rem;
-  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: space-between;

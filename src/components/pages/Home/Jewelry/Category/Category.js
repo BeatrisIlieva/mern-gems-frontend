@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { CategoryCard } from "../reusable/CategoryCard/CategoryCard";
+import { CategoryCard } from "./CategoryCard/CategoryCard";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
 import { useService } from "../../../../../hooks/useService";

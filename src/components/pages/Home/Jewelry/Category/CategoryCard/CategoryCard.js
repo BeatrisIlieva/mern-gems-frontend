@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import { LargeImages } from "./LargeImages/LargeImages";
 import { CircleIcon } from "./CircleIcon/CircleIcon";
 import { MiniImages } from "./MiniImages/MiniImages";
 
@@ -50,21 +51,11 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
           updateFirstImageUrlIsActive={updateFirstImageUrlIsActive}
         />
       </div>
-      <div className={styles["thumbnail"]}>
-        <img
-          className={`${styles["image"]} ${
-            firstImageUrlIsActive
-              ? styles["slide-in-right"]
-              : styles["slide-in-left"]
-          }`}
-          src={
-            firstImageUrlIsActive
-              ? entity[colorIndex].firstImageUrl
-              : entity[colorIndex].secondImageUrl
-          }
-          alt={entity[colorIndex].title}
-        />
-      </div>
+      <LargeImages
+        firstImageUrlIsActive={firstImageUrlIsActive}
+        entity={entity}
+        colorIndex={colorIndex}
+      />
       <ul className={styles["mini-images-list"]} role="list">
         {entity.map((item, index) => (
           <li
