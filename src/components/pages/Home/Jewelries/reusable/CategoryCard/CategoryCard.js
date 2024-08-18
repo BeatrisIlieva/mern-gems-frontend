@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { CircleIcon } from "./CircleIcon/CircleIcon";
 import { MiniImages } from "./MiniImages/MiniImages";
@@ -13,6 +13,10 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
+
+  useEffect(() => {
+    setFirstImageUrlIsActive(true);
+  }, [activeMiniImage]);
 
   const updateActiveMiniImage = (index) => {
     setActiveMiniImage(index);
