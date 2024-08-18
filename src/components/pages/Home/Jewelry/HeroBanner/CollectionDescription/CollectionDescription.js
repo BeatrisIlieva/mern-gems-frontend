@@ -2,7 +2,7 @@ import { MiniImage } from "../MiniImage/MiniImage";
 
 import { IMAGE_BY_URL_AND_VARIANT } from "../constants/imagesByUrlAndVariant";
 
-import styles from "./CollectionDescription.module.css"
+import styles from "./CollectionDescription.module.css";
 
 export const CollectionDescription = () => {
   return (
