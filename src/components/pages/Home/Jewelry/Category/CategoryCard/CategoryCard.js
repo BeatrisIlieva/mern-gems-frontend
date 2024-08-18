@@ -13,8 +13,6 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
-  const [articleIsHovered, setArticleIsHovered] = useState(false);
-
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
@@ -39,15 +37,7 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const clickHandler = () => {};
 
   return (
-    <article
-      onMouseEnter={() => setArticleIsHovered(true)}
-      onMouseLeave={() => setArticleIsHovered(false)}
-      className={
-        articleIsHovered
-          ? `${styles["category-card"]} ${styles["hovered"]}`
-          : styles["category-card"]
-      }
-    >
+    <article className={styles["category-card"]}>
       <div onClick={clickHandler}>
         <DualTitleSection
           firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}

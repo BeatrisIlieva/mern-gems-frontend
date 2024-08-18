@@ -6,10 +6,6 @@
   padding: 1rem 1rem 0.8rem 1rem;
 }
 
-.category-card.hovered {
-  box-shadow: 0 0 0 1px var(--light-gray);
-}
-
 .circle-icons-container {
   display: flex;
   justify-content: center;
@@ -24,7 +20,7 @@
 }
 
 .icon {
-  width: 0.250rem;
+  width: 0.25rem;
 }
 
 .icon.sold-out {
