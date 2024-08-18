@@ -1,0 +1,9 @@
+.circle {
+  color: var(--light-gray);
+  height: 10px;
+  padding-bottom: 1rem;
+}
+
+.selected {
+  color: var(--medium-gray);
+}

@@ -21,7 +21,11 @@
 .image {
   object-fit: contain;
 }
-
+.circle-icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
 .mini-images-list {
   width: 100%;
   display: flex;

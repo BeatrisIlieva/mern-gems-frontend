@@ -8,7 +8,7 @@ const COLORS_BY_INDEX = {
   2: "gray"
 }
 
-export const MiniImages = ({ imageObject, index, updateActiveImage }) => {
+export const MiniImages = ({ imageObject, index, updateActiveMiniImage }) => {
   const [showTitle, setShowTitle] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ export const MiniImages = ({ imageObject, index, updateActiveImage }) => {
         className={`${styles["image-object"]} ${styles["image"]}`}
         src={imageObject[0].imageUrl}
         alt={imageObject[0].title}
-        onClick={() => updateActiveImage(index)}
+        onClick={() => updateActiveMiniImage(index)}
       />
       {showTitle && (
         <span
