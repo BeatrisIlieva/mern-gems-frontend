@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { COLORS_BY_INDEX } from "../../../../constants/colorsByIndex";
 
-import styles from "./MiniImage.module.css";
+import styles from "./Image.module.css";
 
-export const MiniImage = ({
+export const Image = ({
   imageObject,
   index,
   updateActiveMiniImage,

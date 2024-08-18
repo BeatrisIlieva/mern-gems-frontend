@@ -1,0 +1,41 @@
+.mini-image,
+.mini-image.left,
+.mini-image.right {
+  width: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mini-image.left,
+.mini-image.right {
+  position: absolute;
+}
+
+.mini-image-absolute-left {
+  top: -10px;
+  left: 100px;
+}
+
+.mini-image-absolute-right {
+  top: 0;
+  right: 100px;
+}
+
+.wave-effect {
+  display: block;
+  width: 300px;
+  height: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  animation: wave 4s infinite linear;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

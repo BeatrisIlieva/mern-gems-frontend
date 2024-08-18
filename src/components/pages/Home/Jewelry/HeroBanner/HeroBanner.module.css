@@ -3,11 +3,8 @@
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #e5e3df;
-
-  /* background-color: #e5e3df; */
-  /* background: rgb(229,226,223);
-  background: linear-gradient(0deg, rgba(229,226,223,1) 1%, rgba(138,129,123,1) 47%, rgba(229,226,223,1) 90%); */
 }
+
 .text {
   position: relative;
   display: flex;
@@ -19,26 +16,9 @@
 }
 
 .title {
-    font-size: var(--xlarge);
+  font-size: var(--xlarge);
   text-align: center;
   margin-bottom: 1rem;
-}
-
-.mini-image, .mini-image-absolute-left, .mini-image-absolute-right {
-  width: 3rem;
-  margin-bottom: 1rem;
-}
-
-.mini-image-absolute-left {
-  top: -10px;
-  left: 100px;
-  position: absolute;
-}
-
-.mini-image-absolute-right {
-  top: 0;
-  right: 100px;
-  position: absolute;
 }
 
 .paragraph {
@@ -55,29 +35,4 @@
   height: 100%;
   object-fit: contain;
   overflow: hidden;
-}
-
-.wave-effect {
-  /* Ensure the image is displayed as block to apply transforms properly */
-  display: block;
-  /* Apply a size to the image */
-  width: 300px; /* Adjust to fit your design */
-  height: auto; /* Maintain aspect ratio */
-  /* Apply the initial clip-path */
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  /* Set up the animation */
-  animation: wave 4s infinite linear;
-}
-
-
-@keyframes wave {
-  0% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-10px);
-  }
-  100% {
-      transform: translateY(0);
-  }
 }

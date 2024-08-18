@@ -1,4 +1,4 @@
-import { MiniImage } from "./MiniImage/MiniImage";
+import { Image } from "./Image/Image";
 
 import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
 
@@ -24,7 +24,7 @@ export const MiniImages = ({
               : ""
           }`.trim()}
         >
-          <MiniImage
+          <Image
             imageObject={item.miniImage}
             index={index}
             updateActiveMiniImage={updateActiveMiniImage}
