@@ -5,16 +5,12 @@ import { MiniImages } from "./MiniImages/MiniImages";
 
 import styles from "./CategoryCard.module.css";
 
-const COLORS_BY_INDEX = {
-  0: "pink",
-  1: "blue",
-  2: "gray",
-};
+
 
 export const CategoryCard = ({ entity, entityIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
   const [activeLargeImage, setActiveLargeImage] = useState(
-    entity[0].firstImageUrl
+    entity[entityIndex].firstImageUrl
   );
   const [activeMiniImage, setActiveMiniImage] = useState(entityIndex);
 
@@ -25,6 +21,8 @@ export const CategoryCard = ({ entity, entityIndex }) => {
   const updateActiveLargeImage = (image) => {
     setActiveLargeImage(image);
   };
+
+  const updateEntityIndex = (index) => {}
 
   return (
     <article
@@ -38,13 +36,13 @@ export const CategoryCard = ({ entity, entityIndex }) => {
     >
       <div className={styles["circle-icons-container"]}>
         <CircleIcon
-          isSelected={activeLargeImage === entity[0].firstImageUrl}
-          image={entity[0].firstImageUrl}
+          isSelected={activeLargeImage === entity[entityIndex].firstImageUrl}
+          image={entity[entityIndex].firstImageUrl}
           updateActiveLargeImage={updateActiveLargeImage}
         />
         <CircleIcon
-          isSelected={activeLargeImage === entity[0].secondImageUrl}
-          image={entity[0].secondImageUrl}
+          isSelected={activeLargeImage === entity[entityIndex].secondImageUrl}
+          image={entity[entityIndex].secondImageUrl}
           updateActiveLargeImage={updateActiveLargeImage}
         />
       </div>
@@ -53,14 +51,14 @@ export const CategoryCard = ({ entity, entityIndex }) => {
           // onMouseEnter={() => setActiveLargeImage(entity[0].firstImageUrl)}
           // onMouseLeave={() => setActiveLargeImage(entity[0].secondImageUrl)}
           className={`${styles["image"]} ${
-            activeLargeImage === entity[0].firstImageUrl
+            activeLargeImage === entity[entityIndex].firstImageUrl
               ? styles["slide-in-right"]
               : styles["slide-in-left"]
           }`}
           src={
-            activeLargeImage === entity[0].firstImageUrl
-              ? entity[0].firstImageUrl 
-              : entity[0].secondImageUrl
+            activeLargeImage === entity[entityIndex].firstImageUrl
+              ? entity[entityIndex].firstImageUrl 
+              : entity[entityIndex].secondImageUrl
           }
           alt={entity[entityIndex].title}
         />
