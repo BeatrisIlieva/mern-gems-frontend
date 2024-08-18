@@ -1,41 +1,37 @@
-import { useState } from "react";
+import { MiniImage } from "./MiniImage/MiniImage";
 
 import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
 
 import styles from "./MiniImages.module.css";
 
 export const MiniImages = ({
-  imageObject,
-  index,
+  colorIndex,
+  entity,
+  activeMiniImage,
   updateActiveMiniImage,
   updateColorIndex,
 }) => {
-  const [showTitle, setShowTitle] = useState(false);
-
-  const color = COLORS_BY_INDEX[index];
-
-  const clickHandler = () => {
-    updateActiveMiniImage(index);
-    updateColorIndex(index);
-  };
+  const color = COLORS_BY_INDEX[colorIndex];
 
   return (
-    <div
-      className={styles["image-object"]}
-      onMouseEnter={() => setShowTitle(true)}
-      onMouseLeave={() => setShowTitle(false)}
-    >
-      <img
-        className={styles["image"]}
-        src={imageObject[0].imageUrl}
-        alt={imageObject[0].title}
-        onClick={clickHandler}
-      />
-      {showTitle && (
-        <span className={`${styles["title"]} ${styles[color]}`}>
-          {imageObject[0].title}
-        </span>
-      )}
-    </div>
+    <ul className={styles["mini-images-list"]} role="list">
+      {entity.map((item, index) => (
+        <li
+          key={item._id}
+          className={`${
+            activeMiniImage === index
+              ? `${styles["active-mini-image"]} ${styles[color]}`
+              : ""
+          }`.trim()}
+        >
+          <MiniImage
+            imageObject={item.miniImage}
+            index={index}
+            updateActiveMiniImage={updateActiveMiniImage}
+            updateColorIndex={updateColorIndex}
+          />
+        </li>
+      ))}
+    </ul>
   );
 };

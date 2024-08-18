@@ -4,8 +4,6 @@ import { LargeImages } from "./LargeImages/LargeImages";
 import { CircleIcon } from "./CircleIcon/CircleIcon";
 import { MiniImages } from "./MiniImages/MiniImages";
 
-import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
-
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
@@ -26,8 +24,6 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const updateFirstImageUrlIsActive = (image) => {
     setFirstImageUrlIsActive(entity[colorIndex].firstImageUrl === image);
   };
-
-  const color = COLORS_BY_INDEX[colorIndex];
 
   return (
     <article
@@ -56,25 +52,13 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
         entity={entity}
         colorIndex={colorIndex}
       />
-      <ul className={styles["mini-images-list"]} role="list">
-        {entity.map((item, index) => (
-          <li
-            key={item._id}
-            className={`${
-              activeMiniImage === index
-                ? `${styles["active-mini-image"]} ${styles[color]}`
-                : ""
-            }`.trim()}
-          >
-            <MiniImages
-              imageObject={item.miniImage}
-              index={index}
-              updateActiveMiniImage={updateActiveMiniImage}
-              updateColorIndex={updateColorIndex}
-            />
-          </li>
-        ))}
-      </ul>
+      <MiniImages
+        colorIndex={colorIndex}
+        entity={entity}
+        activeMiniImage={activeMiniImage}
+        updateActiveMiniImage={updateActiveMiniImage}
+        updateColorIndex={updateColorIndex}
+      />
     </article>
   );
 };
