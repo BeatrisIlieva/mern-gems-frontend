@@ -93,16 +93,14 @@
   }
 }
 
-/* Base styling for the wave effect */
 .wave-effect-butterfly {
   display: block;
-  width: 300px; /* Adjust the size as needed */
+  width: 300px;
   height: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   animation: circular-wave 8s infinite ease-in-out;
 }
 
-/* Keyframes for the circular wave effect */
 @keyframes circular-wave {
   0% {
     transform: translate(0, 0) rotate(0deg) scale(1);
@@ -111,12 +109,12 @@
     transform: translate(50px, -50px) rotate(45deg) scale(1);
   }
   50% {
-    transform: translate(100px, 0) rotate(90deg) scale(1.1); /* Start rotating to the left */
+    transform: translate(100px, 0) rotate(90deg) scale(1.1);
   }
   75% {
-    transform: translate(50px, 50px) rotate(135deg) scale(1); /* Continue rotating in a circular path */
+    transform: translate(50px, 50px) rotate(135deg) scale(1);
   }
   100% {
-    transform: translate(0, 0) rotate(180deg) scale(1); /* Fully rotate and return to start */
+    transform: translate(0, 0) rotate(180deg) scale(1);
   }
 }
