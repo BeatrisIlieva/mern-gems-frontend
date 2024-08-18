@@ -7,22 +7,22 @@ import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
 
 import styles from "./CategoryCard.module.css";
 
-export const CategoryCard = ({ entity, entityIndex, updateColorIndex }) => {
+export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
-  const [activeMiniImage, setActiveMiniImage] = useState(entityIndex);
+  const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
 
   const updateActiveMiniImage = (index) => {
     setActiveMiniImage(index);
   };
 
   const updateFirstImageUrlIsActive = (image) => {
-    setFirstImageUrlIsActive(entity[entityIndex].firstImageUrl === image);
+    setFirstImageUrlIsActive(entity[colorIndex].firstImageUrl === image);
   };
 
-  const color = COLORS_BY_INDEX[entityIndex];
+  const color = COLORS_BY_INDEX[colorIndex];
 
   return (
     <article
@@ -37,12 +37,12 @@ export const CategoryCard = ({ entity, entityIndex, updateColorIndex }) => {
       <div className={styles["circle-icons-container"]}>
         <CircleIcon
           isSelected={firstImageUrlIsActive}
-          image={entity[entityIndex].firstImageUrl}
+          image={entity[colorIndex].firstImageUrl}
           updateFirstImageUrlIsActive={updateFirstImageUrlIsActive}
         />
         <CircleIcon
           isSelected={!firstImageUrlIsActive}
-          image={entity[entityIndex].secondImageUrl}
+          image={entity[colorIndex].secondImageUrl}
           updateFirstImageUrlIsActive={updateFirstImageUrlIsActive}
         />
       </div>
@@ -55,10 +55,10 @@ export const CategoryCard = ({ entity, entityIndex, updateColorIndex }) => {
           }`}
           src={
             firstImageUrlIsActive
-              ? entity[entityIndex].firstImageUrl
-              : entity[entityIndex].secondImageUrl
+              ? entity[colorIndex].firstImageUrl
+              : entity[colorIndex].secondImageUrl
           }
-          alt={entity[entityIndex].title}
+          alt={entity[colorIndex].title}
         />
       </div>
       <ul className={styles["mini-images-list"]} role="list">

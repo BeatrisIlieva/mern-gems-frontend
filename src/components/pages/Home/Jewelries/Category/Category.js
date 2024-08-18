@@ -36,7 +36,7 @@ export const Category = ({ entityId, initialColorIndex }) => {
       ) : (
         <CategoryCard
           entity={entity}
-          entityIndex={colorIndex}
+          colorIndex={colorIndex}
           updateColorIndex={updateColorIndex}
         />
       )}
