@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-import { LargeImages } from "./LargeImages/LargeImages";
 import { CircleIcon } from "./CircleIcon/CircleIcon";
+import { LargeImages } from "./LargeImages/LargeImages";
 import { MiniImages } from "./MiniImages/MiniImages";
 
 import styles from "./CategoryCard.module.css";
