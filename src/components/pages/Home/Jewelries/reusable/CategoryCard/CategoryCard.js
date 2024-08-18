@@ -5,27 +5,24 @@ import { MiniImages } from "./MiniImages/MiniImages";
 
 import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
 
-
 import styles from "./CategoryCard.module.css";
-
-
 
 export const CategoryCard = ({ entity, entityIndex, updateColorIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
-  const [activeLargeImage, setActiveLargeImage] = useState(
-    entity[entityIndex].firstImageUrl
-  );
+
+  const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
+
   const [activeMiniImage, setActiveMiniImage] = useState(entityIndex);
 
   const updateActiveMiniImage = (index) => {
     setActiveMiniImage(index);
   };
 
-  const updateActiveLargeImage = (image) => {
-    setActiveLargeImage(image);
+  const updateFirstImageUrlIsActive = (image) => {
+    setFirstImageUrlIsActive(entity[entityIndex].firstImageUrl === image);
   };
 
-const color = COLORS_BY_INDEX[entityIndex];
+  const color = COLORS_BY_INDEX[entityIndex];
 
   return (
     <article
@@ -39,26 +36,26 @@ const color = COLORS_BY_INDEX[entityIndex];
     >
       <div className={styles["circle-icons-container"]}>
         <CircleIcon
-          isSelected={activeLargeImage === entity[entityIndex].firstImageUrl}
+          isSelected={firstImageUrlIsActive}
           image={entity[entityIndex].firstImageUrl}
-          updateActiveLargeImage={updateActiveLargeImage}
+          updateFirstImageUrlIsActive={updateFirstImageUrlIsActive}
         />
         <CircleIcon
-          isSelected={activeLargeImage === entity[entityIndex].secondImageUrl}
+          isSelected={!firstImageUrlIsActive}
           image={entity[entityIndex].secondImageUrl}
-          updateActiveLargeImage={updateActiveLargeImage}
+          updateFirstImageUrlIsActive={updateFirstImageUrlIsActive}
         />
       </div>
       <div className={styles["thumbnail"]}>
         <img
           className={`${styles["image"]} ${
-            activeLargeImage === entity[entityIndex].firstImageUrl
+            firstImageUrlIsActive
               ? styles["slide-in-right"]
               : styles["slide-in-left"]
           }`}
           src={
-            activeLargeImage === entity[entityIndex].firstImageUrl
-              ? entity[entityIndex].firstImageUrl 
+            firstImageUrlIsActive
+              ? entity[entityIndex].firstImageUrl
               : entity[entityIndex].secondImageUrl
           }
           alt={entity[entityIndex].title}
@@ -70,9 +67,7 @@ const color = COLORS_BY_INDEX[entityIndex];
             key={item._id}
             className={`${
               activeMiniImage === index
-                ? `${styles["active-mini-image"]} ${
-                    styles[color]
-                  }`
+                ? `${styles["active-mini-image"]} ${styles[color]}`
                 : ""
             }`.trim()}
           >
