@@ -55,7 +55,9 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
             <span className={styles["stock"]}>
               <FontAwesomeIcon
                 icon={faCircle}
-                className={`${styles["icon"]} ${isSoldOut ? styles["sold-out"] : styles["in-stock"]}`}
+                className={`${styles["icon"]} ${
+                  isSoldOut ? styles["sold-out"] : styles["in-stock"]
+                }`}
               />
               {isSoldOut ? "Sold Out" : "In Stock"}
             </span>
