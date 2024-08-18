@@ -7,9 +7,7 @@ import { useService } from "../../../../../hooks/useService";
 
 import { jewelryServiceFactory } from "../../../../../services/jewelryService";
 
-import { CATEGORIES_BY_ID } from "../../../../../mappers/categoriesById";
-
-export const Category = ({entityId, initialColorIndex}) => {
+export const Category = ({ entityId, initialColorIndex }) => {
   const [entity, setEntity] = useState([]);
 
   const [colorIndex, setColorIndex] = useState(initialColorIndex);
@@ -33,7 +31,7 @@ export const Category = ({entityId, initialColorIndex}) => {
 
   return (
     <>
-      {items.length < 1 ? (
+      {entity.length < 1 ? (
         <CardSkeleton />
       ) : (
         <CategoryCard
