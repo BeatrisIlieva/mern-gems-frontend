@@ -98,7 +98,7 @@
   width: 300px;
   height: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  animation: circular-wave 8s infinite ease-in-out;
+  animation: circular-wave 6s infinite ease-in-out;
 }
 
 @keyframes circular-wave {

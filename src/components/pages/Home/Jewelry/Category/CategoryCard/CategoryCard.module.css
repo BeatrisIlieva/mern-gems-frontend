@@ -17,8 +17,14 @@
   margin-top: 2rem;
 }
 
+.stock {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
 .icon {
-  width: 0.25rem;
+  width: 0.250rem;
 }
 
 .icon.sold-out {

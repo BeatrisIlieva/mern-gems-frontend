@@ -52,7 +52,7 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
         <DualTitleSection
           firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
           secondTitle={
-            <span>
+            <span className={styles["stock"]}>
               <FontAwesomeIcon
                 icon={faCircle}
                 className={`${styles["icon"]} ${isSoldOut ? styles["sold-out"] : styles["in-stock"]}`}
