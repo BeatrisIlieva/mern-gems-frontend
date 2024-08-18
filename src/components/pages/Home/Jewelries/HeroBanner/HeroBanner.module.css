@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--light-pink);
+  background-color: #f5f3f1;
 }
 
 .text {
@@ -18,7 +18,7 @@
 
 .paragraph {
   text-align: center;
-  margin: 0 6rem 0 6rem;
+  margin: 0 8rem 0 8rem;
 }
 
 .thumbnail {

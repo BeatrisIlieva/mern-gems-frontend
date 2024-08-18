@@ -13,6 +13,11 @@ const COLORS_BY_INDEX = {
 export const CategoryCard = ({ entity, entityIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
   const [imageIsHovered, setImageIsHovered] = useState(false);
+  const [activeImage, setActiveImage] = useState(entityIndex);
+
+  const updateActiveImage = (index) => {
+    setActiveImage(index);
+  }
 
   return (
     <article
@@ -33,8 +38,8 @@ export const CategoryCard = ({ entity, entityIndex }) => {
           }`}
           src={
             imageIsHovered
-              ? entity[entityIndex].secondImageUrl
-              : entity[entityIndex].firstImageUrl
+              ? entity[activeImage].secondImageUrl
+              : entity[activeImage].firstImageUrl
           }
           alt={entity[entityIndex].title}
         />
@@ -44,10 +49,10 @@ export const CategoryCard = ({ entity, entityIndex }) => {
           <li
             key={item._id}
             className={`${
-              entityIndex === index ? `${styles["active-mini-image"]} ${styles[COLORS_BY_INDEX[index]]}` : ""
+              activeImage === index ? `${styles["active-mini-image"]} ${styles[COLORS_BY_INDEX[index]]}` : ""
             }`.trim()}
           >
-            <MiniImages imageObject={item.miniImage} index={index}/>
+            <MiniImages imageObject={item.miniImage} index={index} updateActiveImage={updateActiveImage}/>
           </li>
         ))}
       </ul>
