@@ -1,6 +1,5 @@
 export const COLORS_BY_INDEX = {
-  pink: 0,
-  blue: 1,
-  gray: 2,
+  0: "pink",
+  1: "blue",
+  2: "gray",
 };
-

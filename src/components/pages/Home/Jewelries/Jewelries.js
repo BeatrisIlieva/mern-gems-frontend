@@ -14,10 +14,10 @@ export const Jewelries = () => {
     <section id={styles["jewelries"]}>
       <HeroBanner />
       <div className={styles["wrapper"]}>
-        <Bracelets />
+        {/* <Bracelets /> */}
         <Earrings />
-        <Necklaces />
-        <Rings />
+        {/* <Necklaces />
+        <Rings /> */}
       </div>
     </section>
   );

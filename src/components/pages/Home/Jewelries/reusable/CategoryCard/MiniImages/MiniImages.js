@@ -1,13 +1,18 @@
 import { useState } from "react";
 
-import { getColorByIndex } from "../../../helpers/getColorByIndex";
+import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ imageObject, index, updateActiveMiniImage }) => {
+export const MiniImages = ({ imageObject, index, updateActiveMiniImage, updateColorIndex }) => {
   const [showTitle, setShowTitle] = useState(false);
 
-  const color = getColorByIndex(index);
+  const color = COLORS_BY_INDEX[index];
+
+  const clickHandler = () => {
+    updateActiveMiniImage(index)
+    updateColorIndex(index)
+  }
 
   return (
     <div
@@ -19,7 +24,7 @@ export const MiniImages = ({ imageObject, index, updateActiveMiniImage }) => {
         className={styles["image"]}
         src={imageObject[0].imageUrl}
         alt={imageObject[0].title}
-        onClick={() => updateActiveMiniImage(index)}
+        onClick={clickHandler}
       />
       {showTitle && (
         <span

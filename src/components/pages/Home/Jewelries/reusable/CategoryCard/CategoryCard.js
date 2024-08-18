@@ -3,13 +3,14 @@ import { useState } from "react";
 import { CircleIcon } from "./CircleIcon/CircleIcon";
 import { MiniImages } from "./MiniImages/MiniImages";
 
-import { getColorByIndex } from "../../helpers/getColorByIndex";
+import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
+
 
 import styles from "./CategoryCard.module.css";
 
 
 
-export const CategoryCard = ({ entity, entityIndex }) => {
+export const CategoryCard = ({ entity, entityIndex, updateColorIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
   const [activeLargeImage, setActiveLargeImage] = useState(
     entity[entityIndex].firstImageUrl
@@ -24,7 +25,7 @@ export const CategoryCard = ({ entity, entityIndex }) => {
     setActiveLargeImage(image);
   };
 
-const color = getColorByIndex(entityIndex);
+const color = COLORS_BY_INDEX[entityIndex];
 
   return (
     <article
@@ -50,8 +51,6 @@ const color = getColorByIndex(entityIndex);
       </div>
       <div className={styles["thumbnail"]}>
         <img
-          // onMouseEnter={() => setActiveLargeImage(entity[0].firstImageUrl)}
-          // onMouseLeave={() => setActiveLargeImage(entity[0].secondImageUrl)}
           className={`${styles["image"]} ${
             activeLargeImage === entity[entityIndex].firstImageUrl
               ? styles["slide-in-right"]
@@ -81,6 +80,7 @@ const color = getColorByIndex(entityIndex);
               imageObject={item.miniImage}
               index={index}
               updateActiveMiniImage={updateActiveMiniImage}
+              updateColorIndex={updateColorIndex}
             />
           </li>
         ))}
