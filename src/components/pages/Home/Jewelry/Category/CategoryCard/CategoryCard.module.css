@@ -16,3 +16,15 @@
   gap: 0.4rem;
   margin-top: 2rem;
 }
+
+.icon {
+  width: 0.25rem;
+}
+
+.icon.sold-out {
+  color: var(--medium-red);
+}
+
+.icon.in-stock {
+  color: var(--green);
+}

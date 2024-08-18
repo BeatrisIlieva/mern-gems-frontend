@@ -1,8 +1,13 @@
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ firstImageUrlIsActive, entity, colorIndex }) => {
+export const LargeImages = ({
+  firstImageUrlIsActive,
+  entity,
+  colorIndex,
+  clickHandler,
+}) => {
   return (
-    <div className={styles["thumbnail"]}>
+    <div className={styles["thumbnail"]} onClick={clickHandler}>
       <img
         className={`${styles["image"]} ${
           firstImageUrlIsActive
