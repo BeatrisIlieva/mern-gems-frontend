@@ -1,0 +1,9 @@
+#jewelry {
+  display: flex;
+  margin: 2rem;
+  justify-content: space-evenly;
+}
+
+.thumbnail {
+  width: calc(30%);
+}
