@@ -4,7 +4,7 @@ import { CircleIcons } from "./CircleIcons/CircleIcons";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ entity, clickHandler }) => {
+export const LargeImages = ({ entity,}) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const LargeImages = ({ entity, clickHandler }) => {
   const toggleFirstImageUrlIsActive = () => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
   };
-  
+
   return (
     <>
       <CircleIcons
@@ -23,7 +23,7 @@ export const LargeImages = ({ entity, clickHandler }) => {
         firstImageUrl={entity.firstImageUrl}
         secondImageUrl={entity.secondImageUrl}
       />
-      <div className={styles["thumbnail"]} onClick={clickHandler}>
+      <div className={styles["thumbnail"]} >
         <img
           className={`${styles["image"]} ${
             firstImageUrlIsActive

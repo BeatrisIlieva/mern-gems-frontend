@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
-// import { CircleIcon } from "../../common/CircleIcons/CircleIcon/CircleIcon";
-import { CircleIcons } from "../../common/LargeImages/CircleIcons/CircleIcons";
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
 
@@ -21,8 +19,6 @@ import styles from "./CategoryCard.module.css";
 export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
-
-
   const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
 
   const allQuantitiesZero = checkIfItemsHasBeenSoldOut(entity[colorIndex]);
@@ -34,17 +30,12 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // setFirstImageUrlIsActive(true);
     setIsSoldOut(checkIfItemsHasBeenSoldOut(entity[colorIndex]));
   }, [activeMiniImage]);
 
   const updateActiveMiniImage = (index) => {
     setActiveMiniImage(index);
   };
-
-  // const updateFirstImageUrlIsActive = (image) => {
-  //   setFirstImageUrlIsActive(entity[colorIndex].firstImageUrl === image);
-  // };
 
   const slugifiedJewelryTitle = slugify(entity[colorIndex].title);
 
@@ -55,7 +46,7 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
 
     navigate(`/${slugifiedJewelryTitle}`);
   };
-const selectedEntity = entity[colorIndex]
+  const selectedEntity = entity[colorIndex];
   return (
     <article
       onMouseEnter={() => setArticleIsHovered(true)}
@@ -82,14 +73,8 @@ const selectedEntity = entity[colorIndex]
           }
           variant={"regular"}
         />
+        <LargeImages entity={selectedEntity} />
       </div>
-      
-      <LargeImages
-        // firstImageUrlIsActive={firstImageUrlIsActive}
-        entity={selectedEntity}
-        colorIndex={colorIndex}
-        clickHandler={clickHandler}
-      />
       <MiniImages
         colorIndex={colorIndex}
         entity={entity}
