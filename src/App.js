@@ -5,6 +5,7 @@ import { ScrollToTop } from "./components/utils/ScrollToTop/ScrollToTop";
 import { Header } from "./components/layout/Header/Header";
 import { Home } from "./components/pages/Home/Home";
 import { Footer } from "./components/layout/Footer/Footer";
+import { Jewelry } from "./components/pages/Jewelry/Jewelry";
 import { JewelryList } from "./components/pages/JewelryList/JewelryList";
 import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
 import { Account } from "./components/pages/Account/Account";
@@ -25,6 +26,7 @@ function App() {
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/:slugifiedJewelryTitle" element={<Jewelry/>} />
           <Route
             path="/forget-me-not/*"
             element={

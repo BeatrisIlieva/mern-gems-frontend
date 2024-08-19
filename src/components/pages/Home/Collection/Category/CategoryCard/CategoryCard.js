@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { CircleIcon } from "../../common/CircleIcon/CircleIcon";
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
+
+import { useJewelryContext } from "../../../../../../contexts/JewelryContext";
+
+import { slugify } from "../../../../../../utils/slugify";
 
 import { checkIfItemsHasBeenSoldOut } from "./helpers/checkIfItemsHasBeenSoldOut";
 
@@ -13,6 +18,8 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
+  const [articleIsHovered, setArticleIsHovered] = useState(false);
+
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
@@ -20,6 +27,10 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const allQuantitiesZero = checkIfItemsHasBeenSoldOut(entity[colorIndex]);
 
   const [isSoldOut, setIsSoldOut] = useState(allQuantitiesZero);
+
+  const { updateSelectedEntity } = useJewelryContext();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setFirstImageUrlIsActive(true);
@@ -34,10 +45,29 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
     setFirstImageUrlIsActive(entity[colorIndex].firstImageUrl === image);
   };
 
-  const clickHandler = () => {};
+  const slugifiedJewelryTitle = slugify(entity[colorIndex].title);
+
+  const clickHandler = () => {
+    updateSelectedEntity(entity);
+    console.log(entity)
+
+    navigate(`/${slugifiedJewelryTitle}`)
+
+    // window.history.pushState(entity, "", `/${slugifiedJewelryTitle}`)
+
+    // window.history.pushState({}, "", `/${slugifiedJewelryTitle}`);
+  };
 
   return (
-    <article className={styles["category-card"]}>
+    <article
+      onMouseEnter={() => setArticleIsHovered(true)}
+      onMouseLeave={() => setArticleIsHovered(false)}
+      className={
+        articleIsHovered
+          ? `${styles["category-card"]} ${styles["hovered"]}`
+          : styles["category-card"]
+      }
+    >
       <div onClick={clickHandler}>
         <DualTitleSection
           firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
