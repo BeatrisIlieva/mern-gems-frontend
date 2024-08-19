@@ -12,7 +12,11 @@ export const Collection = () => {
       <div className={styles["wrapper"]}>
         {Object.entries(CATEGORIES_BY_ID_AND_INITIAL_COLOR_INDEX).map(
           ([_, { id, initialColorIndex }]) => (
-            <Category entityId={id} initialColorIndex={initialColorIndex} />
+            <Category
+              key={id}
+              entityId={id}
+              initialColorIndex={initialColorIndex}
+            />
           )
         )}
       </div>
