@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
+import { StockStatus } from "../../common/StockStatus/StockStatus";
 
 import { useJewelryContext } from "../../../../../../contexts/JewelryContext";
 
@@ -59,24 +60,27 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
           : styles["category-card"]
       }
     >
-
-        <DualTitleSection
-          firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
-          secondTitle={
-            <span className={styles["stock"]}>
-              <FontAwesomeIcon
-                icon={faCircle}
-                className={`${styles["icon"]} ${
-                  isSoldOut ? styles["sold-out"] : styles["in-stock"]
-                }`}
-              />
-              {isSoldOut ? "Sold Out" : "In Stock"}
-            </span>
-          }
-          variant={"regular"}
-        />
-        <LargeImages entity={entity} colorIndex={colorIndex}/>
-
+      {/* <DualTitleSection
+        firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
+        secondTitle={
+          <span className={styles["stock"]}>
+            <FontAwesomeIcon
+              icon={faCircle}
+              className={`${styles["icon"]} ${
+                isSoldOut ? styles["sold-out"] : styles["in-stock"]
+              }`}
+            />
+            {isSoldOut ? "Sold Out" : "In Stock"}
+          </span>
+        }
+        variant={"regular"}
+      /> */}
+      <DualTitleSection
+      firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
+      secondTitle={<StockStatus isSoldOut={isSoldOut} />}
+      variant={"regular"}
+    />
+      <LargeImages entity={entity} colorIndex={colorIndex} />
       <MiniImages
         colorIndex={colorIndex}
         entity={entity}

@@ -11,20 +11,4 @@
 }
 
 
-.stock {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
-}
 
-.icon {
-  width: 0.250rem;
-}
-
-.icon.sold-out {
-  color: var(--medium-red);
-}
-
-.icon.in-stock {
-  color: var(--green);
-}
