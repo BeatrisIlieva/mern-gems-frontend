@@ -1,6 +1,7 @@
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../common/StockStatus/StockStatus";
+import { Sizes } from "./Sizes/Sizes";
 
 import { useJewelryContext } from "../../../contexts/JewelryContext";
 
@@ -10,6 +11,8 @@ export const Jewelry = () => {
   const { selectedEntity, selectedColor, updateSelectedColor } =
     useJewelryContext();
 
+    
+
   return (
     <section id={styles["jewelry"]}>
       <div className={styles["thumbnail"]}>
@@ -17,13 +20,18 @@ export const Jewelry = () => {
         <LargeImages entity={selectedEntity} colorIndex={selectedColor} />
       </div>
       <div className={styles["info-and-action"]}>
-        <h1 className={styles["title"]}></h1>
-        <p className={styles["description"]}></p>
-        <MiniImages
-          colorIndex={selectedColor}
-          entity={selectedEntity}
-          updateColorIndex={updateSelectedColor}
-        />
+        <h1 className={styles["title"]}>{selectedEntity[selectedColor].title}</h1>
+        <p className={styles["description"]}>
+        {selectedEntity[selectedColor].description}
+        </p>
+        <div className={styles["mini-images"]}>
+          <MiniImages
+            colorIndex={selectedColor}
+            entity={selectedEntity}
+            updateColorIndex={updateSelectedColor}
+          />
+        </div>
+        <Sizes />
       </div>
     </section>
   );
