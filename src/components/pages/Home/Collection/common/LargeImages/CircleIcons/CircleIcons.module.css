@@ -4,3 +4,11 @@
   gap: 0.4rem;
   margin-top: 2rem;
 }
+
+.circle-icons-container.top {
+  order: -1;
+}
+
+.circle-icons-container.bottom {
+  order: 1;
+}
