@@ -1,15 +1,36 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 
+import { useJewelryContext } from "../../../../../../contexts/JewelryContext";
+
+import { slugify } from "../../../../../../utils/slugify";
+
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ entity,}) => {
+export const LargeImages = ({ entity, colorIndex }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
+
+  const { updateSelectedEntity, updateSelectedColor } = useJewelryContext();
+
+  const navigate = useNavigate();
+
+  const slugifiedJewelryTitle = slugify(entity[colorIndex].title);
+
+  const clickHandler = () => {
+    updateSelectedEntity(entity);
+
+    updateSelectedColor(colorIndex);
+
+    navigate(`/${slugifiedJewelryTitle}`);
+  };
+
+  const selectedEntity = entity[colorIndex];
 
   useEffect(() => {
     setFirstImageUrlIsActive(true);
-  }, [entity]);
+  }, [colorIndex]);
 
   const toggleFirstImageUrlIsActive = () => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
@@ -20,10 +41,10 @@ export const LargeImages = ({ entity,}) => {
       <CircleIcons
         firstImageUrlIsActive={firstImageUrlIsActive}
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-        firstImageUrl={entity.firstImageUrl}
-        secondImageUrl={entity.secondImageUrl}
+        firstImageUrl={selectedEntity.firstImageUrl}
+        secondImageUrl={selectedEntity.secondImageUrl}
       />
-      <div className={styles["thumbnail"]} >
+      <div className={styles["thumbnail"]} onClick={clickHandler}>
         <img
           className={`${styles["image"]} ${
             firstImageUrlIsActive
@@ -31,9 +52,11 @@ export const LargeImages = ({ entity,}) => {
               : styles["slide-in-left"]
           }`}
           src={
-            firstImageUrlIsActive ? entity.firstImageUrl : entity.secondImageUrl
+            firstImageUrlIsActive
+              ? selectedEntity.firstImageUrl
+              : selectedEntity.secondImageUrl
           }
-          alt={entity.title}
+          alt={selectedEntity.title}
         />
       </div>
     </>

@@ -25,9 +25,9 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
 
   const [isSoldOut, setIsSoldOut] = useState(allQuantitiesZero);
 
-  const { updateSelectedEntity, updateSelectedColor } = useJewelryContext();
+  // const { updateSelectedEntity, updateSelectedColor } = useJewelryContext();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     setIsSoldOut(checkIfItemsHasBeenSoldOut(entity[colorIndex]));
@@ -37,16 +37,18 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
     setActiveMiniImage(index);
   };
 
-  const slugifiedJewelryTitle = slugify(entity[colorIndex].title);
+  // const slugifiedJewelryTitle = slugify(entity[colorIndex].title);
 
-  const clickHandler = () => {
-    updateSelectedEntity(entity);
+  // const clickHandler = () => {
+  //   updateSelectedEntity(entity);
 
-    updateSelectedColor(colorIndex);
+  //   updateSelectedColor(colorIndex);
 
-    navigate(`/${slugifiedJewelryTitle}`);
-  };
-  const selectedEntity = entity[colorIndex];
+  //   navigate(`/${slugifiedJewelryTitle}`);
+  // };
+
+  // const selectedEntity = entity[colorIndex];
+
   return (
     <article
       onMouseEnter={() => setArticleIsHovered(true)}
@@ -57,7 +59,7 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
           : styles["category-card"]
       }
     >
-      <div onClick={clickHandler}>
+
         <DualTitleSection
           firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
           secondTitle={
@@ -73,8 +75,8 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
           }
           variant={"regular"}
         />
-        <LargeImages entity={selectedEntity} />
-      </div>
+        <LargeImages entity={entity} colorIndex={colorIndex}/>
+
       <MiniImages
         colorIndex={colorIndex}
         entity={entity}
