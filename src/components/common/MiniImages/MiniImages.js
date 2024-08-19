@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Image } from "./Image/Image";
 
-import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
+import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
 
 import styles from "./MiniImages.module.css";
 

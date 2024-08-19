@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
-import { useJewelryContext } from "../../../../../../../contexts/JewelryContext";
+import { useJewelryContext } from "../../../../contexts/JewelryContext";
 
-import { slugify } from "../../../../../../../utils/slugify";
+import { slugify } from "../../../../utils/slugify";
 
 import styles from "./LargeImage.module.css";
 
