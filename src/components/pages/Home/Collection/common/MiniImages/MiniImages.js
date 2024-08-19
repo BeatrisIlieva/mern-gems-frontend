@@ -6,14 +6,7 @@ import { COLORS_BY_INDEX } from "../../constants/colorsByIndex";
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({
-  colorIndex,
-  entity,
-  // activeMiniImage,
-  // updateActiveMiniImage,
-  updateColorIndex,
-}) => {
-
+export const MiniImages = ({ colorIndex, entity, updateColorIndex }) => {
   const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
 
   const updateActiveMiniImage = (index) => {
@@ -21,7 +14,6 @@ export const MiniImages = ({
   };
 
   const color = COLORS_BY_INDEX[colorIndex];
-
 
   return (
     <ul className={styles["mini-images-list"]} role="list">
