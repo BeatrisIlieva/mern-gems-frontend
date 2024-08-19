@@ -13,7 +13,7 @@ export const LargeImages = ({ entity, colorIndex }) => {
 
   const displayCircleIconsOnTop = location.pathname === "/";
 
-  const selectedEntity = entity[colorIndex];
+  const selectedEntityColor = entity[colorIndex];
 
   useEffect(() => {
     setFirstImageUrlIsActive(true);
@@ -28,14 +28,14 @@ export const LargeImages = ({ entity, colorIndex }) => {
       <CircleIcons
         firstImageUrlIsActive={firstImageUrlIsActive}
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-        firstImageUrl={selectedEntity.firstImageUrl}
-        secondImageUrl={selectedEntity.secondImageUrl}
+        firstImageUrl={selectedEntityColor.firstImageUrl}
+        secondImageUrl={selectedEntityColor.secondImageUrl}
         variant={displayCircleIconsOnTop ? "top" : "bottom"}
       />
       <LargeImage
         firstImageUrlIsActive={firstImageUrlIsActive}
         entity={entity}
-        selectedEntity={selectedEntity}
+        selectedEntityColor={selectedEntityColor}
         colorIndex={colorIndex}
       />
     </div>

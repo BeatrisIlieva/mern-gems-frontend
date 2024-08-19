@@ -10,7 +10,7 @@ import styles from "./CategoryCard.module.css";
 export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
-  const selectedEntity = entity[colorIndex];
+  const selectedEntityColor = entity[colorIndex];
 
   return (
     <article
@@ -24,7 +24,7 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
     >
       <DualTitleSection
         firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
-        secondTitle={<StockStatus entity={selectedEntity} />}
+        secondTitle={<StockStatus selectedEntityColor={selectedEntityColor} />}
         variant={"regular"}
       />
       <LargeImages entity={entity} colorIndex={colorIndex} />

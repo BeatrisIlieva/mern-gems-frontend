@@ -6,12 +6,12 @@ import { slugify } from "../../../../utils/slugify";
 
 import styles from "./LargeImage.module.css";
 
-export const LargeImage = ({ firstImageUrlIsActive, entity, selectedEntity, colorIndex }) => {
+export const LargeImage = ({ firstImageUrlIsActive, entity, selectedEntityColor, colorIndex }) => {
   const navigate = useNavigate();
 
   const { updateSelectedEntity, updateSelectedColor } = useJewelryContext();
 
-  const slugifiedJewelryTitle = slugify(selectedEntity.title);
+  const slugifiedJewelryTitle = slugify(selectedEntityColor.title);
 
   const clickHandler = () => {
     updateSelectedEntity(entity);
@@ -30,7 +30,7 @@ export const LargeImage = ({ firstImageUrlIsActive, entity, selectedEntity, colo
             : styles["slide-in-left"]
         }`}
         src={
-          firstImageUrlIsActive ? selectedEntity.firstImageUrl : selectedEntity.secondImageUrl
+          firstImageUrlIsActive ? selectedEntityColor.firstImageUrl : selectedEntityColor.secondImageUrl
         }
         alt={entity.title}
       />

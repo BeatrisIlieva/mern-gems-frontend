@@ -7,14 +7,14 @@ import { checkIfItemsHasBeenSoldOut } from "./helpers/checkIfItemsHasBeenSoldOut
 
 import styles from "./StockStatus.module.css";
 
-export const StockStatus = ({ entity }) => {
-  const allQuantitiesZero = checkIfItemsHasBeenSoldOut(entity);
+export const StockStatus = ({ selectedEntityColor }) => {
+  const allQuantitiesZero = checkIfItemsHasBeenSoldOut(selectedEntityColor);
 
   const [isSoldOut, setIsSoldOut] = useState(allQuantitiesZero);
 
   useEffect(() => {
-    setIsSoldOut(checkIfItemsHasBeenSoldOut(entity));
-  }, [entity]);
+    setIsSoldOut(checkIfItemsHasBeenSoldOut(selectedEntityColor));
+  }, [selectedEntityColor]);
 
   return (
     <span className={styles["stock"]}>
