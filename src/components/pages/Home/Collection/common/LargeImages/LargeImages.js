@@ -1,26 +1,41 @@
+import { useState, useEffect } from "react";
+
+import { CircleIcons } from "./CircleIcons/CircleIcons";
+
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({
-  firstImageUrlIsActive,
-  entity,
-  colorIndex,
-  clickHandler,
-}) => {
+export const LargeImages = ({ entity, clickHandler }) => {
+  const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
+
+  useEffect(() => {
+    setFirstImageUrlIsActive(true);
+  }, [entity]);
+
+  const toggleFirstImageUrlIsActive = () => {
+    setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
+  };
+  
   return (
-    <div className={styles["thumbnail"]} onClick={clickHandler}>
-      <img
-        className={`${styles["image"]} ${
-          firstImageUrlIsActive
-            ? styles["slide-in-right"]
-            : styles["slide-in-left"]
-        }`}
-        src={
-          firstImageUrlIsActive
-            ? entity[colorIndex].firstImageUrl
-            : entity[colorIndex].secondImageUrl
-        }
-        alt={entity[colorIndex].title}
+    <>
+      <CircleIcons
+        firstImageUrlIsActive={firstImageUrlIsActive}
+        toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+        firstImageUrl={entity.firstImageUrl}
+        secondImageUrl={entity.secondImageUrl}
       />
-    </div>
+      <div className={styles["thumbnail"]} onClick={clickHandler}>
+        <img
+          className={`${styles["image"]} ${
+            firstImageUrlIsActive
+              ? styles["slide-in-right"]
+              : styles["slide-in-left"]
+          }`}
+          src={
+            firstImageUrlIsActive ? entity.firstImageUrl : entity.secondImageUrl
+          }
+          alt={entity.title}
+        />
+      </div>
+    </>
   );
 };

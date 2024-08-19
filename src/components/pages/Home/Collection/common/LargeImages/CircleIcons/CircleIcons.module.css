@@ -1,0 +1,6 @@
+.circle-icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+}

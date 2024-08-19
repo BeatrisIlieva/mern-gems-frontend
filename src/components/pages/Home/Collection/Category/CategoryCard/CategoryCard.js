@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
-import { CircleIcon } from "../../common/CircleIcon/CircleIcon";
+// import { CircleIcon } from "../../common/CircleIcons/CircleIcon/CircleIcon";
+import { CircleIcons } from "../../common/LargeImages/CircleIcons/CircleIcons";
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
 
@@ -20,7 +21,7 @@ import styles from "./CategoryCard.module.css";
 export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
-  const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
+
 
   const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
 
@@ -28,12 +29,12 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
 
   const [isSoldOut, setIsSoldOut] = useState(allQuantitiesZero);
 
-  const { updateSelectedEntity } = useJewelryContext();
+  const { updateSelectedEntity, updateSelectedColor } = useJewelryContext();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFirstImageUrlIsActive(true);
+    // setFirstImageUrlIsActive(true);
     setIsSoldOut(checkIfItemsHasBeenSoldOut(entity[colorIndex]));
   }, [activeMiniImage]);
 
@@ -41,23 +42,20 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
     setActiveMiniImage(index);
   };
 
-  const updateFirstImageUrlIsActive = (image) => {
-    setFirstImageUrlIsActive(entity[colorIndex].firstImageUrl === image);
-  };
+  // const updateFirstImageUrlIsActive = (image) => {
+  //   setFirstImageUrlIsActive(entity[colorIndex].firstImageUrl === image);
+  // };
 
   const slugifiedJewelryTitle = slugify(entity[colorIndex].title);
 
   const clickHandler = () => {
     updateSelectedEntity(entity);
-    console.log(entity)
 
-    navigate(`/${slugifiedJewelryTitle}`)
+    updateSelectedColor(colorIndex);
 
-    // window.history.pushState(entity, "", `/${slugifiedJewelryTitle}`)
-
-    // window.history.pushState({}, "", `/${slugifiedJewelryTitle}`);
+    navigate(`/${slugifiedJewelryTitle}`);
   };
-
+const selectedEntity = entity[colorIndex]
   return (
     <article
       onMouseEnter={() => setArticleIsHovered(true)}
@@ -85,21 +83,10 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
           variant={"regular"}
         />
       </div>
-      <div className={styles["circle-icons-container"]}>
-        <CircleIcon
-          isSelected={firstImageUrlIsActive}
-          image={entity[colorIndex].firstImageUrl}
-          updateFirstImageUrlIsActive={updateFirstImageUrlIsActive}
-        />
-        <CircleIcon
-          isSelected={!firstImageUrlIsActive}
-          image={entity[colorIndex].secondImageUrl}
-          updateFirstImageUrlIsActive={updateFirstImageUrlIsActive}
-        />
-      </div>
+      
       <LargeImages
-        firstImageUrlIsActive={firstImageUrlIsActive}
-        entity={entity}
+        // firstImageUrlIsActive={firstImageUrlIsActive}
+        entity={selectedEntity}
         colorIndex={colorIndex}
         clickHandler={clickHandler}
       />

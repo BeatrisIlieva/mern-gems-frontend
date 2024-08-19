@@ -10,12 +10,6 @@
   box-shadow: 0 0 0 1px var(--light-gray);
 }
 
-.circle-icons-container {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  margin-top: 2rem;
-}
 
 .stock {
   display: flex;
