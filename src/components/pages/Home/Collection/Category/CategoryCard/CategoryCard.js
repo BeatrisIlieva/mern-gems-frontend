@@ -10,12 +10,6 @@ import styles from "./CategoryCard.module.css";
 export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
-  const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
-
-  const updateActiveMiniImage = (index) => {
-    setActiveMiniImage(index);
-  };
-
   const selectedEntity = entity[colorIndex];
 
   return (
@@ -37,8 +31,6 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
       <MiniImages
         colorIndex={colorIndex}
         entity={entity}
-        activeMiniImage={activeMiniImage}
-        updateActiveMiniImage={updateActiveMiniImage}
         updateColorIndex={updateColorIndex}
       />
     </article>
