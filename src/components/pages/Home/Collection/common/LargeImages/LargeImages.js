@@ -11,9 +11,7 @@ export const LargeImages = ({ entity, colorIndex }) => {
 
   const location = useLocation();
 
-  const [displayCircleIconsOnTop, setDisplayCircleIconsOnTop] = useState(
-    location.pathname === "/"
-  );
+  const displayCircleIconsOnTop = location.pathname === "/";
 
   const selectedEntity = entity[colorIndex];
 
@@ -34,7 +32,6 @@ export const LargeImages = ({ entity, colorIndex }) => {
         secondImageUrl={selectedEntity.secondImageUrl}
         variant={displayCircleIconsOnTop ? "top" : "bottom"}
       />
-
       <LargeImage
         firstImageUrlIsActive={firstImageUrlIsActive}
         entity={entity}
