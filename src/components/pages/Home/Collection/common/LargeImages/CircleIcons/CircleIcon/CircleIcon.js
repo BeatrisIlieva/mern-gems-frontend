@@ -3,10 +3,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./CircleIcon.module.css";
 
-export const CircleIcon = ({
-  isSelected,
-  toggleFirstImageUrlIsActive,
-}) => {
+export const CircleIcon = ({ isSelected, toggleFirstImageUrlIsActive }) => {
   return (
     <FontAwesomeIcon
       onClick={toggleFirstImageUrlIsActive}

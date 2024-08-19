@@ -22,17 +22,13 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
 
   const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
 
-  const allQuantitiesZero = checkIfItemsHasBeenSoldOut(entity[colorIndex]);
 
-  const [isSoldOut, setIsSoldOut] = useState(allQuantitiesZero);
 
   // const { updateSelectedEntity, updateSelectedColor } = useJewelryContext();
 
   // const navigate = useNavigate();
 
-  useEffect(() => {
-    setIsSoldOut(checkIfItemsHasBeenSoldOut(entity[colorIndex]));
-  }, [activeMiniImage]);
+
 
   const updateActiveMiniImage = (index) => {
     setActiveMiniImage(index);
@@ -48,7 +44,7 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
   //   navigate(`/${slugifiedJewelryTitle}`);
   // };
 
-  // const selectedEntity = entity[colorIndex];
+  const selectedEntity = entity[colorIndex];
 
   return (
     <article
@@ -69,15 +65,15 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
               className={`${styles["icon"]} ${
                 isSoldOut ? styles["sold-out"] : styles["in-stock"]
               }`}
-            />
+            />¸¸¸
             {isSoldOut ? "Sold Out" : "In Stock"}
           </span>
         }
         variant={"regular"}
       /> */}
-      <DualTitleSection
+          <DualTitleSection
       firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
-      secondTitle={<StockStatus isSoldOut={isSoldOut} />}
+      secondTitle={<StockStatus entity={selectedEntity} />}
       variant={"regular"}
     />
       <LargeImages entity={entity} colorIndex={colorIndex} />
