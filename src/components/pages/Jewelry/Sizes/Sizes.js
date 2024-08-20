@@ -1,6 +1,10 @@
 import { useJewelryContext } from "../../../../contexts/JewelryContext";
 import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./Sizes.module.css";
 
 // { errorMessage, changeHandler }
@@ -18,8 +22,8 @@ export const Sizes = () => {
     <div className={styles["size-wrapper"]}>
       <div className={styles["radio-container"]}>
         {sizes.map((item) => (
-          <>
-            <span>{item.price}</span>
+          <div className={styles["wrapper"]}>
+            <span>{`$${item.price}`}</span>
             <div key={item.size}>
               <input
                 type="radio"
@@ -34,7 +38,12 @@ export const Sizes = () => {
                 {item.size}
               </label>
             </div>
-          </>
+            <div className={styles["quantity"]}>
+              {/* <FontAwesomeIcon icon={faPlus} className={styles["icon"]}/>
+              {item.quantity}
+              <FontAwesomeIcon icon={faMinus} className={styles["icon"]}/> */}
+            </div>
+          </div>
         ))}
       </div>
       {/* <div className={styles["error-message"]}>{errorMessage}</div> */}
