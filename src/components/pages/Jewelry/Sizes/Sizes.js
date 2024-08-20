@@ -1,52 +1,90 @@
+import { useState } from "react";
+
 import { useJewelryContext } from "../../../../contexts/JewelryContext";
 import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
+
+import { Button } from "../../../reusable/Button/Button";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
+
+import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
 import styles from "./Sizes.module.css";
 
 // { errorMessage, changeHandler }
 
 export const Sizes = () => {
-  // const { sizes, selectedSize } = useJewelryItemContext();
   const { selectedEntity, selectedColor } = useJewelryContext();
 
-  // const sizes = selectedEntity[selectedColor].map(inventories.sizes)
-  const sizes = selectedEntity[selectedColor].inventories;
+  const [errorMessage, setErrorMessage] = useState("");
 
-  console.log("here", selectedEntity[selectedColor].inventories);
+  const inventories = selectedEntity[selectedColor].inventories;
+  console.log(inventories);
+
+  const [selectedSize, setSelectedSize] = useState(null);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!selectedSize) {
+      setErrorMessage(SIZE_ERROR_MESSAGE);
+      return;
+    }
+
+    try {
+      // if (jewelry.category === EARRING_ID) {
+      //   const sizeId = jewelry.sizes[0]._id;
+      //   await addToBagHandler({ size: sizeId }, jewelry._id);
+      // } else {
+      //   await addToBagHandler(selectedSize, jewelry._id);
+      //   updateSizeIsSelected(false);
+      // }
+      // removeSelectedSize();
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  const changeHandler = (e) => {
+
+    setSelectedSize(e.target.value);
+
+    setErrorMessage("");
+  };
 
   return (
-    <div className={styles["size-wrapper"]}>
-      <div className={styles["radio-container"]}>
-        {sizes.map((item) => (
-          <div className={styles["wrapper"]}>
-            <span>{`$${item.price}`}</span>
-            <div key={item.size}>
+    <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
+      <div className={styles["size-wrapper"]}>
+        <div className={styles["radio-container"]}>
+          {inventories.map((item) => (
+            <div key={item.size} className={styles["wrapper"]}>
+              {/* <span>{`$${item.price}`}</span> */}
               <input
                 type="radio"
                 name={SIZE_FORM_KEY.Size}
                 id={item.size}
                 value={item.size}
-                // onChange={changeHandler}
-                // checked={Number(selectedSize[SIZE_FORM_KEY.Size]) === item._id}
-                disabled={!Number(item.quantity) > 0}
+                onChange={changeHandler}
+                onClick={changeHandler}
+                checked={item.size === selectedSize}
+                // disabled={!Number(item.quantity) > 0}
               />
-              <label className={styles["label"]} htmlFor={item._id}>
+              <label className={styles["label"]} htmlFor={item.size}>
                 {item.size}
               </label>
-            </div>
-            <div className={styles["quantity"]}>
-              {/* <FontAwesomeIcon icon={faPlus} className={styles["icon"]}/>
+              <div className={styles["quantity"]}>
+                {/* <FontAwesomeIcon icon={faPlus} className={styles["icon"]}/>
               {item.quantity}
               <FontAwesomeIcon icon={faMinus} className={styles["icon"]}/> */}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className={styles["error-message"]}>{errorMessage}</div>
       </div>
-      {/* <div className={styles["error-message"]}>{errorMessage}</div> */}
-    </div>
+      <Button variant={"pink"} title={"Add To Bag"} />
+    </form>
   );
 };

@@ -46,7 +46,6 @@ export const Jewelry = () => {
           {selectedEntity[selectedColor].description}
         </p>
         <Sizes />
-        <Button variant={"pink"} title={"Add To Bag"} />
       </div>
     </section>
   );
