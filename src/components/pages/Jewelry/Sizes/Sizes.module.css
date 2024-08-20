@@ -27,15 +27,6 @@
   align-items: center;
 }
 
-.quantity {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 60px;
-}
-.icon {
-  color: var(--pink);
-}
 
 .error-message {
   color: var(--red);

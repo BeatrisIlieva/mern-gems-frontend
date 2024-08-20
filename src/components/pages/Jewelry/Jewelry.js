@@ -3,7 +3,6 @@ import { MiniImages } from "../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../common/StockStatus/StockStatus";
 import { Sizes } from "./Sizes/Sizes";
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
-import { Button } from "../../reusable/Button/Button";
 
 import { useJewelryContext } from "../../../contexts/JewelryContext";
 
@@ -43,9 +42,9 @@ export const Jewelry = () => {
           {selectedEntity[selectedColor].title}
         </h1>
         <p className={styles["description"]}>
-          {selectedEntity[selectedColor].description}
+          {`${selectedEntity[selectedColor].description}.`}
         </p>
-        <Sizes />
+        <Sizes jewelryId={selectedEntity[selectedColor]._id}/>
       </div>
     </section>
   );

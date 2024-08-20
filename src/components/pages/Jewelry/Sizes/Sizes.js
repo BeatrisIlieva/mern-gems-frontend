@@ -1,34 +1,34 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import { useJewelryContext } from "../../../../contexts/JewelryContext";
 import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
 
 import { Button } from "../../../reusable/Button/Button";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faMinus } from "@fortawesome/free-solid-svg-icons";
+import {useService} from "../../../../hooks/useService"
+
+import {bagServiceFactory, useBagServiceFactory} from "../../../../services/bagService"
 
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
 import styles from "./Sizes.module.css";
 
-// { errorMessage, changeHandler }
 
-export const Sizes = () => {
+export const Sizes = ({jewelryId}) => {
   const { selectedEntity, selectedColor } = useJewelryContext();
 
   const [errorMessage, setErrorMessage] = useState("");
 
   const inventories = selectedEntity[selectedColor].inventories;
-  console.log(inventories);
 
   const [selectedSize, setSelectedSize] = useState(null);
 
+  const bagService = useService(bagServiceFactory)
+
   useEffect(() => {
     setSelectedSize(null);
-    setErrorMessage(null)
-  }, [selectedColor])
+    setErrorMessage(null);
+  }, [selectedColor]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -39,21 +39,15 @@ export const Sizes = () => {
     }
 
     try {
-      // if (jewelry.category === EARRING_ID) {
-      //   const sizeId = jewelry.sizes[0]._id;
-      //   await addToBagHandler({ size: sizeId }, jewelry._id);
-      // } else {
-      //   await addToBagHandler(selectedSize, jewelry._id);
-      //   updateSizeIsSelected(false);
-      // }
-      // removeSelectedSize();
+      await bagService.create({[SIZE_FORM_KEY.Size]: selectedSize}, jewelryId);
+
+      setSelectedSize(null);
     } catch (err) {
       console.log(err.message);
     }
   };
 
   const changeHandler = (e) => {
-
     setSelectedSize(e.target.value);
 
     setErrorMessage("");
@@ -65,7 +59,7 @@ export const Sizes = () => {
         <div className={styles["radio-container"]}>
           {inventories.map((item) => (
             <div key={item.size} className={styles["wrapper"]}>
-              {/* <span>{`$${item.price}`}</span> */}
+              <span>{`$${item.price}`}</span>
               <input
                 type="radio"
                 name={SIZE_FORM_KEY.Size}
@@ -74,16 +68,12 @@ export const Sizes = () => {
                 onChange={changeHandler}
                 onClick={changeHandler}
                 checked={item.size === selectedSize}
-                // disabled={!Number(item.quantity) > 0}
+                disabled={!Number(item.quantity) > 0}
               />
               <label className={styles["label"]} htmlFor={item.size}>
                 {item.size}
               </label>
-              <div className={styles["quantity"]}>
-                {/* <FontAwesomeIcon icon={faPlus} className={styles["icon"]}/>
-              {item.quantity}
-              <FontAwesomeIcon icon={faMinus} className={styles["icon"]}/> */}
-              </div>
+              <div className={styles["quantity"]}></div>
             </div>
           ))}
         </div>
