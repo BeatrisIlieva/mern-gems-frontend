@@ -32,6 +32,8 @@ exports.getAll = async (categoryId) => {
     },
     {
       $project: {
+        _id: 1,
+        category: 1,
         description: 1,
         firstImageUrl: 1,
         "inventories.price": 1,

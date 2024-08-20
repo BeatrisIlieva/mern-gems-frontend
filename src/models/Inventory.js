@@ -7,8 +7,7 @@ const inventorySchema = new mongoose.Schema({
     required: true,
   },
   size: {
-    type: Number,
-    ref: "Size",
+    type: String,
     required: true,
   },
   quantity: {

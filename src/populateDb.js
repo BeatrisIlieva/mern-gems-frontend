@@ -79,19 +79,19 @@ async function populateDb() {
   await MiniImage.create({
     title: "Sapphire",
     imageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_earrings_diamond_and_pink_sapphire_eapsp1mflrfmn_ee-1_k5iyct.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723968898/forget-me-not-collection/miniImages/forget_me_not_earrings_diamond_and_pink_sapphire_eapsp1mflrfmn_ee-1_k5iyct_1_liyyq0.png",
   });
 
   await MiniImage.create({
     title: "Sapphire",
     imageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_no_earrings_diamond_and_sapphire_easp1mflrfmn_ee-1_fp320u.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723969377/forget-me-not-collection/miniImages/forget_me_no_earrings_diamond_and_sapphire_easp1mflrfmn_ee-1_1_cqjbdx.png",
   });
 
   await MiniImage.create({
     title: "Diamond",
     imageUrl:
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/miniImages/forget_me_not_diamond_earrings_eadp1mflrfmn_ee-1_s3apwm.webp",
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1723969376/forget-me-not-collection/miniImages/forget_me_not_diamond_earrings_eadp1mflrfmn_ee-1_1_u72yns.png",
   });
 
   const allCategories = await Category.find();
@@ -99,7 +99,7 @@ async function populateDb() {
   const allMiniImages = await MiniImage.find();
 
   await Jewelry.create({
-    title: "Forget-Me-Not Pink Sapphire and Diamond Bracelet",
+    title: "Pink Sapphire and Diamond Bracelet",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_1_vz9pv4.avif",
     secondImageUrl:
@@ -111,7 +111,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Blue Sapphire and Diamond Bracelet",
+    title: "Blue Sapphire and Diamond Bracelet",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_1_fokzrw.webp",
     secondImageUrl:
@@ -123,7 +123,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Diamond Bracelet",
+    title: "Diamond Bracelet",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/bracelets/forget_me_not_diamond_bracelet_brdprfflrfmn_e-1_muieri.avif",
     secondImageUrl:
@@ -135,7 +135,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Pink Sapphire and Diamond Drop Earrings",
+    title: "Pink Sapphire and Diamond Drop Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-1_zzaw4q.webp",
     secondImageUrl:
@@ -147,7 +147,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Blue Sapphire and Diamond Drop Earrings",
+    title: "Blue Sapphire and Diamond Drop Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-1_zx2cga.webp",
     secondImageUrl:
@@ -159,7 +159,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Diamond Drop Earrings",
+    title: "Diamond Drop Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/earrings/forget_me_not_diamond_drop_earrings_eadpdrflrfmn_ee-1_knlt2u.webp",
     secondImageUrl:
@@ -171,7 +171,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Pink Sapphire and Diamond Lariat Necklace",
+    title: "Pink Sapphire and Diamond Lariat Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_pink_sapphire_nkpspltflrfmn_e_1_kuxbds.webp",
     secondImageUrl:
@@ -183,7 +183,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me Not Blue Sapphire and Diamond Lariat Necklace",
+    title: "Blue Sapphire and Diamond Lariat Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_1_p2uxlj.webp",
     secondImageUrl:
@@ -195,7 +195,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Diamond Lariat Necklace",
+    title: "Diamond Lariat Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/necklaces/forget_me_not_lariat_diamond_necklace_nkdpltflrfmn_e-1_u0gwpv.avif",
     secondImageUrl:
@@ -207,7 +207,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Pink Sapphire and Diamond Ring",
+    title: "Pink Sapphire and Diamond Ring",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714892/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_1_qfumu3.webp",
     secondImageUrl:
@@ -219,7 +219,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Blue Sapphire and Diamond Ring",
+    title: "Blue Sapphire and Diamond Ring",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_1_pm9u6t.avif",
     secondImageUrl:
@@ -231,7 +231,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Forget-Me-Not Diamond Ring",
+    title: "Diamond Ring",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/rings/forget_me_not_diamond_ring_frdprfflrfmn_e-1h_yueh2k.webp",
     secondImageUrl:
@@ -247,228 +247,228 @@ async function populateDb() {
   await Inventory.insertMany([
     {
       jewelry: allJewelries[0],
-      size: allSizes[0],
+      size: "15.2 cm",
       quantity: 2,
       price: 33000,
     },
     {
       jewelry: allJewelries[0],
-      size: allSizes[1],
+      size: "17.8 cm",
       quantity: 2,
       price: 34000,
     },
     {
       jewelry: allJewelries[0],
-      size: allSizes[2],
+      size: "19.3 cm",
       quantity: 2,
       price: 35000,
     },
 
     {
       jewelry: allJewelries[1],
-      size: allSizes[0],
+      size: "15.2 cm",
       quantity: 2,
       price: 33000,
     },
     {
       jewelry: allJewelries[1],
-      size: allSizes[1],
+      size: "17.8 cm",
       quantity: 2,
       price: 34000,
     },
     {
       jewelry: allJewelries[1],
-      size: allSizes[2],
+      size: "19.3 cm",
       quantity: 2,
       price: 35000,
     },
 
     {
       jewelry: allJewelries[2],
-      size: allSizes[0],
+      size: "15.2 cm",
       quantity: 2,
       price: 33000,
     },
     {
       jewelry: allJewelries[2],
-      size: allSizes[1],
+      size: "17.8 cm",
       quantity: 2,
       price: 34000,
     },
     {
       jewelry: allJewelries[2],
-      size: allSizes[2],
+      size: "19.3 cm",
       quantity: 2,
       price: 35000,
     },
 
     {
       jewelry: allJewelries[3],
-      size: allSizes[3],
+      size: "4.05 cm",
       quantity: 2,
       price: 43000,
     },
     {
       jewelry: allJewelries[3],
-      size: allSizes[4],
+      size: "4.98 cm",
       quantity: 2,
       price: 44000,
     },
     {
       jewelry: allJewelries[3],
-      size: allSizes[5],
+      size: "5.86 cm",
       quantity: 2,
       price: 45000,
     },
 
     {
       jewelry: allJewelries[4],
-      size: allSizes[3],
+      size: "4.05 cm",
       quantity: 2,
       price: 43000,
     },
     {
       jewelry: allJewelries[4],
-      size: allSizes[4],
+      size: "4.98 cm",
       quantity: 2,
       price: 44000,
     },
     {
       jewelry: allJewelries[4],
-      size: allSizes[5],
+      size: "5.86 cm",
       quantity: 2,
       price: 45000,
     },
 
     {
       jewelry: allJewelries[5],
-      size: allSizes[3],
+      size: "4.05 cm",
       quantity: 2,
       price: 43000,
     },
     {
       jewelry: allJewelries[5],
-      size: allSizes[4],
+      size: "4.98 cm",
       quantity: 2,
       price: 44000,
     },
     {
       jewelry: allJewelries[5],
-      size: allSizes[5],
+      size: "5.86 cm",
       quantity: 2,
       price: 45000,
     },
 
     {
       jewelry: allJewelries[6],
-      size: allSizes[6],
+      size: "40.64 cm",
       quantity: 2,
       price: 53000,
     },
     {
       jewelry: allJewelries[6],
-      size: allSizes[7],
+      size: "43.18 cm",
       quantity: 2,
       price: 54000,
     },
     {
       jewelry: allJewelries[6],
-      size: allSizes[8],
+      size: "45.72 cm",
       quantity: 2,
       price: 55000,
     },
 
     {
       jewelry: allJewelries[7],
-      size: allSizes[6],
+      size: "40.64 cm",
       quantity: 2,
       price: 53000,
     },
     {
       jewelry: allJewelries[7],
-      size: allSizes[7],
+      size: "43.18 cm",
       quantity: 2,
       price: 54000,
     },
     {
       jewelry: allJewelries[7],
-      size: allSizes[8],
+      size: "45.72 cm",
       quantity: 2,
       price: 55000,
     },
 
     {
       jewelry: allJewelries[8],
-      size: allSizes[6],
+      size: "40.64 cm",
       quantity: 2,
       price: 53000,
     },
     {
       jewelry: allJewelries[8],
-      size: allSizes[7],
+      size: "43.18 cm",
       quantity: 2,
       price: 54000,
     },
     {
       jewelry: allJewelries[8],
-      size: allSizes[8],
+      size: "45.72 cm",
       quantity: 2,
       price: 55000,
     },
 
     {
       jewelry: allJewelries[9],
-      size: allSizes[9],
+      size: "4.7 cm",
       quantity: 2,
       price: 23000,
     },
     {
       jewelry: allJewelries[9],
-      size: allSizes[10],
+      size: "4.9 cm",
       quantity: 2,
       price: 24000,
     },
     {
       jewelry: allJewelries[9],
-      size: allSizes[11],
+      size: "5.05 cm",
       quantity: 2,
       price: 25000,
     },
 
     {
       jewelry: allJewelries[10],
-      size: allSizes[9],
+      size: "4.7 cm",
       quantity: 2,
       price: 23000,
     },
     {
       jewelry: allJewelries[10],
-      size: allSizes[10],
+      size: "4.9 cm",
       quantity: 2,
       price: 24000,
     },
     {
       jewelry: allJewelries[10],
-      size: allSizes[11],
+      size: "5.05 cm",
       quantity: 2,
       price: 25000,
     },
 
     {
       jewelry: allJewelries[11],
-      size: allSizes[9],
+      size: "4.7 cm",
       quantity: 2,
       price: 23000,
     },
     {
       jewelry: allJewelries[11],
-      size: allSizes[10],
+      size: "4.9 cm",
       quantity: 2,
       price: 24000,
     },
     {
       jewelry: allJewelries[11],
-      size: allSizes[11],
+      size: "5.05 cm",
       quantity: 2,
       price: 25000,
     },
