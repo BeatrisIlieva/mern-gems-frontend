@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 import { useJewelryContext } from "../../../../contexts/JewelryContext";
 import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
@@ -24,6 +24,11 @@ export const Sizes = () => {
   console.log(inventories);
 
   const [selectedSize, setSelectedSize] = useState(null);
+
+  useEffect(() => {
+    setSelectedSize(null);
+    setErrorMessage(null)
+  }, [selectedColor])
 
   const onSubmit = async (e) => {
     e.preventDefault();
