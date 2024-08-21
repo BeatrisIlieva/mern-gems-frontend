@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import { Image } from "./Image/Image";
 
-import { useJewelry } from "../../../hooks/useJewelry";
-
 import { slugify } from "../../../utils/slugify";
 
 import { COLORS_BY_ID } from "../../../constants/colorsById";
