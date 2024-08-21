@@ -4,14 +4,13 @@ import { JewelryCard } from "../../common/JewelryCard/JewelryCard";
 import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
 
-import {useBag} from "../../../hooks/useBag"
+import { useBag } from "../../../hooks/useBag";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 import { Quantity } from "./Quantity/Quantity";
 
 import styles from "./BagList.module.css";
 
 export const BagList = ({ variant }) => {
-
   const location = useLocation();
 
   const showRemoveButton =
@@ -33,16 +32,10 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
+            <span>Size: {item.size}</span>
             <DualTitleSection
-              firstTitle={`Size: ${item.size}`}
-              secondTitle={
-                showRemoveButton ? (
-                  <Quantity quantity={item.quantity}/>
-                  // <Remove bagId={item.bagId} />
-                ) : (
-                  `Qty ${item.quantity}`
-                )
-              }
+              firstTitle={<Remove bagId={item.bagId} />}
+              secondTitle={<Quantity quantity={item.quantity} />}
               variant={"regular"}
             />
           </div>
