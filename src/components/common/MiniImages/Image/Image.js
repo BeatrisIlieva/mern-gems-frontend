@@ -2,7 +2,6 @@ import { COLORS_BY_ID } from "../../../../constants/colorsById";
 
 import styles from "./Image.module.css";
 
-
 export const Image = ({
   imageUrl,
   title,
@@ -27,9 +26,7 @@ export const Image = ({
         />
       </div>
       {isActive && (
-        <span className={`${styles["title"]} ${styles[color]}`}>
-          {title}
-        </span>
+        <span className={`${styles["title"]} ${styles[color]}`}>{title}</span>
       )}
     </div>
   );
