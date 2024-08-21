@@ -5,7 +5,6 @@ import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
 
 import { useBag } from "../../../hooks/useBag";
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 import { Quantity } from "./Quantity/Quantity";
 
 import styles from "./BagList.module.css";
@@ -13,7 +12,7 @@ import styles from "./BagList.module.css";
 export const BagList = ({ variant }) => {
   const location = useLocation();
 
-  const showRemoveButton =
+  const showUpdateQuantityButtons =
     location.pathname !== "/checkout" && location.pathname !== "/payment";
 
   const { bagItems } = useBag();
@@ -33,11 +32,13 @@ export const BagList = ({ variant }) => {
               variant={"bolded"}
             />
             <span>Size: {item.size}</span>
-            <DualTitleSection
-              firstTitle={<Remove bagId={item.bagId} />}
-              secondTitle={<Quantity quantity={item.quantity} />}
-              variant={"regular"}
-            />
+            {showUpdateQuantityButtons && (
+              <DualTitleSection
+                firstTitle={<Remove bagId={item.bagId} />}
+                secondTitle={<Quantity quantity={item.quantity} />}
+                variant={"regular"}
+              />
+            )}
           </div>
         </li>
       ))}
