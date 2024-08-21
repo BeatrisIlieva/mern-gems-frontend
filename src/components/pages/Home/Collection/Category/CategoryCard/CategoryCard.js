@@ -1,14 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
-
-import { useJewelry } from "../../../../../../hooks/useJewelry";
-
-import { slugify } from "../../../../../../utils/slugify";
 
 import styles from "./CategoryCard.module.css";
 
@@ -31,11 +26,9 @@ export const CategoryCard = ({ jewelriesByCategory }) => {
         variant={"regular"}
       />
       {/* <div onClick={clickHandler}> */}
-        <LargeImages jewelriesByCategory={jewelriesByCategory} />
+      <LargeImages jewelriesByCategory={jewelriesByCategory} />
       {/* </div> */}
-      <MiniImages
-      jewelriesByCategory={jewelriesByCategory}
-      />
+      <MiniImages jewelriesByCategory={jewelriesByCategory} />
     </article>
   );
 };
