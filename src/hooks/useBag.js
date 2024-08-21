@@ -17,7 +17,8 @@ export const useBag = ({ userId }) => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [bagService]);
+
 
   return { bagItems };
 };

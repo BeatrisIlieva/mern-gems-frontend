@@ -1,10 +1,13 @@
 import { NonEmptyBag } from "./NonEmptyBag/NonEmptyBag";
 import { EmptyBag } from "./EmptyBag/EmptyBag";
 
-import { useBagContext } from "../../../contexts/BagContext";
+import { useBag } from "../../../hooks/useBag";
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 export const Bag = () => {
-  const { bagTotalQuantity } = useBagContext();
+  const { userId } = useAuthenticationContext();
 
-  return <>{bagTotalQuantity > 0 ? <NonEmptyBag /> : <EmptyBag />}</>;
+  const { bagItems } = useBag({ userId });
+
+  return <>{bagItems.length > 0 ? <NonEmptyBag /> : <EmptyBag />}</>;
 };

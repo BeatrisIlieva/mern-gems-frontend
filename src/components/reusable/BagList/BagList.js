@@ -1,33 +1,30 @@
 import { useLocation } from "react-router-dom";
 
-import { JewelryCard } from "../JewelryCard/JewelryCard";
+import { JewelryCard } from "../../common/JewelryCard/JewelryCard";
 import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
 
-import { useBagContext } from "../../../contexts/BagContext";
+import {useBag} from "../../../hooks/useBag"
+import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import styles from "./BagList.module.css";
 
 export const BagList = ({ variant }) => {
+  const {userId} = useAuthenticationContext()
   const location = useLocation();
 
   const showRemoveButton =
     location.pathname !== "/checkout" && location.pathname !== "/payment";
 
-  const { bagItems } = useBagContext();
+  const { bagItems } = useBag({userId});
 
   return (
     <ul role="list" className={`${styles["bag-list"]} ${styles[variant]}`}>
       {bagItems.map((item) => (
         <li key={item.bagId} className={styles["wrapper"]}>
           <JewelryCard
-            jewelryId={item.jewelryId}
             firstImageUrl={item.firstImageUrl}
-            isSoldOut={item.isSoldOut}
-            collectionTitle={item.collectionTitle}
-            categoryTitle={item.categoryTitle}
             jewelryTitle={item.jewelryTitle}
-            variant={"bag-list"}
           />
           <div className={styles["info"]}>
             <DualTitleSection
