@@ -4,7 +4,6 @@ import { StockStatus } from "../../common/StockStatus/StockStatus";
 import { Sizes } from "./Sizes/Sizes";
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 
-
 import styles from "./Jewelry.module.css";
 import { useParams } from "react-router-dom";
 
@@ -17,7 +16,6 @@ export const Jewelry = () => {
     categoryId,
     colorId,
   });
-
 
   return (
     <>
