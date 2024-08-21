@@ -16,16 +16,13 @@ export const CategoryCard = ({ jewelriesByCategory }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   const clickHandler = () => {
-    const categoryId = jewelriesByCategory[0].category;
-    const colorId = jewelriesByCategory[0].color;
-
     const categoryTitle = jewelriesByCategory[0].categories[0].title;
+    
     const colorTitle = jewelriesByCategory[0].colors[0].title;
 
     const slugifiedCategoryTitle = slugify(categoryTitle);
 
     const slugifiedColorTitle = slugify(colorTitle);
-    // const slugifiedJewelryTitle = slugify(jewelriesByCategory[0].title);
 
     navigate(`/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
