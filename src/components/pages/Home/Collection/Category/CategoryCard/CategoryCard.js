@@ -11,21 +11,11 @@ import { slugify } from "../../../../../../utils/slugify";
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({ jewelriesByCategory, updateColorTitle }) => {
-  const navigate = useNavigate();
+
 
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
-  const clickHandler = () => {
-    const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
-    const colorTitle = jewelriesByCategory[0].colors[0].title;
-
-    const slugifiedCategoryTitle = slugify(categoryTitle);
-
-    const slugifiedColorTitle = slugify(colorTitle);
-
-    navigate(`/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  };
 
   return (
     <article
@@ -42,9 +32,9 @@ export const CategoryCard = ({ jewelriesByCategory, updateColorTitle }) => {
         secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
         variant={"regular"}
       />
-      <div onClick={clickHandler}>
+      
         <LargeImages jewelriesByCategory={jewelriesByCategory} />
-      </div>
+     
       <MiniImages jewelriesByCategory={jewelriesByCategory} updateColorTitle={updateColorTitle}/>
     </article>
   );

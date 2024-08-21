@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
+
+import { slugify } from "../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
 
@@ -11,7 +13,7 @@ export const LargeImages = ({ jewelriesByCategory }) => {
 
   const location = useLocation();
 
-  const displayCircleIconsOnTop = location.pathname === "/";
+  const locationIsHomePage = location.pathname === "/";
 
   useEffect(() => {
     setFirstImageUrlIsActive(true);
@@ -21,6 +23,24 @@ export const LargeImages = ({ jewelriesByCategory }) => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
   };
 
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    if (locationIsHomePage) {
+      const categoryTitle = jewelriesByCategory[0].categories[0].title;
+
+      const colorTitle = jewelriesByCategory[0].colors[0].title;
+
+      const slugifiedCategoryTitle = slugify(categoryTitle);
+
+      const slugifiedColorTitle = slugify(colorTitle);
+
+      navigate(`/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+    } else {
+      toggleFirstImageUrlIsActive();
+    }
+  };
+
   return (
     <div className={styles["large-images"]}>
       <CircleIcons
@@ -28,12 +48,14 @@ export const LargeImages = ({ jewelriesByCategory }) => {
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
         firstImageUrl={jewelriesByCategory[0].firstImageUrl}
         secondImageUrl={jewelriesByCategory[0].secondImageUrl}
-        variant={displayCircleIconsOnTop ? "top" : "bottom"}
+        variant={locationIsHomePage ? "top" : "bottom"}
       />
-      <LargeImage
-        firstImageUrlIsActive={firstImageUrlIsActive}
-        jewelriesByCategory={jewelriesByCategory}
-      />
+      <div onClick={clickHandler}>
+        <LargeImage
+          firstImageUrlIsActive={firstImageUrlIsActive}
+          jewelriesByCategory={jewelriesByCategory}
+        />
+      </div>
     </div>
   );
 };
