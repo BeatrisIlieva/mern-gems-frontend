@@ -1,28 +1,25 @@
 import { useState, useEffect } from "react";
 
-import { useJewelryContext } from "../../../../contexts/JewelryContext";
 import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
 
 import { Button } from "../../../reusable/Button/Button";
 
-import {useService} from "../../../../hooks/useService"
+import { useService } from "../../../../hooks/useService";
 
-import {bagServiceFactory, useBagServiceFactory} from "../../../../services/bagService"
+import { bagServiceFactory } from "../../../../services/bagService";
 
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
 import styles from "./Sizes.module.css";
 
-
-export const Sizes = ({jewelriesByCategory}) => {
-
+export const Sizes = ({ jewelriesByCategory }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const inventories = jewelriesByCategory[0].inventories;
 
   const [selectedSize, setSelectedSize] = useState(null);
 
-  const bagService = useService(bagServiceFactory)
+  const bagService = useService(bagServiceFactory);
 
   useEffect(() => {
     setSelectedSize(null);
@@ -38,7 +35,10 @@ export const Sizes = ({jewelriesByCategory}) => {
     }
 
     try {
-      await bagService.create({[SIZE_FORM_KEY.Size]: selectedSize}, jewelriesByCategory[0]._id);
+      await bagService.create(
+        { [SIZE_FORM_KEY.Size]: selectedSize },
+        jewelriesByCategory[0]._id
+      );
 
       setSelectedSize(null);
     } catch (err) {
