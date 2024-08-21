@@ -15,7 +15,7 @@ export const LargeImages = ({ jewelriesByCategory }) => {
 
   useEffect(() => {
     setFirstImageUrlIsActive(true);
-  }, []);
+  }, [jewelriesByCategory[0].color]);
 
   const toggleFirstImageUrlIsActive = () => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
