@@ -30,13 +30,17 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
-
-              <DualTitleSection
-                firstTitle={`{Size: ${item.size}}`}
-                secondTitle={<Remove bagId={item.bagId} inventoryId={item.inventoryId} />}
-                variant={"regular"}
-              />
-
+            <DualTitleSection
+              firstTitle={`Size: ${item.size}`}
+              secondTitle={
+                displayRemoveButton ? (
+                  <Remove bagId={item.bagId} inventoryId={item.inventoryId} />
+                ) : (
+                  `Qty ${item.quantity}`
+                )
+              }
+              variant={"regular"}
+            />
           </div>
         </li>
       ))}
