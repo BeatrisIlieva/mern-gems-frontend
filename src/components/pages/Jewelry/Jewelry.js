@@ -4,13 +4,8 @@ import { StockStatus } from "../../common/StockStatus/StockStatus";
 import { Sizes } from "./Sizes/Sizes";
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 
-import { useJewelryContext } from "../../../contexts/JewelryContext";
-
-import { useService } from "../../../hooks/useService";
-import { jewelryServiceFactory } from "../../../services/jewelryService";
 
 import styles from "./Jewelry.module.css";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useJewelry } from "../../../hooks/useJewelry";
