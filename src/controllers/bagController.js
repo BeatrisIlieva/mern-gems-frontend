@@ -2,13 +2,10 @@ const router = require("express").Router();
 
 const bagManager = require("../managers/bagManager");
 
-const {
-  NOT_SELECTED_SIZE_ERROR_MESSAGE,
-} = require("../constants/bag");
+const { NOT_SELECTED_SIZE_ERROR_MESSAGE } = require("../constants/bag");
 
 router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
-  console.log(userId)
 
   try {
     const result = await bagManager.getAll(userId);
@@ -24,7 +21,6 @@ router.get("/:userId", async (req, res) => {
 });
 
 router.post("/create/:jewelryId", async (req, res) => {
-  console.log(req.body)
   const { size } = req.body;
 
   const userId = req.user._id;
@@ -41,7 +37,7 @@ router.post("/create/:jewelryId", async (req, res) => {
     await bagManager.create({
       userId,
       jewelryId,
-      size
+      size,
       // sizeId,
     });
 
@@ -55,11 +51,13 @@ router.post("/create/:jewelryId", async (req, res) => {
   }
 });
 
-router.delete("/delete/:bagId", async (req, res) => {
+router.delete("/delete/:bagId/:inventoryId", async (req, res) => {
   const bagId = req.params.bagId;
 
+  const inventoryId = req.params.inventoryId;
+
   try {
-    await bagManager.delete(bagId);
+    await bagManager.delete(bagId, inventoryId);
 
     res.status(204).json();
   } catch (err) {

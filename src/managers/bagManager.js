@@ -40,20 +40,30 @@ exports.getAll = async (userId) => {
   return getAllBagItemsByUserId(user);
 };
 
-exports.delete = async (bagId) => {
-  const bagItem = await Bag.findById(bagId);
+// exports.delete = async (bagId) => {
+//   const bagItem = await Bag.findById(bagId);
 
-  const jewelryId = bagItem.jewelry;
+//   const jewelryId = bagItem.jewelry;
 
-  const sizeId = bagItem.size;
+//   const size = bagItem.size;
 
-  const bagQuantity = bagItem.quantity;
+//   const bagQuantity = bagItem.quantity;
 
-  await bagItem.deleteOne();
+//   await bagItem.deleteOne();
 
-  await Inventory.findOneAndUpdate(
-    { jewelry: jewelryId, size: sizeId },
-    { $inc: { quantity: +bagQuantity } },
+//   await Inventory.findOneAndUpdate(
+//     { jewelry: jewelryId, size },
+//     { $inc: { quantity: +bagQuantity } },
+//     { new: true }
+//   );
+// };
+
+exports.delete = async (bagId, inventoryId) => {
+  await Bag.findByIdAndDelete(bagId);
+
+  await Inventory.findByIdAndUpdate(
+    inventoryId,
+    { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
     { new: true }
   );
 };

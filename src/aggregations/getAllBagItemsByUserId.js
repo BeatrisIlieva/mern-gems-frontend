@@ -169,17 +169,6 @@ exports.getAllBagItemsByUserId = async (user) => {
     },
     {
       $lookup: {
-        as: "categories",
-        from: "categories",
-        foreignField: "_id",
-        localField: "jewelries.category",
-      },
-    },
-    {
-      $unwind: "$categories",
-    },
-    {
-      $lookup: {
         as: "inventories",
         from: "inventories",
         foreignField: "jewelry",
@@ -201,12 +190,12 @@ exports.getAllBagItemsByUserId = async (user) => {
     },
     {
       $addFields: {
-        price: "$inventories.price",
+        inventoryId: "$inventories._id",
       },
     },
     {
       $addFields: {
-        price: "$inventories.size",
+        price: "$inventories.price",
       },
     },
     {
@@ -215,8 +204,14 @@ exports.getAllBagItemsByUserId = async (user) => {
         bagId: {
           $first: "$_id",
         },
+        inventoryId: {
+          $first: "$inventoryId",
+        },
         jewelryId: {
           $first: "$jewelryId",
+        },
+        size: {
+          $first: "$size",
         },
         user: {
           $first: "$user",
@@ -229,9 +224,6 @@ exports.getAllBagItemsByUserId = async (user) => {
         },
         inventoryQuantity: {
           $first: "$inventories.quantity",
-        },
-        inventorySize: {
-          $first: "$inventories.size",
         },
         price: {
           $first: "$inventories.price",
@@ -255,6 +247,7 @@ exports.getAllBagItemsByUserId = async (user) => {
     {
       $project: {
         bagId: 1,
+        inventoryId: 1,
         user: 1,
         jewelryId: 1,
         jewelryTitle: 1,
@@ -263,7 +256,7 @@ exports.getAllBagItemsByUserId = async (user) => {
         maxQuantity: 1,
         categoryTitle: 1,
         inventoryQuantity: 1,
-        inventorySize: 1,
+        size: 1,
         price: 1,
       },
     },
