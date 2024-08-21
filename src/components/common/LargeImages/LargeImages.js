@@ -3,12 +3,10 @@ import { useLocation } from "react-router-dom";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
-import { useJewelry } from "../../../hooks/useJewelry";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({jewelriesByCategory}) => {
-
+export const LargeImages = ({ jewelriesByCategory }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const location = useLocation();
