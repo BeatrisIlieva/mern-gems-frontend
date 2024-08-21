@@ -12,7 +12,7 @@ import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
 import styles from "./Sizes.module.css";
 
-export const Sizes = ({ jewelriesByCategory }) => {
+export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const inventories = jewelriesByCategory[0].inventories;
@@ -39,6 +39,8 @@ export const Sizes = ({ jewelriesByCategory }) => {
         { [SIZE_FORM_KEY.Size]: selectedSize },
         jewelriesByCategory[0]._id
       );
+      console.log(selectedSize)
+      toggleDisplayPopup()
 
       setSelectedSize(null);
     } catch (err) {

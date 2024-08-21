@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-
+import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 import { useService } from "./useService";
 import { bagServiceFactory } from "../services/bagService";
 
-export const useBag = ({ userId }) => {
+export const useBag = () => {
+  const {userId} = useAuthenticationContext();
+
   const [bagItems, setBagItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [bagTotalQuantity, setBagTotalQuantity] = useState(bagItems.length);
@@ -28,11 +30,12 @@ export const useBag = ({ userId }) => {
         }));
 
         setBagItems(modifiedData);
+        setBagTotalQuantity(modifiedData.length)
       })
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userId, bagService]);
+  }, [userId, bagService, bagTotalQuantity]);
 
   return { bagItems, totalPrice, bagTotalQuantity };
 };

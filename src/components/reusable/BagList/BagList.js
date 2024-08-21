@@ -6,17 +6,18 @@ import { Remove } from "./Remove/Remove";
 
 import {useBag} from "../../../hooks/useBag"
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+import { Quantity } from "./Quantity/Quantity";
 
 import styles from "./BagList.module.css";
 
 export const BagList = ({ variant }) => {
-  const {userId} = useAuthenticationContext()
+
   const location = useLocation();
 
   const showRemoveButton =
     location.pathname !== "/checkout" && location.pathname !== "/payment";
 
-  const { bagItems } = useBag({userId});
+  const { bagItems } = useBag();
 
   return (
     <ul role="list" className={`${styles["bag-list"]} ${styles[variant]}`}>
@@ -33,10 +34,11 @@ export const BagList = ({ variant }) => {
               variant={"bolded"}
             />
             <DualTitleSection
-              firstTitle={`Size: ${item.inventorySize}`}
+              firstTitle={`Size: ${item.size}`}
               secondTitle={
                 showRemoveButton ? (
-                  <Remove bagId={item.bagId} />
+                  <Quantity quantity={item.quantity}/>
+                  // <Remove bagId={item.bagId} />
                 ) : (
                   `Qty ${item.quantity}`
                 )

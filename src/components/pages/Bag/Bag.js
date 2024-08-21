@@ -5,9 +5,9 @@ import { useBag } from "../../../hooks/useBag";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 export const Bag = () => {
-  const { userId } = useAuthenticationContext();
 
-  const { bagItems } = useBag({ userId });
 
-  return <>{bagItems.length > 0 ? <NonEmptyBag /> : <EmptyBag />}</>;
+  const { bagTotalQuantity } = useBag();
+
+  return <>{bagTotalQuantity > 0 ? <NonEmptyBag /> : <EmptyBag />}</>;
 };
