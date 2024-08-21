@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 
 import { Images } from "./Images/Images";
-import { LoadingSpinner } from "../JewelryList/LoadingSpinner/LoadingSpinner";
+
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
 import { MiniBag } from "./MiniBag/MiniBag";
 import { Nav } from "./Nav/Nav";
@@ -78,10 +78,7 @@ export const JewelryItem = () => {
   };
 
   return (
-    <>
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
+
         <>
           {displayMiniBagPopup && (
             <MiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
@@ -96,7 +93,6 @@ export const JewelryItem = () => {
             </div>
           </section>
         </>
-      )}
-    </>
+
   );
 };

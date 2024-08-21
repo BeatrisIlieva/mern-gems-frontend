@@ -6,7 +6,6 @@ import { Header } from "./components/layout/Header/Header";
 import { Home } from "./components/pages/Home/Home";
 import { Footer } from "./components/layout/Footer/Footer";
 import { Jewelry } from "./components/pages/Jewelry/Jewelry";
-import { JewelryList } from "./components/pages/JewelryList/JewelryList";
 import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
 import { Account } from "./components/pages/Account/Account";
 import { Bag } from "./components/pages/Bag/Bag";
@@ -31,38 +30,6 @@ function App() {
             element={
               <RouteGuard>
                 <Jewelry />
-              </RouteGuard>
-            }
-          />
-          <Route
-            path="/forget-me-not/*"
-            element={
-              <RouteGuard>
-                <JewelryList />
-              </RouteGuard>
-            }
-          />
-          <Route
-            path="/sparkling-cluster/*"
-            element={
-              <RouteGuard>
-                <JewelryList />
-              </RouteGuard>
-            }
-          />
-          <Route
-            path="/sunflower/*"
-            element={
-              <RouteGuard>
-                <JewelryList />
-              </RouteGuard>
-            }
-          />
-          <Route
-            path="/diamond-loop/*"
-            element={
-              <RouteGuard>
-                <JewelryList />
               </RouteGuard>
             }
           />
