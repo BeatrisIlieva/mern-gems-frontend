@@ -6,23 +6,21 @@ import { slugify } from "../../../../utils/slugify";
 
 import styles from "./LargeImage.module.css";
 
-export const LargeImage = ({ firstImageUrlIsActive, entity, selectedEntityColor, colorIndex }) => {
-  const navigate = useNavigate();
+export const LargeImage = ({ jewelriesByCategory, firstImageUrlIsActive }) => {
 
-  const { updateSelectedEntity, updateSelectedColor } = useJewelryContext();
 
-  const slugifiedJewelryTitle = slugify(selectedEntityColor.title);
+  // const slugifiedJewelryTitle = slugify(selectedEntityColor.title);
 
-  const clickHandler = () => {
-    updateSelectedEntity(entity);
+  // const clickHandler = () => {
+  //   updateSelectedEntity(entity);
 
-    updateSelectedColor(colorIndex);
+  //   updateSelectedColor(colorIndex);
 
-    navigate(`/${slugifiedJewelryTitle}`);
-  };
+  //   navigate(`/${slugifiedJewelryTitle}`);
+  // };
 
   return (
-    <div className={styles["thumbnail"]} onClick={clickHandler}>
+    <div className={styles["thumbnail"]} >
       <img
         className={`${styles["image"]} ${
           firstImageUrlIsActive
@@ -30,9 +28,9 @@ export const LargeImage = ({ firstImageUrlIsActive, entity, selectedEntityColor,
             : styles["slide-in-left"]
         }`}
         src={
-          firstImageUrlIsActive ? selectedEntityColor.firstImageUrl : selectedEntityColor.secondImageUrl
+          firstImageUrlIsActive ? jewelriesByCategory[0].firstImageUrl : jewelriesByCategory[0].secondImageUrl
         }
-        alt={entity.title}
+        alt={jewelriesByCategory[0].title}
       />
     </div>
   );

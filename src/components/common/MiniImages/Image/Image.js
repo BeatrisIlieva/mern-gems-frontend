@@ -1,19 +1,19 @@
-import { COLORS_BY_INDEX } from "../../../../constants/colorsByIndex";
+import { COLORS_BY_ID } from "../../../../constants/colorsById";
 
 import styles from "./Image.module.css";
 
+
 export const Image = ({
-  imageObject,
-  index,
+  imageUrl,
+  title,
+  id,
   updateActiveMiniImage,
-  updateColorIndex,
   isActive,
 }) => {
-  const color = COLORS_BY_INDEX[index];
+  const color = COLORS_BY_ID[id];
 
   const clickHandler = () => {
-    updateActiveMiniImage(index);
-    updateColorIndex(index);
+    updateActiveMiniImage(id);
   };
 
   return (
@@ -21,14 +21,14 @@ export const Image = ({
       <div className={styles["thumbnail"]}>
         <img
           className={styles["image"]}
-          src={imageObject[0].imageUrl}
-          alt={imageObject[0].title}
+          src={imageUrl}
+          alt={title}
           onClick={clickHandler}
         />
       </div>
       {isActive && (
         <span className={`${styles["title"]} ${styles[color]}`}>
-          {imageObject[0].title}
+          {title}
         </span>
       )}
     </div>

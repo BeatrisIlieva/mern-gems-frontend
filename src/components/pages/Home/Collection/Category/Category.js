@@ -1,44 +1,20 @@
-import { useState, useEffect } from "react";
-
 import { CategoryCard } from "./CategoryCard/CategoryCard";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
-import { useService } from "../../../../../hooks/useService";
+import { useJewelry } from "../../../../../hooks/useJewelry";
 
-import { jewelryServiceFactory } from "../../../../../services/jewelryService";
-
-export const Category = ({ entityId, initialColorIndex }) => {
-  const [entity, setEntity] = useState([]);
-
-  const [colorIndex, setColorIndex] = useState(initialColorIndex);
-
-  const jewelryService = useService(jewelryServiceFactory);
-
-  const updateColorIndex = (index) => {
-    setColorIndex(index);
-  };
-
-  useEffect(() => {
-    jewelryService
-      .getAll(entityId)
-      .then((data) => {
-        setEntity(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
+export const Category = ({ categoryId, colorId }) => {
+  const { jewelriesByCategory } = useJewelry({
+    categoryId,
+    colorId,
+  });
 
   return (
     <>
-      {entity.length < 1 ? (
+      {jewelriesByCategory.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard
-          entity={entity}
-          colorIndex={colorIndex}
-          updateColorIndex={updateColorIndex}
-        />
+        <CategoryCard jewelriesByCategory={jewelriesByCategory} />
       )}
     </>
   );

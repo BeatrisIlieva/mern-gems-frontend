@@ -7,14 +7,14 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./StockStatus.module.css";
 
-export const StockStatus = ({ selectedEntityColor }) => {
-  const allQuantitiesZero = checkIfItemsHasBeenSoldOut(selectedEntityColor);
+export const StockStatus = ({ jewelriesByCategory }) => {
+  const allQuantitiesZero = checkIfItemsHasBeenSoldOut(jewelriesByCategory[0]);
 
   const [isSoldOut, setIsSoldOut] = useState(allQuantitiesZero);
 
   useEffect(() => {
-    setIsSoldOut(checkIfItemsHasBeenSoldOut(selectedEntityColor));
-  }, [selectedEntityColor]);
+    setIsSoldOut(checkIfItemsHasBeenSoldOut(jewelriesByCategory[0]));
+  }, [jewelriesByCategory]);
 
   return (
     <span className={styles["stock"]}>

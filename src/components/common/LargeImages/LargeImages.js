@@ -3,21 +3,21 @@ import { useLocation } from "react-router-dom";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
+import { useJewelry } from "../../../hooks/useJewelry";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ entity, colorIndex }) => {
+export const LargeImages = ({jewelriesByCategory}) => {
+
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const location = useLocation();
 
   const displayCircleIconsOnTop = location.pathname === "/";
 
-  const selectedEntityColor = entity[colorIndex];
-
   useEffect(() => {
     setFirstImageUrlIsActive(true);
-  }, [colorIndex]);
+  }, []);
 
   const toggleFirstImageUrlIsActive = () => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
@@ -28,15 +28,13 @@ export const LargeImages = ({ entity, colorIndex }) => {
       <CircleIcons
         firstImageUrlIsActive={firstImageUrlIsActive}
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-        firstImageUrl={selectedEntityColor.firstImageUrl}
-        secondImageUrl={selectedEntityColor.secondImageUrl}
+        firstImageUrl={jewelriesByCategory[0].firstImageUrl}
+        secondImageUrl={jewelriesByCategory[0].secondImageUrl}
         variant={displayCircleIconsOnTop ? "top" : "bottom"}
       />
       <LargeImage
         firstImageUrlIsActive={firstImageUrlIsActive}
-        entity={entity}
-        selectedEntityColor={selectedEntityColor}
-        colorIndex={colorIndex}
+        jewelriesByCategory={jewelriesByCategory}
       />
     </div>
   );

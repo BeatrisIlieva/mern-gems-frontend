@@ -8,7 +8,9 @@ export const jewelryServiceFactory = (token) => {
   const request = requestFactory(token);
 
   return {
-    getAll: (categoryId) => request.get(`${baseUrl}/${categoryId}`)
+    getAll: (categoryId) => request.get(`${baseUrl}/${categoryId}`),
+
+    getOne: (categoryId, colorId) => request.get(`${baseUrl}/${categoryId}/${colorId}`)
     // getOne: (jewelryId) => request.get(`${baseUrl}/${jewelryId}`),
 
     // getAll: (collectionId, categoryId, skip, limit) =>

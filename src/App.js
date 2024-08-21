@@ -26,7 +26,7 @@ function App() {
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:slugifiedJewelryTitle" element={<Jewelry/>} />
+          <Route path="/:categoryId/:colorId" element={<Jewelry/>} />
           <Route
             path="/forget-me-not/*"
             element={

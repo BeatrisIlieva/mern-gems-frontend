@@ -1,40 +1,62 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Image } from "./Image/Image";
 
-import { COLORS_BY_INDEX } from "../../../constants/colorsByIndex";
+import { useJewelry } from "../../../hooks/useJewelry";
+
+import { slugify } from "../../../utils/slugify";
+
+import { COLORS_BY_ID } from "../../../constants/colorsById";
+import { MINI_IMAGES_BY_COLOR_ID_AND_IMAGE_URL } from "../../pages/Home/Collection/constants/miniImagesByColorIdAndImageUrl";
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ colorIndex, entity, updateColorIndex }) => {
-  const [activeMiniImage, setActiveMiniImage] = useState(colorIndex);
+export const MiniImages = ({ jewelriesByCategory }) => {
+  const navigate = useNavigate();
 
-  const updateActiveMiniImage = (index) => {
-    setActiveMiniImage(index);
+  const clickHandler = (colorId) => {
+    const categoryId = jewelriesByCategory[0].category;
+
+    const slugifiedJewelryTitle = slugify(jewelriesByCategory[0].title);
+
+    navigate(`/${categoryId}/${colorId}`);
   };
 
-  const color = COLORS_BY_INDEX[colorIndex];
+  const [activeMiniImage, setActiveMiniImage] = useState(
+    jewelriesByCategory[0].color
+  );
+
+  const updateActiveMiniImage = (id) => {
+    setActiveMiniImage(id);
+
+    clickHandler(id);
+  };
+
+  const color = COLORS_BY_ID[activeMiniImage];
 
   return (
     <ul className={styles["mini-images-list"]} role="list">
-      {entity.map((item, index) => (
-        <li
-          key={item._id}
-          className={`${
-            activeMiniImage === index
-              ? `${styles["active-mini-image"]} ${styles[color]}`
-              : ""
-          }`.trim()}
-        >
-          <Image
-            imageObject={item.miniImage}
-            index={index}
-            updateActiveMiniImage={updateActiveMiniImage}
-            updateColorIndex={updateColorIndex}
-            isActive={activeMiniImage === index}
-          />
-        </li>
-      ))}
+      {Object.entries(MINI_IMAGES_BY_COLOR_ID_AND_IMAGE_URL).map(
+        ([id, { title, imageUrl }]) => (
+          <li
+            key={id}
+            className={`${
+              Number(id) === activeMiniImage
+                ? `${styles["active-mini-image"]} ${styles[color]}`
+                : ""
+            }`.trim()}
+          >
+            <Image
+              imageUrl={imageUrl}
+              title={title}
+              id={Number(id)}
+              updateActiveMiniImage={updateActiveMiniImage}
+              isActive={Number(id) === activeMiniImage}
+            />
+          </li>
+        )
+      )}
     </ul>
   );
 };

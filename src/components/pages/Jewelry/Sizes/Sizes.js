@@ -14,12 +14,11 @@ import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 import styles from "./Sizes.module.css";
 
 
-export const Sizes = ({jewelryId}) => {
-  const { selectedEntity, selectedColor } = useJewelryContext();
+export const Sizes = ({jewelriesByCategory}) => {
 
   const [errorMessage, setErrorMessage] = useState("");
 
-  const inventories = selectedEntity[selectedColor].inventories;
+  const inventories = jewelriesByCategory[0].inventories;
 
   const [selectedSize, setSelectedSize] = useState(null);
 
@@ -28,7 +27,7 @@ export const Sizes = ({jewelryId}) => {
   useEffect(() => {
     setSelectedSize(null);
     setErrorMessage(null);
-  }, [selectedColor]);
+  }, [jewelriesByCategory[0].color]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +38,7 @@ export const Sizes = ({jewelryId}) => {
     }
 
     try {
-      await bagService.create({[SIZE_FORM_KEY.Size]: selectedSize}, jewelryId);
+      await bagService.create({[SIZE_FORM_KEY.Size]: selectedSize}, jewelriesByCategory[0]._id);
 
       setSelectedSize(null);
     } catch (err) {
@@ -68,7 +67,7 @@ export const Sizes = ({jewelryId}) => {
                 onChange={changeHandler}
                 onClick={changeHandler}
                 checked={item.size === selectedSize}
-                disabled={!Number(item.quantity) > 0}
+                disabled={item.quantity === 0}
               />
               <label className={styles["label"]} htmlFor={item.size}>
                 {item.size}

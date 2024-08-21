@@ -6,46 +6,53 @@ import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSecti
 
 import { useJewelryContext } from "../../../contexts/JewelryContext";
 
+import { useService } from "../../../hooks/useService";
+import { jewelryServiceFactory } from "../../../services/jewelryService";
+
 import styles from "./Jewelry.module.css";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+import { useJewelry } from "../../../hooks/useJewelry";
 
 export const Jewelry = () => {
-  const { selectedEntity, selectedColor, updateSelectedColor } =
-    useJewelryContext();
+  const { categoryId, colorId } = useParams();
+
+  const { jewelriesByCategory } = useJewelry({
+    categoryId,
+    colorId,
+  });
+
 
   return (
-    <section id={styles["jewelry"]}>
-      {/* <div className={styles["image-container"]}>
-        <img className={styles["image"]} src={selectedEntity[selectedColor].firstImageUrl} alt="" />
-      </div> */}
-      <div className={styles["image-container"]}>
-        <div className={styles["image"]}>
-          <LargeImages entity={selectedEntity} colorIndex={selectedColor} />
-        </div>
-      </div>
-      <div className={styles["info-and-action-container"]}>
-        <DualTitleSection
-          firstTitle={
-            <div className={styles["mini-images"]}>
-              <MiniImages
-                colorIndex={selectedColor}
-                entity={selectedEntity}
-                updateColorIndex={updateSelectedColor}
-              />
+    <>
+      {jewelriesByCategory.length > 0 && (
+        <section id={styles["jewelry"]}>
+          <div className={styles["image-container"]}>
+            <div className={styles["image"]}>
+              <LargeImages jewelriesByCategory={jewelriesByCategory} />
             </div>
-          }
-          secondTitle={
-            <StockStatus selectedEntityColor={selectedEntity[selectedColor]} />
-          }
-          variant={"regular"}
-        />
-        <h1 className={styles["title"]}>
-          {selectedEntity[selectedColor].title}
-        </h1>
-        <p className={styles["description"]}>
-          {`${selectedEntity[selectedColor].description}.`}
-        </p>
-        <Sizes jewelryId={selectedEntity[selectedColor]._id}/>
-      </div>
-    </section>
+          </div>
+          <div className={styles["info-and-action-container"]}>
+            <DualTitleSection
+              firstTitle={
+                <div className={styles["mini-images"]}>
+                  <MiniImages jewelriesByCategory={jewelriesByCategory} />
+                </div>
+              }
+              secondTitle={
+                <StockStatus jewelriesByCategory={jewelriesByCategory} />
+              }
+              variant={"regular"}
+            />
+            <h1 className={styles["title"]}>{jewelriesByCategory[0].title}</h1>
+            <p className={styles["description"]}>
+              {`${jewelriesByCategory[0].description}.`}
+            </p>
+            <Sizes jewelriesByCategory={jewelriesByCategory} />
+          </div>
+        </section>
+      )}
+    </>
   );
 };

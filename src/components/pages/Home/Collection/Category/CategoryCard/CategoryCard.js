@@ -1,16 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
 
+import { useJewelry } from "../../../../../../hooks/useJewelry";
+
+import { slugify } from "../../../../../../utils/slugify";
+
 import styles from "./CategoryCard.module.css";
 
-export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
+export const CategoryCard = ({ jewelriesByCategory }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
-
-  const selectedEntityColor = entity[colorIndex];
 
   return (
     <article
@@ -23,15 +26,15 @@ export const CategoryCard = ({ entity, colorIndex, updateColorIndex }) => {
       }
     >
       <DualTitleSection
-        firstTitle={`$${entity[0].inventories[0].price} - $${entity[0].inventories[2].price}`}
-        secondTitle={<StockStatus selectedEntityColor={selectedEntityColor} />}
+        firstTitle={`$${jewelriesByCategory[0].inventories[0].price} - $${jewelriesByCategory[0].inventories[2].price}`}
+        secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
         variant={"regular"}
       />
-      <LargeImages entity={entity} colorIndex={colorIndex} />
+      {/* <div onClick={clickHandler}> */}
+        <LargeImages jewelriesByCategory={jewelriesByCategory} />
+      {/* </div> */}
       <MiniImages
-        colorIndex={colorIndex}
-        entity={entity}
-        updateColorIndex={updateColorIndex}
+      jewelriesByCategory={jewelriesByCategory}
       />
     </article>
   );
