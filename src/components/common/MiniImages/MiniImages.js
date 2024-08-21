@@ -5,42 +5,44 @@ import { Image } from "./Image/Image";
 
 import { slugify } from "../../../utils/slugify";
 
-import { COLORS_BY_ID } from "../../../constants/colorsById";
-import { MINI_IMAGES_BY_COLOR_ID_AND_IMAGE_URL } from "../../pages/Home/Collection/constants/miniImagesByColorIdAndImageUrl";
+import { COLORS_BY_TITLE } from "../../../constants/colorsByTitle";
+import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "../../pages/Home/Collection/constants/miniImagesByTitleAndImageUrl";
 
 import styles from "./MiniImages.module.css";
 
 export const MiniImages = ({ jewelriesByCategory }) => {
   const navigate = useNavigate();
 
-  const clickHandler = (colorId) => {
-    const categoryId = jewelriesByCategory[0].category;
+  const clickHandler = (colorTitle) => {
+    const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
-    const slugifiedJewelryTitle = slugify(jewelriesByCategory[0].title);
+    const slugifiedCategoryTitle = slugify(categoryTitle);
 
-    navigate(`/${categoryId}/${colorId}`);
+    const slugifiedColorTitle = slugify(colorTitle);
+
+    navigate(`/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
 
   const [activeMiniImage, setActiveMiniImage] = useState(
-    jewelriesByCategory[0].color
+    jewelriesByCategory[0].colors[0].title
   );
 
-  const updateActiveMiniImage = (id) => {
-    setActiveMiniImage(id);
+  const updateActiveMiniImage = (colorTitle) => {
+    setActiveMiniImage(colorTitle);
 
-    clickHandler(id);
+    clickHandler(colorTitle);
   };
 
-  const color = COLORS_BY_ID[activeMiniImage];
+  const color = COLORS_BY_TITLE[activeMiniImage];
 
   return (
     <ul className={styles["mini-images-list"]} role="list">
-      {Object.entries(MINI_IMAGES_BY_COLOR_ID_AND_IMAGE_URL).map(
-        ([id, { title, imageUrl }]) => (
+      {Object.entries(MINI_IMAGES_BY_TITLE_AND_IMAGE_URL).map(
+        ([colorName, { title, imageUrl }]) => (
           <li
-            key={id}
+            key={colorName}
             className={`${
-              Number(id) === activeMiniImage
+              colorName === activeMiniImage
                 ? `${styles["active-mini-image"]} ${styles[color]}`
                 : ""
             }`.trim()}
@@ -48,9 +50,9 @@ export const MiniImages = ({ jewelriesByCategory }) => {
             <Image
               imageUrl={imageUrl}
               title={title}
-              id={Number(id)}
+              colorName={colorName}
               updateActiveMiniImage={updateActiveMiniImage}
-              isActive={Number(id) === activeMiniImage}
+              isActive={colorName === activeMiniImage}
             />
           </li>
         )

@@ -3,10 +3,9 @@ import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
 import { useJewelry } from "../../../../../hooks/useJewelry";
 
-export const Category = ({ categoryId, colorId }) => {
+export const Category = ({ categoryTitle,colorTitle }) => {
   const { jewelriesByCategory } = useJewelry({
-    categoryId,
-    colorId,
+    categoryTitle,colorTitle
   });
 
   return (

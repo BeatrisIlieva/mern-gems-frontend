@@ -1,18 +1,18 @@
-import { COLORS_BY_ID } from "../../../../constants/colorsById";
+import { COLORS_BY_TITLE } from "../../../../constants/colorsByTitle";
 
 import styles from "./Image.module.css";
 
 export const Image = ({
   imageUrl,
   title,
-  id,
+  colorName,
   updateActiveMiniImage,
   isActive,
 }) => {
-  const color = COLORS_BY_ID[id];
+  const color = COLORS_BY_TITLE[colorName];
 
   const clickHandler = () => {
-    updateActiveMiniImage(id);
+    updateActiveMiniImage(colorName);
   };
 
   return (

@@ -8,13 +8,16 @@ import styles from "./Jewelry.module.css";
 import { useParams } from "react-router-dom";
 
 import { useJewelry } from "../../../hooks/useJewelry";
+import { deslugify } from "../../../utils/deslugify";
 
 export const Jewelry = () => {
-  const { categoryId, colorId } = useParams();
+  const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
+  const categoryTitle = deslugify(slugifiedCategoryTitle);
+  const colorTitle = deslugify(slugifiedColorTitle);
 
   const { jewelriesByCategory } = useJewelry({
-    categoryId,
-    colorId,
+    categoryTitle,
+    colorTitle,
   });
 
   return (

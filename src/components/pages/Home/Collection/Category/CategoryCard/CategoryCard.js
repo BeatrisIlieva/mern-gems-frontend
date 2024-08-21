@@ -1,10 +1,12 @@
 import { useState } from "react";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
+
+import { slugify } from "../../../../../../utils/slugify";
 
 import styles from "./CategoryCard.module.css";
 
@@ -17,9 +19,15 @@ export const CategoryCard = ({ jewelriesByCategory }) => {
     const categoryId = jewelriesByCategory[0].category;
     const colorId = jewelriesByCategory[0].color;
 
+    const categoryTitle = jewelriesByCategory[0].categories[0].title;
+    const colorTitle = jewelriesByCategory[0].colors[0].title;
+
+    const slugifiedCategoryTitle = slugify(categoryTitle);
+
+    const slugifiedColorTitle = slugify(colorTitle);
     // const slugifiedJewelryTitle = slugify(jewelriesByCategory[0].title);
 
-    navigate(`/${categoryId}/${colorId}`);
+    navigate(`/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
 
   return (
@@ -38,7 +46,7 @@ export const CategoryCard = ({ jewelriesByCategory }) => {
         variant={"regular"}
       />
       <div onClick={clickHandler}>
-      <LargeImages jewelriesByCategory={jewelriesByCategory} />
+        <LargeImages jewelriesByCategory={jewelriesByCategory} />
       </div>
       <MiniImages jewelriesByCategory={jewelriesByCategory} />
     </article>
