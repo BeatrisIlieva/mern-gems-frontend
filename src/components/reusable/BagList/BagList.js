@@ -4,7 +4,7 @@ import { JewelryCard } from "../../common/JewelryCard/JewelryCard";
 import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
 
-import { useBag } from "../../../hooks/useBag";
+import { useBagContext } from "../../../contexts/BagContext";
 
 import styles from "./BagList.module.css";
 
@@ -14,7 +14,7 @@ export const BagList = ({ variant }) => {
   const displayRemoveButton =
     location.pathname !== "/checkout" && location.pathname !== "/payment";
 
-  const { bagItems } = useBag();
+  const { bagItems } = useBagContext();
 
   return (
     <ul role="list" className={`${styles["bag-list"]} ${styles[variant]}`}>

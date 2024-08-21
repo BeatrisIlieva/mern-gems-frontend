@@ -1,13 +1,23 @@
-import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
-import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
+import { Link } from "react-router-dom";
 
-import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { BagList } from "../../../reusable/BagList/BagList";
+import { Button } from "../../../reusable/Button/Button";
+import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
+import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Popup } from "../../../reusable/Popup/Popup";
 
-import { useBag } from "../../../../hooks/useBag";
+import { useBagContext } from "../../../../contexts/BagContext";
+
+import styles from "./MiniBag.module.css"
 
 export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
-  const { bagItems } = useBag();
+  const { totalPrice } = useBagContext();
+
+  const buttonClickHandler = () => {
+    document.body.style.overflow = "visible";
+
+    toggleDisplayMiniBagPopup();
+  };
 
   return (
     <Popup
@@ -15,13 +25,33 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       modalVariant={"mini-bag"}
       overlayVariant={"mini-bag"}
     >
-      {bagItems.length > 0 ? (
-        <NonEmptyMiniBag
-          toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
-        />
-      ) : (
-        <EmptyMiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
-      )}
+      <section className={styles["mini-bag"]}>
+        <LargeTitle title={"My Bag"} textAlight={"align-left"} />
+        <BagList variant={"mini"} />
+        <div className={styles["bottom-container"]}>
+          <DualTitleSection
+            firstTitle={"Total"}
+            secondTitle={`$ ${totalPrice}`}
+            variant={"bolded"}
+          />
+          <Link to={"/users/shopping-bag"} className={styles["no-decoration"]}>
+            <Button
+              title={"View Bag"}
+              buttonIsDisabled={false}
+              callBackFunction={buttonClickHandler}
+              variant={"pink"}
+            />
+          </Link>
+          <Link to={"/checkout"} className={styles["no-decoration"]}>
+            <Button
+              title={"Continue Checkout"}
+              buttonIsDisabled={false}
+              callBackFunction={buttonClickHandler}
+              variant={"gray"}
+            />
+          </Link>
+        </div>
+      </section>
     </Popup>
   );
 };

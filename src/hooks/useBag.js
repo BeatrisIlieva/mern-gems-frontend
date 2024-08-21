@@ -1,44 +1,44 @@
-import { useState, useEffect } from "react";
-import { useAuthenticationContext } from "../contexts/AuthenticationContext";
-import { useService } from "./useService";
-import { bagServiceFactory } from "../services/bagService";
+// import { useState, useEffect } from "react";
+// import { useAuthenticationContext } from "../contexts/AuthenticationContext";
+// import { useService } from "./useService";
+// import { bagServiceFactory } from "../services/bagService";
 
-export const useBag = () => {
-  const {userId} = useAuthenticationContext();
+// export const useBag = () => {
+//   const {userId} = useAuthenticationContext();
 
-  const [bagItems, setBagItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [bagTotalQuantity, setBagTotalQuantity] = useState(0);
+//   const [bagItems, setBagItems] = useState([]);
+//   const [totalPrice, setTotalPrice] = useState(0);
+//   const [bagTotalQuantity, setBagTotalQuantity] = useState(0);
 
-  const bagService = useService(bagServiceFactory);
+//   const bagService = useService(bagServiceFactory);
 
-  useEffect(() => {
-    setTotalPrice(
-      bagItems.reduce((total, item) => {
-        return total + item.price * item.quantity;
-      }, 0)
-    );
-  }, [bagItems]);
+//   useEffect(() => {
+//     setTotalPrice(
+//       bagItems.reduce((total, item) => {
+//         return total + item.price * item.quantity;
+//       }, 0)
+//     );
+//   }, [bagItems]);
 
-  useEffect(() => {
-    setBagTotalQuantity(bagItems.length)
-  }, [bagItems])
+//   useEffect(() => {
+//     setBagTotalQuantity(bagItems.length)
+//   }, [bagItems])
 
-  useEffect(() => {
-    bagService
-      .getAll(userId)
-      .then((data) => {
-        const modifiedData = data.map((item) => ({
-          ...item,
-          totalPrice: item.quantity * item.price,
-        }));
+//   useEffect(() => {
+//     bagService
+//       .getAll(userId)
+//       .then((data) => {
+//         const modifiedData = data.map((item) => ({
+//           ...item,
+//           totalPrice: item.quantity * item.price,
+//         }));
 
-        setBagItems(modifiedData);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userId, bagService]);
+//         setBagItems(modifiedData);
+//       })
+//       .catch((err) => {
+//         console.log(err.message);
+//       });
+//   }, [userId, bagService]);
 
-  return { bagItems, totalPrice, bagTotalQuantity };
-};
+//   return { bagItems, totalPrice, bagTotalQuantity };
+// };
