@@ -20,11 +20,11 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
   };
 
   return (
-    <Popup
-      popupCloseHandler={toggleDisplayMiniBagPopup}
-      modalVariant={"mini-bag"}
-      overlayVariant={"mini-bag"}
-    >
+    // <Popup
+    //   popupCloseHandler={toggleDisplayMiniBagPopup}
+    //   modalVariant={"mini-bag"}
+    //   overlayVariant={"mini-bag"}
+    // >
       <section className={styles["mini-bag"]}>
         <LargeTitle title={"My Bag"} textAlight={"align-left"} />
         <BagList variant={"mini"} />
@@ -52,6 +52,6 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
           </Link>
         </div>
       </section>
-    </Popup>
+    // </Popup>
   );
 };

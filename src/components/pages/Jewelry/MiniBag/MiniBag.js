@@ -2,22 +2,26 @@ import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+import { Popup } from "../../../reusable/Popup/Popup";
 
 import { useBag } from "../../../../hooks/useBag";
 
 export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
-  const userId = useAuthenticationContext()
-  const { bagTotalQuantity } = useBag({userId});
+  const { bagItems } = useBag();
 
   return (
-    <>
-      {bagTotalQuantity > 0 ? (
+    <Popup
+      popupCloseHandler={toggleDisplayMiniBagPopup}
+      modalVariant={"mini-bag"}
+      overlayVariant={"mini-bag"}
+    >
+      {bagItems.length > 0 ? (
         <NonEmptyMiniBag
           toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
         />
       ) : (
         <EmptyMiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
       )}
-    </>
+    </Popup>
   );
 };

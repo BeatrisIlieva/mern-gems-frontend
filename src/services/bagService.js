@@ -13,6 +13,7 @@ export const bagServiceFactory = (token) => {
 
     getAll: (userId) => request.get(`${baseUrl}/${userId}`),
 
-    delete: (bagId, inventoryId) => request.delete(`${baseUrl}/delete/${bagId}/${inventoryId}`),
+    delete: (bagId, inventoryId) =>
+      request.delete(`${baseUrl}/delete/${bagId}/${inventoryId}`),
   };
 };
