@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react";
 
 import { CategoryCard } from "./CategoryCard/CategoryCard";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
@@ -22,7 +22,10 @@ export const Category = ({ categoryTitle, colorTitle }) => {
       {jewelriesByCategory.length < 1 ? (
         <CardSkeleton />
       ) : (
-        <CategoryCard jewelriesByCategory={jewelriesByCategory} updateColorTitle={updateColorTitle}/>
+        <CategoryCard
+          jewelriesByCategory={jewelriesByCategory}
+          updateColorTitle={updateColorTitle}
+        />
       )}
     </>
   );
