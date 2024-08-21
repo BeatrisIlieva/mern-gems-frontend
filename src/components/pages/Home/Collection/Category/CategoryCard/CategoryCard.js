@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useNavigate} from "react-router-dom"
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../../../common/LargeImages/LargeImages";
@@ -8,7 +9,18 @@ import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({ jewelriesByCategory }) => {
+  const navigate = useNavigate();
+
   const [articleIsHovered, setArticleIsHovered] = useState(false);
+
+  const clickHandler = () => {
+    const categoryId = jewelriesByCategory[0].category;
+    const colorId = jewelriesByCategory[0].color;
+
+    // const slugifiedJewelryTitle = slugify(jewelriesByCategory[0].title);
+
+    navigate(`/${categoryId}/${colorId}`);
+  };
 
   return (
     <article
@@ -25,9 +37,9 @@ export const CategoryCard = ({ jewelriesByCategory }) => {
         secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
         variant={"regular"}
       />
-      {/* <div onClick={clickHandler}> */}
+      <div onClick={clickHandler}>
       <LargeImages jewelriesByCategory={jewelriesByCategory} />
-      {/* </div> */}
+      </div>
       <MiniImages jewelriesByCategory={jewelriesByCategory} />
     </article>
   );
