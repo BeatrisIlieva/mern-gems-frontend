@@ -5,7 +5,7 @@ import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
 
 import { useBag } from "../../../hooks/useBag";
-import { Quantity } from "./Quantity/Quantity";
+import { UpdateQuantity } from "./UpdateQuantity/UpdateQuantity";
 
 import styles from "./BagList.module.css";
 
@@ -35,7 +35,9 @@ export const BagList = ({ variant }) => {
             {showUpdateQuantityButtons && (
               <DualTitleSection
                 firstTitle={<Remove bagId={item.bagId} />}
-                secondTitle={<Quantity quantity={item.quantity} />}
+                secondTitle={
+                  <UpdateQuantity bagId={item.bagId} inventoryId={item.inventoryId} quantity={item.quantity} />
+                }
                 variant={"regular"}
               />
             )}

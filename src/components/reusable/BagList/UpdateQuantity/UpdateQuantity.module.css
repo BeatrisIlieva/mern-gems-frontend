@@ -1,9 +1,6 @@
-.quantity {
+.update-quantity {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 3rem;
-}
-.icon {
-  color: var(--pink);
 }
