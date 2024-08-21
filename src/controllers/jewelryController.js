@@ -1,12 +1,35 @@
 const router = require("express").Router();
 
+const Category = require("../models/Category");
+const Color = require("../models/Color");
+
 const jewelryManager = require("../managers/jewelryManager");
 
-router.get("/:categoryId", async (req, res) => {
-  const categoryId = Number(req.params.categoryId);
+router.get("/:categoryTitle/:colorTitle", async (req, res) => {
+  const categoryTitle = req.params.categoryTitle;
+
+  const colorTitle = req.params.colorTitle;
+
+
+
+  const category = await Category.findOne({ title: categoryTitle });
+  const categoryId = category._id;
+
+  const color = await Color.findOne({ title: colorTitle });
+
+  const colorId = color._id;
+
+
+  // const { _id: categoryId } = await Category.findOne({ title: categoryTitle })
+  //   .select("_id")
+  //   .lean();
+    
+  // const { _id: colorId } = await Color.findOne({ title: colorTitle })
+  //   .select("_id")
+  //   .lean();
 
   try {
-    const result = await jewelryManager.getAll(categoryId);
+    const result = await jewelryManager.getOne(categoryId, colorId);
 
     res.status(200).json(result);
   } catch (err) {
@@ -17,6 +40,22 @@ router.get("/:categoryId", async (req, res) => {
     });
   }
 });
+
+// router.get("/:categoryId", async (req, res) => {
+//   const categoryId = Number(req.params.categoryId);
+
+//   try {
+//     const result = await jewelryManager.getAll(categoryId);
+
+//     res.status(200).json(result);
+//   } catch (err) {
+//     console.log(err);
+
+//     res.status(401).json({
+//       message: err.message,
+//     });
+//   }
+// });
 
 // router.get("/:jewelryId", async (req, res) => {
 //   const jewelryId = Number(req.params.jewelryId);

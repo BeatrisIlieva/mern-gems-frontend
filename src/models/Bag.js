@@ -14,8 +14,7 @@ const bagSchema = new mongoose.Schema({
   },
 
   size: {
-    type: Number,
-    ref: "Size",
+    type: String,
     required: true,
   },
 

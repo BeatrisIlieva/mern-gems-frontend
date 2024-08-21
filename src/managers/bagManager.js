@@ -13,8 +13,8 @@ const {
   SOLD_OUT_JEWELRY_ERROR_MESSAGE,
 } = require("../constants/bag");
 
-exports.create = async ({ userId, jewelryId, sizeId }) => {
-  const isAvailable = await checkIfItemIsAvailable(jewelryId, sizeId);
+exports.create = async ({ userId, jewelryId, size }) => {
+  const isAvailable = await checkIfItemIsAvailable(jewelryId, size);
 
   if (!isAvailable) {
     throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
@@ -23,12 +23,12 @@ exports.create = async ({ userId, jewelryId, sizeId }) => {
   await Bag.create({
     user: userId,
     jewelry: jewelryId,
-    size: sizeId,
+    size,
     quantity: DEFAULT_ADD_QUANTITY,
   });
 
   await Inventory.findOneAndUpdate(
-    { jewelry: jewelryId, size: sizeId },
+    { jewelry: jewelryId, size },
     { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
     { new: true }
   );

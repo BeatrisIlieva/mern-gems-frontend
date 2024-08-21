@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const Category = require("../models/Category");
-const JewelryCollection = require("../models/JewelryCollection");
 
 const jewelrySchema = new mongoose.Schema({
   _id: {
@@ -29,9 +27,9 @@ const jewelrySchema = new mongoose.Schema({
     required: true,
   },
   
-  miniImage: {
+  color: {
     type: Number,
-    ref: "MiniImage",
+    ref: "Color",
     required: true,
   },
   

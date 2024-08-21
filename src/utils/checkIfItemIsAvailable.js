@@ -1,9 +1,9 @@
 const Inventory = require("../models/Inventory");
 
-exports.checkIfItemIsAvailable = async (jewelryId, sizeId) => {
+exports.checkIfItemIsAvailable = async (jewelryId, size) => {
   const result = await Inventory.findOne({
     jewelry: jewelryId,
-    size: Number(sizeId),
+    size,
     quantity: { $gt: 0 },
   });
 

@@ -8,6 +8,7 @@ const {
 
 router.get("/:userId", async (req, res) => {
   const userId = req.params.userId;
+  console.log(userId)
 
   try {
     const result = await bagManager.getAll(userId);
@@ -23,6 +24,7 @@ router.get("/:userId", async (req, res) => {
 });
 
 router.post("/create/:jewelryId", async (req, res) => {
+  console.log(req.body)
   const { size } = req.body;
 
   const userId = req.user._id;
@@ -34,12 +36,13 @@ router.post("/create/:jewelryId", async (req, res) => {
       throw new Error(NOT_SELECTED_SIZE_ERROR_MESSAGE);
     }
 
-    const sizeId = Number(size);
+    // const sizeId = Number(size);
 
     await bagManager.create({
       userId,
       jewelryId,
-      sizeId,
+      size
+      // sizeId,
     });
 
     res.status(204).json();
