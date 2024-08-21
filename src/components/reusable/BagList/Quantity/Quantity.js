@@ -6,7 +6,7 @@ import styles from "./Quantity.module.css";
 
 export const Quantity = ({ quantity }) => {
   return (
-    <div>
+    <div className={styles["quantity"]}>
       <FontAwesomeIcon icon={faPlus} className={styles["icon"]} />
       {quantity}
       <FontAwesomeIcon icon={faMinus} className={styles["icon"]} />
