@@ -12,7 +12,9 @@ import { deslugify } from "../../../utils/deslugify";
 
 export const Jewelry = () => {
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
+
   const categoryTitle = deslugify(slugifiedCategoryTitle);
+  
   const colorTitle = deslugify(slugifiedColorTitle);
 
   const { jewelriesByCategory } = useJewelry({
