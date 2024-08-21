@@ -40,24 +40,6 @@ exports.getAll = async (userId) => {
   return getAllBagItemsByUserId(user);
 };
 
-// exports.delete = async (bagId) => {
-//   const bagItem = await Bag.findById(bagId);
-
-//   const jewelryId = bagItem.jewelry;
-
-//   const size = bagItem.size;
-
-//   const bagQuantity = bagItem.quantity;
-
-//   await bagItem.deleteOne();
-
-//   await Inventory.findOneAndUpdate(
-//     { jewelry: jewelryId, size },
-//     { $inc: { quantity: +bagQuantity } },
-//     { new: true }
-//   );
-// };
-
 exports.delete = async (bagId, inventoryId) => {
   await Bag.findByIdAndDelete(bagId);
 
