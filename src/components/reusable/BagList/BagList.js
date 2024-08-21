@@ -33,7 +33,7 @@ export const BagList = ({ variant }) => {
               variant={"bolded"}
             />
             <DualTitleSection
-              firstTitle={`Size: ${item.size}`}
+              firstTitle={`Size: ${item.inventorySize}`}
               secondTitle={
                 showRemoveButton ? (
                   <Remove bagId={item.bagId} />
