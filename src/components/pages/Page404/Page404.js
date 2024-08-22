@@ -8,7 +8,7 @@ export const Page404 = () => {
         title={"Sorry, we can’t locate that page."}
         subtitle={"You can continue shopping by exploring the links below"}
       />
-      <Collection/>
+      <Collection />
     </>
   );
 };
