@@ -50,16 +50,6 @@ exports.getAll = async (userId) => {
   return getAllBagItemsByUserId(user);
 };
 
-// exports.delete = async (bagId, inventoryId) => {
-//   await Bag.findByIdAndDelete(bagId);
-
-//   await Inventory.findByIdAndUpdate(
-//     inventoryId,
-//     { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
-//     { new: true }
-//   );
-// };
-
 exports.delete = async (bagId) => {
   const bagItem = await Bag.findById(bagId);
 
