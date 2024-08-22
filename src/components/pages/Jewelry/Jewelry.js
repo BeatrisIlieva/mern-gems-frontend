@@ -6,6 +6,7 @@ import { StockStatus } from "../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form"; 
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { MiniBag } from "./MiniBag/MiniBag";
+import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 
 import styles from "./Jewelry.module.css";
 import { useParams } from "react-router-dom";
@@ -59,9 +60,7 @@ export const Jewelry = () => {
                 }
                 variant={"regular"}
               />
-              <h1 className={styles["title"]}>
-                {jewelriesByCategory[0].title}
-              </h1>
+              <LargeTitle title={jewelriesByCategory[0].title}/> 
               <p className={styles["description"]}>
                 {`${jewelriesByCategory[0].description}.`}
               </p>

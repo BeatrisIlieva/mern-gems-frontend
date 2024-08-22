@@ -33,14 +33,6 @@
   width: calc(50vw - 3rem);
 }
 
-.title {
-  font-size: var(--large);
-  font-family: var(--bold-italic-font-family);
-}
-
-.description {
-}
-
 .mini-images {
   width: 12rem;
 }

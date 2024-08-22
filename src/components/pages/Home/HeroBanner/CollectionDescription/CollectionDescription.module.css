@@ -11,16 +11,7 @@
   font-family: var(--bold-italic-font-family);
 }
 
-.title {
-  font-size: var(--xlarge);
-  text-align: center;
+.inner-wrapper {
   margin: 2rem 0 1rem 0;
   position: relative;
 }
-
-.paragraph {
-  text-align: center;
-  margin: 0 8rem 0 8rem;
-}
-
-

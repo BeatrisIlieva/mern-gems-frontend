@@ -1,3 +1,5 @@
+import { NormalTitle } from "../../../../reusable/NormalTitle/NormalTitle";
+
 import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
 
 import styles from "./Sizes.module.css";
@@ -13,7 +15,7 @@ export const Sizes = ({
       <div className={styles["radio-container"]}>
         {inventories.map((item) => (
           <div key={item.size} className={styles["wrapper"]}>
-            <span>{`$${item.price}`}</span>
+            <NormalTitle title={`$${item.price}`} variant={"bolded"}/>
             <input
               type="radio"
               name={SIZE_FORM_KEY.Size}
