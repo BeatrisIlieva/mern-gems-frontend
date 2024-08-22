@@ -20,7 +20,7 @@ router.get("/:userId", async (req, res) => {
   }
 });
 
-router.post("/create/:jewelryId", async (req, res) => {
+router.post("/add/:jewelryId", async (req, res) => {
   const { size } = req.body;
 
   const userId = req.user._id;
