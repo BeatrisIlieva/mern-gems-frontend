@@ -1,19 +1,19 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../common/StockStatus/StockStatus";
-import { Form } from "./Form/Form"; 
+import { Form } from "./Form/Form";
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { MiniBag } from "./MiniBag/MiniBag";
 import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../reusable/Paragraph/Paragraph";
 
-import styles from "./Jewelry.module.css";
-import { useParams } from "react-router-dom";
-
 import { useJewelry } from "../../../hooks/useJewelry";
 import { deslugify } from "../../../utils/deslugify";
+
+import styles from "./Jewelry.module.css";
 
 export const Jewelry = () => {
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
@@ -61,8 +61,11 @@ export const Jewelry = () => {
                 }
                 variant={"regular"}
               />
-              <LargeTitle title={jewelriesByCategory[0].title}/> 
-              <Paragraph text={`${jewelriesByCategory[0].description}.`} textAlign={"left"}/>
+              <LargeTitle title={jewelriesByCategory[0].title} />
+              <Paragraph
+                text={`${jewelriesByCategory[0].description}.`}
+                textAlign={"left"}
+              />
               <Form
                 jewelriesByCategory={jewelriesByCategory}
                 toggleDisplayPopup={toggleDisplayPopup}
