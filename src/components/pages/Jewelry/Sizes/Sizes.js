@@ -21,7 +21,7 @@ export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
 
   const [selectedSize, setSelectedSize] = useState(null);
 
-  const {add} = useBagContext()
+  const { add } = useBagContext();
 
   const bagService = useService(bagServiceFactory);
 
@@ -43,10 +43,6 @@ export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
       const jewelryId = jewelriesByCategory[0]._id;
 
       await add(size, jewelryId);
-      // await bagService.create(
-      //   { [SIZE_FORM_KEY.Size]: selectedSize },
-      //   jewelriesByCategory[0]._id
-      // );
 
       toggleDisplayPopup();
 
