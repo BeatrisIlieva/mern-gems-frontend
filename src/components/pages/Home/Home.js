@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 
 import { Authentication } from "./Authentication/Authentication";
-import { Collection } from "./Collection/Collection";
+import { HeroBanner } from "./HeroBanner/HeroBanner";
+import { Collection } from "../../common/Collection/Collection";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -17,6 +18,7 @@ export const Home = () => {
   return (
     <>
       {!isAuthenticated && <Authentication />}
+      <HeroBanner />
       <Collection />
     </>
   );

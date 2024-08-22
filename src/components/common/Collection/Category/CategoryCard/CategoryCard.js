@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
-import { LargeImages } from "../../../../../common/LargeImages/LargeImages";
-import { MiniImages } from "../../../../../common/MiniImages/MiniImages";
-import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
+import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
+import { LargeImages } from "../../../LargeImages/LargeImages";
+import { MiniImages } from "../../../MiniImages/MiniImages";
+import { StockStatus } from "../../../StockStatus/StockStatus";
 
-import { slugify } from "../../../../../../utils/slugify";
+import { slugify } from "../../../../../utils/slugify";
 
 import styles from "./CategoryCard.module.css";
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { CategoryCard } from "./CategoryCard/CategoryCard";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
 
-import { useJewelry } from "../../../../../hooks/useJewelry";
+import { useJewelry } from "../../../../hooks/useJewelry";
 
 export const Category = ({ categoryTitle, colorTitle }) => {
   const [selectedColorTitle, setSelectedColorTitle] = useState(colorTitle);
