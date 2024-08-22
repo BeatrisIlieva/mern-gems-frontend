@@ -1,20 +1,14 @@
 import { Button } from "../../Button/Button";
 
-import { useService } from "../../../../hooks/useService";
+import { useBagContext } from "../../../../contexts/BagContext";
 
-import { bagServiceFactory } from "../../../../services/bagService";
-
-export const Remove = ({ bagId}) => {
-  const bagService = useService(bagServiceFactory);
-
-  const removeItem = async () => {
-    await bagService.delete(bagId);
-  };
+export const Remove = ({ bagId }) => {
+  const { remove } = useBagContext();
 
   return (
     <Button
       title={"Remove"}
-      callBackFunction={removeItem}
+      callBackFunction={() => remove(bagId)}
       variant={"underlined"}
     />
   );

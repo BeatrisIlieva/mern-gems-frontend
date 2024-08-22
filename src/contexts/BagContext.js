@@ -148,6 +148,10 @@ export const BagProvider = ({ children }) => {
     setBagTotalQuantity((oldQuantity) => (oldQuantity - 1))
   }
 
+  const remove = async (bagId) => {
+    await bagService.delete(bagId)
+  }
+
   const context = { bagItems, totalPrice, bagTotalQuantity, increase, decrease };
 
   return <BagContext.Provider value={context}>{children}</BagContext.Provider>;
