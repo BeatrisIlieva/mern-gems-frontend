@@ -123,6 +123,8 @@ const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
 
 const { findBagItem } = require("../utils/findBagItem");
+const { updateBagQuantity } = require("../utils/updateBagQuantity");
+const { updateInventoryQuantity } = require("../utils/updateInventoryQuantity");
 
 const {
   getAllBagItemsByUserId,
@@ -132,6 +134,7 @@ const { checkIfItemIsAvailable } = require("../utils/checkIfItemIsAvailable");
 
 const {
   DEFAULT_ADD_QUANTITY,
+  DEFAULT_REMOVE_QUANTITY,
   SOLD_OUT_JEWELRY_ERROR_MESSAGE,
 } = require("../constants/bag");
 
@@ -142,10 +145,10 @@ exports.create = async ({ userId, jewelryId, size }) => {
     throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
   }
 
-  const bagItem = await findBagItem(userId, jewelryId, size)
+  const bagItem = await findBagItem(userId, jewelryId, size);
 
   if (bagItem) {
-
+    await updateBagQuantity(bagItem._id, DEFAULT_ADD_QUANTITY)
   } else {
     await Bag.create({
       user: userId,
@@ -155,11 +158,7 @@ exports.create = async ({ userId, jewelryId, size }) => {
     });
   }
 
-  await Inventory.findOneAndUpdate(
-    { jewelry: jewelryId, size },
-    { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
-    { new: true }
-  );
+
 };
 
 exports.getAll = async (userId) => {
