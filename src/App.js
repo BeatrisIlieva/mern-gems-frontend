@@ -6,7 +6,6 @@ import { Header } from "./components/layout/Header/Header";
 import { Home } from "./components/pages/Home/Home";
 import { Footer } from "./components/layout/Footer/Footer";
 import { Jewelry } from "./components/pages/Jewelry/Jewelry";
-import { JewelryItem } from "./components/pages/JewelryItem/JewelryItem";
 import { Account } from "./components/pages/Account/Account";
 import { Bag } from "./components/pages/Bag/Bag";
 import { Checkout } from "./components/pages/Checkout/Checkout";
@@ -30,14 +29,6 @@ function App() {
             element={
               <RouteGuard>
                 <Jewelry />
-              </RouteGuard>
-            }
-          />
-          <Route
-            path="/:slugifiedCollectionTitle/:slugifiedCategoryTitle/:slugifiedJewelryTitle/:jewelryId"
-            element={
-              <RouteGuard>
-                <JewelryItem />
               </RouteGuard>
             }
           />
