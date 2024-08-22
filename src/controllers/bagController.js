@@ -51,13 +51,39 @@ router.post("/create/:jewelryId", async (req, res) => {
   }
 });
 
-router.delete("/delete/:bagId/:inventoryId", async (req, res) => {
+router.delete("/delete/:bagId", async (req, res) => {
   const bagId = req.params.bagId;
 
-  const inventoryId = req.params.inventoryId;
+  try {
+    await bagManager.delete(bagId);
+
+    res.status(204).json();
+  } catch (err) {
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
+
+router.put("/increase/:bagId", async (req, res) => {
+  const bagId = req.params.bagId;
 
   try {
-    await bagManager.delete(bagId, inventoryId);
+    await bagManager.increase(bagId);
+
+    res.status(204).json();
+  } catch (err) {
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
+
+router.put("/decrease/:bagId", async (req, res) => {
+  const bagId = req.params.bagId;
+
+  try {
+    await bagManager.decrease(bagId);
 
     res.status(204).json();
   } catch (err) {

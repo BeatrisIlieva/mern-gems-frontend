@@ -20,12 +20,22 @@ exports.create = async ({ userId, jewelryId, size }) => {
     throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
   }
 
-  await Bag.create({
-    user: userId,
-    jewelry: jewelryId,
-    size,
-    quantity: DEFAULT_ADD_QUANTITY,
-  });
+  const bagItem = await Bag.findOne({ user: userId, jewelry: jewelryId, size });
+
+  if (bagItem) {
+    await Bag.findByIdAndUpdate(
+      bagItem._id,
+      { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
+      { new: true }
+    );
+  } else {
+    await Bag.create({
+      user: userId,
+      jewelry: jewelryId,
+      size,
+      quantity: DEFAULT_ADD_QUANTITY,
+    });
+  }
 
   await Inventory.findOneAndUpdate(
     { jewelry: jewelryId, size },
@@ -40,12 +50,80 @@ exports.getAll = async (userId) => {
   return getAllBagItemsByUserId(user);
 };
 
-exports.delete = async (bagId, inventoryId) => {
-  await Bag.findByIdAndDelete(bagId);
+// exports.delete = async (bagId, inventoryId) => {
+//   await Bag.findByIdAndDelete(bagId);
 
-  await Inventory.findByIdAndUpdate(
-    inventoryId,
+//   await Inventory.findByIdAndUpdate(
+//     inventoryId,
+//     { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
+//     { new: true }
+//   );
+// };
+
+exports.delete = async (bagId) => {
+  const bagItem = await Bag.findById(bagId);
+
+  const jewelryId = bagItem.jewelry;
+
+  const size = bagItem.size;
+
+  const bagQuantity = bagItem.quantity;
+
+  await bagItem.deleteOne();
+
+  await Inventory.findOneAndUpdate(
+    { jewelry: jewelryId, size },
+    { $inc: { quantity: +bagQuantity } },
+    { new: true }
+  );
+};
+
+exports.decrease = async (bagId) => {
+  const bagItem = await Bag.findById(bagId);
+
+  const jewelryId = bagItem.jewelry;
+
+  const size = bagItem.size;
+
+  if (bagItem.quantity === DEFAULT_ADD_QUANTITY) {
+    await bagItem.deleteOne();
+  } else {
+    await Bag.findByIdAndUpdate(
+      bagId,
+      { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
+      { new: true }
+    );
+  }
+
+  await Inventory.findOneAndUpdate(
+    { jewelry: jewelryId, size },
     { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
+    { new: true }
+  );
+};
+
+exports.increase = async (bagId) => {
+  const bagItem = await Bag.findById(bagId);
+
+  const jewelryId = bagItem.jewelry;
+
+  const size = bagItem.size;
+
+  const isAvailable = await checkIfItemIsAvailable(jewelryId, size);
+
+  if (!isAvailable) {
+    throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
+  }
+
+  await Bag.findByIdAndUpdate(
+    bagId,
+    { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
+    { new: true }
+  );
+
+  await Inventory.findOneAndUpdate(
+    { jewelry: jewelryId, size },
+    { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
     { new: true }
   );
 };
