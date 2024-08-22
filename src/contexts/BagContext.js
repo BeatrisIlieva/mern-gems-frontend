@@ -1,6 +1,9 @@
 import { useState, useEffect, createContext, useContext } from "react";
+
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
+
 import { useService } from "../hooks/useService";
+
 import { bagServiceFactory } from "../services/bagService";
 
 export const BagContext = createContext();
@@ -9,7 +12,9 @@ export const BagProvider = ({ children }) => {
   const { userId } = useAuthenticationContext();
 
   const [bagItems, setBagItems] = useState([]);
+
   const [totalPrice, setTotalPrice] = useState(0);
+
   const [bagTotalQuantity, setBagTotalQuantity] = useState(0);
 
   const bagService = useService(bagServiceFactory);
