@@ -122,7 +122,10 @@ const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
 
-const { findBagItemByUser, findBagItemsByBagId } = require("../utils/findBagItem");
+const {
+  findBagItemByUser,
+  findBagItemsByBagId,
+} = require("../utils/findBagItem");
 const { updateBagQuantity } = require("../utils/updateBagQuantity");
 const { updateInventoryQuantity } = require("../utils/updateInventoryQuantity");
 
@@ -168,17 +171,13 @@ exports.getAll = async (userId) => {
 };
 
 exports.delete = async (bagId) => {
-  const bagItems = await findBagItemsByBagId(bagId);
-
-
+  const { bagItem, jewelryId, size, bagQuantity } = await findBagItemsByBagId(
+    bagId
+  );
 
   await bagItem.deleteOne();
 
-  await Inventory.findOneAndUpdate(
-    { jewelry: jewelryId, size },
-    { $inc: { quantity: +bagQuantity } },
-    { new: true }
-  );
+  await updateInventoryQuantity(jewelryId, size, bagQuantity);
 };
 
 exports.decrease = async (bagId) => {

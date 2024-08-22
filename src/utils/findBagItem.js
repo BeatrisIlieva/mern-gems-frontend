@@ -5,7 +5,7 @@ exports.findBagItemByUser = async (user, jewelry, size) => {
 };
 
 exports.findBagItemsByBagId = async (bagId) => {
-  const bagItem = await Bag.findOne({ user, jewelry, size });
+  const bagItem = await Bag.findById(bagId);
 
   const jewelryId = bagItem.jewelry;
 
