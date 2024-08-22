@@ -134,9 +134,21 @@ export const BagProvider = ({ children }) => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userId, bagService]);
+  }, [userId, bagService, bagTotalQuantity]);
 
-  const context = { bagItems, totalPrice, bagTotalQuantity };
+  const increase = async (bagId) => {
+    await bagService.increase(bagId);
+
+    setBagTotalQuantity((oldQuantity) => (oldQuantity + 1))
+  }
+
+  const decrease = async (bagId) => {
+    await bagService.decrease(bagId);
+
+    setBagTotalQuantity((oldQuantity) => (oldQuantity - 1))
+  }
+
+  const context = { bagItems, totalPrice, bagTotalQuantity, increase, decrease };
 
   return <BagContext.Provider value={context}>{children}</BagContext.Provider>;
 };

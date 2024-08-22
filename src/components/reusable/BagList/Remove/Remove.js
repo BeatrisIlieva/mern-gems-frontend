@@ -4,11 +4,11 @@ import { useService } from "../../../../hooks/useService";
 
 import { bagServiceFactory } from "../../../../services/bagService";
 
-export const Remove = ({ bagId, inventoryId }) => {
+export const Remove = ({ bagId}) => {
   const bagService = useService(bagServiceFactory);
 
   const removeItem = async () => {
-    await bagService.delete(bagId, inventoryId);
+    await bagService.delete(bagId);
   };
 
   return (

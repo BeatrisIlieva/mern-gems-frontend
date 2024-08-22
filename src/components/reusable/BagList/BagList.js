@@ -6,6 +6,8 @@ import { Remove } from "./Remove/Remove";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
+import { Quantity } from "./Quantity/Quantity";
+
 import styles from "./BagList.module.css";
 
 export const BagList = ({ variant }) => {
@@ -30,11 +32,12 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
+            <Quantity bagId={item.bagId} quantity={item.quantity}/>
             <DualTitleSection
               firstTitle={`Size: ${item.size}`}
               secondTitle={
                 displayRemoveButton ? (
-                  <Remove bagId={item.bagId} inventoryId={item.inventoryId} />
+                  <Remove bagId={item.bagId} />
                 ) : (
                   `Qty ${item.quantity}`
                 )
