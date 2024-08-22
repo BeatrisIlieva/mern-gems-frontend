@@ -1,9 +1,13 @@
-
 import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
 
 import styles from "./Sizes.module.css";
 
-export const Sizes = ({inventories, errorMessage, changeHandler, selectedSize}) => {
+export const Sizes = ({
+  inventories,
+  errorMessage,
+  changeHandler,
+  selectedSize,
+}) => {
   return (
     <div className={styles["size-wrapper"]}>
       <div className={styles["radio-container"]}>
