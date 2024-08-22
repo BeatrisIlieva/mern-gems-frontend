@@ -10,6 +10,8 @@ import { bagServiceFactory } from "../../../../services/bagService";
 
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
+import { useBagContext } from "../../../../contexts/BagContext";
+
 import styles from "./Sizes.module.css";
 
 export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
@@ -18,6 +20,8 @@ export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const inventories = jewelriesByCategory[0].inventories;
 
   const [selectedSize, setSelectedSize] = useState(null);
+
+  const {add} = useBagContext()
 
   const bagService = useService(bagServiceFactory);
 
@@ -35,12 +39,16 @@ export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     }
 
     try {
-      await bagService.create(
-        { [SIZE_FORM_KEY.Size]: selectedSize },
-        jewelriesByCategory[0]._id
-      );
-      console.log(selectedSize)
-      toggleDisplayPopup()
+      const size = { [SIZE_FORM_KEY.Size]: selectedSize };
+      const jewelryId = jewelriesByCategory[0]._id;
+
+      await add(size, jewelryId);
+      // await bagService.create(
+      //   { [SIZE_FORM_KEY.Size]: selectedSize },
+      //   jewelriesByCategory[0]._id
+      // );
+
+      toggleDisplayPopup();
 
       setSelectedSize(null);
     } catch (err) {

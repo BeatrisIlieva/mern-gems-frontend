@@ -136,6 +136,10 @@ export const BagProvider = ({ children }) => {
       });
   }, [userId, bagService, bagTotalQuantity]);
 
+  const add = async (size, jewelryId) => {
+    await bagService.add(size, jewelryId)
+  }
+
   const increase = async (bagId) => {
     await bagService.increase(bagId);
 
@@ -152,7 +156,7 @@ export const BagProvider = ({ children }) => {
     await bagService.delete(bagId)
   }
 
-  const context = { bagItems, totalPrice, bagTotalQuantity, increase, decrease };
+  const context = { bagItems, totalPrice, bagTotalQuantity, increase, decrease, remove, add };
 
   return <BagContext.Provider value={context}>{children}</BagContext.Provider>;
 };
