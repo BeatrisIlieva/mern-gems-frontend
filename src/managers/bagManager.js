@@ -122,7 +122,7 @@ const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
 
-const { findBagItemByUserId } = require("../utils/findBagItemByUserId");
+const { findBagItem } = require("../utils/findBagItem");
 
 const {
   getAllBagItemsByUserId,
@@ -141,6 +141,8 @@ exports.create = async ({ userId, jewelryId, size }) => {
   if (!isAvailable) {
     throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
   }
+
+  const bagItem = await findBagItem(userId, jewelryId, size)
 
   if (bagItem) {
     await Bag.findByIdAndUpdate(
