@@ -3,7 +3,7 @@ import { useState } from "react";
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../common/StockStatus/StockStatus";
-import { Sizes } from "./Sizes/Sizes";
+import { Form } from "./Form/Form"; 
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { MiniBag } from "./MiniBag/MiniBag";
 
@@ -65,7 +65,7 @@ export const Jewelry = () => {
               <p className={styles["description"]}>
                 {`${jewelriesByCategory[0].description}.`}
               </p>
-              <Sizes
+              <Form
                 jewelriesByCategory={jewelriesByCategory}
                 toggleDisplayPopup={toggleDisplayPopup}
               />

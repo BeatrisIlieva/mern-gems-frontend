@@ -1,3 +1,5 @@
+import { Sizes } from "./Sizes/Sizes";
+
 import { useState, useEffect } from "react";
 
 import { Button } from "../../../reusable/Button/Button";
@@ -7,9 +9,9 @@ import { useBagContext } from "../../../../contexts/BagContext";
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
 
-import styles from "./Sizes.module.css";
+import styles from "./Form.module.css";
 
-export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
+export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const inventories = jewelriesByCategory[0].inventories;
@@ -22,6 +24,12 @@ export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     setSelectedSize(null);
     setErrorMessage(null);
   }, [jewelriesByCategory[0].color]);
+
+  const changeHandler = (e) => {
+    setSelectedSize(e.target.value);
+
+    setErrorMessage("");
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -45,38 +53,14 @@ export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     }
   };
 
-  const changeHandler = (e) => {
-    setSelectedSize(e.target.value);
-
-    setErrorMessage("");
-  };
-
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
-      <div className={styles["size-wrapper"]}>
-        <div className={styles["radio-container"]}>
-          {inventories.map((item) => (
-            <div key={item.size} className={styles["wrapper"]}>
-              <span>{`$${item.price}`}</span>
-              <input
-                type="radio"
-                name={SIZE_FORM_KEY.Size}
-                id={item.size}
-                value={item.size}
-                onChange={changeHandler}
-                onClick={changeHandler}
-                checked={item.size === selectedSize}
-                disabled={item.quantity === 0}
-              />
-              <label className={styles["label"]} htmlFor={item.size}>
-                {item.size}
-              </label>
-              <div className={styles["quantity"]}></div>
-            </div>
-          ))}
-        </div>
-        <div className={styles["error-message"]}>{errorMessage}</div>
-      </div>
+      <Sizes
+        inventories={inventories}
+        errorMessage={errorMessage}
+        changeHandler={changeHandler}
+        selectedSize={selectedSize}
+      />
       <Button variant={"pink"} title={"Add To Bag"} />
     </form>
   );
