@@ -1,21 +1,14 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../LargeImages/LargeImages";
 import { MiniImages } from "../../../MiniImages/MiniImages";
 import { StockStatus } from "../../../StockStatus/StockStatus";
 
-import { slugify } from "../../../../../utils/slugify";
-
 import styles from "./CategoryCard.module.css";
 
 export const CategoryCard = ({ jewelriesByCategory, updateColorTitle }) => {
-
-
   const [articleIsHovered, setArticleIsHovered] = useState(false);
-
-
 
   return (
     <article
@@ -32,10 +25,11 @@ export const CategoryCard = ({ jewelriesByCategory, updateColorTitle }) => {
         secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
         variant={"regular"}
       />
-      
-        <LargeImages jewelriesByCategory={jewelriesByCategory} />
-     
-      <MiniImages jewelriesByCategory={jewelriesByCategory} updateColorTitle={updateColorTitle}/>
+      <LargeImages jewelriesByCategory={jewelriesByCategory} />
+      <MiniImages
+        jewelriesByCategory={jewelriesByCategory}
+        updateColorTitle={updateColorTitle}
+      />
     </article>
   );
 };
