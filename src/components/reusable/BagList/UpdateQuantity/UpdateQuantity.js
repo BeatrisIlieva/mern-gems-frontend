@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./Quantity.module.css";
+import styles from "./UpdateQuantity.module.css";
 
-export const Quantity = ({ bagId, bagQuantity, inventoryQuantity }) => {
+export const UpdateQuantity = ({ bagId, bagQuantity, inventoryQuantity }) => {
   const { increase, decrease } = useBagContext();
 
   return (

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { JewelryCard } from "../../common/JewelryCard/JewelryCard";
 import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
-import { Quantity } from "./Quantity/Quantity";
+import { UpdateQuantity } from "./UpdateQuantity/UpdateQuantity";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
@@ -42,7 +42,7 @@ export const BagList = ({ variant }) => {
               }
               secondTitle={
                 displayUpdateQuantityButtons ? (
-                  <Quantity
+                  <UpdateQuantity
                     bagId={item.bagId}
                     bagQuantity={item.quantity}
                     inventoryQuantity={item.inventoryQuantity}
