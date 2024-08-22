@@ -75,7 +75,7 @@ p {
 }
 
 :root {
-  --small: 0.8125rem;
+  --small: 0.75rem;
   --normal: 0.875rem;
   --medium: 1rem;
   --large: 1.375rem;

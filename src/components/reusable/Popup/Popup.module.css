@@ -24,7 +24,7 @@
   border-block-start: 1px solid var(--medium-pink);
   position: relative;
   transition: opacity 0.8s ease, transform 0.8s ease;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .modal.large,
@@ -36,11 +36,11 @@
 }
 
 .modal.large {
-  width: 560px;
+  width: 38rem;
 }
 
 .modal.small {
-  width: 280px;
+  width: 20rem;
 }
 
 .modal.authentication {
