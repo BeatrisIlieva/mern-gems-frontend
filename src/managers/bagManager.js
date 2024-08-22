@@ -145,11 +145,7 @@ exports.create = async ({ userId, jewelryId, size }) => {
   const bagItem = await findBagItem(userId, jewelryId, size)
 
   if (bagItem) {
-    await Bag.findByIdAndUpdate(
-      bagItem._id,
-      { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
-      { new: true }
-    );
+
   } else {
     await Bag.create({
       user: userId,
