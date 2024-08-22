@@ -13,7 +13,7 @@ import styles from "./BagList.module.css";
 export const BagList = ({ variant }) => {
   const location = useLocation();
 
-  const displayRemoveButton =
+  const displayUpdateQuantityButtons =
     location.pathname !== "/checkout" && location.pathname !== "/payment";
 
   const { bagItems } = useBagContext();
@@ -32,12 +32,22 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
-            <Quantity bagId={item.bagId} bagQuantity={item.quantity} inventoryQuantity={item.inventoryQuantity}/>
+            {displayUpdateQuantityButtons && <span>Size: {item.size}</span>}
             <DualTitleSection
-              firstTitle={`Size: ${item.size}`}
-              secondTitle={
-                displayRemoveButton ? (
+              firstTitle={
+                displayUpdateQuantityButtons ? (
                   <Remove bagId={item.bagId} />
+                ) : (
+                  `Size: ${item.size}`
+                )
+              }
+              secondTitle={
+                displayUpdateQuantityButtons ? (
+                  <Quantity
+                    bagId={item.bagId}
+                    bagQuantity={item.quantity}
+                    inventoryQuantity={item.inventoryQuantity}
+                  />
                 ) : (
                   `Qty ${item.quantity}`
                 )
