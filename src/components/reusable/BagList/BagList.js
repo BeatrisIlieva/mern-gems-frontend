@@ -32,7 +32,7 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
-            <Quantity bagId={item.bagId} quantity={item.quantity}/>
+            <Quantity bagId={item.bagId} bagQuantity={item.quantity} inventoryQuantity={item.inventoryQuantity}/>
             <DualTitleSection
               firstTitle={`Size: ${item.size}`}
               secondTitle={
