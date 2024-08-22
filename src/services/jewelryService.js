@@ -12,9 +12,5 @@ export const jewelryServiceFactory = (token) => {
 
     getOne: (categoryTitle, colorTitle) =>
       request.get(`${baseUrl}/${categoryTitle}/${colorTitle}`),
-    // getOne: (jewelryId) => request.get(`${baseUrl}/${jewelryId}`),
-
-    // getAll: (collectionId, categoryId, skip, limit) =>
-    //   request.get(`${baseUrl}/${collectionId}/${categoryId}/${skip}/${limit}`),
   };
 };
