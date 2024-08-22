@@ -191,11 +191,7 @@ exports.decrease = async (bagId) => {
     await updateBagQuantity(bagItem._id, DEFAULT_REMOVE_QUANTITY);
   }
 
-  await Inventory.findOneAndUpdate(
-    { jewelry: jewelryId, size },
-    { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
-    { new: true }
-  );
+  await updateInventoryQuantity(jewelryId, size, DEFAULT_ADD_QUANTITY);
 };
 
 exports.increase = async (bagId) => {
