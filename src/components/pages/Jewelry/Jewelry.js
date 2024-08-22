@@ -41,7 +41,7 @@ export const Jewelry = () => {
           <section id={styles["jewelry"]}>
             <div className={styles["image-container"]}>
               <div className={styles["image"]}>
-                <LargeImages jewelriesByCategory={jewelriesByCategory} />
+                <LargeImages jewelriesByCategory={jewelriesByCategory} circleIconsPosition={"bottom"}/>
               </div>
             </div>
             <div className={styles["info-and-action-container"]}>
@@ -67,7 +67,7 @@ export const Jewelry = () => {
                 toggleDisplayPopup={toggleDisplayPopup}
               />
             </div>
-          </section>pindex
+          </section>
         </>
       )}
     </>

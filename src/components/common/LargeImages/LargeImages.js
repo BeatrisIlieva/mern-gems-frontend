@@ -8,7 +8,7 @@ import { slugify } from "../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ jewelriesByCategory }) => {
+export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const location = useLocation();
@@ -48,7 +48,7 @@ export const LargeImages = ({ jewelriesByCategory }) => {
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
         firstImageUrl={jewelriesByCategory[0].firstImageUrl}
         secondImageUrl={jewelriesByCategory[0].secondImageUrl}
-        variant={locationIsHomePage ? "top" : "bottom"}
+        variant={circleIconsPosition}
       />
       <div onClick={clickHandler}>
         <LargeImage
