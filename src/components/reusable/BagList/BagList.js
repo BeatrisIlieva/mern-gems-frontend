@@ -3,10 +3,9 @@ import { useLocation } from "react-router-dom";
 import { JewelryCard } from "../../common/JewelryCard/JewelryCard";
 import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
+import { Quantity } from "./Quantity/Quantity";
 
 import { useBagContext } from "../../../contexts/BagContext";
-
-import { Quantity } from "./Quantity/Quantity";
 
 import styles from "./BagList.module.css";
 
