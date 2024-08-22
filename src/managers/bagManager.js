@@ -195,11 +195,9 @@ exports.decrease = async (bagId) => {
 };
 
 exports.increase = async (bagId) => {
-  const bagItem = await Bag.findById(bagId);
-
-  const jewelryId = bagItem.jewelry;
-
-  const size = bagItem.size;
+  const { bagItem, jewelryId, size, bagQuantity } = await findBagItemsByBagId(
+    bagId
+  );
 
   const isAvailable = await checkIfItemIsAvailable(jewelryId, size);
 
@@ -207,15 +205,7 @@ exports.increase = async (bagId) => {
     throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
   }
 
-  await Bag.findByIdAndUpdate(
-    bagId,
-    { $inc: { quantity: +DEFAULT_ADD_QUANTITY } },
-    { new: true }
-  );
+  await updateBagQuantity(bagItem._id, DEFAULT_ADD_QUANTITY);
 
-  await Inventory.findOneAndUpdate(
-    { jewelry: jewelryId, size },
-    { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
-    { new: true }
-  );
+  await updateInventoryQuantity(jewelryId, size, DEFAULT_REMOVE_QUANTITY);
 };
