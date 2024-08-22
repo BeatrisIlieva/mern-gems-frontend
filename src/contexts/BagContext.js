@@ -134,7 +134,7 @@ export const BagProvider = ({ children }) => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userId, bagService, bagTotalQuantity]);
+  }, [userId, bagService]);
 
   const add = async (size, jewelryId) => {
     await bagService.add(size, jewelryId)
@@ -142,14 +142,10 @@ export const BagProvider = ({ children }) => {
 
   const increase = async (bagId) => {
     await bagService.increase(bagId);
-
-    setBagTotalQuantity((oldQuantity) => (oldQuantity + 1))
   }
 
   const decrease = async (bagId) => {
     await bagService.decrease(bagId);
-
-    setBagTotalQuantity((oldQuantity) => (oldQuantity - 1))
   }
 
   const remove = async (bagId) => {
