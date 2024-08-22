@@ -32,13 +32,10 @@ router.post("/add/:jewelryId", async (req, res) => {
       throw new Error(NOT_SELECTED_SIZE_ERROR_MESSAGE);
     }
 
-    // const sizeId = Number(size);
-
     await bagManager.create({
       userId,
       jewelryId,
       size,
-      // sizeId,
     });
 
     res.status(204).json();
