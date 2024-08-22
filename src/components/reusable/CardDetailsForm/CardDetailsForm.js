@@ -30,7 +30,7 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
   const { userId } = useAuthenticationContext();
 
-  const { totalPrice, clearShoppingBag } = useBagContext();
+  const { totalPrice} = useBagContext();
 
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
 
@@ -88,8 +88,6 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
           popupCloseHandler();
         } else {
           await paymentService.create(userId, data);
-
-          clearShoppingBag();
 
           navigate("/order-confirmation");
         }

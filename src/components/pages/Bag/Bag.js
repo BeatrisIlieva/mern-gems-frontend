@@ -1,13 +1,35 @@
-import { NonEmptyBag } from "./NonEmptyBag/NonEmptyBag";
-import { EmptyBag } from "./EmptyBag/EmptyBag";
+import { Link } from "react-router-dom";
 
-import { useBag } from "../../../hooks/useBag";
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
+import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
+import { BagList } from "../../reusable/BagList/BagList";
+import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
+import { Button } from "../../reusable/Button/Button";
+
+import styles from "./Bag.module.css";
+
+import { useBagContext } from "../../../contexts/BagContext";
 
 export const Bag = () => {
+  const { bagTotalQuantity } = useBagContext();
 
-
-  const { bagTotalQuantity } = useBag();
-
-  return <>{bagTotalQuantity > 0 ? <NonEmptyBag /> : <EmptyBag />}</>;
+  return (
+    <ShoppingProcessContainer title={"Bag"}>
+    <ChildWrapper>
+      <BagList />
+    </ChildWrapper>
+    <ChildWrapper>
+      <>
+        <OrderSummary />
+        <Link to={"/checkout"} className={styles["no-decoration"]}>
+          <Button
+            title={"Continue Checkout"}
+            buttonIsDisabled={false}
+            variant={"pink"}
+          />
+        </Link>
+      </>
+    </ChildWrapper>
+  </ShoppingProcessContainer>
+  )
 };
