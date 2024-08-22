@@ -1,5 +1,12 @@
 .paragraph {
-  text-align: center;
   color: var(--gray);
-  margin: 0px 40px 30px 40px;
+}
+
+.paragraph.left {
+  text-align: left;
+}
+
+.paragraph.center {
+  text-align: center;
+  margin: 0rem 4rem;
 }
