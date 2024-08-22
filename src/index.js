@@ -8,7 +8,6 @@ import App from "./App";
 
 import { AuthenticationProvider } from "./contexts/AuthenticationContext";
 import { BagProvider } from "./contexts/BagContext";
-import { JewelryItemProvider } from "./contexts/JewelryItemContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -16,11 +15,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthenticationProvider>
-        <JewelryItemProvider>
-          <BagProvider>
-            <App />
-          </BagProvider>
-        </JewelryItemProvider>
+        <BagProvider>
+          <App />
+        </BagProvider>
       </AuthenticationProvider>
     </Router>
   </React.StrictMode>

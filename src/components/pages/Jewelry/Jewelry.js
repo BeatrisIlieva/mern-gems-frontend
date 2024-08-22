@@ -67,7 +67,7 @@ export const Jewelry = () => {
                 toggleDisplayPopup={toggleDisplayPopup}
               />
             </div>
-          </section>
+          </section>pindex
         </>
       )}
     </>
