@@ -5,6 +5,7 @@ import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
 import { BagList } from "../../reusable/BagList/BagList";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { Button } from "../../reusable/Button/Button";
+import { Collection } from "../../common/Collection/Collection";
 
 import styles from "./Bag.module.css";
 
@@ -14,22 +15,28 @@ export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
 
   return (
-    <ShoppingProcessContainer title={"Bag"}>
-    <ChildWrapper>
-      <BagList />
-    </ChildWrapper>
-    <ChildWrapper>
-      <>
-        <OrderSummary />
-        <Link to={"/checkout"} className={styles["no-decoration"]}>
-          <Button
-            title={"Continue Checkout"}
-            buttonIsDisabled={false}
-            variant={"pink"}
-          />
-        </Link>
-      </>
-    </ChildWrapper>
-  </ShoppingProcessContainer>
-  )
+    <>
+      {bagTotalQuantity === 0 ? (
+        <Collection />
+      ) : (
+        <ShoppingProcessContainer title={"Bag"}>
+          <ChildWrapper>
+            <BagList />
+          </ChildWrapper>
+          <ChildWrapper>
+            <>
+              <OrderSummary />
+              <Link to={"/checkout"} className={styles["no-decoration"]}>
+                <Button
+                  title={"Continue Checkout"}
+                  buttonIsDisabled={false}
+                  variant={"pink"}
+                />
+              </Link>
+            </>
+          </ChildWrapper>
+        </ShoppingProcessContainer>
+      )}
+    </>
+  );
 };
