@@ -1,7 +1,6 @@
-import { Sizes } from "./Sizes/Sizes";
-
 import { useState, useEffect } from "react";
 
+import { Sizes } from "./Sizes/Sizes";
 import { Button } from "../../../reusable/Button/Button";
 
 import { useBagContext } from "../../../../contexts/BagContext";
