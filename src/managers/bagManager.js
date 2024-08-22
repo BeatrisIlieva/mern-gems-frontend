@@ -122,7 +122,7 @@ const Bag = require("../models/Bag");
 const Inventory = require("../models/Inventory");
 const UserLoginDetails = require("../models/UserLoginDetails");
 
-const { findBagItem } = require("../utils/findBagItem");
+const { findBagItemByUser, findBagItemsByBagId } = require("../utils/findBagItem");
 const { updateBagQuantity } = require("../utils/updateBagQuantity");
 const { updateInventoryQuantity } = require("../utils/updateInventoryQuantity");
 
@@ -145,10 +145,10 @@ exports.create = async ({ userId, jewelryId, size }) => {
     throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
   }
 
-  const bagItem = await findBagItem(userId, jewelryId, size);
+  const bagItem = await findBagItemByUser(userId, jewelryId, size);
 
   if (bagItem) {
-    await updateBagQuantity(bagItem._id, DEFAULT_ADD_QUANTITY)
+    await updateBagQuantity(bagItem._id, DEFAULT_ADD_QUANTITY);
   } else {
     await Bag.create({
       user: userId,
@@ -158,7 +158,7 @@ exports.create = async ({ userId, jewelryId, size }) => {
     });
   }
 
-
+  await updateInventoryQuantity(jewelryId, size, DEFAULT_REMOVE_QUANTITY);
 };
 
 exports.getAll = async (userId) => {
@@ -168,13 +168,9 @@ exports.getAll = async (userId) => {
 };
 
 exports.delete = async (bagId) => {
-  const bagItem = await Bag.findById(bagId);
+  const bagItems = await findBagItemsByBagId(bagId);
 
-  const jewelryId = bagItem.jewelry;
 
-  const size = bagItem.size;
-
-  const bagQuantity = bagItem.quantity;
 
   await bagItem.deleteOne();
 
