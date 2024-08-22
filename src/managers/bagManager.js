@@ -181,20 +181,14 @@ exports.delete = async (bagId) => {
 };
 
 exports.decrease = async (bagId) => {
-  const bagItem = await Bag.findById(bagId);
+  const { bagItem, jewelryId, size, bagQuantity } = await findBagItemsByBagId(
+    bagId
+  );
 
-  const jewelryId = bagItem.jewelry;
-
-  const size = bagItem.size;
-
-  if (bagItem.quantity === DEFAULT_ADD_QUANTITY) {
+  if (bagQuantity === DEFAULT_ADD_QUANTITY) {
     await bagItem.deleteOne();
   } else {
-    await Bag.findByIdAndUpdate(
-      bagId,
-      { $inc: { quantity: -DEFAULT_ADD_QUANTITY } },
-      { new: true }
-    );
+    await updateBagQuantity(bagItem._id, DEFAULT_REMOVE_QUANTITY);
   }
 
   await Inventory.findOneAndUpdate(
