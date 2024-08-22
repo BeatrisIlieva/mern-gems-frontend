@@ -4,10 +4,6 @@ import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
 
 import { Button } from "../../../reusable/Button/Button";
 
-import { useService } from "../../../../hooks/useService";
-
-import { bagServiceFactory } from "../../../../services/bagService";
-
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 
 import { useBagContext } from "../../../../contexts/BagContext";
@@ -22,8 +18,6 @@ export const Sizes = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const [selectedSize, setSelectedSize] = useState(null);
 
   const { add } = useBagContext();
-
-  const bagService = useService(bagServiceFactory);
 
   useEffect(() => {
     setSelectedSize(null);
