@@ -6,6 +6,7 @@ import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSe
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Popup } from "../../../reusable/Popup/Popup";
 import { Collection } from "../../../common/Collection/Collection";
+import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
@@ -29,7 +30,13 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       <section className={styles["mini-bag"]}>
         <LargeTitle title={"My Bag"} textAlight={"align-left"} />
         {bagTotalQuantity === 0 ? (
-          <Collection />
+          <>
+            <InfoMessage
+              title={"Your Shopping Bag Is Empty"}
+              subtitle={"Explore and add something you love."}
+            />
+            <Collection />
+          </>
         ) : (
           <>
             <BagList variant={"mini"} />

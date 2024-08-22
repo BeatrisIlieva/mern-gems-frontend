@@ -6,6 +6,7 @@ import { BagList } from "../../reusable/BagList/BagList";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { Button } from "../../reusable/Button/Button";
 import { Collection } from "../../common/Collection/Collection";
+import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
 
 import styles from "./Bag.module.css";
 
@@ -17,7 +18,13 @@ export const Bag = () => {
   return (
     <>
       {bagTotalQuantity === 0 ? (
-        <Collection />
+        <>
+          <InfoMessage
+            title={"Your Shopping Bag Is Empty"}
+            subtitle={"Explore and add something you love."}
+          />
+          <Collection />
+        </>
       ) : (
         <ShoppingProcessContainer title={"Bag"}>
           <ChildWrapper>
