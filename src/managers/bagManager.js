@@ -170,14 +170,20 @@ exports.getAll = async (userId) => {
   return getAllBagItemsByUserId(user);
 };
 
-exports.delete = async (bagId) => {
+exports.increase = async (bagId) => {
   const { bagItem, jewelryId, size, bagQuantity } = await findBagItemsByBagId(
     bagId
   );
 
-  await bagItem.deleteOne();
+  const isAvailable = await checkIfItemIsAvailable(jewelryId, size);
 
-  await updateInventoryQuantity(jewelryId, size, bagQuantity);
+  if (!isAvailable) {
+    throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
+  }
+
+  await updateBagQuantity(bagItem._id, DEFAULT_ADD_QUANTITY);
+
+  await updateInventoryQuantity(jewelryId, size, DEFAULT_REMOVE_QUANTITY);
 };
 
 exports.decrease = async (bagId) => {
@@ -194,18 +200,12 @@ exports.decrease = async (bagId) => {
   await updateInventoryQuantity(jewelryId, size, DEFAULT_ADD_QUANTITY);
 };
 
-exports.increase = async (bagId) => {
+exports.delete = async (bagId) => {
   const { bagItem, jewelryId, size, bagQuantity } = await findBagItemsByBagId(
     bagId
   );
 
-  const isAvailable = await checkIfItemIsAvailable(jewelryId, size);
+  await bagItem.deleteOne();
 
-  if (!isAvailable) {
-    throw new Error(SOLD_OUT_JEWELRY_ERROR_MESSAGE);
-  }
-
-  await updateBagQuantity(bagItem._id, DEFAULT_ADD_QUANTITY);
-
-  await updateInventoryQuantity(jewelryId, size, DEFAULT_REMOVE_QUANTITY);
+  await updateInventoryQuantity(jewelryId, size, bagQuantity);
 };
