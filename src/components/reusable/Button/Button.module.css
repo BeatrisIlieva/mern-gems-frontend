@@ -8,11 +8,11 @@
   cursor: pointer;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
-  padding: 1rem;
+  padding: 0.75rem;
   width: 100%;
   justify-content: center;
   display: flex;
-  transition: background-color 300ms linear, color 300ms;
+  transition: background-color 300ms linear, color 300ms, box-shadow 300ms;
   border-radius: 2rem;
 }
 
@@ -47,6 +47,7 @@
 .button.animated:hover {
   background: var(--gray);
   color: var(--white);
+  box-shadow: 0 0 0 1px var(--white);
 }
 
 .button.underlined {

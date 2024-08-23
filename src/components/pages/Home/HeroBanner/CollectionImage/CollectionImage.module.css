@@ -1,6 +1,6 @@
 .thumbnail {
   width: 100vw;
-  height: calc(100vh - 10.313rem);
+  height: calc(100vh - 11.313rem);
   position: relative;
   display: flex;
   flex-direction: column;

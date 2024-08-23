@@ -11,7 +11,7 @@ export const CollectionDescription = () => {
   return (
     <div className={styles["description-wrapper"]}>
       <div className={styles["collection-description"]}>
-        <MiniImage
+        {/* <MiniImage
           imageUrl={IMAGE_BY_URL_AND_VARIANT.pink.imageUrl}
           variant={IMAGE_BY_URL_AND_VARIANT.pink.variant}
           waveEffect={IMAGE_BY_URL_AND_VARIANT.pink.waveEffect}
@@ -20,7 +20,7 @@ export const CollectionDescription = () => {
           imageUrl={IMAGE_BY_URL_AND_VARIANT.blue.imageUrl}
           variant={IMAGE_BY_URL_AND_VARIANT.blue.variant}
           waveEffect={IMAGE_BY_URL_AND_VARIANT.blue.waveEffect}
-        />
+        /> */}
         <div className={styles["wrapper"]}>
           <div className={styles["inner-wrapper"]}>
             <MiniImage
