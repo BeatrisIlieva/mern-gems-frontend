@@ -42,6 +42,7 @@
   background: var(--white);
   color: var(--medium-gray);
   width: 30%;
+  box-shadow: 0 0 0 1px var(--medium-gray);
 }
 
 .button.animated:hover {
