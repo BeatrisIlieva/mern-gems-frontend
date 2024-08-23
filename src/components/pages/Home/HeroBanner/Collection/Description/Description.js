@@ -1,13 +1,13 @@
-import { MiniImage } from "../MiniImage/MiniImage";
-import { Paragraph } from "../../../../reusable/Paragraph/Paragraph";
-import { XLargeTitle } from "../../../../reusable/XLargeTitle/XLargeTitle";
+import { MiniImage } from "../../MiniImage/MiniImage";
+import { Paragraph } from "../../../../../reusable/Paragraph/Paragraph";
+import { XLargeTitle } from "../../../../../reusable/XLargeTitle/XLargeTitle";
 
-import { IMAGE_BY_URL_AND_VARIANT } from "../constants/imagesByUrlAndVariant";
-import { Button } from "../../../../reusable/Button/Button";
+import { IMAGE_BY_URL_AND_VARIANT } from "../../constants/imagesByUrlAndVariant";
+import { Button } from "../../../../../reusable/Button/Button";
 
-import styles from "./CollectionDescription.module.css";
+import styles from "./Description.module.css";
 
-export const CollectionDescription = () => {
+export const Description = () => {
   return (
     <div className={styles["description-wrapper"]}>
       <div className={styles["collection-description"]}>
