@@ -11,7 +11,7 @@ export const useIsTransitioning = () => {
 
     const timeout = setTimeout(() => {
       setIsTransitioning(false);
-    }, 400);
+    }, 600);
 
     return () => clearTimeout(timeout);
   }, [location.pathname]);
