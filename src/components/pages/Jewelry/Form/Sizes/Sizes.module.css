@@ -1,23 +1,32 @@
-.size-wrapper {
+.size-wrapper,
+.radio-container,
+.wrapper,
+.label,
+.error-message {
   display: flex;
+}
+
+.size-wrapper {
   flex-direction: column;
 }
 
 .radio-container {
-  display: flex;
   gap: 2rem;
 }
 
 .wrapper {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 0.2rem;
 }
 
+.label,
+.error-message {
+  font-size: var(--normal);
+}
+
 .label {
-  display: flex;
   gap: 4px;
   border: 1px solid var(--medium-pink);
   border-radius: 60rem;
@@ -30,7 +39,6 @@
 .error-message {
   color: var(--red);
   height: 2rem;
-  display: flex;
   align-items: center;
 }
 

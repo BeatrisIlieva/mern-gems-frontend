@@ -33,7 +33,7 @@
 .line-img {
   width: 26px;
   vertical-align: middle;
-  margin: 0px .1px;
+  margin: 0px 0.1px;
 }
 
 @media (min-width: 340px) and (max-width: 569px) {
@@ -44,6 +44,6 @@
   .line-img {
     width: 20px;
     vertical-align: middle;
-    margin: 0px .1px;
+    margin: 0px 0.1px;
   }
 }

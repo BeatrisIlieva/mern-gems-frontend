@@ -16,7 +16,7 @@ export const MiniImages = ({ jewelriesByCategory, updateColorTitle }) => {
   const navigate = useNavigate();
 
   const clickHandler = (colorTitle) => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/collection") {
       updateColorTitle(colorTitle);
     } else {
       const categoryTitle = jewelriesByCategory[0].categories[0].title;

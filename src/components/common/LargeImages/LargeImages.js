@@ -13,7 +13,7 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition, variant 
 
   const location = useLocation();
 
-  const locationIsHomePage = location.pathname === "/";
+  const locationIsCollectionPage = location.pathname === "/collection";
 
   useEffect(() => {
     setFirstImageUrlIsActive(true);
@@ -26,7 +26,7 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition, variant 
   const navigate = useNavigate();
 
   const clickHandler = () => {
-    if (locationIsHomePage) {
+    if (locationIsCollectionPage) {
       const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
       const colorTitle = jewelriesByCategory[0].colors[0].title;
