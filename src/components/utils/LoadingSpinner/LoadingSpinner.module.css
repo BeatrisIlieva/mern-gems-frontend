@@ -2,7 +2,7 @@
   width: calc(100%);
   height: calc(100vh - 10rem);
   z-index: 10;
-  transition: opacity 0.4s ease, transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .loading-spinner {
