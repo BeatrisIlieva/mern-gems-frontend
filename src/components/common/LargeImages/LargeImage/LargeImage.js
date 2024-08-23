@@ -1,6 +1,10 @@
 import styles from "./LargeImage.module.css";
 
-export const LargeImage = ({ jewelriesByCategory, firstImageUrlIsActive, variant }) => {
+export const LargeImage = ({
+  jewelriesByCategory,
+  firstImageUrlIsActive,
+  variant,
+}) => {
   return (
     <div className={`${styles["thumbnail"]} ${styles[variant]}`}>
       <img
