@@ -8,7 +8,11 @@ import { slugify } from "../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ jewelriesByCategory, circleIconsPosition, variant }) => {
+export const LargeImages = ({
+  jewelriesByCategory,
+  circleIconsPosition,
+  variant,
+}) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const location = useLocation();
