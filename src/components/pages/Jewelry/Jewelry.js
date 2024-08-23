@@ -13,12 +13,9 @@ import { Paragraph } from "../../reusable/Paragraph/Paragraph";
 import { useJewelry } from "../../../hooks/useJewelry";
 import { deslugify } from "../../../utils/deslugify";
 
-import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
-
 import styles from "./Jewelry.module.css";
 
 export const Jewelry = () => {
-  const { isTransitioning } = useIsTransitioning();
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
 
   const categoryTitle = deslugify(slugifiedCategoryTitle);
