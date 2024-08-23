@@ -8,6 +8,8 @@ import { useBagContext } from "../../../../contexts/BagContext";
 import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
 import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
 
+import styles from "./Form.module.css";
+
 export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -51,7 +53,7 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   };
 
   return (
-    <form method="POST" onSubmit={onSubmit}>
+    <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
       <Sizes
         inventories={inventories}
         errorMessage={errorMessage}
