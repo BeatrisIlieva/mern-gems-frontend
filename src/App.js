@@ -4,6 +4,7 @@ import { RouteGuard } from "./components/utils/RouteGuard/RouteGuard";
 import { ScrollToTop } from "./components/utils/ScrollToTop/ScrollToTop";
 import { Header } from "./components/layout/Header/Header";
 import { Home } from "./components/pages/Home/Home";
+import { CollectionList } from "./components/pages/CollectionList/CollectionList";
 import { Footer } from "./components/layout/Footer/Footer";
 import { Jewelry } from "./components/pages/Jewelry/Jewelry";
 import { Account } from "./components/pages/Account/Account";
@@ -24,6 +25,14 @@ function App() {
       <main className={styles["main"]}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/collection"
+            element={
+              <RouteGuard>
+                <Collection />
+              </RouteGuard>
+            }
+          />
           <Route
             path="/:slugifiedCategoryTitle/:slugifiedColorTitle"
             element={
