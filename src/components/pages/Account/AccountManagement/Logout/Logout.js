@@ -19,8 +19,6 @@ export const Logout = () => {
 
     clearToken();
 
-    clearShoppingBag();
-
     navigate("/");
   };
 

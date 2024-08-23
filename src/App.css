@@ -5,6 +5,7 @@
   color: var(--gray);
 }
 
+
 body {
   font-family: var(--main-font-family);
   font-size: var(--medium);
@@ -150,3 +151,8 @@ body::-webkit-scrollbar {
   width: 4px;
   height: 0px;
 }
+
+
+
+
+

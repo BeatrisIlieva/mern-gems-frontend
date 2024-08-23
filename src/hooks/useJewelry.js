@@ -21,8 +21,9 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
       .catch((err) => {
         console.log(err.message);
         navigate("*");
-      });
-  }, [categoryTitle, colorTitle, jewelryService]);
+      })
+      .finally(() => {});
+  }, [categoryTitle, colorTitle, jewelryService, navigate]);
 
   return { jewelriesByCategory };
 };
