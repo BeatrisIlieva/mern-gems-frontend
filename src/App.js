@@ -34,7 +34,7 @@ function App() {
             }
           />
           <Route
-            path="/:slugifiedCategoryTitle/:slugifiedColorTitle"
+            path="/collection/:slugifiedCategoryTitle/:slugifiedColorTitle"
             element={
               <RouteGuard>
                 <Jewelry />

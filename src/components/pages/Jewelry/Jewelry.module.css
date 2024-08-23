@@ -46,9 +46,11 @@
 }
 
 .wrapper {
-  gap: 4rem;
+  gap: 2rem;
 }
-
+.top {
+  margin-bottom: 2rem;
+}
 .bottom {
   gap: 0.8rem;
 }

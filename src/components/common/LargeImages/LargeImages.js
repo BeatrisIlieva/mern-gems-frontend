@@ -39,7 +39,7 @@ export const LargeImages = ({
 
       const slugifiedColorTitle = slugify(colorTitle);
 
-      navigate(`/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+      navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
     } else {
       toggleFirstImageUrlIsActive();
     }

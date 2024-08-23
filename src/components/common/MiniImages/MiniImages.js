@@ -25,7 +25,7 @@ export const MiniImages = ({ jewelriesByCategory, updateColorTitle }) => {
 
       const slugifiedColorTitle = slugify(colorTitle);
 
-      navigate(`/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+      navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
     }
   };
 
