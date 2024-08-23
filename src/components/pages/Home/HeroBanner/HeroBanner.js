@@ -1,11 +1,11 @@
-import { CollectionImage } from "./CollectionImage/CollectionImage";
+import { CollectionImage } from "./Collection/Collection";
 
 import styles from "./HeroBanner.module.css";
 
 export const HeroBanner = () => {
   return (
-    <article id={styles["hero-banner"]}>
+    <section id={styles["hero-banner"]}>
       <CollectionImage />
-    </article>
+    </section>
   );
 };

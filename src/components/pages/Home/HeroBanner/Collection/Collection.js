@@ -1,10 +1,10 @@
 import { CollectionDescription } from "../CollectionDescription/CollectionDescription";
 
-import styles from "./CollectionImage.module.css";
+import styles from "./Collection.module.css";
 
-export const CollectionImage = () => {
+export const Collection = () => {
   return (
-    <div className={styles["thumbnail"]}>
+    <article id={styles["collection"]}>
       <div className={styles["overlay"]}></div>
       <CollectionDescription />
       <img
@@ -12,6 +12,6 @@ export const CollectionImage = () => {
         src="https://res.cloudinary.com/deztgvefu/image/upload/v1716995569/collections/forgetmenot_rz0umv.png"
         alt=""
       />
-    </div>
+    </article>
   );
 };
