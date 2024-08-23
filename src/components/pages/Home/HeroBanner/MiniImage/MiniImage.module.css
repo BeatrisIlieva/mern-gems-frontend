@@ -1,31 +1,10 @@
 .mini-image.center,
-.mini-image.left,
-.mini-image.right,
 .mini-image.butterfly {
   width: 3rem;
 }
 
-.mini-image.center {
-  /* margin-top: 1rem; */
-}
-
-.mini-image.left,
-.mini-image.right,
 .mini-image.butterfly {
   position: absolute;
-}
-
-.mini-image.left {
-  top: -3rem;
-  left: 100px;
-}
-
-.mini-image.right {
-  top: -2rem;
-  right: 100px;
-}
-
-.mini-image.butterfly {
   width: 5rem;
   top: 20%;
   left: 50%;
@@ -33,14 +12,11 @@
   z-index: 20;
 }
 
-.wave-effect {
+.wave-effect-1 {
   display: block;
   width: 300px;
   height: auto;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-.wave-effect-1 {
   animation: wave1 4s infinite linear;
 }
 
@@ -50,44 +26,6 @@
   }
   50% {
     transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.wave-effect-2 {
-  animation: wave2 3s infinite ease-in-out;
-}
-
-@keyframes wave2 {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  75% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.wave-effect-3 {
-  animation: wave3 6s infinite ease;
-}
-
-@keyframes wave3 {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px) rotate(-2deg);
   }
   100% {
     transform: translateY(0);
