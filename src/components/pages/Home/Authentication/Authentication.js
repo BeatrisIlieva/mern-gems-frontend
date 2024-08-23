@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Popup } from "../../../reusable/Popup/Popup";
 import { Login } from "./Login/Login";
 import { Register } from "./Register/Register";
-
 import { SwitchOptions } from "./switchOptions";
 
 import styles from "./Authentication.module.css";
