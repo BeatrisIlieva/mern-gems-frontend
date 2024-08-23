@@ -1,15 +1,15 @@
-.description-wrapper {
+.description {
   position: absolute;
   top: 4rem;
   left: 2rem;
 }
 
-.collection-description {
+.description-wrapper {
   position: relative;
   width: 36%;
 }
 
-.wrapper {
+.outer-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;

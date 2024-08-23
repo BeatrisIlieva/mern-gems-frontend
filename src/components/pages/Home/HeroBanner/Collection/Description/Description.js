@@ -9,9 +9,9 @@ import styles from "./Description.module.css";
 
 export const Description = () => {
   return (
-    <div className={styles["description-wrapper"]}>
-      <div className={styles["collection-description"]}>
-        <div className={styles["wrapper"]}>
+    <div className={styles["description"]}>
+      <div className={styles["description-wrapper"]}>
+        <div className={styles["outer-wrapper"]}>
           <div className={styles["inner-wrapper"]}>
             <MiniImage
               imageUrl={IMAGE_BY_URL_AND_VARIANT.butterfly.imageUrl}
