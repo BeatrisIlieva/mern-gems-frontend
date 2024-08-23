@@ -1,4 +1,5 @@
 import { CollectionDescription } from "../CollectionDescription/CollectionDescription";
+import { Button } from "../../../../reusable/Button/Button";
 
 import styles from "./CollectionImage.module.css";
 

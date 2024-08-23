@@ -11,7 +11,7 @@
   cursor: pointer;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
-  padding: 12px;
+  padding: 1rem;
   width: 100%;
   justify-content: center;
   display: flex;
@@ -45,27 +45,18 @@
 
 .button.animated {
   position: relative;
-  border: 1px solid var(--light-gray);
+  border-radius: 2rem;
   background: var(--white);
   color: var(--medium-gray);
   width: 30%;
+  transition: background-color 300ms linear, color 300ms;
 }
 
-.button.animated:before {
-  content: "";
-  position: absolute;
-  width: 0px;
-  height: 1px;
-  bottom: 0;
-  left: 50%;
-  background-color: var(--light-gray);
-  transition: width 0.3s ease, left 0.3s ease;
+.button.animated:hover {
+  background: var(--gray);
+  color: var(--white);
 }
 
-.button.animated:hover::before {
-  width: 100%;
-  left: 0;
-}
 
 .button.underlined {
   background-color: var(--white);

@@ -2,6 +2,8 @@
   width: 100vw;
   height: calc(100vh - 10.313rem);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .overlay {
@@ -11,6 +13,7 @@
   height: 100%;
   background: rgb(0,0,0);
   background: linear-gradient(90deg, rgba(0,0,0,0.8001794467787114) 21%, rgba(148,187,233,0) 100%);
+
 }
 
 .image {
@@ -18,4 +21,10 @@
   height: 100%;
   object-fit: cover;
   /* overflow: hidden; */
+}
+
+.button {
+  /* position: absolute; */
+  /* top: 7rem;
+  left: 2rem; */
 }

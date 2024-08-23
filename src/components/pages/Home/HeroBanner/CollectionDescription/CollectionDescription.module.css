@@ -18,6 +18,9 @@
 }
 
 .inner-wrapper {
-  /* margin: 2rem 0 1rem 0; */
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }

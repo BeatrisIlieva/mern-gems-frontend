@@ -3,6 +3,7 @@ import { Paragraph } from "../../../../reusable/Paragraph/Paragraph";
 import { XLargeTitle } from "../../../../reusable/XLargeTitle/XLargeTitle";
 
 import { IMAGE_BY_URL_AND_VARIANT } from "../constants/imagesByUrlAndVariant";
+import { Button } from "../../../../reusable/Button/Button";
 
 import styles from "./CollectionDescription.module.css";
 
@@ -11,9 +12,9 @@ export const CollectionDescription = () => {
     <div className={styles["description-wrapper"]}>
       <div className={styles["collection-description"]}>
         <MiniImage
-          imageUrl={IMAGE_BY_URL_AND_VARIANT.white.imageUrl}
-          variant={IMAGE_BY_URL_AND_VARIANT.white.variant}
-          waveEffect={IMAGE_BY_URL_AND_VARIANT.white.waveEffect}
+          imageUrl={IMAGE_BY_URL_AND_VARIANT.pink.imageUrl}
+          variant={IMAGE_BY_URL_AND_VARIANT.pink.variant}
+          waveEffect={IMAGE_BY_URL_AND_VARIANT.pink.waveEffect}
         />
         <MiniImage
           imageUrl={IMAGE_BY_URL_AND_VARIANT.blue.imageUrl}
@@ -28,11 +29,11 @@ export const CollectionDescription = () => {
               waveEffect={IMAGE_BY_URL_AND_VARIANT.butterfly.waveEffect}
             />
             <XLargeTitle title={"Forget-Me-Not Collection"} />
-          </div>
+
           <MiniImage
-            imageUrl={IMAGE_BY_URL_AND_VARIANT.pink.imageUrl}
-            variant={IMAGE_BY_URL_AND_VARIANT.pink.variant}
-            waveEffect={IMAGE_BY_URL_AND_VARIANT.pink.waveEffect}
+            imageUrl={IMAGE_BY_URL_AND_VARIANT.white.imageUrl}
+            variant={IMAGE_BY_URL_AND_VARIANT.white.variant}
+            waveEffect={IMAGE_BY_URL_AND_VARIANT.white.waveEffect}
           />
           <Paragraph
             text={
@@ -40,6 +41,8 @@ export const CollectionDescription = () => {
             }
             textAlign={"center"}
           />
+          <Button variant={"animated"} title={"Discover"} />
+          </div>
         </div>
       </div>
     </div>
