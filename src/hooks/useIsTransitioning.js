@@ -7,17 +7,14 @@ export const useIsTransitioning = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    // Set transitioning to true immediately
     setIsTransitioning(true);
 
-    // Set transitioning to false after 400ms to allow the animation to complete
     const timeout = setTimeout(() => {
       setIsTransitioning(false);
     }, 400);
 
-    // Cleanup timeout on unmount or when location changes
     return () => clearTimeout(timeout);
   }, [location.pathname]);
 
-  return { isTransitioning };
+  return { isTransitioning, setIsTransitioning };
 };

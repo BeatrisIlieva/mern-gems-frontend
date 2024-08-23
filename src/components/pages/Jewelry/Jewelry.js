@@ -13,9 +13,12 @@ import { Paragraph } from "../../reusable/Paragraph/Paragraph";
 import { useJewelry } from "../../../hooks/useJewelry";
 import { deslugify } from "../../../utils/deslugify";
 
+import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
+
 import styles from "./Jewelry.module.css";
 
 export const Jewelry = () => {
+  const { isTransitioning } = useIsTransitioning();
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
 
   const categoryTitle = deslugify(slugifiedCategoryTitle);
@@ -35,7 +38,7 @@ export const Jewelry = () => {
 
   return (
     <>
-      {jewelriesByCategory.length > 0 && (
+      {jewelriesByCategory.length > 0 ? (
         <>
           {displayPopup && (
             <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
@@ -76,6 +79,8 @@ export const Jewelry = () => {
             </div>
           </section>
         </>
+      ) : (
+        <div className={styles["empty"]}></div>
       )}
     </>
   );

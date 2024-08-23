@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import { RouteGuard } from "../../utils/RouteGuard/RouteGuard";
 import { Home } from "../../pages/Home/Home";
@@ -10,14 +10,18 @@ import { Checkout } from "../../pages/Checkout/Checkout";
 import { Payment } from "../../pages/Payment/Payment";
 import { OrderConfirmation } from "../../pages/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "../../pages/Page404/Page404";
-import {LoadingSpinner} from "../../utils/LoadingSpinner/LoadingSpinner"
+import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
 
 import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 
 import styles from "./Main.module.css";
 
 export const Main = () => {
+  const location = useLocation();
+
   const { isTransitioning } = useIsTransitioning();
+
+//   const showLoadingSpinner = location.pathname !== "/" && location.pathname !== "/collection"
 
   return (
     <>

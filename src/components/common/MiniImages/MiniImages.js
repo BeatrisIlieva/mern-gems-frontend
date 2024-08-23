@@ -16,9 +16,9 @@ export const MiniImages = ({ jewelriesByCategory, updateColorTitle }) => {
   const navigate = useNavigate();
 
   const clickHandler = (colorTitle) => {
-    if (location.pathname === "/collection") {
-      updateColorTitle(colorTitle);
-    } else {
+    // if (location.pathname === "/collection") {
+    //   updateColorTitle(colorTitle);
+    // } else {
       const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
       const slugifiedCategoryTitle = slugify(categoryTitle);
@@ -26,7 +26,7 @@ export const MiniImages = ({ jewelriesByCategory, updateColorTitle }) => {
       const slugifiedColorTitle = slugify(colorTitle);
 
       navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-    }
+    // }
   };
 
   const [activeMiniImage, setActiveMiniImage] = useState(

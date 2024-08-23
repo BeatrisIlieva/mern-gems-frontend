@@ -1,8 +1,15 @@
+import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
+
 import styles from "./LoadingSpinner.module.css";
 export const LoadingSpinner = () => {
+
+  const {isTransitioning} = useIsTransitioning()
   return (
     <div
-      className={styles["loading-spinner-box"]}
+    className={`${styles["loading-spinner-box"]} ${
+      isTransitioning ? styles["slide-out"] : styles["slide-in"]
+    }`}
+      // className={styles["loading-spinner-box"]}
       data-testid="loading-spinner-box"
     >
       <div className={styles["loading-spinner"]} data-testid="loading-spinner">
