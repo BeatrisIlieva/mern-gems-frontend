@@ -42,7 +42,7 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition, variant 
   };
 
   return (
-    <div className={`${styles["images"]} ${styles[variant]}`}>
+    <div className={styles["images"]}>
       <CircleIcons
         firstImageUrlIsActive={firstImageUrlIsActive}
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
