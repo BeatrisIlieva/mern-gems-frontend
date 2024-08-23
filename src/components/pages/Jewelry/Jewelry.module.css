@@ -7,8 +7,8 @@
 #jewelry,
 .image-container,
 .info-and-action-container,
-.outer-wrapper,
-.inner-wrapper {
+.wrapper,
+.bottom {
   display: flex;
 }
 
@@ -18,8 +18,8 @@
 }
 
 .info-and-action-container,
-.outer-wrapper,
-.inner-wrapper,
+.wrapper,
+.bottom,
 .image-container {
   flex-direction: column;
 }
@@ -45,10 +45,10 @@
   width: 12rem;
 }
 
-.outer-wrapper {
-  gap: 1.2rem;
+.wrapper {
+  gap: 4rem;
 }
 
-.inner-wrapper {
+.bottom {
   gap: 0.8rem;
 }

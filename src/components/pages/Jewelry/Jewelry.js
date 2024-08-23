@@ -49,19 +49,21 @@ export const Jewelry = () => {
               />
             </div>
             <div className={styles["info-and-action-container"]}>
-              <div className={styles["outer-wrapper"]}>
-                <DualTitleSection
-                  firstTitle={
-                    <div className={styles["mini-images"]}>
-                      <MiniImages jewelriesByCategory={jewelriesByCategory} />
-                    </div>
-                  }
-                  secondTitle={
-                    <StockStatus jewelriesByCategory={jewelriesByCategory} />
-                  }
-                  variant={"regular"}
-                />
-                <div className={styles["inner-wrapper"]}>
+              <div className={styles["wrapper"]}>
+                <div className={styles["top"]}>
+                  <DualTitleSection
+                    firstTitle={
+                      <div className={styles["mini-images"]}>
+                        <MiniImages jewelriesByCategory={jewelriesByCategory} />
+                      </div>
+                    }
+                    secondTitle={
+                      <StockStatus jewelriesByCategory={jewelriesByCategory} />
+                    }
+                    variant={"regular"}
+                  />
+                </div>
+                <div className={styles["bottom"]}>
                   <LargeTitle title={jewelriesByCategory[0].title} />
                   <Paragraph
                     text={`${jewelriesByCategory[0].description}.`}
