@@ -1,8 +1,5 @@
 .button {
-  border: none;
-  overflow: hidden;
-  color: var(--white);
-  outline: none;
+  all: unset;
 }
 
 .button.pink,
@@ -15,11 +12,8 @@
   width: 100%;
   justify-content: center;
   display: flex;
-}
-
-.button.pink,
-.button.gray {
   transition: background-color 300ms linear, color 300ms;
+  border-radius: 2rem;
 }
 
 .button.pink {
@@ -45,18 +39,15 @@
 
 .button.animated {
   position: relative;
-  border-radius: 2rem;
   background: var(--white);
   color: var(--medium-gray);
   width: 30%;
-  transition: background-color 300ms linear, color 300ms;
 }
 
 .button.animated:hover {
   background: var(--gray);
   color: var(--white);
 }
-
 
 .button.underlined {
   background-color: var(--white);
