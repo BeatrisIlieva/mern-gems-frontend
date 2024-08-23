@@ -6,7 +6,7 @@ import styles from "./HeroBanner.module.css";
 export const HeroBanner = () => {
   return (
     <article id={styles["hero-banner"]}>
-      <CollectionDescription />
+      {/* <CollectionDescription /> */}
       <CollectionImage />
     </article>
   );

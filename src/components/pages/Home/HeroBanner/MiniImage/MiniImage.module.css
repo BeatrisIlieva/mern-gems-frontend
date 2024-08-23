@@ -6,7 +6,7 @@
 }
 
 .mini-image.center {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .mini-image.left,
@@ -16,12 +16,12 @@
 }
 
 .mini-image.left {
-  top: -10px;
+  top: -3rem;
   left: 100px;
 }
 
 .mini-image.right {
-  top: 0;
+  top: -2rem;
   right: 100px;
 }
 

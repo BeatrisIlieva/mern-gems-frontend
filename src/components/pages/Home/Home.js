@@ -19,7 +19,7 @@ export const Home = () => {
     <>
       {!isAuthenticated && <Authentication />}
       <HeroBanner />
-      <Collection />
+      {/* <Collection /> */}
     </>
   );
 };
