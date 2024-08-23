@@ -1,5 +1,7 @@
-.main {
+/* .main {
   transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  z-index: 1000;
 }
 
 .slide-in {
@@ -29,5 +31,42 @@
   to {
     right: 100%;
     opacity: 0;
+  }
+} */
+
+
+.main {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  z-index: 1000;
+}
+
+.slide-in {
+  animation: slideIn 0.6s forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.6s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 1; /* Start from right */
+    opacity: 0; /* Fully transparent */
+  }
+  to {
+    opacity: 0; /* Slide into place */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 0; /* Start at current position */
+    opacity: 1; /* Fully visible */
+  }
+  to {
+    opacity: 1;/* Slide out to left */
+    opacity: 0; /* Fully transparent */
   }
 }

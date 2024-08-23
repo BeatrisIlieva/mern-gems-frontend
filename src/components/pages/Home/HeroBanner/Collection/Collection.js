@@ -5,7 +5,7 @@ import styles from "./Collection.module.css";
 export const Collection = () => {
   return (
     <article id={styles["collection"]}>
-      <div className={styles["overlay"]}></div>
+      <div className={styles["collection-overlay"]}></div>
       <Description />
       <img
         className={styles["image"]}
