@@ -3,4 +3,5 @@
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #e5e3df;
+  height: calc(100vh - 10rem);
 }

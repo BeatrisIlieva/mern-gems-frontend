@@ -2,7 +2,11 @@
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
+}
 
+#jewelry,
+.empty {
+  height: calc(100vh - 10rem);
 }
 
 #jewelry,
@@ -52,8 +56,4 @@
 
 .bottom {
   gap: 0.8rem;
-}
-
-.empty {
-  height: calc(100vh - 10rem);
 }
