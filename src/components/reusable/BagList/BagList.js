@@ -31,7 +31,9 @@ export const BagList = ({ variant }) => {
               secondTitle={`$ ${item.totalPrice}`}
               variant={"bolded"}
             />
-            {displayUpdateQuantityButtons && <span>Size: {item.size}</span>}
+            {displayUpdateQuantityButtons && (
+              <span className={styles["size"]}>Size: {item.size}</span>
+            )}
             <DualTitleSection
               firstTitle={
                 displayUpdateQuantityButtons ? (

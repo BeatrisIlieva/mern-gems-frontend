@@ -66,7 +66,6 @@ export const Jewelry = () => {
                   <Paragraph
                     text={`${jewelriesByCategory[0].description}.`}
                     textAlign={"left"}
-                    color={"gray"}
                   />
                 </div>
               </div>

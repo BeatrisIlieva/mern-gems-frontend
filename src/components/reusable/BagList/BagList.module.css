@@ -21,3 +21,7 @@
   justify-content: space-between;
   width: 100%;
 }
+
+.size {
+  font-size: var(--normal);
+}
