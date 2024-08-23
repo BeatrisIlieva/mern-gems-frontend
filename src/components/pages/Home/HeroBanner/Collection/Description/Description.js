@@ -1,9 +1,9 @@
 import { MiniImage } from "../../MiniImage/MiniImage";
 import { Paragraph } from "../../../../../reusable/Paragraph/Paragraph";
 import { XLargeTitle } from "../../../../../reusable/XLargeTitle/XLargeTitle";
-
-import { IMAGE_BY_URL_AND_VARIANT } from "../../constants/imagesByUrlAndVariant";
 import { Button } from "../../../../../reusable/Button/Button";
+
+import { IMAGE_BY_URL_AND_VARIANT } from "./constants/imagesByUrlAndVariant";
 
 import styles from "./Description.module.css";
 
