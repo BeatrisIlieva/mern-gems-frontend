@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { MiniImage } from "../../MiniImage/MiniImage";
 import { Paragraph } from "../../../../../reusable/Paragraph/Paragraph";
 import { XLargeTitle } from "../../../../../reusable/XLargeTitle/XLargeTitle";
@@ -8,6 +10,12 @@ import { IMAGE_BY_URL_AND_VARIANT } from "./constants/imagesByUrlAndVariant";
 import styles from "./Description.module.css";
 
 export const Description = () => {
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    navigate("/collection");
+  };
+
   return (
     <div className={styles["description"]}>
       <div className={styles["description-wrapper"]}>
@@ -30,7 +38,11 @@ export const Description = () => {
               }
               textAlign={"center"}
             />
-            <Button variant={"animated"} title={"Discover"} />
+            <Button
+              variant={"animated"}
+              title={"Discover"}
+              callBackFunction={clickHandler}
+            />
           </div>
         </div>
       </div>

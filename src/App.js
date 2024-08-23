@@ -29,7 +29,7 @@ function App() {
             path="/collection"
             element={
               <RouteGuard>
-                <Collection />
+                <CollectionList />
               </RouteGuard>
             }
           />

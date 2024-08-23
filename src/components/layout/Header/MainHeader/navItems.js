@@ -6,8 +6,8 @@ import { faGem } from "@fortawesome/free-regular-svg-icons";
 
 export const LEFT_NAV_ITEMS = [
   {
-    to: "/",
-    label: <MediumTitle title={"Collections"} />,
+    to: "/collection",
+    label: <MediumTitle title={"Collection"} />,
     icon: faGem,
     variant: "header",
   },
