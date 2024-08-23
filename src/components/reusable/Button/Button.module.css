@@ -8,8 +8,7 @@
   cursor: pointer;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
-  padding: 0.75rem;
-  width: 100%;
+  padding: 0.75rem 2.25rem;
   justify-content: center;
   display: flex;
   transition: background-color 300ms linear, color 300ms, box-shadow 300ms;
@@ -40,12 +39,12 @@
 .button.animated {
   position: relative;
   background: var(--white);
-  color: var(--medium-gray);
-  width: 30%;
-  box-shadow: 0 0 0 1px var(--medium-gray);
+  color: var(--gray);
+  box-shadow: 0 0 0 1px var(--gray);
 }
 
-.button.animated:hover {
+.button.animated:hover,
+.button.animated:active {
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
