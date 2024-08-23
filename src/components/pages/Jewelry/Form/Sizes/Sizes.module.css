@@ -27,7 +27,6 @@
   align-items: center;
 }
 
-
 .error-message {
   color: var(--red);
   height: 2rem;
@@ -37,13 +36,17 @@
 
 input[type="radio"] {
   display: none;
-  &:not(:disabled) ~ label {
-    cursor: pointer;
-  }
-  &:disabled ~ label {
-    color: var(--medium-gray);
-    border: 1px solid var(--medium-gray);
-    box-shadow: none;
-    cursor: not-allowed;
-  }
+}
+
+input[type="radio"]:not(:disabled) ~ label {
+  cursor: pointer;
+}
+
+input[type="radio"]:disabled ~ label {
+  color: var(--medium-gray);
+  border: 1px solid var(--light-gray);
+  box-shadow: none;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  text-decoration-color: var(--light-gray);
 }

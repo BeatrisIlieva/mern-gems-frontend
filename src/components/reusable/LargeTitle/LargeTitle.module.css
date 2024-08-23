@@ -3,7 +3,6 @@
   font-size: var(--large);
   font-family: var(--bold-italic-font-family);
   color: var(--gray);
-  margin-bottom: 30px;
 }
 
 .title.align-left {

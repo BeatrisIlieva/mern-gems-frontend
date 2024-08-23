@@ -8,7 +8,7 @@
   flex-direction: column;
   z-index: 90;
   background-color: var(--white);
-  height: 149px;
+  height: 9.313rem;
 }
 
 .wrapper {
@@ -20,9 +20,9 @@
 }
 
 .thumbnail {
-  height: 140px;
-  margin-left: 112px;
-  margin-top: 3px;
+  height: 8.75rem;
+  margin-left: 7rem;
+  margin-top: 0.188rem;
 }
 
 .logo-image {

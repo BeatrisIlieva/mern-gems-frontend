@@ -1,5 +1,14 @@
-.large-images {
+.images {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.large {
+  height: calc(100vh - 16.313rem);
+}
+
+.small {
 }

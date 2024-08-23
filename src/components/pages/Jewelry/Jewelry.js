@@ -42,30 +42,33 @@ export const Jewelry = () => {
           )}
           <section id={styles["jewelry"]}>
             <div className={styles["image-container"]}>
-              <div className={styles["image"]}>
-                <LargeImages
-                  jewelriesByCategory={jewelriesByCategory}
-                  circleIconsPosition={"bottom"}
-                />
-              </div>
+              <LargeImages
+                jewelriesByCategory={jewelriesByCategory}
+                circleIconsPosition={"bottom"}
+                variant={"large"}
+              />
             </div>
             <div className={styles["info-and-action-container"]}>
-              <DualTitleSection
-                firstTitle={
-                  <div className={styles["mini-images"]}>
-                    <MiniImages jewelriesByCategory={jewelriesByCategory} />
-                  </div>
-                }
-                secondTitle={
-                  <StockStatus jewelriesByCategory={jewelriesByCategory} />
-                }
-                variant={"regular"}
-              />
-              <LargeTitle title={jewelriesByCategory[0].title} />
-              <Paragraph
-                text={`${jewelriesByCategory[0].description}.`}
-                textAlign={"left"}
-              />
+              <div className={styles["outer-wrapper"]}>
+                <DualTitleSection
+                  firstTitle={
+                    <div className={styles["mini-images"]}>
+                      <MiniImages jewelriesByCategory={jewelriesByCategory} />
+                    </div>
+                  }
+                  secondTitle={
+                    <StockStatus jewelriesByCategory={jewelriesByCategory} />
+                  }
+                  variant={"regular"}
+                />
+                <div className={styles["inner-wrapper"]}>
+                  <LargeTitle title={jewelriesByCategory[0].title} />
+                  <Paragraph
+                    text={`${jewelriesByCategory[0].description}.`}
+                    textAlign={"left"}
+                  />
+                </div>
+              </div>
               <Form
                 jewelriesByCategory={jewelriesByCategory}
                 toggleDisplayPopup={toggleDisplayPopup}

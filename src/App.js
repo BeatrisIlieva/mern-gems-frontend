@@ -72,7 +72,14 @@ function App() {
               </RouteGuard>
             }
           />
-          <Route path="*" element={<Page404 />} />
+          <Route
+            path="*"
+            element={
+              <RouteGuard>
+                <Page404 />
+              </RouteGuard>
+            }
+          />
         </Routes>
       </main>
       <Footer />

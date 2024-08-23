@@ -1,38 +1,54 @@
 #jewelry {
-  display: flex;
-  background-color: aliceblue;
-  flex-wrap: wrap;
+  background-color: var(--very-light-gray);
   gap: 2rem;
+  padding: 2rem;
+}
+
+#jewelry,
+.image-container,
+.info-and-action-container,
+.outer-wrapper,
+.inner-wrapper {
+  display: flex;
+}
+
+#jewelry,
+.image-container {
   justify-content: center;
 }
 
-.image-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0rem;
+.info-and-action-container,
+.outer-wrapper,
+.inner-wrapper,
+.image-container {
+  flex-direction: column;
+}
+
+.info-and-action-container,
+.image-container {
+  border-radius: 4rem;
+  width: 50%;
   background-color: var(--white);
-  padding-bottom: 1rem;
-  display: flex;
-  width: calc(50vw - 3rem);
-  /* height: calc(100vh - 180px); */
-
 }
 
-.image {
-  width: 80%;
+.image-container {
+  padding-bottom: 1rem;
+  align-items: center;
 }
 
 .info-and-action-container {
-  display: grid;
-  grid-template-rows: 100px 40px 100px 200px;
-  margin: 2rem 0rem;
-  background-color: var(--white);
-  padding: 2rem;
-  height: fit-content;
-  width: calc(50vw - 3rem);
+  padding: 3rem;
+  justify-content: space-between;
 }
 
 .mini-images {
   width: 12rem;
+}
+
+.outer-wrapper {
+  gap: 1.2rem;
+}
+
+.inner-wrapper {
+  gap: 0.8rem;
 }

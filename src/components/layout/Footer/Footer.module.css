@@ -1,8 +1,8 @@
 .footer {
-  height: 31px;
+  height: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 0.2rem;
   color: var(--gray);
   border-top: 0.1px solid var(--pink);
 }

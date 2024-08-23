@@ -1,7 +1,5 @@
-.thumbnail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.thumbnail.large {
+  height: calc(100vh - 20rem);
 }
 
 .image {
