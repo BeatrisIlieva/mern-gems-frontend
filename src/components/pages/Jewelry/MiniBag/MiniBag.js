@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import { Link } from "react-router-dom";
 
 import { BagList } from "../../../reusable/BagList/BagList";
@@ -7,8 +6,6 @@ import { Button } from "../../../reusable/Button/Button";
 import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Popup } from "../../../reusable/Popup/Popup";
-import { Collection } from "../../../common/Collection/Collection";
-import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
@@ -23,6 +20,12 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
     toggleDisplayMiniBagPopup();
   };
 
+  useEffect(() => {
+    if (bagTotalQuantity === 0) {
+      toggleDisplayMiniBagPopup();
+    }
+  }, [bagTotalQuantity]);
+
   return (
     <Popup
       popupCloseHandler={toggleDisplayMiniBagPopup}
@@ -31,45 +34,30 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
     >
       <section className={styles["mini-bag"]}>
         <LargeTitle title={"My Bag"} textAlight={"align-left"} />
-        {bagTotalQuantity === 0 ? (
-          <>
-            <InfoMessage
-              title={"Your Shopping Bag Is Empty"}
-              subtitle={"Explore and add something you love."}
+        <BagList variant={"mini"} />
+        <div className={styles["bottom-container"]}>
+          <DualTitleSection
+            firstTitle={"Total"}
+            secondTitle={`$ ${totalPrice}`}
+            variant={"bolded"}
+          />
+          <Link to={"/users/shopping-bag"} className={styles["no-decoration"]}>
+            <Button
+              title={"View Bag"}
+              buttonIsDisabled={false}
+              callBackFunction={buttonClickHandler}
+              variant={"pink"}
             />
-            <Collection />
-          </>
-        ) : (
-          <>
-            <BagList variant={"mini"} />
-            <div className={styles["bottom-container"]}>
-              <DualTitleSection
-                firstTitle={"Total"}
-                secondTitle={`$ ${totalPrice}`}
-                variant={"bolded"}
-              />
-              <Link
-                to={"/users/shopping-bag"}
-                className={styles["no-decoration"]}
-              >
-                <Button
-                  title={"View Bag"}
-                  buttonIsDisabled={false}
-                  callBackFunction={buttonClickHandler}
-                  variant={"pink"}
-                />
-              </Link>
-              <Link to={"/checkout"} className={styles["no-decoration"]}>
-                <Button
-                  title={"Continue Checkout"}
-                  buttonIsDisabled={false}
-                  callBackFunction={buttonClickHandler}
-                  variant={"gray"}
-                />
-              </Link>
-            </div>
-          </>
-        )}
+          </Link>
+          <Link to={"/checkout"} className={styles["no-decoration"]}>
+            <Button
+              title={"Continue Checkout"}
+              buttonIsDisabled={false}
+              callBackFunction={buttonClickHandler}
+              variant={"gray"}
+            />
+          </Link>
+        </div>
       </section>
     </Popup>
   );

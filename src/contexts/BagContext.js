@@ -35,10 +35,6 @@ export const BagProvider = ({ children }) => {
     );
   }, [bagItems]);
 
-  // useEffect(() => {
-  //   setBagTotalQuantity(bagItems.length);
-  // }, [bagItems]);
-
   useEffect(() => {
     bagService
       .getAll(userId)
