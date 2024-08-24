@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
+
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../common/StockStatus/StockStatus";
@@ -54,9 +56,7 @@ export const Jewelry = () => {
                 <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
               )}
               <section
-                className={` ${
-                  isTransitioning ? styles["jewelry"] : ""
-                }`.trim()}
+                className={`${styles["jewelry"]} ${styles["transitioning"]}`}
               >
                 <div className={styles["image-container"]}>
                   <LargeImages
@@ -66,34 +66,41 @@ export const Jewelry = () => {
                   />
                 </div>
                 <div className={styles["info-and-action-container"]}>
-                  <div className={styles["wrapper"]}>
-                    <DualTitleSection
-                      firstTitle={
-                        <div className={styles["mini-images"]}>
-                          <MiniImages
+                  {isTransitioning && <LoadingSpinner />}
+                  <div
+                    className={`${styles["content"]} ${
+                      isTransitioning ? `${styles["transitioning"]}` : ""
+                    }`.trim()}
+                  >
+                    <div className={styles["wrapper"]}>
+                      <DualTitleSection
+                        firstTitle={
+                          <div className={styles["mini-images"]}>
+                            <MiniImages
+                              jewelriesByCategory={jewelriesByCategory}
+                            />
+                          </div>
+                        }
+                        secondTitle={
+                          <StockStatus
                             jewelriesByCategory={jewelriesByCategory}
                           />
-                        </div>
-                      }
-                      secondTitle={
-                        <StockStatus
-                          jewelriesByCategory={jewelriesByCategory}
-                        />
-                      }
-                      variant={"regular"}
-                    />
-                    <div className={styles["bottom"]}>
-                      <LargeTitle title={jewelriesByCategory[0].title} />
-                      <Paragraph
-                        text={`${jewelriesByCategory[0].description}.`}
-                        textAlign={"left"}
+                        }
+                        variant={"regular"}
                       />
+                      <div className={styles["bottom"]}>
+                        <LargeTitle title={jewelriesByCategory[0].title} />
+                        <Paragraph
+                          text={`${jewelriesByCategory[0].description}.`}
+                          textAlign={"left"}
+                        />
+                      </div>
                     </div>
+                    <Form
+                      jewelriesByCategory={jewelriesByCategory}
+                      toggleDisplayPopup={toggleDisplayPopup}
+                    />
                   </div>
-                  <Form
-                    jewelriesByCategory={jewelriesByCategory}
-                    toggleDisplayPopup={toggleDisplayPopup}
-                  />
                 </div>
               </section>
             </>
@@ -101,6 +108,8 @@ export const Jewelry = () => {
             <div className={styles["empty"]}></div>
           )}
         </>
+        //   )}
+        // </>
       )}
     </>
   );

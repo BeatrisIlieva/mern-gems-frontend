@@ -1,8 +1,17 @@
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .loading-spinner-box {
   width: calc(100%);
-  height: calc(100vh - 10rem);
+  height: calc(100%);
   z-index: 10;
+  background-color: transparent;
   transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
 }
 
 .loading-spinner {
@@ -21,11 +30,12 @@
   margin: 0;
   color: var(--pink);
   font-family: var(--bold-italic-font-family);
+  font-size: var(--large);
 }
 
 .image-container {
-  width: 140px;
-  height: 140px;
+  width: 8rem;
+  height: 8rem;
 }
 
 .image {

@@ -1,29 +1,11 @@
-
-
-
-
 .jewelry {
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
-
-  opacity: 0;
-  animation: heroAppear 4s forwards;
-
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* .jewelry.appear {
-  animation: heroAppear 4s forwards;
-} */
 
-@keyframes heroAppear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 .jewelry,
 .empty {
@@ -33,6 +15,7 @@
 .jewelry,
 .image-container,
 .info-and-action-container,
+.content,
 .wrapper,
 .bottom {
   display: flex;
@@ -44,6 +27,7 @@
 }
 
 .info-and-action-container,
+.content,
 .wrapper,
 .bottom,
 .image-container {
@@ -64,6 +48,12 @@
 
 .info-and-action-container {
   padding: 2rem;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -77,4 +67,21 @@
 
 .bottom {
   gap: 0.8rem;
+}
+
+.jewelry.transitioning {
+  animation: transitioning 4s forwards;
+}
+
+.content.transitioning {
+  animation: transitioning 10s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
