@@ -29,7 +29,6 @@ export const Jewelry = () => {
 
   const colorTitle = deslugify(slugifiedColorTitle);
 
-  // const [displayPage404, setDisplayPage404] = useState(false);
 
   const { jewelriesByCategory, displayPage404 } = useJewelry({
     categoryTitle,
