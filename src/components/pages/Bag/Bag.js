@@ -1,5 +1,3 @@
-import {useState, useEffect} from "react"
-
 import { Link } from "react-router-dom";
 
 import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
@@ -10,14 +8,12 @@ import { Button } from "../../reusable/Button/Button";
 import { Collection } from "../../common/Collection/Collection";
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
 
-import styles from "./Bag.module.css";
-
 import { useBagContext } from "../../../contexts/BagContext";
+
+import styles from "./Bag.module.css";
 
 export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
-
-  const [displayInfoMessage, setDisplayInfoMessage] = useState(false);
 
   return (
     <>

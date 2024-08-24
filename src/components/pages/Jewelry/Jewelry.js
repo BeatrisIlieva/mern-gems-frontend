@@ -55,6 +55,7 @@ export const Jewelry = () => {
                 className={`${styles["jewelry"]} ${styles["transitioning"]}`}
               >
                 <div className={styles["image-container"]}>
+                {isTransitioning && <LoadingSpinner />}
                   <LargeImages
                     jewelriesByCategory={jewelriesByCategory}
                     circleIconsPosition={"bottom"}
