@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 import { Routes, Route } from "react-router-dom";
 
 import { RouteGuard } from "../../utils/RouteGuard/RouteGuard";
@@ -12,15 +10,8 @@ import { Checkout } from "../../pages/Checkout/Checkout";
 import { Payment } from "../../pages/Payment/Payment";
 import { OrderConfirmation } from "../../pages/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "../../pages/Page404/Page404";
-import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
-
-import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
-
-import styles from "./Main.module.css";
 
 export const Main = () => {
-  const { isTransitioning } = useIsTransitioning();
-
   return (
     <main>
       <Routes>
