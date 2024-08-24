@@ -39,7 +39,7 @@ export const Popup = ({
 
   return (
     <section
-      className={`${styles["overlay"]} ${styles["slide-in"]} ${styles[overlayVariant]}`}
+      className={`isOpen ? ${styles["overlay"]} ${styles["slide-in"]} ${styles[overlayVariant]} : ${styles["overlay"]} ${styles["slide-out"]} ${styles[overlayVariant]}`}
       onAnimationEnd={() => !isOpen && setIsOpen(false)}
     >
       <div className={`${styles["modal"]} ${styles[modalVariant]}`}>
