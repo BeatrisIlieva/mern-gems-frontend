@@ -4,10 +4,20 @@
   justify-content: center;
   margin: 40px 80px;
   gap: 40px;
+  animation: transitioning 1.6s forwards;
 }
 
 .flex-container {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
