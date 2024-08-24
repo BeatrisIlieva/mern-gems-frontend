@@ -10,7 +10,11 @@ export const LargeImage = ({
   const { isTransitioning } = useIsTransitioning();
 
   return (
-    <div className={`${styles["thumbnail"]} ${styles[variant]}`}>
+    <div
+      className={`${styles["thumbnail"]} ${styles[variant]} ${
+        isTransitioning ? styles["transitioning"] : ""
+      }`.trim()}
+    >
       <img
         className={`${styles["image"]} ${
           firstImageUrlIsActive

@@ -42,6 +42,7 @@
 .image-container {
   padding-bottom: 1rem;
   align-items: center;
+  position: relative;
 }
 
 .info-and-action-container {

@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
-
 import { LargeImages } from "../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../common/StockStatus/StockStatus";
@@ -55,7 +54,7 @@ export const Jewelry = () => {
                 className={`${styles["jewelry"]} ${styles["transitioning"]}`}
               >
                 <div className={styles["image-container"]}>
-                {isTransitioning && <LoadingSpinner />}
+                  {isTransitioning && <LoadingSpinner />}
                   <LargeImages
                     jewelriesByCategory={jewelriesByCategory}
                     circleIconsPosition={"bottom"}
