@@ -1,7 +1,6 @@
-.hero-banner {
-  height: calc(100vh - 10rem);
+.collection-list {
   opacity: 0;
-  animation: transitioning 1.5s forwards;
+  animation: transitioning 2s forwards;
 }
 
 @keyframes transitioning {
