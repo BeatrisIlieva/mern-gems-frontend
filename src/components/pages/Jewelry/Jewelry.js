@@ -13,10 +13,6 @@ import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../reusable/Paragraph/Paragraph";
 import { Page404 } from "../Page404/Page404";
 
-import { useService } from "../../../hooks/useService";
-
-import { jewelryServiceFactory } from "../../../services/jewelryService";
-
 import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 
 import { useJewelry } from "../../../hooks/useJewelry";
