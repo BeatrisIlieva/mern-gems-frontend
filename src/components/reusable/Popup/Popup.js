@@ -20,7 +20,7 @@ export const Popup = ({
   };
   
   return (
-    <section className={`${styles["overlay"]} ${styles[overlayVariant]}`}>
+    <section className={`${styles["overlay"]} ${styles["slide-in"]} ${styles[overlayVariant]}`}>
       <div className={`${styles["modal"]} ${styles[modalVariant]}`}>
         {showXMark && (
           <FontAwesomeIcon

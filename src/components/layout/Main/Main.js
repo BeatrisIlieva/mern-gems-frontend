@@ -1,4 +1,6 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+import { Routes, Route } from "react-router-dom";
 
 import { RouteGuard } from "../../utils/RouteGuard/RouteGuard";
 import { Home } from "../../pages/Home/Home";
@@ -17,27 +19,15 @@ import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 import styles from "./Main.module.css";
 
 export const Main = () => {
-  const location = useLocation();
-
   const { isTransitioning } = useIsTransitioning();
-
-  //   const showLoadingSpinner = location.pathname !== "/" && location.pathname !== "/collection"
-
-  let zIndex;
-
-  if (document.body.style.overflow === "hidden") {
-    zIndex = "higher-order";
-  } else {
-    zIndex =  "lower-order";
-  }
 
   return (
     <>
-      {isTransitioning ? (
+      {/* {isTransitioning ? (
         <LoadingSpinner />
-      ) : (
+      ) : ( */}
         <main
-          className={`${styles["main"]} ${styles[zIndex]} ${
+          className={`${styles["main"]}  ${
             isTransitioning ? styles["slide-out"] : styles["slide-in"]
           }`}
         >
@@ -109,7 +99,7 @@ export const Main = () => {
             />
           </Routes>
         </main>
-      )}
+      {/* )} */}
     </>
   );
 };

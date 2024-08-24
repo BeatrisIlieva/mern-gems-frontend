@@ -14,7 +14,7 @@ import styles from "./MiniBag.module.css";
 export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
   const { totalPrice, bagTotalQuantity } = useBagContext();
 
-  const buttonClickHandler = () => {
+  const clickHandler = () => {
     document.body.style.overflow = "visible";
 
     toggleDisplayMiniBagPopup();
@@ -22,7 +22,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
 
   useEffect(() => {
     if (bagTotalQuantity === 0) {
-      toggleDisplayMiniBagPopup();
+      clickHandler();
     }
   }, [bagTotalQuantity]);
 
@@ -45,7 +45,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
             <Button
               title={"View Bag"}
               buttonIsDisabled={false}
-              callBackFunction={buttonClickHandler}
+              callBackFunction={clickHandler}
               variant={"pink"}
             />
           </Link>
@@ -53,7 +53,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
             <Button
               title={"Continue Checkout"}
               buttonIsDisabled={false}
-              callBackFunction={buttonClickHandler}
+              callBackFunction={clickHandler}
               variant={"gray"}
             />
           </Link>
