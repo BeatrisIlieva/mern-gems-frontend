@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 30px;
   opacity: 0;
-  animation: transitioning 1.5s forwards;
+  animation: transitioning 1.6s forwards;
 }
 
 .bag-list {
