@@ -1,7 +1,27 @@
+
+
+
+
 #jewelry {
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
+
+  opacity: 0;
+
+}
+
+#jewelry.appear {
+  animation: heroAppear 4s forwards;
+}
+
+@keyframes heroAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #jewelry,

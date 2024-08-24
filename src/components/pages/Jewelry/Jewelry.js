@@ -15,6 +15,8 @@ import { useService } from "../../../hooks/useService";
 
 import { jewelryServiceFactory } from "../../../services/jewelryService";
 
+import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
+
 import { useJewelry } from "../../../hooks/useJewelry";
 import { deslugify } from "../../../utils/deslugify";
 
@@ -34,22 +36,6 @@ export const Jewelry = () => {
     colorTitle,
   });
 
-  // const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
-
-  // const jewelryService = useService(jewelryServiceFactory);
-
-  // useEffect(() => {
-  //   jewelryService
-  //     .getOne(categoryTitle, colorTitle)
-  //     .then((data) => {
-  //       setJewelriesByCategory(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //       setDisplayPage404(true);
-  //     })
-  //     .finally(() => {});
-  // }, [categoryTitle, colorTitle, jewelryService]);
 
   const [displayPopup, setDisplayPopup] = useState(false);
 

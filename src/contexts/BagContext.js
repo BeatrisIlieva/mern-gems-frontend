@@ -30,7 +30,7 @@ export const BagProvider = ({ children }) => {
   useEffect(() => {
     setBagTotalQuantity(
       bagItems.reduce((total, item) => {
-        return total +  item.quantity;
+        return total + item.quantity;
       }, 0)
     );
   }, [bagItems]);
@@ -58,13 +58,13 @@ export const BagProvider = ({ children }) => {
   const increase = async (bagId) => {
     await bagService.increase(bagId);
 
-    setBagTotalQuantity((oldQuantity) => (oldQuantity + 1))
+    setBagTotalQuantity((oldQuantity) => oldQuantity + 1);
   };
 
   const decrease = async (bagId) => {
     await bagService.decrease(bagId);
 
-    setBagTotalQuantity((oldQuantity) => (oldQuantity - 1))
+    setBagTotalQuantity((oldQuantity) => oldQuantity - 1);
   };
 
   const remove = async (bagId) => {
