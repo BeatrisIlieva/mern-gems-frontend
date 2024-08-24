@@ -16,7 +16,7 @@ export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
 
   return (
-    <>
+    <section className={styles["bag"]}>
       {bagTotalQuantity < 1 ? (
         <>
           <InfoMessage
@@ -44,6 +44,6 @@ export const Bag = () => {
           </ChildWrapper>
         </ShoppingProcessContainer>
       )}
-    </>
+    </section>
   );
 };
