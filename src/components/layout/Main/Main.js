@@ -22,84 +22,74 @@ export const Main = () => {
   const { isTransitioning } = useIsTransitioning();
 
   return (
-    <>
-      {/* {isTransitioning ? (
-        <LoadingSpinner />
-      ) : ( */}
-        <main
-          className={`${styles["main"]}  ${
-            isTransitioning ? styles["slide-out"] : styles["slide-in"]
-          }`}
-        >
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/collection"
-              element={
-                <RouteGuard>
-                  <CollectionList />
-                </RouteGuard>
-              }
-            />
-            <Route
-              path="/collection/:slugifiedCategoryTitle/:slugifiedColorTitle"
-              element={
-                <RouteGuard>
-                  <Jewelry />
-                </RouteGuard>
-              }
-            />
-            <Route
-              path="/users/account"
-              element={
-                <RouteGuard>
-                  <Account />
-                </RouteGuard>
-              }
-            />
-            <Route
-              path="/users/shopping-bag"
-              element={
-                <RouteGuard>
-                  <Bag />
-                </RouteGuard>
-              }
-            />
-            <Route
-              path="/checkout"
-              element={
-                <RouteGuard>
-                  <Checkout />
-                </RouteGuard>
-              }
-            />
-            <Route
-              path="/payment"
-              element={
-                <RouteGuard>
-                  <Payment />
-                </RouteGuard>
-              }
-            />
-            <Route
-              path="/order-confirmation"
-              element={
-                <RouteGuard>
-                  <OrderConfirmation />
-                </RouteGuard>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <RouteGuard>
-                  <Page404 />
-                </RouteGuard>
-              }
-            />
-          </Routes>
-        </main>
-      {/* )} */}
-    </>
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/collection"
+          element={
+            <RouteGuard>
+              <CollectionList />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="/collection/:slugifiedCategoryTitle/:slugifiedColorTitle"
+          element={
+            <RouteGuard>
+              <Jewelry />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="/users/account"
+          element={
+            <RouteGuard>
+              <Account />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="/users/shopping-bag"
+          element={
+            <RouteGuard>
+              <Bag />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <RouteGuard>
+              <Checkout />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <RouteGuard>
+              <Payment />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="/order-confirmation"
+          element={
+            <RouteGuard>
+              <OrderConfirmation />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <RouteGuard>
+              <Page404 />
+            </RouteGuard>
+          }
+        />
+      </Routes>
+    </main>
   );
 };
