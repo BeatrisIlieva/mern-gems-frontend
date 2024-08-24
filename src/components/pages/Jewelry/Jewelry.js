@@ -29,12 +29,12 @@ export const Jewelry = () => {
 
   const colorTitle = deslugify(slugifiedColorTitle);
 
-
   const { jewelriesByCategory, displayPage404 } = useJewelry({
     categoryTitle,
     colorTitle,
   });
 
+  const { isTransitioning } = useIsTransitioning();
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
@@ -53,7 +53,11 @@ export const Jewelry = () => {
               {displayPopup && (
                 <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
               )}
-              <section id={styles["jewelry"]}>
+              <section
+                className={` ${
+                  isTransitioning ? styles["jewelry"] : ""
+                }`.trim()}
+              >
                 <div className={styles["image-container"]}>
                   <LargeImages
                     jewelriesByCategory={jewelriesByCategory}

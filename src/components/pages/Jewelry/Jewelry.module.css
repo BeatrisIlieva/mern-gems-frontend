@@ -2,18 +2,19 @@
 
 
 
-#jewelry {
+.jewelry {
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
 
   opacity: 0;
-
-}
-
-#jewelry.appear {
   animation: heroAppear 4s forwards;
+
 }
+
+/* .jewelry.appear {
+  animation: heroAppear 4s forwards;
+} */
 
 @keyframes heroAppear {
   0% {
@@ -24,12 +25,12 @@
   }
 }
 
-#jewelry,
+.jewelry,
 .empty {
   height: calc(100vh - 10rem);
 }
 
-#jewelry,
+.jewelry,
 .image-container,
 .info-and-action-container,
 .wrapper,
@@ -37,7 +38,7 @@
   display: flex;
 }
 
-#jewelry,
+.jewelry,
 .image-container {
   justify-content: center;
 }

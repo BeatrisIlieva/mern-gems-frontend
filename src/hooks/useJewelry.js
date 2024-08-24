@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { useService } from "./useService";
 
 import { jewelryServiceFactory } from "../services/jewelryService";
 
 export const useJewelry = ({ categoryTitle, colorTitle }) => {
-  const navigate = useNavigate();
-
   const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
 
   const jewelryService = useService(jewelryServiceFactory);
@@ -22,10 +19,10 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
       })
       .catch((err) => {
         console.log(err.message);
-        setDisplayPage404(true)
+        setDisplayPage404(true);
       })
       .finally(() => {});
-  }, [categoryTitle, colorTitle, jewelryService, navigate]);
+  }, [categoryTitle, colorTitle, jewelryService]);
 
   return { jewelriesByCategory, displayPage404 };
 };
