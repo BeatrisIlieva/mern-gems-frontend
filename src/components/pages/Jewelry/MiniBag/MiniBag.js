@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 
 import { BagList } from "../../../reusable/BagList/BagList";
@@ -35,7 +37,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
               title={"Your Shopping Bag Is Empty"}
               subtitle={"Explore and add something you love."}
             />
-            <Collection />
+            {/* <Collection /> */}
           </>
         ) : (
           <>

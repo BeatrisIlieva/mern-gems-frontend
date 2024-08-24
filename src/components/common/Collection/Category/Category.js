@@ -13,34 +13,34 @@ import { useJewelry } from "../../../../hooks/useJewelry";
 export const Category = ({ categoryTitle, colorTitle }) => {
   const navigate = useNavigate();
 
-  const [selectedColorTitle, setSelectedColorTitle] = useState(colorTitle);
+  // const [selectedColorTitle, setSelectedColorTitle] = useState(colorTitle);
 
-  const updateColorTitle = (title) => {
-    navigate(`/collection/${colorTitle}`)
-    setSelectedColorTitle(title);
+  // const updateColorTitle = (title) => {
+  //   navigate(`/collection/${colorTitle}`)
+  //   setSelectedColorTitle(title);
 
-  };
+  // };
 
-  const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
+  // const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
 
-  const jewelryService = useService(jewelryServiceFactory);
+  // const jewelryService = useService(jewelryServiceFactory);
 
-  // const { jewelriesByCategory } = useJewelry({
-  //   categoryTitle,
-  //   colorTitle: selectedColorTitle,
-  // });
+  const { jewelriesByCategory } = useJewelry({
+    categoryTitle,
+    colorTitle,
+  });
 
-  useEffect(() => {
-    jewelryService
-      .getOne(categoryTitle, selectedColorTitle)
-      .then((data) => {
-        setJewelriesByCategory(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      })
-      .finally(() => {});
-  }, [categoryTitle, selectedColorTitle, jewelryService]);
+  // useEffect(() => {
+  //   jewelryService
+  //     .getOne(categoryTitle, colorTitle)
+  //     .then((data) => {
+  //       setJewelriesByCategory(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     })
+  //     .finally(() => {});
+  // }, [categoryTitle, colorTitle, jewelryService]);
 
   return (
     <>
@@ -49,7 +49,7 @@ export const Category = ({ categoryTitle, colorTitle }) => {
       ) : (
         <CategoryCard
           jewelriesByCategory={jewelriesByCategory}
-          updateColorTitle={updateColorTitle}
+          // updateColorTitle={updateColorTitle}
         />
       )}
     </>

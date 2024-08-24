@@ -10,7 +10,7 @@ import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitl
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ jewelriesByCategory, updateColorTitle }) => {
+export const MiniImages = ({ jewelriesByCategory}) => {
   const location = useLocation();
 
   const navigate = useNavigate();

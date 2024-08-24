@@ -9,7 +9,7 @@ import { useIsTransitioning } from "../../../../../hooks/useIsTransitioning";
 
 import styles from "./CategoryCard.module.css";
 
-export const CategoryCard = ({ jewelriesByCategory, updateColorTitle }) => {
+export const CategoryCard = ({ jewelriesByCategory}) => {
   const {isTransitioning} = useIsTransitioning();
 
   const [articleIsHovered, setArticleIsHovered] = useState(false);
@@ -36,7 +36,7 @@ export const CategoryCard = ({ jewelriesByCategory, updateColorTitle }) => {
       <LargeImages jewelriesByCategory={jewelriesByCategory} />
       <MiniImages
         jewelriesByCategory={jewelriesByCategory}
-        updateColorTitle={updateColorTitle}
+        // updateColorTitle={updateColorTitle}
       />
     </article>
   );

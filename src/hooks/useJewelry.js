@@ -12,6 +12,8 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
 
   const jewelryService = useService(jewelryServiceFactory);
 
+  const [displayPage404, setDisplayPage404] = useState(false);
+
   useEffect(() => {
     jewelryService
       .getOne(categoryTitle, colorTitle)
@@ -20,10 +22,10 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
       })
       .catch((err) => {
         console.log(err.message);
-        navigate("*");
+        setDisplayPage404(true)
       })
       .finally(() => {});
   }, [categoryTitle, colorTitle, jewelryService, navigate]);
 
-  return { jewelriesByCategory };
+  return { jewelriesByCategory, displayPage404 };
 };

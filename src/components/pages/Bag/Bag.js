@@ -1,3 +1,5 @@
+import {useState, useEffect} from "react"
+
 import { Link } from "react-router-dom";
 
 import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
@@ -15,15 +17,17 @@ import { useBagContext } from "../../../contexts/BagContext";
 export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
 
+  const [displayInfoMessage, setDisplayInfoMessage] = useState(false);
+
   return (
     <>
-      {bagTotalQuantity === 0 ? (
+      {bagTotalQuantity < 1 ? (
         <>
           <InfoMessage
             title={"Your Shopping Bag Is Empty"}
             subtitle={"Explore and add something you love."}
           />
-          <Collection />
+          {/* <Collection /> */}
         </>
       ) : (
         <ShoppingProcessContainer title={"Bag"}>

@@ -27,29 +27,29 @@ export const Jewelry = () => {
 
   const colorTitle = deslugify(slugifiedColorTitle);
 
-  const [displayPage404, setDisplayPage404] = useState(false);
+  // const [displayPage404, setDisplayPage404] = useState(false);
 
-  // const { jewelriesByCategory } = useJewelry({
-  //   categoryTitle,
-  //   colorTitle,
-  // });
+  const { jewelriesByCategory, displayPage404 } = useJewelry({
+    categoryTitle,
+    colorTitle,
+  });
 
-  const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
+  // const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
 
-  const jewelryService = useService(jewelryServiceFactory);
+  // const jewelryService = useService(jewelryServiceFactory);
 
-  useEffect(() => {
-    jewelryService
-      .getOne(categoryTitle, colorTitle)
-      .then((data) => {
-        setJewelriesByCategory(data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-        setDisplayPage404(true);
-      })
-      .finally(() => {});
-  }, [categoryTitle, colorTitle, jewelryService]);
+  // useEffect(() => {
+  //   jewelryService
+  //     .getOne(categoryTitle, colorTitle)
+  //     .then((data) => {
+  //       setJewelriesByCategory(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //       setDisplayPage404(true);
+  //     })
+  //     .finally(() => {});
+  // }, [categoryTitle, colorTitle, jewelryService]);
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
