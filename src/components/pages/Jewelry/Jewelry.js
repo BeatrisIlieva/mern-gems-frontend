@@ -51,7 +51,7 @@ export const Jewelry = () => {
                 <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
               )}
               <section
-                className={`${styles["jewelry"]} ${styles["transitioning"]}`}
+                className={styles["jewelry"]}
               >
                 <div className={styles["image-container"]}>
                   {isTransitioning && <LoadingSpinner />}

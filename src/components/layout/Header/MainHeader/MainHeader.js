@@ -8,7 +8,7 @@ import styles from "./MainHeader.module.css";
 
 export const MainHeader = () => {
   return (
-    <header className={styles["header"]}>
+    <header id="header" className={styles["header"]}>
       <div className={styles["wrapper"]}>
         <NavLinkItem items={LEFT_NAV_ITEMS} />
         <Link to="/">

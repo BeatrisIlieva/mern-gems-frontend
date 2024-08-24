@@ -5,6 +5,8 @@
   margin: 40px 80px;
   gap: 40px;
   animation: transitioning 1.6s forwards;
+  position: relative; /* Ensure it has a stacking context */
+  z-index: 1; 
 }
 
 .flex-container {

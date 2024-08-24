@@ -2,7 +2,6 @@
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .jewelry,
@@ -65,10 +64,6 @@
 
 .bottom {
   gap: 0.8rem;
-}
-
-.jewelry.transitioning {
-  animation: transitioning 2s forwards;
 }
 
 .content.transitioning {
