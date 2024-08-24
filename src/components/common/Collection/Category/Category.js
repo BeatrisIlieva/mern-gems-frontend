@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { CategoryCard } from "./CategoryCard/CategoryCard";
 import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
+
+import { useService } from "../../../../hooks/useService";
+
+import { jewelryServiceFactory } from "../../../../services/jewelryService";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
 
@@ -17,10 +21,26 @@ export const Category = ({ categoryTitle, colorTitle }) => {
 
   };
 
-  const { jewelriesByCategory } = useJewelry({
-    categoryTitle,
-    colorTitle: selectedColorTitle,
-  });
+  const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
+
+  const jewelryService = useService(jewelryServiceFactory);
+
+  // const { jewelriesByCategory } = useJewelry({
+  //   categoryTitle,
+  //   colorTitle: selectedColorTitle,
+  // });
+
+  useEffect(() => {
+    jewelryService
+      .getOne(categoryTitle, selectedColorTitle)
+      .then((data) => {
+        setJewelriesByCategory(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      })
+      .finally(() => {});
+  }, [categoryTitle, selectedColorTitle, jewelryService]);
 
   return (
     <>

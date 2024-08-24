@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { LargeImages } from "../../common/LargeImages/LargeImages";
@@ -9,6 +9,11 @@ import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSecti
 import { MiniBag } from "./MiniBag/MiniBag";
 import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../reusable/Paragraph/Paragraph";
+import { Page404 } from "../Page404/Page404";
+
+import { useService } from "../../../hooks/useService";
+
+import { jewelryServiceFactory } from "../../../services/jewelryService";
 
 import { useJewelry } from "../../../hooks/useJewelry";
 import { deslugify } from "../../../utils/deslugify";
@@ -22,10 +27,29 @@ export const Jewelry = () => {
 
   const colorTitle = deslugify(slugifiedColorTitle);
 
-  const { jewelriesByCategory } = useJewelry({
-    categoryTitle,
-    colorTitle,
-  });
+  const [displayPage404, setDisplayPage404] = useState(false);
+
+  // const { jewelriesByCategory } = useJewelry({
+  //   categoryTitle,
+  //   colorTitle,
+  // });
+
+  const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
+
+  const jewelryService = useService(jewelryServiceFactory);
+
+  useEffect(() => {
+    jewelryService
+      .getOne(categoryTitle, colorTitle)
+      .then((data) => {
+        setJewelriesByCategory(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setDisplayPage404(true);
+      })
+      .finally(() => {});
+  }, [categoryTitle, colorTitle, jewelryService]);
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
@@ -35,49 +59,59 @@ export const Jewelry = () => {
 
   return (
     <>
-      {jewelriesByCategory.length > 0 ? (
+      {displayPage404 ? (
+        <Page404 />
+      ) : (
         <>
-          {displayPopup && (
-            <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
-          )}
-          <section id={styles["jewelry"]}>
-            <div className={styles["image-container"]}>
-              <LargeImages
-                jewelriesByCategory={jewelriesByCategory}
-                circleIconsPosition={"bottom"}
-                variant={"large"}
-              />
-            </div>
-            <div className={styles["info-and-action-container"]}>
-              <div className={styles["wrapper"]}>
-                <DualTitleSection
-                  firstTitle={
-                    <div className={styles["mini-images"]}>
-                      <MiniImages jewelriesByCategory={jewelriesByCategory} />
-                    </div>
-                  }
-                  secondTitle={
-                    <StockStatus jewelriesByCategory={jewelriesByCategory} />
-                  }
-                  variant={"regular"}
-                />
-                <div className={styles["bottom"]}>
-                  <LargeTitle title={jewelriesByCategory[0].title} />
-                  <Paragraph
-                    text={`${jewelriesByCategory[0].description}.`}
-                    textAlign={"left"}
+          {jewelriesByCategory.length > 0 ? (
+            <>
+              {displayPopup && (
+                <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
+              )}
+              <section id={styles["jewelry"]}>
+                <div className={styles["image-container"]}>
+                  <LargeImages
+                    jewelriesByCategory={jewelriesByCategory}
+                    circleIconsPosition={"bottom"}
+                    variant={"large"}
                   />
                 </div>
-              </div>
-              <Form
-                jewelriesByCategory={jewelriesByCategory}
-                toggleDisplayPopup={toggleDisplayPopup}
-              />
-            </div>
-          </section>
+                <div className={styles["info-and-action-container"]}>
+                  <div className={styles["wrapper"]}>
+                    <DualTitleSection
+                      firstTitle={
+                        <div className={styles["mini-images"]}>
+                          <MiniImages
+                            jewelriesByCategory={jewelriesByCategory}
+                          />
+                        </div>
+                      }
+                      secondTitle={
+                        <StockStatus
+                          jewelriesByCategory={jewelriesByCategory}
+                        />
+                      }
+                      variant={"regular"}
+                    />
+                    <div className={styles["bottom"]}>
+                      <LargeTitle title={jewelriesByCategory[0].title} />
+                      <Paragraph
+                        text={`${jewelriesByCategory[0].description}.`}
+                        textAlign={"left"}
+                      />
+                    </div>
+                  </div>
+                  <Form
+                    jewelriesByCategory={jewelriesByCategory}
+                    toggleDisplayPopup={toggleDisplayPopup}
+                  />
+                </div>
+              </section>
+            </>
+          ) : (
+            <div className={styles["empty"]}></div>
+          )}
         </>
-      ) : (
-        <div className={styles["empty"]}></div>
       )}
     </>
   );

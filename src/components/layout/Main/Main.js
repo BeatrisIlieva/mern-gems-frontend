@@ -21,7 +21,15 @@ export const Main = () => {
 
   const { isTransitioning } = useIsTransitioning();
 
-//   const showLoadingSpinner = location.pathname !== "/" && location.pathname !== "/collection"
+  //   const showLoadingSpinner = location.pathname !== "/" && location.pathname !== "/collection"
+
+  let zIndex;
+
+  if (document.body.style.overflow === "hidden") {
+    zIndex = "lower-order";
+  } else {
+    zIndex = "higher-order";
+  }
 
   return (
     <>
@@ -29,7 +37,7 @@ export const Main = () => {
         <LoadingSpinner />
       ) : (
         <main
-          className={`${styles["main"]} ${
+          className={`${styles["main"]} ${styles[zIndex]} ${
             isTransitioning ? styles["slide-out"] : styles["slide-in"]
           }`}
         >
