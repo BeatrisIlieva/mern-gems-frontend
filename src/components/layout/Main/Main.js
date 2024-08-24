@@ -26,9 +26,9 @@ export const Main = () => {
   let zIndex;
 
   if (document.body.style.overflow === "hidden") {
-    zIndex = "lower-order";
-  } else {
     zIndex = "higher-order";
+  } else {
+    zIndex =  "lower-order";
   }
 
   return (

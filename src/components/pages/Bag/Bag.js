@@ -27,7 +27,7 @@ export const Bag = () => {
             title={"Your Shopping Bag Is Empty"}
             subtitle={"Explore and add something you love."}
           />
-          {/* <Collection /> */}
+          <Collection />
         </>
       ) : (
         <ShoppingProcessContainer title={"Bag"}>

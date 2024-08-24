@@ -28,8 +28,16 @@ export const BagProvider = ({ children }) => {
   }, [bagItems]);
 
   useEffect(() => {
-    setBagTotalQuantity(bagItems.length);
+    setBagTotalQuantity(
+      bagItems.reduce((total, item) => {
+        return total +  item.quantity;
+      }, 0)
+    );
   }, [bagItems]);
+
+  // useEffect(() => {
+  //   setBagTotalQuantity(bagItems.length);
+  // }, [bagItems]);
 
   useEffect(() => {
     bagService
@@ -45,7 +53,7 @@ export const BagProvider = ({ children }) => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userId, bagService, bagTotalQuantity]);
+  }, [userId, bagService]);
 
   const add = async (size, jewelryId) => {
     await bagService.add(size, jewelryId);
