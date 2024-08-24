@@ -16,11 +16,16 @@
 }
 
 .button.pink {
-  background: var(--medium-pink);
+  background: var(--light-pink);
+  color: var(--gray);
+  box-shadow: 0 0 0 1px var(--light-gray);
 }
 
-.button.pink:hover {
+.button.pink:hover,
+.button.pink:active {
   background: var(--pink);
+  color: var(--white);
+  box-shadow: 0 0 0 1px var(--white);
 }
 
 .button.pink.disabled {
@@ -29,15 +34,18 @@
 }
 
 .button.gray {
-  background: var(--medium-gray);
+  background: var(--light-gray);
+  color: var(--gray);
+  box-shadow: 0 0 0 1px var(--light-pink);
 }
 
-.button.gray:hover {
+.button.gray:hover, .button.gray:active {
   background: var(--gray);
+  color: var(--white);
+  box-shadow: 0 0 0 1px var(--white);
 }
 
 .button.animated {
-  position: relative;
   background: var(--white);
   color: var(--gray);
   box-shadow: 0 0 0 1px var(--gray);
