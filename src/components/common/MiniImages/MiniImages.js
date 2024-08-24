@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Image } from "./Image/Image";
 
@@ -10,23 +10,17 @@ import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitl
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ jewelriesByCategory}) => {
-  const location = useLocation();
-
+export const MiniImages = ({ jewelriesByCategory }) => {
   const navigate = useNavigate();
 
   const clickHandler = (colorTitle) => {
-    // if (location.pathname === "/collection") {
-    //   updateColorTitle(colorTitle);
-    // } else {
-      const categoryTitle = jewelriesByCategory[0].categories[0].title;
+    const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
-      const slugifiedCategoryTitle = slugify(categoryTitle);
+    const slugifiedCategoryTitle = slugify(categoryTitle);
 
-      const slugifiedColorTitle = slugify(colorTitle);
+    const slugifiedColorTitle = slugify(colorTitle);
 
-      navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-    // }
+    navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
 
   const [activeMiniImage, setActiveMiniImage] = useState(

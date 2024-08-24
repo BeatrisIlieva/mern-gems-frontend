@@ -1,7 +1,6 @@
 .category-card {
   cursor: pointer;
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   justify-content: space-between;
   width: 20vw;
@@ -13,8 +12,6 @@
 .category-card.hovered {
   box-shadow: 0 0 0 1px var(--light-gray);
 }
-
-
 
 .slide-in {
   animation: slideIn 0.4s forwards;
@@ -45,4 +42,3 @@
     opacity: 0;
   }
 }
-

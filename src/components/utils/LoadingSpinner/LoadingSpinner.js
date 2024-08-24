@@ -3,6 +3,7 @@ import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 import styles from "./LoadingSpinner.module.css";
 export const LoadingSpinner = () => {
   const { isTransitioning } = useIsTransitioning();
+
   return (
     <div className={styles["wrapper"]}>
       <div
