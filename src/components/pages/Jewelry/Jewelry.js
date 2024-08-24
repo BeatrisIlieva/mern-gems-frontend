@@ -104,8 +104,6 @@ export const Jewelry = () => {
             <div className={styles["empty"]}></div>
           )}
         </>
-        //   )}
-        // </>
       )}
     </>
   );
