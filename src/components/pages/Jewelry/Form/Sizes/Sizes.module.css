@@ -28,7 +28,7 @@
 
 .label {
   gap: 4px;
-  border: 1px solid var(--medium-pink);
+  border: 0.1px solid var(--medium-pink);
   border-radius: 60rem;
   width: 80px;
   height: 40px;
