@@ -42,7 +42,7 @@
   border-block-start: 1px solid var(--medium-pink);
   position: relative;
   transition: opacity 0.8s ease, transform 0.8s ease;
-  padding: 2rem;
+  padding: 20px;
 }
 
 .modal.large,

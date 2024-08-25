@@ -19,6 +19,7 @@
   background: var(--light-pink);
   color: var(--gray);
   box-shadow: 0 0 0 1px var(--light-gray);
+  width: 100%;
 }
 
 .button.pink:hover,
@@ -44,7 +45,6 @@
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
-  width: 100%;
 }
 
 .button.animated {
