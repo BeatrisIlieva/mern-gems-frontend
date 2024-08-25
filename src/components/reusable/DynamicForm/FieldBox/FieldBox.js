@@ -24,6 +24,8 @@ export const FieldBox = ({
       {currentKey === "Email" && location.pathname !== "/users/account" && (
         <QuestionMark />
       )}
+
+      {currentKey === "Password" && <QuestionMark />}
       <FieldContainer
         values={values}
         value={value}
