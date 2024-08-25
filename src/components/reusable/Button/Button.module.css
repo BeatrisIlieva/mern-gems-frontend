@@ -8,12 +8,17 @@
 .button.underlined {
   cursor: pointer;
   font-size: var(--medium);
-  font-family: var(--bold-italic-font-family);
   padding: 0.75rem 2.25rem;
   justify-content: center;
   display: flex;
   transition: background-color 300ms linear, color 300ms, box-shadow 300ms;
   border-radius: 2rem;
+}
+
+.button.pink,
+.button.gray,
+.button.white {
+  font-family: var(--bold-italic-font-family);
 }
 
 .button.pink {
@@ -74,5 +79,5 @@
 .button.underlined:hover,
 .button.underlined:active {
   font-family: var(--bold-font-family);
-color: var(--gray);
+  color: var(--gray);
 }
