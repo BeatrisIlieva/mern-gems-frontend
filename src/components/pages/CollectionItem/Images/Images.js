@@ -1,9 +1,9 @@
 import { LoadingSpinner } from "../../../utils/LoadingSpinner/LoadingSpinner";
 import { LargeImages } from "../../../common/LargeImages/LargeImages";
 
-import styles from "./Images.module.css"
+import styles from "./Images.module.css";
 
-export const Images = ({ jewelriesByCategory, isTransitioning}) => {
+export const Images = ({ jewelriesByCategory, isTransitioning }) => {
   return (
     <div className={styles["image-container"]}>
       {isTransitioning && <LoadingSpinner />}
