@@ -59,11 +59,11 @@
 }
 
 .wrapper {
-  gap: 2rem;
+  gap: 1.4rem;
 }
 
 .bottom {
-  gap: 0.8rem;
+  gap: 0.6rem;
 }
 
 .content.transitioning {

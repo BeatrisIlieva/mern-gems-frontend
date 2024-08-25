@@ -76,7 +76,7 @@
   font-size: var(--normal);
   color: var(--medium-gray);
   padding: 0px;
-  min-width: 49px;
+  min-width: 4rem;
 }
 
 .button.underlined:hover,
