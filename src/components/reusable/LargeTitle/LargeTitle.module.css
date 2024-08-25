@@ -4,6 +4,9 @@
   font-family: var(--bold-italic-font-family);
   color: var(--gray);
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .title.align-left {
