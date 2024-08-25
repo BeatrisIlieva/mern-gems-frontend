@@ -33,7 +33,6 @@
 
 .info-and-action-container,
 .image-container {
-  border-radius: 4rem;
   width: 50%;
   background-color: var(--white);
 }

@@ -16,9 +16,12 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
       .getOne(categoryTitle, colorTitle)
       .then((data) => {
         setJewelriesByCategory(data);
+
+        setDisplayPage404(false);
       })
       .catch((err) => {
         console.log(err.message);
+        
         setDisplayPage404(true);
       })
       .finally(() => {});
