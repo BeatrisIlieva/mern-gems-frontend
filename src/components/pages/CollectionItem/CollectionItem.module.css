@@ -10,7 +10,6 @@
 }
 
 .collection-item,
-.image-container,
 .info-and-action-container,
 .content,
 .wrapper,
@@ -18,30 +17,22 @@
   display: flex;
 }
 
-.collection-item,
-.image-container {
+.collection-item{
   justify-content: center;
 }
 
 .info-and-action-container,
 .content,
 .wrapper,
-.bottom,
-.image-container {
+.bottom{
   flex-direction: column;
 }
 
-.info-and-action-container,
-.image-container {
+.info-and-action-container{
   width: 50%;
   background-color: var(--white);
 }
 
-.image-container {
-  padding-bottom: 1rem;
-  align-items: center;
-  position: relative;
-}
 
 .info-and-action-container {
   padding: 1.5rem;

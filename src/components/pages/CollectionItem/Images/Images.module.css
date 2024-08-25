@@ -1,0 +1,10 @@
+.image-container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  background-color: var(--white);
+  padding-bottom: 1rem;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}

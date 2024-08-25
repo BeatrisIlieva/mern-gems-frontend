@@ -11,6 +11,7 @@ import { MiniBag } from "./MiniBag/MiniBag";
 import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../reusable/Paragraph/Paragraph";
 import { Page404 } from "../Page404/Page404";
+import { Images } from "./Images/Images";
 
 import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 
@@ -51,14 +52,10 @@ export const CollectionItem = () => {
                 <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
               )}
               <section className={styles["collection-item"]}>
-                <div className={styles["image-container"]}>
-                  {isTransitioning && <LoadingSpinner />}
-                  <LargeImages
-                    jewelriesByCategory={jewelriesByCategory}
-                    circleIconsPosition={"bottom"}
-                    variant={"large"}
-                  />
-                </div>
+                <Images
+                  jewelriesByCategory={jewelriesByCategory}
+                  isTransitioning={isTransitioning}
+                />
                 <div className={styles["info-and-action-container"]}>
                   {isTransitioning && <LoadingSpinner />}
                   <div
