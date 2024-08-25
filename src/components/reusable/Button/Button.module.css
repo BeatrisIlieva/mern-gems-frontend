@@ -41,7 +41,8 @@
   width: 100%;
 }
 
-.button.gray:hover, .button.gray:active {
+.button.gray:hover,
+.button.gray:active {
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
