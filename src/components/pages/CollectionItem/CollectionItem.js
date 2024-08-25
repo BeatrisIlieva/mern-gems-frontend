@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { MiniBag } from "./MiniBag/MiniBag";
-
 import { Page404 } from "../Page404/Page404";
 import { Images } from "./Images/Images";
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
