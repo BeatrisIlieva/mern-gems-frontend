@@ -60,7 +60,9 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
         changeHandler={changeHandler}
         selectedSize={selectedSize}
       />
+      <div className={styles["button"]}>
       <Button variant={"pink"} title={"Add To Bag"} />
+      </div>
     </form>
   );
 };

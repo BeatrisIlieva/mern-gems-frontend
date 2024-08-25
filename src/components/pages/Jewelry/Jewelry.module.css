@@ -52,6 +52,7 @@
 .content {
   justify-content: space-between;
   flex-grow: 1;
+  width: 100%;
 }
 
 .mini-images {
@@ -64,6 +65,8 @@
 
 .bottom {
   gap: 0.8rem;
+  width: 100%;
+  display: flex;
 }
 
 .content.transitioning {
