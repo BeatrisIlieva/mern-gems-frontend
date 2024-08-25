@@ -47,7 +47,8 @@
 
 .modal.large,
 .modal.small,
-.modal.authentication {
+.modal.authentication,
+.modal.order-history {
   max-height: 96vh;
   overflow-y: auto;
   animation: slideInTop 1s forwards;
@@ -66,6 +67,10 @@
   height: 100vh;
   width: 40vw;
   animation: slideInRight 1s forwards;
+}
+
+.modal.order-history {
+  width: calc(40vw + 5rem);
 }
 
 .x-mark {

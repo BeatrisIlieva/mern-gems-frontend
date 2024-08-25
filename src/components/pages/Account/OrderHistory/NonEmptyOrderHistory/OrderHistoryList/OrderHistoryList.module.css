@@ -11,22 +11,18 @@
   width: 100%;
 }
 
-.jewelries {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
 .order-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 0.625rem;
   width: 100%;
 }
+
+.jewelries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+
