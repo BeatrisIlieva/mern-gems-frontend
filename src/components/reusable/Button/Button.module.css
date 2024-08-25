@@ -21,11 +21,15 @@
   font-family: var(--bold-italic-font-family);
 }
 
+.button.pink,
+.button.gray {
+  width: 100%;
+}
+
 .button.pink {
   background: var(--light-pink);
   color: var(--gray);
   box-shadow: 0 0 0 1px var(--light-gray);
-  width: 100%;
 }
 
 .button.pink:hover,
@@ -44,7 +48,6 @@
   background: var(--light-gray);
   color: var(--gray);
   box-shadow: 0 0 0 1px var(--light-pink);
-  width: 100%;
 }
 
 .button.gray:hover,
