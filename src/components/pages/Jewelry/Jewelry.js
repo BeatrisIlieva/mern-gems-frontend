@@ -45,7 +45,7 @@ export const Jewelry = () => {
         <Page404 />
       ) : (
         <>
-          {jewelriesByCategory.length > 0 ? (
+          {jewelriesByCategory.length > 0 && (
             <>
               {displayPopup && (
                 <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
@@ -98,8 +98,6 @@ export const Jewelry = () => {
                 </div>
               </section>
             </>
-          ) : (
-            <div ></div>
           )}
         </>
       )}
