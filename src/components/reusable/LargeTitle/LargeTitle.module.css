@@ -3,6 +3,7 @@
   font-size: var(--large);
   font-family: var(--bold-italic-font-family);
   color: var(--gray);
+  margin-bottom: 2rem;
 }
 
 .title.align-left {
@@ -11,5 +12,4 @@
 
 .title.align-center {
   text-align: center;
-  margin-bottom: 2rem;
 }

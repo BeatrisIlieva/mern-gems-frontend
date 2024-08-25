@@ -47,7 +47,10 @@ export const OrderHistory = () => {
         buttonTitle={"View Order History"}
       />
       {displayPopup && (
-        <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"order-history"}>
+        <Popup
+          popupCloseHandler={toggleDisplayPopup}
+          modalVariant={"order-history"}
+        >
           <LargeTitle title={"Order History"} textAlign={"align-center"} />
           {orderItems.length < 1 ? (
             <EmptyOrderHistory />

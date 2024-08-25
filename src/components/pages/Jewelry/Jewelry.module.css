@@ -45,7 +45,7 @@
 }
 
 .info-and-action-container {
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative;
 }
 
@@ -60,10 +60,6 @@
 
 .wrapper {
   gap: 1.4rem;
-}
-
-.bottom {
-  gap: 0.6rem;
 }
 
 .content.transitioning {
