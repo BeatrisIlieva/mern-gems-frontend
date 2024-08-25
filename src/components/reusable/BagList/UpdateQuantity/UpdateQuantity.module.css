@@ -3,14 +3,22 @@
   justify-content: space-between;
   align-items: center;
   width: 3rem;
+  cursor: pointer;
+  font-size: var(--medium);
 }
 
 .enabled {
+  color: var(--medium-pink);
+}
+
+.enabled:hover,
+.enabled:active {
   color: var(--pink);
 }
 
 .disabled {
   color: var(--light-gray);
+  cursor: default;
 }
 
 .button {

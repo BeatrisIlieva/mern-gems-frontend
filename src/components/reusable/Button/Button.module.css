@@ -4,7 +4,8 @@
 
 .button.pink,
 .button.gray,
-.button.white {
+.button.white,
+.button.underlined {
   cursor: pointer;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
@@ -65,11 +66,13 @@
   background-color: var(--white);
   text-decoration: underline;
   font-size: var(--normal);
-  color: var(--gray);
+  color: var(--medium-gray);
   padding: 0px;
   min-width: 49px;
 }
 
-.button.underlined:hover {
+.button.underlined:hover,
+.button.underlined:active {
   font-family: var(--bold-font-family);
+color: var(--gray);
 }
