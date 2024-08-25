@@ -17,7 +17,7 @@ export const Checkout = () => {
       <ChildWrapper>
         <>
           <OrderSummary />
-          <BagList variant={"shopping-process-container"} />
+          <BagList />
         </>
       </ChildWrapper>
     </ShoppingProcessContainer>

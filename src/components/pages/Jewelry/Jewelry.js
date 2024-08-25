@@ -99,7 +99,7 @@ export const Jewelry = () => {
               </section>
             </>
           ) : (
-            <div className={styles["empty"]}></div>
+            <div ></div>
           )}
         </>
       )}

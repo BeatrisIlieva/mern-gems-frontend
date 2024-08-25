@@ -2,10 +2,10 @@
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
+  min-height: calc(100vh - 14rem);
 }
 
-.jewelry,
-.empty {
+.jewelry {
   height: calc(100vh - 10rem);
 }
 

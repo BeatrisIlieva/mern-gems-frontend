@@ -16,15 +16,15 @@ export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
 
   return (
-    <section className={styles["bag"]}>
+    <>
       {bagTotalQuantity < 1 ? (
-        <>
+        <section className={styles["bag"]}>
           <InfoMessage
             title={"Your Shopping Bag Is Empty"}
             subtitle={"Explore and add something you love."}
           />
           <Collection />
-        </>
+        </section>
       ) : (
         <ShoppingProcessContainer title={"Bag"}>
           <ChildWrapper>
@@ -44,6 +44,6 @@ export const Bag = () => {
           </ChildWrapper>
         </ShoppingProcessContainer>
       )}
-    </section>
+    </>
   );
 };

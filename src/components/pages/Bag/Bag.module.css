@@ -6,11 +6,6 @@
   animation: transitioning 1.6s forwards;
 }
 
-.bag-list {
-  overflow-y: auto;
-  height: 40vh;
-}
-
 .no-decoration {
   text-decoration: none;
   width: 100%;
