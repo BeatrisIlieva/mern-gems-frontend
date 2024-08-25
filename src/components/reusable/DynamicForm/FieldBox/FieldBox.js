@@ -5,6 +5,9 @@ import { FieldContainer } from "./FieldContainer/FieldContainer";
 import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
 import { SuccessMessage } from "./SuccessMessage/SuccessMessage";
 
+import { EMAIL_QUESTION_MARK } from "../../../../constants/email";
+import { PASSWORD_REQUIREMENTS } from "../../../../constants/password";
+
 import styles from "./FieldBox.module.css";
 
 export const FieldBox = ({
@@ -22,10 +25,12 @@ export const FieldBox = ({
   return (
     <div key={currentKey} className={styles["field-box"]}>
       {currentKey === "Email" && location.pathname !== "/users/account" && (
-        <QuestionMark />
+        <QuestionMark text={EMAIL_QUESTION_MARK} />
       )}
 
-      {currentKey === "Password" && <QuestionMark />}
+      {currentKey === "Password" && (
+        <QuestionMark text={PASSWORD_REQUIREMENTS} />
+      )}
       <FieldContainer
         values={values}
         value={value}

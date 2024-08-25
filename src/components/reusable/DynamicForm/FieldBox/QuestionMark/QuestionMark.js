@@ -7,7 +7,7 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./QuestionMark.module.css";
 
-export const QuestionMark = () => {
+export const QuestionMark = ({ text }) => {
   const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
 
   const onHoverQuestionMark = () => {
@@ -20,7 +20,7 @@ export const QuestionMark = () => {
 
   return (
     <span>
-      {hoveredQuestionMark && <Text />}
+      {hoveredQuestionMark && <Text text={text} />}
       <FontAwesomeIcon
         icon={faQuestion}
         className={styles["icon"]}
