@@ -2,17 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 40px 80px;
-  gap: 40px;
+  margin: 2rem;
+  gap: 2rem;
   animation: transitioning 1.6s forwards;
-  position: relative; /* Ensure it has a stacking context */
-  z-index: 1; 
+  min-height: calc(100vh - 14rem);
 }
 
 .flex-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 2rem;
 }
 
 @keyframes transitioning {
