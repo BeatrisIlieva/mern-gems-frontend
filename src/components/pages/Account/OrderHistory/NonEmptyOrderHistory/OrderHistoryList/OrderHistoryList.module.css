@@ -4,16 +4,29 @@
   gap: 30px;
   padding-bottom: 30px;
   border-bottom: 0.1px solid var(--pink);
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .jewelries {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .order-info {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }

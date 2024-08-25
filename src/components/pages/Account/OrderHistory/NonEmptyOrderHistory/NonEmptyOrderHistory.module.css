@@ -1,5 +1,6 @@
-.order-history {
+.non-empty-order-history {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 40px;
 }
+

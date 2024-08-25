@@ -4,7 +4,7 @@ import styles from "./NonEmptyOrderHistory.module.css";
 
 export const NonEmptyOrderHistory = ({ orderItems }) => {
   return (
-    <ul role="list" className={styles["order-history"]}>
+    <ul role="list" className={styles["non-empty-order-history"]}>
       {orderItems.map((item) => (
         <li key={item._id}>
           <OrderHistoryList {...item} />
