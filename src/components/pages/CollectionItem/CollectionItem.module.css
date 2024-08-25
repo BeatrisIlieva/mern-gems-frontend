@@ -1,15 +1,15 @@
-.jewelry {
+.collection-item {
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
   min-height: calc(100vh - 14rem);
 }
 
-.jewelry {
+.collection-item {
   height: calc(100vh - 10rem);
 }
 
-.jewelry,
+.collection-item,
 .image-container,
 .info-and-action-container,
 .content,
@@ -18,7 +18,7 @@
   display: flex;
 }
 
-.jewelry,
+.collection-item,
 .image-container {
   justify-content: center;
 }

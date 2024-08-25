@@ -17,9 +17,9 @@ import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 import { useJewelry } from "../../../hooks/useJewelry";
 import { deslugify } from "../../../utils/deslugify";
 
-import styles from "./Jewelry.module.css";
+import styles from "./CollectionItem.module.css";
 
-export const Jewelry = () => {
+export const CollectionItem = () => {
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
 
   const categoryTitle = deslugify(slugifiedCategoryTitle);
@@ -50,7 +50,7 @@ export const Jewelry = () => {
               {displayPopup && (
                 <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
               )}
-              <section className={styles["jewelry"]}>
+              <section className={styles["collection-item"]}>
                 <div className={styles["image-container"]}>
                   {isTransitioning && <LoadingSpinner />}
                   <LargeImages

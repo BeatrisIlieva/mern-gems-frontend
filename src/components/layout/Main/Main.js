@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { RouteGuard } from "../../utils/RouteGuard/RouteGuard";
 import { Home } from "../../pages/Home/Home";
 import { CollectionList } from "../../pages/CollectionList/CollectionList";
-import { Jewelry } from "../../pages/Jewelry/Jewelry";
+import { CollectionItem } from "../../pages/CollectionItem/CollectionItem";
 import { Account } from "../../pages/Account/Account";
 import { Bag } from "../../pages/Bag/Bag";
 import { Checkout } from "../../pages/Checkout/Checkout";
@@ -28,7 +28,7 @@ export const Main = () => {
           path="/collection/:slugifiedCategoryTitle/:slugifiedColorTitle"
           element={
             <RouteGuard>
-              <Jewelry />
+              <CollectionItem />
             </RouteGuard>
           }
         />
