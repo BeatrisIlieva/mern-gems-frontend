@@ -39,7 +39,7 @@ export const Description = () => {
               textAlign={"center"}
             />
             <Button
-              variant={"animated"}
+              variant={"white"}
               title={"Discover"}
               callBackFunction={clickHandler}
             />

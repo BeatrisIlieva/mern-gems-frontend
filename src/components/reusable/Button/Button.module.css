@@ -4,7 +4,7 @@
 
 .button.pink,
 .button.gray,
-.button.animated {
+.button.white {
   cursor: pointer;
   font-size: var(--medium);
   font-family: var(--bold-italic-font-family);
@@ -48,14 +48,14 @@
   box-shadow: 0 0 0 1px var(--white);
 }
 
-.button.animated {
+.button.white {
   background: var(--white);
   color: var(--gray);
   box-shadow: 0 0 0 1px var(--gray);
 }
 
-.button.animated:hover,
-.button.animated:active {
+.button.white:hover,
+.button.white:active {
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
