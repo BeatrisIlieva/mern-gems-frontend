@@ -1,0 +1,40 @@
+.info-and-action-container {
+  width: 50%;
+  background-color: var(--white);
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content {
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+}
+
+.mini-images {
+  width: 12rem;
+}
+
+.wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content.transitioning {
+  animation: transitioning 10s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,6 +1,6 @@
-import { NormalTitle } from "../../../../reusable/NormalTitle/NormalTitle";
+import { NormalTitle } from "../../../../../reusable/NormalTitle/NormalTitle";
 
-import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
+import { SIZE_FORM_KEY } from "../../../../../../constants/sizeFormKey";
 
 import styles from "./Sizes.module.css";
 

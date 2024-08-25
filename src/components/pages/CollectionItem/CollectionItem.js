@@ -1,17 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { LoadingSpinner } from "../../utils/LoadingSpinner/LoadingSpinner";
-import { LargeImages } from "../../common/LargeImages/LargeImages";
-import { MiniImages } from "../../common/MiniImages/MiniImages";
-import { StockStatus } from "../../common/StockStatus/StockStatus";
-import { Form } from "./Form/Form";
-import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { MiniBag } from "./MiniBag/MiniBag";
-import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
-import { Paragraph } from "../../reusable/Paragraph/Paragraph";
+
 import { Page404 } from "../Page404/Page404";
 import { Images } from "./Images/Images";
+import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
 
 import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 
@@ -56,43 +50,11 @@ export const CollectionItem = () => {
                   jewelriesByCategory={jewelriesByCategory}
                   isTransitioning={isTransitioning}
                 />
-                <div className={styles["info-and-action-container"]}>
-                  {isTransitioning && <LoadingSpinner />}
-                  <div
-                    className={`${styles["content"]} ${
-                      isTransitioning ? `${styles["transitioning"]}` : ""
-                    }`.trim()}
-                  >
-                    <div className={styles["wrapper"]}>
-                      <DualTitleSection
-                        firstTitle={
-                          <div className={styles["mini-images"]}>
-                            <MiniImages
-                              jewelriesByCategory={jewelriesByCategory}
-                            />
-                          </div>
-                        }
-                        secondTitle={
-                          <StockStatus
-                            jewelriesByCategory={jewelriesByCategory}
-                          />
-                        }
-                        variant={"regular"}
-                      />
-                      <div className={styles["bottom"]}>
-                        <LargeTitle title={jewelriesByCategory[0].title} />
-                        <Paragraph
-                          text={`${jewelriesByCategory[0].description}.`}
-                          textAlign={"left"}
-                        />
-                      </div>
-                    </div>
-                    <Form
-                      jewelriesByCategory={jewelriesByCategory}
-                      toggleDisplayPopup={toggleDisplayPopup}
-                    />
-                  </div>
-                </div>
+                <InfoAndAction
+                  jewelriesByCategory={jewelriesByCategory}
+                  isTransitioning={isTransitioning}
+                  toggleDisplayPopup={toggleDisplayPopup}
+                />
               </section>
             </>
           )}

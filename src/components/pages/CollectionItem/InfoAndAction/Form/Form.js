@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
 import { Sizes } from "./Sizes/Sizes";
-import { Button } from "../../../reusable/Button/Button";
+import { Button } from "../../../../reusable/Button/Button";
 
-import { useBagContext } from "../../../../contexts/BagContext";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
-import { SIZE_ERROR_MESSAGE } from "../../../../constants/sizeErrorMessage";
-import { SIZE_FORM_KEY } from "../../../../constants/sizeFormKey";
+import { SIZE_ERROR_MESSAGE } from "../../../../../constants/sizeErrorMessage";
+import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
 
 import styles from "./Form.module.css";
 
