@@ -40,8 +40,8 @@
   border-inline-end: 1px solid var(--medium-pink);
   border-block-end: 1px solid var(--medium-pink);
   border-block-start: 1px solid var(--medium-pink);
-  /* position: relative; */
-  /* transition: opacity 0.8s ease, transform 0.8s ease; */
+  position: relative;
+  transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 20px;
 }
 

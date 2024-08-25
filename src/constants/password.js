@@ -8,7 +8,8 @@ export const PASSWORD_PATTERN = new RegExp(
 );
 
 export const PASSWORD_ERROR_MESSAGE = "Ensure you enter a valid password"
-export const PASSWORD_REQUIREMENTS = `* Password must be ${PASSWORD_LENGTH.MIN}-${PASSWORD_LENGTH.MAX} characters and include at least one lowercase letter, one uppercase letter, and one digit`;
+
+export const PASSWORD_REQUIREMENTS = `Password must be ${PASSWORD_LENGTH.MIN}-${PASSWORD_LENGTH.MAX} characters and include at least one lowercase letter, one uppercase letter, and one digit`;
 
 export const PASSWORD_MISMATCH_ERROR_MESSAGE =
   "* Ensure that both password fields contain the same password";
