@@ -17,35 +17,37 @@ export const InfoAndAction = ({
     <div className={styles["info-and-action-container"]}>
       {isTransitioning && <LoadingSpinner />}
       <div
-        className={`${styles["content"]} ${
+        className={`${styles["outer-wrapper"]} ${
           isTransitioning ? `${styles["transitioning"]}` : ""
         }`.trim()}
       >
-        <div className={styles["wrapper"]}>
-          <DualTitleSection
-            firstTitle={
-              <div className={styles["mini-images"]}>
-                <MiniImages jewelriesByCategory={jewelriesByCategory} />
-              </div>
-            }
-            secondTitle={
-              <StockStatus jewelriesByCategory={jewelriesByCategory} />
-            }
-            variant={"regular"}
-          />
-          <div>
-            <LargeTitle title={jewelriesByCategory[0].title} />
-            <Paragraph
-              text={`${jewelriesByCategory[0].description}.`}
-              textAlign={"left"}
+        <div className={styles["content"]}>
+          <div className={styles["wrapper"]}>
+            <DualTitleSection
+              firstTitle={
+                <div className={styles["mini-images"]}>
+                  <MiniImages jewelriesByCategory={jewelriesByCategory} />
+                </div>
+              }
+              secondTitle={
+                <StockStatus jewelriesByCategory={jewelriesByCategory} />
+              }
+              variant={"regular"}
             />
+            <div>
+              <LargeTitle title={jewelriesByCategory[0].title} />
+              <Paragraph
+                text={`${jewelriesByCategory[0].description}.`}
+                textAlign={"left"}
+              />
+            </div>
           </div>
         </div>
+        <Form
+          jewelriesByCategory={jewelriesByCategory}
+          toggleDisplayPopup={toggleDisplayPopup}
+        />
       </div>
-      <Form
-        jewelriesByCategory={jewelriesByCategory}
-        toggleDisplayPopup={toggleDisplayPopup}
-      />
     </div>
   );
 };
