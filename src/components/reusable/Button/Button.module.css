@@ -32,8 +32,7 @@
   box-shadow: 0 0 0 1px var(--light-gray);
 }
 
-.button.pink:hover,
-.button.pink:active {
+.button.pink:hover {
   background: var(--pink);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
@@ -50,8 +49,7 @@
   box-shadow: 0 0 0 1px var(--light-pink);
 }
 
-.button.gray:hover,
-.button.gray:active {
+.button.gray:hover {
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
@@ -63,8 +61,7 @@
   box-shadow: 0 0 0 1px var(--gray);
 }
 
-.button.white:hover,
-.button.white:active {
+.button.white:hover {
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
