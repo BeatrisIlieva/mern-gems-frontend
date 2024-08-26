@@ -1,5 +1,5 @@
 import { CategoryCard } from "./CategoryCard/CategoryCard";
-import { CardSkeleton } from "../CardSkeleton/CardSkeleton";
+import { CardSkeleton } from "./CardSkeleton/CardSkeleton";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
 
