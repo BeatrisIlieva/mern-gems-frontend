@@ -1,5 +1,6 @@
-.hero-banner {
-  height: calc(100vh - 10rem);
+#hero-banner {
+  width: 100%;
+  height: calc(100vh - 9.6rem);
   opacity: 0;
   animation: transitioning 1.6s forwards;
 }
@@ -10,5 +11,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-banner {
+    height: calc(100vh - 6.6rem);
   }
 }

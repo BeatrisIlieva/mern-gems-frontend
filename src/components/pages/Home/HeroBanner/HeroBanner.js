@@ -4,7 +4,7 @@ import styles from "./HeroBanner.module.css";
 
 export const HeroBanner = () => {
   return (
-    <section className={styles["hero-banner"]}>
+    <section id={styles["hero-banner"]}>
       <Collection />
     </section>
   );
