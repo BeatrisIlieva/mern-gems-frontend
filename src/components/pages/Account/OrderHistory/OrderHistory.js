@@ -4,7 +4,7 @@ import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
 import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistory";
 import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
-import { Popup } from "../../../reusable/Popup/Popup";
+import { Popup } from "../../../common/Popup/Popup";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 

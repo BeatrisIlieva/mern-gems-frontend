@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { ShippingDetailsForm } from "../../../reusable/ShippingDetailsForm/ShippingDetailsForm";
-import { Popup } from "../../../reusable/Popup/Popup";
+import { Popup } from "../../../common/Popup/Popup";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";

@@ -7,7 +7,7 @@ import { CardDetailsForm } from "../../common/CardDetailsForm/CardDetailsForm";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { BagList } from "../../common/BagList/BagList";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
-import { Popup } from "../../reusable/Popup/Popup";
+import { Popup } from "../../common/Popup/Popup";
 import { ShippingDetailsForm } from "../../reusable/ShippingDetailsForm/ShippingDetailsForm";
 
 export const Payment = () => {
