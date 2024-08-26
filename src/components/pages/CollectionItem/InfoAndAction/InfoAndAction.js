@@ -35,7 +35,10 @@ export const InfoAndAction = ({
               variant={"regular"}
             />
             <div>
-              <LargeTitle title={jewelriesByCategory[0].title} />
+              <LargeTitle
+                title={jewelriesByCategory[0].title}
+                textAlign={"left"}
+              />
               <Paragraph
                 text={`${jewelriesByCategory[0].description}.`}
                 textAlign={"left"}

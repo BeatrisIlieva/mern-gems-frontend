@@ -1,8 +1,9 @@
 .delivery {
   display: flex;
-  gap: 6px;
   align-items: center;
   justify-content: center;
+  width: 12rem;
+  justify-content: space-between;
 }
 
 .icon {

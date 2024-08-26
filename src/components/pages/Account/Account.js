@@ -13,8 +13,8 @@ export const Account = () => {
         <CardDetails />
       </div>
       <div className={styles["flex-container"]}>
-      <AccountManagement />
-      <OrderHistory />
+        <AccountManagement />
+        <OrderHistory />
       </div>
     </section>
   );

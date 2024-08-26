@@ -4,5 +4,6 @@
 }
 
 .bag-count {
-  max-width: 80px;
+  width: 74px;
+  text-align: right;
 }
