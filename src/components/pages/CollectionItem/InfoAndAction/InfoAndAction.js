@@ -1,4 +1,4 @@
-import { LoadingSpinner } from "../../../utils/LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../common/LoadingSpinner/LoadingSpinner";
 import { MiniImages } from "../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form";

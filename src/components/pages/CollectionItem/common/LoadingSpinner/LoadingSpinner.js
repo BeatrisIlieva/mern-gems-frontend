@@ -1,4 +1,4 @@
-import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
+import { useIsTransitioning } from "../../../../../hooks/useIsTransitioning";
 
 import styles from "./LoadingSpinner.module.css";
 export const LoadingSpinner = () => {

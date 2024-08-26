@@ -1,4 +1,4 @@
-import { LoadingSpinner } from "../../../utils/LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../common/LoadingSpinner/LoadingSpinner";
 import { LargeImages } from "../../../common/LargeImages/LargeImages";
 
 import styles from "./Images.module.css";
