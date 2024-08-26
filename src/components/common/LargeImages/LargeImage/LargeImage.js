@@ -1,5 +1,3 @@
-import { useIsTransitioning } from "../../../../hooks/useIsTransitioning";
-
 import styles from "./LargeImage.module.css";
 
 export const LargeImage = ({
@@ -7,14 +5,8 @@ export const LargeImage = ({
   firstImageUrlIsActive,
   variant,
 }) => {
-  const { isTransitioning } = useIsTransitioning();
-
   return (
-    <div
-      className={`${styles["thumbnail"]} ${styles[variant]} ${
-        isTransitioning ? styles["transitioning"] : ""
-      }`.trim()}
-    >
+    <div className={`${styles["thumbnail"]} ${styles[variant]}`}>
       <img
         className={`${styles["image"]} ${
           firstImageUrlIsActive

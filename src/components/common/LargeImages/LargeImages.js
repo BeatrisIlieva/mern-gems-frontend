@@ -4,6 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
 
+import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
+
 import { slugify } from "../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
@@ -13,6 +15,8 @@ export const LargeImages = ({
   circleIconsPosition,
   variant,
 }) => {
+  const { isTransitioning } = useIsTransitioning();
+
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   const location = useLocation();
@@ -46,7 +50,11 @@ export const LargeImages = ({
   };
 
   return (
-    <div className={styles["images"]}>
+    <div
+      className={`${styles["large-images"]} ${
+        isTransitioning ? styles["transitioning"] : ""
+      }`.trim()}
+    >
       <CircleIcons
         firstImageUrlIsActive={firstImageUrlIsActive}
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}

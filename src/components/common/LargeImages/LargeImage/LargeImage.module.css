@@ -38,17 +38,3 @@
     transform: translateX(0);
   }
 }
-
-.thumbnail.transitioning,
-.thumbnail.large.transitioning {
-  animation: transitioning 10s forwards;
-}
-
-@keyframes transitioning {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
