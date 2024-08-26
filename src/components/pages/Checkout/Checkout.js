@@ -1,5 +1,5 @@
 import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer"; 
-import { ShippingDetailsForm } from "../../reusable/ShippingDetailsForm/ShippingDetailsForm";
+import { ShippingDetailsForm } from "../../common/ShippingDetailsForm/ShippingDetailsForm";
 import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { BagList } from "../../common/BagList/BagList";
