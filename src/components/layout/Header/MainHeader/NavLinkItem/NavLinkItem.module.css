@@ -35,9 +35,9 @@
   height: var(--normal);
 }
 
-@media (min-width: 340px) and (max-width: 569px) {
+@media (max-width: 480px) {
   .list {
-    gap: 14px;
+    gap: 1rem;
   }
 
   .list-item.label {
