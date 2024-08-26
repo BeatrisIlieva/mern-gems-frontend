@@ -1,7 +1,6 @@
 .card-skeleton {
   border: 0.1px solid var(--gray);
   width: 20vw;
-  height: calc(100vh - 14rem);
   aspect-ratio: 1;
   z-index: 100;
   position: relative;
@@ -22,5 +21,12 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-skeleton {
+    width: 100%;
+    height: calc(100vh - 13.6rem);
   }
 }

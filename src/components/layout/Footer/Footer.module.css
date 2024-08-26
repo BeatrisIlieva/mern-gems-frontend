@@ -10,10 +10,7 @@
 
 @media (max-width: 480px) {
   .footer {
-    /* height: 2rem;
+
     font-size: var(--small);
-    position: absolute;
-    bottom: 0;
-    width: 100%; */
   }
 }

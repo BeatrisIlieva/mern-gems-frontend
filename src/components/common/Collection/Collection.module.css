@@ -1,5 +1,6 @@
 #collection {
   margin: 0;
+  height: calc(100vh - 13.6rem);
 }
 
 .wrapper {
@@ -8,4 +9,14 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  #collection {
+    height: auto;
+  }
+
+  .wrapper {
+    row-gap: 2rem;
+  }
 }
