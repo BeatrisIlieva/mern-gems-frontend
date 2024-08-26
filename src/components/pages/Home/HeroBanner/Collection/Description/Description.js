@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import { MiniImage } from "../../MiniImage/MiniImage";
 import { Paragraph } from "../../../../../reusable/Paragraph/Paragraph";
-import { XLargeTitle } from "../../../../../reusable/XLargeTitle/XLargeTitle";
+import { LargeTitle } from "../../../../../reusable/LargeTitle/LargeTitle";
 import { Button } from "../../../../../reusable/Button/Button";
 
 import { IMAGE_BY_URL_AND_VARIANT } from "./constants/imagesByUrlAndVariant";
@@ -20,13 +20,13 @@ export const Description = () => {
     <div className={styles["description"]}>
       <div className={styles["description-wrapper"]}>
         <div className={styles["outer-wrapper"]}>
+          <MiniImage
+            imageUrl={IMAGE_BY_URL_AND_VARIANT.butterfly.imageUrl}
+            variant={IMAGE_BY_URL_AND_VARIANT.butterfly.variant}
+            waveEffect={IMAGE_BY_URL_AND_VARIANT.butterfly.waveEffect}
+          />
+          <LargeTitle title={"Forget-Me-Not Collection"} />
           <div className={styles["inner-wrapper"]}>
-            <MiniImage
-              imageUrl={IMAGE_BY_URL_AND_VARIANT.butterfly.imageUrl}
-              variant={IMAGE_BY_URL_AND_VARIANT.butterfly.variant}
-              waveEffect={IMAGE_BY_URL_AND_VARIANT.butterfly.waveEffect}
-            />
-            <XLargeTitle title={"Forget-Me-Not Collection"} />
             <MiniImage
               imageUrl={IMAGE_BY_URL_AND_VARIANT.white.imageUrl}
               variant={IMAGE_BY_URL_AND_VARIANT.white.variant}
