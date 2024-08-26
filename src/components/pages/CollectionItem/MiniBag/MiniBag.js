@@ -5,7 +5,6 @@ import { BagHeader } from "../../../common/BagHeader/BagHeader";
 import { BagList } from "../../../common/BagList/BagList";
 import { Button } from "../../../reusable/Button/Button";
 import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
-import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Popup } from "../../../common/Popup/Popup";
 
 import { useBagContext } from "../../../../contexts/BagContext";
