@@ -28,17 +28,17 @@
   object-fit: contain;
 }
 
-@media (min-width: 340px) and (max-width: 569px) {
+@media (max-width: 480px) {
   .header {
-    height: 68px;
+    height: 4.6rem;
   }
 
   .wrapper {
-    margin: 0px 20px;
+    padding: 0 1rem;
   }
 
   .thumbnail {
-    height: 60px;
-    margin-left: 40px;
+    height: 4rem;
+    margin-left: 2.6rem;
   }
 }
