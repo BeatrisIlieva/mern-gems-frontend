@@ -1,4 +1,4 @@
-import { XLargeTitle } from "../XLargeTitle/XLargeTitle";
+import { LargeTitle } from "../LargeTitle/LargeTitle";
 import { NormalTitle } from "../NormalTitle/NormalTitle";
 import { HorizontalLine } from "../HorizontalLine/HorizontalLine";
 
@@ -8,7 +8,7 @@ export const InfoMessage = ({ title, subtitle }) => {
   return (
     <section className={styles["info-message"]}>
       <div className={styles["message"]}>
-        <XLargeTitle title={title} variant={"regular"} />
+        <LargeTitle title={title} textAlign={"center"} />
         <NormalTitle title={subtitle} variant={"bolded"} />
       </div>
       <HorizontalLine variantHr={"small"} />
