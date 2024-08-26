@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import { RouteGuard } from "../../utils/RouteGuard/RouteGuard";
+import { RouteGuard } from "./RouteGuard/RouteGuard";
 import { Home } from "../../pages/Home/Home";
 import { CollectionList } from "../../pages/CollectionList/CollectionList";
 import { CollectionItem } from "../../pages/CollectionItem/CollectionItem";

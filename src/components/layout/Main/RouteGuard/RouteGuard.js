@@ -1,6 +1,6 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
-import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 export const RouteGuard = ({ children }) => {
   const location = useLocation();
