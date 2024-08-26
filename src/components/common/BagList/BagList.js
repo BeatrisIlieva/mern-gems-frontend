@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 
-import { JewelryCard } from "../../common/JewelryCard/JewelryCard";
-import { DualTitleSection } from "../DualTitleSection/DualTitleSection";
+import { JewelryCard } from "../JewelryCard/JewelryCard";
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { Remove } from "./Remove/Remove";
 import { UpdateQuantity } from "./UpdateQuantity/UpdateQuantity";
 

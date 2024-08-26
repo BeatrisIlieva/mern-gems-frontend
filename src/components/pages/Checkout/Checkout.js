@@ -2,7 +2,7 @@ import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContaine
 import { ShippingDetailsForm } from "../../reusable/ShippingDetailsForm/ShippingDetailsForm";
 import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
-import { BagList } from "../../reusable/BagList/BagList";
+import { BagList } from "../../common/BagList/BagList";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
 
 export const Checkout = () => {

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { BagList } from "../../../reusable/BagList/BagList";
+import { BagList } from "../../../common/BagList/BagList";
 import { Button } from "../../../reusable/Button/Button";
 import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";

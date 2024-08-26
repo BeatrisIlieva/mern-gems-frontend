@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
-import { BagList } from "../../reusable/BagList/BagList";
+import { BagList } from "../../common/BagList/BagList";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { Button } from "../../reusable/Button/Button";
 import { Collection } from "../../common/Collection/Collection";
