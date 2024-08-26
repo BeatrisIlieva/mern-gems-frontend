@@ -101,3 +101,9 @@
     right: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .modal.mini-bag {
+    width: 100vw;
+  }
+}
