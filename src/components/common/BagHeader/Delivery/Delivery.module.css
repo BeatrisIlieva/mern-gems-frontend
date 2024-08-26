@@ -7,5 +7,6 @@
 
 .icon {
   color: var(--pink);
-  font-size: var(--large);
+  font-size: var(--medium);
+  margin-bottom: 2rem;
 }

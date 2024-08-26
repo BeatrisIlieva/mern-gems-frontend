@@ -1,5 +1,6 @@
 .title {
   font-size: var(--normal);
+  margin-bottom: 2rem;
 }
 
 .bag-count {

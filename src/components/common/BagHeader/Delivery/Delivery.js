@@ -1,5 +1,5 @@
-import { BagCount } from "../../../common/BagCount/BagCount";
-import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
+import { BagCount } from "./BagCount/BagCount"; 
+import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle"; 
 
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

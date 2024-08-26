@@ -6,7 +6,7 @@ import { Button } from "../../../reusable/Button/Button";
 import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Popup } from "../../../common/Popup/Popup";
-import { BagCount } from "../../../common/BagCount/BagCount";
+// import { BagCount } from "../../../common/BagCount/BagCount";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
@@ -37,7 +37,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
         <LargeTitle
           title={
             <>
-              My Bag <BagCount />
+              {/* My Bag <BagCount /> */}
             </>
           }
           textAlight={"align-left"}

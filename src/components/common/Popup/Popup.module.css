@@ -80,7 +80,7 @@
   color: var(--medium-gray);
   font-size: var(--large);
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   margin-left: auto;
 }
 
