@@ -8,7 +8,7 @@ import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { BagList } from "../../common/BagList/BagList";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
 import { Popup } from "../../common/Popup/Popup";
-import { ShippingDetailsForm } from "../../reusable/ShippingDetailsForm/ShippingDetailsForm";
+import { ShippingDetailsForm } from "../../common/ShippingDetailsForm/ShippingDetailsForm";
 
 export const Payment = () => {
   const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
