@@ -13,6 +13,7 @@
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 @keyframes transitioning {
@@ -21,5 +22,15 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .shopping-process-container {
+    margin: 1rem 0;
+  }
+
+  .children {
+    margin: 1rem;
   }
 }
