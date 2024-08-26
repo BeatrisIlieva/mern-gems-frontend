@@ -1,7 +1,6 @@
 .bag {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   opacity: 0;
   animation: transitioning 1.6s forwards;
 }
