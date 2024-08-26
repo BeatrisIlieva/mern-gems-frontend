@@ -11,9 +11,11 @@ import { Payment } from "../../pages/Payment/Payment";
 import { OrderConfirmation } from "../../pages/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "../../pages/Page404/Page404";
 
+import styles from "./Main.module.css"
+
 export const Main = () => {
   return (
-    <main>
+    <main id={styles["main"]}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

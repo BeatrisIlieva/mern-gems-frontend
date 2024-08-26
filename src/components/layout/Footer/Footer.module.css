@@ -1,8 +1,19 @@
 .footer {
-  height: 2rem;
+  grid-area: footer;
+  /* height: 32px; */
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--gray);
   border-top: 0.1px solid var(--pink);
+}
+
+@media (max-width: 480px) {
+  .footer {
+    /* height: 2rem;
+    font-size: var(--small);
+    position: absolute;
+    bottom: 0;
+    width: 100%; */
+  }
 }

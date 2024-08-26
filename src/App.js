@@ -4,11 +4,12 @@ import { Footer } from "./components/layout/Footer/Footer";
 import { ScrollToTop } from "./components/layout/ScrollToTop/ScrollToTop";
 
 import "normalize.css";
-import styles from "./App.css";
+
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div className={styles["app"]}>
+    <div id={styles["app"]}>
       <Header />
       <Main />
       <Footer />
