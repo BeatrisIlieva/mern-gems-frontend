@@ -32,11 +32,6 @@ export const Bag = () => {
           <ChildWrapper>
             <>
             <BagHeader/>
-              {/* <DualTitleSection
-                firstTitle={<LargeTitle title={"Bag"} />}
-                secondTitle={<Delivery />}
-                variant={"bolded"}
-              /> */}
               <BagList />
             </>
           </ChildWrapper>

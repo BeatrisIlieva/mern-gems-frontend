@@ -1,4 +1,4 @@
-import { useBagContext } from "../../../../../contexts/BagContext"; 
+import { useBagContext } from "../../../../../contexts/BagContext";
 
 import styles from "./BagCount.module.css";
 
