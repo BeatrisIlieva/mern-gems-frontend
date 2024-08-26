@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { DynamicForm } from "../DynamicForm/DynamicForm";
+import { DynamicForm } from "../../reusable/DynamicForm/DynamicForm";
 
 import { useBagContext } from "../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
