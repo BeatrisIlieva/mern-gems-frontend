@@ -11,7 +11,6 @@ import { BagHeader } from "../../common/BagHeader/BagHeader";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
-
 import styles from "./Bag.module.css";
 
 export const Bag = () => {
@@ -31,7 +30,7 @@ export const Bag = () => {
         <ShoppingProcessContainer title={"Bag"}>
           <ChildWrapper>
             <>
-            <BagHeader/>
+              <BagHeader />
               <BagList />
             </>
           </ChildWrapper>
