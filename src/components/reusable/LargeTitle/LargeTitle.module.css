@@ -7,7 +7,6 @@
   align-items: center;
   gap: 4px;
   z-index: 10;
-  text-align: center;
 }
 
 .title.align-left {

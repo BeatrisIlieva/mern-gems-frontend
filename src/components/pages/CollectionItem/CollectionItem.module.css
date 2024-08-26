@@ -2,12 +2,9 @@
   background-color: var(--very-light-gray);
   gap: 2rem;
   padding: 2rem;
-  min-height: calc(100vh - 14rem);
   animation: transitioning 1.6s forwards;
-}
-
-.collection-item {
-  height: calc(100vh - 10rem);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .collection-item {
