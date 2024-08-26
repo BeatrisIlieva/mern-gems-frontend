@@ -24,3 +24,20 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+@media (max-width: 480px) {
+  .description {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+  }
+
+  .description-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
