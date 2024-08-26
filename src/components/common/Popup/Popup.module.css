@@ -43,6 +43,8 @@
   position: relative;
   transition: opacity 0.8s ease, transform 0.8s ease;
   padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal.large,
@@ -74,12 +76,12 @@
 }
 
 .x-mark {
-  text-align: center;
+  display: flex;
   color: var(--medium-gray);
   font-size: var(--large);
   cursor: pointer;
-  position: absolute;
-  right: 0.75rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
 }
 
 @keyframes slideInTop {

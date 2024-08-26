@@ -7,8 +7,11 @@ import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { Button } from "../../reusable/Button/Button";
 import { Collection } from "../../common/Collection/Collection";
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
-
+import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { useBagContext } from "../../../contexts/BagContext";
+
+import { Delivery } from "./Delivery/Delivery";
 
 import styles from "./Bag.module.css";
 
@@ -28,7 +31,14 @@ export const Bag = () => {
       ) : (
         <ShoppingProcessContainer title={"Bag"}>
           <ChildWrapper>
-            <BagList />
+            <>
+              <DualTitleSection
+                firstTitle={<LargeTitle title={"Bag"} />}
+                secondTitle={<Delivery />}
+                variant={"bolded"}
+              />
+              <BagList />
+            </>
           </ChildWrapper>
           <ChildWrapper>
             <>

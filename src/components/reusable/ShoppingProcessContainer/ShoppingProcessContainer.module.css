@@ -22,7 +22,7 @@
   font-family: var(--bold-italic-font-family);
 }
 
-.delivery {
+/* .delivery {
   display: flex;
   gap: 6px;
   align-items: center;
@@ -31,7 +31,7 @@
 .icon {
   color: var(--pink);
   font-size: var(--large);
-}
+} */
 
 .children {
   display: flex;

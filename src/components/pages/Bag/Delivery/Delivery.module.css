@@ -1,0 +1,11 @@
+.delivery {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: var(--pink);
+  font-size: var(--large);
+}
