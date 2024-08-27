@@ -32,11 +32,12 @@
   box-shadow: 0 0 0 1px var(--light-gray);
 }
 
-.button.pink:hover {
+.button.pink.hovered {
   background: var(--pink);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
 }
+
 
 .button.pink.disabled {
   cursor: not-allowed;
@@ -49,7 +50,7 @@
   box-shadow: 0 0 0 1px var(--light-pink);
 }
 
-.button.gray:hover {
+.button.gray.hovered {
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
@@ -61,7 +62,7 @@
   box-shadow: 0 0 0 1px var(--gray);
 }
 
-.button.white:hover {
+.button.white.hovered {
   background: var(--gray);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--white);
@@ -75,8 +76,7 @@
   padding: 0px;
 }
 
-.button.underlined:hover,
-.button.underlined:active {
+.button.underlined.hovered {
   font-family: var(--bold-font-family);
   color: var(--gray);
 }
