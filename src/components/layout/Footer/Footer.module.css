@@ -1,6 +1,5 @@
 .footer {
   grid-area: footer;
-  /* height: 32px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +9,12 @@
 
 @media (max-width: 480px) {
   .footer {
-
     font-size: var(--small);
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    text-align: center;
   }
 }

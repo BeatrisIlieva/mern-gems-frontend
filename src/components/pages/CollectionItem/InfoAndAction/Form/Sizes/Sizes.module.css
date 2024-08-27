@@ -11,7 +11,7 @@
 }
 
 .radio-container {
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .wrapper {
@@ -40,6 +40,7 @@
   color: var(--red);
   height: 2rem;
   align-items: center;
+  font-size: var(--small);
 }
 
 input[type="radio"] {
