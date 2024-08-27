@@ -37,17 +37,4 @@
   .children {
     margin: 1rem;
   }
-
-  /* .shopping-process-container:nth-child(1) {
-    order: 1; 
-  }
-
-  .shopping-process-container:nth-child(2) {
-    order: 1;
-  } */
-
-  /* .shopping-process-container:nth-child(1) {
-    background-color: aqua;
-    order: 1; 
-  } */
 }

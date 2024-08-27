@@ -30,7 +30,7 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
   const { userId } = useAuthenticationContext();
 
-  const { totalPrice} = useBagContext();
+  const { totalPrice } = useBagContext();
 
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
 

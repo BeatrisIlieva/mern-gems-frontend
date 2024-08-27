@@ -38,7 +38,6 @@
   box-shadow: 0 0 0 1px var(--white);
 }
 
-
 .button.pink.disabled {
   cursor: not-allowed;
   background: var(--light-gray);

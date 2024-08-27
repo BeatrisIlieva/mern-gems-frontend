@@ -26,7 +26,7 @@ export const OrderHistoryList = ({
       <ul className={styles["jewelries"]} role="list">
         {jewelries.map((item) => (
           <li key={item._id} className={styles["jewelry-item"]}>
-            <JewelryCard {...item}  />
+            <JewelryCard {...item} />
           </li>
         ))}
       </ul>
