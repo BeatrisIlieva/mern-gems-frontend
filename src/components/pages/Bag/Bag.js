@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
 import { BagList } from "../../common/BagList/BagList";
@@ -16,6 +17,8 @@ import styles from "./Bag.module.css";
 export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
 
+
+
   return (
     <>
       {bagTotalQuantity < 1 ? (
@@ -27,26 +30,51 @@ export const Bag = () => {
           <Collection />
         </section>
       ) : (
-        <ShoppingProcessContainer title={"Bag"}>
-          <ChildWrapper>
-            <>
-              <BagHeader />
-              <BagList />
-            </>
-          </ChildWrapper>
-          <ChildWrapper>
-            <>
-              <OrderSummary />
-              <Link to={"/checkout"} className={styles["no-decoration"]}>
-                <Button
-                  title={"Continue Checkout"}
-                  buttonIsDisabled={false}
-                  variant={"pink"}
-                />
-              </Link>
-            </>
-          </ChildWrapper>
-        </ShoppingProcessContainer>
+        <>
+          {isReversed ? (
+            <ShoppingProcessContainer title={"Bag"}>
+              <ChildWrapper>
+                <>
+                  <OrderSummary />
+                  <Link to={"/checkout"} className={styles["no-decoration"]}>
+                    <Button
+                      title={"Continue Checkout"}
+                      buttonIsDisabled={false}
+                      variant={"pink"}
+                    />
+                  </Link>
+                </>
+              </ChildWrapper>
+              <ChildWrapper>
+                <>
+                  <BagHeader />
+                  <BagList />
+                </>
+              </ChildWrapper>
+            </ShoppingProcessContainer>
+          ) : (
+            <ShoppingProcessContainer title={"Bag"}>
+              <ChildWrapper>
+                <>
+                  <BagHeader />
+                  <BagList />
+                </>
+              </ChildWrapper>
+              <ChildWrapper>
+                <>
+                  <OrderSummary />
+                  <Link to={"/checkout"} className={styles["no-decoration"]}>
+                    <Button
+                      title={"Continue Checkout"}
+                      buttonIsDisabled={false}
+                      variant={"pink"}
+                    />
+                  </Link>
+                </>
+              </ChildWrapper>
+            </ShoppingProcessContainer>
+          )}
+        </>
       )}
     </>
   );

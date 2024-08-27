@@ -19,9 +19,20 @@
 }
 
 .logo-image {
-  height: 7.6rem;
+  height: 6rem;
 }
 
 .icon {
   color: var(--pink);
+}
+
+
+@media (max-width: 480px) {
+  .mini-header {
+    height: 4.6rem;
+  }
+
+  .logo-image {
+    height: 4rem;
+  }
 }
