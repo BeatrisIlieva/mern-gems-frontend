@@ -9,7 +9,7 @@ export const OrderConfirmation = () => {
   return (
     <section id={styles["order-confirmation"]}>
       <div className={styles["wrapper"]}>
-        <LargeTitle title={"Thank you for your purchase!"} variant={"italic"} />
+        <LargeTitle title={"Thank you for your purchase!"} variant={"italic"} textAlign={"align-center"}/>
         <div className={styles["info"]}>
           <NormalTitle
             title={"Your order has been successfully placed."}

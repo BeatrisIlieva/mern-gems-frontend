@@ -63,7 +63,6 @@
 .modal.small,
 .modal.authentication {
   width: 18rem;
-  /* width: 14rem; */
 }
 
 .modal.mini-bag {
@@ -110,5 +109,12 @@
 
   .modal.order-history {
     width: 93vw;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .modal.large {
+    width: 20rem;
   }
 }

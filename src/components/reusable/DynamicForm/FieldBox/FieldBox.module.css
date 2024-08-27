@@ -1,6 +1,16 @@
-.field-box {
-  height: 5.6rem;
+.field-box,
+.larger-field-box {
   width: 12rem;
-  /* width: 15rem; */
+  height: 5.6rem;
   position: relative;
+}
+
+.larger-field-box {
+  width: 15rem;
+}
+
+@media (max-width: 360px) {
+  .field-box {
+    width: 8.4rem;
+  }
 }

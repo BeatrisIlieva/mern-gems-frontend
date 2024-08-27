@@ -63,6 +63,7 @@
   .order-confirmation {
     margin: 1rem;
     justify-content: center;
+    align-items: center;
   }
 
   .info {
@@ -72,5 +73,15 @@
   .image {
     width: 100%;
     margin-top: 2rem;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .link-to-account {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

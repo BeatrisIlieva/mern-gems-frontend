@@ -23,7 +23,17 @@ export const FieldBox = ({
   const location = useLocation();
 
   return (
-    <div key={currentKey} className={styles["field-box"]}>
+    <div
+      key={currentKey}
+      className={
+        currentKey !== "Password" &&
+        currentKey !== "NewPassword" &&
+        currentKey !== "RetypeNewPassword" &&
+        currentKey !== "Email"
+          ? `${styles["field-box"]}`
+          : `${styles["larger-field-box"]}`
+      }
+    >
       {currentKey === "Email" && location.pathname !== "/users/account" && (
         <QuestionMark text={EMAIL_QUESTION_MARK} />
       )}

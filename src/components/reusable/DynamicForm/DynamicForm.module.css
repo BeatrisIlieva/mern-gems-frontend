@@ -10,3 +10,9 @@
   color: var(--pink);
   opacity: 1;
 }
+
+@media (max-width: 360px) {
+  .form {
+    column-gap: 0.5rem;
+  }
+}
