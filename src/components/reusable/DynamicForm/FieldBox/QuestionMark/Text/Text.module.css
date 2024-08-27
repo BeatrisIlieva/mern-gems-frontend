@@ -1,6 +1,5 @@
 .text {
   position: absolute;
-  /* transform: translateX(calc(50% - 18px)); */
   color: var(--white);
   background-color: var(--medium-pink);
   border-radius: 32px;
