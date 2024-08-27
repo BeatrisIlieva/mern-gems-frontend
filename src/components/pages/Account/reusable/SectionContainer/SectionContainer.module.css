@@ -1,13 +1,13 @@
 .title {
   font-size: var(--large);
   font-family: var(--bold-italic-font-family);
-  padding: 0px 20px;
+  padding: 0 1rem;
   border-bottom: 0.1px solid var(--medium-gray);
 }
 
 .section-container {
-  padding: 20px;
-  width: 320px;
+  padding: 1rem;
+  width: 18.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
