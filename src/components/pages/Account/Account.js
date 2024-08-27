@@ -9,13 +9,11 @@ export const Account = () => {
   return (
     <section className={styles["account"]}>
       <div className={styles["flex-container"]}>
+        <OrderHistory />
         <ShippingDetails />
         <CardDetails />
       </div>
-      <div className={styles["flex-container"]}>
-        <AccountManagement />
-        <OrderHistory />
-      </div>
+      <AccountManagement />
     </section>
   );
 };

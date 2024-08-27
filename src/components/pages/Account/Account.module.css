@@ -5,7 +5,7 @@
   align-items: center;
   gap: 2rem;
   animation: transitioning 1.6s forwards;
-  min-height: calc(100vh - 14rem);
+  margin: 2rem;
 }
 
 .flex-container {
@@ -25,8 +25,8 @@
 
 @media (max-width: 480px) {
   .account {
-    margin: 1rem;
     gap: 1rem;
+    margin: 1rem;
   }
 
   .flex-container {

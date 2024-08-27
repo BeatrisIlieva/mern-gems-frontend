@@ -48,10 +48,8 @@ export const AccountManagement = () => {
 
   return (
     <section className={styles["account-management"]}>
-      <div className={styles["wrapper"]}>
-        <LargeTitle title={"Account Management"} />
-        <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
-      </div>
+      <LargeTitle title={"Account Management"} />
+      <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
         <UpdateEmail
           updateEmailClickHandler={updateEmailClickHandler}

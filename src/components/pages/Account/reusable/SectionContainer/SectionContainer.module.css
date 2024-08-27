@@ -12,16 +12,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
-  margin-top: auto;
-  margin-bottom: auto;
+  gap: 1rem;
   border: 0.1px solid var(--pink);
 }
 
 .button {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.75rem;
   border: none;
   cursor: pointer;
   overflow: hidden;

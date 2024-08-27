@@ -7,21 +7,23 @@ import styles from "./OrderConfirmation.module.css";
 
 export const OrderConfirmation = () => {
   return (
-    <section className={styles["order-confirmation"]}>
-      <div className={styles["info"]}>
+    <section id={styles["order-confirmation"]}>
+      <div className={styles["wrapper"]}>
         <LargeTitle title={"Thank you for your purchase!"} variant={"italic"} />
-        <NormalTitle
-          title={"Your order has been successfully placed."}
-          variant={"bolded"}
-        />
-        <div className={styles["link-to-account"]}>
+        <div className={styles["info"]}>
           <NormalTitle
-            title={"You can track your order status in your"}
-            variant={"bolded"}
+            title={"Your order has been successfully placed."}
+            variant={"regular"}
           />
-          <Link to={"/users/account"} className={styles["link"]}>
-            Account
-          </Link>
+          <div className={styles["link-to-account"]}>
+            <NormalTitle
+              title={"You can track your order status in your"}
+              variant={"regular"}
+            />
+            <Link to={"/users/account"} className={styles["link"]}>
+              Account
+            </Link>
+          </div>
         </div>
       </div>
       <div className={styles["image"]}>

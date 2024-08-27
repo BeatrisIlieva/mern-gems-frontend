@@ -1,6 +1,19 @@
-.order-confirmation {
-  margin: 2rem;
+#order-confirmation,
+.wrapper,
+.info,
+.link-to-account {
   display: flex;
+}
+
+.wrapper,
+.info {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#order-confirmation {
+  margin: 2rem;
   justify-content: space-evenly;
   opacity: 0;
   animation: transitioning 1.6s forwards;
@@ -9,16 +22,11 @@
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
+  gap: 0.75rem;
 }
 
 .link-to-account {
-  display: flex;
-  gap: 6px;
+  gap: 0.25rem;
 }
 
 .link {
@@ -33,7 +41,7 @@
 }
 
 .image {
-  width: 36%;
+  width: 32%;
 }
 
 .img {
