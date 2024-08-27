@@ -18,7 +18,7 @@ import styles from "./Bag.module.css";
 export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
 
-  const { isReversed } = useIsModile();
+  const { isReversed } = useIsMobile();
 
   return (
     <>
@@ -33,7 +33,7 @@ export const Bag = () => {
       ) : (
         <>
           {isReversed ? (
-            <ShoppingProcessContainer title={"Bag"}>
+            <ShoppingProcessContainer>
               <ChildWrapper>
                 <>
                   <OrderSummary />
@@ -46,15 +46,10 @@ export const Bag = () => {
                   </Link>
                 </>
               </ChildWrapper>
-              <ChildWrapper>
-                <>
-                  <BagHeader />
-                  <BagList />
-                </>
-              </ChildWrapper>
+
             </ShoppingProcessContainer>
           ) : (
-            <ShoppingProcessContainer title={"Bag"}>
+            <ShoppingProcessContainer>
               <ChildWrapper>
                 <>
                   <BagHeader />
