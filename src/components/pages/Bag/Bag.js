@@ -8,7 +8,8 @@ import { Button } from "../../reusable/Button/Button";
 import { Collection } from "../../common/Collection/Collection";
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
 import { BagHeader } from "../../common/BagHeader/BagHeader";
-
+import { BagContent } from "./BagContent/BagContent";
+import { OrderSummaryContent } from "./OrderSummaryContent/OrderSummaryContent";
 import { useBagContext } from "../../../contexts/BagContext";
 
 import { useIsMobile } from "../../../hooks/useIsMobile";
@@ -34,40 +35,13 @@ export const Bag = () => {
         <>
           {isReversed ? (
             <ShoppingProcessContainer>
-              <ChildWrapper>
-                <>
-                  <OrderSummary />
-                  <Link to={"/checkout"} className={styles["no-decoration"]}>
-                    <Button
-                      title={"Continue Checkout"}
-                      buttonIsDisabled={false}
-                      variant={"pink"}
-                    />
-                  </Link>
-                </>
-              </ChildWrapper>
-
+              <OrderSummaryContent />
+              <BagContent />
             </ShoppingProcessContainer>
           ) : (
             <ShoppingProcessContainer>
-              <ChildWrapper>
-                <>
-                  <BagHeader />
-                  <BagList />
-                </>
-              </ChildWrapper>
-              <ChildWrapper>
-                <>
-                  <OrderSummary />
-                  <Link to={"/checkout"} className={styles["no-decoration"]}>
-                    <Button
-                      title={"Continue Checkout"}
-                      buttonIsDisabled={false}
-                      variant={"pink"}
-                    />
-                  </Link>
-                </>
-              </ChildWrapper>
+              <BagContent />
+              <OrderSummaryContent />
             </ShoppingProcessContainer>
           )}
         </>

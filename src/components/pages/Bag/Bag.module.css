@@ -5,12 +5,6 @@
   animation: transitioning 1.6s forwards;
 }
 
-.no-decoration {
-  text-decoration: none;
-  width: 100%;
-  display: flex;
-}
-
 @keyframes transitioning {
   0% {
     opacity: 0;
