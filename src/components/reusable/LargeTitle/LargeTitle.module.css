@@ -2,11 +2,11 @@
   text-decoration: none;
   font-size: var(--large);
   font-family: var(--bold-italic-font-family);
-  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   gap: 4px;
   z-index: 10;
+  margin-bottom: 2rem;
 }
 
 .title.align-left {

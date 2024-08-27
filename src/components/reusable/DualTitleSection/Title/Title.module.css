@@ -1,6 +1,5 @@
 .title {
   font-size: var(--normal);
-  max-width: 60%;
 }
 
 .title.regular {
@@ -9,4 +8,10 @@
 
 .title.bolded {
   font-family: var(--bold-font-family);
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: var(--small);
+  }
 }

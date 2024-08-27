@@ -25,3 +25,9 @@
 .size {
   font-size: var(--normal);
 }
+
+@media (max-width: 360px) {
+  .size {
+    font-size: var(--small);
+  }
+}
