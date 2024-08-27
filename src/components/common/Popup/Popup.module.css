@@ -107,4 +107,8 @@
   .modal.mini-bag {
     width: 100vw;
   }
+
+  .modal.order-history {
+    width: 21.4rem;
+  }
 }
