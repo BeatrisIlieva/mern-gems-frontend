@@ -4,13 +4,14 @@
   justify-content: space-evenly;
   opacity: 0;
   animation: transitioning 1.6s forwards;
-  height: calc(100vh - 14rem);
+  height: calc(100vh - 13.6rem);
+  flex-wrap: wrap;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
 }
@@ -47,5 +48,21 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-confirmation {
+    margin: 1rem;
+    justify-content: center;
+  }
+
+  .info {
+    gap: 1rem;
+  }
+
+  .image {
+    width: 100%;
+    margin-top: 2rem;
   }
 }
