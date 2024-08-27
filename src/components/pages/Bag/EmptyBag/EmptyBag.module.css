@@ -3,6 +3,7 @@
   flex-direction: column;
   opacity: 0;
   animation: transitioning 1.6s forwards;
+  height: calc(100vh);
 }
 
 @keyframes transitioning {
