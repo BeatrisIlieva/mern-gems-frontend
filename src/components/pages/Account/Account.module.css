@@ -22,3 +22,14 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 480px) {
+  .account {
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  .flex-container{
+    gap: 1rem;
+  }
+}

@@ -8,24 +8,21 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import styles from "./QuestionMark.module.css";
 
 export const QuestionMark = ({ text }) => {
-  const [hoveredQuestionMark, setHoveredQuestionMark] = useState(false);
+  const [displayInfo, setDisplayInfo] = useState(false);
 
-  const onHoverQuestionMark = () => {
-    setHoveredQuestionMark(true);
-  };
-
-  const onUnhoverQuestionMark = () => {
-    setHoveredQuestionMark(false);
+  const toggleDisplayInfo = () => {
+    setDisplayInfo((displayInfo) => !displayInfo);
   };
 
   return (
     <span>
-      {hoveredQuestionMark && <Text text={text} />}
+      {displayInfo && <Text text={text} />}
       <FontAwesomeIcon
         icon={faQuestion}
         className={styles["icon"]}
-        onMouseEnter={() => onHoverQuestionMark()}
-        onMouseLeave={() => onUnhoverQuestionMark()}
+        onMouseEnter={() => toggleDisplayInfo()}
+        onMouseLeave={() => toggleDisplayInfo()}
+        onClick={() => toggleDisplayInfo()}
       />
     </span>
   );
