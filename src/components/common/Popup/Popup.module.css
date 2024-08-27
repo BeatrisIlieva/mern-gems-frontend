@@ -57,12 +57,13 @@
 }
 
 .modal.large {
-  width: 33.9rem;
+  width: 28rem;
 }
 
 .modal.small,
 .modal.authentication {
-  width: 17.5rem;
+  width: 18rem;
+  /* width: 14rem; */
 }
 
 .modal.mini-bag {

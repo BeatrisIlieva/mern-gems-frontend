@@ -48,7 +48,7 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.ExpiryDate]: {
-    fieldLabel: "Expiry Date In The Format MM/YY *",
+    fieldLabel: "Expiry Date MM/YY *",
     fieldValue: "",
     regexPattern: EXPIRY_DATE_PATTERN,
     errorMessage: "",

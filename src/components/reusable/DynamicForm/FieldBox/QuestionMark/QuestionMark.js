@@ -22,7 +22,8 @@ export const QuestionMark = ({ text }) => {
         className={styles["icon"]}
         onMouseEnter={() => toggleDisplayInfo()}
         onMouseLeave={() => toggleDisplayInfo()}
-        onClick={() => toggleDisplayInfo()}
+        onTouchStart={() => toggleDisplayInfo()}
+        onTouchEnd={() => toggleDisplayInfo()}
       />
     </span>
   );
