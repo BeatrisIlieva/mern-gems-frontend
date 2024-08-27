@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
 import { BagList } from "../../common/BagList/BagList";
@@ -12,12 +11,14 @@ import { BagHeader } from "../../common/BagHeader/BagHeader";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
+import { useIsMobile } from "../../../hooks/useIsMobile";
+
 import styles from "./Bag.module.css";
 
 export const Bag = () => {
   const { bagTotalQuantity } = useBagContext();
 
-
+  const { isReversed } = useIsModile();
 
   return (
     <>
