@@ -1,4 +1,3 @@
-import { BagCount } from "./BagCount/BagCount";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +10,6 @@ export const Delivery = () => {
     <div className={styles["delivery"]}>
       <FontAwesomeIcon icon={faTruck} className={styles["icon"]} />
       <LargeTitle title={"Delivery"} variant={"italic"} />
-      {/* <BagCount /> */}
     </div>
   );
 };
