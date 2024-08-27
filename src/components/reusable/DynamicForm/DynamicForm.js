@@ -19,6 +19,7 @@ export const DynamicForm = ({
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
       {Object.entries(formKeys).map(([key, value]) => (
         <FieldBox
+        key={key}
           changeHandler={changeHandler}
           clickHandler={clickHandler}
           blurHandler={blurHandler}

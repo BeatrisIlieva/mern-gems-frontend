@@ -11,7 +11,7 @@ export const Delivery = () => {
     <div className={styles["delivery"]}>
       <FontAwesomeIcon icon={faTruck} className={styles["icon"]} />
       <LargeTitle title={"Delivery"} variant={"italic"} />
-      <BagCount />
+      {/* <BagCount /> */}
     </div>
   );
 };
