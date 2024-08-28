@@ -27,15 +27,15 @@
   }
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (max-width: 603px) {
   .shopping-process-container {
     margin: 1rem;
   }
 
   .children {
-    margin: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
   }
 }

@@ -28,7 +28,7 @@
   }
 } */
 
-@media (min-width: 480px) and (max-width: 602px) {
+@media(max-width: 602px) {
   .child-wrapper {
     position: unset;
     width: calc(100vw - 2rem);
