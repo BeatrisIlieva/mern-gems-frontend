@@ -36,7 +36,7 @@
   margin: 0px 0.1px;
 }
 
-@media (min-width: 360px) and (max-width: 803px) {
+@media (min-width: 360px) and (max-width: 1280px) {
   .horizontal-line-header {
     top: 4.06rem;
   }
