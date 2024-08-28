@@ -25,7 +25,14 @@
   gap: 2rem;
 }
 
-@media (min-width: 360px) and (max-width: 1024px) {
+@media (orientation: landscape) and (max-width: 1280px) {
+  .description {
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 1280px) {
   .description {
     top: 20%;
     left: 50%;
