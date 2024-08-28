@@ -5,7 +5,7 @@
   align-items: center;
   gap: 2rem;
   animation: transitioning 1.6s forwards;
-  margin: 2rem;
+  height: calc(100vh - 9.6rem);
 }
 
 .flex-container {

@@ -15,7 +15,7 @@
   padding: 1.25rem;
 }
 
-@media (max-width: 950px) {
+@media(max-width: 1280px)  {
   .child-wrapper {
     position: unset;
     width: calc(100vw - 2rem);
