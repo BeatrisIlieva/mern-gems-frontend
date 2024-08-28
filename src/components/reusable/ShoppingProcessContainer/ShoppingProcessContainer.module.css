@@ -3,12 +3,10 @@
   animation: transitioning 1.6s forwards;
   opacity: 0;
   min-height: calc(100vh - 14rem);
-  /* max-width: 70.3rem; */
 }
 
 .children {
   display: flex;
-  /* justify-content: space-evenly; */
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
