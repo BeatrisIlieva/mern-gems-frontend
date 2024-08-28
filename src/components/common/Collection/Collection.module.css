@@ -1,6 +1,5 @@
 #collection {
   margin: 0;
-  
 }
 
 .wrapper {
@@ -11,9 +10,7 @@
   flex-wrap: wrap;
 }
 
-
-
-@media (min-width: 360px) and (max-width: 1280px) {
+@media (max-width: 1280px) {
   #collection {
     height: auto;
   }
