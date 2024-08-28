@@ -39,3 +39,15 @@
 .title.gray {
   color: var(--medium-gray);
 }
+
+
+@media (max-width: 1280px) {
+  .title  {
+    font-size: var(--small);
+    top: -1.5rem;
+  }
+
+  .thumbnail {
+    width: 40%;
+  }
+}

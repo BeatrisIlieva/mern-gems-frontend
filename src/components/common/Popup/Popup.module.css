@@ -72,7 +72,7 @@
 }
 
 .modal.order-history {
-  width: calc(40vw + 5rem);
+  width: 36.5rem;
 }
 
 .x-mark {
@@ -116,9 +116,7 @@
     width: 100vw;
   }
 
-  .modal.order-history {
-    width: 93vw;
-  }
+
 }
 
 @media (max-width: 960px) {
@@ -147,6 +145,10 @@
   .modal.small,
   .modal.authentication {
     width: 48vw;
+  }
+
+  .modal.order-history {
+    width: 19.5rem;
   }
 }
 
