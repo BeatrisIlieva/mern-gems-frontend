@@ -23,7 +23,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 603px) {
   .account {
     gap: 1rem;
     margin: 1rem;

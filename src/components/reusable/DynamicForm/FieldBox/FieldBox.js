@@ -19,21 +19,23 @@ export const FieldBox = ({
   changeHandler,
   initialFormValues,
   userInformation,
+  fieldVariant
 }) => {
   const location = useLocation();
 
+  // className={
+  //   currentKey !== "Password" &&
+  //   currentKey !== "NewPassword" &&
+  //   currentKey !== "RetypeNewPassword" &&
+  //   currentKey !== "Email" &&
+  //   currentKey !== "CardHolder" &&
+  //   currentKey !== "LongCardNumber"
+  //     ? `${styles["field-box"]}`
+  //     : `${styles["larger-field-box"]}`
+  // }
+
   return (
-    <div
-      key={currentKey}
-      className={
-        currentKey !== "Password" &&
-        currentKey !== "NewPassword" &&
-        currentKey !== "RetypeNewPassword" &&
-        currentKey !== "Email"
-          ? `${styles["field-box"]}`
-          : `${styles["larger-field-box"]}`
-      }
-    >
+    <div key={currentKey} className={`${styles[fieldVariant]}`}>
       {currentKey === "Email" && location.pathname !== "/users/account" && (
         <QuestionMark text={EMAIL_QUESTION_MARK} />
       )}

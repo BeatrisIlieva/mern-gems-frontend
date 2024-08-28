@@ -66,6 +66,8 @@ export const RegisterForm = () => {
       initialFormValues={INITIAL_FORM_VALUES}
       buttonTitle={"Sign Up"}
       onSubmit={onSubmit}
+      formVariant={"column-form"}
+      fieldVariant={"large-field-box"}
     />
   );
 };

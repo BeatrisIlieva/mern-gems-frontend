@@ -9,7 +9,7 @@
   flex-direction: column;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 603px) {
   .image-container {
     width: 100%;
   }

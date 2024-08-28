@@ -24,7 +24,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 603px) {
   .collection-item {
     padding: 1rem;
     gap: 1rem;

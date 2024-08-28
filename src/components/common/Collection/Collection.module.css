@@ -11,7 +11,7 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 603px) {
   #collection {
     height: auto;
   }

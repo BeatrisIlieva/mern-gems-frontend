@@ -14,9 +14,11 @@ export const DynamicForm = ({
   buttonTitle,
   onSubmit,
   isLoading,
+  formVariant,
+  fieldVariant,
 }) => {
   return (
-    <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
+    <form method="POST" onSubmit={onSubmit} className={styles[formVariant]}>
       {Object.entries(formKeys).map(([key, value]) => (
         <FieldBox
           key={key}
@@ -28,14 +30,17 @@ export const DynamicForm = ({
           value={value}
           currentKey={key}
           initialFormValues={initialFormValues}
+          fieldVariant={fieldVariant}
         />
       ))}
-      <Button
-        title={buttonTitle}
-        isLoading={isLoading}
-        type={"submit"}
-        variant={"pink"}
-      />
+      <div className={styles["button"]}>
+        <Button
+          title={buttonTitle}
+          isLoading={isLoading}
+          type={"submit"}
+          variant={"pink"}
+        />
+      </div>
     </form>
   );
 };

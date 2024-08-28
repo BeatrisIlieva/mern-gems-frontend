@@ -118,6 +118,8 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
         buttonTitle={buttonTitle}
         onSubmit={onSubmit}
         isLoading={isLoading}
+        formVariant={"wrapped-form"}
+        fieldVariant={"small-field-box"}
       />
     </>
   );

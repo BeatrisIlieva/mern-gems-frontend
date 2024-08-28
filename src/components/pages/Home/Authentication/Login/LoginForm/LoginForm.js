@@ -66,6 +66,8 @@ export const LoginForm = () => {
       initialFormValues={INITIAL_FORM_VALUES}
       buttonTitle={"Sign In"}
       onSubmit={onSubmit}
+      formVariant={"column-form"}
+      fieldVariant={"large-field-box"}
     />
   );
 };

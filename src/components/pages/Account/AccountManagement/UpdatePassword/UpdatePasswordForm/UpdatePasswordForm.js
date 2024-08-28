@@ -113,6 +113,8 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
         buttonTitle={"Save"}
         onSubmit={onSubmit}
         isLoading={isLoading}
+        formVariant={"column-form"}
+        fieldVariant={"large-field-box"}
       />
     </>
   );

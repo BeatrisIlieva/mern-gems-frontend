@@ -25,7 +25,7 @@
   gap: 2rem;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 603px) {
   .description {
     top: 20%;
     left: 50%;

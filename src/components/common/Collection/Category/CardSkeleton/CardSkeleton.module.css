@@ -24,7 +24,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width: 603px) {
   .card-skeleton {
     width: 100%;
     height: calc(100vh - 13.6rem);

@@ -35,7 +35,7 @@
   height: var(--normal);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 603px) {
   .list {
     gap: 1rem;
   }

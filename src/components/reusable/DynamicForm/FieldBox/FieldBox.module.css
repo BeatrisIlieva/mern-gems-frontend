@@ -1,15 +1,18 @@
-.field-box,
-.larger-field-box {
-  width: 12rem;
+.small-field-box,
+.large-field-box {
   height: 5.6rem;
   position: relative;
 }
 
-.larger-field-box {
-  width: 15rem;
+.small-field-box {
+  width: calc(50% - 0.5rem);
 }
 
-@media (max-width: 360px) {
+.large-field-box {
+  width: 100%;
+}
+
+@media (min-width: 360px) and (max-width: 603px) {
   .field-box {
     width: 8.4rem;
   }
