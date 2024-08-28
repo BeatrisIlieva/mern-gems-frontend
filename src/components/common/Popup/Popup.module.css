@@ -109,7 +109,7 @@
 
   .modal.small,
   .modal.authentication {
-    width: 56vw;
+    width: 36vw;
   }
 
   .modal.mini-bag {
@@ -121,14 +121,21 @@
   }
 }
 
+@media (max-width: 960px) {
+  .modal.large {
+    width: 38vw;
+  }
+
+}
+
 @media (max-width: 860px) {
   .modal.large {
-    width: 68vw;
+    width: 48vw;
   }
 
   .modal.small,
   .modal.authentication {
-    width: 68vw;
+    width: 48vw;
   }
 }
 
@@ -139,7 +146,7 @@
 
   .modal.small,
   .modal.authentication {
-    width: 88vw;
+    width: 48vw;
   }
 }
 
@@ -150,6 +157,6 @@
 
   .modal.small,
   .modal.authentication {
-    width: 98vw;
+    width: 78vw;
   }
 }

@@ -14,7 +14,7 @@
   }
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (min-width: 360px) and (max-width: 803px) {
   #hero-banner {
     height: calc(100vh - 6.6rem);
   }

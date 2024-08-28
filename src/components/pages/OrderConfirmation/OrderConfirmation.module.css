@@ -59,7 +59,7 @@
   }
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (min-width: 360px) and (max-width: 803px) {
   .order-confirmation {
     margin: 1rem;
     justify-content: center;

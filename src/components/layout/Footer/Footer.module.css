@@ -7,7 +7,7 @@
   border-top: 0.1px solid var(--pink);
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (min-width: 360px) and (max-width: 803px) {
   .footer {
     font-size: var(--small);
   }

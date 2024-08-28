@@ -27,7 +27,7 @@
 }
 
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (min-width: 360px) and (max-width: 803px) {
   .mini-header {
     height: 4.6rem;
   }

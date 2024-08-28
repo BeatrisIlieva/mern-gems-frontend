@@ -1,6 +1,6 @@
 #collection {
   margin: 0;
-  height: calc(100vh - 13.6rem);
+  
 }
 
 .wrapper {
@@ -11,13 +11,15 @@
   flex-wrap: wrap;
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+
+
+@media (min-width: 360px) and (max-width: 1280px) {
   #collection {
     height: auto;
   }
 
   .wrapper {
-    row-gap: 2rem;
+    gap: 2rem;
     margin: 1rem;
   }
 }

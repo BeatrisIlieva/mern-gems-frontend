@@ -43,7 +43,7 @@
   }
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (min-width: 360px) and (max-width: 1024px) {
   .info-and-action-container {
     width: 100%;
   }

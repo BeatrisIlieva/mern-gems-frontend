@@ -4,7 +4,7 @@ import styles from "./CollectionList.module.css";
 
 export const CollectionList = () => {
   return (
-    <section className={styles["collection-list"]}>
+    <section id={styles["collection-list"]}>
       <Collection />
     </section>
   );
