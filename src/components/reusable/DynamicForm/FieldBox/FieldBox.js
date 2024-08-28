@@ -19,20 +19,9 @@ export const FieldBox = ({
   changeHandler,
   initialFormValues,
   userInformation,
-  fieldVariant
+  fieldVariant,
 }) => {
   const location = useLocation();
-
-  // className={
-  //   currentKey !== "Password" &&
-  //   currentKey !== "NewPassword" &&
-  //   currentKey !== "RetypeNewPassword" &&
-  //   currentKey !== "Email" &&
-  //   currentKey !== "CardHolder" &&
-  //   currentKey !== "LongCardNumber"
-  //     ? `${styles["field-box"]}`
-  //     : `${styles["larger-field-box"]}`
-  // }
 
   return (
     <div key={currentKey} className={`${styles[fieldVariant]}`}>
