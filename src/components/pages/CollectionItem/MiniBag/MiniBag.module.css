@@ -1,8 +1,6 @@
 .mini-bag {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
   height: 100%;
   width: 100%;
 }
@@ -10,7 +8,8 @@
 .bottom-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
+  padding-bottom: 2rem;
 }
 
 .no-decoration {
