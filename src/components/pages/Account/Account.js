@@ -7,7 +7,7 @@ import styles from "./Account.module.css";
 
 export const Account = () => {
   return (
-    <section className={styles["account"]}>
+    <section id={styles["account"]}>
       <div className={styles["flex-container"]}>
         <OrderHistory />
         <ShippingDetails />
