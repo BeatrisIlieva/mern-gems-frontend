@@ -1,6 +1,5 @@
 #account {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -25,9 +24,10 @@
 
 @media (min-width: 360px) and (max-width: 803px) {
   #account {
-    gap: 0rem;
-    margin: 0rem;
+    gap: 1rem;
+    margin: 0;
     height: calc(100vh - 6.6rem);
+    flex-direction: column;
   }
 
   .flex-container {
