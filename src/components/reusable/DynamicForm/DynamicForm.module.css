@@ -18,9 +18,3 @@
   display: flex;
   width: 100%;
 }
-
-/* @media (min-width: 360px) and (max-width: 603px) {
-  .form {
-    column-gap: 0.5rem;
-  }
-} */
