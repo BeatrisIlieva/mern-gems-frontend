@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 export const useIsMobile = () => {
-  const [isReversed, setIsReversed] = useState(window.innerWidth <= 803);
+  const [isReversed, setIsReversed] = useState(window.innerWidth <= 950);
 
   const handleResize = () => {
-    setIsReversed(window.innerWidth <= 803);
+    setIsReversed(window.innerWidth <= 950);
   };
 
   useEffect(() => {
