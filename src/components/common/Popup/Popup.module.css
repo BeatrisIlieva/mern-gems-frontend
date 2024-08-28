@@ -57,12 +57,12 @@
 }
 
 .modal.large {
-  width: 40vw;
+  width: 36vw;
 }
 
 .modal.small,
 .modal.authentication {
-  width: 20vw;
+  width: 22vw;
 }
 
 .modal.mini-bag {
@@ -102,7 +102,16 @@
   }
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (max-width: 1060px) {
+  .modal.large {
+    width: 56vw;
+  }
+
+  .modal.small,
+  .modal.authentication {
+    width: 56vw;
+  }
+
   .modal.mini-bag {
     width: 100vw;
   }
@@ -112,8 +121,35 @@
   }
 }
 
-@media (min-width: 360px) and (max-width: 603px) {
+@media (max-width: 860px) {
   .modal.large {
-    width: calc(360px - 2rem);
+    width: 68vw;
+  }
+
+  .modal.small,
+  .modal.authentication {
+    width: 68vw;
+  }
+}
+
+@media (max-width: 660px) {
+  .modal.large {
+    width: 88vw;
+  }
+
+  .modal.small,
+  .modal.authentication {
+    width: 88vw;
+  }
+}
+
+@media (max-width: 460px) {
+  .modal.large {
+    width: 98vw;
+  }
+
+  .modal.small,
+  .modal.authentication {
+    width: 98vw;
   }
 }
