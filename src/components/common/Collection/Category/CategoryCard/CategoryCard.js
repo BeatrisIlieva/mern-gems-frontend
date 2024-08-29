@@ -20,11 +20,15 @@ export const CategoryCard = ({ jewelriesByCategory }) => {
           : styles["category-card"]
       }
     >
-      <DualTitleSection
-        firstTitle={`$${jewelriesByCategory[0].inventories[0].price} - $${jewelriesByCategory[0].inventories[2].price}`}
-        secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
-        variant={"regular"}
-      />
+      <div className={styles["info"]}>
+        <DualTitleSection
+          firstTitle={`$${jewelriesByCategory[0].inventories[0].price} - $${jewelriesByCategory[0].inventories[2].price}`}
+          secondTitle={
+            <StockStatus jewelriesByCategory={jewelriesByCategory} />
+          }
+          variant={"regular"}
+        />
+      </div>
       <LargeImages jewelriesByCategory={jewelriesByCategory} />
       <MiniImages jewelriesByCategory={jewelriesByCategory} />
     </article>
