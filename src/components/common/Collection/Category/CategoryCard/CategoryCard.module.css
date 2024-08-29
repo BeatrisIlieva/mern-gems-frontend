@@ -43,7 +43,7 @@
   }
 }
 
-@media (min-width: 360px) and (max-width: 1280px) {
+@media (max-width: 1280px) {
   .category-card {
     height: 100%;
     width: 100%;
@@ -54,7 +54,7 @@
   .info {
     display: none;
   }
-  
+
   .category-card {
     height: calc(100vh - 8.6rem);
     width: 20vw;
