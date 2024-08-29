@@ -21,7 +21,6 @@
 html {
   line-height: 1.5;
   letter-spacing: 1px;
-  /* font-size: 62.5% */
 }
 
 h1,
@@ -41,9 +40,7 @@ p {
   --white: #ffffff;
   --black: #000000;
   --pink: #e48cb0;
-  /* --pink: #fc8eac; */
   --medium-pink: #ecafc8;
-  /* --medium-pink: #fda5bd; */
   --light-pink: #fae8ef;
   --very-light-pink: #fcf4f7;
   --violet: #cb9bf7;

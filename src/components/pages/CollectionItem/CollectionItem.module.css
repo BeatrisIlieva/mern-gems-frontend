@@ -33,7 +33,7 @@
 }
 
 @media (max-width: 1280px) {
-  .collection-item{
+  .collection-item {
     height: auto;
   }
 }

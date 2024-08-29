@@ -8,7 +8,7 @@ export const Button = ({
   callBackFunction,
   variant,
   type,
-  isLoading, 
+  isLoading,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 

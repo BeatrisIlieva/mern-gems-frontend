@@ -23,7 +23,9 @@ export const NavLinkItem = ({ items }) => {
                   icon={item.icon}
                   className={`${styles["icon"]} ${styles[item.variant]}`}
                 />
-                <span className={`${styles["list-item"]} ${styles["label"]}`}>{item.label}</span>
+                <span className={`${styles["list-item"]} ${styles["label"]}`}>
+                  {item.label}
+                </span>
               </NavLink>
             </li>
           </Fragment>
