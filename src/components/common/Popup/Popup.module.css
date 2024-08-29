@@ -54,7 +54,6 @@
 .modal.authentication,
 .modal.order-history {
   max-height: 96vh;
-  overflow-y: auto;
   animation: slideInTop 1s forwards;
 }
 
