@@ -25,16 +25,7 @@
   gap: 2rem;
 }
 
-@media (orientation: landscape) and (max-width: 1280px) {
-  .description {
-    top: 2rem;
-    left: 1rem;
-  }
 
-  .description-wrapper {
-    width: 60%;
-  }
-}
 
 @media (orientation: portrait) and (max-width: 1280px) {
   .description {
@@ -44,7 +35,7 @@
   }
 
   .description-wrapper {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,3 +43,40 @@
     margin-right: auto;
   }
 }
+
+@media (orientation: landscape) and (max-width: 932px) {
+  .description {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .description-wrapper {
+    width: 100%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 844px) {
+  .description {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+
+  .description-wrapper {
+    width: 100%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 740px) {
+  .description {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+  }
+
+  .description-wrapper {
+    width: 100%;
+  }
+}
+

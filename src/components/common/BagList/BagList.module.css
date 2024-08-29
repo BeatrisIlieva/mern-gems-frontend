@@ -5,6 +5,7 @@
 }
 
 .bag-list.mini {
+  height: 56vh;
   overflow-y: auto;
 }
 

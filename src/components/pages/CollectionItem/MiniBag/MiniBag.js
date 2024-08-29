@@ -33,31 +33,38 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       overlayVariant={"mini-bag"}
     >
       <section className={styles["mini-bag"]}>
-        <BagHeader />
-        <BagList variant={"mini"} />
-        <div className={styles["bottom-container"]}>
-          <DualTitleSection
-            firstTitle={"Total"}
-            secondTitle={`$ ${totalPrice}`}
-            variant={"bolded"}
-          />
-          <Link to={"/users/shopping-bag"} className={styles["no-decoration"]}>
-            <Button
-              title={"View Bag"}
-              buttonIsDisabled={false}
-              callBackFunction={clickHandler}
-              variant={"pink"}
+        <>
+          <BagHeader />
+          <BagList variant={"mini"} />
+        </>
+        <>
+          <div className={styles["bottom-container"]}>
+            <DualTitleSection
+              firstTitle={"Total"}
+              secondTitle={`$ ${totalPrice}`}
+              variant={"bolded"}
             />
-          </Link>
-          <Link to={"/checkout"} className={styles["no-decoration"]}>
-            <Button
-              title={"Continue Checkout"}
-              buttonIsDisabled={false}
-              callBackFunction={clickHandler}
-              variant={"gray"}
-            />
-          </Link>
-        </div>
+            <Link
+              to={"/users/shopping-bag"}
+              className={styles["no-decoration"]}
+            >
+              <Button
+                title={"View Bag"}
+                buttonIsDisabled={false}
+                callBackFunction={clickHandler}
+                variant={"pink"}
+              />
+            </Link>
+            <Link to={"/checkout"} className={styles["no-decoration"]}>
+              <Button
+                title={"Continue Checkout"}
+                buttonIsDisabled={false}
+                callBackFunction={clickHandler}
+                variant={"gray"}
+              />
+            </Link>
+          </div>
+        </>
       </section>
     </Popup>
   );
