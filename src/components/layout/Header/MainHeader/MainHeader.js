@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+
 import { HorizontalLine } from "../../../reusable/HorizontalLine/HorizontalLine";
 import { NavLinkItem } from "./NavLinkItem/NavLinkItem";
-import { Link } from "react-router-dom";
 
 import { LEFT_NAV_ITEMS, RIGHT_NAV_ITEMS } from "./navItems";
 
