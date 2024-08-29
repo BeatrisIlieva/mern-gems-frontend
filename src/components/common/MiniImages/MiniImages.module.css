@@ -29,8 +29,7 @@
 }
 
 @media (max-width: 1280px) {
-  .active-mini-image  {
+  .active-mini-image {
     padding-bottom: 0.5rem;
   }
-
 }
