@@ -50,7 +50,9 @@ export const Popup = ({
             onClick={closeHandler}
           />
         )}
+        <div className={styles["content"]}>
         {children}
+        </div>
       </div>
     </section>
   );

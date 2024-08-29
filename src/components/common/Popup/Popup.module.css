@@ -88,6 +88,10 @@
   margin-left: auto;
 }
 
+.content {
+  overflow-y: auto;
+}
+
 @keyframes slideInTop {
   from {
     top: -100%;
