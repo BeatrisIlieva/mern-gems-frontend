@@ -38,11 +38,10 @@
   }
 }
 
-@media (orientation: landscape) and (max-width: 880px) {
+@media (orientation: landscape) and (max-width: 932px) {
   .child-wrapper {
     position: unset;
     width: calc(100vw - 2rem);
     gap: 1rem;
   }
-
 }

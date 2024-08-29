@@ -3,9 +3,9 @@ import { useState } from "react";
 import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { ShippingDetailsForm } from "../../../common/ShippingDetailsForm/ShippingDetailsForm";
 import { Popup } from "../../../common/Popup/Popup";
+import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 
 export const ShippingDetails = () => {
   const [displayPopup, setDisplayPopup] = useState(false);
