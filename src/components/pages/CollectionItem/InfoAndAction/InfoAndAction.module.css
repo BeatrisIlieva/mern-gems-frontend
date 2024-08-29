@@ -3,6 +3,7 @@
   background-color: var(--white);
   padding: 1.5rem;
   position: relative;
+  border-radius: 2rem;
 }
 
 .outer-wrapper {
