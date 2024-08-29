@@ -31,9 +31,9 @@
 }
 
 .line-img {
-  width: 26px;
+  width: 1.5rem;
   vertical-align: middle;
-  margin: 0px 0.1px;
+  margin: 0px 0.125rem;
 }
 
 @media (max-width: 1280px) {

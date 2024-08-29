@@ -19,7 +19,8 @@
 
 .thumbnail {
   height: 7rem;
-  margin-left: 7rem;
+  margin-left: 8.4rem;
+  padding: 0.25rem;
 }
 
 .logo-image {
@@ -29,7 +30,7 @@
   margin-top: 0.188rem;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1023px) {
   .header {
     height: 4.6rem;
   }
@@ -40,6 +41,7 @@
 
   .thumbnail {
     height: 4rem;
-    margin-left: 2.7rem;
+    margin-left: 3.5rem;
+    padding: 0.125rem;
   }
 }

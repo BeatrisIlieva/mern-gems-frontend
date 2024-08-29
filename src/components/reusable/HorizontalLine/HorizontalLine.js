@@ -12,7 +12,7 @@ export const HorizontalLine = ({ variantHorizontalLine, variantHr }) => {
       <hr className={`${styles["hr-line"]} ${styles[variantHr]}`} />
       <img
         className={styles["line-img"]}
-        src="https://res.cloudinary.com/deztgvefu/image/upload/v1707499296/template_images/giphy_s_b3cfly_1_b0dwbo.gif"
+        src="https://res.cloudinary.com/deztgvefu/image/upload/v1724934188/forget-me-not-collection/miniImages/forget_me_not_earrings_diamond_and_pink_sapphire_eapsp1mflrfmn_ee-1_k5iyct_1_liyyq0_1_1_nyks5t.png"
         alt=""
       />
       <hr className={`${styles["hr-line"]} ${styles[variantHr]}`} />
