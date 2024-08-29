@@ -25,7 +25,10 @@ export const Description = () => {
             variant={IMAGE_BY_URL_AND_VARIANT.butterfly.variant}
             waveEffect={IMAGE_BY_URL_AND_VARIANT.butterfly.waveEffect}
           />
-          <LargeTitle title={"Forget-Me-Not Collection"} textAlign={"align-center"}/>
+          <LargeTitle
+            title={"Forget-Me-Not Collection"}
+            textAlign={"align-center"}
+          />
           <div className={styles["inner-wrapper"]}>
             <MiniImage
               imageUrl={IMAGE_BY_URL_AND_VARIANT.white.imageUrl}

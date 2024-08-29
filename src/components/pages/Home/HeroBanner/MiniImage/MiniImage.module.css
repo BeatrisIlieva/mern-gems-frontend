@@ -58,8 +58,6 @@
   }
 }
 
-
-
 @media (orientation: landscape) and (max-width: 844px) {
   .mini-image.center {
     display: none;
