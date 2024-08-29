@@ -25,7 +25,7 @@
   }
 }
 
-@media (orientation: portrait) and (max-width: 1280px) {
+@media (orientation: portrait) and (max-width: 739px) {
   .shopping-process-container {
     margin: 1rem;
   }

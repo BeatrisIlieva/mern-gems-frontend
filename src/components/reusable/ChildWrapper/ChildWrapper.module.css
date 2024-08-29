@@ -16,7 +16,13 @@
   border-radius: 2rem;
 }
 
-@media (orientation: portrait) and (max-width: 1280px) {
+@media (max-width: 1280px) {
+  .child-wrapper {
+    position: unset;
+  }
+}
+
+@media (min-width: 740px) and (min-width: 768px) {
   .child-wrapper {
     position: unset;
     width: calc(100vw - 2rem);
@@ -28,9 +34,8 @@
   }
 }
 
-@media (orientation: landscape) and (max-width: 1280px) {
+@media (orientation: landscape) and (max-width: 740px) {
   .child-wrapper {
     top: 5.6rem;
   }
-
 }

@@ -18,7 +18,7 @@ export const MiniHeader = () => {
         <img
           className={styles["logo-image"]}
           src={
-            "https://res.cloudinary.com/deztgvefu/image/upload/v1719057213/template_images/Screenshot_2024-06-22_at_14.52.43_xrdvgt.png"
+            "https://res.cloudinary.com/deztgvefu/image/upload/v1724933359/forget-me-not-collection/miniImages/Screenshot_2024-08-29_at_15.08.13_ycwzhl.png"
           }
           alt="logo-image"
         />
