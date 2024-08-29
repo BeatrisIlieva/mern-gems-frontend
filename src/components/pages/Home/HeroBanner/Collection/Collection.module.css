@@ -26,7 +26,7 @@
   object-position: center;
 }
 
-@media (orientation: portrait) and (max-width: 1280px) {
+@media (orientation: portrait) and (max-width: 1023px) {
   .collection-overlay {
     background: rgb(0, 0, 0);
     background: linear-gradient(
@@ -37,7 +37,7 @@
   }
 }
 
-@media (orientation: landscape) and (max-width: 1280px) {
+@media (orientation: landscape) and (max-width: 1023px) {
   .collection-overlay {
     background: rgb(0, 0, 0);
     background: linear-gradient(
