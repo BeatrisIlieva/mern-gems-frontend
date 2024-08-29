@@ -7,8 +7,8 @@ import { Images } from "./Images/Images";
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
 
 import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
-
 import { useJewelry } from "../../../hooks/useJewelry";
+
 import { deslugify } from "../../../utils/deslugify";
 
 import styles from "./CollectionItem.module.css";
