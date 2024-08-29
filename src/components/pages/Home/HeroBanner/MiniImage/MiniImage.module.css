@@ -57,3 +57,9 @@
     transform: translate(0, 0) rotate(360deg) scale(1);
   }
 }
+
+@media (orientation: landscape) and (max-width: 1280px) {
+  .mini-image.center {
+    display: none;
+  }
+}
