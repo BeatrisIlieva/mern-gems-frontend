@@ -1,5 +1,4 @@
 import { CategoryCard } from "./CategoryCard/CategoryCard";
-import { CardSkeleton } from "./CardSkeleton/CardSkeleton";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
 
@@ -11,9 +10,7 @@ export const Category = ({ categoryTitle, colorTitle }) => {
 
   return (
     <>
-      {jewelriesByCategory.length < 1 ? (
-        <CardSkeleton />
-      ) : (
+      {jewelriesByCategory.length > 0 && (
         <CategoryCard jewelriesByCategory={jewelriesByCategory} />
       )}
     </>
