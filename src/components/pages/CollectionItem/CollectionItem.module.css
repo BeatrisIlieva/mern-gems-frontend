@@ -5,6 +5,7 @@
   animation: transitioning 1.6s forwards;
   display: flex;
   flex-wrap: wrap;
+  height: calc(100vh - 9.6rem);
 }
 
 .collection-item {
@@ -28,5 +29,11 @@
   .collection-item {
     padding: 1rem;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .collection-item{
+    height: auto;
   }
 }

@@ -15,7 +15,7 @@
   padding: 1.25rem;
 }
 
-@media (max-width: 1280px) {
+@media (orientation: portrait) and (max-width: 1280px) {
   .child-wrapper {
     position: unset;
     width: calc(100vw - 2rem);
@@ -25,4 +25,11 @@
   .child-wrapper:nth-child(1) {
     order: 1;
   }
+}
+
+@media (orientation: landscape) and (max-width: 1280px) {
+  .child-wrapper {
+    top: 5.6rem;
+  }
+
 }

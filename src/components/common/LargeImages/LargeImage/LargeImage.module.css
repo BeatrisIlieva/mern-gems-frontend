@@ -38,3 +38,9 @@
     transform: translateX(0);
   }
 }
+
+@media (orientation: landscape) and (max-width: 1280px) {
+  .thumbnail.large {
+    height: calc(100vh - 8.6rem);
+  }
+}
