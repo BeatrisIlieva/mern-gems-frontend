@@ -25,7 +25,7 @@
   }
 }
 
-@media (orientation: portrait) and (max-width: 739px) {
+@media (orientation: portrait) and (max-width: 1280px) {
   .shopping-process-container {
     margin: 1rem;
   }
@@ -37,3 +37,4 @@
     gap: 1rem;
   }
 }
+
