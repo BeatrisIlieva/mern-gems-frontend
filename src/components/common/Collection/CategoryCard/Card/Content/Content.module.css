@@ -17,14 +17,14 @@
 @media (orientation: landscape) and (min-width: 932px) and (max-width: 1366px) {
   .content {
     min-height: calc(600px + 2rem);
-    width: calc(50% - 1rem);
+    width: calc(50vw - 2rem);
   }
 }
 
 @media (orientation: landscape) and (min-width: 740px) and (max-width: 931px) {
   .content {
     min-height: calc(470px + 2rem);
-    width: calc(50% - 1rem);
+    width: calc(50vw - 2rem);
   }
 }
 
@@ -38,6 +38,6 @@
 @media (orientation: portrait) and (min-width: 740px) and (max-width: 1024px) {
   .content {
     height: calc(512px + 2rem);
-    width: calc(50% - 1rem);
+    width: calc(50vw - 2rem);
   }
 }
