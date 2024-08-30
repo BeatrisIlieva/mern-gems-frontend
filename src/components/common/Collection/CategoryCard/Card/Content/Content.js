@@ -16,8 +16,8 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
       onMouseLeave={() => setArticleIsHovered(false)}
       className={
         articleIsHovered
-          ? `${styles["category-card"]} ${styles["hovered"]}`
-          : styles["category-card"]
+          ? `${styles["content"]} ${styles["hovered"]}`
+          : styles["content"]
       }
     >
       <DualTitleSection

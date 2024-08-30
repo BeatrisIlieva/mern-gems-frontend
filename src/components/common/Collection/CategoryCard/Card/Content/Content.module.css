@@ -1,4 +1,4 @@
-.category-card {
+.content {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -10,35 +10,34 @@
   animation: transitioning 2s forwards;
 }
 
-.category-card.hovered {
+.content.hovered {
   box-shadow: 0 0 0 1px var(--light-gray);
 }
 
 @media (orientation: landscape) and (min-width: 932px) and (max-width: 1366px) {
-    .category-card {
-      min-height: calc(600px + 2rem);
-      width: calc(50% - 1rem);
-    }
+  .content {
+    min-height: calc(600px + 2rem);
+    width: calc(50% - 1rem);
   }
-  
-  @media (orientation: landscape) and (min-width: 740px) and (max-width: 931px) {
-    .category-card {
-      min-height: calc(470px + 2rem);
-      width: calc(50% - 1rem);
-    }
+}
+
+@media (orientation: landscape) and (min-width: 740px) and (max-width: 931px) {
+  .content {
+    min-height: calc(470px + 2rem);
+    width: calc(50% - 1rem);
   }
-  
-  @media (orientation: portrait) and (min-width: 360px) and (max-width: 739px) {
-    .category-card {
-      height: calc(100vh - 11.6rem);
-      width: 100%;
-    }
+}
+
+@media (orientation: portrait) and (min-width: 360px) and (max-width: 739px) {
+  .content {
+    height: calc(100vh - 11.6rem);
+    width: 100%;
   }
-  
-  @media (orientation: portrait) and (min-width: 740px) and (max-width: 1024px) {
-    .category-card {
-      height: calc(512px + 2rem);
-      width: calc(50% - 1rem);
-    }
+}
+
+@media (orientation: portrait) and (min-width: 740px) and (max-width: 1024px) {
+  .content {
+    height: calc(512px + 2rem);
+    width: calc(50% - 1rem);
   }
-  
+}
