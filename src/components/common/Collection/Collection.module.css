@@ -10,7 +10,7 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1180px) {
   #collection {
     height: auto;
   }
