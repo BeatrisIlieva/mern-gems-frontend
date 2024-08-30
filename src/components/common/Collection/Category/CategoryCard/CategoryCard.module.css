@@ -2,18 +2,15 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   width: 20vw;
   padding: 1rem;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  height: calc(100vh - 13.6rem);
 }
 
 .category-card.hovered {
   box-shadow: 0 0 0 1px var(--light-gray);
-}
-
-.info {
-  margin-bottom: 1rem;
 }
 
 .slide-in {
@@ -46,14 +43,14 @@
   }
 }
 
-@media (max-width: 1226px) {
+@media (max-width: 1366px) {
   .category-card {
-    height: 100%;
+    height: calc(100vh - 11.6rem);
     width: 100%;
   }
 }
 
-@media (orientation: landscape) and (max-width: 1180px) {
+@media (orientation: landscape) and (min-width:740px) and (max-width: 1366px){
   .category-card {
     height: 100%;
     width: calc(50% - 1rem);

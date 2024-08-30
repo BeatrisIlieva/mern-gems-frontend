@@ -2,13 +2,16 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-family: var(--bold-italic-font-family);
 }
 
+.mini-images-list li {
+  padding: 1rem;
+}
+
 .active-mini-image {
-  padding-bottom: 1rem;
   border-bottom-left-radius: 50rem;
   border-bottom-right-radius: 50rem;
 }

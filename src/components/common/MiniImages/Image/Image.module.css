@@ -5,11 +5,10 @@
   align-items: center;
   flex-direction: column;
   transition: transform 0.4s ease-in-out;
-  margin-top: 1.8rem;
 }
 
 .thumbnail {
-  width: 60%;
+  width: 4vw;
 }
 
 .image {
