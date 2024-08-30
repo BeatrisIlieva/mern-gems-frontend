@@ -79,7 +79,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Pink Sapphire and Diamond Drop Earrings",
+    title: "Pink Sapphire and Diamond Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-1_zzaw4q.webp",
     secondImageUrl:
@@ -91,7 +91,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Blue Sapphire and Diamond Drop Earrings",
+    title: "Blue Sapphire and Diamond Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-1_zx2cga.webp",
     secondImageUrl:
@@ -103,7 +103,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Diamond Drop Earrings",
+    title: "Diamond Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/earrings/forget_me_not_diamond_drop_earrings_eadpdrflrfmn_ee-1_knlt2u.webp",
     secondImageUrl:
@@ -115,7 +115,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Pink Sapphire and Diamond Lariat Necklace",
+    title: "Pink Sapphire and Diamond Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_pink_sapphire_nkpspltflrfmn_e_1_kuxbds.webp",
     secondImageUrl:
@@ -127,7 +127,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Blue Sapphire and Diamond Lariat Necklace",
+    title: "Blue Sapphire and Diamond Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_1_p2uxlj.webp",
     secondImageUrl:
@@ -139,7 +139,7 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Diamond Lariat Necklace",
+    title: "Diamond Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/necklaces/forget_me_not_lariat_diamond_necklace_nkdpltflrfmn_e-1_u0gwpv.avif",
     secondImageUrl:

@@ -1,10 +1,6 @@
 const Bag = require("../models/Bag");
 
-exports.findBagItemByUser = async (user, jewelry, size) => {
-  return await Bag.findOne({ user, jewelry, size });
-};
-
-exports.findBagItemsByBagId = async (bagId) => {
+exports.findBagItems = async (bagId) => {
   const bagItem = await Bag.findById(bagId);
 
   const jewelryId = bagItem.jewelry;
