@@ -40,6 +40,12 @@
   }
 }
 
+@media (orientation: landscape) and (max-width: 1280px) {
+  .info-and-action-container {
+    height: 50%;
+  }
+}
+
 @media (orientation: portrait) and (max-width: 1280px) {
   .info-and-action-container {
     width: 100%;
