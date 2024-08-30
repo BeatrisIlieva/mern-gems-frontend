@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../LargeImages/LargeImages";

@@ -31,12 +31,10 @@ export const MiniImages = ({ jewelriesByCategory, updateSelectedColor }) => {
 
   const updateActiveMiniImage = (colorTitle) => {
     setActiveMiniImage(colorTitle);
-    
+
     if (location.pathname === "/collection") {
       updateSelectedColor(colorTitle);
     } else {
-
-
       clickHandler(colorTitle);
     }
   };
