@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { Image } from "./Image/Image";
 
@@ -10,8 +10,10 @@ import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitl
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ jewelriesByCategory }) => {
+export const MiniImages = ({ jewelriesByCategory, updateSelectedColor }) => {
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   const clickHandler = (colorTitle) => {
     const categoryTitle = jewelriesByCategory[0].categories[0].title;
@@ -29,8 +31,14 @@ export const MiniImages = ({ jewelriesByCategory }) => {
 
   const updateActiveMiniImage = (colorTitle) => {
     setActiveMiniImage(colorTitle);
+    
+    if (location.pathname === "/collection") {
+      updateSelectedColor(colorTitle);
+    } else {
 
-    clickHandler(colorTitle);
+
+      clickHandler(colorTitle);
+    }
   };
 
   const color = COLORS_BY_TITLE[activeMiniImage];

@@ -1,4 +1,4 @@
-import { LoadingSpinner } from "../common/LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../../../common/LoadingSpinner/LoadingSpinner";
 import { MiniImages } from "../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form";
@@ -15,7 +15,7 @@ export const InfoAndAction = ({
 }) => {
   return (
     <div className={styles["info-and-action-container"]}>
-      {isTransitioning && <LoadingSpinner />}
+      {isTransitioning && <LoadingSpinner isTransitioning={isTransitioning} />}
       <div
         className={`${styles["outer-wrapper"]} ${
           isTransitioning ? `${styles["transitioning"]}` : ""

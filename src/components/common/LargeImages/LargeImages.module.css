@@ -8,7 +8,7 @@
 }
 
 .large-images.transitioning {
-  animation: transitioning 10s forwards;
+  animation: transitioning 14s forwards;
 }
 
 @keyframes transitioning {
