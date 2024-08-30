@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const fs = require("fs");
+const path = require("path");
 
 exports.sendRegistrationEmail = (email) => {
   const transporter = nodemailer.createTransport({
@@ -10,7 +11,9 @@ exports.sendRegistrationEmail = (email) => {
     },
   });
 
-  fs.readFile("email-greeting.html", "utf8", (err, html) => {
+  const htmlFilePath = path.join(__dirname, "email-greeting.html");
+
+  fs.readFile(htmlFilePath, "utf8", (err, html) => {
     if (err) {
       console.error("❌ Error reading HTML file:", err);
       return;
@@ -42,9 +45,11 @@ exports.sendOrderConfirmationEmail = (email, firstName) => {
     },
   });
 
-  fs.readFile("email-order-confirmation.html", "utf8", (err, html) => {
+  const htmlFilePath = path.join(__dirname, "email-order-confirmation.html");
+
+  fs.readFile(htmlFilePath, "utf8", (err, html) => {
     if (err) {
-      // console.error("❌ Error reading HTML file:", err);
+      console.error("❌ Error reading HTML file:", err);
       return;
     }
 

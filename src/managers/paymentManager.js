@@ -4,7 +4,7 @@ const UserShippingDetails = require("../models/UserShippingDetails");
 
 const orderManager = require("../managers/orderManager");
 
-const { sendOrderConfirmationEmail } = require("../../mailer");
+const { sendOrderConfirmationEmail } = require("../mailer/mailer");
 
 exports.create = async (userId) => {
   await orderManager.create(userId);
@@ -14,7 +14,6 @@ exports.create = async (userId) => {
   const userLoginDetails = await UserLoginDetails.findById(userId);
 
   const email = userLoginDetails.email;
-  console.log(email);
 
   const userShippingDetails = await UserShippingDetails.findById(userId);
 

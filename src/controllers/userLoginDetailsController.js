@@ -4,7 +4,7 @@ const userLoginDetailsManager = require("../managers/userLoginDetailsManager");
 const userShippingDetailsManager = require("../managers/userShippingDetailsManager");
 const userCardDetailsManager = require("../managers/userCardDetailsManager");
 
-const { sendRegistrationEmail } = require("../../mailer");
+const { sendRegistrationEmail } = require("../mailer/mailer");
 
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
