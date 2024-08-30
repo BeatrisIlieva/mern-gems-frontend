@@ -1,6 +1,6 @@
 const Bag = require("../models/Bag");
 
-exports.getAllBagItemsByUserId = async (user) => {
+exports.getAllBagItems = async (user) => {
   return await Bag.aggregate([
     {
       $match: {

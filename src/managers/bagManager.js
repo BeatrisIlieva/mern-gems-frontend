@@ -6,9 +6,7 @@ const { updateBagQuantity } = require("../utils/updateBagQuantity");
 const { updateInventoryQuantity } = require("../utils/updateInventoryQuantity");
 const { checkIfItemIsAvailable } = require("../utils/checkIfItemIsAvailable");
 
-const {
-  getAllBagItemsByUserId,
-} = require("../aggregations/getAllBagItemsByUserId");
+const { getAllBagItems } = require("../aggregations/getAllBagItems");
 
 const {
   DEFAULT_ADD_QUANTITY,
@@ -42,7 +40,7 @@ exports.create = async ({ userId, jewelryId, size }) => {
 exports.getAll = async (userId) => {
   const user = await UserLoginDetails.findById(userId);
 
-  return getAllBagItemsByUserId(user);
+  return getAllBagItems(user);
 };
 
 exports.increase = async (bagId) => {
