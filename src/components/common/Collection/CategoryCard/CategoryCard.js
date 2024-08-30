@@ -1,12 +1,8 @@
 import { useState } from "react";
 
-
-
 import { Card } from "./Card/Card";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
-
-
 
 export const CategoryCard = ({ categoryTitle, colorTitle }) => {
   const [selectedColor, setSelectedColor] = useState(colorTitle);
