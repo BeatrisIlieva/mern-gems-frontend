@@ -10,7 +10,6 @@
   border-radius: 2rem;
 }
 
-
 @media (orientation: portrait) and (max-width: 1280px) {
   .image-container {
     width: 100%;

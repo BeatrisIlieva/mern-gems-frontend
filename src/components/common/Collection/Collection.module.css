@@ -8,13 +8,11 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-
 }
-
 
 @media (max-width: 1180px) {
   #collection {
-      height: auto;
+    height: auto;
   }
 
   .wrapper {

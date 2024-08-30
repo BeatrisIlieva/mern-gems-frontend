@@ -8,7 +8,7 @@
 }
 
 .thumbnail {
-  width: 4vw;
+  width: 3rem;
 }
 
 .image {
@@ -43,5 +43,9 @@
   .title {
     font-size: var(--small);
     top: -1.5rem;
+  }
+
+  .thumbnail {
+    width: 2rem;
   }
 }

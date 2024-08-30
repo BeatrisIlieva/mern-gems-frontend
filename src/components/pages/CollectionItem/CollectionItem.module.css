@@ -32,12 +32,6 @@
   }
 }
 
-/* @media (orientation:landscape) and (max-width: 1280px) {
-  .collection-item {
-    height: calc(100vh - 8.6rem);
-  }
-} */
-
 @media (max-width: 1280px) {
   .collection-item {
     height: auto;
