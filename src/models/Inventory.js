@@ -6,17 +6,14 @@ const inventorySchema = new mongoose.Schema({
     ref: "Jewelry",
     required: true,
   },
-
   size: {
     type: String,
     required: true,
   },
-
   quantity: {
     type: Number,
     required: true,
   },
-
   price: {
     type: Number,
     required: true,
