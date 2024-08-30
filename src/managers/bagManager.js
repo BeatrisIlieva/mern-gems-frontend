@@ -40,7 +40,7 @@ exports.create = async ({ userId, jewelryId, size }) => {
 exports.getAll = async (userId) => {
   const user = await UserLoginDetails.findById(userId);
 
-  return getAllBagItems(user);
+  return await getAllBagItems(user);
 };
 
 exports.increase = async (bagId) => {
