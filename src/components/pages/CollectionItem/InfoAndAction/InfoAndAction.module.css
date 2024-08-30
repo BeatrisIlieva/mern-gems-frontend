@@ -20,10 +20,6 @@
   display: flex;
 }
 
-.mini-images {
-  width: 12rem;
-}
-
 .wrapper {
   display: flex;
   gap: 1rem;
@@ -50,8 +46,8 @@
   }
 }
 
-@media (max-width: 370px) {
+/* @media (max-width: 370px) {
   .mini-images {
     width: 10rem;
   }
-}
+} */

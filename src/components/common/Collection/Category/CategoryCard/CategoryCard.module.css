@@ -52,7 +52,7 @@
 
 @media (orientation: landscape) and (min-width:740px) and (max-width: 1366px){
   .category-card {
-    height: 100%;
+    height: calc(100vh - 11.6rem);
     width: calc(50% - 1rem);
   }
 }
