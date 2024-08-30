@@ -1,4 +1,4 @@
-import { Category } from "./Category/Category";
+import { CategoryCard } from "./CategoryCard/CategoryCard";
 
 import { CATEGORIES_BY_ID_AND_INITIAL_COLOR_ID } from "./constants/categoriesByIdAndInitialColorId";
 
@@ -10,7 +10,7 @@ export const Collection = () => {
       <div className={styles["wrapper"]}>
         {Object.entries(CATEGORIES_BY_ID_AND_INITIAL_COLOR_ID).map(
           ([categoryTitle, colorTitle]) => (
-            <Category
+            <CategoryCard
               key={categoryTitle}
               categoryTitle={categoryTitle}
               colorTitle={colorTitle}
