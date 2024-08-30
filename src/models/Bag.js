@@ -6,23 +6,19 @@ const bagSchema = new mongoose.Schema({
     ref: "UserLoginDetails",
     required: true,
   },
-
   jewelry: {
     type: Number,
     ref: "Jewelry",
     required: true,
   },
-
   size: {
     type: String,
     required: true,
   },
-
   quantity: {
     type: Number,
     default: 0,
   },
-
   createdAt: {
     type: Date,
     default: Date.now,
