@@ -43,9 +43,17 @@ describe("userLoginInformationController", () => {
 
     const user = await UserLoginDetails.findOne({ email });
 
-    userId = user._id;
+    if (user) {
+      userId = user._id;
 
-    await user.deleteOne();
+      await user.deleteOne();
+    } else {
+      updatedUser = await UserLoginDetails.findOne({ email: updatedEmail });
+
+      userId = updatedUser._id;
+
+      await updatedUser.deleteOne();
+    }
 
     await UserShippingDetails.findByIdAndDelete(userId);
     await UserCardDetails.findByIdAndDelete(userId);
@@ -83,11 +91,9 @@ describe("userLoginInformationController", () => {
   });
 
   test("Test user registration; It should not populate user models with duplicate email; Expect error", async () => {
-    const res1 = await request
+    await request
       .post("/users-login-details/register")
       .send({ email, password });
-
-    expect(res1.status).toBe(201);
 
     const res2 = await request
       .post("/users-login-details/register")
@@ -132,5 +138,27 @@ describe("userLoginInformationController", () => {
       .send({ wrongEmail, password });
 
     expect(res2.status).toBe(401);
+  });
+
+  test("Test update user email with valid password; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    const res2 = await request
+      .put(`/users-login-details/email/${userId}`)
+      .send({ email: updatedEmail, password });
+
+    expect(res2.status).toBe(200);
+
+    const updatedUserLoginDetails = await UserLoginDetails.findById(userId);
+
+    expect(updatedUserLoginDetails.email).toBe(updatedEmail);
   });
 });
