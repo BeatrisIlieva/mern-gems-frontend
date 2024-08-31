@@ -48,20 +48,6 @@ router.post("/add/:jewelryId/:userId", async (req, res) => {
   }
 });
 
-router.delete("/delete/:bagId", async (req, res) => {
-  const bagId = req.params.bagId;
-
-  try {
-    await bagManager.delete(bagId);
-
-    res.status(204).json();
-  } catch (err) {
-    res.status(401).json({
-      message: err.message,
-    });
-  }
-});
-
 router.put("/increase/:bagId", async (req, res) => {
   const bagId = req.params.bagId;
 
@@ -81,6 +67,20 @@ router.put("/decrease/:bagId", async (req, res) => {
 
   try {
     await bagManager.decrease(bagId);
+
+    res.status(204).json();
+  } catch (err) {
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
+
+router.delete("/delete/:bagId", async (req, res) => {
+  const bagId = req.params.bagId;
+
+  try {
+    await bagManager.delete(bagId);
 
     res.status(204).json();
   } catch (err) {

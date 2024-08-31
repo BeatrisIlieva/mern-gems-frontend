@@ -100,6 +100,6 @@ describe("bagController", () => {
 
     const bag = await Bag.find({ user: userId });
 
-    expect(bag).toBe(null);
+    expect(bag).toBe([]);
   });
 });
