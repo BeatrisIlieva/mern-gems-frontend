@@ -211,4 +211,31 @@ describe("userLoginInformationController", () => {
 
     expect(isChanged).toBe(true);
   });
+
+  test("Test update user password with invalid current password; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    const res2 = await request
+      .put(`/users-login-details/password/${userId}`)
+      .send({ email, wrongPassword, newPassword });
+
+    expect(res2.status).toBe(401);
+
+    const updatedUserLoginDetails = await UserLoginDetails.findById(userId);
+
+    const isChanged = await bcrypt.compare(
+      newPassword,
+      updatedUserLoginDetails.password
+    );
+
+    expect(isChanged).toBe(false);
+  });
 });
