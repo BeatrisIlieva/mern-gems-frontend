@@ -11,7 +11,10 @@ const UserLoginDetails = require("../../src/models/UserLoginDetails");
 const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
 
-const {DEFAULT_ADD_QUANTITY} = require("../../src/constants/bag")
+const {
+  DEFAULT_ADD_QUANTITY,
+  DEFAULT_REMOVE_QUANTITY,
+} = require("../../src/constants/bag");
 
 describe("bagController", () => {
   beforeAll(async () => {
@@ -68,5 +71,35 @@ describe("bagController", () => {
     const bag = await Bag.find({ user: userId });
 
     expect(bag[0].quantity).toBe(DEFAULT_ADD_QUANTITY);
+  });
+
+  test("Test delete shopping bag; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    await request.post(`/bags/add/${jewelryId}/${userId}`).send({
+      size,
+    });
+
+    const createdBag = await Bag.findOne({ user: userId });
+
+    const bagId = createdBag._id;
+
+    const res3 = await request.delete(`/bags/delete/${bagId}`).send({
+      size,
+    });
+
+    expect(res3.status).toBe(204);
+
+    const bag = await Bag.find({ user: userId });
+
+    expect(bag).toBe(null);
   });
 });
