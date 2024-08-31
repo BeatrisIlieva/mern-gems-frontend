@@ -97,7 +97,7 @@ describe("bagController", () => {
 
     expect(res3.status).toBe(204);
 
-    const bag = await Bag.find({ user: userId });
+    const bag = await Bag.findOne({ user: userId });
 
     expect(bag.quantity).toBe(2);
   });
