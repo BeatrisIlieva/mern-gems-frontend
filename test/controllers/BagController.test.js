@@ -164,11 +164,11 @@ describe("bagController", () => {
       size,
     });
 
-    await request.put(`/bags/increase/${bagId}`);
-
     const createdBag = await Bag.findOne({ user: userId });
 
     const bagId = createdBag._id;
+
+    await request.put(`/bags/increase/${bagId}`);
 
     const res3 = await request.delete(`/bags/delete/${bagId}`);
 
