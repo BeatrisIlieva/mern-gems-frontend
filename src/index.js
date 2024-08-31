@@ -14,11 +14,6 @@ mongoose
   .then(() => console.log("DB connected"))
   .catch((err) => console.log(err.message));
 
-// mongoose
-//   .connect("mongodb://127.0.0.1:27017/mern-gems")
-//   .then(() => console.log("DB connected"))
-//   .catch((err) => console.log(err.message));
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
