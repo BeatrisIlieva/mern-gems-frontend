@@ -29,9 +29,9 @@ describe("userShippingDetailsController", () => {
   const email = "test@email.com";
   const password = "123456Bb";
   const firstName = "TestName";
+  const invalidFirstName = "Test1";
   const lastName = "TestName";
-  const updatedFirstName = "Test";
-  const updatedLastName = "Test";
+  const invalidLastName = "Test1";
   const country = "Test";
   const invalidCountry = "Test1";
   const city = "Test";
@@ -104,5 +104,43 @@ describe("userShippingDetailsController", () => {
     expect(updatedUserShippingDetails.apartment).toBe(apartment);
     expect(updatedUserShippingDetails.zipCode).toBe(zipCode);
     expect(updatedUserShippingDetails.phoneNumber).toBe(phoneNumber);
+  });
+
+  test("Test update user address details with invalid data; Expect errors", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    const res2 = await request.put(`/users-shipping-details/${userId}`).send({
+      firstName: invalidFirstName,
+      lastName: invalidLastName,
+      country: invalidCountry,
+      city: invalidCity,
+      street: invalidStreet,
+      apartment: invalidApartment,
+      zipCode: invalidZipCode,
+      phoneNumber: invalidPhoneNumber,
+    });
+
+    expect(res2.status).toBe(401);
+
+    const updatedUserShippingDetails = await UserShippingDetails.findById(
+      userId
+    );
+
+    expect(updatedUserShippingDetails.firstName).not.toBe(firstName);
+    expect(updatedUserShippingDetails.lastName).not.toBe(lastName);
+    expect(updatedUserShippingDetails.country).not.toBe(country);
+    expect(updatedUserShippingDetails.city).not.toBe(city);
+    expect(updatedUserShippingDetails.street).not.toBe(street);
+    expect(updatedUserShippingDetails.apartment).not.toBe(apartment);
+    expect(updatedUserShippingDetails.zipCode).not.toBe(zipCode);
+    expect(updatedUserShippingDetails.phoneNumber).not.toBe(phoneNumber);
   });
 });
