@@ -183,4 +183,38 @@ describe("bagController", () => {
 
     expect(updatedInventoryQuantity).toBe(initialInventoryQuantity);
   });
+
+  test("Test get all shopping bags; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    const res2 = await request.get(`/bags/${userId}`);
+
+    expect(res2.status).toBe(200);
+
+    const responseBody = res2.body;
+    expect(responseBody).toBeInstanceOf(Array);
+
+    responseBody.forEach((item) => {
+      expect(item).toHaveProperty("bagId");
+      expect(item).toHaveProperty("inventoryId");
+      expect(item).toHaveProperty("user");
+      expect(item).toHaveProperty("jewelryId");
+      expect(item).toHaveProperty("jewelryTitle");
+      expect(item).toHaveProperty("firstImageUrl");
+      expect(item).toHaveProperty("quantity");
+      expect(item).toHaveProperty("maxQuantity");
+      expect(item).toHaveProperty("categoryTitle");
+      expect(item).toHaveProperty("inventoryQuantity");
+      expect(item).toHaveProperty("size");
+      expect(item).toHaveProperty("price");
+    });
+  });
 });
