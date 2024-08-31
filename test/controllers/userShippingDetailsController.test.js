@@ -1,7 +1,5 @@
 const supertest = require("supertest");
 
-const bcrypt = require("bcrypt");
-
 const { app, server } = require("../../src/index");
 
 const request = supertest(app);
@@ -134,14 +132,14 @@ describe("userShippingDetailsController", () => {
       userId
     );
 
-    expect(updatedUserShippingDetails.firstName).not.toBe(firstName);
-    expect(updatedUserShippingDetails.lastName).not.toBe(lastName);
-    expect(updatedUserShippingDetails.country).not.toBe(country);
-    expect(updatedUserShippingDetails.city).not.toBe(city);
-    expect(updatedUserShippingDetails.street).not.toBe(street);
-    expect(updatedUserShippingDetails.apartment).not.toBe(apartment);
-    expect(updatedUserShippingDetails.zipCode).not.toBe(zipCode);
-    expect(updatedUserShippingDetails.phoneNumber).not.toBe(phoneNumber);
+    expect(updatedUserShippingDetails.firstName).not.toBe(invalidFirstName);
+    expect(updatedUserShippingDetails.lastName).not.toBe(invalidLastName);
+    expect(updatedUserShippingDetails.country).not.toBe(invalidCountry);
+    expect(updatedUserShippingDetails.city).not.toBe(invalidCity);
+    expect(updatedUserShippingDetails.street).not.toBe(invalidStreet);
+    expect(updatedUserShippingDetails.apartment).not.toBe(invalidApartment);
+    expect(updatedUserShippingDetails.zipCode).not.toBe(invalidZipCode);
+    expect(updatedUserShippingDetails.phoneNumber).not.toBe(invalidPhoneNumber);
   });
 
   test("Test get user shipping details; Expect success", async () => {

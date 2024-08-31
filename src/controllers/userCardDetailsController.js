@@ -25,7 +25,7 @@ router.put("/:userId", async (req, res) => {
   try {
     const result = await userCardDetailsManager.update(userId, data);
 
-    res.status(201).json({ result });
+    res.status(200).json({ result });
   } catch (err) {
     console.log(err);
 
