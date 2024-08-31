@@ -11,6 +11,13 @@ const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
 const Bag = require("../../src/models/Bag");
 
+const { sendOrderConfirmationEmail } = require("../../src/mailer/mailer");
+
+jest.mock("../../src/mailer/mailer", () => ({
+  ...jest.requireActual("../../src/mailer/mailer"),
+  sendOrderConfirmationEmail: jest.fn(),
+}));
+
 describe("paymentController", () => {
   beforeAll(async () => {
     await connectDB();
@@ -77,6 +84,12 @@ describe("paymentController", () => {
     });
 
     expect(res3.status).toBe(204);
+
+    expect(sendOrderConfirmationEmail).toHaveBeenCalledTimes(1);
+
+    const userShippingDetails = await UserShippingDetails.findById(userId);
+    
+    expect(sendOrderConfirmationEmail).toHaveBeenCalledWith(email, userShippingDetails.firstName);
   });
 
   test("Test complete transaction with invalid data; Expect errors", async () => {

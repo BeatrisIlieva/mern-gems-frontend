@@ -12,6 +12,13 @@ const UserLoginDetails = require("../../src/models/UserLoginDetails");
 const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
 
+const { sendRegistrationEmail } = require("../../src/mailer/mailer");
+
+jest.mock("../../src/mailer/mailer", () => ({
+  ...jest.requireActual("../../src/mailer/mailer"),
+  sendRegistrationEmail: jest.fn(),
+}));
+
 const {
   EMAIL_ALREADY_EXISTS_ERROR_MESSAGE,
 } = require("../../src/constants/email");
@@ -85,6 +92,11 @@ describe("userLoginDetailsController", () => {
     expect(createdUserShippingDetails).not.toBeNull();
 
     expect(createdUserCardDetails).not.toBeNull();
+
+
+    expect(sendRegistrationEmail).toHaveBeenCalledTimes(1);
+
+    expect(sendRegistrationEmail).toHaveBeenCalledWith(email);
   });
 
   test("Test user registration; It should not populate user models with duplicate email; Expect error", async () => {
