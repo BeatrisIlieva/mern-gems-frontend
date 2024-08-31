@@ -184,4 +184,31 @@ describe("userLoginInformationController", () => {
     expect(updatedUserLoginDetails.email).not.toBe(updatedEmail);
     expect(updatedUserLoginDetails.email).toBe(email);
   });
+
+  test("Test update user password with valid current password; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    const res2 = await request
+      .put(`/users-login-details/password/${userId}`)
+      .send({ email, password, newPassword });
+
+    expect(res2.status).toBe(200);
+
+    const updatedUserLoginDetails = await UserLoginDetails.findById(userId);
+
+    const isChanged = await bcrypt.compare(
+      newPassword,
+      updatedUserLoginDetails.password
+    );
+
+    expect(isChanged).toBe(true);
+  });
 });
