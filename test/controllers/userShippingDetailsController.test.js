@@ -106,7 +106,7 @@ describe("userShippingDetailsController", () => {
     expect(updatedUserShippingDetails.phoneNumber).toBe(phoneNumber);
   });
 
-  test("Test update user address details with invalid data; Expect errors", async () => {
+  test("Test update user shipping details with invalid data; Expect errors", async () => {
     await request
       .post("/users-login-details/register")
       .send({ email, password });
@@ -142,5 +142,25 @@ describe("userShippingDetailsController", () => {
     expect(updatedUserShippingDetails.apartment).not.toBe(apartment);
     expect(updatedUserShippingDetails.zipCode).not.toBe(zipCode);
     expect(updatedUserShippingDetails.phoneNumber).not.toBe(phoneNumber);
+  });
+
+  test("Test get user shipping details; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    const res2 = await request.get(`/users-shipping-details/${userId}`);
+
+    expect(res2.status).toBe(200);
+
+    expect(res2.body).toBeDefined();
+    expect(res2.body).toHaveProperty("_id");
+    expect(res2.body._id).toBe(userId.toString());
   });
 });
