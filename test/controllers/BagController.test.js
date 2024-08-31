@@ -53,6 +53,10 @@ describe("bagController", () => {
   });
 
   test("Test add to shopping bag; Expect success", async () => {
+    const inventoryItem = await Inventory.findOne({ jewelry: jewelryId });
+
+    const initialInventoryQuantity = inventoryItem.quantity;
+
     await request
       .post("/users-login-details/register")
       .send({ email, password });
@@ -72,6 +76,17 @@ describe("bagController", () => {
     const bag = await Bag.find({ user: userId });
 
     expect(bag[0].quantity).toBe(DEFAULT_ADD_QUANTITY);
+
+    const subsequentInventoryQuantity =
+      initialInventoryQuantity - DEFAULT_ADD_QUANTITY;
+
+    const updatedInventoryItem = await Inventory.findOne({
+      jewelry: jewelryId,
+    });
+
+    const updatedInventoryQuantity = updatedInventoryItem.quantity;
+
+    expect(updatedInventoryQuantity).toBe(subsequentInventoryQuantity);
   });
 
   test("Test increase shopping bag quantity; Expect success", async () => {
