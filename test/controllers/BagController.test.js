@@ -179,7 +179,7 @@ describe("bagController", () => {
     expect(bag).toStrictEqual([]);
 
     const subsequentInventoryQuantity =
-      initialInventoryQuantity - DEFAULT_ADD_QUANTITY * 2;
+      initialInventoryQuantity + DEFAULT_REMOVE_QUANTITY * 2;
 
     const updatedInventoryItem = await Inventory.findOne({
       jewelry: jewelryId,
