@@ -7,6 +7,7 @@ const request = supertest(app);
 const { connectDB, disconnectDB } = require("../database");
 
 const Bag = require("../../src/models/Bag");
+const Inventory = require("../../src/models/Inventory");
 const UserLoginDetails = require("../../src/models/UserLoginDetails");
 const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
@@ -73,6 +74,34 @@ describe("bagController", () => {
     expect(bag[0].quantity).toBe(DEFAULT_ADD_QUANTITY);
   });
 
+  test("Test increase shopping bag quantity; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    await request.post(`/bags/add/${jewelryId}/${userId}`).send({
+      size,
+    });
+
+    const createdBag = await Bag.findOne({ user: userId });
+
+    const bagId = createdBag._id;
+
+    const res3 = await request.put(`/bags/increase/${bagId}`);
+
+    expect(res3.status).toBe(204);
+
+    const bag = await Bag.find({ user: userId });
+
+    expect(bag.quantity).toBe(2);
+  });
+
   test("Test decrease shopping bag quantity; Expect success", async () => {
     await request
       .post("/users-login-details/register")
@@ -92,7 +121,7 @@ describe("bagController", () => {
 
     const bagId = createdBag._id;
 
-    const res3 = await request.put(`/bags/decrease/${bagId}`)
+    const res3 = await request.put(`/bags/decrease/${bagId}`);
 
     expect(res3.status).toBe(204);
 
@@ -120,7 +149,7 @@ describe("bagController", () => {
 
     const bagId = createdBag._id;
 
-    const res3 = await request.delete(`/bags/delete/${bagId}`)
+    const res3 = await request.delete(`/bags/delete/${bagId}`);
 
     expect(res3.status).toBe(204);
 
