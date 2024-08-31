@@ -146,6 +146,10 @@ describe("bagController", () => {
   });
 
   test("Test delete shopping bag; Expect success", async () => {
+    const inventoryItem = await Inventory.findOne({ jewelry: jewelryId });
+
+    const initialInventoryQuantity = inventoryItem.quantity;
+
     await request
       .post("/users-login-details/register")
       .send({ email, password });
@@ -160,6 +164,8 @@ describe("bagController", () => {
       size,
     });
 
+    await request.put(`/bags/increase/${bagId}`);
+
     const createdBag = await Bag.findOne({ user: userId });
 
     const bagId = createdBag._id;
@@ -171,5 +177,16 @@ describe("bagController", () => {
     const bag = await Bag.find({ user: userId });
 
     expect(bag).toStrictEqual([]);
+
+    const subsequentInventoryQuantity =
+      initialInventoryQuantity - DEFAULT_ADD_QUANTITY * 2;
+
+    const updatedInventoryItem = await Inventory.findOne({
+      jewelry: jewelryId,
+    });
+
+    const updatedInventoryQuantity = updatedInventoryItem.quantity;
+
+    expect(updatedInventoryQuantity).toBe(subsequentInventoryQuantity);
   });
 });
