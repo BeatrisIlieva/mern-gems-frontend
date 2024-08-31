@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 const paymentManager = require("../managers/paymentManager");
-const userCardDetailsManager = require("../managers/userCardDetailsManager")
+const userCardDetailsManager = require("../managers/userCardDetailsManager");
 
 router.put("/:userId", async (req, res) => {
   const userId = req.params.userId;
@@ -9,7 +9,7 @@ router.put("/:userId", async (req, res) => {
   const data = { ...req.body };
 
   try {
-    await userCardDetailsManager.update(userId, data)
+    await userCardDetailsManager.update(userId, data);
 
     await paymentManager.create(userId, data);
 

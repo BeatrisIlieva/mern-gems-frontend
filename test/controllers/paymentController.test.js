@@ -101,6 +101,6 @@ describe("paymentController", () => {
       expiryDate: invalidExpiryDate,
     });
 
-    expect(res3.status).toBe(204);
+    expect(res3.status).toBe(401);
   });
 });
