@@ -94,4 +94,5 @@ describe("orderController", () => {
       expect(item).toHaveProperty("createdAt");
       expect(item).toHaveProperty("status");
   });
+})
 });
