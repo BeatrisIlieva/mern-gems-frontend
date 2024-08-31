@@ -11,13 +11,12 @@ const { connectDB, disconnectDB } = require("../database");
 const UserLoginDetails = require("../../src/models/UserLoginDetails");
 const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
-const Bag = require("../../src/models/Bag");
 
 const {
   EMAIL_ALREADY_EXISTS_ERROR_MESSAGE,
 } = require("../../src/constants/email");
 
-describe("userLoginInformationController", () => {
+describe("userLoginDetailsController", () => {
   beforeAll(async () => {
     await connectDB();
   });
@@ -57,8 +56,6 @@ describe("userLoginInformationController", () => {
 
     await UserShippingDetails.findByIdAndDelete(userId);
     await UserCardDetails.findByIdAndDelete(userId);
-
-    await Bag.findOneAndDelete({ user: userId });
 
     await server.close();
   });
