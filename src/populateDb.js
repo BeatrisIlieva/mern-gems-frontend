@@ -4,12 +4,10 @@ const Category = require("./models/Category");
 const Color = require("./models/Color");
 const Inventory = require("./models/Inventory");
 
-// async function populateDb() {
-//   await mongoose.connect(
-//     "mongodb+srv://beatrisilieve:31iiG2CgGYT18OZg@merngemscluster.u9znfhf.mongodb.net/?retryWrites=true&w=majority&appName=MERNGemsCluster"
-//   );
 async function populateDb() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/mern-gems");
+  await mongoose.connect(
+    "mongodb+srv://beatrisilieve:H7FAVwXvlhhOZsvU@merngems.qaktc.mongodb.net/?retryWrites=true&w=majority&appName=MERNGems"
+  );
 
   await Category.create({
     title: "Bracelets",
