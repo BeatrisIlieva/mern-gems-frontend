@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { MongoMemoryServer } = require("mongodb-memory-server");
 
-require("dotenv").config();
+// require("dotenv").config();
 
 let mongod = null;
 

@@ -2,9 +2,9 @@ const supertest = require("supertest");
 
 const bcrypt = require("bcrypt");
 
-const request = supertest(app);
-
 const { app, server } = require("../../src/index");
+
+const request = supertest(app);
 
 const { connectDB, disconnectDB } = require("../database");
 
@@ -70,25 +70,19 @@ describe("userLoginInformationController", () => {
       email,
     });
 
-    const createdUserShippingDetails = await UserShippingDetails.findOne({
-      email,
-    });
+    const userId = createdUserLoginDetails._id;
 
-    const createdUserCardDetails = await UserCardDetails.findByIdfindOne({
-      email,
-    });
+    const createdUserShippingDetails = await UserShippingDetails.findById(
+      userId
+    );
 
-    const user = await UserLoginDetails.findOne({ email });
-
-    const userId = user._id;
+    const createdUserCardDetails = await UserCardDetails.findById(userId);
 
     expect(createdUserLoginDetails).not.toBeNull();
     expect(createdUserLoginDetails.email).toBe(email);
 
     expect(createdUserShippingDetails).not.toBeNull();
-    expect(createdUserShippingDetails._id).toBe(userId);
 
     expect(createdUserCardDetails).not.toBeNull();
-    expect(createdUserCardDetails._id).toBe(userId);
   });
 });
