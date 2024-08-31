@@ -73,6 +73,34 @@ describe("bagController", () => {
     expect(bag[0].quantity).toBe(DEFAULT_ADD_QUANTITY);
   });
 
+  test("Test decrease shopping bag quantity; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    await request.post(`/bags/add/${jewelryId}/${userId}`).send({
+      size,
+    });
+
+    const createdBag = await Bag.findOne({ user: userId });
+
+    const bagId = createdBag._id;
+
+    const res3 = await request.put(`/bags/decrease/${bagId}`)
+
+    expect(res3.status).toBe(204);
+
+    const bag = await Bag.find({ user: userId });
+
+    expect(bag).toStrictEqual([]);
+  });
+
   test("Test delete shopping bag; Expect success", async () => {
     await request
       .post("/users-login-details/register")
@@ -92,14 +120,12 @@ describe("bagController", () => {
 
     const bagId = createdBag._id;
 
-    const res3 = await request.delete(`/bags/delete/${bagId}`).send({
-      size,
-    });
+    const res3 = await request.delete(`/bags/delete/${bagId}`)
 
     expect(res3.status).toBe(204);
 
     const bag = await Bag.find({ user: userId });
 
-    expect(bag).toBe([]);
+    expect(bag).toStrictEqual([]);
   });
 });
