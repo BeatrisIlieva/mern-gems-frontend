@@ -235,4 +235,24 @@ describe("userLoginDetailsController", () => {
 
     expect(isChanged).toBe(false);
   });
+
+  test("Test get user login details; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
+
+    const userId = createdUserLoginDetails._id;
+
+    const res2 = await request.get(`/users-login-details/${userId}`);
+
+    expect(res2.status).toBe(200);
+
+    expect(res2.body).toBeDefined();
+    expect(res2.body).toHaveProperty("_id");
+    expect(res2.body._id).toBe(userId.toString());
+  });
 });
