@@ -109,4 +109,16 @@ describe("userLoginInformationController", () => {
 
     expect(res2.status).toBe(200);
   });
+
+  test("Test user login with wrong password; It should not login user; Expect error", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
+
+    const res2 = await request
+      .post("/users-login-details/login")
+      .send({ email, wrongPassword });
+
+    expect(res2.status).toBe(401);
+  });
 });
