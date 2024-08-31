@@ -93,6 +93,6 @@ describe("orderController", () => {
       expect(item).toHaveProperty("totalPrice");
       expect(item).toHaveProperty("createdAt");
       expect(item).toHaveProperty("status");
+    });
   });
-})
 });

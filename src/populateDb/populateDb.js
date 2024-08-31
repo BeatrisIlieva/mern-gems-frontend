@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const Jewelry = require("./models/Jewelry");
-const Category = require("./models/Category");
-const Color = require("./models/Color");
-const Inventory = require("./models/Inventory");
+const Jewelry = require("../models/Jewelry");
+const Category = require("../models/Category");
+const Color = require("../models/Color");
+const Inventory = require("../models/Inventory");
 
 async function populateDb() {
   await mongoose.connect(
