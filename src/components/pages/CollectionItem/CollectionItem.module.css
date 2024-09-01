@@ -4,11 +4,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: calc(100vh - 9.6rem);
+  min-height: calc(100vh - 9.6rem);
   padding: 2rem;
   gap: 2rem;
 }
-
 
 @keyframes transitioning {
   0% {
@@ -21,7 +20,6 @@
 
 @media (max-width: 1280px) {
   .collection-item {
-    height: calc(100vh - 6.6rem);
+    min-height: calc(100vh - 6.6rem);
   }
 }
-
