@@ -3,6 +3,7 @@
   animation: transitioning 1.6s forwards;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   height: calc(100vh - 9.6rem);
   padding: 2rem;
   gap: 2rem;
@@ -20,13 +21,7 @@
 
 @media (max-width: 1280px) {
   .collection-item {
-    padding: 1rem;
-    gap: 1rem;
+    height: calc(100vh - 6.6rem);
   }
 }
 
-@media (max-width: 1280px) {
-  .collection-item {
-    height: auto;
-  }
-}

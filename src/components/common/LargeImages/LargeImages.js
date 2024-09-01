@@ -2,15 +2,11 @@ import { useState, useEffect } from "react";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
-import { MiniImages } from "../MiniImages/MiniImages";
+import { Heart } from "../Heart/Heart";
 
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 
 import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./LargeImages.module.css";
 
@@ -47,9 +43,7 @@ export const LargeImages = ({
             position={circleIconsPosition}
           />
         }
-        secondTitle={
-          <FontAwesomeIcon icon={faHeart} className={styles["heart-icon"]} />
-        }
+        secondTitle={<Heart />}
         variant={"bolded"}
       />
       <div className={styles["image-container"]}>
@@ -59,10 +53,6 @@ export const LargeImages = ({
           toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
         />
       </div>
-      <MiniImages
-        jewelriesByCategory={jewelriesByCategory}
-        updateSelectedColor={updateSelectedColor}
-      />
     </div>
   );
 };

@@ -4,7 +4,11 @@
   justify-content: space-between;
   cursor: pointer;
   width: 18rem;
-  height: 24rem;
+  height: 20rem;
+}
+
+.large-images.larger {
+  width: 22rem;
 }
 
 .image-container {
@@ -16,11 +20,6 @@
   animation: transitioning 14s forwards;
 }
 
-.heart-icon {
-  color: var(--pink);
-  height: 1.25rem;
-}
-
 @keyframes transitioning {
   0% {
     opacity: 0;
@@ -29,4 +28,3 @@
     opacity: 1;
   }
 }
-

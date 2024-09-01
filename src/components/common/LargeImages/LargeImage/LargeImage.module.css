@@ -4,6 +4,10 @@
   aspect-ratio: 1/1;
 }
 
+.image.larger {
+  width: 22rem;
+}
+
 .image.slide-in-left {
   position: relative;
   display: inline-block;
@@ -34,15 +38,14 @@
   }
 }
 
-
 @media (max-width: 1920px) {
-.image {
-  /* height: calc(100vh - 469.6px); */
-}
+  .image {
+    /* height: calc(100vh - 469.6px); */
+  }
 }
 
 @media (max-width: 932px) {
   .image {
     /* height: calc(100vh - 10.2rem); */
   }
-  }
+}
