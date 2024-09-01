@@ -1,9 +1,10 @@
 .large-images {
   display: flex;
   flex-direction: column;
-  gap: 1.50rem;
+  justify-content: space-between;
   cursor: pointer;
   width: 18rem;
+  height: 24rem;
 }
 
 .image-container {
