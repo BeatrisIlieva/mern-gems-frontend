@@ -4,6 +4,7 @@ import { Sizes } from "./Sizes/Sizes";
 import { Button } from "../../../../reusable/Button/Button";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
+import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
 import { SIZE_ERROR_MESSAGE } from "../../../../../constants/sizeErrorMessage";
 import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
@@ -11,6 +12,8 @@ import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
 import styles from "./Form.module.css";
 
 export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
+  const { userId } = useAuthenticationContext();
+
   const [errorMessage, setErrorMessage] = useState("");
 
   const inventories = jewelriesByCategory[0].inventories;
@@ -42,7 +45,7 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
       const size = { [SIZE_FORM_KEY.Size]: selectedSize };
       const jewelryId = jewelriesByCategory[0]._id;
 
-      await add(size, jewelryId);
+      await add(size, jewelryId, userId);
 
       toggleDisplayPopup();
 

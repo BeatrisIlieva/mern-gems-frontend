@@ -1,5 +1,5 @@
 .collection-item {
-  background-color: var(--very-light-gray);
+  background-color: #fcf4f75b;
   gap: 2rem;
   padding: 2rem;
   animation: transitioning 1.6s forwards;

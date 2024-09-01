@@ -8,8 +8,8 @@ export const bagServiceFactory = (token) => {
   const request = requestFactory(token);
 
   return {
-    add: (data, jewelryId) =>
-      request.post(`${baseUrl}/add/${jewelryId}`, data),
+    add: (data, jewelryId, userId) =>
+      request.post(`${baseUrl}/add/${jewelryId}/${userId}`, data),
 
     getAll: (userId) => request.get(`${baseUrl}/${userId}`),
 

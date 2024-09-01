@@ -51,8 +51,8 @@ export const BagProvider = ({ children }) => {
       });
   }, [userId, bagService]);
 
-  const add = async (size, jewelryId) => {
-    await bagService.add(size, jewelryId);
+  const add = async (size, jewelryId, userId) => {
+    await bagService.add(size, jewelryId, userId);
   };
 
   const increase = async (bagId) => {

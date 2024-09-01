@@ -9,5 +9,7 @@ export const orderServiceFactory = (token) => {
 
   return {
     getAll: (userId) => request.get(`${baseUrl}/${userId}`),
+
+    create: (userId) => request.get(`${baseUrl}/create/${userId}`),
   };
 };

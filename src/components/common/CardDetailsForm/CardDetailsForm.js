@@ -10,6 +10,7 @@ import { useService } from "../../../hooks/useService";
 import { useForm } from "../../../hooks/useForm";
 
 import { paymentServiceFactory } from "../../../services/paymentService";
+import { orderServiceFactory } from "../../../services/orderService";
 import { userCardDetailsServiceFactory } from "../../../services/userCardDetailsService";
 
 import { checkIfFormErrorHasOccurred } from "../../../utils/checkIfFormErrorHasOccurred";
@@ -35,6 +36,8 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
 
   const paymentService = useService(paymentServiceFactory);
+  
+  const orderService = useService(orderServiceFactory);
 
   const {
     values,
@@ -88,6 +91,8 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
           popupCloseHandler();
         } else {
           await paymentService.create(userId, data);
+
+          await orderService.create(userId);
 
           navigate("/order-confirmation");
         }
