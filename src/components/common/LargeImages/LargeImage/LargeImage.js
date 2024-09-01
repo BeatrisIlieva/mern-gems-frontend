@@ -32,12 +32,6 @@ export const LargeImage = ({
     }
   };
 
-  // className={`${styles["image"]} ${
-  //   firstImageUrlIsActive
-  //     ? styles["slide-in-right"]
-  //     : styles["slide-in-left"]
-  // }`}
-
   return (
     <img
       className={`${styles["image"]} ${
