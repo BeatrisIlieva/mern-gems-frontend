@@ -1,5 +1,5 @@
 .info-and-action-container {
-  width: calc(50% - 1rem);
+  width: calc(44% - 1rem);
   background-color: var(--white);
   padding: 1.5rem;
   position: relative;
@@ -50,5 +50,17 @@
   .info-and-action-container {
     width: 100%;
     padding: 0.75rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  .info-and-action-container {
+    height: fit-content;
+  }
+}
+
+@media (max-width: 932px) {
+  .info-and-action-container {
+    width: calc(50% - 1rem);
   }
 }

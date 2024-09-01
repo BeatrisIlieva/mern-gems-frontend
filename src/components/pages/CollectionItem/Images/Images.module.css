@@ -1,15 +1,27 @@
 .image-container {
-  width: calc(50% - 1rem);
+  width: calc(34% - 1rem);
   background-color: var(--white);
   border-radius: 2rem;
   display: flex;
   justify-content: center;
   position: relative;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
 @media (orientation: portrait) and (max-width: 1366px) {
   .image-container {
     width: 100%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .image-container {
+    height: fit-content;
+  }
+}
+
+@media (max-width: 932px) {
+  .image-container {
+    width: calc(50% - 1rem);
   }
 }

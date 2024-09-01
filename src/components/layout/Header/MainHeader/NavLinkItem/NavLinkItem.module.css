@@ -3,6 +3,11 @@
   gap: 30px;
 }
 
+.list-item.label {
+  width: 7rem;
+  border: 1px solid black
+}
+
 .selected,
 .not-selected {
   display: flex;
