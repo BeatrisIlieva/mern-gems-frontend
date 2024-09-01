@@ -3,7 +3,7 @@
   animation: transitioning 1.6s forwards;
   display: flex;
   justify-content: center;
-  /* max-height: calc(100vh - 9.6rem); */
+  height: calc(100vh - 9.6rem);
   padding: 2rem;
   gap: 2rem;
 }
