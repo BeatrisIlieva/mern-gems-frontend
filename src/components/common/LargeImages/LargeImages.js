@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
@@ -10,11 +11,7 @@ import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({
-  jewelriesByCategory,
-  updateSelectedColor,
-  circleIconsPosition,
-}) => {
+export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
   const { isTransitioning } = useIsTransitioning();
 
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
@@ -27,11 +24,14 @@ export const LargeImages = ({
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
   };
 
+  const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
+  const displayLargerImage = !!(slugifiedCategoryTitle && slugifiedColorTitle);
+
   return (
     <div
       className={`${styles["large-images"]} ${
-        isTransitioning ? styles["transitioning"] : ""
-      }`.trim()}
+        displayLargerImage ? styles["larger"] : ""
+      } ${isTransitioning ? styles["transitioning"] : ""}`.trim()}
     >
       <DualTitleSection
         firstTitle={
@@ -51,6 +51,7 @@ export const LargeImages = ({
           firstImageUrlIsActive={firstImageUrlIsActive}
           jewelriesByCategory={jewelriesByCategory}
           toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+          displayLargerImage={displayLargerImage}
         />
       </div>
     </div>

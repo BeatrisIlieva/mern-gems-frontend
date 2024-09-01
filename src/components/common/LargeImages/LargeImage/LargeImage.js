@@ -8,6 +8,7 @@ export const LargeImage = ({
   jewelriesByCategory,
   firstImageUrlIsActive,
   toggleFirstImageUrlIsActive,
+  displayLargerImage,
 }) => {
   const navigate = useNavigate();
 
@@ -31,9 +32,17 @@ export const LargeImage = ({
     }
   };
 
+  // className={`${styles["image"]} ${
+  //   firstImageUrlIsActive
+  //     ? styles["slide-in-right"]
+  //     : styles["slide-in-left"]
+  // }`}
+
   return (
     <img
       className={`${styles["image"]} ${
+        displayLargerImage ? styles["larger"] : ""
+      } ${
         firstImageUrlIsActive
           ? styles["slide-in-right"]
           : styles["slide-in-left"]
