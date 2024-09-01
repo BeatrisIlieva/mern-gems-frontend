@@ -1,7 +1,6 @@
 #collection {
-  display:flex;
-  min-height: calc(100vh - 17.50rem);
-  justify-content: center;
+  display: flex;
+  min-height: calc(100vh - 17.5rem);
   align-items: center;
   margin: 2rem;
 }
@@ -11,12 +10,13 @@
   grid-template-columns: repeat(4, 1fr);
   row-gap: 8rem;
   column-gap: 4rem; */
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 @media (max-width: 1280px) {
-
   #collection {
     margin: 1rem;
     /* height: auto; */
