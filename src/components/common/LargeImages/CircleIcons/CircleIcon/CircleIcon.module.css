@@ -1,6 +1,6 @@
 .circle {
   color: var(--light-gray);
-  font-size: 0.6rem;
+  height: 0.75rem;
 }
 
 .selected {

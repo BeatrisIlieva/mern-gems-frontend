@@ -3,10 +3,21 @@
   flex-direction: column;
   gap: 1rem;
   cursor: pointer;
+  width: 18rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
 }
 
 .large-images.transitioning {
   animation: transitioning 14s forwards;
+}
+
+.heart-icon {
+  color: var(--pink);
+  height: 1.25rem;
 }
 
 @keyframes transitioning {

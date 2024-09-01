@@ -47,14 +47,18 @@ export const LargeImages = ({
             position={circleIconsPosition}
           />
         }
-        secondTitle={<FontAwesomeIcon icon={faHeart} />}
+        secondTitle={
+          <FontAwesomeIcon icon={faHeart} className={styles["heart-icon"]} />
+        }
         variant={"bolded"}
       />
-      <LargeImage
-        firstImageUrlIsActive={firstImageUrlIsActive}
-        jewelriesByCategory={jewelriesByCategory}
-        toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-      />
+      <div className={styles["image-container"]}>
+        <LargeImage
+          firstImageUrlIsActive={firstImageUrlIsActive}
+          jewelriesByCategory={jewelriesByCategory}
+          toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+        />
+      </div>
       <MiniImages
         jewelriesByCategory={jewelriesByCategory}
         updateSelectedColor={updateSelectedColor}

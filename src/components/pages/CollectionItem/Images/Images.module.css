@@ -2,6 +2,7 @@
   width: calc(50% - 1rem);
   background-color: var(--white);
   border-radius: 2rem;
+  padding: 1rem;
 }
 
 @media (orientation: portrait) and (max-width: 1280px) {
