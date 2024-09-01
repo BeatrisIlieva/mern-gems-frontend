@@ -8,7 +8,6 @@
   padding: 1.5rem;
 }
 
-
 @media (orientation: portrait) and (max-width: 1366px) {
   .image-container {
     width: 100%;
