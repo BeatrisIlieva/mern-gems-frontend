@@ -24,9 +24,9 @@ export const InfoAndAction = ({
         <div className={styles["content"]}>
           <div className={styles["wrapper"]}>
             <DualTitleSection
-              firstTitle={
-                <MiniImages jewelriesByCategory={jewelriesByCategory} />
-              }
+              // firstTitle={
+              //   <MiniImages jewelriesByCategory={jewelriesByCategory} />
+              // }
               secondTitle={
                 <StockStatus jewelriesByCategory={jewelriesByCategory} />
               }

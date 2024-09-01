@@ -2,15 +2,22 @@ import { useState, useEffect } from "react";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
+import { MiniImages } from "../MiniImages/MiniImages";
+
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 
 import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./LargeImages.module.css";
 
 export const LargeImages = ({
   jewelriesByCategory,
+  updateSelectedColor,
   circleIconsPosition,
-  variant,
 }) => {
   const { isTransitioning } = useIsTransitioning();
 
@@ -30,18 +37,27 @@ export const LargeImages = ({
         isTransitioning ? styles["transitioning"] : ""
       }`.trim()}
     >
-      <CircleIcons
-        firstImageUrlIsActive={firstImageUrlIsActive}
-        toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-        firstImageUrl={jewelriesByCategory[0].firstImageUrl}
-        secondImageUrl={jewelriesByCategory[0].secondImageUrl}
-        position={circleIconsPosition}
+      <DualTitleSection
+        firstTitle={
+          <CircleIcons
+            firstImageUrlIsActive={firstImageUrlIsActive}
+            toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+            firstImageUrl={jewelriesByCategory[0].firstImageUrl}
+            secondImageUrl={jewelriesByCategory[0].secondImageUrl}
+            position={circleIconsPosition}
+          />
+        }
+        secondTitle={<FontAwesomeIcon icon={faHeart} />}
+        variant={"bolded"}
       />
       <LargeImage
         firstImageUrlIsActive={firstImageUrlIsActive}
         jewelriesByCategory={jewelriesByCategory}
-        variant={variant}
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+      />
+      <MiniImages
+        jewelriesByCategory={jewelriesByCategory}
+        updateSelectedColor={updateSelectedColor}
       />
     </div>
   );

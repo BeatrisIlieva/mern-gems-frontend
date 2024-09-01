@@ -10,7 +10,6 @@ export const Images = ({ jewelriesByCategory, isTransitioning }) => {
       <LargeImages
         jewelriesByCategory={jewelriesByCategory}
         circleIconsPosition={"bottom"}
-        variant={"large"}
       />
     </div>
   );

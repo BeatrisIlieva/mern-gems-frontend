@@ -3,11 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  /* justify-content: space-between; */
-  /* width: 20vw; */
   padding: 1rem;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  /* height: calc(100vh - 13.6rem); */
   animation: transitioning 2s forwards;
 }
 

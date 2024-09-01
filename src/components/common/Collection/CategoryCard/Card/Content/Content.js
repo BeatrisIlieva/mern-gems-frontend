@@ -25,11 +25,12 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
         secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
         variant={"regular"}
       />
-      <LargeImages jewelriesByCategory={jewelriesByCategory} />
-      <MiniImages
+      <LargeImages jewelriesByCategory={jewelriesByCategory}
+        updateSelectedColor={updateSelectedColor}/>
+      {/* <MiniImages
         jewelriesByCategory={jewelriesByCategory}
         updateSelectedColor={updateSelectedColor}
-      />
+      /> */}
     </article>
   );
 };

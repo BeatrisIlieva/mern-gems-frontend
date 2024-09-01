@@ -1,13 +1,5 @@
 .circle-icons-container {
   display: flex;
-  justify-content: center;
   gap: 0.4rem;
 }
 
-.circle-icons-container.top {
-  order: -1;
-}
-
-.circle-icons-container.bottom {
-  order: 1;
-}
