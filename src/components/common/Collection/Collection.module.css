@@ -1,15 +1,9 @@
 #collection {
   display:flex;
-  /* margin-top: auto;
-  margin-bottom: auto; */
   min-height: calc(100vh - 17.50rem);
   justify-content: center;
   align-items: center;
   margin: 2rem;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* height: calc(100vh - 13.6rem); */
 }
 
 .wrapper {
