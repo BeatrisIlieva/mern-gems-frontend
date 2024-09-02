@@ -15,6 +15,8 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
     <article
       onMouseEnter={() => setArticleIsHovered(true)}
       onMouseLeave={() => setArticleIsHovered(false)}
+      onTouchStart={() => setArticleIsHovered(true)}
+      onTouchEnd={() => setArticleIsHovered(false)}
       className={
         articleIsHovered
           ? `${styles["content"]} ${styles["hovered"]}`
