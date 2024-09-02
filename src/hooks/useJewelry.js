@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 
+import { useBagContext } from "../contexts/BagContext";
+
 import { useService } from "./useService";
 
 import { jewelryServiceFactory } from "../services/jewelryService";
 
 export const useJewelry = ({ categoryTitle, colorTitle }) => {
   const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
+
+  const { bagTotalQuantity } = useBagContext();
 
   const [jewelryService, setJewelryService] = useState(
     useService(jewelryServiceFactory)
@@ -26,7 +30,7 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
 
         setDisplayPage404(true);
       });
-  }, [categoryTitle, colorTitle, jewelryService]);
+  }, [categoryTitle, colorTitle, jewelryService, bagTotalQuantity]);
 
   return { jewelriesByCategory, displayPage404 };
 };

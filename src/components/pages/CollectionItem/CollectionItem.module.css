@@ -1,5 +1,5 @@
 .collection-item {
-  background-color: #fcf4f75b;
+  background-color: var(--very-light-gray);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

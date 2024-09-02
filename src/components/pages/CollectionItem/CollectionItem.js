@@ -19,7 +19,7 @@ export const CollectionItem = () => {
 
   const colorTitle = deslugify(slugifiedColorTitle);
 
-  const { jewelriesByCategory, displayPage404, isLoading } = useJewelry({
+  const { jewelriesByCategory, displayPage404} = useJewelry({
     categoryTitle,
     colorTitle,
   });
@@ -42,11 +42,9 @@ export const CollectionItem = () => {
           <section className={styles["collection-item"]}>
             <Images
               jewelriesByCategory={jewelriesByCategory}
-              isLoading={isLoading}
             />
             <InfoAndAction
               jewelriesByCategory={jewelriesByCategory}
-              isLoading={isLoading}
               toggleDisplayPopup={toggleDisplayPopup}
             />
           </section>

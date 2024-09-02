@@ -21,10 +21,10 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
   };
 
   useEffect(() => {
-    if (bagTotalQuantity === 0) {
+    if (bagTotalQuantity === 0 && totalPrice === 0) {
       clickHandler();
     }
-  }, [bagTotalQuantity]);
+  }, [bagTotalQuantity, totalPrice, clickHandler]);
 
   return (
     <Popup

@@ -9,7 +9,6 @@ import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 import styles from "./InfoAndAction.module.css";
 
 export const InfoAndAction = ({
-  isLoading,
   jewelriesByCategory,
   toggleDisplayPopup,
 }) => {
