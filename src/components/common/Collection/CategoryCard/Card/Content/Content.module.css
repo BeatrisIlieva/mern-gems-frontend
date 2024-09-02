@@ -6,6 +6,7 @@
   padding: 1rem;
   animation: transitioning 1s forwards;
   background-color: var(--white);
+  border-radius: 1rem;
 }
 
 .content.hovered {
