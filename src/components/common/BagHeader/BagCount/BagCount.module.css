@@ -1,6 +1,16 @@
 .title {
   font-size: var(--normal);
   margin-bottom: 2rem;
+  animation: transitioning 1s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .bag-count {
