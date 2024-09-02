@@ -10,9 +10,3 @@
 .title.bolded {
   font-family: var(--bold-font-family);
 }
-
-@media (max-width: 1280px) {
-  .title {
-    font-size: var(--medium);
-  }
-}

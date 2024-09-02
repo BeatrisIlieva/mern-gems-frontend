@@ -32,7 +32,13 @@ html {
 
 @media (max-width: 360px) {
   html {
-    font-size: 90%;
+    font-size: 86%;
+  }
+}
+
+@media (max-width: 340px) {
+  html {
+    font-size: 72%;
   }
 }
 
@@ -65,7 +71,7 @@ p {
   --gray: #4c4a49;
   --medium-gray: #878685;
   --light-gray: #cbc9c9;
-  --very-light-gray: #ededed4e;
+  --very-light-gray: #ededed74;
 }
 
 @font-face {
@@ -139,7 +145,7 @@ input[type="checkbox"] {
 }
 
 input[type="radio"]:checked + label {
-  background-color: var(--light-pink);
+  background-color: var(--very-light-pink);
 }
 
 input[type="radio"] {

@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import { NormalTitle } from "../../../../../reusable/NormalTitle/NormalTitle";
 
 import { SIZE_FORM_KEY } from "../../../../../../constants/sizeFormKey";
@@ -10,6 +13,14 @@ export const Sizes = ({
   changeHandler,
   selectedSize,
 }) => {
+  const [hoveredLabel, setHoveredLabel] = useState("");
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setHoveredLabel("");
+  }, [location.pathname, inventories]);
+
   return (
     <div className={styles["size-wrapper"]}>
       <NormalTitle title={"Size"} variant={"bolded"} />
@@ -26,7 +37,16 @@ export const Sizes = ({
               checked={item.size === selectedSize}
               disabled={item.quantity === 0}
             />
-            <label className={styles["label"]} htmlFor={item.size}>
+            <label
+              onMouseEnter={() => setHoveredLabel(item.size)}
+              onMouseLeave={() => setHoveredLabel(item.size)}
+              onTouchStart={() => setHoveredLabel(item.size)}
+              onTouchEnd={() => setHoveredLabel(item.size)}
+              className={`${styles["label"]} ${
+                hoveredLabel === item.size ? styles["hovered"] : ""
+              }`.trim()}
+              htmlFor={item.size}
+            >
               {item.size}
             </label>
             <NormalTitle title={`$${item.price}`} variant={"bolded"} />

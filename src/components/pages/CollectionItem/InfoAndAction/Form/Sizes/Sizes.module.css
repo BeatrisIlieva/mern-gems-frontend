@@ -31,14 +31,13 @@
   gap: 4px;
   box-shadow: 0 0 0 1px var(--medium-gray);
   border-radius: 0.5rem;
-  width: 80px;
-  height: 40px;
+  padding: 0.5rem 0.75rem;
   justify-content: center;
   align-items: center;
 }
 
-.label:hover {
-  background: var(--very-light-pink);
+.label.hovered {
+  background: var(--very-light-gray);
 }
 
 .error-message {
