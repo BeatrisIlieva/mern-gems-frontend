@@ -2,6 +2,16 @@
   width: 8rem;
   height: 8rem;
   border: 0.1px solid var(--light-gray);
+  animation: transitioning 1s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .image {
