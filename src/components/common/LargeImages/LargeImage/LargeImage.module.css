@@ -1,11 +1,11 @@
 .image {
-  width: 14rem;
+  width: 100%;
   object-fit: contain;
   aspect-ratio: 1/1;
 }
 
 .image.larger {
-  width: 22rem;
+  width: 100%;
 }
 
 .image.slide-in-left {

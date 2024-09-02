@@ -1,11 +1,7 @@
 .image-container {
-  width: calc(50% - 1rem);
+  width: calc(100vh - 13.6rem);
   background-color: var(--white);
   border-radius: 2rem;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
 @media (orientation: portrait) and (max-width: 1366px) {
@@ -14,7 +10,7 @@
   }
 }
 
-@media (max-width: 1366px) {
+/* @media (max-width: 1366px) {
   .image-container {
     height: fit-content;
   }
@@ -24,4 +20,4 @@
   .image-container {
     width: calc(50% - 1rem);
   }
-}
+} */

@@ -69,10 +69,7 @@ import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSecti
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({
-  jewelriesByCategory,
-  circleIconsPosition,
-}) => {
+export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -88,7 +85,7 @@ export const LargeImages = ({
 
   return (
     <div className={styles["large-images"]}>
-      <DualTitleSection
+      {/* <DualTitleSection
         firstTitle={
           <CircleIcons
             firstImageUrlIsActive={firstImageUrlIsActive}
@@ -100,13 +97,20 @@ export const LargeImages = ({
         }
         secondTitle={<Heart />}
         variant={"bolded"}
-      />
+      /> */}
       <div className={styles["image-container"]}>
         <LargeImage
           firstImageUrlIsActive={firstImageUrlIsActive}
           jewelriesByCategory={jewelriesByCategory}
           toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
           displayLargerImage={displayLargerImage}
+        />
+        <CircleIcons
+          firstImageUrlIsActive={firstImageUrlIsActive}
+          toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+          firstImageUrl={jewelriesByCategory[0].firstImageUrl}
+          secondImageUrl={jewelriesByCategory[0].secondImageUrl}
+          circleIconsPosition={circleIconsPosition}
         />
       </div>
     </div>

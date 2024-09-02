@@ -3,15 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  width: 18rem;
-  height: 20rem;
   animation: transitioning 1s forwards;
+  position: relative;
 }
 
-.large-images.larger {
-  width: 20rem;
-  height: 24rem;
-}
 
 .image-container {
   display: flex;

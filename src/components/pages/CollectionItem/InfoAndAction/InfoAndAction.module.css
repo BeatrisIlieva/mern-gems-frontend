@@ -46,7 +46,7 @@
   }
 }
 
-@media (orientation: portrait) and (max-width: 360px) {
+/* @media (orientation: portrait) and (max-width: 360px) {
   .info-and-action-container {
     width: 100%;
     padding: 0.75rem;
@@ -63,4 +63,4 @@
   .info-and-action-container {
     width: calc(50% - 1rem);
   }
-}
+} */
