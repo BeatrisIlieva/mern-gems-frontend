@@ -45,10 +45,3 @@
     width: 100%;
   }
 }
-
-/* @media (orientation: portrait) and (max-width: 820px) {
-  .info-and-action-container {
-    height: fit-content;
-    width: calc(50% - 1rem);
-  }
-} */
