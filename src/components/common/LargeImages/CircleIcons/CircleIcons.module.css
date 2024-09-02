@@ -1,14 +1,12 @@
 .circle-icons-container {
   display: flex;
   gap: 0.4rem;
-  position: absolute;
-}
-
-.circle-icons-container.top {
-  top: -0.75rem;
-  left: 0.25rem;
 }
 
 .circle-icons-container.bottom {
-  bottom: 0.75rem;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, -1%);
+  z-index: 100;
 }

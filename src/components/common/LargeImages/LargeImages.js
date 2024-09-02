@@ -5,6 +5,8 @@ import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
 import { Heart } from "../Heart/Heart";
 
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
+
 import styles from "./LargeImages.module.css";
 
 export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
@@ -23,32 +25,36 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
 
   return (
     <div className={styles["large-images"]}>
-      {/* <DualTitleSection
-        firstTitle={
-          <CircleIcons
-            firstImageUrlIsActive={firstImageUrlIsActive}
-            toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-            firstImageUrl={jewelriesByCategory[0].firstImageUrl}
-            secondImageUrl={jewelriesByCategory[0].secondImageUrl}
-            position={circleIconsPosition}
-          />
-        }
-        secondTitle={<Heart />}
-        variant={"bolded"}
-      /> */}
-      <div className={styles["image-container"]}>
-        <LargeImage
-          firstImageUrlIsActive={firstImageUrlIsActive}
-          jewelriesByCategory={jewelriesByCategory}
-          toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-          displayLargerImage={displayLargerImage}
-        />
+      {displayLargerImage ? (
         <CircleIcons
           firstImageUrlIsActive={firstImageUrlIsActive}
           toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
           firstImageUrl={jewelriesByCategory[0].firstImageUrl}
           secondImageUrl={jewelriesByCategory[0].secondImageUrl}
           circleIconsPosition={circleIconsPosition}
+        />
+      ) : (
+        <DualTitleSection
+          firstTitle={
+            <CircleIcons
+              firstImageUrlIsActive={firstImageUrlIsActive}
+              toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+              firstImageUrl={jewelriesByCategory[0].firstImageUrl}
+              secondImageUrl={jewelriesByCategory[0].secondImageUrl}
+              position={circleIconsPosition}
+            />
+          }
+          secondTitle={<Heart />}
+          variant={"bolded"}
+        />
+      )}
+
+      <div className={styles["image-container"]}>
+        <LargeImage
+          firstImageUrlIsActive={firstImageUrlIsActive}
+          jewelriesByCategory={jewelriesByCategory}
+          toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+          displayLargerImage={displayLargerImage}
         />
       </div>
     </div>

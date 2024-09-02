@@ -1,5 +1,5 @@
 .info-and-action-container {
-  width: calc(50% - 1rem);
+  width: 42%;
   background-color: var(--white);
   padding: 1.5rem;
   position: relative;
@@ -40,27 +40,15 @@
   }
 }
 
-@media (orientation: portrait) and (max-width: 1365px) {
+@media (max-width: 1024px) {
   .info-and-action-container {
     width: 100%;
   }
 }
 
-/* @media (orientation: portrait) and (max-width: 360px) {
-  .info-and-action-container {
-    width: 100%;
-    padding: 0.75rem;
-  }
-}
-
-@media (max-width: 1366px) {
+/* @media (orientation: portrait) and (max-width: 820px) {
   .info-and-action-container {
     height: fit-content;
-  }
-}
-
-@media (max-width: 932px) {
-  .info-and-action-container {
     width: calc(50% - 1rem);
   }
 } */

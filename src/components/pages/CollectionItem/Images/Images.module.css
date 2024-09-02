@@ -1,23 +1,22 @@
 .image-container {
-  width: calc(100vh - 13.6rem);
+  width: 33%;
   background-color: var(--white);
   border-radius: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (orientation: portrait) and (max-width: 1366px) {
+@media (max-width: 1024px) {
   .image-container {
     width: 100%;
   }
 }
 
-/* @media (max-width: 1366px) {
+/* @media (orientation: portrait) and (max-width: 820px) {
   .image-container {
     height: fit-content;
-  }
-}
-
-@media (max-width: 932px) {
-  .image-container {
     width: calc(50% - 1rem);
   }
 } */

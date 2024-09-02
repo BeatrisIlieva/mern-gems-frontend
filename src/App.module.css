@@ -30,6 +30,12 @@ html {
   }
 }
 
+@media (max-width: 360px) {
+  html {
+    font-size: 90%;
+  }
+}
+
 h1,
 h2,
 h3,

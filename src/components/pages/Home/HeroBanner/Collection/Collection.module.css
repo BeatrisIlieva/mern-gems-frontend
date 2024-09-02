@@ -37,12 +37,24 @@
   }
 }
 
+
 @media (orientation: landscape) and (max-width: 1280px) {
   .collection-overlay {
     background: rgb(0, 0, 0);
     background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.7001794467787114) 100%,
+      rgba(255, 255, 255, 0) 81%
+    );
+  }
+}
+
+@media (orientation: landscape) and (min-width: 933px) and (max-width: 1180px) {
+  .collection-overlay {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7001794467787114) 34%,
       rgba(255, 255, 255, 0) 81%
     );
   }
