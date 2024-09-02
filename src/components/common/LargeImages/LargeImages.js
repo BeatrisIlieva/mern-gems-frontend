@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
 import { Heart } from "../Heart/Heart";
-
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 
 import styles from "./LargeImages.module.css";
@@ -48,7 +47,6 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
           variant={"bolded"}
         />
       )}
-
       <div className={styles["image-container"]}>
         <LargeImage
           firstImageUrlIsActive={firstImageUrlIsActive}
