@@ -17,7 +17,7 @@ export const NavLinkItem = ({ to, icon, label, count }) => {
         <FontAwesomeIcon icon={icon} className={styles["icon"]} />
         <span className={styles["label"]}>{label}</span>
       </NavLink>
-      {count && <span className={styles["count"]}>({count})</span>}
+      {(count || count === 0) && <span className={styles["count"]}>({count})</span>}
     </>
   );
 };
