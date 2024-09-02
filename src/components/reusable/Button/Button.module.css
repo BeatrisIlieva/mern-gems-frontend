@@ -34,15 +34,12 @@
   background: var(--white);
   color: var(--pink);
   box-shadow: 0 0 0 1px var(--pink);
-
 }
 
 .button.pink.hovered {
   background: var(--pink);
   color: var(--white);
   box-shadow: 0 0 0 1px var(--pink);
-
-
 }
 
 .button.pink.disabled {
