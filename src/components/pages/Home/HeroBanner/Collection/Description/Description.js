@@ -41,11 +41,13 @@ export const Description = () => {
               }
               textAlign={"center"}
             />
-            <Button
-              variant={"white"}
-              title={"Discover"}
-              callBackFunction={clickHandler}
-            />
+            <div className={styles["button"]}>
+              <Button
+                variant={"white"}
+                title={"Discover"}
+                callBackFunction={clickHandler}
+              />
+            </div>
           </div>
         </div>
       </div>

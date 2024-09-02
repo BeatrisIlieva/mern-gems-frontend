@@ -76,4 +76,9 @@
   .description-wrapper {
     width: 100%;
   }
+
+  .button {
+    display: none;
+  }
 }
+
