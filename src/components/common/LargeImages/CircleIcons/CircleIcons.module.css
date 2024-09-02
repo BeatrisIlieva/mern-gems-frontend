@@ -5,8 +5,8 @@
 
 .circle-icons-container.bottom {
   position: absolute;
-  bottom: 1%;
+  bottom: 4%;
   left: 50%;
-  transform: translate(-50%, -1%);
+  transform: translate(-50%, -4%);
   z-index: 100;
 }
