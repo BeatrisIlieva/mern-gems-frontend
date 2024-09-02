@@ -1,4 +1,5 @@
 .heart-icon {
   color: var(--pink);
   height: 1.25rem;
+  z-index: 100;
 }

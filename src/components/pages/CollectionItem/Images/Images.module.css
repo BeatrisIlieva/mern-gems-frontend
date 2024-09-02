@@ -1,5 +1,5 @@
 .image-container {
-  width: calc(34% - 1rem);
+  width: calc(50% - 1rem);
   background-color: var(--white);
   border-radius: 2rem;
   display: flex;

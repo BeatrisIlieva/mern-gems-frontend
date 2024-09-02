@@ -31,8 +31,7 @@
 }
 
 .button.pink {
-
-  background: var(--very-light-pink);
+  background: var(--white);
   color: var(--pink);
   box-shadow: 0 0 0 1px var(--pink);
 
@@ -54,7 +53,7 @@
 .button.gray {
   background: var(--light-gray);
   color: var(--gray);
-  box-shadow: 0 0 0 1px var(--light-pink);
+  box-shadow: 0 0 0 1px var(--light-gray);
 }
 
 .button.gray.hovered {

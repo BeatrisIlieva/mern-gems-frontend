@@ -32,6 +32,7 @@ export const Content = ({
       <LargeImages
         jewelriesByCategory={jewelriesByCategory}
         updateSelectedColor={updateSelectedColor}
+        circleIconsPosition={"top"}
       />
       <MiniImages
         jewelriesByCategory={jewelriesByCategory}

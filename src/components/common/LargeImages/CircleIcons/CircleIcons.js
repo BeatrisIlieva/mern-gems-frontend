@@ -5,9 +5,10 @@ import styles from "./CircleIcons.module.css";
 export const CircleIcons = ({
   firstImageUrlIsActive,
   toggleFirstImageUrlIsActive,
+  position
 }) => {
   return (
-    <div className={styles["circle-icons-container"]}>
+    <div className={`${styles["circle-icons-container"]} ${styles[position]}`}>
       <CircleIcon
         isSelected={firstImageUrlIsActive}
         toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}

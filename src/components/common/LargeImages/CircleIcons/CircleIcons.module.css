@@ -2,3 +2,11 @@
   display: flex;
   gap: 0.4rem;
 }
+
+.circle-icons-container.top {
+  order: -1
+}
+
+.circle-icons-container.bottom {
+  order: 1;
+}

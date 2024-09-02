@@ -12,10 +12,10 @@ export const Sizes = ({
 }) => {
   return (
     <div className={styles["size-wrapper"]}>
+      <NormalTitle title={"Size"} variant={"bolded"} />
       <div className={styles["radio-container"]}>
         {inventories.map((item) => (
           <div key={item.size} className={styles["wrapper"]}>
-            <NormalTitle title={`$${item.price}`} variant={"bolded"}/>
             <input
               type="radio"
               name={SIZE_FORM_KEY.Size}
@@ -29,7 +29,7 @@ export const Sizes = ({
             <label className={styles["label"]} htmlFor={item.size}>
               {item.size}
             </label>
-            <div className={styles["quantity"]}></div>
+            <NormalTitle title={`$${item.price}`} variant={"bolded"} />
           </div>
         ))}
       </div>
