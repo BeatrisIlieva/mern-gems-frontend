@@ -9,7 +9,7 @@ import styles from "./MiniHeader.module.css";
 
 export const MiniHeader = () => {
   return (
-    <header id={styles["mini-header"]}>
+    <header className={styles["header"]}>
       <Link to={"/users/shopping-bag"} className={styles["wrapper"]}>
         <FontAwesomeIcon icon={faArrowLeftLong} className={styles["icon"]} />
         <NormalTitle title={"Go To Bag"} />

@@ -66,8 +66,7 @@
 
 @media (orientation: landscape) and (max-width: 932px) {
   .mini-image.butterfly {
-    top: 20%;
-
-    transform: translate(-50%, -20%);
+    top: 22%;
+    transform: translate(-50%, -22%);
   }
 }

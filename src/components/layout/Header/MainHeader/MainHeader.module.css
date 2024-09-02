@@ -1,4 +1,4 @@
-#main-header {
+.header {
   grid-area: header;
   position: sticky;
   top: 0;
@@ -13,7 +13,6 @@
   width: 100vw;
   padding: 0 2rem;
 }
-
 
 .list {
   width: 100%;
@@ -64,7 +63,7 @@
   margin-top: 0.188rem;
 }
 
-/* @media (max-width: 1280px) {
+@media (max-width: 675px) {
   .header {
     height: 4.6rem;
   }
@@ -80,8 +79,20 @@
   }
 }
 
-@media (max-width: 1280px) {
-  .list {
-    gap: 1rem;
+@media (max-width: 675px) {
+  .list-item:nth-last-of-type(1),
+  .list-item:nth-last-of-type(4) {
+    margin-left: 1rem;
   }
-} */
+
+  .list-item:nth-last-of-type(3) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 2rem;
+  }
+
+  .list-item:nth-last-of-type(4) {
+    justify-content: flex-start;
+    margin-left: 1rem;
+  }
+}

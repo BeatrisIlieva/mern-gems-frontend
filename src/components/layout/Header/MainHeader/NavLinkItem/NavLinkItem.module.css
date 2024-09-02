@@ -27,8 +27,12 @@
   padding-left: 0.25rem;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 675px) {
   .label {
+    display: none;
+  }
+
+  .count {
     display: none;
   }
 }

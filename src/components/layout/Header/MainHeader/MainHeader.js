@@ -17,7 +17,7 @@ export const MainHeader = () => {
   const { bagTotalQuantity } = useBagContext();
 
   return (
-    <header id={styles["main-header"]}>
+    <header className={styles["header"]}>
       <nav className={styles["nav"]}>
         <ul role="list" className={styles["list"]}>
           <li className={styles["list-item"]}>
