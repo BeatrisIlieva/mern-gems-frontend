@@ -13,34 +13,35 @@ export const Popup = ({
 }) => {
   const showXMark = modalVariant !== "authentication";
 
-  const [isOpen, setIsOpen] = useState(true);
+  // const [isOpen, setIsOpen] = useState(true);
 
-  useEffect(() => {
-    const headerElement = document.getElementById("header");
+  // useEffect(() => {
+  //   const headerElement = document.getElementById("header");
 
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      headerElement.style.zIndex = "0";
-    } else {
-      document.body.style.overflow = "visible";
-      headerElement.style.zIndex = "100";
-    }
+  //   if (isOpen) {
+  //     document.body.style.overflow = "hidden";
+  //     headerElement.style.zIndex = "0";
+  //   } else {
+  //     document.body.style.overflow = "visible";
+  //     headerElement.style.zIndex = "100";
+  //   }
 
-    return () => {
-      headerElement.style.zIndex = "100";
-      document.body.style.overflow = "visible";
-    };
-  }, [isOpen]);
+  //   return () => {
+  //     headerElement.style.zIndex = "100";
+  //     document.body.style.overflow = "visible";
+  //   };
+  // }, [isOpen]);
 
   const closeHandler = () => {
-    setIsOpen(false);
+    // setIsOpen(false);
     popupCloseHandler();
   };
 
   return (
     <section
-      className={`isOpen ? ${styles["overlay"]} ${styles["slide-in"]} ${styles[overlayVariant]} : ${styles["overlay"]} ${styles["slide-out"]} ${styles[overlayVariant]}`}
-      onAnimationEnd={() => !isOpen && setIsOpen(false)}
+    className={`${styles["overlay"]}  ${styles[overlayVariant]}`}
+      // className={`isOpen ? ${styles["overlay"]} ${styles["slide-in"]} ${styles[overlayVariant]} : ${styles["overlay"]} ${styles["slide-out"]} ${styles[overlayVariant]}`}
+      // onAnimationEnd={() => !isOpen && setIsOpen(false)}
     >
       <div className={`${styles["modal"]} ${styles[modalVariant]}`}>
         {showXMark && (
