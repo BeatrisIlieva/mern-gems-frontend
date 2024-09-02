@@ -2,11 +2,22 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 0.5rem;
+  animation: transitioning 1s forwards;
 }
 
 .column-form {
   display: flex;
   flex-direction: column;
+  animation: transitioning 1s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .custom-placeholder::placeholder {
