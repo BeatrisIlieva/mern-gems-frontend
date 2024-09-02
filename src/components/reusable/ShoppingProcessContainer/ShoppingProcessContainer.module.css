@@ -1,7 +1,5 @@
 .shopping-process-container {
   margin: 2rem 6rem;
-  animation: transitioning 1.6s forwards;
-  opacity: 0;
   min-height: calc(100vh - 14rem);
 }
 
@@ -14,15 +12,6 @@
 
 .children.reversed {
   flex-direction: row-reverse;
-}
-
-@keyframes transitioning {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media (orientation: portrait) and (max-width: 1280px) {

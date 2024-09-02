@@ -7,6 +7,16 @@
   height: fit-content;
   position: sticky;
   top: 8rem;
+  animation: transitioning 1s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .wrapper {
