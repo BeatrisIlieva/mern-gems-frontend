@@ -1,4 +1,3 @@
-import { LoadingSpinner } from "../../../common/LoadingSpinner/LoadingSpinner";
 import { MiniImages } from "../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form";
@@ -8,16 +7,11 @@ import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 
 import styles from "./InfoAndAction.module.css";
 
-export const InfoAndAction = ({
-  jewelriesByCategory,
-  toggleDisplayPopup,
-}) => {
+export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   return (
     <div className={styles["info-and-action-container"]}>
       {jewelriesByCategory.length > 0 && (
-        <div
-          className={styles["outer-wrapper"]}
-        >
+        <div className={styles["outer-wrapper"]}>
           <div className={styles["content"]}>
             <div className={styles["wrapper"]}>
               <DualTitleSection

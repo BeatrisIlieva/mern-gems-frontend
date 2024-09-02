@@ -19,7 +19,7 @@ export const CollectionItem = () => {
 
   const colorTitle = deslugify(slugifiedColorTitle);
 
-  const { jewelriesByCategory, displayPage404} = useJewelry({
+  const { jewelriesByCategory, displayPage404 } = useJewelry({
     categoryTitle,
     colorTitle,
   });
@@ -40,9 +40,7 @@ export const CollectionItem = () => {
             <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
           )}
           <section className={styles["collection-item"]}>
-            <Images
-              jewelriesByCategory={jewelriesByCategory}
-            />
+            <Images jewelriesByCategory={jewelriesByCategory} />
             <InfoAndAction
               jewelriesByCategory={jewelriesByCategory}
               toggleDisplayPopup={toggleDisplayPopup}
