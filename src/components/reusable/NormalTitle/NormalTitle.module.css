@@ -3,8 +3,18 @@
   font-size: var(--normal);
   color: var(--gray);
   text-decoration: none;
+  animation: transitioning 1s forwards;
 }
 
 .title.bolded {
   font-family: var(--bold-font-family);
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

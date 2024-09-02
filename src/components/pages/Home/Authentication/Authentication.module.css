@@ -13,15 +13,15 @@
 }
 
 .content {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .slide-in {
-  animation: slideIn 0.4s forwards;
+  animation: slideIn 1s forwards;
 }
 
 .slide-out {
-  animation: slideOut 0.4s forwards;
+  animation: slideOut 1s forwards;
 }
 
 @keyframes slideIn {

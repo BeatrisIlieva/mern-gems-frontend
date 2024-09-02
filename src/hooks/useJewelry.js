@@ -7,11 +7,16 @@ import { jewelryServiceFactory } from "../services/jewelryService";
 export const useJewelry = ({ categoryTitle, colorTitle }) => {
   const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
 
-  const jewelryService = useService(jewelryServiceFactory);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // const jewelryService = useService(jewelryServiceFactory);
+
+  const [jewelryService, setJewelryService] = useState(useService(jewelryServiceFactory))
 
   const [displayPage404, setDisplayPage404] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true)
     jewelryService
       .getOne(categoryTitle, colorTitle)
       .then((data) => {
@@ -24,8 +29,10 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
         
         setDisplayPage404(true);
       })
-      .finally(() => {});
+      .finally(() => {
+        setIsLoading(false)
+      });
   }, [categoryTitle, colorTitle, jewelryService]);
 
-  return { jewelriesByCategory, displayPage404 };
+  return { jewelriesByCategory, displayPage404, isLoading };
 };

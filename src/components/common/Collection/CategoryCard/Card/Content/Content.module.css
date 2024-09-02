@@ -4,10 +4,18 @@
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  animation: transitioning 2s forwards;
+  animation: transitioning 1s forwards;
 }
 
 .content.hovered {
   box-shadow: 0 0 0 1px var(--light-gray);
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

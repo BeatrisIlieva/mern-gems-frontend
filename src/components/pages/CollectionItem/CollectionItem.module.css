@@ -1,21 +1,11 @@
 .collection-item {
   background-color: #fcf4f75b;
-  animation: transitioning 1.6s forwards;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   min-height: calc(100vh - 9.6rem);
   padding: 2rem;
   gap: 2rem;
-}
-
-@keyframes transitioning {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media (max-width: 1280px) {

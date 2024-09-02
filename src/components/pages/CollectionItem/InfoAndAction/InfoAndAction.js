@@ -9,46 +9,45 @@ import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 import styles from "./InfoAndAction.module.css";
 
 export const InfoAndAction = ({
-  isTransitioning,
+  isLoading,
   jewelriesByCategory,
   toggleDisplayPopup,
 }) => {
   return (
     <div className={styles["info-and-action-container"]}>
-      {isTransitioning && <LoadingSpinner isTransitioning={isTransitioning} />}
-      <div
-        className={`${styles["outer-wrapper"]} ${
-          isTransitioning ? `${styles["transitioning"]}` : ""
-        }`.trim()}
-      >
-        <div className={styles["content"]}>
-          <div className={styles["wrapper"]}>
-            <DualTitleSection
-              firstTitle={
-                <MiniImages jewelriesByCategory={jewelriesByCategory} />
-              }
-              secondTitle={
-                <StockStatus jewelriesByCategory={jewelriesByCategory} />
-              }
-              variant={"regular"}
-            />
-            <div>
-              <LargeTitle
-                title={jewelriesByCategory[0].title}
-                textAlign={"left"}
+      {jewelriesByCategory.length > 0 && (
+        <div
+          className={styles["outer-wrapper"]}
+        >
+          <div className={styles["content"]}>
+            <div className={styles["wrapper"]}>
+              <DualTitleSection
+                firstTitle={
+                  <MiniImages jewelriesByCategory={jewelriesByCategory} />
+                }
+                secondTitle={
+                  <StockStatus jewelriesByCategory={jewelriesByCategory} />
+                }
+                variant={"regular"}
               />
-              <Paragraph
-                text={`${jewelriesByCategory[0].description}.`}
-                textAlign={"left"}
-              />
+              <div>
+                <LargeTitle
+                  title={jewelriesByCategory[0].title}
+                  textAlign={"left"}
+                />
+                <Paragraph
+                  text={`${jewelriesByCategory[0].description}.`}
+                  textAlign={"left"}
+                />
+              </div>
             </div>
           </div>
+          <Form
+            jewelriesByCategory={jewelriesByCategory}
+            toggleDisplayPopup={toggleDisplayPopup}
+          />
         </div>
-        <Form
-          jewelriesByCategory={jewelriesByCategory}
-          toggleDisplayPopup={toggleDisplayPopup}
-        />
-      </div>
+      )}
     </div>
   );
 };

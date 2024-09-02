@@ -6,7 +6,6 @@ import { Page404 } from "../Page404/Page404";
 import { Images } from "./Images/Images";
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
 
-import { useIsTransitioning } from "../../../hooks/useIsTransitioning";
 import { useJewelry } from "../../../hooks/useJewelry";
 
 import { deslugify } from "../../../utils/deslugify";
@@ -20,12 +19,10 @@ export const CollectionItem = () => {
 
   const colorTitle = deslugify(slugifiedColorTitle);
 
-  const { jewelriesByCategory, displayPage404 } = useJewelry({
+  const { jewelriesByCategory, displayPage404, isLoading } = useJewelry({
     categoryTitle,
     colorTitle,
   });
-
-  const { isTransitioning } = useIsTransitioning();
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
@@ -39,24 +36,20 @@ export const CollectionItem = () => {
         <Page404 />
       ) : (
         <>
-          {jewelriesByCategory.length > 0 && (
-            <>
-              {displayPopup && (
-                <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
-              )}
-              <section className={styles["collection-item"]}>
-                <Images
-                  jewelriesByCategory={jewelriesByCategory}
-                  isTransitioning={isTransitioning}
-                />
-                <InfoAndAction
-                  jewelriesByCategory={jewelriesByCategory}
-                  isTransitioning={isTransitioning}
-                  toggleDisplayPopup={toggleDisplayPopup}
-                />
-              </section>
-            </>
+          {displayPopup && (
+            <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
           )}
+          <section className={styles["collection-item"]}>
+            <Images
+              jewelriesByCategory={jewelriesByCategory}
+              isLoading={isLoading}
+            />
+            <InfoAndAction
+              jewelriesByCategory={jewelriesByCategory}
+              isLoading={isLoading}
+              toggleDisplayPopup={toggleDisplayPopup}
+            />
+          </section>
         </>
       )}
     </>

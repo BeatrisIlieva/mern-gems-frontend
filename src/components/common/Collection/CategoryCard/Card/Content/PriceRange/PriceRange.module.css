@@ -1,0 +1,12 @@
+.price-range {
+    animation: transitioning 1s forwards;  
+}
+
+@keyframes transitioning {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

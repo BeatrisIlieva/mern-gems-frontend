@@ -7,32 +7,28 @@ import { useJewelry } from "../../../../hooks/useJewelry";
 export const CategoryCard = ({ categoryTitle, colorTitle }) => {
   const [selectedColor, setSelectedColor] = useState(colorTitle);
 
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  // const [isTransitioning, setIsTransitioning] = useState(false);
 
   const updateSelectedColor = (color) => {
     setSelectedColor(color);
 
-    setIsTransitioning(true);
+    // setIsTransitioning(true);
 
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 2000);
+    // setTimeout(() => {
+    //   setIsTransitioning(false);
+    // }, 2000);
   };
 
-  const { jewelriesByCategory } = useJewelry({
+  const { jewelriesByCategory,     isLoading } = useJewelry({
     categoryTitle,
     colorTitle: selectedColor,
   });
 
   return (
-    <>
-      {jewelriesByCategory.length > 0 && (
-        <Card
-          jewelriesByCategory={jewelriesByCategory}
-          isTransitioning={isTransitioning}
-          updateSelectedColor={updateSelectedColor}
-        />
-      )}
-    </>
+    <Card
+      jewelriesByCategory={jewelriesByCategory}
+      isLoading={isLoading}
+      updateSelectedColor={updateSelectedColor}
+    />
   );
 };

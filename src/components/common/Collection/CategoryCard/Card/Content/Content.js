@@ -4,10 +4,14 @@ import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualT
 import { LargeImages } from "../../../../LargeImages/LargeImages";
 import { MiniImages } from "../../../../MiniImages/MiniImages";
 import { StockStatus } from "../../../../StockStatus/StockStatus";
+import { PriceRange } from "./PriceRange/PriceRange";
 
 import styles from "./Content.module.css";
 
-export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
+export const Content = ({
+  jewelriesByCategory,
+  updateSelectedColor,
+}) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   return (
@@ -21,7 +25,7 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
       }
     >
       <DualTitleSection
-        firstTitle={`$${jewelriesByCategory[0].inventories[0].price} - $${jewelriesByCategory[0].inventories[2].price}`}
+        firstTitle={<PriceRange jewelriesByCategory={jewelriesByCategory} />}
         secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
         variant={"regular"}
       />

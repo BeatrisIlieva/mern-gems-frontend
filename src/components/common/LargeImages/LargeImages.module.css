@@ -5,6 +5,7 @@
   cursor: pointer;
   width: 18rem;
   height: 20rem;
+  animation: transitioning 1s forwards;
 }
 
 .large-images.larger {
@@ -15,10 +16,6 @@
 .image-container {
   display: flex;
   justify-content: center;
-}
-
-.large-images.transitioning {
-  animation: transitioning 14s forwards;
 }
 
 @keyframes transitioning {
