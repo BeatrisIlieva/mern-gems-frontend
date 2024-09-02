@@ -4,7 +4,17 @@
   width: 100%;
 }
 
-.button {
+.button-container {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
+  /* gap: 1rem; */
+  justify-content: space-between;
+}
+
+.button-container.add-to-bag {
+  width: 76%;
+}
+
+.button-container.add-to-wishlist {
+  width: 22%;
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { Sizes } from "./Sizes/Sizes";
 import { Button } from "../../../../reusable/Button/Button";
+import { Heart } from "../../../../common/Heart/Heart";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
@@ -63,8 +64,14 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
         changeHandler={changeHandler}
         selectedSize={selectedSize}
       />
-      <div className={styles["button"]}>
-        <Button variant={"pink"} title={"Add To Bag"} />
+      <div className={styles["button-container"]}>
+        <div className={`${styles["button-container"]} ${styles["add-to-bag"]}`}>
+          <Button variant={"pink"} title={"Add To Bag"} />
+        </div>
+        <div className={`${styles["button-container"]} ${styles["add-to-wishlist"]}`}>
+        <Button variant={"pink"} title={ <Heart />} />
+       
+        </div>
       </div>
     </form>
   );

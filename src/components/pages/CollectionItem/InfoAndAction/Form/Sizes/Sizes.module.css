@@ -28,12 +28,16 @@
 
 .label {
   gap: 4px;
-  border: 0.1px solid var(--medium-pink);
+  box-shadow: 0 0 0 1px var(--medium-pink);
   border-radius: 60rem;
   width: 80px;
   height: 40px;
   justify-content: center;
   align-items: center;
+}
+
+.label:hover {
+  background: var(--very-light-pink);
 }
 
 .error-message {
