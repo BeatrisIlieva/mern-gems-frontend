@@ -40,9 +40,3 @@
   color: var(--medium-gray);
   border-bottom: 1px solid var(--medium-gray);
 }
-
-@media (max-width: 1280px) {
-  .active-mini-image {
-    padding-bottom: 0.75rem;
-  }
-}
