@@ -3,13 +3,13 @@
   height: calc(100vh - 13.6rem);
   align-items: center;
   justify-content: center;
-  margin: 2rem;
+  /* margin: 2rem; */
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 5rem;
 }
 
 @media (max-width: 1400px) {
