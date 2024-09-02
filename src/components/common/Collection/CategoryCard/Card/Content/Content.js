@@ -8,10 +8,7 @@ import { PriceRange } from "./PriceRange/PriceRange";
 
 import styles from "./Content.module.css";
 
-export const Content = ({
-  jewelriesByCategory,
-  updateSelectedColor,
-}) => {
+export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   return (
