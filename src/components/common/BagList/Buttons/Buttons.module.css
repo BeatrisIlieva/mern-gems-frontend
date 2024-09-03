@@ -3,12 +3,8 @@
   gap: 1rem;
 }
 
-
-
 @media (max-width: 760px) {
   .wrapper {
     display: none;
   }
 }
-
-
