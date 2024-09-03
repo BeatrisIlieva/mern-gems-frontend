@@ -1,5 +1,6 @@
 .wrapper {
   position: relative;
+  display: none;
 }
 
 .icon {
@@ -21,7 +22,7 @@
   width: fit-content;
 }
 
-@media (orientation: portrait) and (min-width: 760px) {
+/* @media (orientation: portrait) and (min-width: 760px) {
   .icon {
     display: none;
   }
@@ -31,4 +32,16 @@
   .icon {
     display: none;
   }
+} */
+
+@media (max-width: 545px) {
+  .wrapper {
+    display: flex;
+  }
 }
+
+/* @media (orientation:landscape) and (max-width: 1243px){
+  .wrapper {
+    display: none;
+  }
+} */
