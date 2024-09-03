@@ -31,9 +31,9 @@
 }
 
 .button.pink {
-  background: var(--white);
+  background: var(--very-light-pink);
   color: var(--pink);
-  box-shadow: 0 0 0 1px var(--pink);
+  box-shadow: 0 0 0 1px var(--medium-pink);
 }
 
 .button.pink.hovered {
@@ -48,9 +48,9 @@
 }
 
 .button.gray {
-  background: var(--light-gray);
+  background: var(--very-light-gray);
   color: var(--gray);
-  box-shadow: 0 0 0 1px var(--medium-gray);
+  box-shadow: 0 0 0 1px var(--light-gray);
 }
 
 .button.gray.hovered {
@@ -74,12 +74,11 @@
 .button.underlined {
   background-color: var(--white);
   text-decoration: underline;
-  color: var(--medium-gray);
+  color: var(--gray);
   font-size: var(--normal);
   padding: 0px;
 }
 
 .button.underlined.hovered {
-  font-family: var(--bold-font-family);
-  color: var(--gray);
+  text-decoration: none;
 }

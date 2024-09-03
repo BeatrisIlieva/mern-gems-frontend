@@ -1,6 +1,6 @@
-import { Button } from "../../../reusable/Button/Button";
+import { Button } from "../../../../reusable/Button/Button";
 
-import { useBagContext } from "../../../../contexts/BagContext";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
 export const Remove = ({ bagId }) => {
   const { remove } = useBagContext();

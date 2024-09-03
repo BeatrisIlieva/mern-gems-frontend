@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+  animation: transitioning 1s forwards;
 }
 
 .selected {
@@ -20,11 +21,22 @@
   cursor: pointer;
   color: var(--pink);
   height: var(--medium);
+  animation: transitioning 1s forwards;
 }
 
 .count {
   width: 3rem;
   padding-left: 0.25rem;
+  animation: transitioning 1s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 675px) {
@@ -36,3 +48,5 @@
     display: none;
   }
 }
+
+
