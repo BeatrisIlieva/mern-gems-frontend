@@ -12,10 +12,6 @@ export const Button = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const toggleIsHovered = () => {
-    setIsHovered((isHovered) => !isHovered);
-  };
-
   return (
     <button
       type={type}
@@ -28,10 +24,10 @@ export const Button = ({
       }
       disabled={buttonIsDisabled}
       onClick={callBackFunction}
-      onMouseEnter={toggleIsHovered}
-      onMouseLeave={toggleIsHovered}
-      onTouchStart={toggleIsHovered}
-      onTouchEnd={toggleIsHovered}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
     >
       {isLoading ? "Processing..." : title}
     </button>
