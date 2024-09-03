@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 
+import { MoveToWishlist } from "./MoveToWishlist/MoveToWishlist";
+import { Remove } from "./Remove/Remove";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
@@ -32,7 +35,12 @@ export const Icon = () => {
         onClick={() => setDisplayContent(true)}
         ref={iconRef}
       />
-      {displayContent && <div className={styles["content"]}>"Content"</div>}
+      {displayContent && (
+        <div className={styles["content"]}>
+          <MoveToWishlist />
+          <Remove />
+        </div>
+      )}
     </div>
   );
 };
