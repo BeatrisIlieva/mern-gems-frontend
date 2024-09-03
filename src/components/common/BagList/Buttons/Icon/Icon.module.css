@@ -22,22 +22,8 @@
   width: fit-content;
 }
 
-/* @media (orientation: portrait) and (min-width: 760px) {
-  .icon {
-    display: none;
-  }
-}
-
-@media (orientation: landscape) and (max-width: 760px) {
-  .icon {
-    display: none;
-  }
-} */
-
 @media (max-width: 545px) {
   .wrapper {
     display: flex;
   }
 }
-
-
