@@ -1,20 +1,6 @@
 .wrapper {
-  /* display: flex; */
-
   display: none;
 }
-
-/* @media (orientation: landscape) and (max-width: 1180px) {
-  .wrapper {
-    display: none;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 760px) {
-  .wrapper {
-    display: none;
-  }
-} */
 
 @media (min-width: 546px) {
   .wrapper {
@@ -22,10 +8,3 @@
     gap: 1rem;
   }
 }
-
-/* @media (orientation:landscape) and (max-width: 1243px){
-  .wrapper {
-    display: flex;
-    gap: 1rem;
-  }
-} */
