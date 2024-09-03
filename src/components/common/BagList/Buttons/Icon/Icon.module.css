@@ -1,7 +1,20 @@
+.wrapper {
+  position: relative;
+}
+
 .icon {
   vertical-align: bottom;
   color: var(--medium-gray);
   height: 1.25rem;
+}
+
+.content {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  background-color: var(--light-gray);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
 }
 
 @media (min-width: 760px) {

@@ -25,14 +25,14 @@ export const Icon = () => {
   }, [iconRef]);
 
   return (
-    <>
+    <div className={styles["wrapper"]}>
       <FontAwesomeIcon
         icon={faEllipsis}
         className={styles["icon"]}
         onClick={() => setDisplayContent(true)}
         ref={iconRef}
       />
-      {displayContent && <div>"Content"</div>}
-    </>
+      {displayContent && <div className={styles["content"]}>"Content"</div>}
+    </div>
   );
 };
