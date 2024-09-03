@@ -1,8 +1,6 @@
 import { OrderSummaryContent } from "./OrderSummaryContent/OrderSummaryContent";
 import { BagContent } from "./BagContent/BagContent";
 
-import { useIsMobile } from "../../../../hooks/useIsMobile";
-
 import styles from "./NonEmptyBag.module.css";
 
 export const NonEmptyBag = () => {
