@@ -41,6 +41,19 @@
   }
 }
 
+@media (orientation: portrait) and (max-width: 675px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 573px) {
+  .wrapper {
+    position: relative;
+    display: flex;
+  }
+}
+
 /* @media (orientation: portrait) and (max-width: 928px) {
   .wrapper {
     position: relative;
