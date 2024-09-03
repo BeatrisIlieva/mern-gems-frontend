@@ -16,13 +16,13 @@
   gap: 2rem;
   justify-content: space-between;
   height: fit-content;
-  position: sticky;
-  top: 8rem;
   animation: transitioning 1s forwards;
 }
 
 .order-summary-content {
   width: calc(40vw - 8rem);
+  position: sticky;
+  top: 8rem;
 }
 
 .bag-content {
@@ -70,5 +70,21 @@
 
   .bag-content {
     width: calc(100vw - 8rem);
+    position: unset;
+  }
+}
+
+@media (max-width: 675px) {
+  #non-empty-bag {
+    margin: 2rem 2rem;
+  }
+
+  .order-summary-content {
+    width: calc(100vw - 4rem);
+    position: unset;
+  }
+
+  .bag-content {
+    width: calc(100vw - 4rem);
   }
 }

@@ -3,13 +3,28 @@
 }
 
 
-
-@media (min-width: 1058px) {
+@media (min-width: 904px) {
   .wrapper {
     display: flex;
     gap: 1rem;
   }
 }
+
+
+@media (orientation: portrait) and (max-width: 774px) {
+  .wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 695px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+
 
 /* @media (orientation: portrait) and (max-width: 928px) {
   .wrapper {
