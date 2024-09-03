@@ -1,0 +1,11 @@
+.icon {
+  vertical-align: bottom;
+  color: var(--medium-gray);
+  height: 1.25rem;
+}
+
+@media (min-width: 760px) {
+  .icon {
+    display: none;
+  }
+}
