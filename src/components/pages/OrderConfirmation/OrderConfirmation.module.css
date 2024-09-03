@@ -85,3 +85,9 @@
     align-items: center;
   }
 }
+
+@media (orientation: landscape) and (max-width: 932px) {
+  .image {
+    display: none;
+  }
+}

@@ -15,7 +15,7 @@ export const OrderSummaryContent = () => {
           <Button
             title={"Continue Checkout"}
             buttonIsDisabled={false}
-            variant={"pink"}
+            variant={"gray"}
           />
         </Link>
       </>

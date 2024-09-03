@@ -38,7 +38,7 @@ export const DynamicForm = ({
           title={buttonTitle}
           isLoading={isLoading}
           type={"submit"}
-          variant={"pink"}
+          variant={"gray"}
         />
       </div>
     </form>

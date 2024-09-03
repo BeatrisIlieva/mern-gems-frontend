@@ -76,9 +76,10 @@
   .description-wrapper {
     width: 100%;
   }
+}
 
+@media (orientation: landscape) and (max-width: 932px) {
   .button {
     display: none;
   }
 }
-
