@@ -2,14 +2,12 @@
   display: none;
 }
 
-
 @media (min-width: 904px) {
   .wrapper {
     display: flex;
     gap: 1rem;
   }
 }
-
 
 @media (orientation: portrait) and (max-width: 774px) {
   .wrapper {
@@ -36,17 +34,3 @@
     display: none;
   }
 }
-
-
-/* @media (orientation: portrait) and (max-width: 928px) {
-  .wrapper {
-    display: none;
-  }
-} */
-
-/* @media (orientation: portrait) and (max-width: 928px) {
-  .wrapper {
-    display: flex;
-    gap: 1rem;
-  }
-} */
