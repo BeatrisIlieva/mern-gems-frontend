@@ -51,7 +51,7 @@ export const Main = () => {
           }
         />
         <Route
-          path="/checkout"
+          path="/checkout/*"
           element={
             <RouteGuard>
               <Checkout />

@@ -23,7 +23,7 @@ export const Payment = () => {
   };
 
   return (
-    <ShoppingProcessContainer title={"Payment"}>
+    <ShoppingProcessContainer>
       <ChildWrapper>
         <ShippingInformation
           toggleDisplayShippingDetailsPopup={toggleDisplayShippingDetailsPopup}

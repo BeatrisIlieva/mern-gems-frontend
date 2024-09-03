@@ -70,7 +70,7 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
         if (popupCloseHandler) {
           popupCloseHandler();
         } else {
-          navigate("/payment");
+          navigate("/checkout/payment");
         }
       } catch (err) {
         console.log(err.message);

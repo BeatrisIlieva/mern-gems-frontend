@@ -8,17 +8,15 @@ import styles from "./OrderSummaryContent.module.css";
 
 export const OrderSummaryContent = () => {
   return (
-    <ChildWrapper>
-      <>
-        <OrderSummary />
-        <Link to={"/checkout"} className={styles["no-decoration"]}>
-          <Button
-            title={"Continue Checkout"}
-            buttonIsDisabled={false}
-            variant={"gray"}
-          />
-        </Link>
-      </>
-    </ChildWrapper>
+    <>
+      <OrderSummary />
+      <Link to={"/checkout"} className={styles["no-decoration"]}>
+        <Button
+          title={"Continue Checkout"}
+          buttonIsDisabled={false}
+          variant={"gray"}
+        />
+      </Link>
+    </>
   );
 };

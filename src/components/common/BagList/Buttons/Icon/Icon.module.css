@@ -1,5 +1,4 @@
 .wrapper {
-  position: relative;
   display: none;
 }
 
@@ -22,8 +21,22 @@
   width: fit-content;
 }
 
-@media (max-width: 545px) {
+@media (max-width: 1057px) {
   .wrapper {
+    position: relative;
     display: flex;
   }
 }
+
+/* @media (orientation: portrait) and (max-width: 928px) {
+  .wrapper {
+    position: relative;
+    display: flex;
+  }
+} */
+
+/* @media (orientation: portrait) and (max-width: 928px) {
+  .wrapper {
+    display: none;
+  }
+} */

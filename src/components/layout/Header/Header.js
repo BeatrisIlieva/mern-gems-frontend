@@ -7,7 +7,8 @@ export const Header = () => {
   const location = useLocation();
 
   const isCheckoutOrPaymentLocation =
-    location.pathname === "/checkout" || location.pathname === "/payment";
+    location.pathname === "/checkout" ||
+    location.pathname === "/checkout/payment";
 
   return isCheckoutOrPaymentLocation ? <MiniHeader /> : <MainHeader />;
 };

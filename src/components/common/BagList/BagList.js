@@ -14,7 +14,7 @@ export const BagList = ({ variant }) => {
   const location = useLocation();
 
   const displayUpdateQuantityButtons =
-    location.pathname !== "/checkout" && location.pathname !== "/payment";
+    location.pathname !== "/checkout" && location.pathname !== "/checkout/payment";
 
   const { bagItems } = useBagContext();
 

@@ -11,7 +11,7 @@ export const MoveToWishlist = ({ bagId }) => {
 
   return (
     <Button
-      title={"Move To Wishlist"}
+      title={"Move to Wishlist"}
       callBackFunction={clickHandler}
       variant={"underlined"}
     />
