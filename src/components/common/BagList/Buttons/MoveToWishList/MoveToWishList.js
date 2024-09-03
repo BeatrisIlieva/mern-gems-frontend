@@ -6,8 +6,8 @@ export const MoveToWishlist = ({ bagId }) => {
   const { remove } = useBagContext();
 
   const clickHandler = () => {
-    remove(bagId)
-  }
+    remove(bagId);
+  };
 
   return (
     <Button

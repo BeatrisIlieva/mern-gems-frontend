@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { ChildWrapper } from "../../../../reusable/ChildWrapper/ChildWrapper";
 import { OrderSummary } from "../../../../common/OrderSummary/OrderSummary";
 import { Button } from "../../../../reusable/Button/Button";
 
