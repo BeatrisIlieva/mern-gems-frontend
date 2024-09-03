@@ -60,6 +60,10 @@
 }
 
 @media (max-width: 774px) {
+  #non-empty-bag {
+    margin: 2rem 6rem;
+  }
+
   .order-summary-content {
     width: calc(100vw - 8rem);
   }
