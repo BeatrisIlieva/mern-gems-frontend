@@ -14,10 +14,12 @@ export const LargeImage = ({
 
   const location = useLocation();
 
-  const locationIsCollectionPage = location.pathname === "/collection";
+  const applyNavigation =
+    location.pathname === "/collection" ||
+    location.pathname === "/users/wishlist";
 
   const clickHandler = () => {
-    if (locationIsCollectionPage) {
+    if (applyNavigation) {
       const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
       const colorTitle = jewelriesByCategory[0].colors[0].title;
