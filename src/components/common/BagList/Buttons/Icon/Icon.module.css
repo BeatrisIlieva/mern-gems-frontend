@@ -27,29 +27,3 @@
     display: flex;
   }
 }
-
-/* @media (orientation: portrait) and (max-width: 774px) {
-  .wrapper {
-    display: none;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 695px) {
-  .wrapper {
-    position: relative;
-    display: flex;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 675px) {
-  .wrapper {
-    display: none;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 573px) {
-  .wrapper {
-    position: relative;
-    display: flex;
-  }
-} */
