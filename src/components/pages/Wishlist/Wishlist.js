@@ -15,14 +15,16 @@ export const Wishlist = () => {
     <>
       {displayContent && (
         <section id={styles["wishlist"]}>
-          <div className={styles["wrapper"]}>
-            {itemsArray.map((item) => (
-              <CategoryCard
-                key={item._id}
-                categoryTitle={item.category.title}
-                colorTitle={item.color.title}
-              />
-            ))}
+          <div className={styles["outer-wrapper"]}>
+            <div className={styles["wrapper"]}>
+              {itemsArray.map((item) => (
+                <CategoryCard
+                  key={item._id}
+                  categoryTitle={item.category.title}
+                  colorTitle={item.color.title}
+                />
+              ))}
+            </div>
           </div>
         </section>
       )}

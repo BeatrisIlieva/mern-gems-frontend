@@ -1,4 +1,12 @@
-#collection {
+
+
+
+#wishlist {
+    background-color: var(--very-light-gray);
+    padding: 2rem;
+  }
+
+  .outer-wrapper {
     display: flex;
     height: calc(100vh - 13.6rem);
     align-items: center;
@@ -12,7 +20,7 @@
   }
   
   @media (max-width: 1400px) {
-    #collection {
+    #wishlist {
       height: auto;
     }
     .wrapper {
