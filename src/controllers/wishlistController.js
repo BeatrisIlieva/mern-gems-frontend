@@ -21,4 +21,23 @@ router.post("/add/:jewelryId/:userId", async (req, res) => {
   }
 });
 
+router.delete("/delete/:jewelryId/:userId", async (req, res) => {
+  const userId = req.params.userId;
+
+  const jewelryId = Number(req.params.jewelryId);
+
+  try {
+    await wishlistManager.delete({
+      userId,
+      jewelryId,
+    });
+
+    res.status(200).json();
+  } catch (err) {
+    res.status(401).json({
+      message: err.message,
+    });
+  }
+});
+
 module.exports = router;
