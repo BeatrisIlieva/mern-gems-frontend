@@ -16,6 +16,6 @@ router.use("/jewelries", jewelryController);
 router.use("/bags", bagController);
 router.use("/payments", paymentController);
 router.use("/orders", orderController);
-router.use("/wishlist", wishlistController);
+router.use("/wishlists", wishlistController);
 
 module.exports = router;
