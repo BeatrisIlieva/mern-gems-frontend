@@ -1,5 +1,4 @@
 const Wishlist = require("../models/Wishlist");
-const { getOneJewelry } = require("../aggregations/getOneJewelry");
 
 const {
   JEWELRY_IS_ALREADY_ADDED_ERROR_MESSAGE,
