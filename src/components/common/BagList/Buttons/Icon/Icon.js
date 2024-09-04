@@ -11,7 +11,7 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Icon.module.css";
 
-export const Icon = () => {
+export const Icon = ({bagId}) => {
   const [displayContent, setDisplayContent] = useState(false);
 
   const iconRef = useRef(null);
@@ -45,7 +45,7 @@ export const Icon = () => {
             secondTitle={<FontAwesomeIcon icon={faHeart} />}
           />
           <DualTitleSection
-            firstTitle={<Remove />}
+            firstTitle={<Remove bagId={bagId}/>}
             secondTitle={<FontAwesomeIcon icon={faTrashCan} />}
           />
         </div>
