@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../../LargeImages/LargeImages";
@@ -10,6 +11,10 @@ import styles from "./Content.module.css";
 
 export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
+
+  const location = useLocation();
+
+  const locationIsWishlist = location.pathname === "/users/wishlist";
 
   return (
     <article
@@ -33,10 +38,12 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
         updateSelectedColor={updateSelectedColor}
         circleIconsPosition={"top"}
       />
-      <MiniImages
-        jewelriesByCategory={jewelriesByCategory}
-        updateSelectedColor={updateSelectedColor}
-      />
+      {!locationIsWishlist && (
+        <MiniImages
+          jewelriesByCategory={jewelriesByCategory}
+          updateSelectedColor={updateSelectedColor}
+        />
+      )}
     </article>
   );
 };
