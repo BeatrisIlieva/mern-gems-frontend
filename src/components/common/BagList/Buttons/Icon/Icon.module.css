@@ -21,14 +21,14 @@
   width: fit-content;
 }
 
-@media (max-width: 903px) {
+@media (max-width: 499px) {
   .wrapper {
     position: relative;
     display: flex;
   }
 }
 
-@media (orientation: portrait) and (max-width: 774px) {
+/* @media (orientation: portrait) and (max-width: 774px) {
   .wrapper {
     display: none;
   }
@@ -52,4 +52,4 @@
     position: relative;
     display: flex;
   }
-}
+} */

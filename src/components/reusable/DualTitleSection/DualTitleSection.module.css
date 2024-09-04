@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   animation: transitioning 1s forwards;
+  gap: 2rem;
 }
 
 .column-form {

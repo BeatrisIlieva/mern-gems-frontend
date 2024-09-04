@@ -36,6 +36,12 @@ html {
   }
 }
 
+@media (max-width: 619px) {
+  html {
+    font-size: 92%;
+  }
+}
+
 @media (max-width: 395px) {
   html {
     font-size: 88%;
