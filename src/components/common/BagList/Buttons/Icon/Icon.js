@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 
-import { MoveToWishlist } from "./MoveToWishlist/MoveToWishlist";
-import { Remove } from "./Remove/Remove";
+import {DualTitleSection} from "../../../../reusable/DualTitleSection/DualTitleSection"
+import { Content } from "./Content/Content";
+import { MoveToWishlist } from "../MoveToWishlist/MoveToWishlist";
+import { Remove } from "../Remove/Remove";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Icon.module.css";
 
@@ -37,8 +41,8 @@ export const Icon = () => {
       />
       {displayContent && (
         <div className={styles["content"]}>
-          <MoveToWishlist />
-          <Remove />
+          <DualTitleSection  firstTitle={<MoveToWishlist/>} secondTitle={<FontAwesomeIcon icon={faHeart}/>}/>
+          <DualTitleSection  firstTitle={<Remove/>} secondTitle={<FontAwesomeIcon icon={faTrashCan}/>}/>
         </div>
       )}
     </div>

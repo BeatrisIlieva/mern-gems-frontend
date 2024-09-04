@@ -1,5 +1,5 @@
 import { Remove } from "./Remove/Remove";
-import { MoveToWishlist } from "./MoveToWishList/MoveToWishList";
+import { MoveToWishlist } from "./MoveToWishlist/MoveToWishlist";
 import { Icon } from "./Icon/Icon";
 
 import styles from "./Buttons.module.css";
