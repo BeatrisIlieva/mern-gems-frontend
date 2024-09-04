@@ -19,7 +19,7 @@ export const Wishlist = () => {
           <InfoMessage
             title={`Your Wish List (${wishlistTotalQuantity})`}
             subtitle={
-              "Your favorite item(s) are below. Wishes can come true, especially when you dream"
+              "Your favorite item(s) are below. Wishes can come true, especially when you dream."
             }
           />
           <div className={styles["outer-wrapper"]}>
