@@ -7,7 +7,7 @@ import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { BagList } from "../../common/BagList/BagList";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
-import { ShippingInformation } from "../Payment/ShippingInformation/ShippingInformation";
+import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 import { Popup } from "../../common/Popup/Popup";
 import { CardDetailsForm } from "../../common/CardDetailsForm/CardDetailsForm";
 

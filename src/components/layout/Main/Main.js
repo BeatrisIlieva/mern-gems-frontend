@@ -8,7 +8,6 @@ import { Account } from "../../pages/Account/Account";
 import { Bag } from "../../pages/Bag/Bag";
 import { Wishlist } from "../../pages/Wishlist/Wishlist";
 import { Checkout } from "../../pages/Checkout/Checkout";
-import { Payment } from "../../pages/Payment/Payment";
 import { OrderConfirmation } from "../../pages/OrderConfirmation/OrderConfirmation";
 import { Page404 } from "../../pages/Page404/Page404";
 
@@ -64,14 +63,6 @@ export const Main = () => {
           element={
             <RouteGuard>
               <Checkout />
-            </RouteGuard>
-          }
-        />
-        <Route
-          path="/payment"
-          element={
-            <RouteGuard>
-              <Payment />
             </RouteGuard>
           }
         />
