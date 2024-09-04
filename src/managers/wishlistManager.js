@@ -15,3 +15,16 @@ exports.create = async ({ userId, jewelryId }) => {
     });
   }
 };
+
+exports.delete = async ({ userId, jewelryId }) => {
+  const wishlistItem = await Wishlist.findOne({
+    user: userId,
+    jewelry: jewelryId,
+  });
+
+  if (!wishlistItem) {
+    throw new Error("Jewelry is not added yet.");
+  } else {
+    await wishlistItem.deleteOne();
+  }
+};
