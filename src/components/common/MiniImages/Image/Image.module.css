@@ -44,7 +44,15 @@
     font-size: var(--small);
     top: -1.5rem;
   }
+}
 
+@media (max-width: 420px) {
+  .thumbnail {
+    width: 2.5rem;
+  }
+}
+
+@media (max-width: 375px) {
   .thumbnail {
     width: 2rem;
   }

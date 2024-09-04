@@ -125,16 +125,15 @@
   .modal.authentication {
     width: 36vw;
   }
-
-  .modal.mini-bag {
-    width: 100vw;
-    border-radius: 0;
-  }
 }
 
 @media (max-width: 960px) {
   .modal.large {
     width: 38vw;
+  }
+
+  .modal.mini-bag {
+    width: 70vw;
   }
 }
 
@@ -161,6 +160,11 @@
 
   .modal.order-history {
     width: 19.5rem;
+  }
+
+  .modal.mini-bag {
+    width: 100vw;
+    border-radius: 0;
   }
 }
 
