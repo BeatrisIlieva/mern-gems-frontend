@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-import {DualTitleSection} from "../../../../reusable/DualTitleSection/DualTitleSection"
-import { Content } from "./Content/Content";
+import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { MoveToWishlist } from "../MoveToWishlist/MoveToWishlist";
 import { Remove } from "../Remove/Remove";
 
@@ -41,8 +40,14 @@ export const Icon = () => {
       />
       {displayContent && (
         <div className={styles["content"]}>
-          <DualTitleSection  firstTitle={<MoveToWishlist/>} secondTitle={<FontAwesomeIcon icon={faHeart}/>}/>
-          <DualTitleSection  firstTitle={<Remove/>} secondTitle={<FontAwesomeIcon icon={faTrashCan}/>}/>
+          <DualTitleSection
+            firstTitle={<MoveToWishlist />}
+            secondTitle={<FontAwesomeIcon icon={faHeart} />}
+          />
+          <DualTitleSection
+            firstTitle={<Remove />}
+            secondTitle={<FontAwesomeIcon icon={faTrashCan} />}
+          />
         </div>
       )}
     </div>
