@@ -1,0 +1,12 @@
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.1rem;
+}
+
+.no-decoration {
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+}
