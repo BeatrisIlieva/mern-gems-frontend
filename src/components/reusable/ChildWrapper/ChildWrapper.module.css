@@ -26,6 +26,12 @@
   border-radius: 2rem;
 }
 
+@media (max-width: 1057px) {
+  .child-wrapper {
+    width: calc(50vw - 3rem);
+  }
+}
+
 /* @media (orientation: portrait) and (max-width: 1280px) {
   .child-wrapper {
     position: unset;

@@ -9,6 +9,12 @@
   gap: 2rem;
 }
 
+@media (max-width: 1057px) {
+  .shopping-process-container {
+    margin: 2rem 2rem;
+  }
+}
+
 /* .children.reversed {
   flex-direction: row-reverse;
 } */
