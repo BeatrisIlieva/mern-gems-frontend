@@ -1,7 +1,7 @@
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
 import { Collection } from "../../common/Collection/Collection";
 
-import styles from "./Page404.module.css"
+import styles from "./Page404.module.css";
 
 export const Page404 = () => {
   return (
