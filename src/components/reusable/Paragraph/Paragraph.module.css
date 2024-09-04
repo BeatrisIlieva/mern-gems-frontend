@@ -21,3 +21,11 @@
   text-align: center;
   color: var(--white);
 }
+
+.paragraph.white {
+  color: var(--white);
+}
+
+.paragraph.gray {
+  color: var(--gray);
+}

@@ -40,6 +40,7 @@ export const Description = () => {
                 "The enchanting and delicate beauty of a Forget-Me-Not flower in bloom is captured in a series of fine jewelry designs that celebrate the endless beauty of nature’s greatest gifts – rare gemstones and flowers in bloom."
               }
               textAlign={"center"}
+              color={"white"}
             />
             <div className={styles["button"]}>
               <Button

@@ -31,6 +31,7 @@ export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
                 <Paragraph
                   text={`${jewelriesByCategory[0].description}.`}
                   textAlign={"left"}
+                  color={"gray"}
                 />
               </div>
             </div>
