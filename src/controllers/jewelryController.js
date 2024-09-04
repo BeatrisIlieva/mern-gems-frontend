@@ -5,23 +5,19 @@ const Color = require("../models/Color");
 
 const jewelryManager = require("../managers/jewelryManager");
 
-router.get("/:categoryTitle/:colorTitle", async (req, res) => {
-  const categoryTitle = req.params.categoryTitle;
+router.get("/:categoryId/:colorId", async (req, res) => {
+  const categoryId = Number(req.params.categoryId);
 
-  const colorTitle = req.params.colorTitle;
+  const colorId = Number(req.params.colorId);
 
   try {
-    const category = await Category.findOne({ title: categoryTitle });
+    const category = await Category.findById(categoryId);
 
-    const color = await Color.findOne({ title: colorTitle });
+    const color = await Color.findById(colorId);
 
     if (!category || !color) {
       throw new Error("Invalid Url");
     } else {
-      const categoryId = category._id;
-
-      const colorId = color._id;
-
       const result = await jewelryManager.getOne(categoryId, colorId);
 
       res.status(200).json(result);

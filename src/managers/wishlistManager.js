@@ -1,14 +1,16 @@
 const Wishlist = require("../models/Wishlist");
+const { getOneJewelry } = require("../aggregations/getOneJewelry");
 
 const {
   JEWELRY_IS_ALREADY_ADDED_ERROR_MESSAGE,
   JEWELRY_IS_NOT_ADDED_YET_ERROR_MESSAGE,
 } = require("../constants/wishlist");
 
-exports.create = async ({ userId, jewelryId }) => {
+exports.create = async ({ categoryId, colorId, userId }) => {
   const wishlistItem = await Wishlist.findOne({
     user: userId,
-    jewelry: jewelryId,
+    category: categoryId,
+    color: colorId,
   });
 
   if (wishlistItem) {
@@ -16,21 +18,26 @@ exports.create = async ({ userId, jewelryId }) => {
   } else {
     await Wishlist.create({
       user: userId,
-      jewelry: jewelryId,
+      category: categoryId,
+      color: colorId,
     });
   }
 };
 
 exports.getAll = async (userId) => {
-  return await Wishlist.find({
-    user: userId,
-  });
+  const wishlistItems = await Wishlist.find({ user: userId })
+    .populate("category")
+    .populate("color")
+    .sort({ createdAt: 1 });
+
+  return wishlistItems;
 };
 
-exports.delete = async ({ userId, jewelryId }) => {
+exports.delete = async ({ categoryId, colorId, userId }) => {
   const wishlistItem = await Wishlist.findOne({
     user: userId,
-    jewelry: jewelryId,
+    category: categoryId,
+    color: colorId,
   });
 
   if (!wishlistItem) {

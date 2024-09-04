@@ -6,9 +6,14 @@ const wishlistSchema = new mongoose.Schema({
     ref: "UserLoginDetails",
     required: true,
   },
-  jewelry: {
+  category: {
     type: Number,
-    ref: "Jewelry",
+    ref: "Category",
+    required: true,
+  },
+  color: {
+    type: Number,
+    ref: "Color",
     required: true,
   },
   createdAt: {
