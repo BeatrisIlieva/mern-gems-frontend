@@ -8,7 +8,7 @@ export const Page404 = () => {
     <section id={styles["page-404"]}>
       <InfoMessage
         title={"Sorry, we can’t locate that page."}
-        subtitle={"You can continue shopping by exploring the links below"}
+        subtitle={"You can continue shopping by exploring the links below."}
       />
       <Collection />
     </section>

@@ -16,7 +16,7 @@ export const Wishlist = () => {
   const subtitle =
     wishlistTotalQuantity > 0
       ? "Your favorite item(s) are below. Wishes can come true, especially when you dream."
-      : "This list is empty. You can continue shopping by exploring the links below";
+      : "This list is empty. Explore and add something you love.";
 
   return (
     <>
