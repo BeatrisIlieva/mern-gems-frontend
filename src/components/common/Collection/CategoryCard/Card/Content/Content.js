@@ -7,14 +7,19 @@ import { MiniImages } from "../../../../MiniImages/MiniImages";
 import { StockStatus } from "../../../../StockStatus/StockStatus";
 import { PriceRange } from "./PriceRange/PriceRange";
 
+import { useWishlistContext } from "../../../../../../contexts/WishlistContext";
+
 import styles from "./Content.module.css";
 
 export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
+  const { wishlistTotalQuantity } = useWishlistContext();
+
   const location = useLocation();
 
-  const locationIsWishlist = location.pathname === "/users/wishlist";
+  const notDisplayingMiniImages =
+    location.pathname === "/users/wishlist" && wishlistTotalQuantity > 0;
 
   return (
     <article
@@ -38,7 +43,7 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
         updateSelectedColor={updateSelectedColor}
         circleIconsPosition={"top"}
       />
-      {!locationIsWishlist && (
+      {!notDisplayingMiniImages && (
         <MiniImages
           jewelriesByCategory={jewelriesByCategory}
           updateSelectedColor={updateSelectedColor}
