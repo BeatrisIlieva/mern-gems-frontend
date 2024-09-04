@@ -6,6 +6,7 @@ import { CollectionList } from "../../pages/CollectionList/CollectionList";
 import { CollectionItem } from "../../pages/CollectionItem/CollectionItem";
 import { Account } from "../../pages/Account/Account";
 import { Bag } from "../../pages/Bag/Bag";
+import { Wishlist } from "../../pages/Wishlist/Wishlist";
 import { Checkout } from "../../pages/Checkout/Checkout";
 import { Payment } from "../../pages/Payment/Payment";
 import { OrderConfirmation } from "../../pages/OrderConfirmation/OrderConfirmation";
@@ -47,6 +48,14 @@ export const Main = () => {
           element={
             <RouteGuard>
               <Bag />
+            </RouteGuard>
+          }
+        />
+        <Route
+          path="/users/wishlist"
+          element={
+            <RouteGuard>
+              <Wishlist />
             </RouteGuard>
           }
         />

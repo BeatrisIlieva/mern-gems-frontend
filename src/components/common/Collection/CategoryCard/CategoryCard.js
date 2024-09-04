@@ -11,7 +11,7 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
     setSelectedColor(color);
   };
 
-  const { jewelriesByCategory, isLoading } = useJewelry({
+  const { jewelriesByCategory } = useJewelry({
     categoryTitle,
     colorTitle: selectedColor,
   });
@@ -19,7 +19,6 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
   return (
     <Card
       jewelriesByCategory={jewelriesByCategory}
-      isLoading={isLoading}
       updateSelectedColor={updateSelectedColor}
     />
   );

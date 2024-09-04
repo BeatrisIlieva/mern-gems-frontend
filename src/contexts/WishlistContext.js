@@ -29,12 +29,12 @@ export const WishlistProvider = ({ children }) => {
       });
   }, [userId, wishlistService]);
 
-  const add = async (jewelryId, userId) => {
-    await wishlistService.add(jewelryId, userId);
+  const add = async (categoryId, colorId, userId) => {
+    await wishlistService.add(categoryId, colorId, userId);
   };
 
-  const remove = async (jewelryId, userId) => {
-    await wishlistService.delete(jewelryId, userId);
+  const remove = async (categoryId, colorId, userId) => {
+    await wishlistService.delete(categoryId, colorId, userId);
   };
 
   const context = {

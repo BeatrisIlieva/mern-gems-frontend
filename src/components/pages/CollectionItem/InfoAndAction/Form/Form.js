@@ -73,7 +73,10 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
         <div
           className={`${styles["button-container"]} ${styles["add-to-wishlist"]}`}
         >
-          <Heart />
+          <Heart
+            categoryId={jewelriesByCategory[0].category}
+            colorId={jewelriesByCategory[0].color}
+          />
         </div>
       </div>
     </form>

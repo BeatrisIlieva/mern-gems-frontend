@@ -32,7 +32,10 @@ export const MiniImages = ({ jewelriesByCategory, updateSelectedColor }) => {
   const updateActiveMiniImage = (colorTitle) => {
     setActiveMiniImage(colorTitle);
 
-    if (location.pathname === "/collection") {
+    if (
+      location.pathname === "/collection" ||
+      location.pathname === "/users/wishlist"
+    ) {
       updateSelectedColor(colorTitle);
     } else {
       clickHandler(colorTitle);

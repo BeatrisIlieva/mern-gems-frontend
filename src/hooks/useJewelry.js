@@ -6,6 +6,9 @@ import { useService } from "./useService";
 
 import { jewelryServiceFactory } from "../services/jewelryService";
 
+import { CATEGORIES_BY_ID } from "../constants/categoriesById";
+import { COLORS_BY_ID } from "../constants/colorsById";
+
 export const useJewelry = ({ categoryTitle, colorTitle }) => {
   const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
 
@@ -17,9 +20,12 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
 
   const [displayPage404, setDisplayPage404] = useState(false);
 
+  const categoryId = CATEGORIES_BY_ID[categoryTitle];
+  const colorId = COLORS_BY_ID[colorTitle];
+
   useEffect(() => {
     jewelryService
-      .getOne(categoryTitle, colorTitle)
+      .getOne(categoryId, colorId)
       .then((data) => {
         setJewelriesByCategory(data);
 
