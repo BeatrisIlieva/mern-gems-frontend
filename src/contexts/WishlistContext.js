@@ -22,7 +22,7 @@ export const WishlistProvider = ({ children }) => {
       .getAll(userId)
       .then((data) => {
         setWishlistItems(data);
-        setWishlistTotalQuantity(data.length);
+        setWishlistTotalQuantity(data.result.length);
       })
       .catch((err) => {
         console.log(err.message);

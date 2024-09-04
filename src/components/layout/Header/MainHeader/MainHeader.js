@@ -5,6 +5,7 @@ import { NavLinkItem } from "./NavLinkItem/NavLinkItem";
 import { MediumTitle } from "../../../reusable/MediumTitle/MediumTitle";
 
 import { useBagContext } from "../../../../contexts/BagContext";
+import { useWishlistContext } from "../../../../contexts/WishlistContext";
 
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +16,8 @@ import styles from "./MainHeader.module.css";
 
 export const MainHeader = () => {
   const { bagTotalQuantity } = useBagContext();
+
+  const { wishlistTotalQuantity } = useWishlistContext();
 
   return (
     <header className={styles["header"]}>
@@ -31,7 +34,7 @@ export const MainHeader = () => {
             <NavLinkItem
               to={"/users/wishlist"}
               label={<MediumTitle title={"Wishlist"} />}
-              count={bagTotalQuantity}
+              count={wishlistTotalQuantity}
               icon={faHeart}
             />
           </li>
