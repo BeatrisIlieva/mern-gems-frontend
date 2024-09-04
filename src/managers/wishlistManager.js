@@ -7,7 +7,7 @@ exports.create = async ({ userId, jewelryId }) => {
   });
 
   if (wishlistItem) {
-    throw new Error("Jewelry is already added.");
+    throw new Error();
   } else {
     await Wishlist.create({
       user: userId,
