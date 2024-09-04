@@ -32,6 +32,23 @@
   }
 }
 
+@media (max-width: 774px) {
+  .child-wrapper {
+    width: calc(100vw - 6rem);
+    position: unset;
+  }
+
+  .child-wrapper:nth-child(1) {
+    order: 1;
+  }
+}
+
+@media (max-width: 774px) {
+  .child-wrapper {
+    width: calc(100vw - 4rem);
+  }
+}
+
 /* @media (orientation: portrait) and (max-width: 1280px) {
   .child-wrapper {
     position: unset;

@@ -15,6 +15,18 @@
   }
 }
 
+@media (max-width: 774px) {
+  .shopping-process-container {
+    margin: 2rem 6rem;
+  }
+}
+
+@media (max-width: 574px) {
+  .shopping-process-container {
+    margin: 2rem 2rem;
+  }
+}
+
 /* .children.reversed {
   flex-direction: row-reverse;
 } */
