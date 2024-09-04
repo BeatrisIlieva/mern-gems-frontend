@@ -43,7 +43,12 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
               position={circleIconsPosition}
             />
           }
-          secondTitle={<Heart categoryId={jewelriesByCategory[0].category} colorId={jewelriesByCategory[0].color}/>}
+          secondTitle={
+            <Heart
+              categoryId={jewelriesByCategory[0].category}
+              colorId={jewelriesByCategory[0].color}
+            />
+          }
           variant={"bolded"}
         />
       )}
