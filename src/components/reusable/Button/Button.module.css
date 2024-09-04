@@ -72,7 +72,6 @@
 }
 
 .button.underlined {
-  background-color: var(--white);
   text-decoration: underline;
   color: var(--gray);
   font-size: var(--normal);
@@ -81,4 +80,11 @@
 
 .button.underlined.hovered {
   text-decoration: none;
+}
+
+.info {
+  color: var(--pink);
+  font-size: var(--normal);
+  padding: 0px;
+  cursor: auto;
 }

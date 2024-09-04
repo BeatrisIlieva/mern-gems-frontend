@@ -11,7 +11,7 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Buttons.module.css";
 
-export const Buttons = ({ bagId }) => {
+export const Buttons = ({ bagId, categoryId, colorId }) => {
   const [displayContent, setDisplayContent] = useState(false);
 
   const iconRef = useRef(null);
@@ -33,7 +33,11 @@ export const Buttons = ({ bagId }) => {
   return (
     <>
       <div className={styles["buttons-wrapper"]}>
-        <MoveToWishlist />
+        <MoveToWishlist
+          bagId={bagId}
+          categoryId={categoryId}
+          colorId={colorId}
+        />
         <Remove bagId={bagId} />
       </div>
       <div className={styles["icon-wrapper"]} ref={iconRef}>

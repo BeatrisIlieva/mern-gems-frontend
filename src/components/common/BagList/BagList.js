@@ -14,7 +14,8 @@ export const BagList = ({ variant }) => {
   const location = useLocation();
 
   const displayUpdateQuantityButtons =
-    location.pathname !== "/checkout" && location.pathname !== "/checkout/payment";
+    location.pathname !== "/checkout" &&
+    location.pathname !== "/checkout/payment";
 
   const { bagItems } = useBagContext();
 
@@ -38,7 +39,11 @@ export const BagList = ({ variant }) => {
             <DualTitleSection
               firstTitle={
                 displayUpdateQuantityButtons ? (
-                  <Buttons bagId={item.bagId} />
+                  <Buttons
+                    bagId={item.bagId}
+                    categoryId={item.categoryId}
+                    colorId={item.colorId}
+                  />
                 ) : (
                   `Size: ${item.size}`
                 )

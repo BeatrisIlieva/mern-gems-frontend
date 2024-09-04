@@ -4,7 +4,8 @@
   opacity: 0;
   animation: transitioning 1.6s forwards;
   min-height: calc(100vh);
-  margin: 0 2rem;
+  background-color: var(--very-light-gray);
+  padding: 2rem;
 }
 
 @keyframes transitioning {
