@@ -15,7 +15,6 @@
 
 .content {
   justify-content: space-between;
-  flex-grow: 1;
   flex-direction: column;
   display: flex;
 }
@@ -24,7 +23,6 @@
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  flex-grow: 1;
 }
 
 .outer-wrapper.transitioning {
