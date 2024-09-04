@@ -1,6 +1,22 @@
 const router = require("express").Router();
 
-router.post("/add/:jewelryId/:userId", async (req, res) => {
+router.get("/:userId", async (req, res) => {
+    const userId = req.params.userId;
+  
+    try {
+      await wishlistManager.getAll(userId);
+  
+      res.status(200).json();
+    } catch (err) {
+      console.log(err.message);
+  
+      res.status(401).json({
+        message: err.message,
+      });
+    }
+  });
+
+router.get("/add/:jewelryId/:userId", async (req, res) => {
   const userId = req.params.userId;
 
   const jewelryId = Number(req.params.jewelryId);
@@ -32,7 +48,7 @@ router.delete("/delete/:jewelryId/:userId", async (req, res) => {
       jewelryId,
     });
 
-    res.status(200).json();
+    res.status(204).json();
   } catch (err) {
     res.status(401).json({
       message: err.message,

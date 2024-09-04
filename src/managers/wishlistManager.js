@@ -21,6 +21,12 @@ exports.create = async ({ userId, jewelryId }) => {
   }
 };
 
+exports.getAll = async (userId) => {
+  return await Wishlist.find({
+    user: userId,
+  });
+};
+
 exports.delete = async ({ userId, jewelryId }) => {
   const wishlistItem = await Wishlist.findOne({
     user: userId,
