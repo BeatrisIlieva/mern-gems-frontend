@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-import { NormalTitle } from "../../../../reusable/NormalTitle/NormalTitle";
+import { NormalTitle } from "../../../../../reusable/NormalTitle/NormalTitle";
 
-import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
+import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
-import { useService } from "../../../../../hooks/useService";
+import { useService } from "../../../../../../hooks/useService";
 
-import { userLoginDetailsServiceFactory } from "../../../../../services/userLoginDetailsService";
+import { userLoginDetailsServiceFactory } from "../../../../../../services/userLoginDetailsService";
 
 import styles from "./UserLoginDetails.module.css";
 
