@@ -6,7 +6,7 @@ import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { BagList } from "../../common/BagList/BagList";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
 
-import { Popup } from "../../common/Popup/Popup";
+
 
 import { ShippingContent } from "./ShippingContent/ShippingContent";
 import { CardDetailsContent } from "./CardDetailsContent/CardDetailsContent";
