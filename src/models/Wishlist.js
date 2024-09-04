@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const wishlistSchema = new mongoose.Schema({
   user: {
-    type: String,
+    type: mongoose.Types.ObjectId,
+    ref: "UserLoginDetails",
     required: true,
   },
   jewelry: {
