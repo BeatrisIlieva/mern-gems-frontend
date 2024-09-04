@@ -4,12 +4,12 @@ import { Icon } from "./Icon/Icon";
 
 import styles from "./Buttons.module.css";
 
-export const Buttons = ({bagId}) => {
+export const Buttons = ({ bagId }) => {
   return (
     <>
       <div className={styles["wrapper"]}>
         <MoveToWishlist />
-        <Remove bagId={bagId}/>
+        <Remove bagId={bagId} />
       </div>
       <Icon />
     </>
