@@ -43,7 +43,7 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
               position={circleIconsPosition}
             />
           }
-          secondTitle={<Heart />}
+          secondTitle={<Heart jewelryId={jewelriesByCategory[0]._id}/>}
           variant={"bolded"}
         />
       )}
