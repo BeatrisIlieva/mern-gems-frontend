@@ -1,6 +1,6 @@
 import { Collection } from "../../common/Collection/Collection";
 
-import styles from "./ColectionList.module.css";
+import styles from "./CollectionList.module.css";
 
 export const CollectionList = () => {
   return (
