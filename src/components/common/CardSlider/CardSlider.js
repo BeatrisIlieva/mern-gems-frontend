@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
+import { PriceRange } from "../PriceRange/PriceRange";
+import { StockStatus } from "../StockStatus/StockStatus";
 
-import { Content } from "../../pages/CollectionList/CategoryCard/Content/Content";
+import { LargeImages } from "../LargeImages/LargeImages";
 
 import { useJewelry } from "../../../hooks/useJewelry";
 
 import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
 
 import styles from "./CardSlider.module.css";
+
 
 export const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,7 +40,12 @@ export const CardSlider = () => {
     <>
       {jewelriesByCategory.length > 0 && (
         <section className={styles["card-slider"]}>
-          <Content
+                  <DualTitleSection
+        firstTitle={<PriceRange jewelriesByCategory={jewelriesByCategory} />}
+        secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
+        variant={"regular"}
+      />
+          <LargeImages
             jewelriesByCategory={jewelriesByCategory}
           />
 

@@ -1,3 +1,12 @@
 .card-slider {
-    width: 18em;
+  width: 18em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  animation: transitioning 1s forwards;
+  background-color: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
 }
