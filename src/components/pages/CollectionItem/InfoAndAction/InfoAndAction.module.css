@@ -8,14 +8,11 @@
   justify-content: space-between;
   flex-grow: 1;
   height: 100%;
+  animation: transitioning 1s forwards;
 }
 
 .wrapper {
   gap: 1rem;
-}
-
-.outer-wrapper.transitioning {
-  animation: transitioning 14s forwards;
 }
 
 @keyframes transitioning {
