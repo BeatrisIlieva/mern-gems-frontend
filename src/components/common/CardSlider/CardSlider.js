@@ -1,21 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { Content } from "../../pages/CollectionList/CategoryCard/Content/Content";
 
 import { useJewelry } from "../../../hooks/useJewelry";
 
 import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
+
+import styles from "./CardSlider.module.css"
 
 export const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const categories = Object.keys(INITIAL_CATEGORY_CARD_VALUES);
 
-  const currentCategory = categories[currentIndex];
+    const selectedCategory = categories[currentIndex];
 
-  const currentColor = INITIAL_CATEGORY_CARD_VALUES[currentCategory];
+//   const [selectedCategory, setSelectedCategory] = useState(
+//     categories[currentIndex]
+//   );
+
+//   const [selectedColor, setSelectedColor] = useState(
+//     INITIAL_CATEGORY_CARD_VALUES[selectedCategory]
+//   );
+
+    const selectedColor = INITIAL_CATEGORY_CARD_VALUES[selectedCategory];
+
+//   const updateSelectedColor = (color) => {
+//     setSelectedColor(color);
+//   };
+
+//   useEffect(() => {
+//     setSelectedCategory(categories[currentIndex]);
+
+//   }, [currentIndex, categories]);
+
+//   useEffect(() => {
+
+//     setSelectedColor(INITIAL_CATEGORY_CARD_VALUES[selectedCategory]);
+//   }, [selectedCategory]);
 
   const { jewelriesByCategory } = useJewelry({
-    categoryTitle: currentCategory,
-    colorTitle: currentColor,
+    categoryTitle: selectedCategory,
+    colorTitle: selectedColor,
   });
 
   const handleNext = () => {
@@ -29,18 +55,18 @@ export const CardSlider = () => {
   };
 
   return (
-    <div>
-      <h2>{currentCategory}</h2>
-      <p>Color: {currentColor}</p>
+    <>
+      {jewelriesByCategory.length > 0 && (
+        <section className={styles["card-slider"]}>
+          <Content
+            jewelriesByCategory={jewelriesByCategory}
+            // updateSelectedColor={updateSelectedColor}
+          />
 
-      <ul>
-        {jewelriesByCategory.map((jewelry) => (
-          <li key={jewelry.id}>{jewelry.name}</li>
-        ))}
-      </ul>
-
-      <button onClick={handlePrev}>Previous</button>
-      <button onClick={handleNext}>Next</button>
-    </div>
+          <button onClick={handlePrev}>Previous</button>
+          <button onClick={handleNext}>Next</button>
+        </section>
+      )}
+    </>
   );
 };
