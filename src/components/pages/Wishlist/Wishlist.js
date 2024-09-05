@@ -24,21 +24,6 @@ export const Wishlist = () => {
             title={`Your Wish List (${wishlistTotalQuantity})`}
             subtitle={subtitle}
           />
-          {/* {wishlistTotalQuantity > 0 ? (
-            <div className={styles["outer-wrapper"]}>
-              <div className={styles["wrapper"]}>
-                {itemsArray.map((item) => (
-                  <CategoryCard
-                    key={item._id}
-                    categoryTitle={item.category.title}
-                    colorTitle={item.color.title}
-                  />
-                ))}
-              </div>
-            </div>
-          ) : (
-            <Collection />
-          )} */}
         </section>
       )}
     </>

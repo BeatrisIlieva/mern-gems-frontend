@@ -1,39 +1,28 @@
 #wishlist {
   background-color: var(--very-light-gray);
   padding: 2rem;
-}
-
-.outer-wrapper {
-  display: flex;
-  min-height: calc(100vh - 13.6rem);
-  justify-content: flex-start;
-  flex-direction: column;
-}
-
-.wrapper {
-  margin-top: 2rem;
+  height: calc(100vh - 9.6rem);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
 }
 
 @media (max-width: 1400px) {
-  .outer-wrapper {
-    min-height: calc(100vh - 10.6rem);
-  }
-  .wrapper {
+  #wishlist {
+    height: auto;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (max-width: 1040px) {
-  .wrapper {
+  #wishlist {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 680px) {
-  .wrapper {
+  #wishlist {
     grid-template-columns: repeat(1, 1fr);
   }
 }
