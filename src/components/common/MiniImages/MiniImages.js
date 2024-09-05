@@ -10,20 +10,20 @@ import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitl
 
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ jewelriesByCategory, updateSelectedColor }) => {
+export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
   const navigate = useNavigate();
 
   const location = useLocation();
 
-  const clickHandler = (colorTitle) => {
-    const categoryTitle = jewelriesByCategory[0].categories[0].title;
+  // const clickHandler = (colorTitle) => {
+  //   const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
-    const slugifiedCategoryTitle = slugify(categoryTitle);
+  //   const slugifiedCategoryTitle = slugify(categoryTitle);
 
-    const slugifiedColorTitle = slugify(colorTitle);
+  //   const slugifiedColorTitle = slugify(colorTitle);
 
-    navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  };
+  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+  // };
 
   const [activeMiniImage, setActiveMiniImage] = useState(
     jewelriesByCategory[0].colors[0].title
@@ -32,14 +32,16 @@ export const MiniImages = ({ jewelriesByCategory, updateSelectedColor }) => {
   const updateActiveMiniImage = (colorTitle) => {
     setActiveMiniImage(colorTitle);
 
-    if (
-      location.pathname === "/collection" ||
-      location.pathname === "/users/wishlist"
-    ) {
-      updateSelectedColor(colorTitle);
-    } else {
-      clickHandler(colorTitle);
-    }
+    clickHandler(colorTitle);
+
+    // if (
+    //   location.pathname === "/collection" ||
+    //   location.pathname === "/users/wishlist"
+    // ) {
+    //   updateSelectedColor(colorTitle);
+    // } else {
+    //   clickHandler(colorTitle);
+    // }
   };
 
   const color = COLORS_BY_TITLE[activeMiniImage];

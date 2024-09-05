@@ -46,7 +46,7 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
       {!notDisplayingMiniImages && (
         <MiniImages
           jewelriesByCategory={jewelriesByCategory}
-          updateSelectedColor={updateSelectedColor}
+          clickHandler={updateSelectedColor}
         />
       )}
     </article>
