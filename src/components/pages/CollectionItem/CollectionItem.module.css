@@ -26,6 +26,24 @@
   position: relative;
 }
 
+@media (max-width: 1024px) {
+  .collection-item {
+    flex-wrap: wrap;
+    height: auto;
+    /* width: 100%; */
+  }
+}
+
+@media (max-width: 1024px) {
+  .images {
+    width: 100%;
+  }
+
+  .info-and-action {
+    width: 100%;
+  }
+}
+
 @media (max-width: 675px) {
   .collection-item {
     min-height: calc(100vh - 6.6rem);

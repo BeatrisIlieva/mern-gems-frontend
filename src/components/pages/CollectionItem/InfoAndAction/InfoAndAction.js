@@ -27,12 +27,10 @@ export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
           />
         </div>
       </div>
-      <div className={styles["bottom-container"]}>
-        <Form
-          jewelriesByCategory={jewelriesByCategory}
-          toggleDisplayPopup={toggleDisplayPopup}
-        />
-      </div>
+      <Form
+        jewelriesByCategory={jewelriesByCategory}
+        toggleDisplayPopup={toggleDisplayPopup}
+      />
     </div>
   );
 };
