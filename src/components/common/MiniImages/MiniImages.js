@@ -1,9 +1,6 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 
 import { Image } from "./Image/Image";
-
-import { slugify } from "../../../utils/slugify";
 
 import { COLORS_BY_TITLE } from "../../../constants/colorsByTitle";
 import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitleAndImageUrl";
