@@ -1,0 +1,32 @@
+#empty-wishlist {
+  display: flex;
+  animation: transitioning 1.6s forwards;
+  min-height: calc(100vh - 9.6rem);
+  background-color: var(--very-light-gray);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 6rem;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1012px) {
+  #empty-wishlist {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-width: 675px) {
+  #empty-wishlist {
+    min-height: calc(100vh - 6.6rem);
+  }
+}

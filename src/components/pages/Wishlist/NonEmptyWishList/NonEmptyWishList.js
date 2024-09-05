@@ -3,7 +3,7 @@ import { Content } from "./Content/Content";
 
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 
-import styles from "./NonEmptyWishList.module.css";
+import styles from "./NonEmptyWishlist.module.css";
 
 export const NonEmptyWishlist = () => {
   const { wishlistItems, wishlistTotalQuantity } = useWishlistContext();
