@@ -11,20 +11,6 @@ import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitl
 import styles from "./MiniImages.module.css";
 
 export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
-  const navigate = useNavigate();
-
-  const location = useLocation();
-
-  // const clickHandler = (colorTitle) => {
-  //   const categoryTitle = jewelriesByCategory[0].categories[0].title;
-
-  //   const slugifiedCategoryTitle = slugify(categoryTitle);
-
-  //   const slugifiedColorTitle = slugify(colorTitle);
-
-  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  // };
-
   const [activeMiniImage, setActiveMiniImage] = useState(
     jewelriesByCategory[0].colors[0].title
   );
