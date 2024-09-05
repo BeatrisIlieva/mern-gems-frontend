@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 1400px) {
-  #wishlist {
+  .outer-wrapper {
     height: auto;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -19,13 +19,13 @@
 }
 
 @media (max-width: 1040px) {
-  #wishlist {
+  .outer-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 680px) {
-  #wishlist {
+  .outer-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
 }
