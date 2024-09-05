@@ -4,12 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Content } from "./Content/Content";
 import { ShopBy } from "../../../common/ShopBy/ShopBy";
 
-import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
-import { LargeImages } from "./LargeImages/LargeImages";
-import { MiniImages } from "../../../common/MiniImages/MiniImages";
-import { StockStatus } from "../../../common/StockStatus/StockStatus";
-import { PriceRange } from "../../../common/PriceRange/PriceRange";
-
 import { useJewelry } from "../../../../hooks/useJewelry";
 
 import { slugify } from "../../../../utils/slugify";
