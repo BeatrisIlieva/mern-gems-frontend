@@ -13,7 +13,7 @@ import styles from "./InfoAndAction.module.css";
 
 export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const navigate = useNavigate();
-  
+
   const miniImagesClickHandler = (colorTitle) => {
     const categoryTitle = jewelriesByCategory[0].categories[0].title;
 

@@ -33,15 +33,6 @@ export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
     setActiveMiniImage(colorTitle);
 
     clickHandler(colorTitle);
-
-    // if (
-    //   location.pathname === "/collection" ||
-    //   location.pathname === "/users/wishlist"
-    // ) {
-    //   updateSelectedColor(colorTitle);
-    // } else {
-    //   clickHandler(colorTitle);
-    // }
   };
 
   const color = COLORS_BY_TITLE[activeMiniImage];
