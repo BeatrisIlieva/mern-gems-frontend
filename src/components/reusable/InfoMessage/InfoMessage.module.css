@@ -4,6 +4,7 @@
   align-items: center;
   animation: transitioning 1s forwards;
   flex-direction: column;
+  text-align: center;
 }
 
 .thumbnail {

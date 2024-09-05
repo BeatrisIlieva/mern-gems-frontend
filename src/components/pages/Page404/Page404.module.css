@@ -5,10 +5,8 @@
   background-color: var(--very-light-gray);
   align-items: center;
   justify-content: center;
-}
-
-.half-container {
-  width: 50%;
+  padding: 2rem;
+  gap: 6rem;
 }
 
 @keyframes transitioning {
@@ -17,6 +15,13 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1012px) {
+  #page-404 {
+  flex-direction: column;
+  gap: 2rem;
   }
 }
 
