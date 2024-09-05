@@ -1,4 +1,3 @@
-
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
 import { Content } from "./Content/Content";
 
@@ -28,17 +27,15 @@ export const Wishlist = () => {
           />
           {wishlistTotalQuantity > 0 && (
             <div className={styles["outer-wrapper"]}>
-              {/* <div className={styles["wrapper"]}> */}
-                {itemsArray.map((item) => (
-                  <Content
-                    key={item._id}
-                    categoryTitle={item.category.title}
-                    colorTitle={item.color.title}
-                  />
-                ))}
-              {/* </div> */}
+              {itemsArray.map((item) => (
+                <Content
+                  key={item._id}
+                  categoryTitle={item.category.title}
+                  colorTitle={item.color.title}
+                />
+              ))}
             </div>
-          ) }
+          )}
         </section>
       )}
     </>
