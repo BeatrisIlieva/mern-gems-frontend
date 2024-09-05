@@ -1,3 +1,5 @@
+import styles from "./Image.module.css";
+
 export const Image = ({
   firstImageUrlIsActive,
   firstImageUrl,
