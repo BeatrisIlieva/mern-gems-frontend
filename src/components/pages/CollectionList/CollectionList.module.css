@@ -4,7 +4,6 @@
   height: calc(100vh - 9.6rem);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* display: flex; */
   gap: 4rem;
 }
 
