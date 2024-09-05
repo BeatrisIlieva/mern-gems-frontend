@@ -9,39 +9,30 @@ import styles from "./InfoAndAction.module.css";
 
 export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   return (
-    <div className={styles["info-and-action-container"]}>
-      {jewelriesByCategory.length > 0 && (
-        <div className={styles["outer-wrapper"]}>
-          <div className={styles["content"]}>
-            <div className={styles["wrapper"]}>
-              <DualTitleSection
-                firstTitle={
-                  <MiniImages jewelriesByCategory={jewelriesByCategory} />
-                }
-                secondTitle={
-                  <StockStatus jewelriesByCategory={jewelriesByCategory} />
-                }
-                variant={"regular"}
-              />
-              <div>
-                <LargeTitle
-                  title={jewelriesByCategory[0].title}
-                  textAlign={"left"}
-                />
-                <Paragraph
-                  text={`${jewelriesByCategory[0].description}.`}
-                  textAlign={"left"}
-                  color={"gray"}
-                />
-              </div>
-            </div>
-          </div>
-          <Form
-            jewelriesByCategory={jewelriesByCategory}
-            toggleDisplayPopup={toggleDisplayPopup}
+    <div className={styles["outer-wrapper"]}>
+      <div className={styles["wrapper"]}>
+        <DualTitleSection
+          firstTitle={<MiniImages jewelriesByCategory={jewelriesByCategory} />}
+          secondTitle={
+            <StockStatus jewelriesByCategory={jewelriesByCategory} />
+          }
+          variant={"regular"}
+        />
+        <div>
+          <LargeTitle title={jewelriesByCategory[0].title} textAlign={"left"} />
+          <Paragraph
+            text={`${jewelriesByCategory[0].description}.`}
+            textAlign={"left"}
+            color={"gray"}
           />
         </div>
-      )}
+      </div>
+      <div className={styles["bottom-container"]}>
+        <Form
+          jewelriesByCategory={jewelriesByCategory}
+          toggleDisplayPopup={toggleDisplayPopup}
+        />
+      </div>
     </div>
   );
 };

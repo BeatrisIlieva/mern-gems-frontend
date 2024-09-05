@@ -4,10 +4,6 @@
   aspect-ratio: 1/1;
 }
 
-.image.larger {
-  width: 100%;
-}
-
 .image.slide-in-left {
   position: relative;
   display: inline-block;

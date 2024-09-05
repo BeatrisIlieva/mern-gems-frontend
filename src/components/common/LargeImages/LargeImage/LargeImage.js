@@ -4,41 +4,24 @@ import { slugify } from "../../../../utils/slugify";
 
 import styles from "./LargeImage.module.css";
 
-export const LargeImage = ({
-  jewelriesByCategory,
-  firstImageUrlIsActive,
-  toggleFirstImageUrlIsActive,
-  displayLargerImage,
-}) => {
+export const LargeImage = ({ jewelriesByCategory, firstImageUrlIsActive }) => {
   const navigate = useNavigate();
 
-  const location = useLocation();
-
-  const applyNavigation =
-    location.pathname === "/collection" ||
-    location.pathname === "/users/wishlist";
-
   const clickHandler = () => {
-    if (applyNavigation) {
-      const categoryTitle = jewelriesByCategory[0].categories[0].title;
+    const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
-      const colorTitle = jewelriesByCategory[0].colors[0].title;
+    const colorTitle = jewelriesByCategory[0].colors[0].title;
 
-      const slugifiedCategoryTitle = slugify(categoryTitle);
+    const slugifiedCategoryTitle = slugify(categoryTitle);
 
-      const slugifiedColorTitle = slugify(colorTitle);
+    const slugifiedColorTitle = slugify(colorTitle);
 
-      navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-    } else {
-      toggleFirstImageUrlIsActive();
-    }
+    navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
 
   return (
     <img
       className={`${styles["image"]} ${
-        displayLargerImage ? styles["larger"] : ""
-      } ${
         firstImageUrlIsActive
           ? styles["slide-in-right"]
           : styles["slide-in-left"]

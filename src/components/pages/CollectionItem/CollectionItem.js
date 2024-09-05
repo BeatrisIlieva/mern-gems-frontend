@@ -40,11 +40,19 @@ export const CollectionItem = () => {
             <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
           )}
           <section className={styles["collection-item"]}>
-            <Images jewelriesByCategory={jewelriesByCategory} />
-            <InfoAndAction
-              jewelriesByCategory={jewelriesByCategory}
-              toggleDisplayPopup={toggleDisplayPopup}
-            />
+            <div className={styles["images"]}>
+              {jewelriesByCategory.length > 0 && (
+                <Images jewelriesByCategory={jewelriesByCategory} />
+              )}
+            </div>
+            <div className={styles["info-and-action"]}>
+              {jewelriesByCategory.length > 0 && (
+                <InfoAndAction
+                  jewelriesByCategory={jewelriesByCategory}
+                  toggleDisplayPopup={toggleDisplayPopup}
+                />
+              )}
+            </div>
           </section>
         </>
       )}

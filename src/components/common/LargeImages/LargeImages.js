@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 import { CircleIcons } from "./CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
@@ -8,7 +7,7 @@ import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSecti
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
+export const LargeImages = ({ jewelriesByCategory }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -19,45 +18,29 @@ export const LargeImages = ({ jewelriesByCategory, circleIconsPosition }) => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
   };
 
-  const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
-  const displayLargerImage = !!(slugifiedCategoryTitle && slugifiedColorTitle);
-
   return (
     <div className={styles["large-images"]}>
-      {displayLargerImage ? (
-        <CircleIcons
-          firstImageUrlIsActive={firstImageUrlIsActive}
-          toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-          firstImageUrl={jewelriesByCategory[0].firstImageUrl}
-          secondImageUrl={jewelriesByCategory[0].secondImageUrl}
-          circleIconsPosition={circleIconsPosition}
-        />
-      ) : (
-        <DualTitleSection
-          firstTitle={
-            <CircleIcons
-              firstImageUrlIsActive={firstImageUrlIsActive}
-              toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-              firstImageUrl={jewelriesByCategory[0].firstImageUrl}
-              secondImageUrl={jewelriesByCategory[0].secondImageUrl}
-              position={circleIconsPosition}
-            />
-          }
-          secondTitle={
-            <Heart
-              categoryId={jewelriesByCategory[0].category}
-              colorId={jewelriesByCategory[0].color}
-            />
-          }
-          variant={"bolded"}
-        />
-      )}
+      <DualTitleSection
+        firstTitle={
+          <CircleIcons
+            firstImageUrlIsActive={firstImageUrlIsActive}
+            toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+            firstImageUrl={jewelriesByCategory[0].firstImageUrl}
+            secondImageUrl={jewelriesByCategory[0].secondImageUrl}
+          />
+        }
+        secondTitle={
+          <Heart
+            categoryId={jewelriesByCategory[0].category}
+            colorId={jewelriesByCategory[0].color}
+          />
+        }
+        variant={"bolded"}
+      />
       <div className={styles["image-container"]}>
         <LargeImage
           firstImageUrlIsActive={firstImageUrlIsActive}
           jewelriesByCategory={jewelriesByCategory}
-          toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-          displayLargerImage={displayLargerImage}
         />
       </div>
     </div>
