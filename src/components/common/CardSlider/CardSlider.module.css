@@ -10,3 +10,12 @@
   border-radius: 1rem;
   overflow: hidden;
 }
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.icon {
+  color: var(--pink);
+  height: 1.25rem;
+}

@@ -9,8 +9,11 @@ import { useJewelry } from "../../../hooks/useJewelry";
 
 import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
 
-import styles from "./CardSlider.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
+import styles from "./CardSlider.module.css";
 
 export const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,17 +43,28 @@ export const CardSlider = () => {
     <>
       {jewelriesByCategory.length > 0 && (
         <section className={styles["card-slider"]}>
-                  <DualTitleSection
-        firstTitle={<PriceRange jewelriesByCategory={jewelriesByCategory} />}
-        secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
-        variant={"regular"}
-      />
-          <LargeImages
-            jewelriesByCategory={jewelriesByCategory}
+          <DualTitleSection
+            firstTitle={
+              <PriceRange jewelriesByCategory={jewelriesByCategory} />
+            }
+            secondTitle={
+              <StockStatus jewelriesByCategory={jewelriesByCategory} />
+            }
+            variant={"regular"}
           />
-
-          <button onClick={handlePrev}>Previous</button>
-          <button onClick={handleNext}>Next</button>
+          <LargeImages jewelriesByCategory={jewelriesByCategory} />
+          <div className={styles["button-wrapper"]}>
+            <FontAwesomeIcon
+              icon={faCircleChevronLeft}
+              className={styles["icon"]}
+              onClick={handlePrev}
+            />
+            <FontAwesomeIcon
+              icon={faCircleChevronRight}
+              className={styles["icon"]}
+              onClick={handleNext}
+            />
+          </div>
         </section>
       )}
     </>
