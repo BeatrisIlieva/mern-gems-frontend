@@ -41,7 +41,7 @@ export const Images = ({ jewelriesByCategory }) => {
   return (
     <>
       <img
-        className={`${styles["image"]} ${
+        className={`${styles["images"]} ${
           firstImageUrlIsActive
             ? styles["slide-in-right"]
             : styles["slide-in-left"]
