@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { CircleIcons } from "./CircleIcons/CircleIcons";
+import { CircleIcons } from "../CircleIcons/CircleIcons";
 import { LargeImage } from "./LargeImage/LargeImage";
 import { Heart } from "../Heart/Heart";
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";

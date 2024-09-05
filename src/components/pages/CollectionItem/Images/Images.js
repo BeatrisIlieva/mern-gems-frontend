@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { JewelryImage } from "../../../common/JewelryImage/JewelryImage";
-import { CircleIcons } from "../../../common/LargeImages/CircleIcons/CircleIcons";
+import { CircleIcons } from "../../../common/CircleIcons/CircleIcons";
 
 import styles from "./Images.module.css";
 
