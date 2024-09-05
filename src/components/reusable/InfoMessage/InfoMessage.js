@@ -10,6 +10,13 @@ export const InfoMessage = ({ title, subtitle }) => {
         <LargeTitle title={title} textAlign={"center"} />
         <Paragraph text={subtitle} textAlign={"center"} color={"gray"} />
       </div>
+      <div className={styles["thumbnail"]}>
+        <img
+          src="https://res.cloudinary.com/deztgvefu/image/upload/v1725543807/forget-me-not-collection/miniImages/pngtree-sweet-pink-ribbon-png-image_13127280_cfwfwv.png"
+          alt="ribbon"
+          className={styles["ribbon"]}
+        />
+      </div>
     </section>
   );
 };

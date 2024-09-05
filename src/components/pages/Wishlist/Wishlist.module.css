@@ -4,10 +4,6 @@
   min-height: calc(100vh - 9.6rem);
 }
 
-.top-container {
-  position: relative;
-}
-
 .thumbnail {
   width: 6rem;
   position: absolute;

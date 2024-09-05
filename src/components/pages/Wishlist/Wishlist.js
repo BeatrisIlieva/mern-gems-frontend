@@ -21,19 +21,10 @@ export const Wishlist = () => {
     <>
       {displayContent && (
         <section id={styles["wishlist"]}>
-          <div className={styles["top-container"]}>
-            <InfoMessage
-              title={`Your Wish List (${wishlistTotalQuantity})`}
-              subtitle={subtitle}
-            />
-            <div className={styles["thumbnail"]}>
-              <img
-                src="https://res.cloudinary.com/deztgvefu/image/upload/v1725543807/forget-me-not-collection/miniImages/pngtree-sweet-pink-ribbon-png-image_13127280_cfwfwv.png"
-                alt="ribbon"
-                className={styles["ribbon"]}
-              />
-            </div>
-          </div>
+          <InfoMessage
+            title={`Your Wish List (${wishlistTotalQuantity})`}
+            subtitle={subtitle}
+          />
           {wishlistTotalQuantity > 0 && (
             <div className={styles["outer-wrapper"]}>
               {itemsArray.map((item) => (
