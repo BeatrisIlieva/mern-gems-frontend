@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { PriceRange } from "../PriceRange/PriceRange";
 import { StockStatus } from "../StockStatus/StockStatus";
-
 import { LargeImages } from "../LargeImages/LargeImages";
 
 import { useJewelry } from "../../../hooks/useJewelry";
