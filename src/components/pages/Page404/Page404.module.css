@@ -1,11 +1,14 @@
 #page-404 {
   display: flex;
-  flex-direction: column;
-  opacity: 0;
   animation: transitioning 1.6s forwards;
-  min-height: calc(100vh);
+  min-height: calc(100vh - 9.6rem);
   background-color: var(--very-light-gray);
-  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.half-container {
+  width: 50%;
 }
 
 @keyframes transitioning {
@@ -14,5 +17,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 675px) {
+  #page-404 {
+    min-height: calc(100vh - 6.6rem);
   }
 }
