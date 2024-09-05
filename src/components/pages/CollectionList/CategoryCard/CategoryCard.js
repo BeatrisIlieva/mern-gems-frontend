@@ -48,36 +48,6 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
             categoryTitle={categoryTitle}
             buttonClickHandler={buttonClickHandler}
           />
-          {/* <div
-            onMouseEnter={() => setArticleIsHovered(true)}
-            onMouseLeave={() => setArticleIsHovered(false)}
-            onTouchStart={() => setArticleIsHovered(true)}
-            onTouchEnd={() => setArticleIsHovered(false)}
-            className={
-              articleIsHovered
-                ? `${styles["content"]} ${styles["hovered"]}`
-                : styles["content"]
-            }
-          >
-            <DualTitleSection
-              firstTitle={
-                <PriceRange jewelriesByCategory={jewelriesByCategory} />
-              }
-              secondTitle={
-                <StockStatus jewelriesByCategory={jewelriesByCategory} />
-              }
-              variant={"regular"}
-            />
-            <LargeImages
-              jewelriesByCategory={jewelriesByCategory}
-              updateSelectedColor={updateSelectedColor}
-              circleIconsPosition={"top"}
-            />
-            <MiniImages
-              jewelriesByCategory={jewelriesByCategory}
-              clickHandler={updateSelectedColor}
-            />
-          </div> */}
           <Content
             jewelriesByCategory={jewelriesByCategory}
             updateSelectedColor={updateSelectedColor}
