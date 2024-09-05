@@ -12,12 +12,8 @@ export const Image = ({
           ? styles["slide-in-right"]
           : styles["slide-in-left"]
       }`}
-      src={
-        firstImageUrlIsActive
-          ? jewelriesByCategory[0].firstImageUrl
-          : jewelriesByCategory[0].secondImageUrl
-      }
-      alt={jewelriesByCategory[0].title}
+      src={firstImageUrlIsActive ? firstImageUrl : secondImageUrl}
+      alt={title}
       onClick={clickHandler}
     />
   );
