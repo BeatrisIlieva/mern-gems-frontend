@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { useJewelry } from "../../../hooks/useJewelry";
 
-import { INITIAL_CATEGORY_CARD_VALUES } from "../../pages/CollectionList/constants/initialCategoryCardValues";
+import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
 
 export const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
