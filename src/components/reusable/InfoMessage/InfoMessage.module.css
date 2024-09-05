@@ -5,6 +5,7 @@
   animation: transitioning 1s forwards;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .thumbnail {

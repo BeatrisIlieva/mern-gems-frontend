@@ -21,7 +21,7 @@
 @media (max-width: 1012px) {
   #page-404 {
   flex-direction: column;
-  gap: 2rem;
+  gap: 0;
   }
 }
 
