@@ -6,15 +6,11 @@ import styles from "./Page404.module.css";
 export const Page404 = () => {
   return (
     <section id={styles["page-404"]}>
-      <div className={styles["half-container"]}>
-        <InfoMessage
-          title={"Sorry, we can’t locate that page."}
-          subtitle={"You can continue shopping by exploring the collection."}
-        />
-      </div>
-      <div className={styles["half-container"]}>
-        <CardSlider />
-      </div>
+      <InfoMessage
+        title={"Sorry, we can’t locate that page."}
+        subtitle={"You can continue shopping by exploring the collection."}
+      />
+      <CardSlider />
     </section>
   );
 };

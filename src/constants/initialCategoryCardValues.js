@@ -1,6 +1,6 @@
 export const INITIAL_CATEGORY_CARD_VALUES = {
-  Bracelets: "Pink",
-  Earrings: "Blue",
+  Earrings: "Pink",
+  Bracelets: "Blue",
   Necklaces: "White",
   Rings: "Pink",
 };

@@ -1,4 +1,4 @@
-#wishlist {
+#non-empty-wishlist {
   background-color: var(--very-light-gray);
   padding: 2rem;
   min-height: calc(100vh - 9.6rem);

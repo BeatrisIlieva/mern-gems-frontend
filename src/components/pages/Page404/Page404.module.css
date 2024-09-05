@@ -20,8 +20,8 @@
 
 @media (max-width: 1012px) {
   #page-404 {
-  flex-direction: column;
-  gap: 0;
+    flex-direction: column;
+    gap: 0;
   }
 }
 
