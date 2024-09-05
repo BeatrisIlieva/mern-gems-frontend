@@ -1,5 +1,5 @@
-import { EmptyWishlist } from "./EmptyWishList/EmptyWishList"; 
-import { NonEmptyWishlist } from "./NonEmptyWishList/NonEmptyWishList"; 
+import { EmptyWishlist } from "./EmptyWishlist/EmptyWishlist"; 
+import { NonEmptyWishlist } from "./NonEmptyWishlist/NonEmptyWishlist"; 
 
 import { useWishlistContext } from "../../../contexts/WishlistContext";
 
