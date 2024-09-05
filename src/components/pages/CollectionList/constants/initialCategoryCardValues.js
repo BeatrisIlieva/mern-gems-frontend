@@ -1,4 +1,4 @@
-export const CATEGORIES_BY_ID_AND_INITIAL_COLOR_ID = {
+export const INITIAL_CATEGORY_CARD_VALUES = {
   Bracelets: "Pink",
   Earrings: "Blue",
   Necklaces: "White",

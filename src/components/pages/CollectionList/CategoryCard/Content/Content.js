@@ -28,9 +28,7 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
         secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
         variant={"regular"}
       />
-      <LargeImages
-        jewelriesByCategory={jewelriesByCategory}
-      />
+      <LargeImages jewelriesByCategory={jewelriesByCategory} />
       <MiniImages
         jewelriesByCategory={jewelriesByCategory}
         clickHandler={updateSelectedColor}
