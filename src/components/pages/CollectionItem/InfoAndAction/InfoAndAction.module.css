@@ -1,15 +1,17 @@
-.outer-wrapper {
+.outer-wrapper,
+.wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.outer-wrapper {
   justify-content: space-between;
   flex-grow: 1;
   height: 100%;
 }
 
 .wrapper {
-  display: flex;
   gap: 1rem;
-  flex-direction: column;
 }
 
 .outer-wrapper.transitioning {
