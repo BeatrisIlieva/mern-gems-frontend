@@ -1,4 +1,6 @@
+
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
+import { Content } from "./Content/Content";
 
 import { useWishlistContext } from "../../../contexts/WishlistContext";
 
@@ -24,6 +26,19 @@ export const Wishlist = () => {
             title={`Your Wish List (${wishlistTotalQuantity})`}
             subtitle={subtitle}
           />
+          {wishlistTotalQuantity > 0 && (
+            <div className={styles["outer-wrapper"]}>
+              <div className={styles["wrapper"]}>
+                {itemsArray.map((item) => (
+                  <Content
+                    key={item._id}
+                    categoryTitle={item.category.title}
+                    colorTitle={item.color.title}
+                  />
+                ))}
+              </div>
+            </div>
+          ) }
         </section>
       )}
     </>

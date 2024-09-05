@@ -13,8 +13,6 @@ import styles from "./CategoryCard.module.css";
 export const CategoryCard = ({ categoryTitle, colorTitle }) => {
   const [selectedColor, setSelectedColor] = useState(colorTitle);
 
-  const [articleIsHovered, setArticleIsHovered] = useState(false);
-
   const navigate = useNavigate();
 
   const updateSelectedColor = (color) => {
