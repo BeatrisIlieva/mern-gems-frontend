@@ -28,7 +28,7 @@ export const Wishlist = () => {
           />
           {wishlistTotalQuantity > 0 && (
             <div className={styles["outer-wrapper"]}>
-              <div className={styles["wrapper"]}>
+              {/* <div className={styles["wrapper"]}> */}
                 {itemsArray.map((item) => (
                   <Content
                     key={item._id}
@@ -36,7 +36,7 @@ export const Wishlist = () => {
                     colorTitle={item.color.title}
                   />
                 ))}
-              </div>
+              {/* </div> */}
             </div>
           ) }
         </section>

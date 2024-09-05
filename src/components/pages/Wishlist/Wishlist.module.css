@@ -2,6 +2,9 @@
   background-color: var(--very-light-gray);
   padding: 2rem;
   height: calc(100vh - 9.6rem);
+}
+
+.outer-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
