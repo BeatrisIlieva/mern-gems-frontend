@@ -6,26 +6,16 @@ import { useJewelry } from "../../../hooks/useJewelry";
 
 import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
 
-import styles from "./CardSlider.module.css"
+import styles from "./CardSlider.module.css";
 
 export const CardSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const categories = Object.keys(INITIAL_CATEGORY_CARD_VALUES);
 
-    const selectedCategory = categories[currentIndex];
+  const selectedCategory = categories[currentIndex];
 
-//   const [selectedCategory, setSelectedCategory] = useState(
-//     categories[currentIndex]
-//   );
-
-//   const [selectedColor, setSelectedColor] = useState(
-//     INITIAL_CATEGORY_CARD_VALUES[selectedCategory]
-//   );
-
-    const selectedColor = INITIAL_CATEGORY_CARD_VALUES[selectedCategory];
-
-
+  const selectedColor = INITIAL_CATEGORY_CARD_VALUES[selectedCategory];
 
   const { jewelriesByCategory } = useJewelry({
     categoryTitle: selectedCategory,
@@ -48,7 +38,6 @@ export const CardSlider = () => {
         <section className={styles["card-slider"]}>
           <Content
             jewelriesByCategory={jewelriesByCategory}
-            // updateSelectedColor={updateSelectedColor}
           />
 
           <button onClick={handlePrev}>Previous</button>
