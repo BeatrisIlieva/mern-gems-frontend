@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { JewelryImage } from "../../../../../../common/JewelryImage/JewelryImage";
-import { CircleIcons } from "../../../../../../common/CircleIcons/CircleIcons";
-import { Heart } from "../../../../../../common/Heart/Heart";
-import { DualTitleSection } from "../../../../../../reusable/DualTitleSection/DualTitleSection";
+import { JewelryImage } from "../../../../../common/JewelryImage/JewelryImage";
+import { CircleIcons } from "../../../../../common/CircleIcons/CircleIcons";
+import { Heart } from "../../../../../common/Heart/Heart";
+import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 
-import { slugify } from "../../../../../../../utils/slugify";
+import { slugify } from "../../../../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
 

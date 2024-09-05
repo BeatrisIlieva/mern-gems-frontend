@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Card } from "./Card/Card";
-import { ShopBy } from "../../../common/ShopBy/ShopBy"; 
+import { Content } from "./Content/Content";
+import { ShopBy } from "../../../common/ShopBy/ShopBy";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
 
@@ -38,7 +38,7 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
         categoryTitle={categoryTitle}
         buttonClickHandler={buttonClickHandler}
       />
-      <Card
+      <Content
         jewelriesByCategory={jewelriesByCategory}
         updateSelectedColor={updateSelectedColor}
       />

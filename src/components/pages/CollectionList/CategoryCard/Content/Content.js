@@ -1,25 +1,15 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 
-import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
-import { LargeImages } from "./LargeImages/LargeImages"; 
-import { MiniImages } from "../../../../../common/MiniImages/MiniImages";
-import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
-import { PriceRange } from "../../../../../common/PriceRange/PriceRange";
-
-import { useWishlistContext } from "../../../../../../contexts/WishlistContext";
+import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
+import { LargeImages } from "./LargeImages/LargeImages";
+import { MiniImages } from "../../../../common/MiniImages/MiniImages";
+import { StockStatus } from "../../../../common/StockStatus/StockStatus";
+import { PriceRange } from "../../../../common/PriceRange/PriceRange";
 
 import styles from "./Content.module.css";
 
 export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
-
-  const { wishlistTotalQuantity } = useWishlistContext();
-
-  const location = useLocation();
-
-  const notDisplayingMiniImages =
-    location.pathname === "/users/wishlist" && wishlistTotalQuantity > 0;
 
   return (
     <article
@@ -43,12 +33,10 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
         updateSelectedColor={updateSelectedColor}
         circleIconsPosition={"top"}
       />
-      {!notDisplayingMiniImages && (
-        <MiniImages
-          jewelriesByCategory={jewelriesByCategory}
-          clickHandler={updateSelectedColor}
-        />
-      )}
+      <MiniImages
+        jewelriesByCategory={jewelriesByCategory}
+        clickHandler={updateSelectedColor}
+      />
     </article>
   );
 };
