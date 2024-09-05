@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Card } from "./Card/Card";
-import { Button } from "../../../reusable/Button/Button";
+import { ShopBy } from "../../ShopBy/ShopBy";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
 
@@ -34,10 +34,9 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
 
   return (
     <section className={styles["category-card"]}>
-      <Button
-        title={`Shop ${categoryTitle}`}
-        variant={"underlined"}
-        callBackFunction={buttonClickHandler}
+      <ShopBy
+        categoryTitle={categoryTitle}
+        buttonClickHandler={buttonClickHandler}
       />
       <Card
         jewelriesByCategory={jewelriesByCategory}

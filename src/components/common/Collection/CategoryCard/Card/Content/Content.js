@@ -5,7 +5,7 @@ import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualT
 import { LargeImages } from "../../../../LargeImages/LargeImages";
 import { MiniImages } from "../../../../MiniImages/MiniImages";
 import { StockStatus } from "../../../../StockStatus/StockStatus";
-import { PriceRange } from "./PriceRange/PriceRange";
+import { PriceRange } from "../../../../PriceRange/PriceRange";
 
 import { useWishlistContext } from "../../../../../../contexts/WishlistContext";
 
