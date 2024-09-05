@@ -1,6 +1,4 @@
-import { CategoryCard } from "../../common/Collection/CategoryCard/CategoryCard";
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
-import { Collection } from "../../common/Collection/Collection";
 
 import { useWishlistContext } from "../../../contexts/WishlistContext";
 
@@ -26,7 +24,7 @@ export const Wishlist = () => {
             title={`Your Wish List (${wishlistTotalQuantity})`}
             subtitle={subtitle}
           />
-          {wishlistTotalQuantity > 0 ? (
+          {/* {wishlistTotalQuantity > 0 ? (
             <div className={styles["outer-wrapper"]}>
               <div className={styles["wrapper"]}>
                 {itemsArray.map((item) => (
@@ -40,7 +38,7 @@ export const Wishlist = () => {
             </div>
           ) : (
             <Collection />
-          )}
+          )} */}
         </section>
       )}
     </>

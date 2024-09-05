@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { CircleIcons } from "../CircleIcons/CircleIcons";
-import { LargeImage } from "./LargeImage/LargeImage";
-import { Heart } from "../Heart/Heart";
-import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
+import { JewelryImage } from "../../../../../../common/JewelryImage/JewelryImage";
+import { CircleIcons } from "../../../../../../common/CircleIcons/CircleIcons";
+import { Heart } from "../../../../../../common/Heart/Heart";
+import { DualTitleSection } from "../../../../../../reusable/DualTitleSection/DualTitleSection";
+
+import { slugify } from "../../../../../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
 
@@ -16,6 +19,20 @@ export const LargeImages = ({ jewelriesByCategory }) => {
 
   const toggleFirstImageUrlIsActive = () => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
+  };
+
+  const navigate = useNavigate();
+
+  const clickHandler = () => {
+    const categoryTitle = jewelriesByCategory[0].categories[0].title;
+
+    const colorTitle = jewelriesByCategory[0].colors[0].title;
+
+    const slugifiedCategoryTitle = slugify(categoryTitle);
+
+    const slugifiedColorTitle = slugify(colorTitle);
+
+    navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
 
   return (
@@ -38,9 +55,12 @@ export const LargeImages = ({ jewelriesByCategory }) => {
         variant={"bolded"}
       />
       <div className={styles["image-container"]}>
-        <LargeImage
+        <JewelryImage
           firstImageUrlIsActive={firstImageUrlIsActive}
-          jewelriesByCategory={jewelriesByCategory}
+          firstImageUrl={jewelriesByCategory[0].firstImageUrl}
+          secondImageUrl={jewelriesByCategory[0].secondImageUrl}
+          title={jewelriesByCategory[0].title}
+          clickHandler={clickHandler}
         />
       </div>
     </div>
