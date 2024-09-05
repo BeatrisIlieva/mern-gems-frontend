@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { Image } from "./Image/Image";
+import { JewelryImage } from "../../../common/JewelryImage/JewelryImage";
 import { CircleIcons } from "../../../common/LargeImages/CircleIcons/CircleIcons";
 
 import styles from "./Images.module.css";
@@ -22,7 +22,7 @@ export const Images = ({ jewelriesByCategory }) => {
 
   return (
     <>
-      <Image
+      <JewelryImage
         firstImageUrlIsActive={firstImageUrlIsActive}
         firstImageUrl={jewelriesByCategory[0].firstImageUrl}
         secondImageUrl={jewelriesByCategory[0].secondImageUrl}
