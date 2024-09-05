@@ -2,7 +2,6 @@
   background-color: var(--very-light-gray);
   display: flex;
   justify-content: center;
-  /* flex-wrap: wrap; */
   height: calc(100vh - 9.6rem);
   padding: 2rem;
   gap: 2rem;
@@ -30,7 +29,6 @@
   .collection-item {
     flex-wrap: wrap;
     height: auto;
-    /* width: 100%; */
   }
 }
 
