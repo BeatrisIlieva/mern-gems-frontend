@@ -25,19 +25,7 @@ export const CardSlider = () => {
 
     const selectedColor = INITIAL_CATEGORY_CARD_VALUES[selectedCategory];
 
-//   const updateSelectedColor = (color) => {
-//     setSelectedColor(color);
-//   };
 
-//   useEffect(() => {
-//     setSelectedCategory(categories[currentIndex]);
-
-//   }, [currentIndex, categories]);
-
-//   useEffect(() => {
-
-//     setSelectedColor(INITIAL_CATEGORY_CARD_VALUES[selectedCategory]);
-//   }, [selectedCategory]);
 
   const { jewelriesByCategory } = useJewelry({
     categoryTitle: selectedCategory,
