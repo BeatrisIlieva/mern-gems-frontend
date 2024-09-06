@@ -112,12 +112,12 @@ describe("wishlistController", () => {
       const responseBody = res2.body;
       expect(responseBody).toBeInstanceOf(Object);
 
-      expect(wishlistItem).toHaveProperty("category");
-      expect(wishlistItem.category).not.toBeNull(); // Ensure category is not null
+      expect(responseBody).toHaveProperty("category");
+      expect(responseBody.category).not.toBeNull(); // Ensure category is not null
     
-      expect(wishlistItem).toHaveProperty("color");
-      expect(wishlistItem.color).not.toBeNull(); // Ensure color is not null
+      expect(responseBody).toHaveProperty("color");
+      expect(responseBody.color).not.toBeNull(); // Ensure color is not null
     
-      expect(wishlistItem).toHaveProperty("createdAt");
+      expect(responseBody).toHaveProperty("createdAt");
     });
 });
