@@ -9,7 +9,6 @@ export const Popup = ({ children }) => {
     setIsTransitioning(true);
 
     setTimeout(() => {
-      popupCloseHandler();
       setIsTransitioning(false);
     }, 400);
   };
@@ -25,7 +24,7 @@ export const Popup = ({ children }) => {
           isTransitioning ? styles["slide-out"] : styles["slide-in"]
         }`}
       >
-        <div className={styles["content"]}>{children}</div>
+        {children}
       </div>
     </section>
   );
