@@ -13,37 +13,18 @@ export const BagProvider = ({ children }) => {
 
   const [bagItems, setBagItems] = useState([]);
 
-  // const [totalPrice, setTotalPrice] = useState(0);
-
-  // const [bagTotalQuantity, setBagTotalQuantity] = useState(0);
-
   const bagService = useService(bagServiceFactory);
 
-  // useEffect(() => {
-  //   setTotalPrice(
-  //     bagItems.reduce((total, item) => {
-  //       return total + item.price * item.quantity;
-  //     }, 0)
-  //   );
-  // }, [bagItems]);
+  const totalPrice = useMemo(() => {
+    return bagItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  }, [bagItems]);
 
-  // useEffect(() => {
-  //   setBagTotalQuantity(
-  //     bagItems.reduce((total, item) => {
-  //       return total + item.quantity;
-  //     }, 0)
-  //   );
-  // }, [bagItems]);
-
-    // Use `useMemo` to memoize totalPrice calculation
-    const totalPrice = useMemo(() => {
-      return bagItems.reduce((total, item) => total + item.price * item.quantity, 0);
-    }, [bagItems]);
-  
-    // Use `useMemo` to memoize bagTotalQuantity calculation
-    const bagTotalQuantity = useMemo(() => {
-      return bagItems.reduce((total, item) => total + item.quantity, 0);
-    }, [bagItems]);
+  const bagTotalQuantity = useMemo(() => {
+    return bagItems.reduce((total, item) => total + item.quantity, 0);
+  }, [bagItems]);
 
   useEffect(() => {
     bagService
@@ -67,14 +48,10 @@ export const BagProvider = ({ children }) => {
 
   const increase = async (bagId) => {
     await bagService.increase(bagId);
-
-    // setBagTotalQuantity((oldQuantity) => oldQuantity + 1);
   };
 
   const decrease = async (bagId) => {
     await bagService.decrease(bagId);
-
-    // setBagTotalQuantity((oldQuantity) => oldQuantity - 1);
   };
 
   const remove = async (bagId) => {
