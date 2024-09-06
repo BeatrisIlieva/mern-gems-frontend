@@ -110,12 +110,19 @@ describe("wishlistController", () => {
       expect(res2.status).toBe(200);
 
       const responseBody = res2.body;
-      expect(responseBody).toBeInstanceOf(Array);
+      expect(responseBody).toBeInstanceOf(Object);
 
-      responseBody.forEach((item) => {
-        expect(item).toHaveProperty("category");
-        expect(item).toHaveProperty("color");
-        expect(item).toHaveProperty("createdAt");
-      });
+  // Check that the response is not empty
+  expect(responseBody.length).toBeGreaterThan(0);
+
+  // Check that each item has category, color, and createdAt
+  responseBody.forEach((item) => {
+    expect(item).toHaveProperty("category");
+    expect(item.category).not.toBeNull(); // Check category is not null
+    expect(item).toHaveProperty("color");
+    expect(item.color).not.toBeNull(); // Check color is not null
+    expect(item).toHaveProperty("createdAt");
+    expect(new Date(item.createdAt)).toBeValidDate(); // Ensure createdAt is a valid date
+  });
     });
 });
