@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Popup } from "../../../common/Popup/Popup";
+
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
+import { XMark } from "../../../common/XMark/XMark";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
 import styles from "./MiniBag.module.css";
-import { XMark } from "../../../common/XMark/XMark";
 
 export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
   const { totalPrice, bagTotalQuantity } = useBagContext();
@@ -50,21 +49,5 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
         </div>
       </div>
     </section>
-
-    // <Popup
-    //   popupCloseHandler={toggleDisplayMiniBagPopup}
-    //   modalVariant={"mini-bag"}
-    //   overlayVariant={"mini-bag"}
-    // >
-    //   <section className={styles["mini-bag"]}>
-    //     {miniBagIsEmpty ? (
-    //       <EmptyMiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
-    //     ) : (
-    //       <NonEmptyMiniBag
-    //         toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
-    //       />
-    //     )}
-    //   </section>
-    // </Popup>
   );
 };
