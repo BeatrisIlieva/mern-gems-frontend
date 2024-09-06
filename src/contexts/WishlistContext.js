@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext, useCallback } from "react";
 
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
@@ -29,13 +29,27 @@ export const WishlistProvider = ({ children }) => {
       });
   }, [userId, wishlistService]);
 
-  const add = async (categoryId, colorId, userId) => {
-    await wishlistService.add(categoryId, colorId, userId);
-  };
+  const add = useCallback(
+    async (categoryId, colorId, userId) => {
+      await wishlistService.add(categoryId, colorId, userId);
+    },
+    [wishlistService]
+  );
 
-  const remove = async (categoryId, colorId, userId) => {
-    await wishlistService.delete(categoryId, colorId, userId);
-  };
+  // const add = async (categoryId, colorId, userId) => {
+  //   await wishlistService.add(categoryId, colorId, userId);
+  // };
+
+  // const remove = async (categoryId, colorId, userId) => {
+  //   await wishlistService.delete(categoryId, colorId, userId);
+  // };
+
+  const remove = useCallback(
+    async (categoryId, colorId, userId) => {
+      await wishlistService.delete(categoryId, colorId, userId);
+    },
+    [wishlistService]
+  );
 
   const context = {
     wishlistItems,

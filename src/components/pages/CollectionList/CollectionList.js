@@ -1,10 +1,12 @@
+import { memo } from "react";
+
 import { CategoryCard } from "./CategoryCard/CategoryCard";
 
 import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
 
 import styles from "./CollectionList.module.css";
 
-export const CollectionList = () => {
+const CollectionList = () => {
   return (
     <section id={styles["collection-list"]}>
       {Object.entries(INITIAL_CATEGORY_CARD_VALUES).map(
@@ -19,3 +21,5 @@ export const CollectionList = () => {
     </section>
   );
 };
+
+export default memo(CollectionList);

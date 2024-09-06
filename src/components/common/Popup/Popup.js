@@ -11,10 +11,6 @@ export const Popup = ({
 }) => {
   const showXMark = modalVariant !== "authentication";
 
-  const closeHandler = () => {
-    popupCloseHandler();
-  };
-
   return (
     <section className={`${styles["overlay"]}  ${styles[overlayVariant]}`}>
       <div className={`${styles["modal"]} ${styles[modalVariant]}`}>
@@ -22,7 +18,7 @@ export const Popup = ({
           <FontAwesomeIcon
             icon={faXmark}
             className={styles["x-mark"]}
-            onClick={closeHandler}
+            onClick={popupCloseHandler}
           />
         )}
         <div className={styles["content"]}>{children}</div>

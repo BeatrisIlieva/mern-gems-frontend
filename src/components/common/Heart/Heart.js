@@ -1,3 +1,5 @@
+import { useCallback, memo } from "react";
+
 import { useWishlistContext } from "../../../contexts/WishlistContext";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -7,7 +9,7 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Heart.module.css";
 
-export const Heart = ({ categoryId, colorId }) => {
+const Heart = ({ categoryId, colorId }) => {
   const { userId } = useAuthenticationContext();
   const { wishlistItems, add, remove } = useWishlistContext();
 
@@ -17,13 +19,21 @@ export const Heart = ({ categoryId, colorId }) => {
     (item) => item.category._id === categoryId && item.color._id === colorId
   );
 
-  const handleClick = () => {
+  // const handleClick = () => {
+  //   if (isLikedByUser) {
+  //     remove(categoryId, colorId, userId);
+  //   } else {
+  //     add(categoryId, colorId, userId);
+  //   }
+  // };
+
+  const handleClick = useCallback(() => {
     if (isLikedByUser) {
       remove(categoryId, colorId, userId);
     } else {
       add(categoryId, colorId, userId);
     }
-  };
+  }, [isLikedByUser, remove, categoryId, colorId, userId, add]);
 
   return (
     <FontAwesomeIcon
@@ -33,3 +43,5 @@ export const Heart = ({ categoryId, colorId }) => {
     />
   );
 };
+
+export default memo(Heart)

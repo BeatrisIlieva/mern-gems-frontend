@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
 import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistory";
 import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
