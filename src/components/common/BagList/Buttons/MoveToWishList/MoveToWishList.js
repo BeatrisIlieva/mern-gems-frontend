@@ -11,9 +11,7 @@ export const MoveToWishlist = ({ bagId, categoryId, colorId }) => {
 
   const { wishlistItems, add: addToWishlist } = useWishlistContext();
 
-  const itemsArray = wishlistItems?.result || [];
-
-  const isLikedByUser = itemsArray.some(
+  const isLikedByUser = wishlistItems.some(
     (item) => item.category._id === categoryId && item.color._id === colorId
   );
 
