@@ -111,8 +111,8 @@ describe("wishlistController", () => {
 
       expect(res3.status).toBe(200);
 
-      const responseBody = res3.body;
-      expect(responseBody).toBeInstanceOf(Object);
+      const responseBody = res3.body.result;
+      expect(responseBody).toBeInstanceOf(Array);
 
       expect(responseBody).toHaveProperty("category");
       expect(responseBody.category).not.toBeNull(); // Ensure category is not null
