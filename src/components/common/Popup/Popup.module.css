@@ -12,10 +12,6 @@
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.overlay.mini-bag {
-  justify-content: flex-end;
-}
-
 .modal {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
@@ -28,7 +24,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 2rem;
-  overflow: hidden;
 }
 
 .modal.large,
@@ -70,7 +65,6 @@
 .content {
   overflow-y: auto;
 }
-
 
 .slide-in {
   animation: slideInTop 1s forwards;
@@ -139,10 +133,6 @@
   .modal.large {
     width: 38vw;
   }
-
-  .modal.mini-bag {
-    width: 70vw;
-  }
 }
 
 @media (max-width: 860px) {
@@ -168,11 +158,6 @@
 
   .modal.order-history {
     width: 26.5rem;
-  }
-
-  .modal.mini-bag {
-    width: 100vw;
-    border-radius: 0;
   }
 }
 

@@ -21,7 +21,6 @@
   transition: opacity 1s ease, transform 1s ease;
 }
 
-
 .modal {
   background-color: var(--white);
   border-inline-start: 1px solid var(--medium-pink);
@@ -90,5 +89,18 @@
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .modal {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 660px) {
+  .modal {
+    width: 100vw;
+    border-radius: 0;
   }
 }
