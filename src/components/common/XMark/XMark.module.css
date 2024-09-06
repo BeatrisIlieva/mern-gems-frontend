@@ -1,0 +1,24 @@
+.x-mark {
+  display: flex;
+  color: var(--medium-gray);
+  font-size: var(--large);
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  margin-left: auto;
+}
+
+
+.overlay.slide-in {
+    opacity: 1;
+    visibility: visible;
+    animation: slideIn 0.6s forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

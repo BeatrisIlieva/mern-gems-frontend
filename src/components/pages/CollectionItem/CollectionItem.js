@@ -1,4 +1,4 @@
-import { useState, memo} from "react";
+import { useState, memo } from "react";
 import { useParams } from "react-router-dom";
 
 import { MiniBag } from "./MiniBag/MiniBag";
@@ -60,4 +60,4 @@ const CollectionItem = () => {
   );
 };
 
-export default memo(CollectionItem)
+export default memo(CollectionItem);
