@@ -16,6 +16,8 @@ export const Authentication = () => {
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const [movePopup, setMovePopup] = useState(false);
+
   const updateIsTransitioningHandler = (option) => {
     setIsTransitioning(true);
 
@@ -26,16 +28,16 @@ export const Authentication = () => {
   };
 
   const closeHandler = async (result) => {
-    setIsTransitioning(true);
+    setMovePopup(true);
 
     setTimeout(async () => {
-      setIsTransitioning(false);
+      setMovePopup(false);
       await updateAuthentication(result);
     }, 400);
   };
 
   return (
-    <Popup isTransitioning={isTransitioning}>
+    <Popup movePopup={movePopup}>
       <div className={styles["image"]}>
         <img
           className={styles["img"]}

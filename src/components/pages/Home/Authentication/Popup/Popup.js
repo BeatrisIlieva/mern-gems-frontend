@@ -1,15 +1,15 @@
 import styles from "./Popup.module.css";
 
-export const Popup = ({ children, isTransitioning }) => {
+export const Popup = ({ children, movePopup }) => {
   return (
     <section
       className={`${styles["overlay"]}  ${
-        isTransitioning ? styles["transition-out"] : styles["transition-in"]
+        movePopup ? styles["transition-out"] : styles["transition-in"]
       }`}
     >
       <div
         className={`${styles["modal"]}  ${
-          isTransitioning ? styles["slide-out"] : styles["slide-in"]
+          movePopup ? styles["slide-out"] : styles["slide-in"]
         }`}
       >
         {children}
