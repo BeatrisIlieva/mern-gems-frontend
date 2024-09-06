@@ -83,7 +83,7 @@ describe("wishlistController", () => {
 
     await request.get(`/wishlists/add/${categoryId}/${colorId}/${userId}`);
 
-    const res3 = await request.DELETE(
+    const res3 = await request.delete(
       `/wishlists/delete/${categoryId}/${colorId}/${userId}`
     );
 
