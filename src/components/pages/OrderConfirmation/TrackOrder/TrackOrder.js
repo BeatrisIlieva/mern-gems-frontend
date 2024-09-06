@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 
-import styles from "./TrackOrder.module.css"
+import styles from "./TrackOrder.module.css";
 
 export const TrackOrder = () => {
   return (
