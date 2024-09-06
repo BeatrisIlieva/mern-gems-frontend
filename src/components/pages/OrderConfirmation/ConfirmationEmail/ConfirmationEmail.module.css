@@ -24,9 +24,28 @@
 
 }
 
-.title {
-  /* border-bottom: 1px solid var(--violet);
-  border-bottom-right-radius: 1rem;
-  padding-right: 0.75rem;
-  padding-left: 4rem; */
+
+
+
+@media (max-width: 534px) and (orientation:portrait) {
+    .confirmation-email {
+        position: unset;
+        flex-direction: column;
+        border-bottom: unset;
+
+        padding-right:  0rem;
+        padding-left: 0rem;
+
+    }
+    .title {
+        /* border-bottom: 1px solid var(--violet); */
+        /* border-bottom-right-radius: 1rem; */
+        /* padding-right: 0.75rem; */
+        text-align: center;
+      }
+
+    .bus-thumbnail {
+        position: unset;
+        order: 1;
+    }
 }
