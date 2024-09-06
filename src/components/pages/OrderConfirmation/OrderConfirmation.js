@@ -1,7 +1,3 @@
-import { Link } from "react-router-dom";
-
-import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
-import { NormalTitle } from "../../reusable/NormalTitle/NormalTitle";
 import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
 import { TrackOrder } from "./TrackOrder/TrackOrder";
 
