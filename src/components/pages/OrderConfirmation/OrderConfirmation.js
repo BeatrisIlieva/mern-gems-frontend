@@ -20,7 +20,7 @@ export const OrderConfirmation = () => {
           subtitle={<TrackOrder />}
         />
       </div>
-      <ConfirmationEmail/>
+      <ConfirmationEmail />
     </section>
   );
 };
