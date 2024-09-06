@@ -10,8 +10,6 @@ export const Popup = ({
   modalVariant,
   overlayVariant,
 }) => {
-  const showXMark = modalVariant !== "authentication";
-
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const closeHandler = () => {
@@ -34,7 +32,7 @@ export const Popup = ({
           isTransitioning ? styles["slide-out"] : styles["slide-in"]
         }`}
       >
-        {showXMark && <XMark callbackFunction={closeHandler} />}
+        <XMark callbackFunction={closeHandler} />
         <div className={styles["content"]}>{children}</div>
       </div>
     </section>
