@@ -94,37 +94,28 @@ describe("wishlistController", () => {
     expect(wishlist).toStrictEqual([]);
   });
 
-  //   test("Test get all shopping bags; Expect success", async () => {
-  //     await request
-  //       .post("/users-login-details/register")
-  //       .send({ email, password });
+    test("Test get all wishlist items; Expect success", async () => {
+      await request
+        .post("/users-login-details/register")
+        .send({ email, password });
 
-  //     const createdUserLoginDetails = await UserLoginDetails.findOne({
-  //       email,
-  //     });
+      const createdUserLoginDetails = await UserLoginDetails.findOne({
+        email,
+      });
 
-  //     const userId = createdUserLoginDetails._id;
+      const userId = createdUserLoginDetails._id;
 
-  //     const res2 = await request.get(`/bags/${userId}`);
+      const res2 = await request.get(`/wishlists/${userId}`);
 
-  //     expect(res2.status).toBe(200);
+      expect(res2.status).toBe(200);
 
-  //     const responseBody = res2.body;
-  //     expect(responseBody).toBeInstanceOf(Array);
+      const responseBody = res2.body;
+      expect(responseBody).toBeInstanceOf(Array);
 
-  //     responseBody.forEach((item) => {
-  //       expect(item).toHaveProperty("bagId");
-  //       expect(item).toHaveProperty("inventoryId");
-  //       expect(item).toHaveProperty("user");
-  //       expect(item).toHaveProperty("jewelryId");
-  //       expect(item).toHaveProperty("jewelryTitle");
-  //       expect(item).toHaveProperty("firstImageUrl");
-  //       expect(item).toHaveProperty("quantity");
-  //       expect(item).toHaveProperty("maxQuantity");
-  //       expect(item).toHaveProperty("categoryTitle");
-  //       expect(item).toHaveProperty("inventoryQuantity");
-  //       expect(item).toHaveProperty("size");
-  //       expect(item).toHaveProperty("price");
-  //     });
-  //   });
+      responseBody.forEach((item) => {
+        expect(item).toHaveProperty("category");
+        expect(item).toHaveProperty("color");
+        expect(item).toHaveProperty("createdAt");
+      });
+    });
 });
