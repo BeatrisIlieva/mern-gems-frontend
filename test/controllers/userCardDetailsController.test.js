@@ -7,6 +7,7 @@ const request = supertest(app);
 const { connectDB, disconnectDB } = require("../database");
 
 const UserLoginDetails = require("../../src/models/UserLoginDetails");
+const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
 
 describe("userCardDetailsController", () => {
@@ -44,6 +45,7 @@ describe("userCardDetailsController", () => {
     await user.deleteOne();
 
     await UserCardDetails.findByIdAndDelete(userId);
+    await UserShippingDetails.findByIdAndDelete(userId);
 
     await server.close();
   });
