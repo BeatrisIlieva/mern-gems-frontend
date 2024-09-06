@@ -8,10 +8,6 @@ import styles from "./NonEmptyWishlist.module.css";
 export const NonEmptyWishlist = () => {
   const { wishlistItems, wishlistTotalQuantity } = useWishlistContext();
 
-  // const itemsArray = wishlistItems?.result;
-
-  // const displayContent = Array.isArray(itemsArray);
-
   const subtitle =
     wishlistTotalQuantity > 0
       ? "Your favorite item(s) are below. Wishes can come true, especially when you dream."
