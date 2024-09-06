@@ -12,9 +12,6 @@
   transition: opacity 1s ease, transform 1s ease;
 }
 
-
-
-
 .overlay.mini-bag {
   justify-content: flex-end;
 }
@@ -39,7 +36,6 @@
 .modal.authentication,
 .modal.order-history {
   max-height: 98vh;
-  /* animation: slideInTop 1s forwards; */
 }
 
 .modal.large {
@@ -54,7 +50,6 @@
 .modal.mini-bag {
   height: 100vh;
   width: 40vw;
-  /* animation: slideInRight 1s forwards; */
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
