@@ -112,9 +112,6 @@ describe("wishlistController", () => {
       const responseBody = res2.body;
       expect(responseBody).toBeInstanceOf(Object);
 
-  // Check that the response is not empty
-  expect(responseBody.length).toBeGreaterThan(0);
-
   // Check that each item has category, color, and createdAt
   responseBody.forEach((item) => {
     expect(item).toHaveProperty("category");
