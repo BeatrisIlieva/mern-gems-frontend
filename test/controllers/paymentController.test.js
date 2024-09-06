@@ -10,6 +10,7 @@ const UserLoginDetails = require("../../src/models/UserLoginDetails");
 const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
 const Bag = require("../../src/models/Bag");
+const Order = require("../../src/models/Order");
 
 const { sendOrderConfirmationEmail } = require("../../src/mailer/mailer");
 
@@ -57,6 +58,7 @@ describe("paymentController", () => {
     await UserShippingDetails.findByIdAndDelete(userId);
     await UserCardDetails.findByIdAndDelete(userId);
     await Bag.findOneAndDelete({ user: userId });
+    await Order.findOneAndDelete({ user: userId });
 
     await server.close();
   });
