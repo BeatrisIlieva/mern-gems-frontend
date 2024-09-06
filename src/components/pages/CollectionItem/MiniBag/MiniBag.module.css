@@ -1,12 +1,3 @@
-.mini-bag {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -38,6 +29,15 @@
   width: 40vw;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.mini-bag {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .slide-in {
