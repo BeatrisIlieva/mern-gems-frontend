@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { XMark } from "../XMark/XMark";
 
 import styles from "./Popup.module.css";
 
@@ -36,11 +35,7 @@ export const Popup = ({
         }`}
       >
         {showXMark && (
-          <FontAwesomeIcon
-            icon={faXmark}
-            className={styles["x-mark"]}
-            onClick={closeHandler}
-          />
+          <XMark callbackFunction={closeHandler}/>
         )}
         <div className={styles["content"]}>{children}</div>
       </div>

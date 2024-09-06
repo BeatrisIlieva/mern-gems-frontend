@@ -53,15 +53,6 @@
   width: 36.5rem;
 }
 
-.x-mark {
-  display: flex;
-  color: var(--medium-gray);
-  font-size: var(--large);
-  cursor: pointer;
-  margin-bottom: 0.75rem;
-  margin-left: auto;
-}
-
 .content {
   overflow-y: auto;
 }
