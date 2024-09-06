@@ -8,9 +8,9 @@ import styles from "./NonEmptyWishlist.module.css";
 export const NonEmptyWishlist = () => {
   const { wishlistItems, wishlistTotalQuantity } = useWishlistContext();
 
-  const itemsArray = wishlistItems?.result;
+  // const itemsArray = wishlistItems?.result;
 
-  const displayContent = Array.isArray(itemsArray);
+  // const displayContent = Array.isArray(itemsArray);
 
   const subtitle =
     wishlistTotalQuantity > 0
@@ -19,7 +19,7 @@ export const NonEmptyWishlist = () => {
 
   return (
     <>
-      {displayContent && (
+      {wishlistItems.length > 0 && (
         <section id={styles["non-empty-wishlist"]}>
           <InfoMessage
             title={`Your Wish List (${wishlistTotalQuantity})`}
@@ -27,7 +27,7 @@ export const NonEmptyWishlist = () => {
           />
           {wishlistTotalQuantity > 0 && (
             <div className={styles["outer-wrapper"]}>
-              {itemsArray.map((item) => (
+              {wishlistItems.map((item) => (
                 <Content
                   key={item._id}
                   categoryTitle={item.category.title}

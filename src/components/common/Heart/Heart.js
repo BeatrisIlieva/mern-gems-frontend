@@ -13,19 +13,9 @@ const Heart = ({ categoryId, colorId }) => {
   const { userId } = useAuthenticationContext();
   const { wishlistItems, add, remove } = useWishlistContext();
 
-  const itemsArray = wishlistItems?.result || [];
-
-  const isLikedByUser = itemsArray.some(
+  const isLikedByUser = wishlistItems.some(
     (item) => item.category._id === categoryId && item.color._id === colorId
   );
-
-  // const handleClick = () => {
-  //   if (isLikedByUser) {
-  //     remove(categoryId, colorId, userId);
-  //   } else {
-  //     add(categoryId, colorId, userId);
-  //   }
-  // };
 
   const handleClick = useCallback(() => {
     if (isLikedByUser) {
@@ -44,4 +34,4 @@ const Heart = ({ categoryId, colorId }) => {
   );
 };
 
-export default memo(Heart)
+export default memo(Heart);

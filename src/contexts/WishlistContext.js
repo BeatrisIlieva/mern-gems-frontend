@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext, useCallback } from "react";
+import { useState, useEffect, createContext, useContext, useCallback, useMemo} from "react";
 
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
@@ -13,21 +13,26 @@ export const WishlistProvider = ({ children }) => {
 
   const [wishlistItems, setWishlistItems] = useState([]);
 
-  const [wishlistTotalQuantity, setWishlistTotalQuantity] = useState(0);
+  // const [wishlistTotalQuantity, setWishlistTotalQuantity] = useState(0);
 
   const wishlistService = useService(wishlistServiceFactory);
+
 
   useEffect(() => {
     wishlistService
       .getAll(userId)
       .then((data) => {
-        setWishlistItems(data);
-        setWishlistTotalQuantity(data.result.length);
+        setWishlistItems(data.result);
+        // setWishlistTotalQuantity(data.result.length);
       })
       .catch((err) => {
         console.log(err.message);
       });
   }, [userId, wishlistService]);
+
+  const wishlistTotalQuantity = useMemo(() => {
+    return wishlistItems.length;
+  }, [wishlistItems]);
 
   const add = useCallback(
     async (categoryId, colorId, userId) => {
