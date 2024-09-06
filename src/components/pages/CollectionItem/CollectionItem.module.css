@@ -30,9 +30,7 @@
     flex-wrap: wrap;
     height: auto;
   }
-}
 
-@media (max-width: 1024px) {
   .images {
     width: 100%;
   }

@@ -32,3 +32,9 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+@media (max-width: 675px) {
+  #non-empty-wishlist {
+    min-height: calc(100vh - 6.6rem);
+  }
+}
