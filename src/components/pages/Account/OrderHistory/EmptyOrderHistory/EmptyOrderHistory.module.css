@@ -1,8 +1,8 @@
-#empty-mini-bag {
+#empty-order-history {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 0.75rem;
 }

@@ -25,7 +25,7 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
     >
       <section className={styles["mini-bag"]}>
         {miniBagIsEmpty ? (
-          <EmptyMiniBag />
+          <EmptyMiniBag toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
         ) : (
           <NonEmptyMiniBag
             toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}

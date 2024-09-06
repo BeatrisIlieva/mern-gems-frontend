@@ -10,7 +10,10 @@ import { slugify } from "../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({ jewelriesByCategory }) => {
+export const LargeImages = ({
+  jewelriesByCategory,
+  toggleDisplayMiniBagPopup,
+}) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -31,6 +34,10 @@ export const LargeImages = ({ jewelriesByCategory }) => {
     const slugifiedCategoryTitle = slugify(categoryTitle);
 
     const slugifiedColorTitle = slugify(colorTitle);
+
+    if (toggleDisplayMiniBagPopup) {
+      toggleDisplayMiniBagPopup();
+    }
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };

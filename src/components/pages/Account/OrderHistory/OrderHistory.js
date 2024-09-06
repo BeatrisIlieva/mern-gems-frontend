@@ -51,7 +51,6 @@ export const OrderHistory = () => {
           popupCloseHandler={toggleDisplayPopup}
           modalVariant={"order-history"}
         >
-          <LargeTitle title={"Order History"} textAlign={"align-center"} />
           {orderItems.length < 1 ? (
             <EmptyOrderHistory />
           ) : (

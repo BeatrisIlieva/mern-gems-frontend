@@ -15,7 +15,7 @@ import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./CardSlider.module.css";
 
-export const CardSlider = () => {
+export const CardSlider = ({ toggleDisplayMiniBagPopup }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const categories = Object.keys(INITIAL_CATEGORY_CARD_VALUES);
@@ -52,7 +52,10 @@ export const CardSlider = () => {
             }
             variant={"regular"}
           />
-          <LargeImages jewelriesByCategory={jewelriesByCategory} />
+          <LargeImages
+            jewelriesByCategory={jewelriesByCategory}
+            toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+          />
           <div className={styles["button-wrapper"]}>
             <FontAwesomeIcon
               icon={faCircleChevronLeft}
