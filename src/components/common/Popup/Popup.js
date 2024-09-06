@@ -34,9 +34,7 @@ export const Popup = ({
           isTransitioning ? styles["slide-out"] : styles["slide-in"]
         }`}
       >
-        {showXMark && (
-          <XMark callbackFunction={closeHandler}/>
-        )}
+        {showXMark && <XMark callbackFunction={closeHandler} />}
         <div className={styles["content"]}>{children}</div>
       </div>
     </section>
