@@ -65,7 +65,7 @@ describe("wishlistController", () => {
 
     const wishlist = await Wishlist.find({ user: userId });
 
-    expect(wishlist).not.toBe.null();
+    expect(wishlist).not.toBeNull();
   });
 
 
