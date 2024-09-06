@@ -11,8 +11,6 @@ const UserLoginDetails = require("../../src/models/UserLoginDetails");
 const UserShippingDetails = require("../../src/models/UserShippingDetails");
 const UserCardDetails = require("../../src/models/UserCardDetails");
 
-const { DEFAULT_ADD_QUANTITY } = require("../../src/constants/bag");
-
 describe("wishlistController", () => {
   beforeAll(async () => {
     await connectDB();
