@@ -25,20 +25,7 @@
   gap: 0.75rem;
 }
 
-.link-to-account {
-  gap: 0.25rem;
-}
 
-.link {
-  color: var(--violet);
-  text-decoration: none;
-  font-size: var(--normal);
-  font-family: var(--bold-font-family);
-}
-
-.link:hover {
-  color: var(--dark-violet);
-}
 
 .image {
   width: 32%;
