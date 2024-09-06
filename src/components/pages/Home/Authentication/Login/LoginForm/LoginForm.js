@@ -15,7 +15,7 @@ import { setInvalidCredentialsErrorMessage } from "./helpers/setInvalidCredentia
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
-export const LoginForm = () => {
+export const LoginForm = ({closeHandler}) => {
   const { updateAuthentication } = useAuthenticationContext();
 
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
@@ -40,9 +40,12 @@ export const LoginForm = () => {
       try {
         const result = await userLoginDetailsService.login(data);
 
-        await updateAuthentication(result);
-
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+
+        // await updateAuthentication(result);
+
+        await closeHandler(result);
+
       } catch (err) {
         let spreadValues = { ...values };
 

@@ -5,14 +5,18 @@ import { Login } from "./Login/Login";
 import { Register } from "./Register/Register";
 import { SwitchOptions } from "./switchOptions";
 
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
+
 import styles from "./Authentication.module.css";
 
 export const Authentication = () => {
+  const { updateAuthentication } = useAuthenticationContext();
+
   const [currentPopup, setCurrentPopup] = useState(SwitchOptions.Login);
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const switchPopupHandler = (option) => {
+  const updateIsTransitioningHandler = (option) => {
     setIsTransitioning(true);
 
     setTimeout(() => {
@@ -21,8 +25,17 @@ export const Authentication = () => {
     }, 400);
   };
 
+  const closeHandler = async (result) => {
+    setIsTransitioning(true);
+
+    setTimeout(async () => {
+      setIsTransitioning(false);
+      await updateAuthentication(result);
+    }, 400);
+  };
+
   return (
-    <Popup >
+    <Popup isTransitioning={isTransitioning}>
       <div className={styles["image"]}>
         <img
           className={styles["img"]}
@@ -40,13 +53,15 @@ export const Authentication = () => {
       >
         {currentPopup === SwitchOptions.Login ? (
           <Login
-            switchPopupHandler={switchPopupHandler}
+            updateIsTransitioningHandler={updateIsTransitioningHandler}
             switchOptions={SwitchOptions}
+            closeHandler={closeHandler}
           />
         ) : (
           <Register
-            switchPopupHandler={switchPopupHandler}
+            updateIsTransitioningHandler={updateIsTransitioningHandler}
             switchOptions={SwitchOptions}
+            closeHandler={closeHandler}
           />
         )}
       </section>
