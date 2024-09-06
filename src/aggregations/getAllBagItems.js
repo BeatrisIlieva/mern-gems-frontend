@@ -43,6 +43,8 @@ exports.getAllBagItems = async (user) => {
     {
       $addFields: {
         jewelryId: "$jewelries._id",
+        categoryId: "$jewelries.category",
+        colorId: "$jewelries.color",
         inventoryQuantity: "$inventories.quantity",
         inventoryId: "$inventories._id",
         price: "$inventories.price",
@@ -54,6 +56,8 @@ exports.getAllBagItems = async (user) => {
         bagId: { $first: "$_id" },
         inventoryId: { $first: "$inventoryId" },
         jewelryId: { $first: "$jewelryId" },
+        categoryId: { $first: "$categoryId" },
+        colorId: { $first: "$colorId" },
         size: { $first: "$size" },
         user: { $first: "$user" },
         jewelryTitle: { $first: "$jewelries.title" },
@@ -74,6 +78,8 @@ exports.getAllBagItems = async (user) => {
         inventoryId: 1,
         user: 1,
         jewelryId: 1,
+        categoryId: 1,
+        colorId: 1,
         jewelryTitle: 1,
         firstImageUrl: 1,
         quantity: 1,

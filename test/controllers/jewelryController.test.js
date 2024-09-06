@@ -20,16 +20,16 @@ describe("jewelryController", () => {
     jest.setTimeout(30000);
   });
 
-  const categoryTitle = "Bracelets";
-  const invalidCategoryTitle = "Bracelet";
-  const colorTitle = "Pink";
+  const categoryId = 1;
+  const invalidCategoryId = 8;
+  const colorId = 1;
 
   afterEach(async () => {
     await server.close();
   });
 
   test("Test find all jewelries by category; Expect success", async () => {
-    const res = await request.get(`/jewelries/${categoryTitle}/${colorTitle}`);
+    const res = await request.get(`/jewelries/${categoryId}/${colorId}`);
 
     expect(res.status).toBe(200);
 
@@ -50,7 +50,7 @@ describe("jewelryController", () => {
 
   test("Test find all jewelries by invalid category; Expect errors", async () => {
     const res = await request.get(
-      `/jewelries/${invalidCategoryTitle}/${colorTitle}`
+      `/jewelries/${invalidCategoryId}/${colorId}`
     );
 
     expect(res.status).toBe(401);
