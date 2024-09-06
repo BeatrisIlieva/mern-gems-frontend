@@ -6,3 +6,15 @@
   padding-bottom: 0px;
   text-align: left;
 }
+
+@media (max-width: 386px) {
+  .error-message {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 366px) {
+  .error-message {
+    font-size: 0.625rem;
+  }
+}

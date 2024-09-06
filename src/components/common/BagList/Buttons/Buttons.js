@@ -49,7 +49,13 @@ export const Buttons = ({ bagId, categoryId, colorId }) => {
         {displayContent && (
           <div className={styles["content"]}>
             <DualTitleSection
-              firstTitle={<MoveToWishlist />}
+              firstTitle={
+                <MoveToWishlist
+                  bagId={bagId}
+                  categoryId={categoryId}
+                  colorId={colorId}
+                />
+              }
               secondTitle={<FontAwesomeIcon icon={faHeart} />}
             />
             <DualTitleSection

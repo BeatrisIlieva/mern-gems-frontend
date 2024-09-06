@@ -5,7 +5,8 @@
   align-items: center;
   margin-top: auto;
   margin-bottom: auto;
-  height: calc(100vh - 9.6rem);
+  height: calc(100vh - 13.6rem);
+  margin: 2rem;
 }
 
 .relative-container {
