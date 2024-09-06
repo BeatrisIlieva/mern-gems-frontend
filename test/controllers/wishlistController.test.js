@@ -105,11 +105,13 @@ describe("wishlistController", () => {
 
       const userId = createdUserLoginDetails._id;
 
-      const res2 = await request.get(`/wishlists/${userId}`);
+      await request.get(`/wishlists/add/${categoryId}/${colorId}/${userId}`);
 
-      expect(res2.status).toBe(200);
+      const res3 = await request.get(`/wishlists/${userId}`);
 
-      const responseBody = res2.body;
+      expect(res3.status).toBe(200);
+
+      const responseBody = res3.body;
       expect(responseBody).toBeInstanceOf(Object);
 
       expect(responseBody).toHaveProperty("category");
