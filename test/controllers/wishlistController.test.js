@@ -43,7 +43,7 @@ describe("wishlistController", () => {
 
     await UserShippingDetails.findByIdAndDelete(userId);
     await UserCardDetails.findByIdAndDelete(userId);
-    await Wishlist.findOneAndDelete({user: userId})
+    await Wishlist.findOneAndDelete({ user: userId });
 
     await server.close();
   });
@@ -59,7 +59,9 @@ describe("wishlistController", () => {
 
     const userId = createdUserLoginDetails._id;
 
-    const res2 = await request.get(`/wishlists/add/${categoryId}/${colorId}/${userId}`)
+    const res2 = await request.get(
+      `/wishlists/add/${categoryId}/${colorId}/${userId}`
+    );
 
     expect(res2.status).toBe(204);
 
@@ -68,80 +70,61 @@ describe("wishlistController", () => {
     expect(wishlist).not.toBeNull();
   });
 
+  test("Test remove from wishlist; Expect success", async () => {
+    await request
+      .post("/users-login-details/register")
+      .send({ email, password });
 
-//   test("Test delete shopping bag; Expect success", async () => {
-//     const inventoryItem = await Inventory.findOne({ jewelry: jewelryId });
+    const createdUserLoginDetails = await UserLoginDetails.findOne({
+      email,
+    });
 
-//     const initialInventoryQuantity = inventoryItem.quantity;
+    const userId = createdUserLoginDetails._id;
 
-//     await request
-//       .post("/users-login-details/register")
-//       .send({ email, password });
+    await request.get(`/wishlists/add/${categoryId}/${colorId}/${userId}`);
 
-//     const createdUserLoginDetails = await UserLoginDetails.findOne({
-//       email,
-//     });
+    const res3 = await request.DELETE(
+      `/wishlists/delete/${categoryId}/${colorId}/${userId}`
+    );
 
-//     const userId = createdUserLoginDetails._id;
+    expect(res3.status).toBe(204);
 
-//     await request.post(`/bags/add/${jewelryId}/${userId}`).send({
-//       size,
-//     });
+    const wishlist = await Wishlist.find({ user: userId });
 
-//     const createdBag = await Bag.findOne({ user: userId });
+    expect(wishlist).toStrictEqual([]);
+  });
 
-//     const bagId = createdBag._id;
+  //   test("Test get all shopping bags; Expect success", async () => {
+  //     await request
+  //       .post("/users-login-details/register")
+  //       .send({ email, password });
 
-//     await request.put(`/bags/increase/${bagId}`);
+  //     const createdUserLoginDetails = await UserLoginDetails.findOne({
+  //       email,
+  //     });
 
-//     const res3 = await request.delete(`/bags/delete/${bagId}`);
+  //     const userId = createdUserLoginDetails._id;
 
-//     expect(res3.status).toBe(204);
+  //     const res2 = await request.get(`/bags/${userId}`);
 
-//     const bag = await Bag.find({ user: userId });
+  //     expect(res2.status).toBe(200);
 
-//     expect(bag).toStrictEqual([]);
+  //     const responseBody = res2.body;
+  //     expect(responseBody).toBeInstanceOf(Array);
 
-//     const updatedInventoryItem = await Inventory.findOne({
-//       jewelry: jewelryId,
-//     });
-
-//     const updatedInventoryQuantity = updatedInventoryItem.quantity;
-
-//     expect(updatedInventoryQuantity).toBe(initialInventoryQuantity);
-//   });
-
-//   test("Test get all shopping bags; Expect success", async () => {
-//     await request
-//       .post("/users-login-details/register")
-//       .send({ email, password });
-
-//     const createdUserLoginDetails = await UserLoginDetails.findOne({
-//       email,
-//     });
-
-//     const userId = createdUserLoginDetails._id;
-
-//     const res2 = await request.get(`/bags/${userId}`);
-
-//     expect(res2.status).toBe(200);
-
-//     const responseBody = res2.body;
-//     expect(responseBody).toBeInstanceOf(Array);
-
-//     responseBody.forEach((item) => {
-//       expect(item).toHaveProperty("bagId");
-//       expect(item).toHaveProperty("inventoryId");
-//       expect(item).toHaveProperty("user");
-//       expect(item).toHaveProperty("jewelryId");
-//       expect(item).toHaveProperty("jewelryTitle");
-//       expect(item).toHaveProperty("firstImageUrl");
-//       expect(item).toHaveProperty("quantity");
-//       expect(item).toHaveProperty("maxQuantity");
-//       expect(item).toHaveProperty("categoryTitle");
-//       expect(item).toHaveProperty("inventoryQuantity");
-//       expect(item).toHaveProperty("size");
-//       expect(item).toHaveProperty("price");
-//     });
-//   });
+  //     responseBody.forEach((item) => {
+  //       expect(item).toHaveProperty("bagId");
+  //       expect(item).toHaveProperty("inventoryId");
+  //       expect(item).toHaveProperty("user");
+  //       expect(item).toHaveProperty("jewelryId");
+  //       expect(item).toHaveProperty("jewelryTitle");
+  //       expect(item).toHaveProperty("firstImageUrl");
+  //       expect(item).toHaveProperty("quantity");
+  //       expect(item).toHaveProperty("maxQuantity");
+  //       expect(item).toHaveProperty("categoryTitle");
+  //       expect(item).toHaveProperty("inventoryQuantity");
+  //       expect(item).toHaveProperty("size");
+  //       expect(item).toHaveProperty("price");
+  //     });
+  //   });
 });
