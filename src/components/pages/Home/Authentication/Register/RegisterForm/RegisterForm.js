@@ -16,8 +16,6 @@ import { setEmailAlreadyExistsErrorMessage } from "./helpers/setEmailAlreadyExis
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
 export const RegisterForm = ({ closeHandler }) => {
-  const { updateAuthentication } = useAuthenticationContext();
-
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   let {
@@ -42,11 +40,7 @@ export const RegisterForm = ({ closeHandler }) => {
 
         clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        // await updateAuthentication(result);
-
-       await closeHandler(result);
-
-
+        await closeHandler(result);
       } catch (err) {
         let spreadValues = { ...values };
 
