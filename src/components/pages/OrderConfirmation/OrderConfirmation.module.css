@@ -1,80 +1,40 @@
-#order-confirmation,
-.wrapper,
-.info,
-.link-to-account {
+#order-confirmation {
   display: flex;
-}
-
-.wrapper,
-.info {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: calc(100vh - 9.6rem);
 }
 
-#order-confirmation {
-  margin: 2rem;
-  justify-content: space-evenly;
-  opacity: 0;
-  animation: transitioning 1.6s forwards;
-  height: calc(100vh - 13.6rem);
-  flex-wrap: wrap;
+.relative-container {
+  position: relative;
 }
 
-.info {
-  gap: 0.75rem;
+.thumbnail {
+  width: 8rem;
+  position: absolute;
+  top: -4.1rem;
+  left: -4rem;
+  z-index: 100;
 }
 
-
-
-.image {
-  width: 32%;
-}
-
-.img {
+.butterfly,
+.bus {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  aspect-ratio: 1/1;
 }
 
-@keyframes transitioning {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.bus-thumbnail {
+  width: 10rem;
 }
 
-@media (orientation: portrait) and (max-width: 1280px) {
-  .order-confirmation {
-    margin: 1rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .info {
-    gap: 1rem;
-  }
-
-  .image {
-    width: 100%;
-    margin-top: 2rem;
-  }
-
-  .wrapper {
-    width: 100%;
-  }
-
-  .link-to-account {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media (orientation: landscape) and (max-width: 932px) {
-  .image {
-    display: none;
+@media (max-width: 540px) {
+  #order-confirmation {
+    margin: 4rem 2rem 0 2rem;
+    height: auto;
   }
 }
