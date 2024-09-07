@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCallback, useMemo } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
 
@@ -49,39 +50,54 @@ export const UpdateEmailForm = ({ popupCloseHandler }) => {
       });
   }, [userLoginDetailsService, userId, updateForm]);
 
-  const onSubmit = async (e) => {
-    submitHandler(e);
+  const onSubmit = useCallback(
+    async (e) => {
+      submitHandler(e);
 
-    const errorOccurred = checkIfFormErrorHasOccurred(values);
+      const errorOccurred = checkIfFormErrorHasOccurred(values);
 
-    if (!errorOccurred) {
-      const data = getData(values);
+      if (!errorOccurred) {
+        const data = getData(values);
 
-      try {
-        setIsLoading(true);
+        try {
+          setIsLoading(true);
 
-        await userLoginDetailsService.updateEmail(userId, data);
+          await userLoginDetailsService.updateEmail(userId, data);
 
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        popupCloseHandler();
-      } catch (err) {
-        console.log(err.message);
+          popupCloseHandler();
+        } catch (err) {
+          console.log(err.message);
 
-        let spreadValues = { ...values };
+          let spreadValues = { ...values };
 
-        spreadValues = setWrongPasswordErrorMessage(
-          spreadValues,
-          FORM_KEYS,
-          err.message
-        );
+          spreadValues = setWrongPasswordErrorMessage(
+            spreadValues,
+            FORM_KEYS,
+            err.message
+          );
 
-        setValues(spreadValues);
-      } finally {
-        setIsLoading(false);
+          setValues(spreadValues);
+        } finally {
+          setIsLoading(false);
+        }
       }
-    }
-  };
+    },
+    [
+      submitHandler,
+      checkIfFormErrorHasOccurred,
+      getData,
+      userLoginDetailsService,
+      clearInitialFormValuesMessages,
+      popupCloseHandler,
+      values,
+    ]
+  );
+
+  const buttonTitle = useMemo(() => {
+    return "Save";
+  }, []);
 
   return (
     <>
@@ -93,7 +109,7 @@ export const UpdateEmailForm = ({ popupCloseHandler }) => {
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
         userInformation={userLoginDetails}
-        buttonTitle={"Save"}
+        buttonTitle={buttonTitle}
         onSubmit={onSubmit}
         isLoading={isLoading}
         formVariant={"column-form"}
