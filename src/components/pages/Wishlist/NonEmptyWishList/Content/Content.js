@@ -47,4 +47,4 @@ const Content = ({ categoryTitle, colorTitle }) => {
   );
 };
 
-export default memo(Content)
+export default memo(Content);
