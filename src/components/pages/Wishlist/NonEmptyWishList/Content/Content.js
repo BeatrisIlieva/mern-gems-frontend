@@ -3,7 +3,7 @@ import { useState, memo } from "react";
 import DualTitleSection from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { PriceRange } from "../../../../common/PriceRange/PriceRange";
 import { StockStatus } from "../../../../common/StockStatus/StockStatus";
-import { LargeImages } from "../../../../common/LargeImages/LargeImages";
+import LargeImages from "../../../../common/LargeImages/LargeImages";
 
 import { useJewelry } from "../../../../../hooks/useJewelry";
 

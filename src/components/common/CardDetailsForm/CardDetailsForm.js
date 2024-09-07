@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../../reusable/DynamicForm/DynamicForm";
@@ -36,7 +36,7 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
   const userCardDetailsService = useService(userCardDetailsServiceFactory);
 
   const paymentService = useService(paymentServiceFactory);
-  
+
   const orderService = useService(orderServiceFactory);
 
   const {
@@ -62,53 +62,112 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
       });
   }, [userCardDetailsService, userId, updateForm]);
 
-  const onSubmit = async (e) => {
-    submitHandler(e);
+  const onSubmit = useCallback(
+    async (e) => {
+      submitHandler(e);
 
-    const errorOccurred = checkIfFormErrorHasOccurred(values);
+      const errorOccurred = checkIfFormErrorHasOccurred(values);
+      const cardHasExpired = checkIfCardHasExpired(
+        values.expiryDate.fieldValue
+      );
 
-    const cardHasExpired = checkIfCardHasExpired(values.expiryDate.fieldValue);
-
-    if (cardHasExpired) {
-      let spreadValues = { ...values };
-
-      spreadValues = setCardHasExpiredErrorMessage(spreadValues, FORM_KEYS);
-
-      setValues(spreadValues);
-
-      return;
-    }
-
-    if (!errorOccurred) {
-      const data = getData(values);
-
-      try {
-        setIsLoading(true);
-
-        await userCardDetailsService.update(userId, data);
-
-        if (popupCloseHandler) {
-          popupCloseHandler();
-        } else {
-          await paymentService.create(userId, data);
-
-          await orderService.create(userId);
-
-          navigate("/order-confirmation");
-        }
-
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-      } catch (err) {
-        console.log(err.message);
-      } finally {
-        setIsLoading(false);
+      if (cardHasExpired) {
+        const updatedValues = setCardHasExpiredErrorMessage(
+          { ...values },
+          FORM_KEYS
+        );
+        setValues(updatedValues);
+        return;
       }
-    }
-  };
 
-  const buttonTitle = popupCloseHandler
-    ? "Save"
-    : `Place Order $ ${totalPrice}`;
+      if (!errorOccurred) {
+        const data = getData(values);
+
+        try {
+          setIsLoading(true);
+
+          await userCardDetailsService.update(userId, data);
+
+          if (popupCloseHandler) {
+            popupCloseHandler();
+          } else {
+            await paymentService.create(userId, data);
+            await orderService.create(userId);
+            navigate("/order-confirmation");
+          }
+
+          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+        } catch (err) {
+          console.error(err.message);
+        } finally {
+          setIsLoading(false);
+        }
+      }
+    },
+    [
+      values,
+      popupCloseHandler,
+      submitHandler,
+      setValues,
+      navigate,
+      userId,
+      userCardDetailsService,
+      paymentService,
+      orderService,
+    ]
+  );
+
+  // const onSubmit = async (e) => {
+  //   submitHandler(e);
+
+  //   const errorOccurred = checkIfFormErrorHasOccurred(values);
+
+  //   const cardHasExpired = checkIfCardHasExpired(values.expiryDate.fieldValue);
+
+  //   if (cardHasExpired) {
+  //     let spreadValues = { ...values };
+
+  //     spreadValues = setCardHasExpiredErrorMessage(spreadValues, FORM_KEYS);
+
+  //     setValues(spreadValues);
+
+  //     return;
+  //   }
+
+  //   if (!errorOccurred) {
+  //     const data = getData(values);
+
+  //     try {
+  //       setIsLoading(true);
+
+  //       await userCardDetailsService.update(userId, data);
+
+  //       if (popupCloseHandler) {
+  //         popupCloseHandler();
+  //       } else {
+  //         await paymentService.create(userId, data);
+
+  //         await orderService.create(userId);
+
+  //         navigate("/order-confirmation");
+  //       }
+
+  //       clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+  //     } catch (err) {
+  //       console.log(err.message);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   }
+  // };
+
+  // const buttonTitle = popupCloseHandler
+  //   ? "Save"
+  //   : `Place Order $ ${totalPrice}`;
+
+  const buttonTitle = useMemo(() => {
+    return popupCloseHandler ? "Save" : `Place Order $${totalPrice}`;
+  }, [popupCloseHandler, totalPrice]);
 
   return (
     <>

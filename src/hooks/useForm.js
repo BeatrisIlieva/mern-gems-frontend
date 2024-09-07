@@ -8,16 +8,20 @@ export const useForm = (INITIAL_FORM_VALUES) => {
     setValues((prevValues) => {
       const updatedValues = { ...prevValues };
 
-      Object.keys(updatedValues).forEach((fieldKey) => {
-        const field = updatedValues[fieldKey];
-        if (field.fieldValue !== "") {
-          updatedValues[fieldKey] = {
-            ...field,
-            isFocused: true,
-          };
+      Object.keys(values).forEach((fieldKey) => {
+        const input = document.getElementById(fieldKey);
+
+        if (input && input.value !== "") {
+          setValues((prevValues) => ({
+            ...prevValues,
+            [fieldKey]: {
+              ...prevValues[fieldKey],
+              fieldValue: input.value,
+              isFocused: true,
+            },
+          }));
         }
       });
-
       return updatedValues;
     });
   }, []);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { JewelryImage } from "../JewelryImage/JewelryImage";
@@ -10,10 +10,7 @@ import { slugify } from "../../../utils/slugify";
 
 import styles from "./LargeImages.module.css";
 
-export const LargeImages = ({
-  jewelriesByCategory,
-  toggleDisplayMiniBagPopup,
-}) => {
+const LargeImages = ({ jewelriesByCategory, toggleDisplayMiniBagPopup }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -73,3 +70,5 @@ export const LargeImages = ({
     </div>
   );
 };
+
+export default memo(LargeImages);
