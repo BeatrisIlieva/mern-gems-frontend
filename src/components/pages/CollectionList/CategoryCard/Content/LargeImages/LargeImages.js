@@ -17,10 +17,6 @@ export const LargeImages = ({ jewelriesByCategory }) => {
     setFirstImageUrlIsActive(true);
   }, [jewelriesByCategory[0].color]);
 
-  // const toggleFirstImageUrlIsActive = () => {
-  //   setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
-  // };
-
   const toggleFirstImageUrlIsActive = useCallback(() => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
   }, []);
@@ -38,18 +34,6 @@ export const LargeImages = ({ jewelriesByCategory }) => {
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
-
-  // const clickHandler = useCallback(() => {
-  //   const categoryTitle = jewelriesByCategory[0].categories[0].title;
-
-  //   const colorTitle = jewelriesByCategory[0].colors[0].title;
-
-  //   const slugifiedCategoryTitle = slugify(categoryTitle);
-
-  //   const slugifiedColorTitle = slugify(colorTitle);
-
-  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  // }, []);
 
   return (
     <div className={styles["large-images"]}>
