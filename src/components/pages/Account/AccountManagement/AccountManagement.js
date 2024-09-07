@@ -41,16 +41,6 @@ export const AccountManagement = () => {
     setDisplayUpdatePasswordForm(false);
   }, []);
 
-  // const updateEmailClickHandler = () => {
-  //   setDisplayUpdateEmailForm(true);
-  //   setDisplayUpdatePasswordForm(false);
-  // };
-
-  // const updatePasswordClickHandler = () => {
-  //   setDisplayUpdatePasswordForm(true);
-  //   setDisplayUpdateEmailForm(false);
-  // };
-
   const updatePasswordClickHandler = useCallback(() => {
     setDisplayUpdatePasswordForm(true);
     setDisplayUpdateEmailForm(false);
