@@ -67,9 +67,7 @@ export const BagProvider = ({ children }) => {
     [bagService]
   );
 
-  // const increase = async (bagId) => {
-  //   await bagService.increase(bagId);
-  // };
+
 
   const decrease = useCallback(
     async (bagId) => {
@@ -78,9 +76,7 @@ export const BagProvider = ({ children }) => {
     [bagService]
   );
 
-  // const decrease = async (bagId) => {
-  //   await bagService.decrease(bagId);
-  // };
+
 
   const remove = useCallback(
     async (bagId) => {
