@@ -1,6 +1,8 @@
+import {memo} from "react"
+
 import styles from "./HorizontalLine.module.css";
 
-export const HorizontalLine = ({ variantHorizontalLine, variantHr }) => {
+const HorizontalLine = ({ variantHorizontalLine, variantHr }) => {
   return (
     <div
       className={
@@ -19,3 +21,5 @@ export const HorizontalLine = ({ variantHorizontalLine, variantHr }) => {
     </div>
   );
 };
+
+export default memo(HorizontalLine)

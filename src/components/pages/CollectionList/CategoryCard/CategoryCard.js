@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Content } from "./Content/Content";
+import Content from "./Content/Content";
 import { ShopBy } from "../../../common/ShopBy/ShopBy";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
@@ -15,22 +15,34 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
 
   const navigate = useNavigate();
 
-  const updateSelectedColor = (color) => {
+  // const updateSelectedColor = (color) => {
+  //   setSelectedColor(color);
+  // };
+
+  const updateSelectedColor = useCallback((color) => {
     setSelectedColor(color);
-  };
+  }, []);
 
   const { jewelriesByCategory } = useJewelry({
     categoryTitle,
     colorTitle: selectedColor,
   });
 
-  const buttonClickHandler = () => {
+  // const buttonClickHandler = () => {
+  //   const slugifiedCategoryTitle = slugify(categoryTitle);
+
+  //   const slugifiedColorTitle = selectedColor;
+
+  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+  // };
+
+  const buttonClickHandler = useCallback(() => {
     const slugifiedCategoryTitle = slugify(categoryTitle);
 
     const slugifiedColorTitle = selectedColor;
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  };
+  }, [slugify]);
 
   return (
     <>

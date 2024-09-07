@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { PriceRange } from "../../../../common/PriceRange/PriceRange";
@@ -9,7 +9,7 @@ import { useJewelry } from "../../../../../hooks/useJewelry";
 
 import styles from "./Content.module.css";
 
-export const Content = ({ categoryTitle, colorTitle }) => {
+const Content = ({ categoryTitle, colorTitle }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   const { jewelriesByCategory } = useJewelry({
@@ -46,3 +46,5 @@ export const Content = ({ categoryTitle, colorTitle }) => {
     </>
   );
 };
+
+export default memo(Content)

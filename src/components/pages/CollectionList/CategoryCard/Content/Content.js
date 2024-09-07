@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../../common/LargeImages/LargeImages";
@@ -8,7 +8,7 @@ import { PriceRange } from "../../../../common/PriceRange/PriceRange";
 
 import styles from "./Content.module.css";
 
-export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
+const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   return (
@@ -36,3 +36,5 @@ export const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
     </article>
   );
 };
+
+export default memo(Content)
