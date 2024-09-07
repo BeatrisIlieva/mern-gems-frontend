@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import DualTitleSection from "../../reusable/DualTitleSection/DualTitleSection";
 import { PriceRange } from "../PriceRange/PriceRange";
@@ -6,6 +6,8 @@ import { StockStatus } from "../StockStatus/StockStatus";
 import LargeImages from "../LargeImages/LargeImages";
 
 import { useJewelry } from "../../../hooks/useJewelry";
+
+import { useLargeImagesClick } from "../../../hooks/useLargeImagesClick";
 
 import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
 
@@ -15,7 +17,7 @@ import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./CardSlider.module.css";
 
-export const CardSlider = ({ toggleDisplayMiniBagPopup }) => {
+export const CardSlider = ({ popupCloseHandler }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const categories = Object.keys(INITIAL_CATEGORY_CARD_VALUES);
@@ -27,6 +29,19 @@ export const CardSlider = ({ toggleDisplayMiniBagPopup }) => {
   const { jewelriesByCategory } = useJewelry({
     categoryTitle: selectedCategory,
     colorTitle: selectedColor,
+  });
+
+  const { largeImagesClickHandler } = useLargeImagesClick({
+    categoryTitle: selectedCategory,
+    colorTitle: selectedColor,
+  });
+
+  const clickHandler = useCallback(() => {
+    if (popupCloseHandler) {
+      popupCloseHandler();
+    }
+
+    largeImagesClickHandler();
   });
 
   const handleNext = () => {
@@ -54,7 +69,7 @@ export const CardSlider = ({ toggleDisplayMiniBagPopup }) => {
           />
           <LargeImages
             jewelriesByCategory={jewelriesByCategory}
-            toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+            clickHandler={clickHandler}
           />
           <div className={styles["button-wrapper"]}>
             <FontAwesomeIcon

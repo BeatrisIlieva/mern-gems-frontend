@@ -1,16 +1,13 @@
 import { useState, useEffect, memo } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { JewelryImage } from "../JewelryImage/JewelryImage";
 import { CircleIcons } from "../CircleIcons/CircleIcons";
 import Heart from "../Heart/Heart";
 import DualTitleSection from "../../reusable/DualTitleSection/DualTitleSection";
 
-import { slugify } from "../../../utils/slugify";
-
 import styles from "./LargeImages.module.css";
 
-const LargeImages = ({ jewelriesByCategory, toggleDisplayMiniBagPopup }) => {
+const LargeImages = ({ jewelriesByCategory, clickHandler }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -19,24 +16,6 @@ const LargeImages = ({ jewelriesByCategory, toggleDisplayMiniBagPopup }) => {
 
   const toggleFirstImageUrlIsActive = () => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
-  };
-
-  const navigate = useNavigate();
-
-  const clickHandler = () => {
-    const categoryTitle = jewelriesByCategory[0].categories[0].title;
-
-    const colorTitle = jewelriesByCategory[0].colors[0].title;
-
-    const slugifiedCategoryTitle = slugify(categoryTitle);
-
-    const slugifiedColorTitle = slugify(colorTitle);
-
-    if (toggleDisplayMiniBagPopup) {
-      toggleDisplayMiniBagPopup();
-    }
-
-    navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
 
   return (

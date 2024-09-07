@@ -10,7 +10,7 @@ export const EmptyMiniBag = ({ popupCloseHandler }) => {
         title={"Your Shopping Bag Is Empty."}
         subtitle={"You can continue shopping by exploring the collection."}
       />
-      <CardSlider toggleDisplayMiniBagPopup={popupCloseHandler} />
+      <CardSlider popupCloseHandler={popupCloseHandler} />
     </section>
   );
 };
