@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import { useLocation } from "react-router-dom";
 
 import { QuestionMark } from "./QuestionMark/QuestionMark";
@@ -9,7 +11,7 @@ import { PASSWORD_REQUIREMENTS } from "../../../../constants/password";
 
 import styles from "./FieldBox.module.css";
 
-export const FieldBox = ({
+const FieldBox = ({
   values,
   value,
   currentKey,
@@ -45,3 +47,5 @@ export const FieldBox = ({
     </div>
   );
 };
+
+export default memo(FieldBox);

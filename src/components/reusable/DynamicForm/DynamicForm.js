@@ -1,4 +1,4 @@
-import { FieldBox } from "./FieldBox/FieldBox";
+import FieldBox from "./FieldBox/FieldBox";
 import { Button } from "../../reusable/Button/Button";
 
 import styles from "./DynamicForm.module.css";
