@@ -1,4 +1,4 @@
-import {memo} from "react"
+import { memo } from "react";
 
 import { COLORS_BY_TITLE } from "../../../../constants/colorsByTitle";
 

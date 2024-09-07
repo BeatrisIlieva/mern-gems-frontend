@@ -1,4 +1,4 @@
-import {memo} from "react"
+import { memo } from "react";
 
 import { NavLink } from "react-router-dom";
 import Label from "./Label/Label";
@@ -18,11 +18,13 @@ const NavLinkItem = ({ to, icon, label, count }) => {
         to={to}
       >
         <FontAwesomeIcon icon={icon} className={styles["icon"]} />
-        <Label title={label}/>
+        <Label title={label} />
       </NavLink>
-      {(count || count === 0) && <span className={styles["count"]}>({count})</span>}
+      {(count || count === 0) && (
+        <span className={styles["count"]}>({count})</span>
+      )}
     </>
   );
 };
 
-export default memo(NavLinkItem)
+export default memo(NavLinkItem);

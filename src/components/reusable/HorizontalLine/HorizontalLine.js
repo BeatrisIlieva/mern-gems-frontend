@@ -1,4 +1,4 @@
-import {memo} from "react"
+import { memo } from "react";
 
 import styles from "./HorizontalLine.module.css";
 
@@ -22,4 +22,4 @@ const HorizontalLine = ({ variantHorizontalLine, variantHr }) => {
   );
 };
 
-export default memo(HorizontalLine)
+export default memo(HorizontalLine);

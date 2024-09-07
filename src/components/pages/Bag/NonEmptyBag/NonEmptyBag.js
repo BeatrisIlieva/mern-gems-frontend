@@ -1,9 +1,11 @@
+import { memo } from "react";
+
 import { OrderSummaryContent } from "./OrderSummaryContent/OrderSummaryContent";
 import { BagContent } from "./BagContent/BagContent";
 
 import styles from "./NonEmptyBag.module.css";
 
-export const NonEmptyBag = () => {
+const NonEmptyBag = () => {
   return (
     <section id={styles["non-empty-bag"]}>
       <div className={styles["outer-wrapper"]}>
@@ -21,3 +23,5 @@ export const NonEmptyBag = () => {
     </section>
   );
 };
+
+export default memo(NonEmptyBag);
