@@ -1,4 +1,4 @@
-import { useState, memo } from "react";
+import { useState, memo, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import { MiniBag } from "./MiniBag/MiniBag";
@@ -26,9 +26,13 @@ export const CollectionItem = () => {
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
-  const toggleDisplayPopup = () => {
+  const toggleDisplayPopup = useCallback(() => {
     setDisplayPopup((displayPopup) => !displayPopup);
-  };
+  }, []);
+
+  // const toggleDisplayPopup = () => {
+  //   setDisplayPopup((displayPopup) => !displayPopup);
+  // };
 
   return (
     <>
