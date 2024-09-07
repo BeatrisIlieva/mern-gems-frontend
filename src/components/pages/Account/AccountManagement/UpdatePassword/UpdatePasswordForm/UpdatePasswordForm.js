@@ -117,6 +117,10 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
     ]
   );
 
+  const buttonTitle = useMemo(() => {
+    return "Save";
+  }, []);
+
   return (
     <>
       <DynamicForm
@@ -127,7 +131,7 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
         changeHandler={changeHandler}
         initialFormValues={INITIAL_FORM_VALUES}
         userInformation={userLoginDetails}
-        buttonTitle={"Save"}
+        buttonTitle={buttonTitle}
         onSubmit={onSubmit}
         isLoading={isLoading}
         formVariant={"column-form"}
