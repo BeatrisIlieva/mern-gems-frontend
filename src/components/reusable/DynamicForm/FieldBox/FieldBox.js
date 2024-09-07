@@ -2,10 +2,10 @@ import { memo } from "react";
 
 import { useLocation } from "react-router-dom";
 
-import { QuestionMark } from "./QuestionMark/QuestionMark";
-import { FieldContainer } from "./FieldContainer/FieldContainer";
-import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
-import { SuccessMessage } from "./SuccessMessage/SuccessMessage";
+import QuestionMark from "./QuestionMark/QuestionMark";
+import FieldContainer from "./FieldContainer/FieldContainer";
+import ErrorMessage from "./ErrorMessage/ErrorMessage";
+import SuccessMessage from "./SuccessMessage/SuccessMessage";
 
 import { PASSWORD_REQUIREMENTS } from "../../../../constants/password";
 
