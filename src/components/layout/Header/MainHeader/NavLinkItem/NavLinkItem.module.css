@@ -40,13 +40,7 @@
 }
 
 @media (max-width: 675px) {
-  .label {
-    display: none;
-  }
-
   .count {
     display: none;
   }
 }
-
-

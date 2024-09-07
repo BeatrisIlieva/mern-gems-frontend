@@ -79,7 +79,6 @@ import { Link } from "react-router-dom";
 
 import HorizontalLine from "../../../reusable/HorizontalLine/HorizontalLine";
 import NavLinkItem from "./NavLinkItem/NavLinkItem";
-import { MediumTitle } from "../../../reusable/MediumTitle/MediumTitle";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
@@ -103,14 +102,14 @@ export const MainHeader = () => {
           <li className={styles["list-item"]}>
             <NavLinkItem
               to={"/collection"}
-              label={<MediumTitle title={"Collection"} />}
+              label={"Collection"}
               icon={faGem}
             />
           </li>
           <li className={styles["list-item"]}>
             <NavLinkItem
               to={"/users/wishlist"}
-              label={<MediumTitle title={"Wishlist"} />}
+              label={"Wishlist"}
               count={memoizedWishlistTotalQuantity}
               icon={faHeart}
             />
@@ -131,7 +130,7 @@ export const MainHeader = () => {
           <li className={styles["list-item"]}>
             <NavLinkItem
               to={"/users/shopping-bag"}
-              label={<MediumTitle title={"My Bag"} />}
+              label={"My Bag"}
               count={memoizedBagTotalQuantity}
               icon={faBagShopping}
             />
@@ -139,7 +138,7 @@ export const MainHeader = () => {
           <li className={styles["list-item"]}>
             <NavLinkItem
               to={"/users/account"}
-              label={<MediumTitle title={"Account"} />}
+              label={"Account"}
               icon={faUser}
             />
           </li>

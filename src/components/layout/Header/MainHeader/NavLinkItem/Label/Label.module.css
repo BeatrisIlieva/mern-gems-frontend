@@ -1,4 +1,4 @@
-.title {
+.label {
   display: inline;
   font-size: var(--medium);
   color: var(--gray);
@@ -12,5 +12,11 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 675px) {
+  .label {
+    display: none;
   }
 }

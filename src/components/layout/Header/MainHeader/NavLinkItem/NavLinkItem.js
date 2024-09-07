@@ -1,6 +1,7 @@
 import {memo} from "react"
 
 import { NavLink } from "react-router-dom";
+import Label from "./Label/Label";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,7 +18,7 @@ const NavLinkItem = ({ to, icon, label, count }) => {
         to={to}
       >
         <FontAwesomeIcon icon={icon} className={styles["icon"]} />
-        <span className={styles["label"]}>{label}</span>
+        <Label title={label}/>
       </NavLink>
       {(count || count === 0) && <span className={styles["count"]}>({count})</span>}
     </>
