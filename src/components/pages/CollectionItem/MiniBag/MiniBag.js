@@ -9,13 +9,13 @@ import { useBagContext } from "../../../../contexts/BagContext";
 import styles from "./MiniBag.module.css";
 
 export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
-  const { totalPrice, bagTotalQuantity } = useBagContext();
+  const { bagTotalQuantity } = useBagContext();
 
   const [miniBagIsEmpty, setMiniBagIsEmpty] = useState(false);
 
   useEffect(() => {
-    setMiniBagIsEmpty(bagTotalQuantity === 0 && totalPrice === 0);
-  }, [bagTotalQuantity, totalPrice]);
+    setMiniBagIsEmpty(bagTotalQuantity === 0);
+  }, [bagTotalQuantity]);
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 

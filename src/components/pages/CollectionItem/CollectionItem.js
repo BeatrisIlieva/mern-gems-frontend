@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { MiniBag } from "./MiniBag/MiniBag";
 import { Page404 } from "../Page404/Page404";
-import { Images } from "./Images/Images";
+import Images from "./Images/Images";
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
 
 import { useJewelry } from "../../../hooks/useJewelry";
@@ -12,7 +12,7 @@ import { deslugify } from "../../../utils/deslugify";
 
 import styles from "./CollectionItem.module.css";
 
-const CollectionItem = () => {
+export const CollectionItem = () => {
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
 
   const categoryTitle = deslugify(slugifiedCategoryTitle);
@@ -60,4 +60,4 @@ const CollectionItem = () => {
   );
 };
 
-export default memo(CollectionItem);
+// export default memo(CollectionItem);

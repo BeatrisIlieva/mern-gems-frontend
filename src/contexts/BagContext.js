@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext, useMemo } from "react";
+import { useState, useEffect, createContext, useContext, useMemo, useCallback } from "react";
 
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
@@ -42,21 +42,50 @@ export const BagProvider = ({ children }) => {
       });
   }, [userId, bagService]);
 
-  const add = async (size, jewelryId, userId) => {
-    await bagService.add(size, jewelryId, userId);
-  };
+  const add = useCallback(
+    async (size, jewelryId, userId) => {
+      await bagService.add(size, jewelryId, userId);
+    },
+    [bagService]
+  );
 
-  const increase = async (bagId) => {
-    await bagService.increase(bagId);
-  };
+  // const add = async (size, jewelryId, userId) => {
+  //   await bagService.add(size, jewelryId, userId);
+  // };
 
-  const decrease = async (bagId) => {
-    await bagService.decrease(bagId);
-  };
+  const increase = useCallback(
+    async (bagId) => {
+      await bagService.increase(bagId);
+    },
+    [bagService]
+  );
 
-  const remove = async (bagId) => {
-    await bagService.delete(bagId);
-  };
+  // const increase = async (bagId) => {
+  //   await bagService.increase(bagId);
+  // };
+
+  const decrease = useCallback(
+    async (bagId) => {
+      await bagService.decrease(bagId);
+    },
+    [bagService]
+  );
+
+  // const decrease = async (bagId) => {
+  //   await bagService.decrease(bagId);
+  // };
+
+  const remove = useCallback(
+    async (bagId) => {
+      await bagService.delete(bagId);
+    },
+    [bagService]
+  );
+
+
+  // const remove = async (bagId) => {
+  //   await bagService.delete(bagId);
+  // };
 
   const context = {
     bagItems,

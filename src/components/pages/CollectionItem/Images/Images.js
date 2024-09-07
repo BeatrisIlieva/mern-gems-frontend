@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 
 import { JewelryImage } from "../../../common/JewelryImage/JewelryImage";
 import { CircleIcons } from "../../../common/CircleIcons/CircleIcons";
 
 import styles from "./Images.module.css";
 
-export const Images = ({ jewelriesByCategory }) => {
+const Images = ({ jewelriesByCategory }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -40,3 +40,5 @@ export const Images = ({ jewelriesByCategory }) => {
     </>
   );
 };
+
+export default memo(Images);

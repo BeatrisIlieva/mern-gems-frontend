@@ -4,11 +4,7 @@ import { EmptyBag } from "./EmptyBag/EmptyBag";
 import { useBagContext } from "../../../contexts/BagContext";
 
 export const Bag = () => {
-  const { bagTotalQuantity, totalPrice } = useBagContext();
+  const { bagTotalQuantity } = useBagContext();
 
-  return (
-    <>
-      {bagTotalQuantity < 1 && totalPrice < 1 ? <EmptyBag /> : <NonEmptyBag />}
-    </>
-  );
+  return <>{bagTotalQuantity < 1 ? <EmptyBag /> : <NonEmptyBag />}</>;
 };

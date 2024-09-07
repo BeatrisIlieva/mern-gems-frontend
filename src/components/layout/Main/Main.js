@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { RouteGuard } from "./RouteGuard/RouteGuard";
 import { Home } from "../../pages/Home/Home";
 import CollectionList from "../../pages/CollectionList/CollectionList";
-import CollectionItem from "../../pages/CollectionItem/CollectionItem";
+import {CollectionItem} from "../../pages/CollectionItem/CollectionItem";
 import { Account } from "../../pages/Account/Account";
 import { Bag } from "../../pages/Bag/Bag";
 import { Wishlist } from "../../pages/Wishlist/Wishlist";
