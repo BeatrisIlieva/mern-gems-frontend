@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { JewelryImage } from "../JewelryImage/JewelryImage";
@@ -41,8 +41,6 @@ export const LargeImages = ({
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
-
-
 
   return (
     <div className={styles["large-images"]}>
