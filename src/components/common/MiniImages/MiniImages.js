@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 import Image from "./Image/Image";
 
@@ -11,12 +11,6 @@ export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
   const [activeMiniImage, setActiveMiniImage] = useState(
     jewelriesByCategory[0].colors[0].title
   );
-
-  // const updateActiveMiniImage = useCallback((colorTitle) => {
-  //   setActiveMiniImage(colorTitle);
-
-  //   clickHandler(colorTitle);
-  // }, []);
 
   const updateActiveMiniImage = (colorTitle) => {
     setActiveMiniImage(colorTitle);
