@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useLocation } from "react-router-dom";
 
 import { NormalTitle } from "../../../../../reusable/NormalTitle/NormalTitle";
@@ -7,12 +7,7 @@ import { SIZE_FORM_KEY } from "../../../../../../constants/sizeFormKey";
 
 import styles from "./Sizes.module.css";
 
-export const Sizes = ({
-  inventories,
-  errorMessage,
-  changeHandler,
-  selectedSize,
-}) => {
+const Sizes = ({ inventories, errorMessage, changeHandler, selectedSize }) => {
   const [hoveredLabel, setHoveredLabel] = useState("");
 
   const location = useLocation();
@@ -57,3 +52,5 @@ export const Sizes = ({
     </div>
   );
 };
+
+export default memo(Sizes);

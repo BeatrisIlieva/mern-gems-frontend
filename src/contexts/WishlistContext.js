@@ -35,7 +35,7 @@ export const WishlistProvider = ({ children }) => {
 
   const wishlistTotalQuantity = useMemo(() => {
     return wishlistItems.length;
-  }, [wishlistItems]);
+  }, [wishlistItems.length]);
 
   const add = useCallback(
     async (categoryId, colorId, userId) => {
@@ -51,12 +51,17 @@ export const WishlistProvider = ({ children }) => {
     [wishlistService]
   );
 
-  const context = {
-    wishlistItems,
-    wishlistTotalQuantity,
-    add,
-    remove,
-  };
+  // const context = {
+  //   wishlistItems,
+  //   wishlistTotalQuantity,
+  //   add,
+  //   remove,
+  // };
+
+  const context = useMemo(
+    () => ({ wishlistItems, wishlistTotalQuantity, add, remove }),
+    [wishlistItems, wishlistTotalQuantity, add, remove]
+  );
 
   return (
     <WishlistContext.Provider value={context}>

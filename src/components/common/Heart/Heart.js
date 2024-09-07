@@ -1,4 +1,4 @@
-import { useCallback, memo } from "react";
+import { useCallback, memo, useMemo } from "react";
 
 import { useWishlistContext } from "../../../contexts/WishlistContext";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
@@ -13,9 +13,15 @@ const Heart = ({ categoryId, colorId }) => {
   const { userId } = useAuthenticationContext();
   const { wishlistItems, add, remove } = useWishlistContext();
 
-  const isLikedByUser = wishlistItems.some(
-    (item) => item.category._id === categoryId && item.color._id === colorId
-  );
+  // const isLikedByUser = wishlistItems.some(
+  //   (item) => item.category._id === categoryId && item.color._id === colorId
+  // );
+
+  const isLikedByUser = useMemo(() => {
+    return wishlistItems.some(
+      (item) => item.category._id === categoryId && item.color._id === colorId
+    );
+  }, [wishlistItems, categoryId, colorId]);
 
   const handleClick = useCallback(() => {
     if (isLikedByUser) {

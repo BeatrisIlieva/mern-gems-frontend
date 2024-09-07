@@ -20,7 +20,7 @@ export const BagProvider = ({ children }) => {
       (total, item) => total + item.price * item.quantity,
       0
     );
-  }, [bagItems]);
+  }, [bagItems.length]);
 
   const bagTotalQuantity = useMemo(() => {
     return bagItems.reduce((total, item) => total + item.quantity, 0);
@@ -87,7 +87,17 @@ export const BagProvider = ({ children }) => {
   //   await bagService.delete(bagId);
   // };
 
-  const context = {
+  // const context = {
+  //   bagItems,
+  //   totalPrice,
+  //   bagTotalQuantity,
+  //   increase,
+  //   decrease,
+  //   remove,
+  //   add,
+  // };
+
+  const context = useMemo(() => ({
     bagItems,
     totalPrice,
     bagTotalQuantity,
@@ -95,7 +105,8 @@ export const BagProvider = ({ children }) => {
     decrease,
     remove,
     add,
-  };
+  }), [bagItems, totalPrice, bagTotalQuantity, increase, decrease, remove, add]);
+
 
   return <BagContext.Provider value={context}>{children}</BagContext.Provider>;
 };

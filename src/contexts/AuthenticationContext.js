@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useEffect, useMemo } from "react";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
@@ -66,13 +66,30 @@ export const AuthenticationProvider = ({ children }) => {
     setAuthentication({});
   };
 
-  const context = {
-    updateAuthentication,
-    clearToken,
-    userId: authentication._id,
-    token: authentication.accessToken,
-    isAuthenticated: !!authentication.accessToken,
-  };
+  // const context = {
+  //   updateAuthentication,
+  //   clearToken,
+  //   userId: authentication._id,
+  //   token: authentication.accessToken,
+  //   isAuthenticated: !!authentication.accessToken,
+  // };
+
+  const userId = authentication._id;
+
+  const token = authentication.accessToken;
+
+  const isAuthenticated = !!authentication.accessToken;
+
+  const context = useMemo(
+    () => ({
+      updateAuthentication,
+      clearToken,
+      userId,
+      token,
+      isAuthenticated,
+    }),
+    [updateAuthentication, clearToken, userId, token, isAuthenticated]
+  );
 
   return (
     <AuthenticationContext.Provider value={context}>

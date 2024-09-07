@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-import { Sizes } from "./Sizes/Sizes";
+import Sizes from "./Sizes/Sizes";
 import { Button } from "../../../../reusable/Button/Button";
 import Heart from "../../../../common/Heart/Heart";
 
