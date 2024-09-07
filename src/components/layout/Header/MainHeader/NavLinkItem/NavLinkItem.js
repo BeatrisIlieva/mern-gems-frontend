@@ -1,10 +1,12 @@
+import {memo} from "react"
+
 import { NavLink } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./NavLinkItem.module.css";
 
-export const NavLinkItem = ({ to, icon, label, count }) => {
+const NavLinkItem = ({ to, icon, label, count }) => {
   return (
     <>
       <NavLink
@@ -21,3 +23,5 @@ export const NavLinkItem = ({ to, icon, label, count }) => {
     </>
   );
 };
+
+export default memo(NavLinkItem)

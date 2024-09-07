@@ -1,8 +1,10 @@
+import {memo} from "react"
+
 import { COLORS_BY_TITLE } from "../../../../constants/colorsByTitle";
 
 import styles from "./Image.module.css";
 
-export const Image = ({
+const Image = ({
   imageUrl,
   title,
   colorName,
@@ -31,3 +33,5 @@ export const Image = ({
     </div>
   );
 };
+
+export default memo(Image);

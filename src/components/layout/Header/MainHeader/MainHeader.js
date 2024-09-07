@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { HorizontalLine } from "../../../reusable/HorizontalLine/HorizontalLine";
-import { NavLinkItem } from "./NavLinkItem/NavLinkItem";
+import NavLinkItem from "./NavLinkItem/NavLinkItem";
 import { MediumTitle } from "../../../reusable/MediumTitle/MediumTitle";
 
 import { useBagContext } from "../../../../contexts/BagContext";
