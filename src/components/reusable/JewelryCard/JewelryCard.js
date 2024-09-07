@@ -1,6 +1,8 @@
+import { memo } from "react";
+
 import styles from "./JewelryCard.module.css";
 
-export const JewelryCard = ({ firstImageUrl, jewelryTitle }) => {
+const JewelryCard = ({ firstImageUrl, jewelryTitle }) => {
   return (
     <div className={styles["thumbnail"]}>
       <img
@@ -11,3 +13,5 @@ export const JewelryCard = ({ firstImageUrl, jewelryTitle }) => {
     </div>
   );
 };
+
+export default memo(JewelryCard);
