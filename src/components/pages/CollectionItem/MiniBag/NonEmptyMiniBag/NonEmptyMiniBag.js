@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { BagHeader } from "../../../../common/BagHeader/BagHeader";
 import { BagList } from "../../../../common/BagList/BagList";
@@ -9,14 +9,17 @@ import { useBagContext } from "../../../../../contexts/BagContext";
 
 import styles from "./NonEmptyMiniBag.module.css";
 
-export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
+export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
   const { totalPrice } = useBagContext();
 
-  const clickHandler = () => {
-    document.body.style.overflow = "visible";
+  const navigate = useNavigate();
 
-    toggleDisplayMiniBagPopup();
+  const clickHandler = async (url) => {
+    await popupCloseHandler();
+
+    navigate(url);
   };
+
   return (
     <>
       <>
@@ -30,22 +33,18 @@ export const NonEmptyMiniBag = ({ toggleDisplayMiniBagPopup }) => {
             secondTitle={`$ ${totalPrice}`}
             variant={"bolded"}
           />
-          <Link to={"/users/shopping-bag"} className={styles["no-decoration"]}>
-            <Button
-              title={"View Bag"}
-              buttonIsDisabled={false}
-              callBackFunction={clickHandler}
-              variant={"pink"}
-            />
-          </Link>
-          <Link to={"/checkout"} className={styles["no-decoration"]}>
-            <Button
-              title={"Continue Checkout"}
-              buttonIsDisabled={false}
-              callBackFunction={clickHandler}
-              variant={"gray"}
-            />
-          </Link>
+          <Button
+            title={"View Bag"}
+            buttonIsDisabled={false}
+            callBackFunction={() => clickHandler("/users/shopping-bag")}
+            variant={"pink"}
+          />
+          <Button
+            title={"Continue Checkout"}
+            buttonIsDisabled={false}
+            callBackFunction={() => clickHandler("/checkout")}
+            variant={"gray"}
+          />
         </div>
       </>
     </>

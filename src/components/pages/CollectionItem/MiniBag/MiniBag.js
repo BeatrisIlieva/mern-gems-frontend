@@ -19,13 +19,25 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const popupCloseHandler = () => {
-    setIsTransitioning(true);
+  // const popupCloseHandler = () => {
+  //   setIsTransitioning(true);
 
-    setTimeout(() => {
-      toggleDisplayMiniBagPopup();
-      setIsTransitioning(false);
-    }, 400);
+  //   setTimeout(() => {
+  //     toggleDisplayMiniBagPopup();
+  //     setIsTransitioning(false);
+  //   }, 400);
+  // };
+
+  const popupCloseHandler = () => {
+    return new Promise((resolve) => {
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        toggleDisplayMiniBagPopup();
+        setIsTransitioning(false);
+        resolve(); // Resolve the promise once the transition is done
+      }, 400); // Assuming 400ms is your transition duration
+    });
   };
 
   return (
@@ -42,9 +54,9 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
         <XMark callbackFunction={popupCloseHandler} />
         <div className={styles["mini-bag"]}>
           {miniBagIsEmpty ? (
-            <EmptyMiniBag toggleDisplayMiniBagPopup={popupCloseHandler} />
+            <EmptyMiniBag popupCloseHandler={popupCloseHandler} />
           ) : (
-            <NonEmptyMiniBag toggleDisplayMiniBagPopup={popupCloseHandler} />
+            <NonEmptyMiniBag popupCloseHandler={popupCloseHandler} />
           )}
         </div>
       </div>

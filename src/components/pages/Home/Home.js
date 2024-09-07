@@ -8,12 +8,6 @@ import { useAuthenticationContext } from "../../../contexts/AuthenticationContex
 export const Home = () => {
   const { isAuthenticated } = useAuthenticationContext();
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      document.body.style.overflow = "visible";
-    }
-  });
-
   return (
     <>
       {!isAuthenticated && <Authentication />}
