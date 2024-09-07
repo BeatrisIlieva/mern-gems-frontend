@@ -1,9 +1,11 @@
-import { Input } from "./Input/Input";
-import { Label } from "./Label/Label";
+import { memo } from "react";
+
+import Input from "./Input/Input";
+import Label from "./Label/Label";
 
 import styles from "./FieldContainer.module.css";
 
-export const FieldContainer = ({
+const FieldContainer = ({
   clickHandler,
   blurHandler,
   changeHandler,
@@ -37,3 +39,5 @@ export const FieldContainer = ({
     </div>
   );
 };
+
+export default memo(FieldContainer);

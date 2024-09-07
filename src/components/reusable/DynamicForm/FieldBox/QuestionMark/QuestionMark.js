@@ -1,6 +1,6 @@
 import { useState, memo } from "react";
 
-import { Text } from "./Text/Text";
+import Text from "./Text/Text";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
