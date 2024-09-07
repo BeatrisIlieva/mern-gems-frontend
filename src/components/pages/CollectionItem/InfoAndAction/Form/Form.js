@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import { Sizes } from "./Sizes/Sizes";
 import { Button } from "../../../../reusable/Button/Button";
@@ -28,11 +28,17 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     setErrorMessage(null);
   }, [jewelriesByCategory[0].color]);
 
-  const changeHandler = (e) => {
+  // const changeHandler = (e) => {
+  //   setSelectedSize(e.target.value);
+
+  //   setErrorMessage("");
+  // };
+
+  const changeHandler = useCallback((e) => {
     setSelectedSize(e.target.value);
 
     setErrorMessage("");
-  };
+  }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
