@@ -1,6 +1,8 @@
+import { memo } from "react";
+
 import styles from "./SuccessMessage.module.css";
 
-export const SuccessMessage = ({ values, value }) => {
+const SuccessMessage = ({ values, value }) => {
   return (
     <>
       {values[value].successMessage && (
@@ -14,3 +16,5 @@ export const SuccessMessage = ({ values, value }) => {
     </>
   );
 };
+
+export default memo(SuccessMessage);
