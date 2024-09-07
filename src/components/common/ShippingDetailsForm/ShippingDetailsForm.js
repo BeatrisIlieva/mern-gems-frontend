@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../../reusable/DynamicForm/DynamicForm";
@@ -52,35 +52,40 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
       });
   }, [userShippingDetailsService, userId, updateForm]);
 
-  const onSubmit = async (e) => {
-    submitHandler(e);
+  const onSubmit = useCallback(
+    async (e) => {
+      submitHandler(e);
 
-    const errorOccurred = checkIfFormErrorHasOccurred(values);
+      const errorOccurred = checkIfFormErrorHasOccurred(values);
 
-    if (!errorOccurred) {
-      const data = getData(values);
+      if (!errorOccurred) {
+        const data = getData(values);
 
-      try {
-        setIsLoading(true);
+        try {
+          setIsLoading(true);
 
-        await userShippingDetailsService.update(userId, data);
+          await userShippingDetailsService.update(userId, data);
 
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        if (popupCloseHandler) {
-          popupCloseHandler();
-        } else {
-          navigate("/checkout/payment");
+          if (popupCloseHandler) {
+            popupCloseHandler();
+          } else {
+            navigate("/checkout/payment");
+          }
+        } catch (err) {
+          console.log(err.message);
+        } finally {
+          setIsLoading(false);
         }
-      } catch (err) {
-        console.log(err.message);
-      } finally {
-        setIsLoading(false);
       }
-    }
-  };
+    },
+    [userShippingDetailsService, userId, values, popupCloseHandler, navigate]
+  );
 
-  const buttonTitle = popupCloseHandler ? "Save" : "Continue Checkout";
+  const buttonTitle = useMemo(() => {
+    return popupCloseHandler ? "Save" : "Continue Checkout";
+  }, [popupCloseHandler]);
 
   return (
     <>
