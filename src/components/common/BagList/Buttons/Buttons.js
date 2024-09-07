@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 
 import { Remove } from "./Remove/Remove";
 import { MoveToWishlist } from "./MoveToWishlist/MoveToWishlist";
@@ -11,7 +11,7 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Buttons.module.css";
 
-export const Buttons = ({ bagId, categoryId, colorId }) => {
+const Buttons = ({ bagId, categoryId, colorId }) => {
   const [displayContent, setDisplayContent] = useState(false);
 
   const iconRef = useRef(null);
@@ -68,3 +68,5 @@ export const Buttons = ({ bagId, categoryId, colorId }) => {
     </>
   );
 };
+
+export default memo(Buttons);
