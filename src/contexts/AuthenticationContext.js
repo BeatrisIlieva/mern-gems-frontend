@@ -66,14 +66,6 @@ export const AuthenticationProvider = ({ children }) => {
     setAuthentication({});
   };
 
-  // const context = {
-  //   updateAuthentication,
-  //   clearToken,
-  //   userId: authentication._id,
-  //   token: authentication.accessToken,
-  //   isAuthenticated: !!authentication.accessToken,
-  // };
-
   const userId = authentication._id;
 
   const token = authentication.accessToken;
