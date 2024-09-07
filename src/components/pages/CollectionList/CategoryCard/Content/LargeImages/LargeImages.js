@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { JewelryImage } from "../JewelryImage/JewelryImage";
@@ -17,9 +17,13 @@ export const LargeImages = ({ jewelriesByCategory }) => {
     setFirstImageUrlIsActive(true);
   }, [jewelriesByCategory[0].color]);
 
-  const toggleFirstImageUrlIsActive = () => {
+  // const toggleFirstImageUrlIsActive = () => {
+  //   setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
+  // };
+
+  const toggleFirstImageUrlIsActive = useCallback(() => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
-  };
+  }, []);
 
   const navigate = useNavigate();
 
