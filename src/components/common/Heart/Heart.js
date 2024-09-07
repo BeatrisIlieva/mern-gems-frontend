@@ -13,10 +13,6 @@ const Heart = ({ categoryId, colorId }) => {
   const { userId } = useAuthenticationContext();
   const { wishlistItems, add, remove } = useWishlistContext();
 
-  // const isLikedByUser = wishlistItems.some(
-  //   (item) => item.category._id === categoryId && item.color._id === colorId
-  // );
-
   const isLikedByUser = useMemo(() => {
     return wishlistItems.some(
       (item) => item.category._id === categoryId && item.color._id === colorId
