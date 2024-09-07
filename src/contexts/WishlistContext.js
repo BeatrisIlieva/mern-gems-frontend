@@ -16,7 +16,7 @@ import { wishlistServiceFactory } from "../services/wishlistService";
 export const WishlistContext = createContext();
 
 export const WishlistProvider = ({ children }) => {
-  const { userId } = useAuthenticationContext();
+  const { userId, isAuthenticated } = useAuthenticationContext();
 
   const [wishlistItems, setWishlistItems] = useState([]);
 
@@ -34,8 +34,8 @@ export const WishlistProvider = ({ children }) => {
   }, [userId, wishlistService]);
 
   const wishlistTotalQuantity = useMemo(() => {
-    return wishlistItems.length;
-  }, [wishlistItems.length]);
+    return isAuthenticated ? wishlistItems.length : 0;
+  }, [wishlistItems.length, isAuthenticated]);
 
   const add = useCallback(
     async (categoryId, colorId, userId) => {

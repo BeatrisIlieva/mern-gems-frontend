@@ -1,5 +1,5 @@
 import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
-import { SwitchButton } from "../SwitchButton/SwitchButton";
+import { SwitchButton } from "../reusable/SwitchButton/SwitchButton";
 import { LoginForm } from "./LoginForm/LoginForm";
 
 export const Login = ({

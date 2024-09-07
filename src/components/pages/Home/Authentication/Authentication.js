@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Popup } from "./Popup/Popup";
 import { Login } from "./Login/Login";
 import { Register } from "./Register/Register";
-import { SwitchOptions } from "./switchOptions";
+import { SwitchOptions } from "./constants/switchOptions";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 

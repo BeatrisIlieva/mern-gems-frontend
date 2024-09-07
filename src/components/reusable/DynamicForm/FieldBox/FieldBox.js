@@ -4,8 +4,7 @@ import { useLocation } from "react-router-dom";
 
 import QuestionMark from "./QuestionMark/QuestionMark";
 import FieldContainer from "./FieldContainer/FieldContainer";
-import ErrorMessage from "./ErrorMessage/ErrorMessage";
-import SuccessMessage from "./SuccessMessage/SuccessMessage";
+import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
 
 import { PASSWORD_REQUIREMENTS } from "../../../../constants/password";
 
@@ -43,7 +42,6 @@ const FieldBox = ({
         currentKey={currentKey}
       />
       <ErrorMessage values={values} value={value} />
-      <SuccessMessage values={values} value={value} />
     </div>
   );
 };

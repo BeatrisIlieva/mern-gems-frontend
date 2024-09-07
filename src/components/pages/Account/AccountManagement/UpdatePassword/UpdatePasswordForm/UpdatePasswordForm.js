@@ -16,8 +16,6 @@ import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPa
 
 import { getData } from "./helpers/getData";
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
-import { setSuccessMessage } from "./helpers/setSuccessMessage";
-import { removeSuccessMessage } from "./helpers/removeSuccessMessage";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
 
@@ -77,8 +75,6 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
 
           await userLoginDetailsService.updatePassword(userId, data);
 
-          spreadValues = setSuccessMessage(spreadValues, FORM_KEYS);
-
           setValues(spreadValues);
 
           clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
@@ -93,8 +89,6 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
             err.message
           );
 
-          spreadValues = removeSuccessMessage(spreadValues, FORM_KEYS);
-
           setValues(spreadValues);
         } finally {
           setIsLoading(false);
@@ -108,11 +102,9 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
       checkIfFormErrorHasOccurred,
       getData,
       userLoginDetailsService,
-      setSuccessMessage,
       clearInitialFormValuesMessages,
       popupCloseHandler,
       setWrongPasswordErrorMessage,
-      removeSuccessMessage,
     ]
   );
 

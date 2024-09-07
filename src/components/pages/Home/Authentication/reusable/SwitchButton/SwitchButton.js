@@ -1,4 +1,4 @@
-import { Button } from "../../../../reusable/Button/Button";
+import { Button } from "../../../../../reusable/Button/Button";
 
 import styles from "./SwitchButton.module.css";
 

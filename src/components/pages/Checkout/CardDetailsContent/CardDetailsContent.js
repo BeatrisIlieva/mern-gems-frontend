@@ -6,7 +6,7 @@ import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { ShippingInformation } from "./ShippingInformation/ShippingInformation";
 import { CardDetailsForm } from "../../../common/CardDetailsForm/CardDetailsForm";
 import { ShippingDetailsForm } from "../../../common/ShippingDetailsForm/ShippingDetailsForm";
-import { Popup } from "../../../common/Popup/Popup";
+import { Popup } from "../../../reusable/Popup/Popup";
 
 export const CardDetailsContent = () => {
   const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =

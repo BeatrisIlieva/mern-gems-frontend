@@ -3,7 +3,7 @@ import { useState } from "react";
 import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 import { Button } from "../../../../reusable/Button/Button";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
-import { Popup } from "../../../../common/Popup/Popup";
+import { Popup } from "../../../../reusable/Popup/Popup";
 
 export const UpdateEmail = () => {
   const [displayPopup, setDisplayPopup] = useState(false);
@@ -22,7 +22,7 @@ export const UpdateEmail = () => {
       {displayPopup && (
         <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
           <LargeTitle title={"Update Email"} textAlign={"align-center"} />
-          <UpdateEmailForm popupCloseHandler={toggleDisplayPopup}/>
+          <UpdateEmailForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>
       )}
     </>

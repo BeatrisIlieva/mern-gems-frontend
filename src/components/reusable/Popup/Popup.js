@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { XMark } from "../XMark/XMark";
+import { XMark } from "../../common/XMark/XMark";
 
 import styles from "./Popup.module.css";
 

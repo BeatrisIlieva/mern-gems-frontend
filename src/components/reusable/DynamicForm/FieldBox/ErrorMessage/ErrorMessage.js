@@ -1,8 +1,6 @@
-import { memo } from "react";
-
 import styles from "./ErrorMessage.module.css";
 
-const ErrorMessage = ({ values, value }) => {
+export const ErrorMessage = ({ values, value }) => {
   return (
     <>
       {values[value].errorMessage && (
@@ -13,5 +11,3 @@ const ErrorMessage = ({ values, value }) => {
     </>
   );
 };
-
-export default memo(ErrorMessage);

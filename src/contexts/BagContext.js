@@ -16,7 +16,7 @@ import { bagServiceFactory } from "../services/bagService";
 export const BagContext = createContext();
 
 export const BagProvider = ({ children }) => {
-  const { userId } = useAuthenticationContext();
+  const { userId, isAuthenticated } = useAuthenticationContext();
 
   const [bagItems, setBagItems] = useState([]);
 
@@ -30,8 +30,10 @@ export const BagProvider = ({ children }) => {
   }, [bagItems.length]);
 
   const bagTotalQuantity = useMemo(() => {
-    return bagItems.reduce((total, item) => total + item.quantity, 0);
-  }, [bagItems]);
+    return isAuthenticated
+      ? bagItems.reduce((total, item) => total + item.quantity, 0)
+      : 0;
+  }, [bagItems, isAuthenticated]);
 
   useEffect(() => {
     bagService

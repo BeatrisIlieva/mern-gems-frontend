@@ -6,6 +6,7 @@ import { StockStatus } from "../../../../common/StockStatus/StockStatus";
 import LargeImages from "../../../../common/LargeImages/LargeImages";
 
 import { useJewelry } from "../../../../../hooks/useJewelry";
+import { useLargeImagesClick } from "../../../../../hooks/useLargeImagesClick";
 
 import styles from "./Content.module.css";
 
@@ -13,6 +14,11 @@ const Content = ({ categoryTitle, colorTitle }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   const { jewelriesByCategory } = useJewelry({
+    categoryTitle,
+    colorTitle,
+  });
+
+  const { largeImagesClickHandler } = useLargeImagesClick({
     categoryTitle,
     colorTitle,
   });
@@ -31,7 +37,10 @@ const Content = ({ categoryTitle, colorTitle }) => {
               : styles["content"]
           }
         >
-          <LargeImages jewelriesByCategory={jewelriesByCategory} />
+          <LargeImages
+            jewelriesByCategory={jewelriesByCategory}
+            clickHandler={largeImagesClickHandler}
+          />
           <DualTitleSection
             firstTitle={
               <PriceRange jewelriesByCategory={jewelriesByCategory} />
