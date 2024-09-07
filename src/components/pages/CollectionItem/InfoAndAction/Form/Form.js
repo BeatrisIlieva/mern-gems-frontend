@@ -28,12 +28,6 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     setErrorMessage(null);
   }, [jewelriesByCategory[0].color]);
 
-  // const changeHandler = (e) => {
-  //   setSelectedSize(e.target.value);
-
-  //   setErrorMessage("");
-  // };
-
   const changeHandler = useCallback((e) => {
     setSelectedSize(e.target.value);
 
