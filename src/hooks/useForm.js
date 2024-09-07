@@ -4,7 +4,6 @@ import { getPatternErrorMessage } from "../utils/getPatternErrorMessage";
 export const useForm = (INITIAL_FORM_VALUES) => {
   const [values, setValues] = useState(INITIAL_FORM_VALUES);
 
-  // Memoize the handlers to avoid re-creating them on every render
   const updateForm = useCallback(() => {
     setValues((prevValues) => {
       const updatedValues = { ...prevValues };
@@ -74,7 +73,7 @@ export const useForm = (INITIAL_FORM_VALUES) => {
         return updatedValues;
       });
 
-      updateForm(); // Ensure fields are updated based on the latest values
+      updateForm();
     },
     [updateForm]
   );
