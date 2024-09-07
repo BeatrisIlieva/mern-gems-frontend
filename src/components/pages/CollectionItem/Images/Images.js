@@ -12,14 +12,6 @@ const Images = ({ jewelriesByCategory }) => {
     setFirstImageUrlIsActive(true);
   }, [jewelriesByCategory[0].color]);
 
-  // const toggleFirstImageUrlIsActive = () => {
-  //   setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
-  // };
-
-  // const clickHandler = () => {
-  //   toggleFirstImageUrlIsActive();
-  // };
-
   const toggleFirstImageUrlIsActive = useCallback(() => {
     setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
   }, []);
