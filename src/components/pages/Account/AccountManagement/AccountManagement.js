@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
 import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
@@ -36,15 +36,25 @@ export const AccountManagement = () => {
 
   const [displayUpdatePassword, setDisplayUpdatePasswordForm] = useState(false);
 
-  const updateEmailClickHandler = () => {
+  const updateEmailClickHandler = useCallback(() => {
     setDisplayUpdateEmailForm(true);
     setDisplayUpdatePasswordForm(false);
-  };
+  }, []);
 
-  const updatePasswordClickHandler = () => {
+  // const updateEmailClickHandler = () => {
+  //   setDisplayUpdateEmailForm(true);
+  //   setDisplayUpdatePasswordForm(false);
+  // };
+
+  // const updatePasswordClickHandler = () => {
+  //   setDisplayUpdatePasswordForm(true);
+  //   setDisplayUpdateEmailForm(false);
+  // };
+
+  const updatePasswordClickHandler = useCallback(() => {
     setDisplayUpdatePasswordForm(true);
     setDisplayUpdateEmailForm(false);
-  };
+  }, []);
 
   return (
     <section className={styles["account-management"]}>
