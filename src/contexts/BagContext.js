@@ -56,18 +56,12 @@ export const BagProvider = ({ children }) => {
     [bagService]
   );
 
-  // const add = async (size, jewelryId, userId) => {
-  //   await bagService.add(size, jewelryId, userId);
-  // };
-
   const increase = useCallback(
     async (bagId) => {
       await bagService.increase(bagId);
     },
     [bagService]
   );
-
-
 
   const decrease = useCallback(
     async (bagId) => {
@@ -76,16 +70,12 @@ export const BagProvider = ({ children }) => {
     [bagService]
   );
 
-
-
   const remove = useCallback(
     async (bagId) => {
       await bagService.delete(bagId);
     },
     [bagService]
   );
-
-
 
   const context = useMemo(
     () => ({
