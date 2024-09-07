@@ -59,5 +59,3 @@ export const CollectionItem = () => {
     </>
   );
 };
-
-// export default memo(CollectionItem);
