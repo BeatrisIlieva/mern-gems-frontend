@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import { Text } from "./Text/Text";
 
@@ -7,7 +7,7 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./QuestionMark.module.css";
 
-export const QuestionMark = ({ text }) => {
+const QuestionMark = ({ text }) => {
   const [displayInfo, setDisplayInfo] = useState(false);
 
   const toggleDisplayInfo = () => {
@@ -28,3 +28,5 @@ export const QuestionMark = ({ text }) => {
     </span>
   );
 };
+
+export default memo(QuestionMark);
