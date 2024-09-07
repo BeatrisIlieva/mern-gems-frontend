@@ -1,4 +1,6 @@
-export const Input = ({
+import { memo } from "react";
+
+const Input = ({
   changeHandler,
   clickHandler,
   userInformation,
@@ -23,3 +25,5 @@ export const Input = ({
     />
   );
 };
+
+export default memo(Input);
