@@ -1,6 +1,8 @@
+import { memo } from "react";
+
 import styles from "./Label.module.css";
 
-export const Label = ({ initialFormValues, values, value }) => {
+const Label = ({ initialFormValues, values, value }) => {
   return (
     <label
       htmlFor={value}
@@ -12,3 +14,5 @@ export const Label = ({ initialFormValues, values, value }) => {
     </label>
   );
 };
+
+export default memo(Label);
