@@ -1,6 +1,6 @@
-import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
+import { useCallback, useMemo } from "react";
 
-import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
+import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
 
 import { useService } from "../../../../../../hooks/useService";
 import { useForm } from "../../../../../../hooks/useForm";
@@ -27,32 +27,46 @@ export const RegisterForm = ({ closeHandler }) => {
     submitHandler,
   } = useForm(INITIAL_FORM_VALUES);
 
-  const onSubmit = async (e) => {
-    submitHandler(e);
+  const onSubmit = useCallback(
+    async (e) => {
+      submitHandler(e);
 
-    const errorOccurred = checkIfFormErrorHasOccurred(values);
+      const errorOccurred = checkIfFormErrorHasOccurred(values);
 
-    if (!errorOccurred) {
-      const data = getData(values);
+      if (!errorOccurred) {
+        const data = getData(values);
 
-      try {
-        const result = await userLoginDetailsService.register(data);
+        try {
+          const result = await userLoginDetailsService.register(data);
 
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        await closeHandler(result);
-      } catch (err) {
-        let spreadValues = { ...values };
+          await closeHandler(result);
+        } catch (err) {
+          let spreadValues = { ...values };
 
-        spreadValues = setEmailAlreadyExistsErrorMessage(
-          spreadValues,
-          FORM_KEYS
-        );
+          spreadValues = setEmailAlreadyExistsErrorMessage(
+            spreadValues,
+            FORM_KEYS
+          );
 
-        setValues(spreadValues);
+          setValues(spreadValues);
+        }
       }
-    }
-  };
+    },
+    [
+      submitHandler,
+      checkIfFormErrorHasOccurred,
+      getData,
+      values,
+      clearInitialFormValuesMessages,
+      closeHandler,
+    ]
+  );
+
+  const buttonTitle = useMemo(() => {
+    return "Sign Up";
+  }, []);
 
   return (
     <DynamicForm
@@ -62,7 +76,7 @@ export const RegisterForm = ({ closeHandler }) => {
       blurHandler={blurHandler}
       changeHandler={changeHandler}
       initialFormValues={INITIAL_FORM_VALUES}
-      buttonTitle={"Sign Up"}
+      buttonTitle={buttonTitle}
       onSubmit={onSubmit}
       formVariant={"column-form"}
       fieldVariant={"large-field-box"}
