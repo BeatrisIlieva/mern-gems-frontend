@@ -117,54 +117,6 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
     ]
   );
 
-  // const onSubmit = async (e) => {
-  //   submitHandler(e);
-
-  //   const errorOccurred = checkIfFormErrorHasOccurred(values);
-
-  //   const cardHasExpired = checkIfCardHasExpired(values.expiryDate.fieldValue);
-
-  //   if (cardHasExpired) {
-  //     let spreadValues = { ...values };
-
-  //     spreadValues = setCardHasExpiredErrorMessage(spreadValues, FORM_KEYS);
-
-  //     setValues(spreadValues);
-
-  //     return;
-  //   }
-
-  //   if (!errorOccurred) {
-  //     const data = getData(values);
-
-  //     try {
-  //       setIsLoading(true);
-
-  //       await userCardDetailsService.update(userId, data);
-
-  //       if (popupCloseHandler) {
-  //         popupCloseHandler();
-  //       } else {
-  //         await paymentService.create(userId, data);
-
-  //         await orderService.create(userId);
-
-  //         navigate("/order-confirmation");
-  //       }
-
-  //       clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-  //     } catch (err) {
-  //       console.log(err.message);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   }
-  // };
-
-  // const buttonTitle = popupCloseHandler
-  //   ? "Save"
-  //   : `Place Order $ ${totalPrice}`;
-
   const buttonTitle = useMemo(() => {
     return popupCloseHandler ? "Save" : `Place Order $${totalPrice}`;
   }, [popupCloseHandler, totalPrice]);
