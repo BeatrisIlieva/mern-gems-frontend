@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import { EmptyOrderHistory } from "./EmptyOrderHistory/EmptyOrderHistory";
 import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistory";
-import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
+import SectionContainer from "../reusable/SectionContainer/SectionContainer";
 import { Popup } from "../../../common/Popup/Popup";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
@@ -33,9 +33,9 @@ export const OrderHistory = () => {
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
-  const toggleDisplayPopup = () => {
+  const toggleDisplayPopup = useCallback(() => {
     setDisplayPopup((displayPopup) => !displayPopup);
-  };
+  }, []);
 
   return (
     <>

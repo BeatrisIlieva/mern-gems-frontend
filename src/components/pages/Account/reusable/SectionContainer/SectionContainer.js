@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./SectionContainer.module.css";
 
-export const SectionContainer = ({
+const SectionContainer = ({
   sectionTitle,
   callBackFunction,
   icon,
@@ -18,3 +20,5 @@ export const SectionContainer = ({
     </section>
   );
 };
+
+export default memo(SectionContainer);

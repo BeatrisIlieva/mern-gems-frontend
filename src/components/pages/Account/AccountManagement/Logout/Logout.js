@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "../../../../reusable/Button/Button";
@@ -7,7 +8,7 @@ import { useService } from "../../../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../../../services/userLoginDetailsService";
 
-export const Logout = () => {
+const Logout = () => {
   const navigate = useNavigate();
 
   const { userId, clearToken } = useAuthenticationContext();
@@ -30,3 +31,5 @@ export const Logout = () => {
     />
   );
 };
+
+export default memo(Logout);
