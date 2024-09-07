@@ -25,16 +25,6 @@ const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   }, []);
 
-  // const miniImagesClickHandler = (colorTitle) => {
-  //   const categoryTitle = jewelriesByCategory[0].categories[0].title;
-
-  //   const slugifiedCategoryTitle = slugify(categoryTitle);
-
-  //   const slugifiedColorTitle = slugify(colorTitle);
-
-  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  // };
-
   return (
     <div className={styles["outer-wrapper"]}>
       <div className={styles["wrapper"]}>
