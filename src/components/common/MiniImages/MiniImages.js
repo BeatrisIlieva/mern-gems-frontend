@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import { Image } from "./Image/Image";
 
@@ -12,11 +12,17 @@ export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
     jewelriesByCategory[0].colors[0].title
   );
 
-  const updateActiveMiniImage = (colorTitle) => {
+  const updateActiveMiniImage = useCallback((colorTitle) => {
     setActiveMiniImage(colorTitle);
 
     clickHandler(colorTitle);
-  };
+  }, []);
+
+  // const updateActiveMiniImage = (colorTitle) => {
+  //   setActiveMiniImage(colorTitle);
+
+  //   clickHandler(colorTitle);
+  // };
 
   const color = COLORS_BY_TITLE[activeMiniImage];
 

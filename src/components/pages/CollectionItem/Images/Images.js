@@ -1,4 +1,4 @@
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect, memo, useCallback } from "react";
 
 import { JewelryImage } from "../../../common/JewelryImage/JewelryImage";
 import { CircleIcons } from "../../../common/CircleIcons/CircleIcons";
@@ -12,13 +12,17 @@ const Images = ({ jewelriesByCategory }) => {
     setFirstImageUrlIsActive(true);
   }, [jewelriesByCategory[0].color]);
 
-  const toggleFirstImageUrlIsActive = () => {
-    setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
-  };
+  // const toggleFirstImageUrlIsActive = () => {
+  //   setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
+  // };
 
-  const clickHandler = () => {
-    toggleFirstImageUrlIsActive();
-  };
+  // const clickHandler = () => {
+  //   toggleFirstImageUrlIsActive();
+  // };
+
+  const toggleFirstImageUrlIsActive = useCallback(() => {
+    setFirstImageUrlIsActive((firstImageUrlIsActive) => !firstImageUrlIsActive);
+  }, []);
 
   return (
     <>
@@ -27,7 +31,7 @@ const Images = ({ jewelriesByCategory }) => {
         firstImageUrl={jewelriesByCategory[0].firstImageUrl}
         secondImageUrl={jewelriesByCategory[0].secondImageUrl}
         title={jewelriesByCategory[0].title}
-        clickHandler={clickHandler}
+        clickHandler={toggleFirstImageUrlIsActive}
       />
       <div className={styles["bottom-container"]}>
         <CircleIcons

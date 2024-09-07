@@ -1,3 +1,4 @@
+import { useCallback, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { MiniImages } from "../../../common/MiniImages/MiniImages";
@@ -11,10 +12,10 @@ import { slugify } from "../../../../utils/slugify";
 
 import styles from "./InfoAndAction.module.css";
 
-export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
+const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const navigate = useNavigate();
 
-  const miniImagesClickHandler = (colorTitle) => {
+  const miniImagesClickHandler = useCallback((colorTitle) => {
     const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
     const slugifiedCategoryTitle = slugify(categoryTitle);
@@ -22,7 +23,17 @@ export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     const slugifiedColorTitle = slugify(colorTitle);
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  };
+  }, []);
+
+  // const miniImagesClickHandler = (colorTitle) => {
+  //   const categoryTitle = jewelriesByCategory[0].categories[0].title;
+
+  //   const slugifiedCategoryTitle = slugify(categoryTitle);
+
+  //   const slugifiedColorTitle = slugify(colorTitle);
+
+  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+  // };
 
   return (
     <div className={styles["outer-wrapper"]}>
@@ -55,3 +66,5 @@ export const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     </div>
   );
 };
+
+export default memo(InfoAndAction);
