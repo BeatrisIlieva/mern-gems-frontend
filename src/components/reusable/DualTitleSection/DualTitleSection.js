@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 import { Title } from "./Title/Title";
 
 import styles from "./DualTitleSection.module.css";
 
-export const DualTitleSection = ({ firstTitle, secondTitle, variant }) => {
+const DualTitleSection = ({ firstTitle, secondTitle, variant }) => {
   return (
     <div className={styles["wrapper"]}>
       <Title title={firstTitle} variant={variant} />
@@ -10,3 +12,5 @@ export const DualTitleSection = ({ firstTitle, secondTitle, variant }) => {
     </div>
   );
 };
+
+export default memo(DualTitleSection);

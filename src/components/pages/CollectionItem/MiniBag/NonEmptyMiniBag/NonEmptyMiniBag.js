@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BagHeader } from "../../../../common/BagHeader/BagHeader";
 import { BagList } from "../../../../common/BagList/BagList";
 import { Button } from "../../../../reusable/Button/Button";
-import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
+import DualTitleSection from "../../../../reusable/DualTitleSection/DualTitleSection";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { JewelryImage } from "../JewelryImage/JewelryImage";
 import { CircleIcons } from "../CircleIcons/CircleIcons";
 import { Heart } from "../Heart/Heart";
-import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
+import DualTitleSection from "../../reusable/DualTitleSection/DualTitleSection";
 
 import { slugify } from "../../../utils/slugify";
 

@@ -1,6 +1,6 @@
 import { useState, memo } from "react";
 
-import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
+import DualTitleSection from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeImages } from "../../../../common/LargeImages/LargeImages";
 import { MiniImages } from "../../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../../common/StockStatus/StockStatus";

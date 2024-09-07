@@ -1,7 +1,7 @@
 import { Button } from "../../../../reusable/Button/Button";
 import { UserShippingDetails } from "./UserShippingDetails/UserShippingDetails";
 import { UserLoginDetails } from "./UserLoginDetails/UserLoginDetails";
-import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
+import DualTitleSection from "../../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 
 import styles from "./ShippingInformation.module.css";

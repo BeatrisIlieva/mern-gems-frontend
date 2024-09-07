@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 
 import HorizontalLine from"../../reusable/HorizontalLine/HorizontalLine";
 import { LargeTitle } from "../../reusable/LargeTitle/LargeTitle";
-import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
+import DualTitleSection from "../../reusable/DualTitleSection/DualTitleSection";
 
 import { useBagContext } from "../../../contexts/BagContext";
 
