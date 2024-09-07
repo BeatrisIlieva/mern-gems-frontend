@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Content from "./Content/Content";
@@ -19,10 +19,6 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
     setSelectedColor(color);
   };
 
-  // const updateSelectedColor = useCallback((color) => {
-  //   setSelectedColor(color);
-  // }, []);
-
   const { jewelriesByCategory } = useJewelry({
     categoryTitle,
     colorTitle: selectedColor,
@@ -35,14 +31,6 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   };
-
-  // const buttonClickHandler = useCallback(() => {
-  //   const slugifiedCategoryTitle = slugify(categoryTitle);
-
-  //   const slugifiedColorTitle = selectedColor;
-
-  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  // }, [slugify]);
 
   return (
     <>
