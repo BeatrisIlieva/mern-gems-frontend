@@ -19,15 +19,6 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
 
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // const popupCloseHandler = () => {
-  //   setIsTransitioning(true);
-
-  //   setTimeout(() => {
-  //     toggleDisplayMiniBagPopup();
-  //     setIsTransitioning(false);
-  //   }, 400);
-  // };
-
   const popupCloseHandler = () => {
     return new Promise((resolve) => {
       setIsTransitioning(true);
@@ -35,8 +26,8 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       setTimeout(() => {
         toggleDisplayMiniBagPopup();
         setIsTransitioning(false);
-        resolve(); // Resolve the promise once the transition is done
-      }, 400); // Assuming 400ms is your transition duration
+        resolve();
+      }, 400);
     });
   };
 
