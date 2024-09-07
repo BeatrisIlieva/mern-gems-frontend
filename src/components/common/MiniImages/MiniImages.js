@@ -12,17 +12,17 @@ export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
     jewelriesByCategory[0].colors[0].title
   );
 
-  const updateActiveMiniImage = useCallback((colorTitle) => {
-    setActiveMiniImage(colorTitle);
-
-    clickHandler(colorTitle);
-  }, []);
-
-  // const updateActiveMiniImage = (colorTitle) => {
+  // const updateActiveMiniImage = useCallback((colorTitle) => {
   //   setActiveMiniImage(colorTitle);
 
   //   clickHandler(colorTitle);
-  // };
+  // }, []);
+
+  const updateActiveMiniImage = (colorTitle) => {
+    setActiveMiniImage(colorTitle);
+
+    clickHandler(colorTitle);
+  };
 
   const color = COLORS_BY_TITLE[activeMiniImage];
 

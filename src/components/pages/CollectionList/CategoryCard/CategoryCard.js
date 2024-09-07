@@ -15,34 +15,34 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
 
   const navigate = useNavigate();
 
-  // const updateSelectedColor = (color) => {
-  //   setSelectedColor(color);
-  // };
-
-  const updateSelectedColor = useCallback((color) => {
+  const updateSelectedColor = (color) => {
     setSelectedColor(color);
-  }, []);
+  };
+
+  // const updateSelectedColor = useCallback((color) => {
+  //   setSelectedColor(color);
+  // }, []);
 
   const { jewelriesByCategory } = useJewelry({
     categoryTitle,
     colorTitle: selectedColor,
   });
 
-  // const buttonClickHandler = () => {
-  //   const slugifiedCategoryTitle = slugify(categoryTitle);
-
-  //   const slugifiedColorTitle = selectedColor;
-
-  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  // };
-
-  const buttonClickHandler = useCallback(() => {
+  const buttonClickHandler = () => {
     const slugifiedCategoryTitle = slugify(categoryTitle);
 
     const slugifiedColorTitle = selectedColor;
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  }, [slugify]);
+  };
+
+  // const buttonClickHandler = useCallback(() => {
+  //   const slugifiedCategoryTitle = slugify(categoryTitle);
+
+  //   const slugifiedColorTitle = selectedColor;
+
+  //   navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+  // }, [slugify]);
 
   return (
     <>
