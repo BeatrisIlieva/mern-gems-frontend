@@ -89,19 +89,7 @@ export const BagProvider = ({ children }) => {
     [bagService]
   );
 
-  // const remove = async (bagId) => {
-  //   await bagService.delete(bagId);
-  // };
 
-  // const context = {
-  //   bagItems,
-  //   totalPrice,
-  //   bagTotalQuantity,
-  //   increase,
-  //   decrease,
-  //   remove,
-  //   add,
-  // };
 
   const context = useMemo(
     () => ({
