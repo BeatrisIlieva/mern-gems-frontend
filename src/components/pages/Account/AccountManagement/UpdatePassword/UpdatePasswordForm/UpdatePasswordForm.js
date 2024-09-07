@@ -1,3 +1,5 @@
+import { useCallback, useMemo } from "react";
+
 import { useEffect, useState } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
@@ -52,53 +54,68 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
       });
   }, [userLoginDetailsService, userId, updateForm]);
 
-  const onSubmit = async (e) => {
-    submitHandler(e);
+  const onSubmit = useCallback(
+    async (e) => {
+      submitHandler(e);
 
-    let spreadValues = { ...values };
+      let spreadValues = { ...values };
 
-    spreadValues = setPasswordMismatchErrorMessage(
-      values,
-      spreadValues,
-      FORM_KEYS
-    );
+      spreadValues = setPasswordMismatchErrorMessage(
+        values,
+        spreadValues,
+        FORM_KEYS
+      );
 
-    setValues(spreadValues);
+      setValues(spreadValues);
 
-    const errorOccurred = checkIfFormErrorHasOccurred(values);
+      const errorOccurred = checkIfFormErrorHasOccurred(values);
 
-    if (!errorOccurred) {
-      const data = getData(values);
+      if (!errorOccurred) {
+        const data = getData(values);
 
-      try {
-        setIsLoading(true);
+        try {
+          setIsLoading(true);
 
-        await userLoginDetailsService.updatePassword(userId, data);
+          await userLoginDetailsService.updatePassword(userId, data);
 
-        spreadValues = setSuccessMessage(spreadValues, FORM_KEYS);
+          spreadValues = setSuccessMessage(spreadValues, FORM_KEYS);
 
-        setValues(spreadValues);
+          setValues(spreadValues);
 
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
-        popupCloseHandler();
-      } catch (err) {
-        console.log(err.message);
+          popupCloseHandler();
+        } catch (err) {
+          console.log(err.message);
 
-        spreadValues = setWrongPasswordErrorMessage(
-          spreadValues,
-          FORM_KEYS,
-          err.message
-        );
+          spreadValues = setWrongPasswordErrorMessage(
+            spreadValues,
+            FORM_KEYS,
+            err.message
+          );
 
-        spreadValues = removeSuccessMessage(spreadValues, FORM_KEYS);
+          spreadValues = removeSuccessMessage(spreadValues, FORM_KEYS);
 
-        setValues(spreadValues);
-      } finally {
-        setIsLoading(false);
+          setValues(spreadValues);
+        } finally {
+          setIsLoading(false);
+        }
       }
-    }
-  };
+    },
+    [
+      submitHandler,
+      setPasswordMismatchErrorMessage,
+      values,
+      checkIfFormErrorHasOccurred,
+      getData,
+      userLoginDetailsService,
+      setSuccessMessage,
+      clearInitialFormValuesMessages,
+      popupCloseHandler,
+      setWrongPasswordErrorMessage,
+      removeSuccessMessage,
+    ]
+  );
 
   return (
     <>
