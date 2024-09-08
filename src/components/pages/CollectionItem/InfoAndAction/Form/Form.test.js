@@ -1,24 +1,27 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+
 import { Form } from "./Form";
+
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
-import '@testing-library/jest-dom/extend-expect';
 
-// Mock the useBagContext hook
 jest.mock("../../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
 
-// Mock the useAuthenticationContext hook
 jest.mock("../../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
 
-// Mock components
 jest.mock("./Sizes/Sizes", () => ({
   Sizes: ({ inventories, errorMessage, changeHandler, selectedSize }) => (
     <div>
-      <select data-testid="size-select" onChange={changeHandler} value={selectedSize}>
+      <select
+        data-testid="size-select"
+        onChange={changeHandler}
+        value={selectedSize}
+      >
         {inventories.map((inventory) => (
           <option key={inventory.size} value={inventory.size}>
             {inventory.size}
@@ -46,7 +49,7 @@ describe("Form Component", () => {
   const mockAdd = jest.fn();
   const mockToggleDisplayPopup = jest.fn();
   const mockUserId = "user-123";
-  
+
   beforeEach(() => {
     jest.clearAllMocks();
     useBagContext.mockReturnValue({ add: mockAdd });
@@ -75,9 +78,8 @@ describe("Form Component", () => {
     expect(screen.getByTestId("heart-icon")).toBeInTheDocument();
   });
 
-
   test("submits form and calls toggleDisplayPopup when size is selected", async () => {
-    mockAdd.mockResolvedValueOnce({}); // Mock successful add
+    mockAdd.mockResolvedValueOnce({});
 
     render(
       <Form
@@ -86,10 +88,10 @@ describe("Form Component", () => {
       />
     );
 
-    // Simulate size selection
-    fireEvent.change(screen.getByTestId("size-select"), { target: { value: "M" } });
+    fireEvent.change(screen.getByTestId("size-select"), {
+      target: { value: "M" },
+    });
 
-    // Submit the form
     fireEvent.click(screen.getByTestId("add-to-bag-button"));
 
     await waitFor(() => {
