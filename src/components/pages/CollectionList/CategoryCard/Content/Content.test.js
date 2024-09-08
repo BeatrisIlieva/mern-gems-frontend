@@ -116,4 +116,34 @@ describe("Content component", () => {
     expect(screen.getByTestId("large-images")).toBeInTheDocument();
     expect(screen.getByTestId("mini-images")).toBeInTheDocument();
   });
+
+  test('calls largeImagesClickHandler when large images are clicked', () => {
+    render(
+      <Content
+        jewelriesByCategory={mockJewelriesByCategory}
+        updateSelectedColor={mockUpdateSelectedColor}
+      />
+    );
+
+    // Trigger click event on LargeImages
+    fireEvent.click(screen.getByTestId('large-images'));
+
+    // Expect largeImagesClickHandler to have been called
+    expect(mockLargeImagesClickHandler).toHaveBeenCalled();
+  });
+
+  test('calls updateSelectedColor when mini images are clicked', () => {
+    render(
+      <Content
+        jewelriesByCategory={mockJewelriesByCategory}
+        updateSelectedColor={mockUpdateSelectedColor}
+      />
+    );
+
+    // Trigger click event on MiniImages
+    fireEvent.click(screen.getByTestId('mini-images'));
+
+    // Expect updateSelectedColor to have been called with 'newColor'
+    expect(mockUpdateSelectedColor).toHaveBeenCalledWith('newColor');
+  });
 });
