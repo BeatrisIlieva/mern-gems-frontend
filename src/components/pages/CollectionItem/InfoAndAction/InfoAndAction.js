@@ -1,4 +1,4 @@
-import { useCallback, memo } from "react";
+import { useCallback, memo, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { MiniImages } from "../../../common/MiniImages/MiniImages";
@@ -25,19 +25,25 @@ const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
   }, []);
 
+  const firstTitle = useMemo(() => {
+    return (
+      <MiniImages
+        jewelriesByCategory={jewelriesByCategory}
+        clickHandler={miniImagesClickHandler}
+      />
+    );
+  }, [jewelriesByCategory, miniImagesClickHandler]);
+
+  const secondTitle = useMemo(() => {
+    return <StockStatus jewelriesByCategory={jewelriesByCategory} />;
+  }, [jewelriesByCategory]);
+
   return (
     <div className={styles["outer-wrapper"]}>
       <div className={styles["wrapper"]}>
         <DualTitleSection
-          firstTitle={
-            <MiniImages
-              jewelriesByCategory={jewelriesByCategory}
-              clickHandler={miniImagesClickHandler}
-            />
-          }
-          secondTitle={
-            <StockStatus jewelriesByCategory={jewelriesByCategory} />
-          }
+          firstTitle={firstTitle}
+          secondTitle={secondTitle}
           variant={"regular"}
         />
         <div>
