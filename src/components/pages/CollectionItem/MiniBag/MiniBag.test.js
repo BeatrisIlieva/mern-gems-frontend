@@ -1,17 +1,17 @@
-// MiniBag.test.js
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import "@testing-library/jest-dom/extend-expect";
+
 import { MiniBag } from "./MiniBag";
+
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 import { useBagContext } from "../../../../contexts/BagContext";
-import { MemoryRouter } from "react-router-dom";
-import "@testing-library/jest-dom/extend-expect";
 
 jest.mock("../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
 
-// Mock the useBagContext hook
 jest.mock("../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
@@ -21,7 +21,6 @@ jest.mock("../../../../contexts/WishlistContext", () => ({
 }));
 
 describe("MiniBag Component", () => {
-  // Mock function for toggling the display of the mini bag popup
   const mockUserId = "user123";
 
   const toggleDisplayMiniBagPopup = jest.fn();
@@ -46,7 +45,6 @@ describe("MiniBag Component", () => {
   });
 
   test("renders EmptyMiniBag when bagTotalQuantity is 0", () => {
-    // Set up the mock to return an empty bag
     useBagContext.mockReturnValue({
       bagTotalQuantity: 0,
       bagItems: [],
@@ -62,7 +60,6 @@ describe("MiniBag Component", () => {
   });
 
   test("renders NonEmptyMiniBag when bagTotalQuantity is greater than 0", () => {
-    // Set up the mock to return a non-empty bag
     useBagContext.mockReturnValue({
       bagTotalQuantity: 1,
       bagItems: [
@@ -98,7 +95,6 @@ describe("MiniBag Component", () => {
   });
 
   test("handles popup close transition", async () => {
-    // Set up the mock to return a non-empty bag
     useBagContext.mockReturnValue({
       bagTotalQuantity: 1,
       bagItems: [
@@ -129,13 +125,10 @@ describe("MiniBag Component", () => {
       </MemoryRouter>
     );
 
-    // Click the close button
     fireEvent.click(screen.getByTestId("x-mark"));
 
-    // Check that the transition classes are applied
     expect(screen.getByTestId("mini-bag")).toHaveClass("transition-out");
 
-    // Wait for the transition to complete and the popup to close
     await waitFor(() => {
       expect(toggleDisplayMiniBagPopup).toHaveBeenCalled();
     });
