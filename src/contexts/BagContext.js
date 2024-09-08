@@ -35,48 +35,72 @@ export const BagProvider = ({ children }) => {
       : 0;
   }, [bagItems, isAuthenticated]);
 
-  useEffect(() => {
-    bagService
-      .getAll(userId)
-      .then((data) => {
-        const modifiedData = data.map((item) => ({
-          ...item,
-          totalPrice: item.quantity * item.price,
-        }));
+  // useEffect(() => {
+  //   bagService
+  //     .getAll(userId)
+  //     .then((data) => {
+  //       const modifiedData = data.map((item) => ({
+  //         ...item,
+  //         totalPrice: item.quantity * item.price,
+  //       }));
 
-        setBagItems(modifiedData);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userId, bagService]);
+  //       setBagItems(modifiedData);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     });
+  // }, [userId, bagService]);
+
+  const fetchBagItems = useCallback(async () => {
+    try {
+      const data = await bagService.getAll(userId);
+      const modifiedData = data.map((item) => ({
+        ...item,
+        totalPrice: item.quantity * item.price,
+      }));
+
+      setBagItems(modifiedData);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }, [bagService, userId]);
+
+  
 
   const add = useCallback(
     async (size, jewelryId, userId) => {
       await bagService.add(size, jewelryId, userId);
+
+      await fetchBagItems(); 
     },
-    [bagService]
+    [bagService, fetchBagItems]
   );
 
   const increase = useCallback(
     async (bagId) => {
       await bagService.increase(bagId);
+
+      await fetchBagItems(); 
     },
-    [bagService]
+    [bagService, fetchBagItems]
   );
 
   const decrease = useCallback(
     async (bagId) => {
       await bagService.decrease(bagId);
+
+      await fetchBagItems(); 
     },
-    [bagService]
+    [bagService, fetchBagItems]
   );
 
   const remove = useCallback(
     async (bagId) => {
       await bagService.delete(bagId);
+
+      await fetchBagItems(); 
     },
-    [bagService]
+    [bagService, fetchBagItems]
   );
 
   const context = useMemo(

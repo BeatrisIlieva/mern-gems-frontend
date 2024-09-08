@@ -1,12 +1,15 @@
+import { useMemo } from "react";
+
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
 export const useService = (serviceFactory) => {
   const { token } = useAuthenticationContext();
 
-  const service = serviceFactory(token);
+  const service = useMemo(() => {
+    return serviceFactory(token);
+  }, [serviceFactory, token]);
+
+  // const service = serviceFactory(token);
 
   return service;
 };
-
-
-
