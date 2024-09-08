@@ -29,6 +29,7 @@ export const Heart = memo(({ categoryId, colorId }) => {
 
   return (
     <FontAwesomeIcon
+      data-testid={isLikedByUser ? "solid" : "regular"}
       icon={isLikedByUser ? solidHeart : regularHeart}
       className={styles["heart-icon"]}
       onClick={handleClick}
