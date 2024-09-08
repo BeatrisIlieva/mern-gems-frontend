@@ -48,7 +48,6 @@ jest.mock("../../../../common/PriceRange/PriceRange", () => ({
   PriceRange: () => <div>Price Range</div>,
 }));
 
-// Mocking useLargeImagesClick hook
 jest.mock("../../../../../hooks/useLargeImagesClick", () => ({
   useLargeImagesClick: jest.fn(),
 }));
@@ -111,13 +110,12 @@ describe("Content component", () => {
       />
     );
 
-    // Check if DualTitleSection, LargeImages, and MiniImages are rendered
     expect(screen.getByTestId("dual-title-section")).toBeInTheDocument();
     expect(screen.getByTestId("large-images")).toBeInTheDocument();
     expect(screen.getByTestId("mini-images")).toBeInTheDocument();
   });
 
-  test('calls largeImagesClickHandler when large images are clicked', () => {
+  test("calls largeImagesClickHandler when large images are clicked", () => {
     render(
       <Content
         jewelriesByCategory={mockJewelriesByCategory}
@@ -125,14 +123,12 @@ describe("Content component", () => {
       />
     );
 
-    // Trigger click event on LargeImages
-    fireEvent.click(screen.getByTestId('large-images'));
+    fireEvent.click(screen.getByTestId("large-images"));
 
-    // Expect largeImagesClickHandler to have been called
     expect(mockLargeImagesClickHandler).toHaveBeenCalled();
   });
 
-  test('calls updateSelectedColor when mini images are clicked', () => {
+  test("calls updateSelectedColor when mini images are clicked", () => {
     render(
       <Content
         jewelriesByCategory={mockJewelriesByCategory}
@@ -140,14 +136,12 @@ describe("Content component", () => {
       />
     );
 
-    // Trigger click event on MiniImages
-    fireEvent.click(screen.getByTestId('mini-images'));
+    fireEvent.click(screen.getByTestId("mini-images"));
 
-    // Expect updateSelectedColor to have been called with 'newColor'
-    expect(mockUpdateSelectedColor).toHaveBeenCalledWith('newColor');
+    expect(mockUpdateSelectedColor).toHaveBeenCalledWith("newColor");
   });
 
-  test('toggles articleIsHovered state on mouse events', () => {
+  test("toggles articleIsHovered state on mouse events", () => {
     render(
       <Content
         jewelriesByCategory={mockJewelriesByCategory}
@@ -155,21 +149,18 @@ describe("Content component", () => {
       />
     );
 
-    const article = screen.getByRole('article'); // Assuming the role "article" is applied
+    const article = screen.getByRole("article");
 
-    // Initial state (not hovered)
-    expect(article).toHaveClass('content'); // Ensure it has default class
+    expect(article).toHaveClass("content");
 
-    // Simulate mouse enter
     fireEvent.mouseEnter(article);
-    expect(article).toHaveClass('content hovered');
+    expect(article).toHaveClass("content hovered");
 
-    // Simulate mouse leave
     fireEvent.mouseLeave(article);
-    expect(article).toHaveClass('content');
+    expect(article).toHaveClass("content");
   });
 
-  test('toggles articleIsHovered state on touch events', () => {
+  test("toggles articleIsHovered state on touch events", () => {
     render(
       <Content
         jewelriesByCategory={mockJewelriesByCategory}
@@ -177,14 +168,12 @@ describe("Content component", () => {
       />
     );
 
-    const article = screen.getByRole('article');
+    const article = screen.getByRole("article");
 
-    // Simulate touch start
     fireEvent.touchStart(article);
-    expect(article).toHaveClass('content hovered');
+    expect(article).toHaveClass("content hovered");
 
-    // Simulate touch end
     fireEvent.touchEnd(article);
-    expect(article).toHaveClass('content');
+    expect(article).toHaveClass("content");
   });
 });
