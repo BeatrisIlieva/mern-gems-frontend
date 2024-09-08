@@ -7,7 +7,7 @@ import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSecti
 
 import styles from "./LargeImages.module.css";
 
-const LargeImages = ({ jewelriesByCategory, clickHandler }) => {
+export const LargeImages = memo(({ jewelriesByCategory, clickHandler }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -48,6 +48,4 @@ const LargeImages = ({ jewelriesByCategory, clickHandler }) => {
       </div>
     </div>
   );
-};
-
-export default memo(LargeImages);
+});
