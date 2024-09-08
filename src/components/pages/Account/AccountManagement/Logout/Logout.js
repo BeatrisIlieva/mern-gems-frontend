@@ -9,7 +9,7 @@ import { useService } from "../../../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../../../services/userLoginDetailsService";
 
-const Logout = () => {
+export const Logout = memo(() => {
   const navigate = useNavigate();
 
   const { userId, clearToken } = useAuthenticationContext();
@@ -31,6 +31,4 @@ const Logout = () => {
       variant={"underlined"}
     />
   );
-};
-
-export default memo(Logout);
+});
