@@ -7,7 +7,7 @@ import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./QuestionMark.module.css";
 
-const QuestionMark = ({ text }) => {
+export const QuestionMark = memo(({ text }) => {
   const [displayInfo, setDisplayInfo] = useState(false);
 
   const toggleDisplayInfo = () => {
@@ -27,6 +27,4 @@ const QuestionMark = ({ text }) => {
       />
     </span>
   );
-};
-
-export default memo(QuestionMark);
+});
