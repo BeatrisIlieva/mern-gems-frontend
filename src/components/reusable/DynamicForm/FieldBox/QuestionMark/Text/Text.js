@@ -2,8 +2,6 @@ import { memo } from "react";
 
 import styles from "./Text.module.css";
 
-const Text = ({ text }) => {
+export const Text = memo(({ text }) => {
   return <div className={styles["text"]}>{text}</div>;
-};
-
-export default memo(Text);
+});
