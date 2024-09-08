@@ -10,40 +10,41 @@ import { PASSWORD_REQUIREMENTS } from "../../../../constants/password";
 
 import styles from "./FieldBox.module.css";
 
-const FieldBox = ({
-  values,
-  value,
-  currentKey,
-  clickHandler,
-  blurHandler,
-  changeHandler,
-  initialFormValues,
-  userInformation,
-  fieldVariant,
-}) => {
-  const location = useLocation();
+export const FieldBox = memo(
+  ({
+    values,
+    value,
+    currentKey,
+    clickHandler,
+    blurHandler,
+    changeHandler,
+    initialFormValues,
+    userInformation,
+    fieldVariant,
+  }) => {
+    const location = useLocation();
 
-  return (
-    <div key={currentKey} className={`${styles[fieldVariant]}`}>
-      {currentKey === "Password" && location.pathname !== "/users/account" && (
-        <QuestionMark text={PASSWORD_REQUIREMENTS} />
-      )}
-      {currentKey === "NewPassword" && (
-        <QuestionMark text={PASSWORD_REQUIREMENTS} />
-      )}
-      <FieldContainer
-        values={values}
-        value={value}
-        clickHandler={clickHandler}
-        blurHandler={blurHandler}
-        changeHandler={changeHandler}
-        initialFormValues={initialFormValues}
-        userInformation={userInformation}
-        currentKey={currentKey}
-      />
-      <ErrorMessage values={values} value={value} />
-    </div>
-  );
-};
-
-export default memo(FieldBox);
+    return (
+      <div key={currentKey} className={`${styles[fieldVariant]}`}>
+        {currentKey === "Password" &&
+          location.pathname !== "/users/account" && (
+            <QuestionMark text={PASSWORD_REQUIREMENTS} />
+          )}
+        {currentKey === "NewPassword" && (
+          <QuestionMark text={PASSWORD_REQUIREMENTS} />
+        )}
+        <FieldContainer
+          values={values}
+          value={value}
+          clickHandler={clickHandler}
+          blurHandler={blurHandler}
+          changeHandler={changeHandler}
+          initialFormValues={initialFormValues}
+          userInformation={userInformation}
+          currentKey={currentKey}
+        />
+        <ErrorMessage values={values} value={value} />
+      </div>
+    );
+  }
+);
