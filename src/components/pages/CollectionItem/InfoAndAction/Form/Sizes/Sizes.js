@@ -49,7 +49,9 @@ export const Sizes = memo(
             </div>
           ))}
         </div>
-        <div className={styles["error-message"]}>{errorMessage}</div>
+        <div className={styles["error-message"]} data-testid="error-message">
+          {errorMessage}
+        </div>
       </div>
     );
   }
