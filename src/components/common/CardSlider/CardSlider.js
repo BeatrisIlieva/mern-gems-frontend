@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-import DualTitleSection from "../../reusable/DualTitleSection/DualTitleSection";
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 import { PriceRange } from "../PriceRange/PriceRange";
 import { StockStatus } from "../StockStatus/StockStatus";
 import LargeImages from "../LargeImages/LargeImages";

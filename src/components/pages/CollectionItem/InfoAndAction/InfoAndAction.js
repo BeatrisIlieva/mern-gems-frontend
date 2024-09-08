@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { MiniImages } from "../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form";
-import DualTitleSection from "../../../reusable/DualTitleSection/DualTitleSection";
+import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 

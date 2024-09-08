@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, memo } from "react";
 
 import { Remove } from "./Remove/Remove";
 import { MoveToWishlist } from "./MoveToWishlist/MoveToWishlist";
-import DualTitleSection from "../../../reusable/DualTitleSection/DualTitleSection";
+import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";

@@ -3,7 +3,7 @@ import { useState, useEffect, memo } from "react";
 import { JewelryImage } from "../JewelryImage/JewelryImage";
 import { CircleIcons } from "../CircleIcons/CircleIcons";
 import Heart from "../Heart/Heart";
-import DualTitleSection from "../../reusable/DualTitleSection/DualTitleSection";
+import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";
 
 import styles from "./LargeImages.module.css";
 
