@@ -168,4 +168,23 @@ describe("Content component", () => {
     fireEvent.mouseLeave(article);
     expect(article).toHaveClass('content');
   });
+
+  test('toggles articleIsHovered state on touch events', () => {
+    render(
+      <Content
+        jewelriesByCategory={mockJewelriesByCategory}
+        updateSelectedColor={mockUpdateSelectedColor}
+      />
+    );
+
+    const article = screen.getByRole('article');
+
+    // Simulate touch start
+    fireEvent.touchStart(article);
+    expect(article).toHaveClass('content hovered');
+
+    // Simulate touch end
+    fireEvent.touchEnd(article);
+    expect(article).toHaveClass('content');
+  });
 });
