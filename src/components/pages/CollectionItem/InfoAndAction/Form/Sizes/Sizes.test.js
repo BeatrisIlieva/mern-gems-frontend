@@ -1,9 +1,9 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { Sizes } from "./Sizes";
 import "@testing-library/jest-dom/extend-expect";
 
-// Mock the NormalTitle component
+import { Sizes } from "./Sizes";
+
 jest.mock("../../../../../reusable/NormalTitle/NormalTitle", () => ({
   NormalTitle: ({ title, variant }) => (
     <div data-testid={`normal-title-${variant}`}>{title}</div>
@@ -35,13 +35,11 @@ describe("Sizes Component", () => {
       </MemoryRouter>
     );
 
-    // Check if sizes and prices are rendered
     expect(screen.getByText("Size")).toBeInTheDocument();
     expect(screen.getByText("$50")).toBeInTheDocument();
     expect(screen.getByText("$60")).toBeInTheDocument();
     expect(screen.getByText("$70")).toBeInTheDocument();
 
-    // Check if error message is rendered
     expect(screen.getByTestId("error-message")).toHaveTextContent(
       "Size selection is required."
     );
