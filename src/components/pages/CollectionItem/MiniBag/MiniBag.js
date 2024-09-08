@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
@@ -8,7 +8,7 @@ import { useBagContext } from "../../../../contexts/BagContext";
 
 import styles from "./MiniBag.module.css";
 
-export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
+export const MiniBag = memo(({ toggleDisplayMiniBagPopup }) => {
   const { bagTotalQuantity } = useBagContext();
 
   const [miniBagIsEmpty, setMiniBagIsEmpty] = useState(false);
@@ -53,4 +53,4 @@ export const MiniBag = ({ toggleDisplayMiniBagPopup }) => {
       </div>
     </section>
   );
-};
+});
