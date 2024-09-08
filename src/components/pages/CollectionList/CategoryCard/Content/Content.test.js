@@ -146,4 +146,26 @@ describe("Content component", () => {
     // Expect updateSelectedColor to have been called with 'newColor'
     expect(mockUpdateSelectedColor).toHaveBeenCalledWith('newColor');
   });
+
+  test('toggles articleIsHovered state on mouse events', () => {
+    render(
+      <Content
+        jewelriesByCategory={mockJewelriesByCategory}
+        updateSelectedColor={mockUpdateSelectedColor}
+      />
+    );
+
+    const article = screen.getByRole('article'); // Assuming the role "article" is applied
+
+    // Initial state (not hovered)
+    expect(article).toHaveClass('content'); // Ensure it has default class
+
+    // Simulate mouse enter
+    fireEvent.mouseEnter(article);
+    expect(article).toHaveClass('content hovered');
+
+    // Simulate mouse leave
+    fireEvent.mouseLeave(article);
+    expect(article).toHaveClass('content');
+  });
 });
