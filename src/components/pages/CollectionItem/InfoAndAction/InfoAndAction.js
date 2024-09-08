@@ -12,58 +12,63 @@ import { slugify } from "../../../../utils/slugify";
 
 import styles from "./InfoAndAction.module.css";
 
-const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
-  const navigate = useNavigate();
+export const InfoAndAction = memo(
+  ({ jewelriesByCategory, toggleDisplayPopup }) => {
+    const navigate = useNavigate();
 
-  const miniImagesClickHandler = useCallback(
-    (colorTitle) => {
-      const categoryTitle = jewelriesByCategory[0].categories[0].title;
+    const miniImagesClickHandler = useCallback(
+      (colorTitle) => {
+        const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
-      const slugifiedCategoryTitle = slugify(categoryTitle);
+        const slugifiedCategoryTitle = slugify(categoryTitle);
 
-      const slugifiedColorTitle = slugify(colorTitle);
+        const slugifiedColorTitle = slugify(colorTitle);
 
-      navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-    },
-    [jewelriesByCategory, navigate]
-  );
-
-  const firstTitle = useMemo(() => {
-    return (
-      <MiniImages
-        jewelriesByCategory={jewelriesByCategory}
-        clickHandler={miniImagesClickHandler}
-      />
+        navigate(
+          `/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`
+        );
+      },
+      [jewelriesByCategory, navigate]
     );
-  }, [jewelriesByCategory, miniImagesClickHandler]);
 
-  const secondTitle = useMemo(() => {
-    return <StockStatus jewelriesByCategory={jewelriesByCategory} />;
-  }, [jewelriesByCategory]);
-
-  return (
-    <div className={styles["outer-wrapper"]}>
-      <div className={styles["wrapper"]}>
-        <DualTitleSection
-          firstTitle={firstTitle}
-          secondTitle={secondTitle}
-          variant={"regular"}
+    const firstTitle = useMemo(() => {
+      return (
+        <MiniImages
+          jewelriesByCategory={jewelriesByCategory}
+          clickHandler={miniImagesClickHandler}
         />
-        <div>
-          <LargeTitle title={jewelriesByCategory[0].title} textAlign={"left"} />
-          <Paragraph
-            text={`${jewelriesByCategory[0].description}.`}
-            textAlign={"left"}
-            color={"gray"}
-          />
-        </div>
-      </div>
-      <Form
-        jewelriesByCategory={jewelriesByCategory}
-        toggleDisplayPopup={toggleDisplayPopup}
-      />
-    </div>
-  );
-};
+      );
+    }, [jewelriesByCategory, miniImagesClickHandler]);
 
-export default memo(InfoAndAction);
+    const secondTitle = useMemo(() => {
+      return <StockStatus jewelriesByCategory={jewelriesByCategory} />;
+    }, [jewelriesByCategory]);
+
+    return (
+      <div className={styles["outer-wrapper"]}>
+        <div className={styles["wrapper"]}>
+          <DualTitleSection
+            firstTitle={firstTitle}
+            secondTitle={secondTitle}
+            variant={"regular"}
+          />
+          <div>
+            <LargeTitle
+              title={jewelriesByCategory[0].title}
+              textAlign={"left"}
+            />
+            <Paragraph
+              text={`${jewelriesByCategory[0].description}.`}
+              textAlign={"left"}
+              color={"gray"}
+            />
+          </div>
+        </div>
+        <Form
+          jewelriesByCategory={jewelriesByCategory}
+          toggleDisplayPopup={toggleDisplayPopup}
+        />
+      </div>
+    );
+  }
+);
