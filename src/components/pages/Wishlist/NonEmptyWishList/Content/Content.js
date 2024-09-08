@@ -10,7 +10,7 @@ import { useLargeImagesClick } from "../../../../../hooks/useLargeImagesClick";
 
 import styles from "./Content.module.css";
 
-const Content = ({ categoryTitle, colorTitle }) => {
+export const Content = memo(({ categoryTitle, colorTitle }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   const { jewelriesByCategory } = useJewelry({
@@ -54,6 +54,4 @@ const Content = ({ categoryTitle, colorTitle }) => {
       )}
     </>
   );
-};
-
-export default memo(Content);
+});
