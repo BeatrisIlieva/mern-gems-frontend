@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 import { Popup } from "../../../../reusable/Popup/Popup";
 import { Button } from "../../../../reusable/Button/Button";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 
-export const UpdatePassword = () => {
+export const UpdatePassword = memo(() => {
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {
@@ -22,9 +22,9 @@ export const UpdatePassword = () => {
       {displayPopup && (
         <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
           <LargeTitle title={"Change Password"} textAlign={"align-center"} />
-          <UpdatePasswordForm popupCloseHandler={toggleDisplayPopup}/>
+          <UpdatePasswordForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>
       )}
     </>
   );
-};
+});
