@@ -9,7 +9,5 @@ export const useService = (serviceFactory) => {
     return serviceFactory(token);
   }, [serviceFactory, token]);
 
-  // const service = serviceFactory(token);
-
   return service;
 };
