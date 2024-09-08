@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./NavLinkItem.module.css";
 
-const NavLinkItem = ({ to, icon, label, count }) => {
+export const NavLinkItem = memo(({ to, icon, label, count }) => {
   return (
     <>
       <NavLink
@@ -25,6 +25,4 @@ const NavLinkItem = ({ to, icon, label, count }) => {
       )}
     </>
   );
-};
-
-export default memo(NavLinkItem);
+});
