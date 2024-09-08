@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 import { Button } from "../../../../reusable/Button/Button";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { Popup } from "../../../../reusable/Popup/Popup";
 
-export const UpdateEmail = () => {
+export const UpdateEmail = memo(() => {
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {
@@ -27,4 +27,4 @@ export const UpdateEmail = () => {
       )}
     </>
   );
-};
+});
