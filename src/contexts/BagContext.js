@@ -27,7 +27,7 @@ export const BagProvider = ({ children }) => {
       (total, item) => total + item.price * item.quantity,
       0
     );
-  }, [bagItems.length]);
+  }, [bagItems]);
 
   const bagTotalQuantity = useMemo(() => {
     return isAuthenticated
