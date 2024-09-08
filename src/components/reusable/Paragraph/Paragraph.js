@@ -1,6 +1,8 @@
+import { memo } from "react";
+
 import styles from "./Paragraph.module.css";
 
-export const Paragraph = ({ text, textAlign, color }) => {
+export const Paragraph = memo(({ text, textAlign, color }) => {
   return (
     <p
       className={`${styles["paragraph"]} ${styles[textAlign]} ${styles[color]}`}
@@ -8,4 +10,4 @@ export const Paragraph = ({ text, textAlign, color }) => {
       {text}
     </p>
   );
-};
+});
