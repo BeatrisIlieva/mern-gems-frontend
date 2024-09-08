@@ -5,7 +5,7 @@ import { BagContent } from "./BagContent/BagContent";
 
 import styles from "./NonEmptyBag.module.css";
 
-const NonEmptyBag = () => {
+export const NonEmptyBag = memo(() => {
   return (
     <section id={styles["non-empty-bag"]}>
       <div className={styles["outer-wrapper"]}>
@@ -22,6 +22,4 @@ const NonEmptyBag = () => {
       </div>
     </section>
   );
-};
-
-export default memo(NonEmptyBag);
+});
