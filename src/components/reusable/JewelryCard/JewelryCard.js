@@ -2,7 +2,7 @@ import { memo } from "react";
 
 import styles from "./JewelryCard.module.css";
 
-const JewelryCard = ({ firstImageUrl, jewelryTitle }) => {
+export const JewelryCard = memo(({ firstImageUrl, jewelryTitle }) => {
   return (
     <div className={styles["thumbnail"]}>
       <img
@@ -12,6 +12,4 @@ const JewelryCard = ({ firstImageUrl, jewelryTitle }) => {
       />
     </div>
   );
-};
-
-export default memo(JewelryCard);
+});
