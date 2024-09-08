@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 
 import { checkIfItemsHasBeenSoldOut } from "./helpers/checkIfItemsHasBeenSoldOut";
 
@@ -7,7 +7,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./StockStatus.module.css";
 
-export const StockStatus = ({ jewelriesByCategory }) => {
+export const StockStatus = memo(({ jewelriesByCategory }) => {
   const allQuantitiesZero = checkIfItemsHasBeenSoldOut(jewelriesByCategory[0]);
 
   const [isSoldOut, setIsSoldOut] = useState(allQuantitiesZero);
@@ -27,4 +27,4 @@ export const StockStatus = ({ jewelriesByCategory }) => {
       {isSoldOut ? "Sold Out" : "In Stock"}
     </span>
   );
-};
+});
