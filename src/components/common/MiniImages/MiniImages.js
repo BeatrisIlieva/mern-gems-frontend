@@ -20,7 +20,11 @@ export const MiniImages = memo(({ jewelriesByCategory, clickHandler }) => {
   const color = COLORS_BY_TITLE[activeMiniImage];
 
   return (
-    <ul className={styles["mini-images-list"]} role="list">
+    <ul
+      className={styles["mini-images-list"]}
+      role="list"
+      data-testid="mini-images"
+    >
       {Object.entries(MINI_IMAGES_BY_TITLE_AND_IMAGE_URL).map(
         ([colorName, { title, imageUrl }]) => (
           <li

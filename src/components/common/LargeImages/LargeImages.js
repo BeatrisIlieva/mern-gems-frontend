@@ -19,7 +19,7 @@ export const LargeImages = memo(({ jewelriesByCategory, clickHandler }) => {
   };
 
   return (
-    <div className={styles["large-images"]}>
+    <div className={styles["large-images"]} data-testid="large-images">
       <DualTitleSection
         firstTitle={
           <CircleIcons
