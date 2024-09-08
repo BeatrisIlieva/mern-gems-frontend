@@ -1,9 +1,11 @@
+import { memo } from "react";
+
 import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
 import { CardSlider } from "../../../common/CardSlider/CardSlider";
 
 import styles from "./EmptyWishlist.module.css";
 
-export const EmptyWishlist = () => {
+export const EmptyWishlist = memo(() => {
   return (
     <section id={styles["empty-wishlist"]}>
       <InfoMessage
@@ -13,4 +15,4 @@ export const EmptyWishlist = () => {
       <CardSlider />
     </section>
   );
-};
+});
