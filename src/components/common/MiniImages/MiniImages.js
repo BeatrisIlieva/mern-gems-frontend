@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useState, useCallback } from "react";
 import Image from "./Image/Image";
 import { COLORS_BY_TITLE } from "../../../constants/colorsByTitle";
 import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitleAndImageUrl";
@@ -9,10 +9,13 @@ export const MiniImages = memo(({ jewelriesByCategory, clickHandler }) => {
     jewelriesByCategory[0].colors[0].title
   );
 
-  const updateActiveMiniImage = (colorTitle) => {
-    setActiveMiniImage(colorTitle);
-    clickHandler(colorTitle);
-  };
+  const updateActiveMiniImage = useCallback(
+    (colorTitle) => {
+      setActiveMiniImage(colorTitle);
+      clickHandler(colorTitle);
+    },
+    [setActiveMiniImage, clickHandler]
+  );
 
   const color = COLORS_BY_TITLE[activeMiniImage];
 

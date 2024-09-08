@@ -1,6 +1,8 @@
+import { memo } from "react";
+
 import { Button } from "../../reusable/Button/Button";
 
-export const ShopBy = ({ categoryTitle, buttonClickHandler }) => {
+export const ShopBy = memo(({ categoryTitle, buttonClickHandler }) => {
   return (
     <Button
       title={`Shop ${categoryTitle}`}
@@ -8,4 +10,4 @@ export const ShopBy = ({ categoryTitle, buttonClickHandler }) => {
       callBackFunction={buttonClickHandler}
     />
   );
-};
+});

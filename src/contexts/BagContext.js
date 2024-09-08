@@ -1,5 +1,6 @@
 import {
   useState,
+  useEffect,
   createContext,
   useContext,
   useMemo,
@@ -47,6 +48,10 @@ export const BagProvider = ({ children }) => {
       console.log(err.message);
     }
   }, [bagService, userId]);
+
+  useEffect(() => {
+    fetchBagItems();
+  }, [fetchBagItems]);
 
   const add = useCallback(
     async (size, jewelryId, userId) => {

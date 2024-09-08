@@ -1,5 +1,6 @@
 import {
   useState,
+  useEffect,
   createContext,
   useContext,
   useCallback,
@@ -30,6 +31,10 @@ export const WishlistProvider = ({ children }) => {
       console.log(err.message);
     }
   }, [wishlistService, userId]);
+
+  useEffect(() => {
+    fetchWishlistItems();
+  }, [fetchWishlistItems]);
 
   const wishlistTotalQuantity = useMemo(() => {
     return isAuthenticated ? wishlistItems.length : 0;

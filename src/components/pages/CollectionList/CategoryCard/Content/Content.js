@@ -1,4 +1,4 @@
-import { useState, memo } from "react";
+import { useState, memo, useMemo } from "react";
 
 import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 import LargeImages from "../../../../common/LargeImages/LargeImages";
@@ -22,6 +22,14 @@ const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
     colorTitle,
   });
 
+  const firstTitle = useMemo(() => {
+    return <PriceRange jewelriesByCategory={jewelriesByCategory} />;
+  }, [jewelriesByCategory]);
+
+  const secondTitle = useMemo(() => {
+    return <StockStatus jewelriesByCategory={jewelriesByCategory} />;
+  }, [jewelriesByCategory]);
+
   return (
     <article
       onMouseEnter={() => setArticleIsHovered(true)}
@@ -35,8 +43,8 @@ const Content = ({ jewelriesByCategory, updateSelectedColor }) => {
       }
     >
       <DualTitleSection
-        firstTitle={<PriceRange jewelriesByCategory={jewelriesByCategory} />}
-        secondTitle={<StockStatus jewelriesByCategory={jewelriesByCategory} />}
+        firstTitle={firstTitle}
+        secondTitle={secondTitle}
         variant={"regular"}
       />
       <LargeImages

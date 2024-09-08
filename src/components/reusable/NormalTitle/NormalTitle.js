@@ -1,6 +1,8 @@
+import { memo } from "react";
+
 import styles from "./NormalTitle.module.css";
 
-export const NormalTitle = ({ title, variant }) => {
+export const NormalTitle = memo(({ title, variant }) => {
   return (
     <h4
       className={
@@ -10,4 +12,4 @@ export const NormalTitle = ({ title, variant }) => {
       {title}
     </h4>
   );
-};
+});
