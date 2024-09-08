@@ -1,5 +1,5 @@
 import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
-import Content from "./Content/Content";
+import { Content } from "./Content/Content";
 
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 

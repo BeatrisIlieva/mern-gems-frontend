@@ -1,5 +1,5 @@
 import { memo, useState, useCallback } from "react";
-import Image from "./Image/Image";
+import { Image } from "./Image/Image";
 import { COLORS_BY_TITLE } from "../../../constants/colorsByTitle";
 import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitleAndImageUrl";
 import styles from "./MiniImages.module.css";

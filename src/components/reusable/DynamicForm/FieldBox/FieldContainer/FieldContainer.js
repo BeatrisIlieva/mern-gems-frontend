@@ -1,7 +1,7 @@
 import { memo } from "react";
 
-import Input from "./Input/Input";
-import Label from "./Label/Label";
+import { Input } from "./Input/Input";
+import { Label } from "./Label/Label";
 
 import styles from "./FieldContainer.module.css";
 

@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import { NavLink } from "react-router-dom";
-import Label from "./Label/Label";
+import { Label } from "./Label/Label";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

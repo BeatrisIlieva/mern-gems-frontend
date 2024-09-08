@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
-import HorizontalLine from "../../../reusable/HorizontalLine/HorizontalLine";
-import NavLinkItem from "./NavLinkItem/NavLinkItem";
+import { HorizontalLine } from "../../../reusable/HorizontalLine/HorizontalLine";
+import { NavLinkItem } from "./NavLinkItem/NavLinkItem";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";

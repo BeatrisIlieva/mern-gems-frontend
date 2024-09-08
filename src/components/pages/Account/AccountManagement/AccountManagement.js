@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 
 import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
 import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
-import Logout from "./Logout/Logout";
+import { Logout } from "./Logout/Logout";
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 

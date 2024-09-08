@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 
-import Sizes from "./Sizes/Sizes";
+import { Sizes } from "./Sizes/Sizes";
 import { Button } from "../../../../reusable/Button/Button";
-import Heart from "../../../../common/Heart/Heart";
+import { Heart } from "../../../../common/Heart/Heart";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
