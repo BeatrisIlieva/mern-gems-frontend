@@ -5,7 +5,7 @@ import { CircleIcons } from "../../../common/CircleIcons/CircleIcons";
 
 import styles from "./Images.module.css";
 
-const Images = ({ jewelriesByCategory }) => {
+export const Images = memo(({ jewelriesByCategory }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -35,6 +35,4 @@ const Images = ({ jewelriesByCategory }) => {
       </div>
     </>
   );
-};
-
-export default memo(Images);
+});
