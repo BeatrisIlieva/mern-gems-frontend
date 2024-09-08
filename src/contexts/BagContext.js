@@ -35,22 +35,6 @@ export const BagProvider = ({ children }) => {
       : 0;
   }, [bagItems, isAuthenticated]);
 
-  // useEffect(() => {
-  //   bagService
-  //     .getAll(userId)
-  //     .then((data) => {
-  //       const modifiedData = data.map((item) => ({
-  //         ...item,
-  //         totalPrice: item.quantity * item.price,
-  //       }));
-
-  //       setBagItems(modifiedData);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err.message);
-  //     });
-  // }, [userId, bagService]);
-
   const fetchBagItems = useCallback(async () => {
     try {
       const data = await bagService.getAll(userId);
@@ -65,13 +49,11 @@ export const BagProvider = ({ children }) => {
     }
   }, [bagService, userId]);
 
-  
-
   const add = useCallback(
     async (size, jewelryId, userId) => {
       await bagService.add(size, jewelryId, userId);
 
-      await fetchBagItems(); 
+      await fetchBagItems();
     },
     [bagService, fetchBagItems]
   );
@@ -80,7 +62,7 @@ export const BagProvider = ({ children }) => {
     async (bagId) => {
       await bagService.increase(bagId);
 
-      await fetchBagItems(); 
+      await fetchBagItems();
     },
     [bagService, fetchBagItems]
   );
@@ -89,7 +71,7 @@ export const BagProvider = ({ children }) => {
     async (bagId) => {
       await bagService.decrease(bagId);
 
-      await fetchBagItems(); 
+      await fetchBagItems();
     },
     [bagService, fetchBagItems]
   );
@@ -98,7 +80,7 @@ export const BagProvider = ({ children }) => {
     async (bagId) => {
       await bagService.delete(bagId);
 
-      await fetchBagItems(); 
+      await fetchBagItems();
     },
     [bagService, fetchBagItems]
   );
