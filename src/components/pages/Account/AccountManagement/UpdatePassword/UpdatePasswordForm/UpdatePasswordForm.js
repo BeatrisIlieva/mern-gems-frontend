@@ -97,14 +97,11 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
     },
     [
       submitHandler,
-      setPasswordMismatchErrorMessage,
       values,
-      checkIfFormErrorHasOccurred,
-      getData,
       userLoginDetailsService,
-      clearInitialFormValuesMessages,
       popupCloseHandler,
-      setWrongPasswordErrorMessage,
+      setValues,
+      userId,
     ]
   );
 

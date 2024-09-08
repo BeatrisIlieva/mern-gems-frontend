@@ -88,6 +88,8 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
           await userCardDetailsService.update(userId, data);
 
+          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+
           if (popupCloseHandler) {
             popupCloseHandler();
           } else {
@@ -95,13 +97,13 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
             await orderService.create(userId);
             navigate("/order-confirmation");
           }
-
-          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
         } catch (err) {
           console.error(err.message);
         } finally {
           setIsLoading(false);
         }
+      } else {
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       }
     },
     [

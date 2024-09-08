@@ -82,16 +82,17 @@ export const UpdateEmailForm = ({ popupCloseHandler }) => {
         } finally {
           setIsLoading(false);
         }
+      } else {
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       }
     },
     [
       submitHandler,
-      checkIfFormErrorHasOccurred,
-      getData,
       userLoginDetailsService,
-      clearInitialFormValuesMessages,
       popupCloseHandler,
       values,
+      setValues,
+      userId,
     ]
   );
 

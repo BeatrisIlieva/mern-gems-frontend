@@ -15,15 +15,18 @@ import styles from "./InfoAndAction.module.css";
 const InfoAndAction = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const navigate = useNavigate();
 
-  const miniImagesClickHandler = useCallback((colorTitle) => {
-    const categoryTitle = jewelriesByCategory[0].categories[0].title;
+  const miniImagesClickHandler = useCallback(
+    (colorTitle) => {
+      const categoryTitle = jewelriesByCategory[0].categories[0].title;
 
-    const slugifiedCategoryTitle = slugify(categoryTitle);
+      const slugifiedCategoryTitle = slugify(categoryTitle);
 
-    const slugifiedColorTitle = slugify(colorTitle);
+      const slugifiedColorTitle = slugify(colorTitle);
 
-    navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  }, []);
+      navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
+    },
+    [jewelriesByCategory, navigate]
+  );
 
   const firstTitle = useMemo(() => {
     return (

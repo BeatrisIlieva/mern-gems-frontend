@@ -9,7 +9,7 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./Heart.module.css";
 
-const Heart = ({ categoryId, colorId }) => {
+export const Heart = memo(({ categoryId, colorId }) => {
   const { userId } = useAuthenticationContext();
   const { wishlistItems, add, remove } = useWishlistContext();
 
@@ -34,6 +34,4 @@ const Heart = ({ categoryId, colorId }) => {
       onClick={handleClick}
     />
   );
-};
-
-export default memo(Heart);
+});

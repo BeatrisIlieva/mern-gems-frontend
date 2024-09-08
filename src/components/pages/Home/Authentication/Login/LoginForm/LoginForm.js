@@ -52,16 +52,11 @@ export const LoginForm = ({ closeHandler }) => {
 
           setValues(spreadValues);
         }
+      } else {
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       }
     },
-    [
-      submitHandler,
-      values,
-      getData,
-      clearInitialFormValuesMessages,
-      closeHandler,
-      setInvalidCredentialsErrorMessage,
-    ]
+    [submitHandler, values, closeHandler, userLoginDetailsService, setValues]
   );
 
   const buttonTitle = useMemo(() => {

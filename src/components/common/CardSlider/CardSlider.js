@@ -42,7 +42,7 @@ export const CardSlider = ({ popupCloseHandler }) => {
     }
 
     largeImagesClickHandler();
-  });
+  }, [popupCloseHandler, largeImagesClickHandler]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % categories.length);

@@ -11,7 +11,7 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 import styles from "./Buttons.module.css";
 
-const Buttons = ({ bagId, categoryId, colorId }) => {
+export const Buttons = memo(({ bagId, categoryId, colorId }) => {
   const [displayContent, setDisplayContent] = useState(false);
 
   const iconRef = useRef(null);
@@ -67,6 +67,4 @@ const Buttons = ({ bagId, categoryId, colorId }) => {
       </div>
     </>
   );
-};
-
-export default memo(Buttons);
+});

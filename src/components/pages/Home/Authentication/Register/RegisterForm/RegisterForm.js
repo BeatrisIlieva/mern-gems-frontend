@@ -52,16 +52,11 @@ export const RegisterForm = ({ closeHandler }) => {
 
           setValues(spreadValues);
         }
+      } else {
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       }
     },
-    [
-      submitHandler,
-      checkIfFormErrorHasOccurred,
-      getData,
-      values,
-      clearInitialFormValuesMessages,
-      closeHandler,
-    ]
+    [submitHandler, values, closeHandler, userLoginDetailsService, setValues]
   );
 
   const buttonTitle = useMemo(() => {

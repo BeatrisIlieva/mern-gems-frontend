@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import { getPatternErrorMessage } from "../utils/getPatternErrorMessage";
 
 export const useForm = (INITIAL_FORM_VALUES) => {
   const [values, setValues] = useState(INITIAL_FORM_VALUES);
 
-  const updateForm = () => {
+  const updateForm = useCallback(() => {
     Object.keys(values).forEach((fieldKey) => {
       const input = document.getElementById(fieldKey);
 
@@ -20,16 +20,19 @@ export const useForm = (INITIAL_FORM_VALUES) => {
         }));
       }
     });
-  };
+  }, [values]);
 
-  const clickHandler = (fieldKey) => {
-    setValues((prevValues) => ({
-      ...prevValues,
-      [fieldKey]: { ...prevValues[fieldKey], isFocused: true },
-    }));
-  };
+  const clickHandler = useCallback(
+    (fieldKey) => {
+      setValues((prevValues) => ({
+        ...prevValues,
+        [fieldKey]: { ...prevValues[fieldKey], isFocused: true },
+      }));
+    },
+    [setValues]
+  );
 
-  const blurHandler = (fieldKey) => {
+  const blurHandler = useCallback((fieldKey) => {
     setValues((prevValues) => ({
       ...prevValues,
       [fieldKey]: {
@@ -42,32 +45,54 @@ export const useForm = (INITIAL_FORM_VALUES) => {
         ),
       },
     }));
-  };
+  }, []);
 
-  const changeHandler = (fieldKey, newValue) => {
-    setValues((prevValues) => ({
-      ...prevValues,
-      [fieldKey]: { ...prevValues[fieldKey], fieldValue: newValue },
-    }));
+  const changeHandler = useCallback(
+    (fieldKey, newValue) => {
+      setValues((prevValues) => ({
+        ...prevValues,
+        [fieldKey]: { ...prevValues[fieldKey], fieldValue: newValue },
+      }));
 
-    updateForm();
-  };
+      updateForm();
+    },
+    [updateForm]
+  );
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  const submitHandler = useCallback(
+    async (e) => {
+      e.preventDefault();
 
-    Object.keys(values).forEach((key) => {
-      const field = values[key];
+      Object.keys(values).forEach((key) => {
+        const field = values[key];
 
-      field.errorMessage = getPatternErrorMessage(
-        key,
-        field.fieldValue,
-        field.regexPattern
-      );
-    });
+        field.errorMessage = getPatternErrorMessage(
+          key,
+          field.fieldValue,
+          field.regexPattern
+        );
+      });
 
-    updateForm();
-  };
+      Object.keys(values).forEach((fieldKey) => {
+        const field = values[fieldKey];
+
+        setValues((prevValues) => ({
+          ...prevValues,
+          [fieldKey]: {
+            ...prevValues[fieldKey],
+            errorMessage: getPatternErrorMessage(
+              fieldKey,
+              field.fieldValue,
+              field.regexPattern
+            ),
+          },
+        }));
+      });
+
+      updateForm();
+    },
+    [updateForm, values]
+  );
 
   return {
     values,

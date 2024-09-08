@@ -78,9 +78,18 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
         } finally {
           setIsLoading(false);
         }
+      } else {
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       }
     },
-    [userShippingDetailsService, userId, values, popupCloseHandler, navigate]
+    [
+      userShippingDetailsService,
+      userId,
+      values,
+      popupCloseHandler,
+      navigate,
+      submitHandler,
+    ]
   );
 
   const buttonTitle = useMemo(() => {

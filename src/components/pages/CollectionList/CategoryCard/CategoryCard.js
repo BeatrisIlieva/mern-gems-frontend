@@ -33,7 +33,7 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
     const slugifiedColorTitle = selectedColor;
 
     navigate(`/collection/${slugifiedCategoryTitle}/${slugifiedColorTitle}`);
-  }, [slugify, categoryTitle, selectedColor, navigate]);
+  }, [categoryTitle, selectedColor, navigate]);
 
   return (
     <>
