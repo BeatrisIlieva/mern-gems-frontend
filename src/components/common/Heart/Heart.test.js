@@ -1,28 +1,25 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-
 import "@testing-library/jest-dom/extend-expect";
 
 import { Heart } from "./Heart";
 
-import { useWishlistContext } from "../../../contexts/WishlistContext";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
-
-jest.mock("../../../contexts/WishlistContext", () => ({
-  useWishlistContext: jest.fn(),
-}));
+import { useWishlistContext } from "../../../contexts/WishlistContext";
 
 jest.mock("../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
 
+jest.mock("../../../contexts/WishlistContext", () => ({
+  useWishlistContext: jest.fn(),
+}));
+
 describe("Heart component", () => {
+  const mockUserId = "user123";
   const mockAdd = jest.fn();
   const mockRemove = jest.fn();
-  const mockUserId = "user123";
 
   beforeEach(() => {
-    jest.clearAllMocks();
-
     useAuthenticationContext.mockReturnValue({
       userId: mockUserId,
     });
@@ -32,6 +29,10 @@ describe("Heart component", () => {
       add: mockAdd,
       remove: mockRemove,
     });
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   test("renders regular heart icon when item is not in the wishlist", () => {

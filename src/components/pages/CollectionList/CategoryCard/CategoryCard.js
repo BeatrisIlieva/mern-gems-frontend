@@ -38,7 +38,7 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
   return (
     <>
       {jewelriesByCategory.length > 0 && (
-        <section className={styles["category-card"]}>
+        <section className={styles["category-card"]} data-testid={"category-card"}>
           <ShopBy
             categoryTitle={categoryTitle}
             buttonClickHandler={buttonClickHandler}
