@@ -22,16 +22,15 @@ export const WishlistProvider = ({ children }) => {
 
   const wishlistService = useService(wishlistServiceFactory);
 
-  useEffect(() => {
-    wishlistService
-      .getAll(userId)
-      .then((data) => {
-        setWishlistItems(data.result);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [userId, wishlistService]);
+  const fetchWishlistItems = useCallback(async () => {
+    try {
+      const data = await wishlistService.getAll(userId);
+
+      setWishlistItems(data.result);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }, [wishlistService, userId]);
 
   const wishlistTotalQuantity = useMemo(() => {
     return isAuthenticated ? wishlistItems.length : 0;
@@ -40,15 +39,19 @@ export const WishlistProvider = ({ children }) => {
   const add = useCallback(
     async (categoryId, colorId, userId) => {
       await wishlistService.add(categoryId, colorId, userId);
+
+      await fetchWishlistItems();
     },
-    [wishlistService]
+    [wishlistService, fetchWishlistItems]
   );
 
   const remove = useCallback(
     async (categoryId, colorId, userId) => {
       await wishlistService.delete(categoryId, colorId, userId);
+
+      await fetchWishlistItems();
     },
-    [wishlistService]
+    [wishlistService, fetchWishlistItems]
   );
 
   const context = useMemo(
