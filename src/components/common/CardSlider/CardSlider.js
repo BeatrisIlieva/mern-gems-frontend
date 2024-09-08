@@ -57,7 +57,7 @@ export const CardSlider = ({ popupCloseHandler }) => {
   return (
     <>
       {jewelriesByCategory.length > 0 && (
-        <section className={styles["card-slider"]}>
+        <section className={styles["card-slider"]} data-testid="card-slider">
           <DualTitleSection
             firstTitle={
               <PriceRange jewelriesByCategory={jewelriesByCategory} />

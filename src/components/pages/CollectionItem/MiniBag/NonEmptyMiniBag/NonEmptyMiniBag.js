@@ -33,7 +33,7 @@ export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
             secondTitle={`$ ${totalPrice}`}
             variant={"bolded"}
           />
-          <div className={styles["button"]}>
+          <div className={styles["button"]} data-testid="view-bag">
             <Button
               title={"View Bag"}
               buttonIsDisabled={false}
@@ -41,7 +41,7 @@ export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
               variant={"pink"}
             />
           </div>
-          <div className={styles["button"]}>
+          <div className={styles["button"]} data-testid="continue-checkout">
             <Button
               title={"Continue Checkout"}
               buttonIsDisabled={false}

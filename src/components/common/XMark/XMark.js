@@ -6,6 +6,7 @@ import styles from "./XMark.module.css";
 export const XMark = ({ callbackFunction }) => {
   return (
     <FontAwesomeIcon
+      data-testid="x-mark"
       icon={faXmark}
       className={styles["x-mark"]}
       onClick={callbackFunction}

@@ -19,7 +19,7 @@ export const BagList = ({ variant }) => {
   const { bagItems } = useBagContext();
 
   return (
-    <ul role="list" className={`${styles["bag-list"]} ${styles[variant]}`}>
+    <ul role="list" className={`${styles["bag-list"]} ${styles[variant]}`} data-testid="bag-list">
       {bagItems.map((item) => (
         <li key={item.bagId} className={styles["wrapper"]}>
           <JewelryCard

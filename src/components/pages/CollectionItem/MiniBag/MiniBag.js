@@ -36,6 +36,7 @@ export const MiniBag = memo(({ toggleDisplayMiniBagPopup }) => {
       className={`${styles["overlay"]} ${
         isTransitioning ? styles["transition-out"] : styles["transition-in"]
       }`}
+      data-testid="mini-bag"
     >
       <div
         className={`${styles["modal"]} ${
