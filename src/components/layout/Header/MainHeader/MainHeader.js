@@ -1,4 +1,4 @@
-import { useMemo, memo } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import HorizontalLine from "../../../reusable/HorizontalLine/HorizontalLine";
@@ -16,7 +16,7 @@ import {
 
 import styles from "./MainHeader.module.css";
 
-const MainHeader = () => {
+export const MainHeader = () => {
   const { bagTotalQuantity } = useBagContext();
 
   const { wishlistTotalQuantity } = useWishlistContext();
@@ -79,5 +79,3 @@ const MainHeader = () => {
     </header>
   );
 };
-
-export default memo(MainHeader);

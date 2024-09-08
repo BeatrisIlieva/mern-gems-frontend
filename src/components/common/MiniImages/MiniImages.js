@@ -1,20 +1,16 @@
-import { useState } from "react";
-
+import { memo, useState } from "react";
 import Image from "./Image/Image";
-
 import { COLORS_BY_TITLE } from "../../../constants/colorsByTitle";
 import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitleAndImageUrl";
-
 import styles from "./MiniImages.module.css";
 
-export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
+export const MiniImages = memo(({ jewelriesByCategory, clickHandler }) => {
   const [activeMiniImage, setActiveMiniImage] = useState(
     jewelriesByCategory[0].colors[0].title
   );
 
   const updateActiveMiniImage = (colorTitle) => {
     setActiveMiniImage(colorTitle);
-
     clickHandler(colorTitle);
   };
 
@@ -44,4 +40,4 @@ export const MiniImages = ({ jewelriesByCategory, clickHandler }) => {
       )}
     </ul>
   );
-};
+});

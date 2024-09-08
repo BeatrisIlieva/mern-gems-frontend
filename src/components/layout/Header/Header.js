@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 
-import MainHeader from "./MainHeader/MainHeader";
+import {MainHeader} from "./MainHeader/MainHeader";
 import { MiniHeader } from "./MiniHeader/MiniHeader";
 
 export const Header = () => {

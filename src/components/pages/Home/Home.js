@@ -1,11 +1,9 @@
-import { memo } from "react";
-
 import { Authentication } from "./Authentication/Authentication";
 import { HeroBanner } from "./HeroBanner/HeroBanner";
 
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-const Home = () => {
+export const Home = () => {
   const { isAuthenticated } = useAuthenticationContext();
 
   return (
@@ -15,5 +13,3 @@ const Home = () => {
     </>
   );
 };
-
-export default memo(Home);
