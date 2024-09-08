@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { NonEmptyBag } from "./NonEmptyBag";
-import '@testing-library/jest-dom/extend-expect';
+import "@testing-library/jest-dom/extend-expect";
 
-// Mock the child components
+import { NonEmptyBag } from "./NonEmptyBag";
+
 jest.mock("./OrderSummaryContent/OrderSummaryContent", () => ({
   OrderSummaryContent: () => <div>OrderSummaryContent</div>,
 }));
@@ -15,10 +15,8 @@ describe("NonEmptyBag Component", () => {
   test("renders BagContent and OrderSummaryContent", () => {
     render(<NonEmptyBag />);
 
-    // Check if BagContent is rendered
     expect(screen.getByText("BagContent")).toBeInTheDocument();
 
-    // Check if OrderSummaryContent is rendered
     expect(screen.getByText("OrderSummaryContent")).toBeInTheDocument();
   });
 });
