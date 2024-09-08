@@ -1,9 +1,11 @@
+import { memo } from "react";
+
 import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
 import { CardSlider } from "../../../common/CardSlider/CardSlider";
 
 import styles from "./EmptyBag.module.css";
 
-export const EmptyBag = () => {
+export const EmptyBag = memo(() => {
   return (
     <section id={styles["empty-bag"]}>
       <InfoMessage
@@ -13,4 +15,4 @@ export const EmptyBag = () => {
       <CardSlider />
     </section>
   );
-};
+});
