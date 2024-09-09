@@ -15,7 +15,7 @@ import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormV
 
 import { getData } from "./helpers/getData";
 
-import { FORM_KEYS, INITIAL_FORM_VALUES } from "./initialFormValues";
+import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 export const ShippingDetailsForm = ({ popupCloseHandler }) => {
   const [isLoading, setIsLoading] = useState(false);

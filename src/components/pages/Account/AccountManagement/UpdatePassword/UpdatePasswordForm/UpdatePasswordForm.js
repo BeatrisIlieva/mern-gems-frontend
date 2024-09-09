@@ -17,7 +17,7 @@ import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPa
 import { getData } from "./helpers/getData";
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
 
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 export const UpdatePasswordForm = ({ popupCloseHandler }) => {
   const [userLoginDetails, setUserLoginDetails] = useState([]);

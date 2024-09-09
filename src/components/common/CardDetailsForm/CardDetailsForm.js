@@ -20,7 +20,7 @@ import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
 import { setCardHasExpiredErrorMessage } from "./helpers/setCardHasExpiredErrorMessage";
 import { getData } from "./helpers/getData";
 
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 export const CardDetailsForm = ({ popupCloseHandler }) => {
   const navigate = useNavigate();

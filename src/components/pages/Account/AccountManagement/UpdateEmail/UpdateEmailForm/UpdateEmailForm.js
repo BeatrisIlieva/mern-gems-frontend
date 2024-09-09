@@ -16,7 +16,7 @@ import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPa
 
 import { getData } from "./helpers/getData";
 
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 export const UpdateEmailForm = ({ popupCloseHandler }) => {
   const [isLoading, setIsLoading] = useState(false);
