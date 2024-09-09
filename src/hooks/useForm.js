@@ -1,5 +1,9 @@
 import { useState, useCallback } from "react";
 
+import { checkIfCardHasExpired } from "../components/common/CardDetailsForm/helpers/checkIfCardHasExpired";
+
+import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../constants/expiryDate";
+
 import { getPatternErrorMessage } from "../utils/getPatternErrorMessage";
 
 export const useForm = (INITIAL_FORM_VALUES) => {
@@ -33,18 +37,33 @@ export const useForm = (INITIAL_FORM_VALUES) => {
   );
 
   const blurHandler = useCallback((fieldKey) => {
-    setValues((prevValues) => ({
-      ...prevValues,
-      [fieldKey]: {
-        ...prevValues[fieldKey],
-        isFocused: prevValues[fieldKey].fieldValue !== "",
-        errorMessage: getPatternErrorMessage(
-          fieldKey,
-          prevValues[fieldKey].fieldValue,
-          prevValues[fieldKey].regexPattern
-        ),
-      },
-    }));
+    setValues((prevValues) => {
+      const patternErrorMessage = getPatternErrorMessage(
+        fieldKey,
+        prevValues[fieldKey].fieldValue,
+        prevValues[fieldKey].regexPattern
+      );
+
+      let errorMessage = patternErrorMessage;
+      if (fieldKey === "expiryDate" && !patternErrorMessage) {
+        const errorOcurred = checkIfCardHasExpired(
+          prevValues[fieldKey].fieldValue
+        );
+
+        if (errorOcurred) {
+          errorMessage = CARD_HAS_EXPIRED_ERROR_MESSAGE;
+        }
+      }
+
+      return {
+        ...prevValues,
+        [fieldKey]: {
+          ...prevValues[fieldKey],
+          isFocused: prevValues[fieldKey].fieldValue !== "",
+          errorMessage,
+        },
+      };
+    });
   }, []);
 
   const changeHandler = useCallback(

@@ -55,7 +55,7 @@ export const INITIAL_FORM_VALUES = {
     isFocused: false,
     fieldType: "text",
     validTestData: "11/30",
-    invalidTestData: "11/20",
+    invalidTestData: "1130",
     emptyTestData: "",
   },
 };

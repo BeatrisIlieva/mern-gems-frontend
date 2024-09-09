@@ -12,10 +12,6 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 import { ERROR_MESSAGES } from "../../../mappers/errorMessages";
 
-// jest.mock("../../../contexts/BagContext", () => ({
-//     useBagContext: jest.fn(),
-//   }));
-
 jest.mock("../../../hooks/useService");
 
 const userId = "test-id";
@@ -24,10 +20,6 @@ describe("CardDetailsForm Component", () => {
   const mockToken = "testToken";
   const mockUserId = userId;
   const mockTotalPrice = 100;
-
-  //   useBagContext.mockReturnValue({
-  //     totalPrice: mockTotalPrice,
-  //   });
 
   const mockUserCardDetailsService = {
     getOne: jest.fn(),
@@ -97,57 +89,57 @@ describe("CardDetailsForm Component", () => {
     });
   });
 
-    test("Submits the form with invalid values; Expect update function not to be called; Expect errors", async () => {
-        const mockUserInformation = {
-            token: mockToken,
-            userId: mockUserId,
-          };
-      
-          const mockBagInformation = {
-            totalPrice: mockTotalPrice,
-          };
-      
-          mockUserCardDetailsService.getOne.mockResolvedValue(mockUserInformation);
-      
-          render(
-            <MemoryRouter>
-              <BagContext.Provider value={mockBagInformation}>
-                <AuthenticationContext.Provider value={mockUserInformation}>
-                  <CardDetailsForm />
-                </AuthenticationContext.Provider>
-              </BagContext.Provider>
-            </MemoryRouter>
-          );
-      const inputs = {};
+  test("Submits the form with invalid values; Expect update function not to be called; Expect errors", async () => {
+    const mockUserInformation = {
+      token: mockToken,
+      userId: mockUserId,
+    };
 
-      Object.values(FORM_KEYS).forEach((value) => {
-        inputs[value] = screen.getByTestId(`${value}-input`);
-      });
+    const mockBagInformation = {
+      totalPrice: mockTotalPrice,
+    };
 
-      Object.entries(inputs).forEach(([inputKey, inputValue]) => {
-        fireEvent.change(inputValue, {
-          target: { value: INITIAL_FORM_VALUES[inputKey].invalidTestData },
-        });
-      });
+    mockUserCardDetailsService.getOne.mockResolvedValue(mockUserInformation);
 
-      const submitButton = screen.getByTestId("button");
-      fireEvent.click(submitButton);
+    render(
+      <MemoryRouter>
+        <BagContext.Provider value={mockBagInformation}>
+          <AuthenticationContext.Provider value={mockUserInformation}>
+            <CardDetailsForm />
+          </AuthenticationContext.Provider>
+        </BagContext.Provider>
+      </MemoryRouter>
+    );
+    const inputs = {};
 
-      const submitData = {};
+    Object.values(FORM_KEYS).forEach((value) => {
+      inputs[value] = screen.getByTestId(`${value}-input`);
+    });
 
-      Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
-        submitData[key] = value.invalidTestData;
-      });
-
-      await waitFor(() => {
-        expect(mockUserCardDetailsService.update).not.toHaveBeenCalled();
-      });
-
-      Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
-        const errorMessageContainer = screen.getByTestId(`${key}-error`);
-        expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+    Object.entries(inputs).forEach(([inputKey, inputValue]) => {
+      fireEvent.change(inputValue, {
+        target: { value: INITIAL_FORM_VALUES[inputKey].invalidTestData },
       });
     });
+
+    const submitButton = screen.getByTestId("button");
+    fireEvent.click(submitButton);
+
+    const submitData = {};
+
+    Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
+      submitData[key] = value.invalidTestData;
+    });
+
+    await waitFor(() => {
+      expect(mockUserCardDetailsService.update).not.toHaveBeenCalled();
+    });
+
+    Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
+      const errorMessageContainer = screen.getByTestId(`${key}-error`);
+      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+    });
+  });
 
   //   test("Submits the form with empty values; Expect update function not to be called; Expect errors", async () => {
   //     const mockUserInformation = {
