@@ -120,7 +120,7 @@ describe("UpdateEmailForm Component", () => {
     });
 
     await waitFor(() => {
-      expect(mockUpdate).not.toHaveBeenCalled();
+      expect(mockUserLoginDetailsService.updateEmail).not.toHaveBeenCalled();
     });
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
