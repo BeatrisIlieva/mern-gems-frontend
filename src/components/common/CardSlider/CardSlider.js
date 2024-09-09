@@ -4,14 +4,13 @@ import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSecti
 import { PriceRange } from "../PriceRange/PriceRange";
 import { StockStatus } from "../StockStatus/StockStatus";
 import { LargeImages } from "../LargeImages/LargeImages";
+import { Arrow } from "./reusable/Arrow";
 
 import { useJewelry } from "../../../hooks/useJewelry";
 
 import { useLargeImagesClick } from "../../../hooks/useLargeImagesClick";
 
 import { INITIAL_CATEGORY_CARD_VALUES } from "../../../constants/initialCategoryCardValues";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -72,16 +71,8 @@ export const CardSlider = ({ popupCloseHandler }) => {
             clickHandler={clickHandler}
           />
           <div className={styles["button-wrapper"]}>
-            <FontAwesomeIcon
-              icon={faCircleChevronLeft}
-              className={styles["icon"]}
-              onClick={handlePrev}
-            />
-            <FontAwesomeIcon
-              icon={faCircleChevronRight}
-              className={styles["icon"]}
-              onClick={handleNext}
-            />
+            <Arrow icon={faCircleChevronLeft} callBackFunction={handlePrev} />
+            <Arrow icon={faCircleChevronRight} callBackFunction={handleNext} />
           </div>
         </section>
       )}
