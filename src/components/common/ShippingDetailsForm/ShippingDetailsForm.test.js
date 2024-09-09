@@ -38,7 +38,9 @@ describe("ShippingDetailsForm Component", () => {
       userId: mockUserId,
     };
 
-    mockUserShippingDetailsService.getOne.mockResolvedValue(mockUserInformation);
+    mockUserShippingDetailsService.getOne.mockResolvedValue(
+      mockUserInformation
+    );
 
     render(
       <MemoryRouter>
@@ -88,7 +90,9 @@ describe("ShippingDetailsForm Component", () => {
       userId: mockUserId,
     };
 
-    mockUserShippingDetailsService.getOne.mockResolvedValue(mockUserInformation);
+    mockUserShippingDetailsService.getOne.mockResolvedValue(
+      mockUserInformation
+    );
 
     render(
       <MemoryRouter>
@@ -135,7 +139,9 @@ describe("ShippingDetailsForm Component", () => {
       userId: mockUserId,
     };
 
-    mockUserShippingDetailsService.getOne.mockResolvedValue(mockUserInformation);
+    mockUserShippingDetailsService.getOne.mockResolvedValue(
+      mockUserInformation
+    );
 
     render(
       <MemoryRouter>
@@ -170,17 +176,11 @@ describe("ShippingDetailsForm Component", () => {
       expect(mockUserShippingDetailsService.update).not.toHaveBeenCalled();
     });
 
-    // Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
-    //   const errorMessageContainer = screen.getByTestId(`${key}-error`);
-    //   expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
-    // });
-
     Object.keys(INITIAL_FORM_VALUES)
-  .filter((key) => key !== "apartment")  // Exclude the "Apartment" key
-  .forEach((key) => {
-    const errorMessageContainer = screen.getByTestId(`${key}-error`);
-    expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
-  });
-
+      .filter((key) => key !== "apartment")
+      .forEach((key) => {
+        const errorMessageContainer = screen.getByTestId(`${key}-error`);
+        expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      });
   });
 });
