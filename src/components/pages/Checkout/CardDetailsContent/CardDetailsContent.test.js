@@ -1,16 +1,9 @@
-// CardDetailsContent.test.js
 
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter} from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 import { CardDetailsContent } from './CardDetailsContent';
-import { ChildWrapper } from '../../../reusable/ChildWrapper/ChildWrapper';
-import { LargeTitle } from '../../../reusable/LargeTitle/LargeTitle';
-import { ShippingInformation } from './ShippingInformation/ShippingInformation';
-import { CardDetailsForm } from '../../../common/CardDetailsForm/CardDetailsForm';
-import { ShippingDetailsForm } from '../../../common/ShippingDetailsForm/ShippingDetailsForm';
-import { Popup } from '../../../reusable/Popup/Popup';
+
 
 // Mock components
 jest.mock('../../../reusable/ChildWrapper/ChildWrapper', () => ({
