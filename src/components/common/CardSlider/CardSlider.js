@@ -70,7 +70,7 @@ export const CardSlider = ({ popupCloseHandler }) => {
             jewelriesByCategory={jewelriesByCategory}
             clickHandler={clickHandler}
           />
-          <div className={styles["button-wrapper"]}>
+          <div className={styles["arrows-wrapper"]}>
             <Arrow icon={faCircleChevronLeft} callBackFunction={handlePrev} />
             <Arrow icon={faCircleChevronRight} callBackFunction={handleNext} />
           </div>
