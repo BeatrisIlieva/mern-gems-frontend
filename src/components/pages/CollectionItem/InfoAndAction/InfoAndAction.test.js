@@ -7,11 +7,15 @@ import { InfoAndAction } from "./InfoAndAction";
 import { useNavigate } from "react-router-dom";
 
 jest.mock("../../../common/MiniImages/MiniImages", () => ({
-  MiniImages: ({ clickHandler }) => (
+  MiniImages: ({ jewelriesByCategory, clickHandler }) => (
     <div>
       <button onClick={() => clickHandler("colorTitle")}>MiniImages</button>
     </div>
   ),
+}));
+
+jest.mock("../../../common/StockStatus/StockStatus", () => ({
+  StockStatus: ({ jewelriesByCategory }) => <div>StockStatus</div>,
 }));
 
 jest.mock("../../../reusable/DualTitleSection/DualTitleSection", () => ({
@@ -35,7 +39,7 @@ jest.mock("../../../reusable/Paragraph/Paragraph", () => ({
 }));
 
 jest.mock("./Form/Form", () => ({
-  Form: ({ toggleDisplayPopup }) => (
+  Form: ({ jewelriesByCategory, toggleDisplayPopup }) => (
     <div>
       <button onClick={toggleDisplayPopup}>Toggle Popup</button>
     </div>
