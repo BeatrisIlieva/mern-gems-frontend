@@ -6,9 +6,9 @@ import styles from "./OrderConfirmation.module.css";
 
 export const OrderConfirmation = () => {
   return (
-    <section id={styles["order-confirmation"]}>
+    <section id={styles["order-confirmation"]} data-testid="order-confirmation">
       <div className={styles["relative-container"]}>
-        <div className={styles["thumbnail"]}>
+        <div className={styles["thumbnail"]} data-testid="butterfly-container">
           <img
             className={styles["butterfly"]}
             src="https://res.cloudinary.com/deztgvefu/image/upload/v1723986117/forget-me-not-collection/miniImages/1042750_d9d98_vfqzme.gif"
