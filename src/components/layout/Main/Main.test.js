@@ -1,9 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
+
 import { Main } from "./Main";
+
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
-// Mock the necessary components
 jest.mock("../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
