@@ -5,6 +5,7 @@ import styles from "./HorizontalLine.module.css";
 export const HorizontalLine = memo(({ variantHorizontalLine, variantHr }) => {
   return (
     <div
+      data-testid="horizontal-line"
       className={
         variantHorizontalLine === "header"
           ? styles["horizontal-line-header"]
