@@ -9,6 +9,7 @@ import { BagContext } from "../../../contexts/BagContext";
 import { useService } from "../../../hooks/useService";
 
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
+import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../constants/expiryDate";
 
 import { ERROR_MESSAGES } from "../../../mappers/errorMessages";
 
@@ -89,7 +90,7 @@ describe("CardDetailsForm Component", () => {
     });
   });
 
-  test("Submits the form with invalid values; Expect update function not to be called; Expect errors", async () => {
+  test("Submits the form with invalid; Expect update function not to be called; Expect errors", async () => {
     const mockUserInformation = {
       token: mockToken,
       userId: mockUserId,
@@ -139,6 +140,58 @@ describe("CardDetailsForm Component", () => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
       expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
     });
+  });
+
+  test("Submits the form with expired date; Expect update function not to be called; Expect errors", async () => {
+    const mockUserInformation = {
+      token: mockToken,
+      userId: mockUserId,
+    };
+
+    const mockBagInformation = {
+      totalPrice: mockTotalPrice,
+    };
+
+    mockUserCardDetailsService.getOne.mockResolvedValue(mockUserInformation);
+
+    render(
+      <MemoryRouter>
+        <BagContext.Provider value={mockBagInformation}>
+          <AuthenticationContext.Provider value={mockUserInformation}>
+            <CardDetailsForm />
+          </AuthenticationContext.Provider>
+        </BagContext.Provider>
+      </MemoryRouter>
+    );
+    const inputs = {};
+
+    Object.values(FORM_KEYS).forEach((value) => {
+      inputs[value] = screen.getByTestId(`${value}-input`);
+    });
+
+    Object.entries(inputs).forEach(([inputKey, inputValue]) => {
+      fireEvent.change(inputValue, {
+        target: { value: INITIAL_FORM_VALUES[inputKey].expiredTestData },
+      });
+    });
+
+    const submitButton = screen.getByTestId("button");
+    fireEvent.click(submitButton);
+
+    const submitData = {};
+
+    Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
+      submitData[key] = value.expiredTestData;
+    });
+
+    await waitFor(() => {
+      expect(mockUserCardDetailsService.update).not.toHaveBeenCalled();
+    });
+
+    const errorMessageContainer = screen.getByTestId("expiryDate-error");
+    expect(errorMessageContainer).toHaveTextContent(
+      CARD_HAS_EXPIRED_ERROR_MESSAGE
+    );
   });
 
   //   test("Submits the form with empty values; Expect update function not to be called; Expect errors", async () => {

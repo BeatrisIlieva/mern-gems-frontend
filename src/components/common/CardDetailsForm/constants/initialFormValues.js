@@ -21,6 +21,7 @@ export const INITIAL_FORM_VALUES = {
     validTestData: "Test",
     invalidTestData: "Test1",
     emptyTestData: "",
+    expiredTestData: "Test",
   },
 
   [FORM_KEYS.LongCardNumber]: {
@@ -33,6 +34,7 @@ export const INITIAL_FORM_VALUES = {
     validTestData: "0123456789123456",
     invalidTestData: "012345678912345T",
     emptyTestData: "",
+    expiredTestData: "0123456789123456",
   },
 
   [FORM_KEYS.CvvCode]: {
@@ -45,6 +47,7 @@ export const INITIAL_FORM_VALUES = {
     validTestData: "123",
     invalidTestData: "12T",
     emptyTestData: "",
+    expiredTestData: "123",
   },
 
   [FORM_KEYS.ExpiryDate]: {
@@ -57,6 +60,7 @@ export const INITIAL_FORM_VALUES = {
     validTestData: "11/30",
     invalidTestData: "1130",
     emptyTestData: "",
+    expiredTestData: "11/20",
   },
 };
 
