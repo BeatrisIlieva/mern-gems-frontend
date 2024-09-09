@@ -113,41 +113,43 @@ describe("RegisterForm Component", () => {
     });
   });
 
-  //   test("Submits the form with empty values; Expect update function not to be called", async () => {
-  //     render(
-  //     //   <AuthContext.Provider value={mockAuthContextValue}>
-  //         <RegisterForm />
-  //     //   </AuthContext.Provider>
-  //     );
+  test("Submits the form with empty values; Expect update function not to be called", async () => {
+    render(
+      <MemoryRouter>
+        <AuthenticationContext.Provider value={mockToken}>
+          <RegisterForm />
+        </AuthenticationContext.Provider>
+      </MemoryRouter>
+    );
 
-  //     const inputs = {};
+    const inputs = {};
 
-  //     Object.values(FORM_KEYS).forEach((value) => {
-  //       inputs[value] = screen.getByTestId(`${value}-input`);
-  //     });
+    Object.values(FORM_KEYS).forEach((value) => {
+      inputs[value] = screen.getByTestId(`${value}-input`);
+    });
 
-  //     Object.entries(inputs).forEach(([inputKey, inputValue]) => {
-  //       fireEvent.change(inputValue, {
-  //         target: { value: INITIAL_FORM_VALUES[inputKey].emptyTestData },
-  //       });
-  //     });
+    Object.entries(inputs).forEach(([inputKey, inputValue]) => {
+      fireEvent.change(inputValue, {
+        target: { value: INITIAL_FORM_VALUES[inputKey].emptyTestData },
+      });
+    });
 
-  //     const submitButton = screen.getByTestId("submit");
-  //     fireEvent.click(submitButton);
+    const submitButton = screen.getByTestId("button");
+    fireEvent.click(submitButton);
 
-  //     const submitData = {};
+    const submitData = {};
 
-  //     Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
-  //       submitData[key] = value.emptyTestData;
-  //     });
+    Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
+      submitData[key] = value.emptyTestData;
+    });
 
-  //     await waitFor(() => {
-  //       expect(mockOnRegisterSubmit).not.toHaveBeenCalled();
-  //     });
+    await waitFor(() => {
+      expect(mockUserLoginDetailsService.register).not.toHaveBeenCalled();
+    });
 
-  //     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
-  //       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-  //       expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
-  //     });
-  //   });
+    Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
+      const errorMessageContainer = screen.getByTestId(`${key}-error`);
+      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+    });
+  });
 });
