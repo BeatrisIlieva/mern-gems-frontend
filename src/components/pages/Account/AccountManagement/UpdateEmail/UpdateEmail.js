@@ -9,7 +9,7 @@ import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitia
 
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
-export const UpdateEmail = memo(() => {
+export const UpdateEmail = memo(({updateUserEmail}) => {
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {
@@ -28,7 +28,7 @@ export const UpdateEmail = memo(() => {
       {displayPopup && (
         <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
           <LargeTitle title={"Update Email"} textAlign={"align-center"} />
-          <UpdateEmailForm popupCloseHandler={toggleDisplayPopup} />
+          <UpdateEmailForm popupCloseHandler={toggleDisplayPopup} updateUserEmail={updateUserEmail}/>
         </Popup>
       )}
     </>

@@ -17,6 +17,12 @@ import styles from "./AccountManagement.module.css";
 export const AccountManagement = () => {
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
+  const [userEmail, setUserEmail] = useState([]);
+
+  const updateUserEmail = useCallback((email) => {
+    setUserEmail(email);
+  }, []);
+
   const { userId } = useAuthenticationContext();
 
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
@@ -25,7 +31,7 @@ export const AccountManagement = () => {
     userLoginDetailsService
       .getOne(userId)
       .then((data) => {
-        setUserLoginDetails(data);
+        setUserEmail(data.email);
       })
       .catch((err) => {
         console.log(err.message);
@@ -49,11 +55,12 @@ export const AccountManagement = () => {
   return (
     <section className={styles["account-management"]}>
       <LargeTitle title={"Account Management"} />
-      <NormalTitle title={userLoginDetails.email} variant={"bolded"} />
+      <NormalTitle title={userEmail} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
         <UpdateEmail
           updateEmailClickHandler={updateEmailClickHandler}
           displayUpdateEmail={displayUpdateEmail}
+          updateUserEmail={updateUserEmail}
         />
         <UpdatePassword
           updatePasswordClickHandler={updatePasswordClickHandler}

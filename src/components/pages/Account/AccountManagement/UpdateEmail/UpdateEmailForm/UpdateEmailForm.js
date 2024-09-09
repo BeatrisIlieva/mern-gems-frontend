@@ -17,7 +17,7 @@ import { getData } from "./helpers/getData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
-export const UpdateEmailForm = ({ popupCloseHandler }) => {
+export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -62,6 +62,8 @@ export const UpdateEmailForm = ({ popupCloseHandler }) => {
           setIsLoading(true);
 
           await userLoginDetailsService.updateEmail(userId, data);
+
+          updateUserEmail(data.email);
 
           popupCloseHandler();
         } catch (err) {
