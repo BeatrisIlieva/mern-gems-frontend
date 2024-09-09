@@ -163,6 +163,7 @@ describe("CardDetailsForm Component", () => {
         </BagContext.Provider>
       </MemoryRouter>
     );
+
     const inputs = {};
 
     Object.values(FORM_KEYS).forEach((value) => {
@@ -194,50 +195,56 @@ describe("CardDetailsForm Component", () => {
     );
   });
 
-  //   test("Submits the form with empty values; Expect update function not to be called; Expect errors", async () => {
-  //     const mockUserInformation = {
-  //       token: mockToken,
-  //       userId: mockUserId,
-  //     };
+    test("Submits the form with empty values; Expect update function not to be called; Expect errors", async () => {
+          const mockUserInformation = {
+      token: mockToken,
+      userId: mockUserId,
+    };
 
-  //     mockUserCardDetailsService.getOne.mockResolvedValue(mockUserInformation);
+    const mockBagInformation = {
+      totalPrice: mockTotalPrice,
+    };
 
-  //     render(
-  //       <MemoryRouter>
-  //         <AuthenticationContext.Provider value={mockUserInformation}>
-  //           <CardDetailsForm />
-  //         </AuthenticationContext.Provider>
-  //       </MemoryRouter>
-  //     );
+    mockUserCardDetailsService.getOne.mockResolvedValue(mockUserInformation);
 
-  //     const inputs = {};
+    render(
+      <MemoryRouter>
+        <BagContext.Provider value={mockBagInformation}>
+          <AuthenticationContext.Provider value={mockUserInformation}>
+            <CardDetailsForm />
+          </AuthenticationContext.Provider>
+        </BagContext.Provider>
+      </MemoryRouter>
+    );
 
-  //     Object.values(FORM_KEYS).forEach((value) => {
-  //       inputs[value] = screen.getByTestId(`${value}-input`);
-  //     });
+      const inputs = {};
 
-  //     Object.entries(inputs).forEach(([inputKey, inputValue]) => {
-  //       fireEvent.change(inputValue, {
-  //         target: { value: INITIAL_FORM_VALUES[inputKey].emptyTestData },
-  //       });
-  //     });
+      Object.values(FORM_KEYS).forEach((value) => {
+        inputs[value] = screen.getByTestId(`${value}-input`);
+      });
 
-  //     const submitButton = screen.getByTestId("button");
-  //     fireEvent.click(submitButton);
+      Object.entries(inputs).forEach(([inputKey, inputValue]) => {
+        fireEvent.change(inputValue, {
+          target: { value: INITIAL_FORM_VALUES[inputKey].emptyTestData },
+        });
+      });
 
-  //     const submitData = {};
+      const submitButton = screen.getByTestId("button");
+      fireEvent.click(submitButton);
 
-  //     Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
-  //       submitData[key] = value.emptyTestData;
-  //     });
+      const submitData = {};
 
-  //     await waitFor(() => {
-  //       expect(mockUserCardDetailsService.update).not.toHaveBeenCalled();
-  //     });
+      Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
+        submitData[key] = value.emptyTestData;
+      });
 
-  //     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
-  //       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-  //       expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
-  //     });
-  //   });
+      await waitFor(() => {
+        expect(mockUserCardDetailsService.update).not.toHaveBeenCalled();
+      });
+
+      Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
+        const errorMessageContainer = screen.getByTestId(`${key}-error`);
+        expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      });
+    });
 });
