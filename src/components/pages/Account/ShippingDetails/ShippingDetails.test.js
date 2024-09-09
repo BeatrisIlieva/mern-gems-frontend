@@ -1,16 +1,11 @@
-// ShippingDetails.test.js
 
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { ShippingDetails } from './ShippingDetails';
-import { SectionContainer } from '../reusable/SectionContainer/SectionContainer';
-import { Popup } from '../../../reusable/Popup/Popup';
-import { LargeTitle } from '../../../reusable/LargeTitle/LargeTitle';
-import { ShippingDetailsForm } from '../../../common/ShippingDetailsForm/ShippingDetailsForm';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-// Mock components
+import { ShippingDetails } from './ShippingDetails';
+
+
+
 jest.mock('../reusable/SectionContainer/SectionContainer', () => ({
   SectionContainer: ({ sectionTitle, callBackFunction, icon, buttonTitle }) => (
     <div>
