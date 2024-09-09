@@ -15,8 +15,6 @@ import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDe
 import styles from "./AccountManagement.module.css";
 
 export const AccountManagement = () => {
-  const [userLoginDetails, setUserLoginDetails] = useState([]);
-
   const [userEmail, setUserEmail] = useState([]);
 
   const updateUserEmail = useCallback((email) => {

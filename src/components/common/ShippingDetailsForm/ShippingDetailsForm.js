@@ -66,8 +66,6 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
 
           await userShippingDetailsService.update(userId, data);
 
-          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-
           if (popupCloseHandler) {
             popupCloseHandler();
           } else {
@@ -78,9 +76,8 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
         } finally {
           setIsLoading(false);
         }
-      } else {
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       }
+      clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
     },
     [
       userShippingDetailsService,

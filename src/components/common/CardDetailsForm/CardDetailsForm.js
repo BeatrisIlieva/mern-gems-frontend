@@ -88,8 +88,6 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
 
           await userCardDetailsService.update(userId, data);
 
-          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-
           if (popupCloseHandler) {
             popupCloseHandler();
           } else {
@@ -102,9 +100,8 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
         } finally {
           setIsLoading(false);
         }
-      } else {
-        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
       }
+      clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
     },
     [
       values,

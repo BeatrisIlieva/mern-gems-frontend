@@ -5,10 +5,7 @@ import { Popup } from "../../../../reusable/Popup/Popup";
 import { Button } from "../../../../reusable/Button/Button";
 import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 
-import {
-  FORM_KEYS,
-  INITIAL_FORM_VALUES,
-} from "./constants/initialFormValues";
+import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 
