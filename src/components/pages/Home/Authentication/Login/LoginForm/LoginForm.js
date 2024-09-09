@@ -13,7 +13,7 @@ import { clearInitialFormValuesMessages } from "../../../../../../utils/clearIni
 import { getData } from "./helpers/getData";
 import { setInvalidCredentialsErrorMessage } from "./helpers/setInvalidCredentialsErrorMessage";
 
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 export const LoginForm = ({ closeHandler }) => {
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
