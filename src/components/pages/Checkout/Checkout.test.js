@@ -1,16 +1,10 @@
-// Checkout.test.js
 
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter} from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
+
 import { Checkout } from './Checkout';
-import { ShoppingProcessContainer } from '../../reusable/ShoppingProcessContainer/ShoppingProcessContainer';
-import { OrderSummary } from '../../common/OrderSummary/OrderSummary';
-import { BagList } from '../../common/BagList/BagList';
-import { ChildWrapper } from '../../reusable/ChildWrapper/ChildWrapper';
-import { ShippingContent } from './ShippingContent/ShippingContent';
-import { CardDetailsContent } from './CardDetailsContent/CardDetailsContent';
+
 
 // Mock components
 jest.mock('../../reusable/ShoppingProcessContainer/ShoppingProcessContainer', () => ({
