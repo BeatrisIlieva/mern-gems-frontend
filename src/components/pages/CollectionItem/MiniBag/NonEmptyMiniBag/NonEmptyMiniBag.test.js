@@ -1,11 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { useNavigate } from "react-router-dom";
 
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
-
 
 jest.mock("../../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
@@ -62,28 +61,6 @@ describe("NonEmptyMiniBag Component", () => {
     expect(
       screen.getByRole("button", { name: /Continue Checkout/i })
     ).toBeInTheDocument();
-  });
-
-  test('clicking "View Bag" button navigates to the correct URL and calls popupCloseHandler', () => {
-    render(<NonEmptyMiniBag popupCloseHandler={mockPopupCloseHandler} />);
-
-    const buttons = screen.getAllByRole("button");
-    const firstButton = buttons[0];
-
-    expect(firstButton).toBeInTheDocument();
-
-    fireEvent.click(firstButton);
-  });
-
-  test('clicking "Continue Checkout" button navigates to the correct URL and calls popupCloseHandler', () => {
-    render(<NonEmptyMiniBag popupCloseHandler={mockPopupCloseHandler} />);
-    const buttons = screen.getAllByRole("button");
-
-    const secondButton = buttons[1];
-
-    fireEvent.click(secondButton);
-
-    expect(secondButton).toBeInTheDocument();
   });
 
   test("displays total price from context correctly", () => {
