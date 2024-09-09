@@ -195,8 +195,8 @@ describe("CardDetailsForm Component", () => {
     );
   });
 
-    test("Submits the form with empty values; Expect update function not to be called; Expect errors", async () => {
-          const mockUserInformation = {
+  test("Submits the form with empty values; Expect update function not to be called; Expect errors", async () => {
+    const mockUserInformation = {
       token: mockToken,
       userId: mockUserId,
     };
@@ -217,34 +217,34 @@ describe("CardDetailsForm Component", () => {
       </MemoryRouter>
     );
 
-      const inputs = {};
+    const inputs = {};
 
-      Object.values(FORM_KEYS).forEach((value) => {
-        inputs[value] = screen.getByTestId(`${value}-input`);
-      });
+    Object.values(FORM_KEYS).forEach((value) => {
+      inputs[value] = screen.getByTestId(`${value}-input`);
+    });
 
-      Object.entries(inputs).forEach(([inputKey, inputValue]) => {
-        fireEvent.change(inputValue, {
-          target: { value: INITIAL_FORM_VALUES[inputKey].emptyTestData },
-        });
-      });
-
-      const submitButton = screen.getByTestId("button");
-      fireEvent.click(submitButton);
-
-      const submitData = {};
-
-      Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
-        submitData[key] = value.emptyTestData;
-      });
-
-      await waitFor(() => {
-        expect(mockUserCardDetailsService.update).not.toHaveBeenCalled();
-      });
-
-      Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
-        const errorMessageContainer = screen.getByTestId(`${key}-error`);
-        expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+    Object.entries(inputs).forEach(([inputKey, inputValue]) => {
+      fireEvent.change(inputValue, {
+        target: { value: INITIAL_FORM_VALUES[inputKey].emptyTestData },
       });
     });
+
+    const submitButton = screen.getByTestId("button");
+    fireEvent.click(submitButton);
+
+    const submitData = {};
+
+    Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
+      submitData[key] = value.emptyTestData;
+    });
+
+    await waitFor(() => {
+      expect(mockUserCardDetailsService.update).not.toHaveBeenCalled();
+    });
+
+    Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
+      const errorMessageContainer = screen.getByTestId(`${key}-error`);
+      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+    });
+  });
 });
