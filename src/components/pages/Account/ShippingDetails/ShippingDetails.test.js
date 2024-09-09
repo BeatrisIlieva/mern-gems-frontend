@@ -1,12 +1,9 @@
+import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import { ShippingDetails } from "./ShippingDetails";
 
-import { ShippingDetails } from './ShippingDetails';
-
-
-
-jest.mock('../reusable/SectionContainer/SectionContainer', () => ({
+jest.mock("../reusable/SectionContainer/SectionContainer", () => ({
   SectionContainer: ({ sectionTitle, callBackFunction, icon, buttonTitle }) => (
     <div>
       <h1>{sectionTitle}</h1>
@@ -14,61 +11,55 @@ jest.mock('../reusable/SectionContainer/SectionContainer', () => ({
         <i className={icon.iconName} /> {buttonTitle}
       </button>
     </div>
-  )
+  ),
 }));
 
-jest.mock('../../../reusable/Popup/Popup', () => ({
+jest.mock("../../../reusable/Popup/Popup", () => ({
   Popup: ({ popupCloseHandler, modalVariant, children }) => (
     <div data-testid="popup" className={modalVariant}>
       <button onClick={popupCloseHandler}>Close</button>
       {children}
     </div>
-  )
+  ),
 }));
 
-jest.mock('../../../reusable/LargeTitle/LargeTitle', () => ({
-  LargeTitle: ({ title, textAlign }) => (
-    <h2 style={{ textAlign }}>{title}</h2>
-  )
+jest.mock("../../../reusable/LargeTitle/LargeTitle", () => ({
+  LargeTitle: ({ title, textAlign }) => <h2 style={{ textAlign }}>{title}</h2>,
 }));
 
-jest.mock('../../../common/ShippingDetailsForm/ShippingDetailsForm', () => ({
+jest.mock("../../../common/ShippingDetailsForm/ShippingDetailsForm", () => ({
   ShippingDetailsForm: ({ popupCloseHandler }) => (
     <form>
-      <button type="button" onClick={popupCloseHandler}>Form Button</button>
+      <button type="button" onClick={popupCloseHandler}>
+        Form Button
+      </button>
     </form>
-  )
+  ),
 }));
 
-describe('ShippingDetails Component', () => {
-  test('does not render Popup initially', () => {
+describe("ShippingDetails Component", () => {
+  test("does not render Popup initially", () => {
     render(<ShippingDetails />);
 
-
-    expect(screen.queryByTestId('popup')).not.toBeInTheDocument();
+    expect(screen.queryByTestId("popup")).not.toBeInTheDocument();
   });
 
-  test('renders Popup when button is clicked', () => {
+  test("renders Popup when button is clicked", () => {
     render(<ShippingDetails />);
 
-   
-    fireEvent.click(screen.getByLabelText('Add new address'));
+    fireEvent.click(screen.getByLabelText("Add new address"));
 
-
-    expect(screen.getByTestId('popup')).toBeInTheDocument();
-    expect(screen.getByText('Form Button')).toBeInTheDocument();
+    expect(screen.getByTestId("popup")).toBeInTheDocument();
+    expect(screen.getByText("Form Button")).toBeInTheDocument();
   });
 
-  test('closes Popup when close button is clicked', () => {
+  test("closes Popup when close button is clicked", () => {
     render(<ShippingDetails />);
 
+    fireEvent.click(screen.getByLabelText("Add new address"));
 
-    fireEvent.click(screen.getByLabelText('Add new address'));
+    fireEvent.click(screen.getByText("Close"));
 
-    // Click the close button in the Popup
-    fireEvent.click(screen.getByText('Close'));
-
-    // Verify that Popup is no longer in the document
-    expect(screen.queryByTestId('popup')).not.toBeInTheDocument();
+    expect(screen.queryByTestId("popup")).not.toBeInTheDocument();
   });
 });
