@@ -7,15 +7,11 @@ import { InfoAndAction } from "./InfoAndAction";
 import { useNavigate } from "react-router-dom";
 
 jest.mock("../../../common/MiniImages/MiniImages", () => ({
-  MiniImages: ({ jewelriesByCategory, clickHandler }) => (
+  MiniImages: ({ clickHandler }) => (
     <div>
       <button onClick={() => clickHandler("colorTitle")}>MiniImages</button>
     </div>
   ),
-}));
-
-jest.mock("../../../common/StockStatus/StockStatus", () => ({
-  StockStatus: ({ jewelriesByCategory }) => <div>StockStatus</div>,
 }));
 
 jest.mock("../../../reusable/DualTitleSection/DualTitleSection", () => ({
@@ -39,14 +35,13 @@ jest.mock("../../../reusable/Paragraph/Paragraph", () => ({
 }));
 
 jest.mock("./Form/Form", () => ({
-  Form: ({ jewelriesByCategory, toggleDisplayPopup }) => (
+  Form: ({ toggleDisplayPopup }) => (
     <div>
       <button onClick={toggleDisplayPopup}>Toggle Popup</button>
     </div>
   ),
 }));
 
-// Mock useNavigate
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: jest.fn(),
@@ -71,7 +66,6 @@ describe("InfoAndAction Component", () => {
       </MemoryRouter>
     );
 
-    // Check if the components are rendered
     expect(screen.getByText("MiniImages")).toBeInTheDocument();
     expect(screen.getByText("StockStatus")).toBeInTheDocument();
     expect(screen.getByText("Jewelry Title")).toBeInTheDocument();
@@ -91,10 +85,8 @@ describe("InfoAndAction Component", () => {
       </MemoryRouter>
     );
 
-    // Simulate click
     fireEvent.click(screen.getByText("MiniImages"));
 
-    // Check if navigate was called with the correct URL
     expect(navigate).toHaveBeenCalledWith(
       "/collection/categorytitle/colortitle"
     );
@@ -112,10 +104,8 @@ describe("InfoAndAction Component", () => {
       </MemoryRouter>
     );
 
-    // Simulate click
     fireEvent.click(screen.getByText("Toggle Popup"));
 
-    // Check if toggleDisplayPopup was called
     expect(toggleDisplayPopup).toHaveBeenCalled();
   });
 });
