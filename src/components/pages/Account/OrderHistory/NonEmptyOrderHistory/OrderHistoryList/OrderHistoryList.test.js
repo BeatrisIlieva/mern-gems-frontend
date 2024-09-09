@@ -1,75 +1,73 @@
-// OrderHistoryList.test.js
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
-import { OrderHistoryList } from './OrderHistoryList';
-import { JewelryCard } from '../../../../../reusable/JewelryCard/JewelryCard';
-import { NormalTitle } from '../../../../../reusable/NormalTitle/NormalTitle';
-import { convertToReadableDate } from '../../../../../../utils/convertToReadableDate';
+import { OrderHistoryList } from "./OrderHistoryList";
 
-// Mock components and utilities
-jest.mock('../../../../../reusable/JewelryCard/JewelryCard', () => ({
+import { convertToReadableDate } from "../../../../../../utils/convertToReadableDate";
+
+jest.mock("../../../../../reusable/JewelryCard/JewelryCard", () => ({
   JewelryCard: ({ name, price }) => (
     <div>
       <div>{name}</div>
       <div>${price}</div>
     </div>
-  )
+  ),
 }));
 
-jest.mock('../../../../../reusable/NormalTitle/NormalTitle', () => ({
-  NormalTitle: ({ title, variant }) => (
-    <div>{title}</div>
-  )
+jest.mock("../../../../../reusable/NormalTitle/NormalTitle", () => ({
+  NormalTitle: ({ title }) => <div>{title}</div>,
 }));
 
-jest.mock('../../../../../../utils/convertToReadableDate', () => ({
-  convertToReadableDate: jest.fn()
+jest.mock("../../../../../../utils/convertToReadableDate", () => ({
+  convertToReadableDate: jest.fn(),
 }));
 
-describe('OrderHistoryList Component', () => {
+describe("OrderHistoryList Component", () => {
   beforeEach(() => {
-    convertToReadableDate.mockImplementation(date => new Date(date).toLocaleDateString());
+    convertToReadableDate.mockImplementation((date) =>
+      new Date(date).toLocaleDateString()
+    );
   });
 
-  test('renders order information correctly', () => {
+  test("renders order information correctly", () => {
     render(
       <OrderHistoryList
         status="Completed"
         createdAt="2024-09-01T00:00:00Z"
         totalPrice={123.45}
-        jewelries={[{ _id: '1', name: 'Ring', price: 50 }]}
+        jewelries={[{ _id: "1", name: "Ring", price: 50 }]}
       />
     );
 
-    // Check for status, creation date, and total price
-    expect(screen.getByText('Status: Completed')).toBeInTheDocument();
-    expect(screen.getByText(`Created at: ${new Date('2024-09-01T00:00:00Z').toLocaleDateString()}`)).toBeInTheDocument();
-    expect(screen.getByText('Total: $ 123.45')).toBeInTheDocument();
+    expect(screen.getByText("Status: Completed")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        `Created at: ${new Date("2024-09-01T00:00:00Z").toLocaleDateString()}`
+      )
+    ).toBeInTheDocument();
+    expect(screen.getByText("Total: $ 123.45")).toBeInTheDocument();
   });
 
-  test('renders jewelry items correctly', () => {
+  test("renders jewelry items correctly", () => {
     render(
       <OrderHistoryList
         status="Completed"
         createdAt="2024-09-01T00:00:00Z"
         totalPrice={123.45}
         jewelries={[
-          { _id: '1', name: 'Ring', price: 50 },
-          { _id: '2', name: 'Necklace', price: 73.45 }
+          { _id: "1", name: "Ring", price: 50 },
+          { _id: "2", name: "Necklace", price: 73.45 },
         ]}
       />
     );
 
-    // Check if JewelryCard components are rendered
-    expect(screen.getByText('Ring')).toBeInTheDocument();
-    expect(screen.getByText('$50')).toBeInTheDocument();
-    expect(screen.getByText('Necklace')).toBeInTheDocument();
-    expect(screen.getByText('$73.45')).toBeInTheDocument();
+    expect(screen.getByText("Ring")).toBeInTheDocument();
+    expect(screen.getByText("$50")).toBeInTheDocument();
+    expect(screen.getByText("Necklace")).toBeInTheDocument();
+    expect(screen.getByText("$73.45")).toBeInTheDocument();
   });
 
-  test('renders empty jewelry list correctly', () => {
+  test("renders empty jewelry list correctly", () => {
     render(
       <OrderHistoryList
         status="Completed"
@@ -79,7 +77,6 @@ describe('OrderHistoryList Component', () => {
       />
     );
 
-    // Check that no jewelry items are rendered
-    expect(screen.queryByText('Ring')).not.toBeInTheDocument();
+    expect(screen.queryByText("Ring")).not.toBeInTheDocument();
   });
 });
