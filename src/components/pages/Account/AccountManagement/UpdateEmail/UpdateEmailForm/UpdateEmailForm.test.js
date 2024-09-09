@@ -70,7 +70,10 @@ describe("UpdateEmailForm Component", () => {
     });
 
     await waitFor(() => {
-      expect(mockUserLoginDetailsService.updateEmail).toHaveBeenCalledWith(userId, submitData);
+      expect(mockUserLoginDetailsService.updateEmail).toHaveBeenCalledWith(
+        userId,
+        submitData
+      );
     });
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
@@ -79,49 +82,52 @@ describe("UpdateEmailForm Component", () => {
     });
   });
 
-  //   test("Submits the form with invalid values; Expect update function not to be called; Expect errors", async () => {
-  //     const mockUserInformation = {
-  //       userId: userId,
-  //     };
+  test("Submits the form with invalid values; Expect update function not to be called; Expect errors", async () => {
+    const mockUserInformation = {
+        token: mockToken,
+        userId: mockUserId,
+      };
+  
+      mockUserLoginDetailsService.getOne.mockResolvedValue(mockUserInformation);
+  
+      render(
+        <MemoryRouter>
+          <AuthenticationContext.Provider value={mockUserInformation}>
+            <UpdateEmailForm />
+          </AuthenticationContext.Provider>
+        </MemoryRouter>
+      );
 
-  //     mockFind.mockResolvedValue(mockUserInformation);
+    const inputs = {};
 
-  //     render(
-  //       <AuthContext.Provider value={mockAuthContextValue}>
-  //         <EmailInformationForm />
-  //       </AuthContext.Provider>
-  //     );
+    Object.values(FORM_KEYS).forEach((value) => {
+      inputs[value] = screen.getByTestId(`${value}-input`);
+    });
 
-  //     const inputs = {};
+    Object.entries(inputs).forEach(([inputKey, inputValue]) => {
+      fireEvent.change(inputValue, {
+        target: { value: INITIAL_FORM_VALUES[inputKey].invalidTestData },
+      });
+    });
 
-  //     Object.values(FORM_KEYS).forEach((value) => {
-  //       inputs[value] = screen.getByTestId(`${value}-input`);
-  //     });
+    const submitButton = screen.getByTestId("button");
+    fireEvent.click(submitButton);
 
-  //     Object.entries(inputs).forEach(([inputKey, inputValue]) => {
-  //       fireEvent.change(inputValue, {
-  //         target: { value: INITIAL_FORM_VALUES[inputKey].invalidTestData },
-  //       });
-  //     });
+    const submitData = {};
 
-  //     const submitButton = screen.getByTestId("submit");
-  //     fireEvent.click(submitButton);
+    Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
+      submitData[key] = value.invalidTestData;
+    });
 
-  //     const submitData = {};
+    await waitFor(() => {
+      expect(mockUpdate).not.toHaveBeenCalled();
+    });
 
-  //     Object.entries(INITIAL_FORM_VALUES).forEach(([key, value]) => {
-  //       submitData[key] = value.invalidTestData;
-  //     });
-
-  //     await waitFor(() => {
-  //       expect(mockUpdate).not.toHaveBeenCalled();
-  //     });
-
-  //     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
-  //       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-  //       expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
-  //     });
-  //   });
+    Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
+      const errorMessageContainer = screen.getByTestId(`${key}-error`);
+      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+    });
+  });
 
   //   test("Submits the form with empty values; Expect update function not to be called; Expect errors", async () => {
   //     const mockUserInformation = {
