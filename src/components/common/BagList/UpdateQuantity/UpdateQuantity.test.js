@@ -1,7 +1,8 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+
 import { UpdateQuantity } from "./UpdateQuantity";
+
 import { useBagContext } from "../../../../contexts/BagContext";
 
 jest.mock("../../../../contexts/BagContext", () => ({
@@ -37,7 +38,7 @@ describe("UpdateQuantity Component", () => {
     expect(screen.getByText(bagQuantity)).toBeInTheDocument();
     expect(plusButton).toBeEnabled();
     expect(minusIcon).toBeInTheDocument();
-    expect(minusIcon).toHaveClass("enabled"); // Assuming 'enabled' is applied as a class
+    expect(minusIcon).toHaveClass("enabled");
   });
 
   test("calls increase function when plus button is clicked", () => {
