@@ -27,11 +27,17 @@ describe("CardDetailsForm Component", () => {
     update: jest.fn(),
   };
 
+  const mockOrderService = {
+    create: jest.fn(),
+  };
+
   beforeEach(() => {
     useService.mockReturnValue(mockUserCardDetailsService);
+    useService.mockReturnValue(mockOrderService);
 
     mockUserCardDetailsService.getOne.mockClear();
     mockUserCardDetailsService.update.mockClear();
+    mockOrderService.create.mockClear();
   });
 
   test("Submits the form with valid values; Expect update function to be called", async () => {
@@ -82,6 +88,8 @@ describe("CardDetailsForm Component", () => {
         userId,
         submitData
       );
+
+      expect(mockOrderService.create).toHaveBeenCalledWith(userId);
     });
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
