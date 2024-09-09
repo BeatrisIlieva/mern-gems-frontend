@@ -52,7 +52,6 @@ describe("Checkout Component", () => {
     );
 
     expect(screen.getByText("CardDetailsContent")).toBeInTheDocument();
-
     expect(screen.getByText("OrderSummary")).toBeInTheDocument();
     expect(screen.getByText("BagList")).toBeInTheDocument();
   });
