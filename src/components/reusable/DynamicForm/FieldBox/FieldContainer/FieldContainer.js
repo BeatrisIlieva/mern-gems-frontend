@@ -18,6 +18,7 @@ export const FieldContainer = memo(
   }) => {
     return (
       <div
+        data-testid="field-container"
         className={`${styles["field-container"]} ${
           values[value].errorMessage !== "" ? styles["error"] : ""
         }`.trim()}
