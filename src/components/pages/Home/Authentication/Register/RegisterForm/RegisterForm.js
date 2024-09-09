@@ -13,7 +13,7 @@ import { clearInitialFormValuesMessages } from "../../../../../../utils/clearIni
 import { getData } from "./helpers/getData";
 import { setEmailAlreadyExistsErrorMessage } from "./helpers/setEmailAlreadyExistsErrorMessage";
 
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./initialFormValues";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 export const RegisterForm = ({ closeHandler }) => {
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);

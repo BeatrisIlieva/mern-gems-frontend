@@ -11,6 +11,7 @@ export const Input = memo(
   }) => {
     return (
       <input
+        data-testid={`${value}-input`}
         type={values[value].fieldType}
         name={value}
         id={value}

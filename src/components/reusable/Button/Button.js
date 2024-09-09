@@ -8,6 +8,7 @@ export const Button = memo(
 
     return (
       <button
+        data-testid="button"
         type={type}
         className={
           !buttonIsDisabled && !isLoading
