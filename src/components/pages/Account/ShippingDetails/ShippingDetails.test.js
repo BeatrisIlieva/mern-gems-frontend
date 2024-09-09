@@ -44,17 +44,17 @@ describe('ShippingDetails Component', () => {
   test('does not render Popup initially', () => {
     render(<ShippingDetails />);
 
-    // Verify that Popup is not present initially
+
     expect(screen.queryByTestId('popup')).not.toBeInTheDocument();
   });
 
   test('renders Popup when button is clicked', () => {
     render(<ShippingDetails />);
 
-    // Click the button to show the Popup
+   
     fireEvent.click(screen.getByLabelText('Add new address'));
 
-    // Verify that Popup is now in the document
+
     expect(screen.getByTestId('popup')).toBeInTheDocument();
     expect(screen.getByText('Form Button')).toBeInTheDocument();
   });
@@ -62,7 +62,7 @@ describe('ShippingDetails Component', () => {
   test('closes Popup when close button is clicked', () => {
     render(<ShippingDetails />);
 
-    // Click the button to show the Popup
+
     fireEvent.click(screen.getByLabelText('Add new address'));
 
     // Click the close button in the Popup
