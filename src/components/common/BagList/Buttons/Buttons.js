@@ -42,6 +42,7 @@ export const Buttons = memo(({ bagId, categoryId, colorId }) => {
       </div>
       <div className={styles["icon-wrapper"]} ref={iconRef}>
         <FontAwesomeIcon
+          data-testid="icon"
           icon={faEllipsis}
           className={styles["icon"]}
           onClick={() => setDisplayContent(true)}
