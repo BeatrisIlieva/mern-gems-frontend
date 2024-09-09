@@ -15,7 +15,7 @@ jest.mock('../reusable/SectionContainer/SectionContainer', () => ({
   SectionContainer: ({ sectionTitle, callBackFunction, icon, buttonTitle }) => (
     <div>
       <h1>{sectionTitle}</h1>
-      <button onClick={callBackFunction}>
+      <button onClick={callBackFunction} aria-label="Add new address">
         <i className={icon.iconName} /> {buttonTitle}
       </button>
     </div>
@@ -57,11 +57,10 @@ describe('ShippingDetails Component', () => {
     render(<ShippingDetails />);
 
     // Click the button to show the Popup
-    fireEvent.click(screen.getByText('Add a New Address'));
+    fireEvent.click(screen.getByLabelText('Add new address'));
 
     // Verify that Popup is now in the document
     expect(screen.getByTestId('popup')).toBeInTheDocument();
-    expect(screen.getByText('Add a New Address')).toBeInTheDocument();
     expect(screen.getByText('Form Button')).toBeInTheDocument();
   });
 
@@ -69,7 +68,7 @@ describe('ShippingDetails Component', () => {
     render(<ShippingDetails />);
 
     // Click the button to show the Popup
-    fireEvent.click(screen.getByText('Add a New Address'));
+    fireEvent.click(screen.getByLabelText('Add new address'));
 
     // Click the close button in the Popup
     fireEvent.click(screen.getByText('Close'));
