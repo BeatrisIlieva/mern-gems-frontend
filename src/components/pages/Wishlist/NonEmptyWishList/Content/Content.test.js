@@ -5,7 +5,6 @@ import { Content } from "./Content";
 import { useJewelry } from "../../../../../hooks/useJewelry";
 import { useLargeImagesClick } from "../../../../../hooks/useLargeImagesClick";
 
-// Mock hooks
 jest.mock("../../../../../hooks/useJewelry", () => ({
   useJewelry: jest.fn(),
 }));
@@ -14,7 +13,6 @@ jest.mock("../../../../../hooks/useLargeImagesClick", () => ({
   useLargeImagesClick: jest.fn(),
 }));
 
-// Mock components
 jest.mock("../../../../reusable/DualTitleSection/DualTitleSection", () => ({
   DualTitleSection: ({ firstTitle, secondTitle }) => (
     <div>
