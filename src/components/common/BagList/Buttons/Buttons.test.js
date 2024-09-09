@@ -1,11 +1,7 @@
-import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { Buttons } from "./Buttons";
-import { MoveToWishlist } from "./MoveToWishlist/MoveToWishlist";
-import { Remove } from "./Remove/Remove";
 
-// Mock the MoveToWishlist and Remove components
 jest.mock("./MoveToWishlist/MoveToWishlist", () => ({
   MoveToWishlist: ({ bagId, categoryId, colorId }) => (
     <button
@@ -35,7 +31,6 @@ describe("Buttons Component", () => {
   test("renders MoveToWishlist and Remove components with correct props", () => {
     render(<Buttons bagId={bagId} categoryId={categoryId} colorId={colorId} />);
 
-    // Check if MoveToWishlist and Remove are rendered with correct props
     const moveToWishlist = screen.getByTestId("move-to-wishlist");
     expect(moveToWishlist).toHaveAttribute("data-bag-id", bagId);
     expect(moveToWishlist).toHaveAttribute("data-category-id", categoryId);
