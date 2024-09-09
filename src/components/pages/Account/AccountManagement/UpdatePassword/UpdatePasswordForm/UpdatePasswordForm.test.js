@@ -7,7 +7,7 @@ import { AuthenticationContext } from "../../../../../../contexts/Authentication
 
 import { useService } from "../../../../../../hooks/useService";
 
-import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
+import { FORM_KEYS, INITIAL_FORM_VALUES } from "../constants/initialFormValues";
 
 import { ERROR_MESSAGES } from "../../../../../../mappers/errorMessages";
 
