@@ -11,13 +11,12 @@ import { useService } from "../../../../../../hooks/useService";
 import { userLoginDetailsServiceFactory } from "../../../../../../services/userLoginDetailsService";
 
 import { checkIfFormErrorHasOccurred } from "../../../../../../utils/checkIfFormErrorHasOccurred";
-import { clearInitialFormValuesMessages } from "../../../../../../utils/clearInitialFormValuesMessages";
 import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPasswordErrorMessage";
 
 import { getData } from "./helpers/getData";
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
 
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
 export const UpdatePasswordForm = ({ popupCloseHandler }) => {
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -76,8 +75,6 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
           await userLoginDetailsService.updatePassword(userId, data);
 
           setValues(spreadValues);
-
-          clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 
           popupCloseHandler();
         } catch (err) {

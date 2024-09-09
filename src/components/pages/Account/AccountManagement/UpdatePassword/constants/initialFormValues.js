@@ -1,4 +1,4 @@
-import { PASSWORD_PATTERN } from "../../../../../../../constants/password";
+import { PASSWORD_PATTERN } from "../../../../../../constants/password";
 
 const FORM_KEYS = {
   Password: "password",
