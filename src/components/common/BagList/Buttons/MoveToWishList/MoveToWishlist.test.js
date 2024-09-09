@@ -1,7 +1,8 @@
-import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+
 import { MoveToWishlist } from "./MoveToWishlist";
+
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../../contexts/WishlistContext";
@@ -43,7 +44,7 @@ describe("MoveToWishlist Component", () => {
     const button = screen.getByRole("button", { name: /Move to Wishlist/i });
     expect(button).toBeInTheDocument();
     expect(button).toHaveTextContent("Move to Wishlist");
-    expect(button).toHaveClass("underlined"); // Assuming the variant is applied as a class
+    expect(button).toHaveClass("underlined");
   });
 
   test("renders Button with correct title and variant when item is in wishlist", () => {
@@ -63,7 +64,7 @@ describe("MoveToWishlist Component", () => {
     const button = screen.getByRole("button", { name: /In Wishlist/i });
     expect(button).toBeInTheDocument();
     expect(button).toHaveTextContent("In Wishlist");
-    expect(button).toHaveClass("info"); // Assuming the variant is applied as a class
+    expect(button).toHaveClass("info");
   });
 
   test("calls addToWishlist and removeFromBag with correct arguments when clicked", () => {
@@ -109,7 +110,6 @@ describe("MoveToWishlist Component", () => {
     expect(button).toHaveTextContent("Move to Wishlist");
     expect(button).toHaveClass("underlined");
 
-    // Simulate adding the item to the wishlist
     useWishlistContext.mockReturnValue({
       wishlistItems: [
         { category: { _id: categoryId }, color: { _id: colorId } },
