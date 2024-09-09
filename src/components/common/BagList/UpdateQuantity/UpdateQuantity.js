@@ -13,9 +13,10 @@ export const UpdateQuantity = memo(
     const { increase, decrease } = useBagContext();
 
     return (
-      <div className={styles["update-quantity"]}>
+      <div className={styles["update-quantity"]} data-testid="increase-button">
         <button disabled={inventoryQuantity < 1} className={styles["button"]}>
           <FontAwesomeIcon
+            data-testid="increase-icon"
             icon={faPlus}
             className={
               inventoryQuantity >= 1 ? styles["enabled"] : styles["disabled"]
@@ -25,6 +26,7 @@ export const UpdateQuantity = memo(
         </button>
         {bagQuantity}
         <FontAwesomeIcon
+          data-testid="decrease-icon"
           icon={faMinus}
           className={styles["enabled"]}
           onClick={() => decrease(bagId)}
