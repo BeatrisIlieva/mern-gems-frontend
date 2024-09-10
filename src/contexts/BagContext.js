@@ -7,6 +7,8 @@ import {
   useCallback,
 } from "react";
 
+import { useLocation } from "react-router-dom";
+
 import { useAuthenticationContext } from "../contexts/AuthenticationContext";
 
 import { useService } from "../hooks/useService";
@@ -16,6 +18,11 @@ import { bagServiceFactory } from "../services/bagService";
 export const BagContext = createContext();
 
 export const BagProvider = ({ children }) => {
+  const location = useLocation();
+
+  const locationIsOrderConfirmation =
+    location.pathname === "/order-confirmation";
+
   const { userId, isAuthenticated } = useAuthenticationContext();
 
   const [bagItems, setBagItems] = useState([]);
@@ -23,6 +30,8 @@ export const BagProvider = ({ children }) => {
   const bagService = useService(bagServiceFactory);
 
   const [isProcessing, setIsProcessing] = useState(false);
+
+  const [processingBagId, setProcessingBagId] = useState(null);
 
   const totalPrice = useMemo(() => {
     return bagItems.reduce(
@@ -53,7 +62,7 @@ export const BagProvider = ({ children }) => {
 
   useEffect(() => {
     fetchBagItems();
-  }, [fetchBagItems]);
+  }, [fetchBagItems, locationIsOrderConfirmation]);
 
   const add = useCallback(
     async (size, jewelryId, userId) => {
@@ -67,21 +76,29 @@ export const BagProvider = ({ children }) => {
   const increase = async (bagId) => {
     setIsProcessing(true);
 
+    setProcessingBagId(bagId);
+
     await bagService.increase(bagId);
 
     await fetchBagItems();
 
     setIsProcessing(false);
+
+    setProcessingBagId(null);
   };
 
   const decrease = async (bagId) => {
     setIsProcessing(true);
 
+    setProcessingBagId(bagId);
+
     await bagService.decrease(bagId);
 
     await fetchBagItems();
-    
+
     setIsProcessing(false);
+
+    setProcessingBagId(null);
   };
 
   const remove = useCallback(
@@ -103,6 +120,7 @@ export const BagProvider = ({ children }) => {
       remove,
       add,
       isProcessing,
+      processingBagId,
     }),
     [bagItems, totalPrice, bagTotalQuantity, increase, decrease, remove, add]
   );

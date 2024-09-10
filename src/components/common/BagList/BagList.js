@@ -16,7 +16,7 @@ export const BagList = ({ variant }) => {
     location.pathname !== "/checkout" &&
     location.pathname !== "/checkout/payment";
 
-  const { bagItems } = useBagContext();
+  const { bagItems, isProcessing, processingBagId } = useBagContext();
 
   return (
     <ul
@@ -57,6 +57,8 @@ export const BagList = ({ variant }) => {
                     bagId={item.bagId}
                     bagQuantity={item.quantity}
                     inventoryQuantity={item.inventoryQuantity}
+                    isProcessing={isProcessing}
+                    processingBagId={processingBagId}
                   />
                 ) : (
                   `Qty ${item.quantity}`

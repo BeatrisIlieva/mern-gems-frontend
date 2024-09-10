@@ -9,8 +9,14 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import styles from "./UpdateQuantity.module.css";
 
 export const UpdateQuantity = memo(
-  ({ bagId, bagQuantity, inventoryQuantity }) => {
-    const { increase, decrease, isProcessing } = useBagContext();
+  ({
+    bagId,
+    bagQuantity,
+    inventoryQuantity,
+    isProcessing,
+    processingBagId,
+  }) => {
+    const { increase, decrease } = useBagContext();
 
     return (
       <div className={styles["update-quantity"]} data-testid="increase-button">
@@ -28,7 +34,7 @@ export const UpdateQuantity = memo(
             }
             onClick={() => increase(bagId)}
           />
-          {isProcessing && (
+          {isProcessing && processingBagId === bagId && (
             <span className={styles["updating"]}>Updating...</span>
           )}
         </button>
