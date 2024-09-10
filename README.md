@@ -85,9 +85,7 @@
 
 ## Frontend
 - Built with React
-> [!NOTE]
-> Currently optimized for desktop; future plans include implementing media queries for responsiveness on various devices
 
-#### *Find the Frontend Repository [**HERE**](https://github.com/BeatrisIlieve/MERNGems-Frontend)*
+#### *Find the Frontend Repository [**HERE**](https://github.com/BeatrisIlieve/mern-gems-frontend)*
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
