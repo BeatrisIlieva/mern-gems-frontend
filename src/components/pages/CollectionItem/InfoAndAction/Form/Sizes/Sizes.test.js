@@ -62,6 +62,12 @@ describe("Sizes Component", () => {
 
     fireEvent.mouseLeave(sizeLabels[0]);
     expect(sizeLabels[0]).toHaveClass("label");
+
+    fireEvent.touchStart(sizeLabels[0]);
+    expect(sizeLabels[0]).toHaveClass("label hovered");
+
+    fireEvent.touchEnd(sizeLabels[0]);
+    expect(sizeLabels[0]).toHaveClass("label");
   });
 
   test("resets hoveredLabel on route change", () => {
