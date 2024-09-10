@@ -1,8 +1,9 @@
 <a name="js-gems"></a>
 
-<p align="right" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 120px;">
+<p align="center" class="margin-left-custom" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 120px;">
   <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1724933359/forget-me-not-collection/miniImages/Screenshot_2024-08-29_at_15.08.13_ycwzhl.png" alt="Project Logo" width="340">
 </p>
+
 
 ---
 
