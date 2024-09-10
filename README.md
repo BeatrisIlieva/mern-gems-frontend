@@ -71,11 +71,7 @@
 
 2. Database aggregations for Product Filtering and Real-time Availability Tracking
    
-3. Searching products by multiple criteria
-   
-4. Transfering Shopping Bag items after registration and login
-   
-5. Obligatory Size Selection except for the Category Earring
+5. Obligatory Size Selection
    
 6. Users can increase or decrease the quantity of items in their shopping bag, with validations in place to ensure that they cannot add more than the available quantity in the database or reduce the quantity below zero
     
