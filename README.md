@@ -55,12 +55,12 @@
 1. User Models:
 - Implemented three distinct user models storing data about:
   - Logging credentials
-  - Personal information
-  - Shipping information
+  - Shipping details
+  - Card details
 
 - Each user model is linked by a common user ID:
   - The ID is derived from the logging credentials model
-  - The IDs for the personal information and shipping information models are set at the time of user registration
+  - The IDs for the shipping and card details models are set at the time of user registration
     
 - Update Email functionality
 - Update Password functionality
