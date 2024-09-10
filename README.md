@@ -67,9 +67,8 @@
     
 - Update Email functionality
 - Update Password functionality
-- Create and Update Personal Information functionality
-- Create and Update Shipping Information functionality
-- Detele Account functionality
+- Create and Update Shipping details functionality
+- Create and Update Card details functionality
 - Logout functionality
 
 2. Database aggregations for Product Filtering and Real-time Availability Tracking
