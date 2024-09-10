@@ -22,7 +22,9 @@ export const ShippingInformation = ({ toggleDisplayShippingDetailsPopup }) => {
         }
       />
       <UserLoginDetails />
-      <UserShippingDetails />
+      <UserShippingDetails
+        toggleDisplayShippingDetailsPopup={toggleDisplayShippingDetailsPopup}
+      />
     </section>
   );
 };

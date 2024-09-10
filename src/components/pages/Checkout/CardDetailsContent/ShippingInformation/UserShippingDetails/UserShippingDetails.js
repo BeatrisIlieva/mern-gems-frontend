@@ -10,7 +10,7 @@ import { userShippingDetailsServiceFactory } from "../../../../../../services/us
 
 import styles from "./UserShippingDetails.module.css";
 
-export const UserShippingDetails = () => {
+export const UserShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
   const [userShippingDetails, setUserShippingDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
@@ -28,7 +28,7 @@ export const UserShippingDetails = () => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, [userShippingDetailsService, userId]);
+  }, [userShippingDetailsService, userId, toggleDisplayShippingDetailsPopup]);
 
   return (
     <ul role="list">

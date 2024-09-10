@@ -48,12 +48,10 @@
 
 @media (max-width: 675px) {
   .horizontal-line-header {
-    top: 4rem;
+    top: 4.2rem;
   }
 
   .line-img {
-    width: 20px;
-    vertical-align: middle;
-    margin: 0px 0.1px;
+    width: 1rem;
   }
 }
