@@ -1,7 +1,7 @@
 .bag-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
   animation: transitioning 1s forwards;
 }
 

@@ -22,6 +22,8 @@ export const BagProvider = ({ children }) => {
 
   const bagService = useService(bagServiceFactory);
 
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const totalPrice = useMemo(() => {
     return bagItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -62,23 +64,25 @@ export const BagProvider = ({ children }) => {
     [bagService, fetchBagItems]
   );
 
-  const increase = useCallback(
-    async (bagId) => {
-      await bagService.increase(bagId);
+  const increase = async (bagId) => {
+    setIsProcessing(true);
 
-      await fetchBagItems();
-    },
-    [bagService, fetchBagItems]
-  );
+    await bagService.increase(bagId);
 
-  const decrease = useCallback(
-    async (bagId) => {
-      await bagService.decrease(bagId);
+    await fetchBagItems();
 
-      await fetchBagItems();
-    },
-    [bagService, fetchBagItems]
-  );
+    setIsProcessing(false);
+  };
+
+  const decrease = async (bagId) => {
+    setIsProcessing(true);
+
+    await bagService.decrease(bagId);
+
+    await fetchBagItems();
+    
+    setIsProcessing(false);
+  };
 
   const remove = useCallback(
     async (bagId) => {
@@ -98,6 +102,7 @@ export const BagProvider = ({ children }) => {
       decrease,
       remove,
       add,
+      isProcessing,
     }),
     [bagItems, totalPrice, bagTotalQuantity, increase, decrease, remove, add]
   );

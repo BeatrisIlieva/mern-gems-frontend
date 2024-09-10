@@ -10,19 +10,27 @@ import styles from "./UpdateQuantity.module.css";
 
 export const UpdateQuantity = memo(
   ({ bagId, bagQuantity, inventoryQuantity }) => {
-    const { increase, decrease } = useBagContext();
+    const { increase, decrease, isProcessing } = useBagContext();
 
     return (
       <div className={styles["update-quantity"]} data-testid="increase-button">
-        <button disabled={inventoryQuantity < 1} className={styles["button"]}>
+        <button
+          disabled={inventoryQuantity < 1 || isProcessing}
+          className={styles["button"]}
+        >
           <FontAwesomeIcon
             data-testid="increase-icon"
             icon={faPlus}
             className={
-              inventoryQuantity >= 1 ? styles["enabled"] : styles["disabled"]
+              inventoryQuantity < 1 || isProcessing
+                ? styles["disabled"]
+                : styles["enabled"]
             }
             onClick={() => increase(bagId)}
           />
+          {isProcessing && (
+            <span className={styles["updating"]}>Updating...</span>
+          )}
         </button>
         {bagQuantity}
         <FontAwesomeIcon
