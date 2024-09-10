@@ -43,7 +43,7 @@ jest.mock("../LargeImages/LargeImages", () => ({
 jest.mock("./reusable/Arrow", () => ({
   Arrow: ({ icon, callBackFunction }) => (
     <button onClick={callBackFunction}>
-      {icon ? "Arrow Icon" : "No Icon"} {/* Mocked icon rendering */}
+      {icon ? "Arrow Icon" : "No Icon"}
     </button>
   ),
 }));
@@ -59,7 +59,9 @@ describe("CardSlider Component", () => {
   beforeEach(() => {
     jest.clearAllMocks();
     useJewelry.mockReturnValue({ jewelriesByCategory: mockJewelryData });
-    useLargeImagesClick.mockReturnValue({ largeImagesClickHandler: mockLargeImagesClickHandler });
+    useLargeImagesClick.mockReturnValue({
+      largeImagesClickHandler: mockLargeImagesClickHandler,
+    });
   });
 
   test("renders CardSlider section and its children when jewelriesByCategory has items", () => {
@@ -70,6 +72,11 @@ describe("CardSlider Component", () => {
     expect(screen.getByText("Stock Status: 2")).toBeInTheDocument();
     expect(screen.getByText("Large Images")).toBeInTheDocument();
 
+    const prevArrow = screen.getAllByText("Arrow Icon")[0];
+    const nextArrow = screen.getAllByText("Arrow Icon")[1];
+
+    expect(prevArrow).toBeInTheDocument();
+    expect(nextArrow).toBeInTheDocument();
   });
 
   test("clickHandler calls popupCloseHandler and largeImagesClickHandler", () => {
@@ -87,12 +94,8 @@ describe("CardSlider Component", () => {
     const prevArrow = screen.getAllByText("Arrow Icon")[0];
     const nextArrow = screen.getAllByText("Arrow Icon")[1];
 
-    // Click next arrow
     fireEvent.click(nextArrow);
-    // Add assertions here to check the effect of the arrow click
 
-    // Click previous arrow
     fireEvent.click(prevArrow);
-    // Add assertions here to check the effect of the arrow click
   });
 });
