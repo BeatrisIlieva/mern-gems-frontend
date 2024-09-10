@@ -112,7 +112,6 @@ describe("Form Component", () => {
       />
     );
 
-    // Select a size and trigger an error
     fireEvent.change(screen.getByTestId("size-select"), {
       target: { value: "M" },
     });
@@ -120,11 +119,10 @@ describe("Form Component", () => {
 
     expect(screen.queryByTestId("error-message")).toBeNull();
 
-    // Change color which triggers useEffect to reset states
     const updatedJewelriesByCategory = [
       {
         ...mockJewelriesByCategory[0],
-        color: "silver", // Color change
+        color: "silver",
       },
     ];
 
@@ -135,8 +133,7 @@ describe("Form Component", () => {
       />
     );
 
-    // Assert that selectedSize and errorMessage are reset
-    expect(screen.getByTestId("size-select").value).toBe("M"); // No size selected
+    expect(screen.getByTestId("size-select").value).toBe("M");
     expect(screen.queryByTestId("error-message")).toBeNull();
   });
 
@@ -154,7 +151,7 @@ describe("Form Component", () => {
       expect(screen.getByTestId("error-message")).toHaveTextContent(
         "Ensure you have selected the desired size"
       );
-      expect(mockAdd).not.toHaveBeenCalled(); // Ensure add is not called
+      expect(mockAdd).not.toHaveBeenCalled();
     });
   });
 });
