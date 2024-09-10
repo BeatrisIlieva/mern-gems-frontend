@@ -55,13 +55,11 @@ describe("Sizes Component", () => {
       </MemoryRouter>
     );
 
-    const sizeLabels = screen.getAllByText(/^[SML]$/); // Matches S, M, L
+    const sizeLabels = screen.getAllByText(/^[SML]$/);
 
-    // Hover over the 'S' label
     fireEvent.mouseEnter(sizeLabels[0]);
     expect(sizeLabels[0]).toHaveClass("label hovered");
 
-    // Hover out of the 'S' label
     fireEvent.mouseLeave(sizeLabels[0]);
     expect(sizeLabels[0]).toHaveClass("label");
   });
@@ -78,12 +76,10 @@ describe("Sizes Component", () => {
       </MemoryRouter>
     );
 
-    // Hover over the 'S' label
     const sizeLabel = screen.getByText("S");
     fireEvent.mouseEnter(sizeLabel);
     expect(sizeLabel).toHaveClass("hovered");
 
-    // Change the route
     rerender(
       <MemoryRouter initialEntries={["/new-route"]}>
         <Sizes
@@ -95,8 +91,7 @@ describe("Sizes Component", () => {
       </MemoryRouter>
     );
 
-    // Check all labels to ensure none have the 'hovered' class
-    const updatedSizeLabels = screen.getAllByText(/^[SML]$/); // Matches S, M, L
+    const updatedSizeLabels = screen.getAllByText(/^[SML]$/);
     updatedSizeLabels.forEach((label) => {
       expect(label).toHaveClass("label");
     });
