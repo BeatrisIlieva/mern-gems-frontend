@@ -19,7 +19,6 @@ describe("SwitchButton Component", () => {
       />
     );
 
-    // Verify the text is rendered
     expect(screen.getByText("Not a member?")).toBeInTheDocument();
   });
 
@@ -33,16 +32,12 @@ describe("SwitchButton Component", () => {
       />
     );
 
-    // Query the button by its role (button) and accessible name ("Sign Up")
     const button = screen.getByRole("button", { name: "Sign Up" });
 
-    // Ensure the button is not disabled
     expect(button).not.toBeDisabled();
 
-    // Simulate a button click
     fireEvent.click(button);
 
-    // Verify the correct function call with the expected argument
     expect(mockSwitchPopupHandler).toHaveBeenCalledTimes(1);
     expect(mockSwitchPopupHandler).toHaveBeenCalledWith(option);
   });
