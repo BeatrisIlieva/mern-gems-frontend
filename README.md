@@ -71,17 +71,15 @@
 
 2. Database aggregations for Product Filtering and Real-time Availability Tracking
    
-5. Obligatory Size Selection
+3. Obligatory Size Selection
    
-6. Users can increase or decrease the quantity of items in their shopping bag, with validations in place to ensure that they cannot add more than the available quantity in the database or reduce the quantity below zero
+4. Users can increase or decrease the quantity of items in their shopping bag, with validations in place to ensure that they cannot add more than the available quantity in the database or reduce the quantity below zero
     
-7. Wishlist
+5. Wishlist
     
-8. The system suggests matching jewelries across categories (earrings, necklaces, rings, bracelets) based on stone color and collection, taking into account the currently selected category
-    
-9. Orders History, ordered by the creation time
+6. Orders History, ordered by the creation time
   
-10. Email Notifications upon Registration and Order Completion
+7. Email Notifications upon Registration and Order Completion
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
