@@ -102,10 +102,7 @@
 }
 
 @media (max-width: 640px) {
-  .modal.large {
-    width: 320px;
-  }
-
+  .modal.large,
   .modal.order-history {
     width: 320px;
   }
