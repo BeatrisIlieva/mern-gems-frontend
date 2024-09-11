@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useParams } from "react-router-dom";
 
 import { MiniBag } from "./MiniBag/MiniBag";
@@ -13,6 +13,8 @@ import { deslugify } from "../../../utils/deslugify";
 import styles from "./CollectionItem.module.css";
 
 export const CollectionItem = () => {
+  const popupRef = useRef(null);
+
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
 
   const categoryTitle = deslugify(slugifiedCategoryTitle);
@@ -30,6 +32,26 @@ export const CollectionItem = () => {
     setDisplayPopup((displayPopup) => !displayPopup);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        toggleDisplayPopup();
+      }
+    };
+
+    // Bind the event listener when the popup is open
+    if (displayPopup) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [displayPopup]);
+
   return (
     <>
       {displayPage404 ? (
@@ -37,7 +59,10 @@ export const CollectionItem = () => {
       ) : (
         <>
           {displayPopup && (
-            <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} />
+            <MiniBag
+              toggleDisplayMiniBagPopup={toggleDisplayPopup}
+              popupRef={popupRef}
+            />
           )}
           <section className={styles["collection-item"]}>
             <div className={styles["images"]}>

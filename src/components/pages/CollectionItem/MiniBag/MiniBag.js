@@ -8,7 +8,7 @@ import { useBagContext } from "../../../../contexts/BagContext";
 
 import styles from "./MiniBag.module.css";
 
-export const MiniBag = memo(({ toggleDisplayMiniBagPopup }) => {
+export const MiniBag = memo(({ toggleDisplayMiniBagPopup, popupRef }) => {
   const { bagTotalQuantity } = useBagContext();
 
   const [miniBagIsEmpty, setMiniBagIsEmpty] = useState(false);
@@ -39,6 +39,7 @@ export const MiniBag = memo(({ toggleDisplayMiniBagPopup }) => {
       data-testid="mini-bag"
     >
       <div
+      ref={popupRef}
         className={`${styles["modal"]} ${
           isTransitioning ? styles["slide-out"] : styles["slide-in"]
         }`}
