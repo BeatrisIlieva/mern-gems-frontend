@@ -12,5 +12,5 @@ exports.create = async (userId) => {
 
   const firstName = userShippingDetails.firstName;
 
-  sendOrderConfirmationEmail(email, firstName);
+  // sendOrderConfirmationEmail(email, firstName);
 };

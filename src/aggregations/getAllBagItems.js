@@ -66,7 +66,6 @@ exports.getAllBagItems = async (user) => {
         price: { $first: "$price" },
         quantity: { $first: "$quantity" },
         createdAt: { $first: "$createdAt" },
-        categoryTitle: { $first: "$categories.title" },
       },
     },
     {
@@ -84,7 +83,6 @@ exports.getAllBagItems = async (user) => {
         firstImageUrl: 1,
         quantity: 1,
         maxQuantity: "$inventoryQuantity",
-        categoryTitle: 1,
         inventoryQuantity: 1,
         size: 1,
         price: 1,

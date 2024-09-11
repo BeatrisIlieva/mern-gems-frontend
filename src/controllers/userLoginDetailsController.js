@@ -19,7 +19,7 @@ router.post("/register", async (req, res) => {
 
     await userCardDetailsManager.create({ _id: userId });
 
-    sendRegistrationEmail(email);
+    // sendRegistrationEmail(email);
 
     res.status(201).json({ token, userId });
   } catch (err) {
