@@ -1,4 +1,4 @@
-import { useState, useCallback} from "react";
+import { useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import { MiniBag } from "./MiniBag/MiniBag";
@@ -13,8 +13,6 @@ import { deslugify } from "../../../utils/deslugify";
 import styles from "./CollectionItem.module.css";
 
 export const CollectionItem = () => {
-
-
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
 
   const categoryTitle = deslugify(slugifiedCategoryTitle);
@@ -31,8 +29,6 @@ export const CollectionItem = () => {
   const toggleDisplayPopup = useCallback(() => {
     setDisplayPopup((displayPopup) => !displayPopup);
   }, []);
-
-
 
   return (
     <>
