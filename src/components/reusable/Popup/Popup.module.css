@@ -28,11 +28,12 @@
 .modal.large,
 .modal.small,
 .modal.order-history {
-  max-height: 98vh;
+  max-height: 94vh;
 }
 
 .modal.large {
-  width: 36vw;
+  width: 640px;
+  /* width: 36vw; */
 }
 
 .modal.small {
@@ -40,7 +41,8 @@
 }
 
 .modal.order-history {
-  width: 36.5rem;
+  width: 640px;
+  /* width: 36.5rem; */
 }
 
 .content {
@@ -99,7 +101,7 @@
   }
 }
 
-@media (max-width: 1280px) {
+/* @media (max-width: 1280px) {
   .modal.large {
     width: 52vw;
   }
@@ -125,14 +127,14 @@
   .modal.order-history {
     width: 26.5rem;
   }
-}
+} */
 
-@media (max-width: 460px) {
+@media (max-width: 640px) {
   .modal.large {
-    width: 98vw;
+    width: 320px;
   }
 
   .modal.order-history {
-    width: 24.5rem;
+    width: 320px;
   }
 }
