@@ -57,10 +57,6 @@ p {
   padding: 0;
 }
 
-p {
-  /* letter-spacing: 0.00875rem; */
-}
-
 :root {
   --white: #ffffff;
   --black: #000000;
