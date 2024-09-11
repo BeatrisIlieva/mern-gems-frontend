@@ -10,9 +10,7 @@ import { usePopup } from "../../../../hooks/usePopup";
 
 import styles from "./MiniBag.module.css";
 
-export const MiniBag = memo(({ toggleDisplayMiniBagPopup, displayPopup}) => {
-  // const popupRef = useRef(null);
-
+export const MiniBag = memo(({ toggleDisplayMiniBagPopup, displayPopup }) => {
   const { bagTotalQuantity } = useBagContext();
 
   const [miniBagIsEmpty, setMiniBagIsEmpty] = useState(false);
@@ -21,51 +19,10 @@ export const MiniBag = memo(({ toggleDisplayMiniBagPopup, displayPopup}) => {
     setMiniBagIsEmpty(bagTotalQuantity === 0);
   }, [bagTotalQuantity]);
 
-  const {isTransitioning, popupRef, popupCloseHandler} = usePopup({ toggleDisplayMiniBagPopup, displayPopup})
-
-  // const [isTransitioning, setIsTransitioning] = useState(false);
-
-  // const popupCloseHandler = () => {
-  //   return new Promise((resolve) => {
-  //     setIsTransitioning(true);
-
-  //     setTimeout(() => {
-  //       toggleDisplayMiniBagPopup();
-  //       setIsTransitioning(false);
-  //       resolve();
-  //     }, 400);
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (popupRef.current && !popupRef.current.contains(event.target)) {
-  //       popupCloseHandler();
-  //     }
-  //   };
-
-  //   const handleKeyDown = (event) => {
-  //     if (event.key === "Escape") {
-  //       popupCloseHandler();
-  //     }
-  //   };
-
-  //   if (displayPopup) {
-  //     document.addEventListener("mousedown", handleClickOutside);
-
-  //     window.addEventListener("keydown", handleKeyDown);
-  //   } else {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-
-  //     window.removeEventListener("keydown", handleKeyDown);
-  //   }
-
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-
-  //     window.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, [displayPopup]);
+  const { isTransitioning, popupRef, popupCloseHandler } = usePopup({
+    toggleDisplayPopup: toggleDisplayMiniBagPopup,
+    displayPopup,
+  });
 
   return (
     <section

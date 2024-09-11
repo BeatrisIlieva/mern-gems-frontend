@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef, memo } from "react";
+import { useEffect, useState, useRef } from "react";
 
-export const usePopup = ({ toggleDisplayMiniBagPopup, displayPopup }) => {
+export const usePopup = ({ toggleDisplayPopup, displayPopup }) => {
   const popupRef = useRef(null);
 
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -10,7 +10,7 @@ export const usePopup = ({ toggleDisplayMiniBagPopup, displayPopup }) => {
       setIsTransitioning(true);
 
       setTimeout(() => {
-        toggleDisplayMiniBagPopup();
+        toggleDisplayPopup();
         setIsTransitioning(false);
         resolve();
       }, 400);
