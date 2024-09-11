@@ -2,11 +2,8 @@ import { useState, memo } from "react";
 
 import { useLocation } from "react-router-dom";
 
-import { QuestionMark } from "./QuestionMark/QuestionMark";
 import { FieldContainer } from "./FieldContainer/FieldContainer";
 import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
-
-import { PASSWORD_REQUIREMENTS } from "../../../../constants/password";
 
 import styles from "./FieldBox.module.css";
 
@@ -22,19 +19,10 @@ export const FieldBox = memo(
     userInformation,
     fieldVariant,
   }) => {
-
-
     const location = useLocation();
 
     return (
       <div key={currentKey} className={`${styles[fieldVariant]}`}>
-        {/* {currentKey === "Password" &&
-          location.pathname !== "/users/account" && (
-            <QuestionMark text={PASSWORD_REQUIREMENTS} />
-          )}
-        {currentKey === "NewPassword" && (
-          <QuestionMark text={PASSWORD_REQUIREMENTS} />
-        )} */}
         <FieldContainer
           values={values}
           value={value}
@@ -45,7 +33,7 @@ export const FieldBox = memo(
           userInformation={userInformation}
           currentKey={currentKey}
         />
-        <ErrorMessage values={values} value={value} />
+        <ErrorMessage values={values} value={value} currentKey={currentKey} />
       </div>
     );
   }

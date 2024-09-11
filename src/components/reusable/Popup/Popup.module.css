@@ -99,9 +99,9 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1280px) {
   .modal.large {
-    width: 56vw;
+    width: 52vw;
   }
 
   .modal.small {
