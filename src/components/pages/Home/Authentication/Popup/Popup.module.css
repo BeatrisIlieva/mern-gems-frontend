@@ -78,27 +78,3 @@
     opacity: 0;
   }
 }
-/* 
-@media (max-width: 1088px) {
-  .modal {
-    width: 36vw;
-  }
-}
-
-@media (max-width: 860px) {
-  .modal {
-    width: 48vw;
-  }
-}
-
-@media (max-width: 660px) {
-  .modal {
-    width: 48vw;
-  }
-}
-
-@media (max-width: 460px) {
-  .modal {
-    width: 68vw;
-  }
-} */
