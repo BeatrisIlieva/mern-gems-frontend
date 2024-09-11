@@ -31,18 +31,13 @@
   max-height: 94vh;
 }
 
-.modal.large {
+.modal.large,
+.modal.order-history {
   width: 640px;
-  /* width: 36vw; */
 }
 
 .modal.small {
   width: 320px;
-}
-
-.modal.order-history {
-  width: 640px;
-  /* width: 36.5rem; */
 }
 
 .content {
