@@ -6,10 +6,12 @@ import { XMark } from "../../../common/XMark/XMark";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
+import { usePopup } from "../../../../hooks/usePopup";
+
 import styles from "./MiniBag.module.css";
 
 export const MiniBag = memo(({ toggleDisplayMiniBagPopup, displayPopup}) => {
-  const popupRef = useRef(null);
+  // const popupRef = useRef(null);
 
   const { bagTotalQuantity } = useBagContext();
 
@@ -19,49 +21,51 @@ export const MiniBag = memo(({ toggleDisplayMiniBagPopup, displayPopup}) => {
     setMiniBagIsEmpty(bagTotalQuantity === 0);
   }, [bagTotalQuantity]);
 
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const {isTransitioning, popupRef, popupCloseHandler} = usePopup({ toggleDisplayMiniBagPopup, displayPopup})
 
-  const popupCloseHandler = () => {
-    return new Promise((resolve) => {
-      setIsTransitioning(true);
+  // const [isTransitioning, setIsTransitioning] = useState(false);
 
-      setTimeout(() => {
-        toggleDisplayMiniBagPopup();
-        setIsTransitioning(false);
-        resolve();
-      }, 400);
-    });
-  };
+  // const popupCloseHandler = () => {
+  //   return new Promise((resolve) => {
+  //     setIsTransitioning(true);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (popupRef.current && !popupRef.current.contains(event.target)) {
-        popupCloseHandler();
-      }
-    };
+  //     setTimeout(() => {
+  //       toggleDisplayMiniBagPopup();
+  //       setIsTransitioning(false);
+  //       resolve();
+  //     }, 400);
+  //   });
+  // };
 
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        popupCloseHandler();
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (popupRef.current && !popupRef.current.contains(event.target)) {
+  //       popupCloseHandler();
+  //     }
+  //   };
 
-    if (displayPopup) {
-      document.addEventListener("mousedown", handleClickOutside);
+  //   const handleKeyDown = (event) => {
+  //     if (event.key === "Escape") {
+  //       popupCloseHandler();
+  //     }
+  //   };
 
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+  //   if (displayPopup) {
+  //     document.addEventListener("mousedown", handleClickOutside);
 
-      window.removeEventListener("keydown", handleKeyDown);
-    }
+  //     window.addEventListener("keydown", handleKeyDown);
+  //   } else {
+  //     document.removeEventListener("mousedown", handleClickOutside);
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //   }
 
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [displayPopup]);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, [displayPopup]);
 
   return (
     <section
