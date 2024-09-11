@@ -47,8 +47,9 @@ export const OrderHistory = () => {
       />
       {displayPopup && (
         <Popup
-          popupCloseHandler={toggleDisplayPopup}
+          toggleDisplayPopup={toggleDisplayPopup}
           modalVariant={"order-history"}
+          displayPopup={displayPopup}
         >
           {orderItems.length < 1 ? (
             <EmptyOrderHistory popupCloseHandler={toggleDisplayPopup} />
