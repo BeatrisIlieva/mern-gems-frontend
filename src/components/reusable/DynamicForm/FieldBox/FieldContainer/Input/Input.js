@@ -8,11 +8,19 @@ export const Input = memo(
     values,
     value,
     currentKey,
+    displayPassword,
   }) => {
+    const inputTypeIsText =
+      displayPassword &&
+      (currentKey === "NewPassword" ||
+        currentKey === "Password" ||
+        currentKey === "RetypeNewPassword");
+
     return (
       <input
         data-testid={`${value}-input`}
-        type={values[value].fieldType}
+        type={inputTypeIsText ? "text" : values[value].fieldType}
+        // type={values[value].fieldType}
         name={value}
         id={value}
         defaultValue={
