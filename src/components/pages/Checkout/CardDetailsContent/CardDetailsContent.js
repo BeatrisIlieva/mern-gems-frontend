@@ -13,8 +13,6 @@ export const CardDetailsContent = () => {
     useState(false);
 
   const toggleDisplayShippingDetailsPopup = () => {
-    document.body.style.overflow = "visible";
-
     setDisplayShippingDetailsPopup(
       (displayShippingDetailsPopup) => !displayShippingDetailsPopup
     );
@@ -42,8 +40,9 @@ export const CardDetailsContent = () => {
       </Routes>
       {displayShippingDetailsPopup && (
         <Popup
-          popupCloseHandler={toggleDisplayShippingDetailsPopup}
+          toggleDisplayPopup={toggleDisplayShippingDetailsPopup}
           modalVariant={"large"}
+          displayPopup={displayShippingDetailsPopup}
         >
           <LargeTitle
             title={"Edit Shipping Address"}
