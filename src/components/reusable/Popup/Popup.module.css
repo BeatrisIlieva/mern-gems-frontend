@@ -101,34 +101,6 @@
   }
 }
 
-/* @media (max-width: 1280px) {
-  .modal.large {
-    width: 52vw;
-  }
-}
-
-@media (max-width: 960px) {
-  .modal.large {
-    width: 38vw;
-  }
-}
-
-@media (max-width: 860px) {
-  .modal.large {
-    width: 48vw;
-  }
-}
-
-@media (max-width: 660px) {
-  .modal.large {
-    width: 88vw;
-  }
-
-  .modal.order-history {
-    width: 26.5rem;
-  }
-} */
-
 @media (max-width: 640px) {
   .modal.large {
     width: 320px;
