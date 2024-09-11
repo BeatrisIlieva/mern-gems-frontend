@@ -14,7 +14,7 @@ describe("Popup Component", () => {
   test("renders with the correct classes and children", () => {
     const { container } = render(
       <Popup
-        popupCloseHandler={() => {}}
+        toggleDisplayPopup={() => {}}
         modalVariant="large"
         overlayVariant="dark"
       >
@@ -33,11 +33,11 @@ describe("Popup Component", () => {
   });
 
   test("calls popupCloseHandler when XMark is clicked", async () => {
-    const popupCloseHandler = jest.fn();
+    const toggleDisplayPopup = jest.fn();
 
     render(
       <Popup
-        popupCloseHandler={popupCloseHandler}
+        toggleDisplayPopup={toggleDisplayPopup}
         modalVariant="large"
         overlayVariant="dark"
       >
@@ -48,14 +48,14 @@ describe("Popup Component", () => {
     fireEvent.click(screen.getByText("Close"));
 
     await waitFor(() => {
-      expect(popupCloseHandler).toHaveBeenCalledTimes(1);
+      expect(toggleDisplayPopup).toHaveBeenCalledTimes(1);
     });
   });
 
   test("applies transitioning classes when isTransitioning is true", async () => {
     const { container } = render(
       <Popup
-        popupCloseHandler={() => {}}
+        toggleDisplayPopup={() => {}}
         modalVariant="large"
         overlayVariant="dark"
       >

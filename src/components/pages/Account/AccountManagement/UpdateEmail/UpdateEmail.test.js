@@ -11,10 +11,10 @@ jest.mock("../../../../reusable/Button/Button", () => ({
 }));
 
 jest.mock("../../../../reusable/Popup/Popup", () => ({
-  Popup: ({ popupCloseHandler, modalVariant, children }) => (
+  Popup: ({ toggleDisplayPopup, modalVariant, children }) => (
     <div>
       <div>Popup - {modalVariant}</div>
-      <button onClick={popupCloseHandler}>Close Popup</button>
+      <button onClick={toggleDisplayPopup}>Close Popup</button>
       {children}
     </div>
   ),

@@ -34,9 +34,9 @@ jest.mock("../reusable/SectionContainer/SectionContainer", () => ({
 }));
 
 jest.mock("../../../reusable/Popup/Popup", () => ({
-  Popup: ({ children, popupCloseHandler }) => (
+  Popup: ({ children, toggleDisplayPopup }) => (
     <div>
-      <button onClick={popupCloseHandler}>Close Popup</button>
+      <button onClick={toggleDisplayPopup}>Close Popup</button>
       {children}
     </div>
   ),

@@ -12,9 +12,9 @@ jest.mock("../reusable/SectionContainer/SectionContainer", () => ({
 }));
 
 jest.mock("../../../reusable/Popup/Popup", () => ({
-  Popup: ({ popupCloseHandler, modalVariant, children }) => (
+  Popup: ({ toggleDisplayPopup, modalVariant, children }) => (
     <div data-testid="popup">
-      <button onClick={popupCloseHandler}>Close Popup</button>
+      <button onClick={toggleDisplayPopup}>Close Popup</button>
       <div className={`modal-${modalVariant}`}>{children}</div>
     </div>
   ),
