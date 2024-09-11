@@ -10,20 +10,19 @@
   align-items: center;
   display: flex;
   transition: opacity 1s ease, transform 1s ease;
+  cursor: url("../../../assets/xmark.png"), auto;
 }
 
 .modal {
   background-color: var(--white);
-  border-inline-start: 1px solid var(--medium-pink);
-  border-inline-end: 1px solid var(--medium-pink);
-  border-block-end: 1px solid var(--medium-pink);
-  border-block-start: 1px solid var(--medium-pink);
   position: relative;
   transition: opacity 1s ease, transform 1s ease;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  border-radius: 2rem;
+  cursor: default;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 }
 
 .modal.large,

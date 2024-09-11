@@ -9,7 +9,9 @@ export const Popup = ({
   children,
   modalVariant,
   overlayVariant,
+  popupRef
 }) => {
+  
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const closeHandler = () => {
@@ -33,7 +35,7 @@ export const Popup = ({
         }`}
       >
         <XMark callbackFunction={closeHandler} />
-        <div className={styles["content"]}>{children}</div>
+        <div ref={popupRef} className={styles["content"]}>{children}</div>
       </div>
     </section>
   );
