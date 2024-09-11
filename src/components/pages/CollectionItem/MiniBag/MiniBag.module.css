@@ -4,12 +4,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
-  z-index: 9999; /* Ensures it's on top of other content */
-  justify-content: flex-end; /* Aligns content inside the overlay */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  justify-content: flex-end;
   align-items: center;
-  display: flex; /* Enables flexbox layout */
-  transition: opacity 1s ease, transform 1s ease; /* Smooth transition effects */
+  display: flex;
+  transition: opacity 1s ease, transform 1s ease;
   cursor: url("../../../assets/xmark.png"), auto;
 }
 
