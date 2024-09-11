@@ -18,7 +18,6 @@ export const FieldContainer = memo(
     currentKey,
     // displayPassword
   }) => {
-
     const [displayPassword, setDisplayPassword] = useState(false);
 
     const toggleDisplayPassword = () => {

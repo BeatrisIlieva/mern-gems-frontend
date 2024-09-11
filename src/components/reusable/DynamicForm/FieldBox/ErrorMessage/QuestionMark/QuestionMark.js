@@ -15,7 +15,7 @@ export const QuestionMark = memo(({ text }) => {
   };
 
   return (
-    <span>
+    <>
       {displayInfo && <Text text={text} />}
       <FontAwesomeIcon
         icon={faQuestion}
@@ -25,6 +25,6 @@ export const QuestionMark = memo(({ text }) => {
         onTouchStart={() => toggleDisplayInfo()}
         onTouchEnd={() => toggleDisplayInfo()}
       />
-    </span>
+    </>
   );
 });

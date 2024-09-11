@@ -1,6 +1,4 @@
-import { useState, memo } from "react";
-
-import { useLocation } from "react-router-dom";
+import { memo } from "react";
 
 import { FieldContainer } from "./FieldContainer/FieldContainer";
 import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
@@ -19,8 +17,6 @@ export const FieldBox = memo(
     userInformation,
     fieldVariant,
   }) => {
-    const location = useLocation();
-
     return (
       <div key={currentKey} className={`${styles[fieldVariant]}`}>
         <FieldContainer

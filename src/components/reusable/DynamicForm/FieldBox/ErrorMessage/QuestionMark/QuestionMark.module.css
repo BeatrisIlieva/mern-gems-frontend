@@ -1,13 +1,9 @@
 .icon {
-  position: absolute;
-  top: 0.25rem;
-  right: 0;
   color: var(--white);
   background-color: var(--medium-red);
   border-radius: 32px;
-  padding: 0.125rem 0.25rem;
+  padding: 2px 4px;
   z-index: 10;
-  width: 0.5rem;
-  margin-right: 0.75rem;
+  width: 8px;
+  margin-right: 12px;
 }
-

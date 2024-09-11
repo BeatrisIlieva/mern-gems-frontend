@@ -20,11 +20,11 @@
   border-block-start: 1px solid var(--medium-pink);
   position: relative;
   transition: opacity 1s ease, transform 1s ease;
-  padding: 1.25rem;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   border-radius: 2rem;
-  width: 22vw;
+  width: 320px;
 }
 
 .slide-in {
@@ -78,8 +78,8 @@
     opacity: 0;
   }
 }
-
-@media (max-width: 1023px) {
+/* 
+@media (max-width: 1088px) {
   .modal {
     width: 36vw;
   }
@@ -101,4 +101,4 @@
   .modal {
     width: 68vw;
   }
-}
+} */

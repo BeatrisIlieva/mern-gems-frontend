@@ -2,37 +2,13 @@
   position: absolute;
   color: var(--gray);
   background-color: var(--white);
-  border: .1px solid var(--red);
+  border: 0.1px solid var(--red);
   border-radius: 0.5rem;
   padding: 12px;
   text-align: center;
-  font-size: var(--normal);
+  font-size: 14px;
   z-index: 99999;
-  top: -7.25rem;
+  top: -85px;
   left: 0;
   transition: transform 2s ease-in-out;
-}
-
-/* @media (min-width: 1600px) and (max-width: 1920px) {
-  .text {
-    top: -5.5rem;
-  }
-} */
-
-@media (max-width: 1280px) {
-  html {
-    font-size: 96%;
-  }
-}
-
-@media (max-width: 740px) {
-  html {
-    font-size: 86%;
-  }
-}
-
-@media (max-width: 375px) {
-  .text {
-    top: -8rem;
-  }
 }
