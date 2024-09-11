@@ -39,7 +39,7 @@ export const MiniBag = memo(({ toggleDisplayMiniBagPopup, popupRef }) => {
       data-testid="mini-bag"
     >
       <div
-      ref={popupRef}
+        ref={popupRef}
         className={`${styles["modal"]} ${
           isTransitioning ? styles["slide-out"] : styles["slide-in"]
         }`}

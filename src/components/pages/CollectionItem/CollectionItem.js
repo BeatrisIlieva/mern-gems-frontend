@@ -59,10 +59,7 @@ export const CollectionItem = () => {
       ) : (
         <>
           {displayPopup && (
-            <MiniBag
-              toggleDisplayMiniBagPopup={toggleDisplayPopup}
-              popupRef={popupRef}
-            />
+            <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} popupRef={popupRef}/>
           )}
           <section className={styles["collection-item"]}>
             <div className={styles["images"]}>

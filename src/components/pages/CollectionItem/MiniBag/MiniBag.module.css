@@ -4,12 +4,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9999;
-  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  z-index: 9999; /* Ensures it's on top of other content */
+  justify-content: flex-end; /* Aligns content inside the overlay */
   align-items: center;
-  display: flex;
-  transition: opacity 1s ease, transform 1s ease;
+  display: flex; /* Enables flexbox layout */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition effects */
+  cursor: url("../../../../assets/xmark.png"), auto;
 }
 
 .modal {
@@ -29,6 +30,7 @@
   width: 40vw;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  cursor: default;
 }
 
 .mini-bag {
