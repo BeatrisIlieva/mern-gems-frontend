@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { XMark } from "../../common/XMark/XMark";
 
 import { usePopup } from "../../../hooks/usePopup";
@@ -13,17 +11,6 @@ export const Popup = ({
   overlayVariant,
   displayPopup,
 }) => {
-  // const [isTransitioning, setIsTransitioning] = useState(false);
-
-  // const closeHandler = () => {
-  //   setIsTransitioning(true);
-
-  //   setTimeout(() => {
-  //     popupCloseHandler();
-  //     setIsTransitioning(false);
-  //   }, 400);
-  // };
-
   const { isTransitioning, popupRef, popupCloseHandler } = usePopup({
     toggleDisplayPopup,
     displayPopup,
