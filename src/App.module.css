@@ -24,7 +24,7 @@ html {
   font-size: 100%;
 }
 
-@media (max-width: 1280px) {
+/* @media (max-width: 1280px) {
   html {
     font-size: 96%;
   }
@@ -40,7 +40,7 @@ html {
   html {
     font-size: 72%;
   }
-}
+} */
 
 h1,
 h2,

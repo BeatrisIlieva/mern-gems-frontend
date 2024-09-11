@@ -7,7 +7,7 @@ describe("Footer Component", () => {
     render(<Footer />);
     expect(
       screen.getByText(
-        "© 2024 MERN Gems | beatrisilieve@icloud.com"
+        "© 2024 MERN Gems"
       )
     ).toBeInTheDocument();
   });
