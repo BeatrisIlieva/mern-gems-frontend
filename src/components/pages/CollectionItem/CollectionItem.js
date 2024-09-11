@@ -40,27 +40,25 @@ export const CollectionItem = () => {
     };
 
     const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        toggleDisplayPopup(); // Call the onClose function when 'Esc' is pressed
+      if (event.key === "Escape") {
+        toggleDisplayPopup();
       }
     };
 
-    // Bind the event listener when the popup is open
     if (displayPopup) {
       document.addEventListener("mousedown", handleClickOutside);
 
-      window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
 
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     }
 
-    // Cleanup the event listener when the component unmounts
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
 
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [displayPopup]);
 
@@ -71,7 +69,10 @@ export const CollectionItem = () => {
       ) : (
         <>
           {displayPopup && (
-            <MiniBag toggleDisplayMiniBagPopup={toggleDisplayPopup} popupRef={popupRef}/>
+            <MiniBag
+              toggleDisplayMiniBagPopup={toggleDisplayPopup}
+              popupRef={popupRef}
+            />
           )}
           <section className={styles["collection-item"]}>
             <div className={styles["images"]}>
