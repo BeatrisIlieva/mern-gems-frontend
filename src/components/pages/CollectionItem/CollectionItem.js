@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useCallback} from "react";
 import { useParams } from "react-router-dom";
 
 import { MiniBag } from "./MiniBag/MiniBag";
@@ -13,7 +13,7 @@ import { deslugify } from "../../../utils/deslugify";
 import styles from "./CollectionItem.module.css";
 
 export const CollectionItem = () => {
-  const popupRef = useRef(null);
+
 
   const { slugifiedCategoryTitle, slugifiedColorTitle } = useParams();
 
@@ -32,35 +32,7 @@ export const CollectionItem = () => {
     setDisplayPopup((displayPopup) => !displayPopup);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (popupRef.current && !popupRef.current.contains(event.target)) {
-        toggleDisplayPopup();
-      }
-    };
 
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        toggleDisplayPopup();
-      }
-    };
-
-    if (displayPopup) {
-      document.addEventListener("mousedown", handleClickOutside);
-
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-
-      window.removeEventListener("keydown", handleKeyDown);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [displayPopup]);
 
   return (
     <>
@@ -71,7 +43,7 @@ export const CollectionItem = () => {
           {displayPopup && (
             <MiniBag
               toggleDisplayMiniBagPopup={toggleDisplayPopup}
-              popupRef={popupRef}
+              displayPopup={displayPopup}
             />
           )}
           <section className={styles["collection-item"]}>

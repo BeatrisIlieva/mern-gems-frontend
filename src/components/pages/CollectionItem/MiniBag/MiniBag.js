@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from "react";
+import { useEffect, useState, useRef, memo } from "react";
 
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
@@ -8,7 +8,9 @@ import { useBagContext } from "../../../../contexts/BagContext";
 
 import styles from "./MiniBag.module.css";
 
-export const MiniBag = memo(({ toggleDisplayMiniBagPopup, popupRef }) => {
+export const MiniBag = memo(({ toggleDisplayMiniBagPopup, displayPopup}) => {
+  const popupRef = useRef(null);
+
   const { bagTotalQuantity } = useBagContext();
 
   const [miniBagIsEmpty, setMiniBagIsEmpty] = useState(false);
@@ -30,6 +32,36 @@ export const MiniBag = memo(({ toggleDisplayMiniBagPopup, popupRef }) => {
       }, 400);
     });
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        popupCloseHandler();
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        popupCloseHandler();
+      }
+    };
+
+    if (displayPopup) {
+      document.addEventListener("mousedown", handleClickOutside);
+
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [displayPopup]);
 
   return (
     <section
