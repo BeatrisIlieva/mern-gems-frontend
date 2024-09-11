@@ -23,7 +23,11 @@ export const CardDetails = () => {
         buttonTitle={"Add a New Credit Card"}
       />
       {displayPopup && (
-        <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"large"}>
+        <Popup
+          displayPopup={displayPopup}
+          toggleDisplayPopup={toggleDisplayPopup}
+          modalVariant={"large"}
+        >
           <LargeTitle title={"Add a New Card"} textAlign={"align-center"} />
           <CardDetailsForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>
