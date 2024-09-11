@@ -26,7 +26,7 @@ export const UpdatePassword = memo(() => {
         variant={"underlined"}
       />
       {displayPopup && (
-        <Popup popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
+        <Popup        displayPopup={displayPopup} popupCloseHandler={toggleDisplayPopup} modalVariant={"small"}>
           <LargeTitle title={"Change Password"} textAlign={"align-center"} />
           <UpdatePasswordForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>
