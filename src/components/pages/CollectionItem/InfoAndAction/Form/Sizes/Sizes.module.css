@@ -63,3 +63,19 @@ input[type="radio"]:disabled ~ label {
   text-decoration: line-through;
   text-decoration-color: var(--light-gray);
 }
+
+@media (max-width: 454px) {
+  .wrapper {
+    flex-direction: unset;
+  }
+
+  .radio-container {
+    flex-direction: column;
+  }
+
+  .wrapper {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
