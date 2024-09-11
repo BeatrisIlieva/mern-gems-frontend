@@ -20,7 +20,6 @@ export const Input = memo(
       <input
         data-testid={`${value}-input`}
         type={inputTypeIsText ? "text" : values[value].fieldType}
-        // type={values[value].fieldType}
         name={value}
         id={value}
         defaultValue={

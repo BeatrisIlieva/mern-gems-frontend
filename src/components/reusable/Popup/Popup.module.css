@@ -36,7 +36,7 @@
 }
 
 .modal.small {
-  width: 22vw;
+  width: 320px;
 }
 
 .modal.order-history {
@@ -103,10 +103,6 @@
   .modal.large {
     width: 52vw;
   }
-
-  .modal.small {
-    width: 36vw;
-  }
 }
 
 @media (max-width: 960px) {
@@ -119,19 +115,11 @@
   .modal.large {
     width: 48vw;
   }
-
-  .modal.small {
-    width: 48vw;
-  }
 }
 
 @media (max-width: 660px) {
   .modal.large {
     width: 88vw;
-  }
-
-  .modal.small {
-    width: 48vw;
   }
 
   .modal.order-history {
@@ -142,10 +130,6 @@
 @media (max-width: 460px) {
   .modal.large {
     width: 98vw;
-  }
-
-  .modal.small {
-    width: 68vw;
   }
 
   .modal.order-history {
