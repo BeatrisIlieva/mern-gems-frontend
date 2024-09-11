@@ -42,8 +42,8 @@ export const UpdateQuantity = memo(
         <FontAwesomeIcon
           data-testid="decrease-icon"
           icon={faMinus}
-          className={styles["enabled"]}
           onClick={() => decrease(bagId)}
+          className={isProcessing ? styles["disabled"] : styles["enabled"]}
         />
       </div>
     );

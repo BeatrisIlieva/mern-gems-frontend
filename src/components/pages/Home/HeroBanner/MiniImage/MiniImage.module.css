@@ -58,15 +58,13 @@
   }
 }
 
-@media (orientation: landscape) and (max-width: 844px) {
-  .mini-image.center {
-    display: none;
-  }
-}
-
 @media (orientation: landscape) and (max-width: 932px) {
   .mini-image.butterfly {
     top: 22%;
     transform: translate(-50%, -22%);
+  }
+
+  .mini-image.center {
+    display: none;
   }
 }

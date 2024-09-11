@@ -42,7 +42,7 @@ html {
   }
 }
 
-@media (max-width: 356px) {
+@media (max-width: 375px) {
   html {
     font-size: 72%;
   }
@@ -58,7 +58,7 @@ p {
 }
 
 p {
-  letter-spacing: 0.00875rem;
+  /* letter-spacing: 0.00875rem; */
 }
 
 :root {
