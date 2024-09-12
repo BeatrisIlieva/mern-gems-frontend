@@ -63,7 +63,7 @@
   margin-top: 0.188rem;
 }
 
-@media (max-width: 675px) {
+@media (max-width: 701px) {
   .header {
     height: 4.6rem;
   }
@@ -75,7 +75,7 @@
   }
 }
 
-@media (max-width: 675px) {
+@media (max-width: 701px) {
   .list-item:nth-last-of-type(1),
   .list-item:nth-last-of-type(4) {
     margin-left: 1rem;

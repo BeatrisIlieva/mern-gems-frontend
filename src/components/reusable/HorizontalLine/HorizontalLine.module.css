@@ -46,7 +46,7 @@
   margin: 0px 0.125rem;
 }
 
-@media (max-width: 675px) {
+@media (max-width: 701px) {
   .horizontal-line-header {
     top: 4.14rem;
   }

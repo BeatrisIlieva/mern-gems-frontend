@@ -96,7 +96,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 660px) {
   .modal.large,
   .modal.order-history {
     width: 320px;

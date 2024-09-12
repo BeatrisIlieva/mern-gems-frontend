@@ -12,7 +12,7 @@
     "footer";
 }
 
-@media (max-width: 675px) {
+@media (max-width: 701px) {
   #app {
     grid-template-rows: 4.6rem minmax(calc(100vh - 6.6rem), auto) 2rem;
   }

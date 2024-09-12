@@ -25,7 +25,7 @@
   }
 }
 
-@media (max-width: 675px) {
+@media (max-width: 701px) {
   #empty-wishlist {
     min-height: calc(100vh - 6.6rem);
   }
