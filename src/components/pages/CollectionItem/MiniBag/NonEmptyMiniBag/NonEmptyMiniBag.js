@@ -4,11 +4,17 @@ import { BagHeader } from "../../../../common/BagHeader/BagHeader";
 import { BagList } from "../../../../common/BagList/BagList";
 import { Button } from "../../../../reusable/Button/Button";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 import { useBagContext } from "../../../../../contexts/BagContext";
+
+import { CONTINUE_CHECKOUT_BUTTON_NAMING } from "../../../../../constants/languageRelated";
+import { VIEW_BAG_BUTTON_NAMING } from "./constants/languageRelated";
 
 import styles from "./NonEmptyMiniBag.module.css";
 
 export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
+  const { language } = useLanguageContext();
+
   const { totalPrice } = useBagContext();
 
   const navigate = useNavigate();
@@ -29,7 +35,7 @@ export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
         <div className={styles["bottom-container"]}>
           <div className={styles["button"]}>
             <Button
-              title={"View Bag"}
+              title={VIEW_BAG_BUTTON_NAMING[language]}
               buttonIsDisabled={false}
               callBackFunction={() => clickHandler("/users/shopping-bag")}
               variant={"pink"}
@@ -37,7 +43,7 @@ export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
           </div>
           <div className={styles["button"]}>
             <Button
-              title={`Continue Checkout $ ${totalPrice}`}
+              title={`${CONTINUE_CHECKOUT_BUTTON_NAMING[language]} $ ${totalPrice}`}
               buttonIsDisabled={false}
               callBackFunction={() => clickHandler("/checkout")}
               variant={"gray"}
