@@ -34,15 +34,6 @@ export const ErrorMessage = ({ values, value, currentKey }) => {
         <div className={styles["error-message"]} data-testid={`${value}-error`}>
           {values[value].errorMessage}
           {displayQuestionMark && <QuestionMark text={PASSWORD_REQUIREMENTS} />}
-          {/* {currentKey === "Password" &&
-            location.pathname !== "/users/account" && (
-              <QuestionMark text={PASSWORD_REQUIREMENTS} />
-            )}
-          {(currentKey === "NewPassword" ||
-            currentKey === "RetypeNewPassword") &&
-            values[value].errorMessage !== PASSWORD_MISMATCH_ERROR_MESSAGE && (
-              <QuestionMark text={PASSWORD_REQUIREMENTS} />
-            )} */}
         </div>
       )}
     </>
