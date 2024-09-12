@@ -10,7 +10,6 @@ import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 
 import { LABEL_TITLES } from "./constants/labelTitles";
-import { LANGUAGES } from "../../../../constants/languages";
 
 import {
   faBagShopping,
@@ -23,7 +22,7 @@ import styles from "./MainHeader.module.css";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 export const MainHeader = () => {
-  const { language, updateLanguage } = useLanguageContext();
+  const { language } = useLanguageContext();
 
   const { isAuthenticated } = useAuthenticationContext();
 
