@@ -6,8 +6,8 @@ export const ORDER_SUMMARY_NAMING = {
 
 export const SUBTOTAL_NAMING = {
   English: "Subtotal",
-  Chinese: "Междинна Сума",
-  Bulgarian: "小计",
+  Chinese: "小计",
+  Bulgarian: "Междинна Сума",
 };
 
 export const SHIPPING_NAMING = {
