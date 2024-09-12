@@ -8,3 +8,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 378px) {
+  .error-message {
+    font-size: 12px;
+  }
+}
