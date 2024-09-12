@@ -8,7 +8,7 @@ import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 import {
   MOVE_TO_WISHLIST_BUTTON_TITLE,
   ALREADY_IN_WISHLIST_TITLE,
-} from "../../../../../constants/languageRelated";
+} from "./constants/languageRelated";
 
 export const MoveToWishlist = ({ bagId, categoryId, colorId }) => {
   const { language } = useLanguageContext();
