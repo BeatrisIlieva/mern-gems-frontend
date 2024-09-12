@@ -14,7 +14,7 @@ export const ShopBy = memo(({ categoryTitle, buttonClickHandler }) => {
 
   return (
     <Button
-      title={`${BUTTON_TITLES_BY_LANGUAGE[language]} ${CATEGORY_TITLES_BY_LANGUAGE[categoryTitle][language]}`}
+      title={`${BUTTON_TITLES_BY_LANGUAGE[language]}${CATEGORY_TITLES_BY_LANGUAGE[categoryTitle][language]}`}
       variant={"underlined"}
       callBackFunction={buttonClickHandler}
     />

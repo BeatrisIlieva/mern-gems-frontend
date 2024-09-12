@@ -1,1 +1,1 @@
-export const LANGUAGES = ["English", "Bulgarian"];
+export const LANGUAGES = ["English", "Bulgarian", "Chinese"];

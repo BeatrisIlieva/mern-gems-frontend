@@ -11,6 +11,7 @@ export const SwitchLanguage = () => {
     <div className={styles["select-language"]}>
       <button onClick={() => updateLanguage(LANGUAGES[0])}>English</button>
       <button onClick={() => updateLanguage(LANGUAGES[1])}>Bulgarian</button>
+      <button onClick={() => updateLanguage(LANGUAGES[2])}>Chinese</button>
     </div>
   );
 };
