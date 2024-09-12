@@ -7,12 +7,17 @@ import { Heart } from "../../../../common/Heart/Heart";
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
 import { SIZE_ERROR_MESSAGE } from "../../../../../constants/sizeErrorMessage";
 import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
+import { ADD_TO_BAG_BUTTON_TITLE } from "../../../../../constants/languageRelated";
 
 import styles from "./Form.module.css";
 
 export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
+  const { language } = useLanguageContext();
+
   const { userId } = useAuthenticationContext();
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -68,7 +73,7 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
         <div
           className={`${styles["button-container"]} ${styles["add-to-bag"]}`}
         >
-          <Button variant={"gray"} title={"Add To Bag"} />
+          <Button variant={"gray"} title={ADD_TO_BAG_BUTTON_TITLE[language]} />
         </div>
         <div
           className={`${styles["button-container"]} ${styles["add-to-wishlist"]}`}
