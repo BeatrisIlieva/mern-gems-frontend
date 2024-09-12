@@ -60,7 +60,9 @@ describe("NonEmptyMiniBag Component", () => {
   test("displays total price from context correctly", () => {
     render(<NonEmptyMiniBag popupCloseHandler={mockPopupCloseHandler} />);
 
-    expect(screen.getByText(`Continue Checkout $ ${mockTotalPrice}`)).toBeInTheDocument();
+    expect(
+      screen.getByText(`Continue Checkout $ ${mockTotalPrice}`)
+    ).toBeInTheDocument();
   });
 
   test("clickHandler calls popupCloseHandler and navigate", async () => {
