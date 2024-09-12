@@ -33,7 +33,7 @@
   .top-wrapper {
     flex-direction: column;
     justify-content: unset;
-    gap: 1rem;
+    gap: 1.75rem;
     flex-direction: column-reverse;
   }
 }
