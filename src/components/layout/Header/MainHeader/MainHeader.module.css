@@ -9,6 +9,12 @@
   background-color: var(--white);
 }
 
+.select-language {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
 .nav {
   width: 100vw;
   padding: 0 2rem;

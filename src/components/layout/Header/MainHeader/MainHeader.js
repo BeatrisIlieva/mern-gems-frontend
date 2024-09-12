@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import { HorizontalLine } from "../../../reusable/HorizontalLine/HorizontalLine";
 import { NavLinkItem } from "./NavLinkItem/NavLinkItem";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
+
+import { LABEL_TITLES } from "./constants/labelTitles";
+import { LANGUAGES } from "../../../../constants/languages";
 
 import {
   faBagShopping,
@@ -17,6 +21,8 @@ import {
 import styles from "./MainHeader.module.css";
 
 export const MainHeader = () => {
+  const { language, updateLanguage } = useLanguageContext();
+
   const { bagTotalQuantity } = useBagContext();
 
   const { wishlistTotalQuantity } = useWishlistContext();
@@ -32,10 +38,15 @@ export const MainHeader = () => {
 
   return (
     <header className={styles["header"]}>
+      <button onClick={() => updateLanguage(LANGUAGES[0])} className={styles["select-language"]}>Language</button>
       <nav className={styles["nav"]}>
         <ul role="list" className={styles["list"]}>
           <li className={styles["list-item"]}>
-            <NavLinkItem to={"/collection"} label={"Collection"} icon={faGem} />
+            <NavLinkItem
+              to={"/collection"}
+              label={LABEL_TITLES[language]}
+              icon={faGem}
+            />
           </li>
           <li className={styles["list-item"]}>
             <NavLinkItem

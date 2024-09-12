@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 
 import { AuthenticationProvider } from "./contexts/AuthenticationContext";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import { BagProvider } from "./contexts/BagContext";
 import { WishlistProvider } from "./contexts/WishlistContext";
 
@@ -15,13 +16,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <AuthenticationProvider>
-        <WishlistProvider>
-          <BagProvider>
-            <App />
-          </BagProvider>
-        </WishlistProvider>
-      </AuthenticationProvider>
+      <LanguageProvider>
+        <AuthenticationProvider>
+          <WishlistProvider>
+            <BagProvider>
+              <App />
+            </BagProvider>
+          </WishlistProvider>
+        </AuthenticationProvider>
+      </LanguageProvider>
     </Router>
   </React.StrictMode>
 );
