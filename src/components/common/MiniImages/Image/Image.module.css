@@ -3,12 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   transition: transform 1s ease-in-out;
 }
 
 .thumbnail {
-  width: 3rem;
+  width: 3.2rem;
 }
 
 .image {
@@ -22,8 +21,6 @@
   position: absolute;
   top: -2rem;
   text-align: center;
-  height: fit-content;
-  width: fit-content;
   cursor: default;
 }
 

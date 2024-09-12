@@ -1,10 +1,16 @@
 import { memo, useState, useCallback, useEffect } from "react";
 import { Image } from "./Image/Image";
+
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
 import { COLORS_BY_TITLE } from "../../../constants/colorsByTitle";
 import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitleAndImageUrl";
+
 import styles from "./MiniImages.module.css";
 
 export const MiniImages = memo(({ jewelriesByCategory, clickHandler }) => {
+  const { language } = useLanguageContext();
+
   const [activeMiniImage, setActiveMiniImage] = useState(
     jewelriesByCategory[0].colors[0].title
   );
@@ -41,7 +47,7 @@ export const MiniImages = memo(({ jewelriesByCategory, clickHandler }) => {
           >
             <Image
               imageUrl={imageUrl}
-              title={title}
+              title={title[language]}
               colorName={colorName}
               updateActiveMiniImage={updateActiveMiniImage}
               isActive={colorName === activeMiniImage}
