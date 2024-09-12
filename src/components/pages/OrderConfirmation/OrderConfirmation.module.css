@@ -3,9 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  /* height: calc(100vh - 13.6rem); */
   margin: 2rem;
 }
 
@@ -27,9 +24,3 @@
   object-fit: contain;
   aspect-ratio: 1/1;
 }
-
-/* @media (max-width: 1280px) {
-  #order-confirmation {
-    height: auto;
-  }
-} */
