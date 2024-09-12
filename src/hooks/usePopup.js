@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 
 export const usePopup = ({ toggleDisplayPopup, displayPopup }) => {
   const popupRef = useRef(null);
-
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const popupCloseHandler = () => {
@@ -32,17 +31,17 @@ export const usePopup = ({ toggleDisplayPopup, displayPopup }) => {
 
     if (displayPopup) {
       document.addEventListener("mousedown", handleClickOutside);
-
+      document.addEventListener("touchstart", handleClickOutside);
       window.addEventListener("keydown", handleKeyDown);
     } else {
       document.removeEventListener("mousedown", handleClickOutside);
-
+      document.removeEventListener("touchstart", handleClickOutside);
       window.removeEventListener("keydown", handleKeyDown);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-
+      document.removeEventListener("touchstart", handleClickOutside);
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [displayPopup]);
