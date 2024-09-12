@@ -7,6 +7,7 @@
   flex-direction: column;
   z-index: 100;
   background-color: var(--white);
+  position: relative;
 }
 
 .select-language {
@@ -19,15 +20,14 @@
 .nav {
   width: 100vw;
   padding: 0 2rem;
+  position: absolute;
+  bottom: 0.25rem;
 }
 
 .list {
   width: 100%;
   background-color: var(--white);
   display: flex;
-  align-items: flex-end;
-  justify-content: space-evenly;
-  flex-grow: 1;
   background-color: var(--white);
 }
 
@@ -35,31 +35,24 @@
   display: flex;
 }
 
-.list-item:nth-last-of-type(1) {
-  justify-content: flex-end;
-}
-
 .list-item:nth-last-of-type(2) {
-  justify-content: flex-end;
+  margin-left: auto;
 }
 
 .list-item:nth-last-of-type(3) {
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 0.65rem;
-}
-
-.list-item:nth-last-of-type(4) {
-  justify-content: flex-start;
   margin-left: 2rem;
 }
 
-.list-item:nth-last-of-type(5) {
-  justify-content: flex-start;
+.logo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -0);
+  z-index: 100;
 }
 
 .thumbnail {
-  height: 7rem;
+  height: 7.2rem;
   padding: 0.25rem;
 }
 
@@ -67,7 +60,25 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  margin-top: 0.188rem;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -0);
+  margin-left: 4rem;
+}
+
+.text-thumbnail {
+  height: 3.2rem;
+  padding: 0.25rem;
+}
+
+.logo-text {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 @media (max-width: 701px) {
@@ -76,26 +87,27 @@
   }
 
   .thumbnail {
-    height: 4rem;
-    margin-left: 3.5rem;
+    height: 4.2rem;
+    padding: 0.125rem;
+  }
+
+  .text-wrapper {
+    margin-left: 2rem;
+  }
+
+  .text-thumbnail {
+    height: 1.2rem;
     padding: 0.125rem;
   }
 }
 
 @media (max-width: 701px) {
   .list-item:nth-last-of-type(1),
-  .list-item:nth-last-of-type(4) {
+  .list-item:nth-last-of-type(3) {
     margin-left: 1rem;
   }
 
   .list-item:nth-last-of-type(3) {
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 2rem;
-  }
-
-  .list-item:nth-last-of-type(4) {
-    justify-content: flex-start;
     margin-left: 1rem;
   }
 }
