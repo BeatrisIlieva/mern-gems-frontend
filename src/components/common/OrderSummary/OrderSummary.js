@@ -18,6 +18,8 @@ import {
 import styles from "./OrderSummary.module.css";
 
 export const OrderSummary = () => {
+  const { language } = useLanguageContext();
+
   const location = useLocation();
 
   const locationIsBag = location.pathname === "/users/shopping-bag";
