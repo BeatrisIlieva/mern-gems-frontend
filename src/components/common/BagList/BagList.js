@@ -6,10 +6,15 @@ import { UpdateQuantity } from "./UpdateQuantity/UpdateQuantity";
 import { Buttons } from "./Buttons/Buttons";
 
 import { useBagContext } from "../../../contexts/BagContext";
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
+import { SIZE_NAMING } from "../../../constants/languageRelated";
 
 import styles from "./BagList.module.css";
 
 export const BagList = ({ variant }) => {
+  const { language } = useLanguageContext();
+
   const location = useLocation();
 
   const displayUpdateQuantityButtons =
@@ -37,7 +42,9 @@ export const BagList = ({ variant }) => {
               variant={"bolded"}
             />
             {displayUpdateQuantityButtons && (
-              <span className={styles["size"]}>Size: {item.size}</span>
+              <span className={styles["size"]}>
+                {SIZE_NAMING[language]} {item.size}
+              </span>
             )}
             <DualTitleSection
               firstTitle={
