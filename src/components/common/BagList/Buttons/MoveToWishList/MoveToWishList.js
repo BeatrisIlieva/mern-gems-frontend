@@ -3,8 +3,16 @@ import { Button } from "../../../../reusable/Button/Button";
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../../contexts/WishlistContext";
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+import {
+  MOVE_TO_WISHLIST_BUTTON_TITLE,
+  ALREADY_IN_WISHLIST_TITLE,
+} from "../../../../../constants/languageRelated";
 
 export const MoveToWishlist = ({ bagId, categoryId, colorId }) => {
+  const { language } = useLanguageContext();
+
   const { userId } = useAuthenticationContext();
 
   const { remove: removeFromBag } = useBagContext();
@@ -21,7 +29,9 @@ export const MoveToWishlist = ({ bagId, categoryId, colorId }) => {
     removeFromBag(bagId);
   };
 
-  const buttonTitle = isLikedByUser ? "In Wishlist" : "Move to Wishlist";
+  const buttonTitle = isLikedByUser
+    ? ALREADY_IN_WISHLIST_TITLE[language]
+    : MOVE_TO_WISHLIST_BUTTON_TITLE[language];
 
   const buttonVariant = isLikedByUser ? "info" : "underlined";
 
