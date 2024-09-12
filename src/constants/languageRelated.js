@@ -4,11 +4,7 @@ export const ADD_TO_BAG_BUTTON_TITLE = {
   Bulgarian: "Добави в Чантата",
 };
 
-export const REMOVE_FROM_BAG_BUTTON_TITLE = {
-  English: "Remove",
-  Chinese: "删除",
-  Bulgarian: "Премахни",
-};
+
 
 export const MOVE_TO_WISHLIST_BUTTON_TITLE = {
   English: "Move to Wishlist",

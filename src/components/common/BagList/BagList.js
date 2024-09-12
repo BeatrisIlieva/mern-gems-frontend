@@ -55,7 +55,7 @@ export const BagList = ({ variant }) => {
                     colorId={item.colorId}
                   />
                 ) : (
-                  `Size: ${item.size}`
+                  `${SIZE_NAMING[language]}: ${item.size}`
                 )
               }
               secondTitle={
