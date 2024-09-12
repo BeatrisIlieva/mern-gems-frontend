@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { BagHeader } from "../../../../common/BagHeader/BagHeader";
 import { BagList } from "../../../../common/BagList/BagList";
 import { Button } from "../../../../reusable/Button/Button";
-import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitleSection";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 
@@ -28,11 +27,6 @@ export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
       </>
       <>
         <div className={styles["bottom-container"]}>
-          <DualTitleSection
-            firstTitle={"Total"}
-            secondTitle={`$ ${totalPrice}`}
-            variant={"bolded"}
-          />
           <div className={styles["button"]}>
             <Button
               title={"View Bag"}
@@ -43,7 +37,7 @@ export const NonEmptyMiniBag = ({ popupCloseHandler }) => {
           </div>
           <div className={styles["button"]}>
             <Button
-              title={"Continue Checkout"}
+              title={`Continue Checkout $ ${totalPrice}`}
               buttonIsDisabled={false}
               callBackFunction={() => clickHandler("/checkout")}
               variant={"gray"}
