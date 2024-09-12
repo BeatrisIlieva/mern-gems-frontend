@@ -19,11 +19,6 @@ export const ErrorMessage = ({ values, value, currentKey }) => {
     (currentKey === "NewPassword" || currentKey === "RetypeNewPassword") &&
     values[value].errorMessage !== PASSWORD_MISMATCH_ERROR_MESSAGE;
 
-  // const displayQuestionMark =
-  //   (currentKey === "Password" && location.pathname !== "/users/account") ||
-  //   ((currentKey === "NewPassword" || currentKey === "RetypeNewPassword") &&
-  //     values[value].errorMessage !== PASSWORD_MISMATCH_ERROR_MESSAGE);
-
   const displayQuestionMark =
     fieldIsPasswordAndStageIsAuthentication ||
     fieldIsNewPasswordOrRetypeNewPasswordAndStageIsUpdatePassword;
