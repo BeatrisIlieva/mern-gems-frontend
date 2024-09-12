@@ -1,4 +1,4 @@
 export const LABEL_TITLES = {
-  "English": "Collection",
-  "Bulgarian": "Колекция",
+  Collection: { English: "Collection", Bulgarian: "Колекция" },
+  Wishlist: { English: "Wishlist", Bulgarian: "Любими" },
 };

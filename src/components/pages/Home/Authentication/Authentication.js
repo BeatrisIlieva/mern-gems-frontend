@@ -4,12 +4,16 @@ import { Popup } from "./Popup/Popup";
 import { Login } from "./Login/Login";
 import { Register } from "./Register/Register";
 import { SwitchOptions } from "./constants/switchOptions";
+import { SwitchLanguage } from "../../../common/SwitchLanguage/SwitchLanguage";
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import styles from "./Authentication.module.css";
 
 export const Authentication = () => {
+  const { language } = useLanguageContext();
+
   const { updateAuthentication } = useAuthenticationContext();
 
   const [currentPopup, setCurrentPopup] = useState(SwitchOptions.Login);
@@ -38,6 +42,7 @@ export const Authentication = () => {
 
   return (
     <Popup movePopup={movePopup}>
+      <SwitchLanguage />
       <div className={styles["image"]}>
         <img
           className={styles["img"]}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { HorizontalLine } from "../../../reusable/HorizontalLine/HorizontalLine";
 import { NavLinkItem } from "./NavLinkItem/NavLinkItem";
+import { SwitchLanguage } from "../../../common/SwitchLanguage/SwitchLanguage";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useBagContext } from "../../../../contexts/BagContext";
@@ -19,9 +20,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./MainHeader.module.css";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 export const MainHeader = () => {
   const { language, updateLanguage } = useLanguageContext();
+
+  const { isAuthenticated } = useAuthenticationContext();
 
   const { bagTotalQuantity } = useBagContext();
 
@@ -38,20 +42,20 @@ export const MainHeader = () => {
 
   return (
     <header className={styles["header"]}>
-      <button onClick={() => updateLanguage(LANGUAGES[0])} className={styles["select-language"]}>Language</button>
+      {isAuthenticated && <SwitchLanguage />}
       <nav className={styles["nav"]}>
         <ul role="list" className={styles["list"]}>
           <li className={styles["list-item"]}>
             <NavLinkItem
               to={"/collection"}
-              label={LABEL_TITLES[language]}
+              label={LABEL_TITLES["Collection"][language]}
               icon={faGem}
             />
           </li>
           <li className={styles["list-item"]}>
             <NavLinkItem
               to={"/users/wishlist"}
-              label={"Wishlist"}
+              label={LABEL_TITLES["Wishlist"][language]}
               count={memoizedWishlistTotalQuantity}
               icon={faHeart}
             />
