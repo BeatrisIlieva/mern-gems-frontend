@@ -48,3 +48,9 @@
     width: calc(100vw - 4rem);
   }
 }
+
+@media (max-width: 355px) {
+  .child-wrapper {
+    width: calc(100vw - 2rem);
+  }
+}

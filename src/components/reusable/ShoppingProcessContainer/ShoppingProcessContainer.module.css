@@ -26,3 +26,9 @@
     margin: 2rem 2rem;
   }
 }
+
+@media (max-width: 355px) {
+  .shopping-process-container {
+    margin: 2rem 1rem;
+  }
+}
