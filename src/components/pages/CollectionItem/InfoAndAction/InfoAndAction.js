@@ -47,11 +47,22 @@ export const InfoAndAction = memo(
     return (
       <div className={styles["outer-wrapper"]}>
         <div className={styles["wrapper"]}>
-          <DualTitleSection
+          <div className={styles["top-wrapper"]}>
+            <div>
+              <MiniImages
+                jewelriesByCategory={jewelriesByCategory}
+                clickHandler={miniImagesClickHandler}
+              />
+            </div>
+            <div>
+              <StockStatus jewelriesByCategory={jewelriesByCategory} />
+            </div>
+          </div>
+          {/* <DualTitleSection
             firstTitle={firstTitle}
             secondTitle={secondTitle}
             variant={"regular"}
-          />
+          /> */}
           <div>
             <LargeTitle
               title={jewelriesByCategory[0].title}
