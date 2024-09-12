@@ -9,6 +9,7 @@ import { useBagContext } from "../../../contexts/BagContext";
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
 import { SIZE_NAMING } from "../../../constants/languageRelated";
+import { QUANTITY_NAMING } from "./constants/languageRelated";
 
 import styles from "./BagList.module.css";
 
@@ -68,7 +69,7 @@ export const BagList = ({ variant }) => {
                     processingBagId={processingBagId}
                   />
                 ) : (
-                  `Qty ${item.quantity}`
+                  `${QUANTITY_NAMING[language]} ${item.quantity}`
                 )
               }
               variant={"regular"}
