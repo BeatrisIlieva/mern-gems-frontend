@@ -34,7 +34,7 @@
 @media (max-width: 357px) {
   .button-container.add-to-wishlist {
     width: unset;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     align-items: center;
   }
 }
