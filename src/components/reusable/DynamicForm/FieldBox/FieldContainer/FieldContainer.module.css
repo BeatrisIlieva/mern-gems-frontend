@@ -1,7 +1,7 @@
 .field-container {
   border-bottom: 0.1px solid var(--pink);
   position: relative;
-  padding: 4px;
+  padding: 0.25rem;
 }
 
 .error {

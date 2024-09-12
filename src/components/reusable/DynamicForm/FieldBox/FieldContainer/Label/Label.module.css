@@ -6,7 +6,7 @@
 }
 
 .isFocused {
-  top: -12px;
+  top: -0.75rem;
   left: 0;
   font-size: var(--small);
 }

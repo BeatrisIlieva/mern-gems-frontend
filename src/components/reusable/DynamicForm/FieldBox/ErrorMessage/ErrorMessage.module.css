@@ -1,16 +1,10 @@
 .error-message {
-  font-size: 13px;
+  font-size: var(--small);
   color: var(--red);
-  padding-top: 4px;
+  padding-top: 0.25rem;
   margin: 0px;
   padding-bottom: 0px;
   text-align: left;
   display: flex;
   justify-content: space-between;
-}
-
-@media (max-width: 640px) {
-  .error-message {
-    font-size: 10px;
-  }
 }
