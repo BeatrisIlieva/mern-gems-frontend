@@ -2,8 +2,9 @@ import { useState, useEffect, memo } from "react";
 
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
-import { STATUS_BY_LANGUAGE } from "./constants/languageRelated";
 import { checkIfItemsHasBeenSoldOut } from "./helpers/checkIfItemsHasBeenSoldOut";
+
+import { STATUS_BY_LANGUAGE } from "./constants/languageRelated";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
@@ -32,7 +33,6 @@ export const StockStatus = memo(({ jewelriesByCategory }) => {
       {isSoldOut
         ? STATUS_BY_LANGUAGE["Sold Out"][language]
         : STATUS_BY_LANGUAGE["In Stock"][language]}
-      {/* {isSoldOut ? "Sold Out" : "In Stock"} */}
     </span>
   );
 });
