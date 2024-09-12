@@ -1,8 +1,15 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .update-quantity {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 4.5rem;
+  width: 5.5rem;
   cursor: pointer;
   font-size: var(--medium);
 }
@@ -22,13 +29,13 @@
 
 .button {
   all: unset;
-  position: relative;
 }
 
 .updating {
-  position: absolute;
-  bottom: -1rem;
-  left: 0;
   font-size: var(--small);
   color: var(--green);
+  display: flex;
+  position: absolute;
+  top: -1rem;
+  left: auto;
 }
