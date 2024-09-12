@@ -7,14 +7,8 @@
   border-top: 0.1px solid var(--pink);
 }
 
-@media (min-width: 360px) and (max-width: 803px) {
+@media (max-width: 380px) {
   .footer {
     font-size: var(--small);
-  }
-}
-
-@media (max-width: 340px) {
-  .footer {
-    text-align: center;
   }
 }
