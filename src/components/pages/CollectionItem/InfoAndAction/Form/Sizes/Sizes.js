@@ -3,12 +3,17 @@ import { useLocation } from "react-router-dom";
 
 import { NormalTitle } from "../../../../../reusable/NormalTitle/NormalTitle";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
 import { SIZE_FORM_KEY } from "../../../../../../constants/sizeFormKey";
+import { SIZE_NAMING } from "../../../../../../constants/languageRelated";
 
 import styles from "./Sizes.module.css";
 
 export const Sizes = memo(
   ({ inventories, errorMessage, changeHandler, selectedSize }) => {
+    const { language } = useLanguageContext();
+
     const [hoveredLabel, setHoveredLabel] = useState("");
 
     const location = useLocation();
@@ -19,7 +24,7 @@ export const Sizes = memo(
 
     return (
       <div className={styles["size-wrapper"]}>
-        <NormalTitle title={"Size"} variant={"bolded"} />
+        <NormalTitle title={SIZE_NAMING[language]} variant={"bolded"} />
         <div className={styles["radio-container"]}>
           {inventories.map((item) => (
             <div key={item.size} className={styles["wrapper"]}>
