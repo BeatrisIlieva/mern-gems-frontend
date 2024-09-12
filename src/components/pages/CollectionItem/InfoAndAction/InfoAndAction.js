@@ -1,10 +1,9 @@
-import { useCallback, memo, useMemo } from "react";
+import { useCallback, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { MiniImages } from "../../../common/MiniImages/MiniImages";
 import { StockStatus } from "../../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form";
-import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 
@@ -31,19 +30,6 @@ export const InfoAndAction = memo(
       [jewelriesByCategory, navigate]
     );
 
-    const firstTitle = useMemo(() => {
-      return (
-        <MiniImages
-          jewelriesByCategory={jewelriesByCategory}
-          clickHandler={miniImagesClickHandler}
-        />
-      );
-    }, [jewelriesByCategory, miniImagesClickHandler]);
-
-    const secondTitle = useMemo(() => {
-      return <StockStatus jewelriesByCategory={jewelriesByCategory} />;
-    }, [jewelriesByCategory]);
-
     return (
       <div className={styles["outer-wrapper"]}>
         <div className={styles["wrapper"]}>
@@ -58,11 +44,6 @@ export const InfoAndAction = memo(
               <StockStatus jewelriesByCategory={jewelriesByCategory} />
             </div>
           </div>
-          {/* <DualTitleSection
-            firstTitle={firstTitle}
-            secondTitle={secondTitle}
-            variant={"regular"}
-          /> */}
           <div>
             <LargeTitle
               title={jewelriesByCategory[0].title}
