@@ -5,7 +5,7 @@
   align-items: center;
   margin-top: auto;
   margin-bottom: auto;
-  height: calc(100vh - 13.6rem);
+  /* height: calc(100vh - 13.6rem); */
   margin: 2rem;
 }
 
@@ -17,7 +17,7 @@
   width: 8rem;
   position: absolute;
   top: -4.1rem;
-  left: -4rem;
+  left: -3rem;
   z-index: 100;
 }
 
@@ -28,9 +28,8 @@
   aspect-ratio: 1/1;
 }
 
-@media (max-width: 1280px) {
+/* @media (max-width: 1280px) {
   #order-confirmation {
-    margin: 2rem 2rem 2rem 2rem;
     height: auto;
   }
-}
+} */

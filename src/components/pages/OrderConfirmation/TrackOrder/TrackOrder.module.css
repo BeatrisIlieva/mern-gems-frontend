@@ -1,18 +1,22 @@
-.link-to-account {
-  display: flex;
-  gap: 0.25rem;
-  animation: transitioning 1.6s forwards;
-}
-
 .link {
-  color: var(--violet);
   text-decoration: none;
-  font-size: var(--normal);
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.violet {
+  color: var(--violet);
   font-family: var(--bold-font-family);
+}
+
+.gray,
+.violet {
   animation: transitioning 1.6s forwards;
 }
 
-.link:hover {
+.violet:hover {
   color: var(--dark-violet);
 }
 
