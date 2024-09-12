@@ -10,7 +10,7 @@ import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
-import { LABEL_TITLES } from "./constants/labelTitles";
+import { LABEL_TITLES } from "./constants/languageRelated";
 
 import {
   faBagShopping,

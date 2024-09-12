@@ -6,6 +6,7 @@ import styles from "./SwitchLanguage.module.css";
 
 export const SwitchLanguage = () => {
   const { updateLanguage } = useLanguageContext();
+
   return (
     <div className={styles["select-language"]}>
       <button onClick={() => updateLanguage(LANGUAGES[0])}>English</button>
