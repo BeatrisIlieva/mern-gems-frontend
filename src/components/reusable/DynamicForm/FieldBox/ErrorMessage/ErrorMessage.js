@@ -2,7 +2,10 @@ import { useLocation } from "react-router-dom";
 
 import { QuestionMark } from "./QuestionMark/QuestionMark";
 
-import { PASSWORD_REQUIREMENTS } from "../../../../../constants/password";
+import {
+  PASSWORD_REQUIREMENTS,
+  PASSWORD_MISMATCH_ERROR_MESSAGE,
+} from "../../../../../constants/password";
 
 import styles from "./ErrorMessage.module.css";
 
@@ -19,9 +22,10 @@ export const ErrorMessage = ({ values, value, currentKey }) => {
               <QuestionMark text={PASSWORD_REQUIREMENTS} />
             )}
           {(currentKey === "NewPassword" ||
-            currentKey === "RetypeNewPassword") && (
-            <QuestionMark text={PASSWORD_REQUIREMENTS} />
-          )}
+            currentKey === "RetypeNewPassword") &&
+            values[value].errorMessage !== PASSWORD_MISMATCH_ERROR_MESSAGE && (
+              <QuestionMark text={PASSWORD_REQUIREMENTS} />
+            )}
         </div>
       )}
     </>
