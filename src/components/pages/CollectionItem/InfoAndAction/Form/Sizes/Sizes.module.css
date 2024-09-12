@@ -64,18 +64,18 @@ input[type="radio"]:disabled ~ label {
   text-decoration-color: var(--light-gray);
 }
 
-@media (max-width: 454px) {
+@media (max-width: 453px) {
+  .size-wrapper {
+    align-items: flex-start;
+  }
+
   .wrapper {
-    flex-direction: unset;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .radio-container {
     flex-direction: column;
-  }
-
-  .wrapper {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.2rem;
   }
 }
