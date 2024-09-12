@@ -30,3 +30,31 @@
 .button-container.add-to-wishlist:hover {
   background: var(--very-light-pink);
 }
+
+@media (max-width: 357px) {
+  /* .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  } */
+
+  .button-container.add-to-bag {
+    width: 98%;
+  }
+
+  .button-container.add-to-wishlist {
+    width: unset;
+    font-size: var(--medium);
+    cursor: pointer;
+    /* padding: unset; */
+    padding: 0.25rem 0.5rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: background-color 300ms linear, color 300ms, box-shadow 300ms;
+    /* border-radius: unset; */
+    animation: transitioning 1s forwards;
+    /* box-shadow: unset; */
+  }
+}
