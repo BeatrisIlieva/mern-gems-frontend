@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../../reusable/DynamicForm/DynamicForm";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { useForm } from "../../../hooks/useForm";
@@ -15,9 +16,15 @@ import { clearInitialFormValuesMessages } from "../../../utils/clearInitialFormV
 
 import { getData } from "./helpers/getData";
 
+import {
+  CONTINUE_CHECKOUT_BUTTON_NAMING,
+  SAVE_BUTTON_NAMING,
+} from "../../../constants/languageRelated";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 export const ShippingDetailsForm = ({ popupCloseHandler }) => {
+  const { language } = useLanguageContext();
+
   const [isLoading, setIsLoading] = useState(false);
 
   const [userShippingDetails, setUserShippingDetails] = useState([]);
@@ -90,7 +97,9 @@ export const ShippingDetailsForm = ({ popupCloseHandler }) => {
   );
 
   const buttonTitle = useMemo(() => {
-    return popupCloseHandler ? "Save" : "Continue Checkout";
+    return popupCloseHandler
+      ? SAVE_BUTTON_NAMING[language]
+      : CONTINUE_CHECKOUT_BUTTON_NAMING[language];
   }, [popupCloseHandler]);
 
   return (
