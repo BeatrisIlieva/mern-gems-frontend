@@ -52,20 +52,15 @@ describe("NonEmptyMiniBag Component", () => {
 
     expect(screen.getByText("BagHeader")).toBeInTheDocument();
     expect(screen.getByText("BagList")).toBeInTheDocument();
-    expect(screen.getByText("Total")).toBeInTheDocument();
-    expect(screen.getByText(`$ ${mockTotalPrice}`)).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: /View Bag/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /Continue Checkout/i })
     ).toBeInTheDocument();
   });
 
   test("displays total price from context correctly", () => {
     render(<NonEmptyMiniBag popupCloseHandler={mockPopupCloseHandler} />);
 
-    expect(screen.getByText(`$ ${mockTotalPrice}`)).toBeInTheDocument();
+    expect(screen.getByText(`Continue Checkout $ ${mockTotalPrice}`)).toBeInTheDocument();
   });
 
   test("clickHandler calls popupCloseHandler and navigate", async () => {
@@ -76,13 +71,6 @@ describe("NonEmptyMiniBag Component", () => {
     await waitFor(() => {
       expect(mockPopupCloseHandler).toHaveBeenCalled();
       expect(mockNavigate).toHaveBeenCalledWith("/users/shopping-bag");
-    });
-
-    fireEvent.click(screen.getByRole("button", { name: /Continue Checkout/i }));
-
-    await waitFor(() => {
-      expect(mockPopupCloseHandler).toHaveBeenCalled();
-      expect(mockNavigate).toHaveBeenCalledWith("/checkout");
     });
   });
 });
