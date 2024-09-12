@@ -11,7 +11,7 @@ import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 
 import { SIZE_ERROR_MESSAGE } from "../../../../../constants/sizeErrorMessage";
 import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
-import { ADD_TO_BAG_BUTTON_TITLE } from "../../../../../constants/languageRelated";
+import { ADD_TO_BAG_BUTTON_TITLE } from "./constants/languageRelated";
 
 import styles from "./Form.module.css";
 
