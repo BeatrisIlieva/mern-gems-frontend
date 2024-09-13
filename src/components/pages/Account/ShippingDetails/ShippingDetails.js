@@ -1,26 +1,39 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { ShippingDetailsForm } from "../../../common/ShippingDetailsForm/ShippingDetailsForm";
 import { Popup } from "../../../reusable/Popup/Popup";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+import {
+  ADDRESS_BOOK_NAMING_NAMING,
+  BUTTON_TITLE,
+} from "./constants/languageRelated";
+
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export const ShippingDetails = () => {
+  const { language } = useLanguageContext();
+
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {
     setDisplayPopup((displayPopup) => !displayPopup);
   };
 
+  const sectionTitle = ADDRESS_BOOK_NAMING_NAMING[language];
+
+  const buttonTitle = BUTTON_TITLE[language];
+
   return (
     <>
       <SectionContainer
-        sectionTitle={"Address Book"}
+        sectionTitle={sectionTitle}
         callBackFunction={toggleDisplayPopup}
         icon={faPlus}
-        buttonTitle={"Add a New Address"}
+        buttonTitle={buttonTitle}
       />
       {displayPopup && (
         <Popup
@@ -28,7 +41,7 @@ export const ShippingDetails = () => {
           toggleDisplayPopup={toggleDisplayPopup}
           modalVariant={"large"}
         >
-          <LargeTitle title={"Add a New Address"} textAlign={"align-center"} />
+          <LargeTitle title={sectionTitle} textAlign={"align-center"} />
           <ShippingDetailsForm popupCloseHandler={toggleDisplayPopup} />
         </Popup>
       )}
