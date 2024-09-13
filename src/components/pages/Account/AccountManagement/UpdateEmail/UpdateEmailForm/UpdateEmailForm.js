@@ -14,10 +14,9 @@ import { userLoginDetailsServiceFactory } from "../../../../../../services/userL
 import { checkIfFormErrorHasOccurred } from "../../../../../../utils/checkIfFormErrorHasOccurred";
 import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPasswordErrorMessage";
 
-import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
-
 import { getData } from "./helpers/getData";
 
+import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
 export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {

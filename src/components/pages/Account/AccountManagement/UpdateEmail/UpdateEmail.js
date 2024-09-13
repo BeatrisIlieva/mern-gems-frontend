@@ -14,7 +14,7 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 export const UpdateEmail = memo(({ updateUserEmail }) => {
   const { language } = useLanguageContext();
-  
+
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {

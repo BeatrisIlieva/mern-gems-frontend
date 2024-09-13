@@ -3,6 +3,7 @@ import { useCallback, useMemo } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
 import { useForm } from "../../../../../../hooks/useForm";
@@ -16,9 +17,12 @@ import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPa
 import { getData } from "./helpers/getData";
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
 
+import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
 export const UpdatePasswordForm = ({ popupCloseHandler }) => {
+  const { language } = useLanguageContext();
+
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -103,7 +107,7 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
   );
 
   const buttonTitle = useMemo(() => {
-    return "Save";
+    return SAVE_BUTTON_NAMING[language];
   }, []);
 
   return (
