@@ -8,11 +8,9 @@ const orderSchema = new mongoose.Schema({
   },
   jewelries: {
     type: Object,
-    required: true,
   },
   totalPrice: {
     type: Number,
-    required: true,
   },
   createdAt: {
     type: Date,
