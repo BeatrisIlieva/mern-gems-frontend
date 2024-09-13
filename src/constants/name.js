@@ -3,6 +3,10 @@ const NAME_LENGTH = {
   MAX: 255,
 };
 
+// export const NAME_PATTERN = new RegExp(
+//   `^[A-Za-z]{${NAME_LENGTH.MIN},${NAME_LENGTH.MAX}}$`
+// );
+
 export const NAME_PATTERN = new RegExp(
   `^[A-Za-z\\u0400-\\u04FF\\u4E00-\\u9FFF]{${NAME_LENGTH.MIN},${NAME_LENGTH.MAX}}$`
 );

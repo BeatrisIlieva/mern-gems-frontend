@@ -2,6 +2,8 @@ import { useLocation } from "react-router-dom";
 
 import { QuestionMark } from "./QuestionMark/QuestionMark";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
 import {
   PASSWORD_REQUIREMENTS,
   PASSWORD_MISMATCH_ERROR_MESSAGE,
@@ -10,6 +12,8 @@ import {
 import styles from "./ErrorMessage.module.css";
 
 export const ErrorMessage = ({ values, value, currentKey }) => {
+  const { language } = useLanguageContext();
+
   const location = useLocation();
 
   const fieldIsPasswordAndStageIsAuthentication =
@@ -27,7 +31,7 @@ export const ErrorMessage = ({ values, value, currentKey }) => {
     <>
       {values[value].errorMessage && (
         <div className={styles["error-message"]} data-testid={`${value}-error`}>
-          {values[value].errorMessage}
+          {values[value].errorMessage[language]}
           {displayQuestionMark && <QuestionMark text={PASSWORD_REQUIREMENTS} />}
         </div>
       )}
