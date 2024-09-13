@@ -65,7 +65,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.Country]: {
-    fieldLabel: "Country *",
+    fieldLabel: {
+      English: "Country *",
+      Chinese: "国家 *",
+      Bulgarian: "Държава *",
+    },
     fieldValue: "",
     regexPattern: NAME_PATTERN,
     errorMessage: "",
@@ -77,7 +81,7 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.City]: {
-    fieldLabel: "City *",
+    fieldLabel: { English: "City *", Chinese: "城市 *", Bulgarian: "Град *" },
     fieldValue: "",
     regexPattern: NAME_PATTERN,
     errorMessage: "",
@@ -89,7 +93,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.Street]: {
-    fieldLabel: "Street *",
+    fieldLabel: {
+      English: "Street *",
+      Chinese: "街道 *",
+      Bulgarian: "Улица *",
+    },
     fieldValue: "",
     regexPattern: STREET_PATTERN,
     errorMessage: "",
