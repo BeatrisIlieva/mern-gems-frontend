@@ -3,7 +3,7 @@ export const convertToReadableDate = (date) => {
 
   const options = {
     year: "numeric",
-    month: "long",
+    month: "numeric",
     day: "numeric",
     hour: "2-digit",
     minute: "2-digit",

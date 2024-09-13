@@ -18,6 +18,11 @@
   width: 100%;
 }
 
+.title-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
 .jewelries {
   display: flex;
   flex-wrap: wrap;

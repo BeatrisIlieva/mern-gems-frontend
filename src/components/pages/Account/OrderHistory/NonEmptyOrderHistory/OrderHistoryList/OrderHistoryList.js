@@ -32,15 +32,18 @@ export const OrderHistoryList = ({
   return (
     <section className={styles["order-history-list"]}>
       <div className={styles["order-info"]}>
-        <NormalTitle title={`${statusTitle}: ${status}`} variant={"regular"} />
-        <NormalTitle
-          title={`${createdAtTitle}: ${readableDate}`}
-          variant={"regular"}
-        />
-        <NormalTitle
-          title={`${totalTitle}: $ ${totalPrice}`}
-          variant={"regular"}
-        />
+        <div className={styles["title-wrapper"]}>
+          <NormalTitle title={`${statusTitle}:`} variant={"bolded"} />
+          <NormalTitle title={`${status}`} variant={"regular"} />
+        </div>
+        <div className={styles["title-wrapper"]}>
+          <NormalTitle title={`${createdAtTitle}:`} variant={"bolded"} />
+          <NormalTitle title={`${readableDate}`} variant={"regular"} />
+        </div>
+        <div className={styles["title-wrapper"]}>
+          <NormalTitle title={`${totalTitle}:`} variant={"bolded"} />
+          <NormalTitle title={`$ ${totalPrice}`} variant={"regular"} />
+        </div>
       </div>
       <ul className={styles["jewelries"]} role="list">
         {jewelries.map((item) => (
