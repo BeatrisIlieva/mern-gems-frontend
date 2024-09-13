@@ -17,7 +17,11 @@ const FORM_KEYS = {
 
 export const INITIAL_FORM_VALUES = {
   [FORM_KEYS.FirstName]: {
-    fieldLabel: "First Name",
+    fieldLabel: {
+      English: "First Name *",
+      Chinese: "名字 *",
+      Bulgarian: "Собствено Име *",
+    },
     fieldValue: "",
     regexPattern: NAME_PATTERN,
     errorMessage: "",
@@ -29,7 +33,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.LastName]: {
-    fieldLabel: "Last Name",
+    fieldLabel: {
+      English: "Last Name *",
+      Chinese: "姓 *",
+      Bulgarian: "Фамилно Име *",
+    },
     fieldValue: "",
     regexPattern: NAME_PATTERN,
     errorMessage: "",
