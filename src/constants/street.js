@@ -3,10 +3,6 @@ const STREET_LENGTH = {
   MAX: 255,
 };
 
-// export const STREET_PATTERN = new RegExp(
-//   `^[a-zA-Z0-9 ]{${STREET_LENGTH.MIN},${STREET_LENGTH.MAX}}$`
-// );
-
 export const STREET_PATTERN = new RegExp(
   `^[\\p{L}\\p{N} ]{${STREET_LENGTH.MIN},${STREET_LENGTH.MAX}}$`,
   "u"
