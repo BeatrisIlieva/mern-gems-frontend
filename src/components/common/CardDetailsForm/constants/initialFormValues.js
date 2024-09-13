@@ -31,8 +31,8 @@ export const INITIAL_FORM_VALUES = {
   [FORM_KEYS.CardHolder]: {
     fieldLabel: {
       English: "Name On Card *",
-      Chinese: "持卡人姓名",
-      Bulgarian: "Име на картодържателя",
+      Chinese: "持卡人姓名 *",
+      Bulgarian: "Име на картодържателя *",
     },
     fieldValue: "",
     regexPattern: CARD_HOLDER_NAME_PATTERN,
