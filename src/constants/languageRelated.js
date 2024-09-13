@@ -33,3 +33,9 @@ export const SUBTITLES_BY_LANGUAGE = {
   Chinese: "您可以通过浏览系列继续购物.",
   Bulgarian: "Можете да продължите пазаруването, като разгледате колекцията.",
 };
+
+export const EMPTY_BAG_TITLE = {
+  English: "Your Shopping Bag Is Empty.",
+  Chinese: "您的购物袋是空的",
+  Bulgarian: "Вашата чанта е празна",
+};
