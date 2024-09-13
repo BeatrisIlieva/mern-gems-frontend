@@ -5,16 +5,28 @@ import { Paragraph } from "../../../../../reusable/Paragraph/Paragraph";
 import { LargeTitle } from "../../../../../reusable/LargeTitle/LargeTitle";
 import { Button } from "../../../../../reusable/Button/Button";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+import {
+  TITLE_BY_LANGUAGE,
+  DESCRIPTION_BY_LANGUAGE,
+} from "./constants/languageRelated";
 import { IMAGE_BY_URL_AND_VARIANT } from "./constants/imagesByUrlAndVariant";
 
 import styles from "./Description.module.css";
 
 export const Description = () => {
+  const { language } = useLanguageContext();
+
   const navigate = useNavigate();
 
   const clickHandler = () => {
     navigate("/collection");
   };
+
+  const title = TITLE_BY_LANGUAGE[language];
+
+  const description = DESCRIPTION_BY_LANGUAGE[language];
 
   return (
     <div className={styles["description"]}>
@@ -25,10 +37,7 @@ export const Description = () => {
             variant={IMAGE_BY_URL_AND_VARIANT.butterfly.variant}
             waveEffect={IMAGE_BY_URL_AND_VARIANT.butterfly.waveEffect}
           />
-          <LargeTitle
-            title={"Forget-Me-Not Collection"}
-            textAlign={"align-center"}
-          />
+          <LargeTitle title={title} textAlign={"align-center"} />
           <div className={styles["inner-wrapper"]}>
             <MiniImage
               imageUrl={IMAGE_BY_URL_AND_VARIANT.white.imageUrl}
@@ -36,9 +45,7 @@ export const Description = () => {
               waveEffect={IMAGE_BY_URL_AND_VARIANT.white.waveEffect}
             />
             <Paragraph
-              text={
-                ""
-              }
+              text={description}
               textAlign={"center"}
               color={"white"}
             />
