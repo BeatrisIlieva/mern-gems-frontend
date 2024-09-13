@@ -49,7 +49,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.PhoneNumber]: {
-    fieldLabel: "Phone Number *",
+    fieldLabel: {
+      English: "Phone Number *",
+      Chinese: "电话号码 *",
+      Bulgarian: "Телефон за връзка *",
+    },
     fieldValue: "",
     regexPattern: PHONE_PATTERN,
     errorMessage: "",
