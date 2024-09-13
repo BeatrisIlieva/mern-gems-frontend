@@ -3,8 +3,17 @@ const APARTMENT_LENGTH = {
   MAX: 10,
 };
 
+// export const APARTMENT_PATTERN = new RegExp(
+//   `^[a-zA-Z0-9]{${APARTMENT_LENGTH.MIN},${APARTMENT_LENGTH.MAX}}$`
+// );
+
 export const APARTMENT_PATTERN = new RegExp(
-  `^[a-zA-Z0-9]{${APARTMENT_LENGTH.MIN},${APARTMENT_LENGTH.MAX}}$`
+  `^[\\p{L}\\p{N} ]{${APARTMENT_LENGTH.MIN},${APARTMENT_LENGTH.MAX}}$`,
+  "u"
 );
 
-export const APARTMENT_ERROR_MESSAGE = `* This field requires ${APARTMENT_LENGTH.MIN}-${APARTMENT_LENGTH.MAX} characters`;
+export const APARTMENT_ERROR_MESSAGE = {
+  English: `* This field requires ${APARTMENT_LENGTH.MIN}-${APARTMENT_LENGTH.MAX} characters`,
+  Chinese: `* 该字段要求 ${APARTMENT_LENGTH.MIN}-${APARTMENT_LENGTH.MAX} 个字母`,
+  Bulgarian: `* Полето трябва да съдържа ${APARTMENT_LENGTH.MIN}-${APARTMENT_LENGTH.MAX} знака`,
+};
