@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const {
-  CARD_HOLDER_NAME_PATTERN,
-  CARD_HOLDER_NAME_PATTERN_ERROR_MESSAGE,
-} = require("../constants/cardHolder");
+  NAME_PATTERN,
+  NAME_PATTERN_ERROR_MESSAGE,
+} = require("../constants/name");
 
 const {
   LONG_CARD_NUMBER_PATTERN,
@@ -28,7 +28,7 @@ const userCardDetailsSchema = new mongoose.Schema({
 
   cardHolder: {
     type: String,
-    match: [CARD_HOLDER_NAME_PATTERN, CARD_HOLDER_NAME_PATTERN_ERROR_MESSAGE],
+    match: [NAME_PATTERN, NAME_PATTERN_ERROR_MESSAGE],
   },
 
   longCardNumber: {
