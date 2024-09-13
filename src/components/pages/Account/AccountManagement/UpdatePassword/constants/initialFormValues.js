@@ -28,7 +28,7 @@ export const INITIAL_FORM_VALUES = {
     fieldLabel: {
       English: "New Password *",
       Chinese: "新密码 *",
-      Bulgarian: "Нова Парола",
+      Bulgarian: "Нова Парола *",
     },
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,
@@ -46,7 +46,7 @@ export const INITIAL_FORM_VALUES = {
     fieldLabel: {
       English: "Confirm Password *",
       Chinese: "确认密码 *",
-      Bulgarian: "Потвърди Парола",
+      Bulgarian: "Потвърди Парола *",
     },
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,

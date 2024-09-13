@@ -5,15 +5,12 @@ import { Login } from "./Login/Login";
 import { Register } from "./Register/Register";
 import { SwitchOptions } from "./constants/switchOptions";
 import { SwitchLanguage } from "../../../common/SwitchLanguage/SwitchLanguage";
-import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import styles from "./Authentication.module.css";
 
 export const Authentication = () => {
-  const { language } = useLanguageContext();
-
   const { updateAuthentication } = useAuthenticationContext();
 
   const [currentPopup, setCurrentPopup] = useState(SwitchOptions.Login);
@@ -47,7 +44,7 @@ export const Authentication = () => {
         <img
           className={styles["img"]}
           src={
-            "https://res.cloudinary.com/deztgvefu/image/upload/v1714938396/template_images/Screenshot_2024-05-05_at_22.42.20-removebg-preview_xfkrvq.png"
+            "https://res.cloudinary.com/deztgvefu/image/upload/v1726147711/forget-me-not-collection/miniImages/logo2_zfmuo1.png"
           }
           alt="logo"
         />
