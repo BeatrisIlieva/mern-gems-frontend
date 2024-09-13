@@ -1,5 +1,5 @@
 import { LONG_CARD_NUMBER_PATTERN } from "../../../../constants/cardNumber";
-import { CARD_HOLDER_NAME_PATTERN } from "../../../../constants/cardHolder";
+import { NAME_PATTERN } from "../../../../constants/name";
 import { CVV_CODE_PATTERN } from "../../../../constants/cVVCode";
 import { EXPIRY_DATE_PATTERN } from "../../../../constants/expiryDate";
 
@@ -35,7 +35,7 @@ export const INITIAL_FORM_VALUES = {
       Bulgarian: "Име на картодържателя *",
     },
     fieldValue: "",
-    regexPattern: CARD_HOLDER_NAME_PATTERN,
+    regexPattern: NAME_PATTERN,
     errorMessage: "",
     isFocused: false,
     fieldType: "text",
