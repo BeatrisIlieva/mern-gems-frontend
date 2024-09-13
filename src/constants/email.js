@@ -1,4 +1,5 @@
-export const EMAIL_PATTERN = /^[A-Za-z0-9]+@+[a-z]+\.[a-z]{2,4}$/;
+export const EMAIL_PATTERN =
+  /^[A-Za-z0-9\u4e00-\u9fff._%+-]+@[A-Za-z0-9\u4e00-\u9fff.-]+\.[A-Za-z\u4e00-\u9fff]{2,4}$/u;
 
 export const EMAIL_ERROR_MESSAGE = "* Ensure you enter a valid email address";
 

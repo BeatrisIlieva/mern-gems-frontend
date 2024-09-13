@@ -4,4 +4,6 @@
   margin-top: 10px;
   gap: 6px;
   align-items: baseline;
+  text-decoration-color: var(--pink);
+  text-underline-offset: 0.24rem;
 }
