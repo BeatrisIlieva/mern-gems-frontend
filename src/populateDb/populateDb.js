@@ -41,7 +41,6 @@ async function populateDb() {
   const allColors = await Color.find();
 
   await Jewelry.create({
-    title: "Bracelet",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_1_vz9pv4.avif",
     secondImageUrl:
@@ -53,7 +52,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Bracelet",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_1_fokzrw.webp",
     secondImageUrl:
@@ -65,7 +63,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Bracelet",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/bracelets/forget_me_not_diamond_bracelet_brdprfflrfmn_e-1_muieri.avif",
     secondImageUrl:
@@ -77,7 +74,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714885/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-1_zzaw4q.webp",
     secondImageUrl:
@@ -89,7 +85,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-1_zx2cga.webp",
     secondImageUrl:
@@ -101,7 +96,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Earrings",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/earrings/forget_me_not_diamond_drop_earrings_eadpdrflrfmn_ee-1_knlt2u.webp",
     secondImageUrl:
@@ -113,7 +107,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_pink_sapphire_nkpspltflrfmn_e_1_kuxbds.webp",
     secondImageUrl:
@@ -125,7 +118,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_1_p2uxlj.webp",
     secondImageUrl:
@@ -137,7 +129,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Necklace",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/necklaces/forget_me_not_lariat_diamond_necklace_nkdpltflrfmn_e-1_u0gwpv.avif",
     secondImageUrl:
@@ -149,7 +140,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Ring",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714892/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_1_qfumu3.webp",
     secondImageUrl:
@@ -161,7 +151,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Ring",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_1_pm9u6t.avif",
     secondImageUrl:
@@ -173,7 +162,6 @@ async function populateDb() {
   });
 
   await Jewelry.create({
-    title: "Ring",
     firstImageUrl:
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/rings/forget_me_not_diamond_ring_frdprfflrfmn_e-1h_yueh2k.webp",
     secondImageUrl:
@@ -190,7 +178,7 @@ async function populateDb() {
     {
       jewelry: allJewelries[0],
       size: "15.2 cm",
-      quantity: 2,
+      quantity: 100,
       price: 33000,
     },
     {
