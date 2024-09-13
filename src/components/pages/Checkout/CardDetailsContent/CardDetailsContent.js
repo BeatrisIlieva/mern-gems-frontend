@@ -13,6 +13,8 @@ import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { PAYMENT_NAMING } from "./constants/languageRelated";
 
 export const CardDetailsContent = () => {
+  const { language } = useLanguageContext();
+
   const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
     useState(false);
 
