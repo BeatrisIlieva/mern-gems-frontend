@@ -25,7 +25,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.NewPassword]: {
-    fieldLabel: "New Password *",
+    fieldLabel: {
+      English: "New Password *",
+      Chinese: "新密码 *",
+      Bulgarian: "Нова Парола",
+    },
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,
     errorMessage: "",
