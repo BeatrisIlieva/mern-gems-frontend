@@ -7,12 +7,18 @@ import { Form } from "./Form/Form";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../mappers/categoryNamesByLanguage";
+
 import { slugify } from "../../../../utils/slugify";
 
 import styles from "./InfoAndAction.module.css";
 
 export const InfoAndAction = memo(
   ({ jewelriesByCategory, toggleDisplayPopup }) => {
+    const { language } = useLanguageContext();
+
     const navigate = useNavigate();
 
     const miniImagesClickHandler = useCallback(
@@ -30,6 +36,10 @@ export const InfoAndAction = memo(
       [jewelriesByCategory, navigate]
     );
 
+    const categoryId = jewelriesByCategory[0].category;
+
+    const jewelryTitle = CATEGORY_NAMES_BY_LANGUAGE[categoryId][language];
+
     return (
       <div className={styles["outer-wrapper"]}>
         <div className={styles["wrapper"]}>
@@ -45,10 +55,7 @@ export const InfoAndAction = memo(
             </div>
           </div>
           <div>
-            <LargeTitle
-              title={jewelriesByCategory[0].title}
-              textAlign={"left"}
-            />
+            <LargeTitle title={jewelryTitle} textAlign={"left"} />
             <Paragraph
               text={`${jewelriesByCategory[0].description}.`}
               textAlign={"left"}
