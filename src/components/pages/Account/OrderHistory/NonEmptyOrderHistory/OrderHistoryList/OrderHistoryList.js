@@ -33,9 +33,9 @@ export const OrderHistoryList = ({
 
   let status;
 
-  if (language === English) {
+  if (language === "English") {
     status = statusEnglish;
-  } else if (language === Chinese) {
+  } else if (language === "Chinese") {
     status = statusChinese;
   } else {
     status = statusBulgarian;
