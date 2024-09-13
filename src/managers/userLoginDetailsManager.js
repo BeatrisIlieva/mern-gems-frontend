@@ -15,6 +15,7 @@ const {
   DEFAULT_SALT,
   INVALID_PASSWORD_ERROR_MESSAGE,
 } = require("../constants/password");
+const { json } = require("express");
 
 exports.register = async (data) => {
   const user = await UserLoginDetails.findOne({ email: data.email });
