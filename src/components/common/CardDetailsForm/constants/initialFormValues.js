@@ -63,7 +63,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.ExpiryDate]: {
-    fieldLabel: "MM/YY *",
+    fieldLabel: {
+      English: "MM/YY *",
+      Chinese: "月/年 *",
+      Bulgarian: "ММ/ГГ *",
+    },
     fieldValue: "",
     regexPattern: EXPIRY_DATE_PATTERN,
     errorMessage: "",
