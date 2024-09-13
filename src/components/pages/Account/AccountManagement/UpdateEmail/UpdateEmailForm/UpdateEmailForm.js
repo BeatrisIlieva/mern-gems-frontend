@@ -18,6 +18,7 @@ import { getData } from "./helpers/getData";
 
 import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
+import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 
 export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
   const { language } = useLanguageContext();
@@ -78,8 +79,10 @@ export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
           spreadValues = setWrongPasswordErrorMessage(
             spreadValues,
             FORM_KEYS,
-            err.message
+            PASSWORD_ERROR_MESSAGE
           );
+
+          console.log(spreadValues);
 
           setValues(spreadValues);
         } finally {
