@@ -11,6 +11,8 @@ import { useLanguageContext } from "../../../contexts/LanguageContext";
 import { SIZE_NAMING } from "../../../constants/languageRelated";
 import { QUANTITY_NAMING } from "./constants/languageRelated";
 
+import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../mappers/categoryNamesByLanguage";
+
 import styles from "./BagList.module.css";
 
 export const BagList = ({ variant }) => {
@@ -34,11 +36,11 @@ export const BagList = ({ variant }) => {
         <li key={item.bagId} className={styles["wrapper"]}>
           <JewelryCard
             firstImageUrl={item.firstImageUrl}
-            jewelryTitle={item.jewelryTitle}
+            jewelryTitle={CATEGORY_NAMES_BY_LANGUAGE[item.categoryId][language]}
           />
           <div className={styles["info"]}>
             <DualTitleSection
-              firstTitle={item.jewelryTitle}
+              firstTitle={CATEGORY_NAMES_BY_LANGUAGE[item.categoryId][language]}
               secondTitle={`$${item.totalPrice}`}
               variant={"bolded"}
             />
