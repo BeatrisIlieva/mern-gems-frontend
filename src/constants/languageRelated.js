@@ -27,3 +27,9 @@ export const EMAIL_ADDRESS_NAMING = {
   Chinese: "电子邮件地址",
   Bulgarian: "Имейл Адрес",
 };
+
+export const SUBTITLES_BY_LANGUAGE = {
+  English: "You can continue shopping by exploring the collection.",
+  Chinese: "您可以通过浏览系列继续购物.",
+  Bulgarian: "Можете да продължите пазаруването, като разгледате колекцията.",
+};

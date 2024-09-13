@@ -3,10 +3,9 @@ import { CardSlider } from "../../common/CardSlider/CardSlider";
 
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
-import {
-  TITLES_BY_LANGUAGE,
-  SUBTITLES_BY_LANGUAGE,
-} from "./constants/languageRelated";
+import { TITLES_BY_LANGUAGE } from "./constants/languageRelated";
+
+import { SUBTITLES_BY_LANGUAGE } from "../../../constants/languageRelated";
 
 import styles from "./Page404.module.css";
 
