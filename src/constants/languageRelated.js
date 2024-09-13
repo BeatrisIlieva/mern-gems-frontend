@@ -15,3 +15,9 @@ export const SAVE_BUTTON_NAMING = {
   Chinese: "保存",
   Bulgarian: "Запази",
 };
+
+export const SHIPPING_ADDRESS_NAMING = {
+  English: "Shipping Address",
+  Chinese: "送货地址",
+  Bulgarian: "Адрес за Доставка",
+};
