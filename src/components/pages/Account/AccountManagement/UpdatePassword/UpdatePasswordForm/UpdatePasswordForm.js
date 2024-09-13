@@ -17,6 +17,7 @@ import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPa
 import { getData } from "./helpers/getData";
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
 
+import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
@@ -87,7 +88,7 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
           spreadValues = setWrongPasswordErrorMessage(
             spreadValues,
             FORM_KEYS,
-            err.message
+            PASSWORD_ERROR_MESSAGE
           );
 
           setValues(spreadValues);
