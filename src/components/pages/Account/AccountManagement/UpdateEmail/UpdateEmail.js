@@ -5,11 +5,16 @@ import { Button } from "../../../../reusable/Button/Button";
 import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
 import { Popup } from "../../../../reusable/Popup/Popup";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 
+import { TITLE_NAMING } from "./constants/languageRelated";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 export const UpdateEmail = memo(({ updateUserEmail }) => {
+  const { language } = useLanguageContext();
+  
   const [displayPopup, setDisplayPopup] = useState(false);
 
   const toggleDisplayPopup = () => {
@@ -18,10 +23,12 @@ export const UpdateEmail = memo(({ updateUserEmail }) => {
     clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
   };
 
+  const title = TITLE_NAMING[language];
+
   return (
     <>
       <Button
-        title={"Update Email Address"}
+        title={title}
         callBackFunction={toggleDisplayPopup}
         variant={"underlined"}
       />
@@ -31,7 +38,7 @@ export const UpdateEmail = memo(({ updateUserEmail }) => {
           toggleDisplayPopup={toggleDisplayPopup}
           modalVariant={"small"}
         >
-          <LargeTitle title={"Update Email"} textAlign={"align-center"} />
+          <LargeTitle title={title} textAlign={"align-center"} />
           <UpdateEmailForm
             popupCloseHandler={toggleDisplayPopup}
             updateUserEmail={updateUserEmail}
