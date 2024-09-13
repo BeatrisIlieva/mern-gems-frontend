@@ -43,7 +43,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.RetypeNewPassword]: {
-    fieldLabel: "Confirm Password *",
+    fieldLabel: {
+      English: "Confirm Password *",
+      Chinese: "确认密码 *",
+      Bulgarian: "Потвърди Парола",
+    },
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,
     errorMessage: "",
