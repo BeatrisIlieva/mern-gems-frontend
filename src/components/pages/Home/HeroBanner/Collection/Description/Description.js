@@ -10,6 +10,7 @@ import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import {
   TITLE_BY_LANGUAGE,
   DESCRIPTION_BY_LANGUAGE,
+  BUTTON_TITLE_BY_LANGUAGE,
 } from "./constants/languageRelated";
 import { IMAGE_BY_URL_AND_VARIANT } from "./constants/imagesByUrlAndVariant";
 
@@ -27,6 +28,8 @@ export const Description = () => {
   const title = TITLE_BY_LANGUAGE[language];
 
   const description = DESCRIPTION_BY_LANGUAGE[language];
+
+  const buttonTitle = BUTTON_TITLE_BY_LANGUAGE[language];
 
   return (
     <div className={styles["description"]}>
