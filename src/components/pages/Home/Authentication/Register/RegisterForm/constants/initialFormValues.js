@@ -8,7 +8,11 @@ const FORM_KEYS = {
 
 export const INITIAL_FORM_VALUES = {
   [FORM_KEYS.Email]: {
-    fieldLabel: "Email Address",
+    fieldLabel: {
+      English: "Email Address *",
+      Chinese: "电子邮件地址 *",
+      Bulgarian: "Емейл Адрес *",
+    },
     fieldValue: "",
     regexPattern: EMAIL_PATTERN,
     errorMessage: "",
@@ -22,7 +26,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.Password]: {
-    fieldLabel: "Password",
+    fieldLabel: {
+      English: "Password *",
+      Chinese: "密码 *",
+      Bulgarian: "Парола *",
+    },
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,
     errorMessage: "",

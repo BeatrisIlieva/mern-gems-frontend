@@ -2,6 +2,7 @@ import { useCallback, useMemo } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { useService } from "../../../../../../hooks/useService";
 import { useForm } from "../../../../../../hooks/useForm";
 
@@ -14,8 +15,11 @@ import { getData } from "./helpers/getData";
 import { setInvalidCredentialsErrorMessage } from "./helpers/setInvalidCredentialsErrorMessage";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
+import { BUTTON_TITLE_BY_LANGUAGE } from "./constants/languageRelated";
 
 export const LoginForm = ({ closeHandler }) => {
+  const { language } = useLanguageContext();
+
   const userLoginDetailsService = useService(userLoginDetailsServiceFactory);
 
   let {
@@ -60,8 +64,8 @@ export const LoginForm = ({ closeHandler }) => {
   );
 
   const buttonTitle = useMemo(() => {
-    return "Sign In";
-  }, []);
+    return BUTTON_TITLE_BY_LANGUAGE[language];
+  }, [language]);
 
   return (
     <DynamicForm
