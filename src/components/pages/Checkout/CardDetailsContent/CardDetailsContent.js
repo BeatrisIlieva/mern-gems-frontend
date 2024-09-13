@@ -8,6 +8,10 @@ import { CardDetailsForm } from "../../../common/CardDetailsForm/CardDetailsForm
 import { ShippingDetailsForm } from "../../../common/ShippingDetailsForm/ShippingDetailsForm";
 import { Popup } from "../../../reusable/Popup/Popup";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+import { PAYMENT_NAMING } from "./constants/languageRelated";
+
 export const CardDetailsContent = () => {
   const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
     useState(false);
@@ -31,7 +35,7 @@ export const CardDetailsContent = () => {
                 }
               />
               <>
-                <LargeTitle title={"Payment"} />
+                <LargeTitle title={PAYMENT_NAMING[language]} />
                 <CardDetailsForm />
               </>
             </ChildWrapper>
