@@ -29,7 +29,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.CardHolder]: {
-    fieldLabel: "Name On Card *",
+    fieldLabel: {
+      English: "Name On Card *",
+      Chinese: "持卡人姓名",
+      Bulgarian: "Име на картодържателя",
+    },
     fieldValue: "",
     regexPattern: CARD_HOLDER_NAME_PATTERN,
     errorMessage: "",
@@ -42,7 +46,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.CvvCode]: {
-    fieldLabel: "CVV *",
+    fieldLabel: {
+      English: "CVV *",
+      Chinese: "CVV码 *",
+      Bulgarian: "Код за сигурност *",
+    },
     fieldValue: "",
     regexPattern: CVV_CODE_PATTERN,
     errorMessage: "",
