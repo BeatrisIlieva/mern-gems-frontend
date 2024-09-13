@@ -8,9 +8,15 @@ import { useService } from "../../../../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../../../../services/userLoginDetailsService";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+import { EMAIL_ADDRESS_NAMING } from "../../../../../../constants/languageRelated";
+
 import styles from "./UserLoginDetails.module.css";
 
 export const UserLoginDetails = () => {
+  const { language } = useLanguageContext();
+
   const [userLoginDetails, setUserLoginDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
@@ -30,7 +36,7 @@ export const UserLoginDetails = () => {
 
   return (
     <section className={styles["user-login-details"]}>
-      <NormalTitle title={"Email Address"} variant={"bolded"} />
+      <NormalTitle title={EMAIL_ADDRESS_NAMING[language]} variant={"bolded"} />
       <NormalTitle title={userLoginDetails.email} variant={"regular"} />
     </section>
   );

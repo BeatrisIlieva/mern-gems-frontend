@@ -21,3 +21,9 @@ export const SHIPPING_ADDRESS_NAMING = {
   Chinese: "送货地址",
   Bulgarian: "Адрес за Доставка",
 };
+
+export const EMAIL_ADDRESS_NAMING = {
+  English: "Email Address",
+  Chinese: "电子邮件地址",
+  Bulgarian: "Имейл Адрес"
+}
