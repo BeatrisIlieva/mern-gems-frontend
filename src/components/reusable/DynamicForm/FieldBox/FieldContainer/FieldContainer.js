@@ -16,7 +16,6 @@ export const FieldContainer = memo(
     values,
     value,
     currentKey,
-    // displayPassword
   }) => {
     const [displayPassword, setDisplayPassword] = useState(false);
 

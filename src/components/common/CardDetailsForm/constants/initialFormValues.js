@@ -12,7 +12,11 @@ const FORM_KEYS = {
 
 export const INITIAL_FORM_VALUES = {
   [FORM_KEYS.LongCardNumber]: {
-    fieldLabel: "Card Number *",
+    fieldLabel: {
+      English: "Card Number *",
+      Chinese: "卡号 *",
+      Bulgarian: "Номер на картата *",
+    },
     fieldValue: "",
     regexPattern: LONG_CARD_NUMBER_PATTERN,
     errorMessage: "",

@@ -55,7 +55,7 @@ export const Description = () => {
             <div className={styles["button"]}>
               <Button
                 variant={"white"}
-                title={"Discover"}
+                title={buttonTitle}
                 callBackFunction={clickHandler}
               />
             </div>
