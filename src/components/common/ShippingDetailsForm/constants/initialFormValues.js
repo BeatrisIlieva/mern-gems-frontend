@@ -112,7 +112,7 @@ export const INITIAL_FORM_VALUES = {
     fieldLabel: {
       English: "Apartment/Suite",
       Chinese: "号公寓",
-      Bulgarian: "Apartment",
+      Bulgarian: "Апартамент",
     },
     fieldValue: "",
     regexPattern: APARTMENT_PATTERN,
@@ -125,7 +125,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.ZipCode]: {
-    fieldLabel: "Zip Code *",
+    fieldLabel: {
+      English: "Zip Code *",
+      Chinese: "邮政编码 *",
+      Bulgarian: "Пощенски код*",
+    },
     fieldValue: "",
     regexPattern: ZIP_CODE_PATTERN,
     errorMessage: "",
