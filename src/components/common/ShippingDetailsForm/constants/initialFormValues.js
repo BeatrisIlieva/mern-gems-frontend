@@ -109,7 +109,11 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.Apartment]: {
-    fieldLabel: "Apartment/Suite",
+    fieldLabel: {
+      English: "Apartment/Suite",
+      Chinese: "号公寓",
+      Bulgarian: "Apartment",
+    },
     fieldValue: "",
     regexPattern: APARTMENT_PATTERN,
     errorMessage: "",
