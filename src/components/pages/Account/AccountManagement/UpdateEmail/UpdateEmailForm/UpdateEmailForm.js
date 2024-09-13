@@ -3,6 +3,7 @@ import { useCallback, useMemo } from "react";
 
 import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
 import { useForm } from "../../../../../../hooks/useForm";
@@ -13,11 +14,15 @@ import { userLoginDetailsServiceFactory } from "../../../../../../services/userL
 import { checkIfFormErrorHasOccurred } from "../../../../../../utils/checkIfFormErrorHasOccurred";
 import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPasswordErrorMessage";
 
+import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
+
 import { getData } from "./helpers/getData";
 
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
 export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
+  const { language } = useLanguageContext();
+
   const [isLoading, setIsLoading] = useState(false);
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -94,7 +99,7 @@ export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
   );
 
   const buttonTitle = useMemo(() => {
-    return "Save";
+    return SAVE_BUTTON_NAMING[language];
   }, []);
 
   return (
