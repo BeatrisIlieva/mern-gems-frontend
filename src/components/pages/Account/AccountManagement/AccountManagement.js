@@ -6,15 +6,20 @@ import { Logout } from "./Logout/Logout";
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
 
+import { ACCOUNT_MANAGEMENT_NAMING } from "./constants/languageRelated";
+
 import styles from "./AccountManagement.module.css";
 
 export const AccountManagement = () => {
+  const { language } = useLanguageContext();
+
   const [userEmail, setUserEmail] = useState([]);
 
   const updateUserEmail = useCallback((email) => {
@@ -50,9 +55,11 @@ export const AccountManagement = () => {
     setDisplayUpdateEmailForm(false);
   }, []);
 
+  const title = ACCOUNT_MANAGEMENT_NAMING[language];
+
   return (
     <section className={styles["account-management"]}>
-      <LargeTitle title={"Account Management"} />
+      <LargeTitle title={title} />
       <NormalTitle title={userEmail} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
         <UpdateEmail
