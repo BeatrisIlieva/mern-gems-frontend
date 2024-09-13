@@ -31,7 +31,7 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   useEffect(() => {
     setSelectedSize(null);
     setErrorMessage(null);
-  }, [jewelriesByCategory[0].color]);
+  }, [jewelriesByCategory[0].color, language]);
 
   const changeHandler = useCallback((e) => {
     setSelectedSize(e.target.value);
@@ -43,7 +43,7 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     e.preventDefault();
 
     if (!selectedSize) {
-      setErrorMessage(SIZE_ERROR_MESSAGE);
+      setErrorMessage(SIZE_ERROR_MESSAGE[language]);
       return;
     }
 

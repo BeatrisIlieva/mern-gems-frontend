@@ -1,9 +1,15 @@
 import { useState, memo } from "react";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
+import { PROCESSING_BUTTON_NAMING } from "./constants/languageRelated";
+
 import styles from "./Button.module.css";
 
 export const Button = memo(
   ({ title, buttonIsDisabled, callBackFunction, variant, type, isLoading }) => {
+    const { language } = useLanguageContext();
+
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -24,7 +30,7 @@ export const Button = memo(
         onTouchStart={() => setIsHovered(true)}
         onTouchEnd={() => setIsHovered(false)}
       >
-        {isLoading ? "Processing..." : title}
+        {isLoading ? PROCESSING_BUTTON_NAMING[language] : title}
       </button>
     );
   }
