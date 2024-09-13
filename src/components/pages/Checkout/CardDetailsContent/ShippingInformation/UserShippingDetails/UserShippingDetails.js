@@ -11,6 +11,8 @@ import { userShippingDetailsServiceFactory } from "../../../../../../services/us
 
 import { SHIPPING_ADDRESS_NAMING } from "../../../../../../constants/languageRelated";
 
+import { STREET_NAMING } from "./constants/languageRelated";
+
 import styles from "./UserShippingDetails.module.css";
 
 export const UserShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
@@ -34,6 +36,11 @@ export const UserShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
         console.log(err.message);
       });
   }, [userShippingDetailsService, userId, toggleDisplayShippingDetailsPopup]);
+
+  const streetTitle =
+    language !== "Bulgarian"
+      ? `${userShippingDetails.street}${STREET_NAMING[language]}`
+      : `${STREET_NAMING[language]}${userShippingDetails.street}`;
 
   return (
     <ul role="list">
@@ -65,10 +72,7 @@ export const UserShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
         />
       </li>
       <li className={styles["list-item"]}>
-        <NormalTitle
-          title={`${userShippingDetails.street} St.`}
-          variant={"regular"}
-        />
+        <NormalTitle title={streetTitle} variant={"regular"} />
       </li>
       {userShippingDetails.apartment && (
         <li className={styles["list-item"]}>

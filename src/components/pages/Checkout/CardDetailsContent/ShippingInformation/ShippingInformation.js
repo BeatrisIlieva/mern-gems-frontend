@@ -6,7 +6,10 @@ import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 
 import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 
-import { SHIPPING_INFORMATION_NAMING } from "./constants/languageRelated";
+import {
+  SHIPPING_INFORMATION_NAMING,
+  EDIT_BUTTON_NAMING,
+} from "./constants/languageRelated";
 
 import styles from "./ShippingInformation.module.css";
 
@@ -24,7 +27,7 @@ export const ShippingInformation = ({ toggleDisplayShippingDetailsPopup }) => {
         }
         secondTitle={
           <Button
-            title={"Edit"}
+            title={EDIT_BUTTON_NAMING[language]}
             callBackFunction={toggleDisplayShippingDetailsPopup}
             variant={"underlined"}
           />

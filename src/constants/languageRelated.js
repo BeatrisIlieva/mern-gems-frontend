@@ -25,5 +25,5 @@ export const SHIPPING_ADDRESS_NAMING = {
 export const EMAIL_ADDRESS_NAMING = {
   English: "Email Address",
   Chinese: "电子邮件地址",
-  Bulgarian: "Имейл Адрес"
-}
+  Bulgarian: "Имейл Адрес",
+};
