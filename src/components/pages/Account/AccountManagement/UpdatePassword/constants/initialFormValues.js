@@ -8,7 +8,11 @@ const FORM_KEYS = {
 
 export const INITIAL_FORM_VALUES = {
   [FORM_KEYS.Password]: {
-    fieldLabel: "Current Password",
+    fieldLabel: {
+      English: "Current Password *",
+      Chinese: "当前密码 *",
+      Bulgarian: "Текуща Парола *",
+    },
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,
     errorMessage: "",
@@ -21,7 +25,7 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.NewPassword]: {
-    fieldLabel: "New Password",
+    fieldLabel: "New Password *",
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,
     errorMessage: "",
@@ -35,7 +39,7 @@ export const INITIAL_FORM_VALUES = {
   },
 
   [FORM_KEYS.RetypeNewPassword]: {
-    fieldLabel: "Confirm Password",
+    fieldLabel: "Confirm Password *",
     fieldValue: "",
     regexPattern: PASSWORD_PATTERN,
     errorMessage: "",
