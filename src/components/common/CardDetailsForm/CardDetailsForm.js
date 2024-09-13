@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { DynamicForm } from "../../reusable/DynamicForm/DynamicForm";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
 import { useBagContext } from "../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../contexts/AuthenticationContext";
 
@@ -20,9 +21,13 @@ import { checkIfCardHasExpired } from "./helpers/checkIfCardHasExpired";
 import { setCardHasExpiredErrorMessage } from "./helpers/setCardHasExpiredErrorMessage";
 import { getData } from "./helpers/getData";
 
+import { PLACE_ORDER_BUTTON_NAMING } from "./constants/languageRelated";
+import { SAVE_BUTTON_NAMING } from "../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 export const CardDetailsForm = ({ popupCloseHandler }) => {
+  const { language } = useLanguageContext();
+
   const navigate = useNavigate();
 
   const [userCardDetails, setUserCardDetails] = useState([]);
@@ -117,7 +122,9 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
   );
 
   const buttonTitle = useMemo(() => {
-    return popupCloseHandler ? "Save" : `Place Order $${totalPrice}`;
+    return popupCloseHandler
+      ? SAVE_BUTTON_NAMING[language]
+      : `${PLACE_ORDER_BUTTON_NAMING[language]} $${totalPrice}`;
   }, [popupCloseHandler, totalPrice]);
 
   return (
