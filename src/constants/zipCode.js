@@ -3,10 +3,6 @@ const ZIP_CODE_LENGTH = {
   MAX: 15,
 };
 
-// export const ZIP_CODE_PATTERN = new RegExp(
-//   `^[A-Za-z0-9 ]{${ZIP_CODE_LENGTH.MIN},${ZIP_CODE_LENGTH.MAX}}$`
-// );
-
 export const ZIP_CODE_PATTERN = new RegExp(
   `^[\\p{L}\\p{N} ]{${ZIP_CODE_LENGTH.MIN},${ZIP_CODE_LENGTH.MAX}}$`,
   "u"
