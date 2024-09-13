@@ -5,15 +5,23 @@ import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory/NonEmptyOrderHistor
 import { SectionContainer } from "../reusable/SectionContainer/SectionContainer";
 import { Popup } from "../../../reusable/Popup/Popup";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../hooks/useService";
 
 import { orderServiceFactory } from "../../../../services/orderService";
 
+import {
+  ORDER_HISTORY_NAMING,
+  BUTTON_TITLE,
+} from "./constants/languageRelated";
+
 import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 export const OrderHistory = () => {
+  const { language } = useLanguageContext();
+
   const [orderItems, setOrderItems] = useState([]);
 
   const { userId } = useAuthenticationContext();
@@ -37,13 +45,17 @@ export const OrderHistory = () => {
     setDisplayPopup((displayPopup) => !displayPopup);
   }, []);
 
+  const sectionTitle = ORDER_HISTORY_NAMING[language];
+
+  const buttonTitle = BUTTON_TITLE[language];
+
   return (
     <>
       <SectionContainer
-        sectionTitle={"Order History"}
+        sectionTitle={sectionTitle}
         callBackFunction={toggleDisplayPopup}
         icon={faClockRotateLeft}
-        buttonTitle={"View Order History"}
+        buttonTitle={buttonTitle}
       />
       {displayPopup && (
         <Popup
