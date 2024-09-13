@@ -2,15 +2,20 @@ import { useState, useEffect } from "react";
 
 import { NormalTitle } from "../../../../../reusable/NormalTitle/NormalTitle";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../../../hooks/useService";
 
 import { userShippingDetailsServiceFactory } from "../../../../../../services/userShippingDetailsService";
 
+import { SHIPPING_ADDRESS_NAMING } from "../../../../../../constants/languageRelated";
+
 import styles from "./UserShippingDetails.module.css";
 
 export const UserShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
+  const { language } = useLanguageContext();
+
   const [userShippingDetails, setUserShippingDetails] = useState([]);
 
   const { userId } = useAuthenticationContext();
@@ -33,7 +38,10 @@ export const UserShippingDetails = ({ toggleDisplayShippingDetailsPopup }) => {
   return (
     <ul role="list">
       <li className={styles["list-item"]}>
-        <NormalTitle title={"Shipping Address"} variant={"bolded"} />
+        <NormalTitle
+          title={SHIPPING_ADDRESS_NAMING[language]}
+          variant={"bolded"}
+        />
       </li>
       <li className={styles["list-item"]}>
         <NormalTitle
