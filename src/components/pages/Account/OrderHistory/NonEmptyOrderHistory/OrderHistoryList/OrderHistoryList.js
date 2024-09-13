@@ -14,7 +14,9 @@ import { convertToReadableDate } from "../../../../../../utils/convertToReadable
 import styles from "./OrderHistoryList.module.css";
 
 export const OrderHistoryList = ({
-  status,
+  statusEnglish,
+  statusChinese,
+  statusBulgarian,
   createdAt,
   totalPrice,
   jewelries,
@@ -28,6 +30,16 @@ export const OrderHistoryList = ({
   const totalTitle = TOTAL_NAMING[language];
 
   const readableDate = convertToReadableDate(createdAt);
+
+  let status;
+
+  if (language === English) {
+    status = statusEnglish;
+  } else if (language === Chinese) {
+    status = statusChinese;
+  } else {
+    status = statusBulgarian;
+  }
 
   return (
     <section className={styles["order-history-list"]}>

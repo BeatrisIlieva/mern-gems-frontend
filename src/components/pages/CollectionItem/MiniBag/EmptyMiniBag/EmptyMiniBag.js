@@ -19,10 +19,7 @@ export const EmptyMiniBag = ({ popupCloseHandler }) => {
 
   return (
     <section id={styles["empty-mini-bag"]} data-testid="empty-mini-bag">
-      <InfoMessage
-        title={title}
-        subtitle={subtitle}
-      />
+      <InfoMessage title={title} subtitle={subtitle} />
       <CardSlider popupCloseHandler={popupCloseHandler} />
     </section>
   );
