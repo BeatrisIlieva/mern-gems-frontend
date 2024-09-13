@@ -32,7 +32,9 @@ export const ErrorMessage = ({ values, value, currentKey }) => {
       {values[value].errorMessage && (
         <div className={styles["error-message"]} data-testid={`${value}-error`}>
           {values[value].errorMessage[language]}
-          {displayQuestionMark && <QuestionMark text={PASSWORD_REQUIREMENTS} />}
+          {displayQuestionMark && (
+            <QuestionMark text={PASSWORD_REQUIREMENTS[language]} />
+          )}
         </div>
       )}
     </>

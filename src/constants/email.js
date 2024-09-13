@@ -1,7 +1,4 @@
-// export const EMAIL_PATTERN = /^[A-Za-z0-9]+@+[a-z]+\.[a-z]{2,4}$/;
-
-export const EMAIL_PATTERN =
-  /^[A-Za-z0-9\u4e00-\u9fff._%+-]+@[A-Za-z0-9\u4e00-\u9fff.-]+\.[A-Za-z\u4e00-\u9fff]{2,4}$/u;
+export const EMAIL_PATTERN = /^[A-Za-z0-9]+@+[a-z]+\.[a-z]{2,4}$/;
 
 export const EMAIL_ERROR_MESSAGE = {
   English: "* Please enter a valid email address",
@@ -20,5 +17,5 @@ export const INVALID_CREDENTIALS_ERROR_MESSAGE = {
     "* We couldn't find an account matching the email and password you entered",
   Chinese: "* 我们找不到与您输入的电子邮件和密码匹配的账户",
   Bulgarian:
-    "* Не съществува потребител, регистриран с въведените имейл или парола",
+    "* Не можахме да намерим акаунт, който съвпада с въведените имейл и парола",
 };
