@@ -14,7 +14,9 @@ exports.create = async (userId) => {
 
   const order = await Order.create({
     user: userId,
-    status: "Pending",
+    statusEnglish: "Pending",
+    statusChinese: "待处理",
+    statusBulgarian: "Обработка",
   });
 
   order.jewelries = orderJewelries;
