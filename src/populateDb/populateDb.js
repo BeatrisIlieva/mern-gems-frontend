@@ -217,8 +217,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_sapphire_frsprfflrfmn_e_2_ucppcd.avif",
     category: allCategories[3],
     color: allColors[1],
-    description:
-      "6 pear-shaped sapphires weighing a total of approximately 2.15 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum",
+    description: {
+      English:
+        "6 pear-shaped sapphires weighing a total of approximately 2.15 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum.",
+      Chinese:
+        "6颗水滴形切工，总重约2.15克拉的蓝宝石和1颗圆形明亮式切工，重约0.05克拉的钻石，悉心镶嵌于铂金底座之上。",
+      Bulgarian:
+        "6 крушовидни сапфира с общо тегло приблизително 2,15 карата и 1 кръгъл брилянтен диамант с тегло приблизително 0,05 карата, вградени в платина.",
+    },
   });
 
   await Jewelry.create({
