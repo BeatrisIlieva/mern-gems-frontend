@@ -3,6 +3,12 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { OrderConfirmation } from "./OrderConfirmation";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../reusable/InfoMessage/InfoMessage", () => ({
   InfoMessage: ({ title, subtitle }) => (
     <div>
@@ -21,6 +27,14 @@ jest.mock("./ConfirmationEmail/ConfirmationEmail", () => ({
 }));
 
 describe("OrderConfirmation Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders the OrderConfirmation component with correct child components", () => {
     render(<OrderConfirmation />);
 
