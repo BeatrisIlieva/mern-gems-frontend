@@ -33,7 +33,7 @@ describe("EmptyWishlist Component", () => {
   test("renders InfoMessage and CardSlider", () => {
     render(<EmptyWishlist />);
 
-    expect(screen.getByText("This Wishlist Is Empty.")).toBeInTheDocument();
+    expect(screen.getByText("This Wish List Is Empty.")).toBeInTheDocument();
     expect(
       screen.getByText("Explore and add something you love.")
     ).toBeInTheDocument();
