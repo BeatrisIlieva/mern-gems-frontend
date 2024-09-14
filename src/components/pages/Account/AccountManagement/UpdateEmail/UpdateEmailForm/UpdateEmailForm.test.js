@@ -22,6 +22,7 @@ const userId = "test-id";
 
 describe("UpdateEmailForm Component", () => {
   const mockLanguage = "English";
+  
   const mockToken = "testToken";
 
   const mockUserId = userId;

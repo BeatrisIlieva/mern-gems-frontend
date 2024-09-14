@@ -3,6 +3,7 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 
 import { UpdatePasswordForm } from "./UpdatePasswordForm";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { AuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../../../hooks/useService";
@@ -11,11 +12,17 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "../constants/initialFormValues";
 
 import { ERROR_MESSAGES } from "../../../../../../mappers/errorMessages";
 
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../../hooks/useService");
 
 const userId = "test-id";
 
 describe("UpdatePasswordForm Component", () => {
+  const mockLanguage = "English";
+
   const mockToken = "testToken";
 
   const mockUserId = userId;
@@ -26,6 +33,8 @@ describe("UpdatePasswordForm Component", () => {
   };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useService.mockReturnValue(mockUserLoginDetailsService);
 
     mockUserLoginDetailsService.getOne.mockClear();
@@ -130,7 +139,9 @@ describe("UpdatePasswordForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 
@@ -177,7 +188,9 @@ describe("UpdatePasswordForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 
@@ -229,7 +242,7 @@ describe("UpdatePasswordForm Component", () => {
     );
 
     expect(newPasswordErrorMessageContainer).toHaveTextContent(
-      ERROR_MESSAGES.passwordMismatch
+      ERROR_MESSAGES.passwordMismatch[mockLanguage]
     );
 
     const retypeNewPasswordErrorMessageContainer = screen.getByTestId(
@@ -237,7 +250,7 @@ describe("UpdatePasswordForm Component", () => {
     );
 
     expect(retypeNewPasswordErrorMessageContainer).toHaveTextContent(
-      ERROR_MESSAGES.passwordMismatch
+      ERROR_MESSAGES.passwordMismatch[mockLanguage]
     );
   });
 
@@ -289,7 +302,7 @@ describe("UpdatePasswordForm Component", () => {
     );
 
     expect(newPasswordErrorMessageContainer).toHaveTextContent(
-      ERROR_MESSAGES.passwordMismatch
+      ERROR_MESSAGES.passwordMismatch[mockLanguage]
     );
 
     const retypeNewPasswordErrorMessageContainer = screen.getByTestId(
@@ -297,7 +310,7 @@ describe("UpdatePasswordForm Component", () => {
     );
 
     expect(retypeNewPasswordErrorMessageContainer).toHaveTextContent(
-      ERROR_MESSAGES.passwordMismatch
+      ERROR_MESSAGES.passwordMismatch[mockLanguage]
     );
   });
 });
