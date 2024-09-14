@@ -46,7 +46,7 @@ describe("OrderConfirmation Component", () => {
     );
 
     expect(
-      screen.getByText("Thank you for your purchase!")
+      screen.getByText("hank you for your purchase!")
     ).toBeInTheDocument();
     expect(screen.getByText("TrackOrder Component")).toBeInTheDocument();
 
