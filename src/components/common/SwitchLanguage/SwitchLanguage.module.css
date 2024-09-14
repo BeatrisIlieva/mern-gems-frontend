@@ -4,6 +4,16 @@
   right: 2rem;
   z-index: 120;
   cursor: pointer;
+  animation: transitioning 1s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .switch-language.to-the-left {
@@ -16,6 +26,7 @@
   display: flex;
   gap: 0.5rem;
   flex-direction: row-reverse;
+  animation: transitioning 1s forwards;
 }
 
 .dropdown.to-the-bottom {

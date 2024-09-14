@@ -8,6 +8,16 @@
   background-color: var(--white);
   z-index: 100;
   border-bottom: 0.1px solid var(--pink);
+  animation: transitioning 1s forwards;
+}
+
+@keyframes transitioning {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .wrapper {
