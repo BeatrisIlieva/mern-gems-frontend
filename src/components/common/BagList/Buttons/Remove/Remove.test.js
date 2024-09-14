@@ -5,14 +5,22 @@ import { Remove } from "./Remove";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
 
 describe("Remove Component", () => {
+  const mockLanguage = "English";
   const bagId = "test-bag-id";
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
     jest.clearAllMocks();
   });
 
