@@ -7,6 +7,12 @@ import { useService } from "../../../../../../hooks/useService";
 
 import { UserShippingDetails } from "./UserShippingDetails";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
@@ -22,6 +28,7 @@ jest.mock("../../../../../../services/userShippingDetailsService", () => ({
 }));
 
 describe("UserShippingDetails Component", () => {
+  const mockLanguage = "English";
   const mockUserId = "12345";
   const mockShippingDetails = {
     firstName: "John",
@@ -35,6 +42,8 @@ describe("UserShippingDetails Component", () => {
   };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useAuthenticationContext.mockReturnValue({ userId: mockUserId });
 
     useService.mockReturnValue({
