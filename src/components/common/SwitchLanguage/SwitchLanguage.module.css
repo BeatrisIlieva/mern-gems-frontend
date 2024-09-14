@@ -34,6 +34,37 @@
   margin-top: 0.25rem;
 }
 
+.slide-in {
+  animation: slideIn 1s forwards;
+}
+
+.slide-out {
+  animation: slideOut 1s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    right: -100%;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+    opacity: 1;
+  }
+  to {
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+
 .thumbnail {
   width: 2.75rem;
 }

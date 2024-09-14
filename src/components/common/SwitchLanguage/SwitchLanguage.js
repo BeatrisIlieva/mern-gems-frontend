@@ -13,17 +13,32 @@ export const SwitchLanguage = ({ variant }) => {
 
   const [displayDropdown, setDisplayDropdown] = useState(false);
 
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
   const toggleDisplayDropdown = () => {
     setDisplayDropdown((displayDropdown) => !displayDropdown);
   };
 
   const languageChangeHandler = (lang) => {
-    setSelectedImage(IMAGE_URLS[lang]);
+    setIsTransitioning(true);
 
-    updateLanguage(lang);
-
-    setDisplayDropdown(false);
+    setTimeout(() => {
+      setSelectedImage(IMAGE_URLS[lang]);
+      updateLanguage(lang);
+      setDisplayDropdown(false);
+      setIsTransitioning(false);
+    }, 400);
   };
+
+  const updateIsTransitioningHandler = () => {
+    setIsTransitioning(true);
+
+    setTimeout(() => {
+      toggleDisplayDropdown();
+      setIsTransitioning(false);
+    }, 400);
+  };
+
   const sectionStyles =
     variant === "to-the-left"
       ? `${styles["switch-language"]} ${styles[variant]}`
@@ -36,11 +51,18 @@ export const SwitchLanguage = ({ variant }) => {
 
   return (
     <section className={sectionStyles}>
-      <div className={styles["thumbnail"]} onClick={toggleDisplayDropdown}>
+      <div
+        className={styles["thumbnail"]}
+        onClick={updateIsTransitioningHandler}
+      >
         <img className={styles["image"]} src={selectedImage} alt="flag" />
       </div>
       {displayDropdown && (
-        <div className={dropdownStyles}>
+        <div
+          className={`${dropdownStyles} ${
+            isTransitioning ? styles["slide-out"] : styles["slide-in"]
+          }`}
+        >
           {Object.keys(IMAGE_URLS)
             .filter((lang) => lang !== language)
             .map((lang) => (
