@@ -6,6 +6,7 @@ import { IMAGE_URLS } from "./constsnts/imageUrls";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./SwitchLanguage.module.css";
 
@@ -65,8 +66,11 @@ export const SwitchLanguage = ({ variant }) => {
           <img className={styles["image"]} src={selectedImage} alt="flag" />
         </div>
         <FontAwesomeIcon
-          icon={faCaretDown}
-          className={styles["icon"]}
+          icon={displayDropdown ? faCaretUp : faCaretDown}
+          // className={styles["icon"]}
+          className={`${styles["icon"]} ${
+            isTransitioning ? styles["slide-out"] : styles["slide-in"]
+          }`}
           onClick={updateIsTransitioningHandler}
         />
       </div>
