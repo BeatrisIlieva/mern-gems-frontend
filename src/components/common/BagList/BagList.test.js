@@ -73,15 +73,10 @@ describe("BagList Component", () => {
     },
   ];
 
-  beforeEach(() => {
-    useLanguageContext.mockReturnValue({ language: mockLanguage });
-
-    jest.clearAllMocks();
-  });
-
   test("renders Buttons and UpdateQuantity components when pathname is not /checkout or /checkout/payment", () => {
     useLocation.mockReturnValue({ pathname: "/some/path" });
     useBagContext.mockReturnValue({ bagItems: mockBagItems });
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
 
     render(
       <Router>

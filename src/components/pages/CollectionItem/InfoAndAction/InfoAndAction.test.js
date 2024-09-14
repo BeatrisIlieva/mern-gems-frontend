@@ -78,6 +78,7 @@ describe("InfoAndAction Component", () => {
       <MemoryRouter>
         <InfoAndAction
           jewelriesByCategory={mockJewelries}
+          language={mockLanguage}
           toggleDisplayPopup={() => {}}
         />
       </MemoryRouter>
@@ -98,6 +99,7 @@ describe("InfoAndAction Component", () => {
         <InfoAndAction
           jewelriesByCategory={mockJewelries}
           toggleDisplayPopup={() => {}}
+          language={mockLanguage}
         />
       </MemoryRouter>
     );
@@ -117,6 +119,7 @@ describe("InfoAndAction Component", () => {
         <InfoAndAction
           jewelriesByCategory={mockJewelries}
           toggleDisplayPopup={toggleDisplayPopup}
+          language={mockLanguage}
         />
       </MemoryRouter>
     );

@@ -4,6 +4,12 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { CardDetailsContent } from "./CardDetailsContent";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../reusable/ChildWrapper/ChildWrapper", () => ({
   ChildWrapper: ({ children }) => <div>{children}</div>,
 }));
@@ -42,6 +48,14 @@ jest.mock("../../../reusable/Popup/Popup", () => ({
 }));
 
 describe("CardDetailsContent Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("does not render Popup initially", () => {
     render(
       <MemoryRouter initialEntries={["/payment"]}>
