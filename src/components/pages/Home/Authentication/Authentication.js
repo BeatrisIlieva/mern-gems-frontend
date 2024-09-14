@@ -39,7 +39,7 @@ export const Authentication = () => {
 
   return (
     <Popup movePopup={movePopup}>
-      <SwitchLanguage />
+      <SwitchLanguage variant={"to-the-bottom"} />
       <div className={styles["image"]}>
         <img
           className={styles["img"]}
