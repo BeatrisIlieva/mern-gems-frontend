@@ -7,6 +7,12 @@ import { useService } from "../../../../../../hooks/useService";
 
 import { UserLoginDetails } from "./UserLoginDetails";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
@@ -22,12 +28,15 @@ jest.mock("../../../../../../services/userLoginDetailsService", () => ({
 }));
 
 describe("UserLoginDetails Component", () => {
+  const mockLanguage = "English";
   const mockUserId = "12345";
   const mockLoginDetails = {
     email: "john.doe@example.com",
   };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useAuthenticationContext.mockReturnValue({ userId: mockUserId });
 
     useService.mockReturnValue({

@@ -16,7 +16,7 @@ export const NonEmptyWishlist = () => {
 
   const { wishlistItems, wishlistTotalQuantity } = useWishlistContext();
 
-  const title = TITLES_BY_LANGUAGE[language];
+  const title = `${TITLES_BY_LANGUAGE[language]} (${wishlistTotalQuantity})`;
 
   const subtitle = SUBTITLES_BY_LANGUAGE[language];
 
