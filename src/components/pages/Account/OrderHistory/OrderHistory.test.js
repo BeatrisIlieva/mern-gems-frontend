@@ -2,6 +2,12 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 import { OrderHistory } from "./OrderHistory";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("./EmptyOrderHistory/EmptyOrderHistory", () => ({
   EmptyOrderHistory: ({ popupCloseHandler }) => (
     <div>
@@ -53,6 +59,14 @@ jest.mock("../../../../hooks/useService", () => ({
 }));
 
 describe("OrderHistory Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders SectionContainer component", () => {
     render(<OrderHistory />);
 
