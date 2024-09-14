@@ -83,3 +83,9 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 701px) {
+  .thumbnail {
+    width: 1.8rem;
+  }
+}
