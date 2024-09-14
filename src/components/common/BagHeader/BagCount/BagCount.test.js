@@ -6,11 +6,25 @@ import { useBagContext } from "../../../../contexts/BagContext";
 
 import styles from "./BagCount.module.css";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
 
 describe("BagCount Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("displays the correct text when bagTotalQuantity is greater than 1", () => {
     useBagContext.mockReturnValue({ bagTotalQuantity: 5 });
 
