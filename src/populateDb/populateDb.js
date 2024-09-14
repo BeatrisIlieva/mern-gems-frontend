@@ -49,11 +49,11 @@ async function populateDb() {
     color: allColors[0],
     description: {
       English:
-        "45 pear-shaped and round brilliant pink sapphires weighing a total of approximately 4.36 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum.",
+        "45 pear-shaped and round brilliant sapphires weighing a total of approximately 4.36 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum.",
       Chinese:
         "45颗水滴形和圆形明亮式切工，总重约4.36克拉的粉色蓝宝石和33颗水滴形、榄尖形和圆形明亮式切工，总重约4.24拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "45 крушовидни и кръгли брилянтни розови сапфира с общо тегло приблизително 4,36 карата и 33 крушовидни диаманта, маркиз и кръгли брилянти с общо тегло приблизително 4,24 карата, вградени в платина.",
+        "45 крушовидни и кръгли брилянтни сапфира с общо тегло приблизително 4,36 карата и 33 крушовидни диаманта, маркиз и кръгли брилянти с общо тегло приблизително 4,24 карата, вградени в платина.",
     },
   });
 
@@ -70,7 +70,7 @@ async function populateDb() {
       Chinese:
         "45颗水滴形和圆形明亮式切工，总重约4.17克拉的蓝宝石和33颗水滴型、榄尖形和圆形明亮式切工，总重约4.24克拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "45 крушовидни и кръгли брилянтни розови сапфира с общо тегло приблизително 4,17 карата и 33 крушовидни диаманта, маркиз и кръгли брилянти с общо тегло приблизително 4,24 карата, вградени в платина.",
+        "45 крушовидни и кръгли брилянтни сапфира с общо тегло приблизително 4,17 карата и 33 крушовидни диаманта, маркиз и кръгли брилянти с общо тегло приблизително 4,24 карата, вградени в платина.",
     },
   });
 
@@ -100,11 +100,11 @@ async function populateDb() {
     color: allColors[0],
     description: {
       English:
-        "28 pear-shaped and round brilliant pink sapphires weighing a total of approximately 3.20 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum.",
+        "28 pear-shaped and round brilliant sapphires weighing a total of approximately 3.20 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum.",
       Chinese:
         "28颗水滴形和圆形明亮式切工，总重约3.20克拉的粉色蓝宝石和28颗榄尖形和圆形明亮式切工，总重约1.98克拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "28 крушовидни и кръгли брилянтни розови сапфира с общо тегло приблизително 3,20 карата и 28 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 1,98 карата, вградени в платина.",
+        "28 крушовидни и кръгли брилянтни сапфира с общо тегло приблизително 3,20 карата и 28 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 1,98 карата, вградени в платина.",
     },
   });
 
@@ -151,11 +151,11 @@ async function populateDb() {
     color: allColors[0],
     description: {
       English:
-        "78 pear-shaped and round brilliant pink sapphires weighing a total of approximately 8.61 carats and 99 marquise and round brilliant diamonds weighing a total of approximately 8.60 carats, set in platinum.",
+        "78 pear-shaped and round brilliant sapphires weighing a total of approximately 8.61 carats and 99 marquise and round brilliant diamonds weighing a total of approximately 8.60 carats, set in platinum.",
       Chinese:
         "78颗水滴形和圆形明亮式切工，总重约8.61克拉的粉色蓝宝石和99颗榄尖形和圆形明亮式切工，总重约8.60克拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "78 крушовидни и кръгли брилянтни розови сапфира с общо тегло приблизително 8,61 карата и 99 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 8,60 карата, вградени в платина.",
+        "78 крушовидни и кръгли брилянтни сапфира с общо тегло приблизително 8,61 карата и 99 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 8,60 карата, вградени в платина.",
     },
   });
 
@@ -172,7 +172,7 @@ async function populateDb() {
       Chinese:
         "78颗水滴形和圆形明亮式切工，总重约8.61克拉的蓝宝石和99颗榄尖形和圆形明亮式切工，总重约8.37克拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "78 крушовидни и кръгли брилянтни сини сапфира с общо тегло приблизително 8,61 карата и 99 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 8,37 карата, вградени в платина.",
+        "78 крушовидни и кръгли брилянтни сапфира с общо тегло приблизително 8,61 карата и 99 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 8,37 карата, вградени в платина.",
     },
   });
 
@@ -202,11 +202,11 @@ async function populateDb() {
     color: allColors[0],
     description: {
       English:
-        "6 pear-shaped pink sapphires weighing a total of approximately 2.22 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum.",
+        "6 pear-shaped sapphires weighing a total of approximately 2.22 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum.",
       Chinese:
         "6颗水滴形切工，总重约2.22克拉的粉色蓝宝石和1颗圆形明亮式切工，重约0.05克拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "6 крушовидни розови сапфира с общо тегло приблизително 2,22 карата и 1 кръгъл брилянтен диамант с тегло приблизително 0,05 карата, вградени в платина.",
+        "6 крушовидни сапфира с общо тегло приблизително 2,22 карата и 1 кръгъл брилянтен диамант с тегло приблизително 0,05 карата, вградени в платина.",
     },
   });
 

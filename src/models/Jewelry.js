@@ -5,10 +5,6 @@ const jewelrySchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  title: {
-    type: String,
-    required: true,
-  },
   firstImageUrl: {
     type: String,
     required: true,
@@ -28,7 +24,7 @@ const jewelrySchema = new mongoose.Schema({
     required: true,
   },
   description: {
-    type: String,
+    type: Object,
     required: [true, "Description is required"],
     minLength: [10, "Description is too short"],
     maxLength: [1000, "Description is too long"],
