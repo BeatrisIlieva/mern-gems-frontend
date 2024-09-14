@@ -4,6 +4,12 @@ import { Authentication } from "./Authentication";
 
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("./Login/Login", () => ({
   Login: ({ updateIsTransitioningHandler, switchOptions, closeHandler }) => (
     <div>
@@ -33,9 +39,12 @@ jest.mock("../../../../contexts/AuthenticationContext", () => ({
 }));
 
 describe("Authentication Component", () => {
+  const mockLanguage = "English";
   const mockUpdateAuthentication = jest.fn();
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+    
     useAuthenticationContext.mockReturnValue({
       updateAuthentication: mockUpdateAuthentication,
     });
