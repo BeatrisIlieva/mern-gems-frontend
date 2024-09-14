@@ -44,7 +44,7 @@ describe("Authentication Component", () => {
 
   beforeEach(() => {
     useLanguageContext.mockReturnValue({ language: mockLanguage });
-    
+
     useAuthenticationContext.mockReturnValue({
       updateAuthentication: mockUpdateAuthentication,
     });

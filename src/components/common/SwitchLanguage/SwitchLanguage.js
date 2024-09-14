@@ -4,6 +4,9 @@ import { useLanguageContext } from "../../../contexts/LanguageContext";
 
 import { IMAGE_URLS } from "./constsnts/imageUrls";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./SwitchLanguage.module.css";
 
 export const SwitchLanguage = ({ variant }) => {
@@ -51,13 +54,21 @@ export const SwitchLanguage = ({ variant }) => {
 
   return (
     <section className={sectionStyles}>
-      <div
-        className={`${styles["thumbnail"]} ${
-          isTransitioning ? styles["slide-out"] : styles["slide-in"]
-        }`}
-        onClick={updateIsTransitioningHandler}
-      >
-        <img className={styles["image"]} src={selectedImage} alt="flag" />
+      <div className={styles["wrapper"]}>
+        {" "}
+        <div
+          className={`${styles["thumbnail"]} ${
+            isTransitioning ? styles["slide-out"] : styles["slide-in"]
+          }`}
+          onClick={updateIsTransitioningHandler}
+        >
+          <img className={styles["image"]} src={selectedImage} alt="flag" />
+        </div>
+        <FontAwesomeIcon
+          icon={faCaretDown}
+          className={styles["icon"]}
+          onClick={updateIsTransitioningHandler}
+        />
       </div>
       {displayDropdown && (
         <div
