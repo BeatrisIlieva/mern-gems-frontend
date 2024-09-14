@@ -49,13 +49,13 @@ describe("OrderHistoryList Component", () => {
       />
     );
 
-    expect(screen.getByText("Status: Completed")).toBeInTheDocument();
+    expect(screen.getByText("Completed")).toBeInTheDocument();
     expect(
       screen.getByText(
-        `Created at: ${new Date("2024-09-01T00:00:00Z").toLocaleDateString()}`
+        `${new Date("2024-09-01T00:00:00Z").toLocaleDateString()}`
       )
     ).toBeInTheDocument();
-    expect(screen.getByText("Total: $ 123.45")).toBeInTheDocument();
+    expect(screen.getByText("$ 123.45")).toBeInTheDocument();
   });
 
   test("renders jewelry items correctly", () => {

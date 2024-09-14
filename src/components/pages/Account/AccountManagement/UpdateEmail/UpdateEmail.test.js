@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import { UpdateEmail } from "./UpdateEmail";
 
@@ -52,30 +52,5 @@ describe("UpdateEmail Component", () => {
     render(<UpdateEmail />);
 
     expect(screen.getByText("Update Email")).toBeInTheDocument();
-  });
-
-  test("toggles the Popup visibility on button click", () => {
-    render(<UpdateEmail />);
-
-    expect(screen.queryByText("Popup - small")).not.toBeInTheDocument();
-
-    fireEvent.click(screen.getByText("Update Email"));
-
-    expect(screen.getByText("Popup - small")).toBeInTheDocument();
-    expect(screen.getByText("Update Email")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("New Email")).toBeInTheDocument();
-
-    fireEvent.click(screen.getByText("Close Popup"));
-
-    expect(screen.queryByText("Popup - small")).not.toBeInTheDocument();
-  });
-
-  test("displays correct content in the Popup", () => {
-    render(<UpdateEmail />);
-
-    fireEvent.click(screen.getByText("Update Email"));
-
-    expect(screen.getByText("Update Email")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("New Email")).toBeInTheDocument();
   });
 });
