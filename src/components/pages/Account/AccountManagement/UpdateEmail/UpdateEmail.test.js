@@ -2,6 +2,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 
 import { UpdateEmail } from "./UpdateEmail";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../reusable/Button/Button", () => ({
   Button: ({ title, callBackFunction, variant }) => (
     <button onClick={callBackFunction} className={variant}>
@@ -34,6 +40,14 @@ jest.mock("./UpdateEmailForm/UpdateEmailForm", () => ({
 }));
 
 describe("UpdateEmail Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders the Update Email Address button", () => {
     render(<UpdateEmail />);
 
