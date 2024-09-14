@@ -183,8 +183,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/necklaces/forget_me_not_lariat_diamond_necklace_nkdpltflrfmn_e-2_tuh8ru.webp",
     category: allCategories[2],
     color: allColors[2],
-    description:
-      "177 pear-shaped, marquise, and round brilliant diamonds, weighing a total of approximately 15.35 carats, set in platinum",
+    description: {
+      English:
+        "177 pear-shaped, marquise, and round brilliant diamonds, weighing a total of approximately 15.35 carats, set in platinum.",
+      Chinese:
+        "177颗水滴形、榄尖形切工和圆形明亮式切工钻石，总重约15.35克拉的稀世钻石悉心镶嵌于铂金底座。",
+      Bulgarian:
+        "177 крушовидни диаманта, маркиза и кръгли брилянти, с общо тегло приблизително 15,35 карата, вградени в платина.",
+    },
   });
 
   await Jewelry.create({
