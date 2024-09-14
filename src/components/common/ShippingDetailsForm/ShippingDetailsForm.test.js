@@ -3,6 +3,7 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 
 import { ShippingDetailsForm } from "./ShippingDetailsForm";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
 import { AuthenticationContext } from "../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../hooks/useService";
@@ -11,11 +12,17 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 import { ERROR_MESSAGES } from "../../../mappers/errorMessages";
 
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../hooks/useService");
 
 const userId = "test-id";
 
 describe("ShippingDetailsForm Component", () => {
+  const mockLanguage = "English";
+
   const mockToken = "testToken";
 
   const mockUserId = userId;
@@ -26,6 +33,8 @@ describe("ShippingDetailsForm Component", () => {
   };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useService.mockReturnValue(mockUserShippingDetailsService);
 
     mockUserShippingDetailsService.getOne.mockClear();
@@ -129,7 +138,9 @@ describe("ShippingDetailsForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 
@@ -180,7 +191,9 @@ describe("ShippingDetailsForm Component", () => {
       .filter((key) => key !== "apartment")
       .forEach((key) => {
         const errorMessageContainer = screen.getByTestId(`${key}-error`);
-        expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+        expect(errorMessageContainer).toHaveTextContent(
+          ERROR_MESSAGES[key][mockLanguage]
+        );
       });
   });
 });
