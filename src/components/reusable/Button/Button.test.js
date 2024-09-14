@@ -1,9 +1,23 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 import { Button } from "./Button";
 
 describe("Button Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders the button with the correct text", () => {
     render(<Button title="Click Me" />);
 
