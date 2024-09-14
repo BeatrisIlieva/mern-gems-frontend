@@ -34,7 +34,11 @@ export const FlagIcon = () => {
                 className={styles["thumbnail"]}
                 onClick={() => languageChangeHandler(lang)}
               >
-                <img src={IMAGE_URLS[lang]} alt={`${lang} flag`} />
+                <img
+                  className={styles["image"]}
+                  src={IMAGE_URLS[lang]}
+                  alt={`${lang} flag`}
+                />
                 {lang}
               </div>
             ))}
