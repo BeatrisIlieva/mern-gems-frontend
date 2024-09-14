@@ -6,6 +6,12 @@ import { ConfirmationEmail } from "./ConfirmationEmail";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 import { useService } from "../../../../hooks/useService";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
@@ -24,7 +30,11 @@ jest.mock("../../../reusable/NormalTitle/NormalTitle", () => ({
 }));
 
 describe("ConfirmationEmail Component", () => {
+  const mockLanguage = "English";
+
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     jest.clearAllMocks();
   });
 
