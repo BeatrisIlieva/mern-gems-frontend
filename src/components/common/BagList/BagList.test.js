@@ -4,7 +4,12 @@ import { useLocation } from "react-router-dom";
 
 import { BagList } from "./BagList";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
 import { useBagContext } from "../../../contexts/BagContext";
+
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
@@ -52,6 +57,8 @@ jest.mock("./Buttons/Buttons", () => ({
 }));
 
 describe("BagList Component", () => {
+  const mockLanguage = "English";
+
   const mockBagItems = [
     {
       bagId: "1",
@@ -65,6 +72,12 @@ describe("BagList Component", () => {
       inventoryQuantity: 10,
     },
   ];
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
 
   test("renders Buttons and UpdateQuantity components when pathname is not /checkout or /checkout/payment", () => {
     useLocation.mockReturnValue({ pathname: "/some/path" });
