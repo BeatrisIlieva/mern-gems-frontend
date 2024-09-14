@@ -3,12 +3,21 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 import { OrderSummary } from "./OrderSummary";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
 import { useBagContext } from "../../../contexts/BagContext";
+
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
 
 jest.mock("../../../contexts/BagContext");
 
 describe("OrderSummary Component", () => {
+  const mockLanguage = "English";
+
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useBagContext.mockReturnValue({
       totalPrice: 0,
     });
