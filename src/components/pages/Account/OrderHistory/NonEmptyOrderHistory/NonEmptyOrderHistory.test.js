@@ -2,6 +2,12 @@ import { render, screen } from "@testing-library/react";
 
 import { NonEmptyOrderHistory } from "./NonEmptyOrderHistory";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("./OrderHistoryList/OrderHistoryList", () => ({
   OrderHistoryList: ({ _id, ...props }) => (
     <div data-testid={`order-item-${_id}`} {...props}>
@@ -15,10 +21,18 @@ jest.mock("../../../../reusable/LargeTitle/LargeTitle", () => ({
 }));
 
 describe("NonEmptyOrderHistory Component", () => {
+  const mockLanguage = "English";
+
   const mockOrderItems = [
     { _id: "1", product: "Product 1", date: "2024-01-01" },
     { _id: "2", product: "Product 2", date: "2024-01-02" },
   ];
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
 
   test("renders LargeTitle component with correct title", () => {
     render(<NonEmptyOrderHistory orderItems={mockOrderItems} />);
