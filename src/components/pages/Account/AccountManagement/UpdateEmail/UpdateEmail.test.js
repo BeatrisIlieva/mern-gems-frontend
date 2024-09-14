@@ -51,7 +51,7 @@ describe("UpdateEmail Component", () => {
   test("renders the Update Email Address button", () => {
     render(<UpdateEmail />);
 
-    expect(screen.getByText("Update Email Address")).toBeInTheDocument();
+    expect(screen.getByText("Update Email")).toBeInTheDocument();
   });
 
   test("toggles the Popup visibility on button click", () => {
@@ -59,7 +59,7 @@ describe("UpdateEmail Component", () => {
 
     expect(screen.queryByText("Popup - small")).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByText("Update Email Address"));
+    fireEvent.click(screen.getByText("Update Email"));
 
     expect(screen.getByText("Popup - small")).toBeInTheDocument();
     expect(screen.getByText("Update Email")).toBeInTheDocument();
@@ -73,7 +73,7 @@ describe("UpdateEmail Component", () => {
   test("displays correct content in the Popup", () => {
     render(<UpdateEmail />);
 
-    fireEvent.click(screen.getByText("Update Email Address"));
+    fireEvent.click(screen.getByText("Update Email"));
 
     expect(screen.getByText("Update Email")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("New Email")).toBeInTheDocument();

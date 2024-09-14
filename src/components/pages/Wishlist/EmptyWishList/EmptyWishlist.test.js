@@ -2,6 +2,12 @@ import { render, screen } from "@testing-library/react";
 
 import { EmptyWishlist } from "./EmptyWishlist";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../reusable/InfoMessage/InfoMessage", () => ({
   InfoMessage: ({ title, subtitle }) => (
     <div>
@@ -16,6 +22,14 @@ jest.mock("../../../common/CardSlider/CardSlider", () => ({
 }));
 
 describe("EmptyWishlist Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders InfoMessage and CardSlider", () => {
     render(<EmptyWishlist />);
 
