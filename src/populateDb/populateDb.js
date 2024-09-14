@@ -166,8 +166,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714890/forget-me-not-collection/necklaces/forget_me_not_lariat_necklace_diamond_and_sapphire_nkspltflrfmn_e_2_hxgdcy.avif",
     category: allCategories[2],
     color: allColors[1],
-    description:
-      "78 pear-shaped and round brilliant sapphires weighing a total of approximately 8.61 carats and 99 marquise and round brilliant diamonds weighing a total of approximately 8.37 carats, set in platinum",
+    description: {
+      English:
+        "78 pear-shaped and round brilliant sapphires weighing a total of approximately 8.61 carats and 99 marquise and round brilliant diamonds weighing a total of approximately 8.37 carats, set in platinum.",
+      Chinese:
+        "78颗水滴形和圆形明亮式切工，总重约8.61克拉的蓝宝石和99颗榄尖形和圆形明亮式切工，总重约8.37克拉的钻石，悉心镶嵌于铂金底座之上。",
+      Bulgarian:
+        "78 крушовидни и кръгли брилянтни сини сапфира с общо тегло приблизително 8,61 карата и 99 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 8,37 карата, вградени в платина.",
+    },
   });
 
   await Jewelry.create({
