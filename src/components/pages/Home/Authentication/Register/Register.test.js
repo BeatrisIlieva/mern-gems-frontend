@@ -1,6 +1,12 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Register } from "./Register";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../reusable/LargeTitle/LargeTitle", () => ({
   LargeTitle: ({ title, textAlign }) => <h1 className={textAlign}>{title}</h1>,
 }));
@@ -22,11 +28,13 @@ jest.mock("./RegisterForm/RegisterForm", () => ({
 }));
 
 describe("Register Component", () => {
+  const mockLanguage = "English";
   const mockUpdateIsTransitioningHandler = jest.fn();
   const mockCloseHandler = jest.fn();
   const mockSwitchOptions = { Login: "Login" };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
     jest.clearAllMocks();
   });
 
