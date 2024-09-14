@@ -6,6 +6,12 @@ import { Description } from "./Description";
 
 import { IMAGE_BY_URL_AND_VARIANT } from "./constants/imagesByUrlAndVariant";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("react-router-dom", () => ({
   useNavigate: jest.fn(),
 }));
@@ -29,9 +35,13 @@ jest.mock("../../../../../reusable/Button/Button", () => ({
 }));
 
 describe("Description Component", () => {
+  const mockLanguage = "English";
+
   const mockNavigate = jest.fn();
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useNavigate.mockReturnValue(mockNavigate);
   });
 

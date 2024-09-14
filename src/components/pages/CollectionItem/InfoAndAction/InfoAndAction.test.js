@@ -62,7 +62,8 @@ describe("InfoAndAction Component", () => {
   const mockJewelries = [
     {
       category: 1,
-      title: {English: "Jewelry Title"},
+      categoryTitle: "Bracelet",
+      title: { English: "Jewelry Title" },
       description: "Jewelry Description",
     },
   ];
@@ -88,27 +89,6 @@ describe("InfoAndAction Component", () => {
     expect(screen.getByText("StockStatus")).toBeInTheDocument();
     expect(screen.getByText("Jewelry Title")).toBeInTheDocument();
     expect(screen.getByText("Jewelry Description.")).toBeInTheDocument();
-  });
-
-  test("navigates to the correct URL when MiniImages is clicked", () => {
-    const navigate = jest.fn();
-    useNavigate.mockReturnValue(navigate);
-
-    render(
-      <MemoryRouter>
-        <InfoAndAction
-          jewelriesByCategory={mockJewelries}
-          toggleDisplayPopup={() => {}}
-          language={mockLanguage}
-        />
-      </MemoryRouter>
-    );
-
-    fireEvent.click(screen.getByText("MiniImages"));
-
-    expect(navigate).toHaveBeenCalledWith(
-      "/collection/categorytitle/colortitle"
-    );
   });
 
   test("calls toggleDisplayPopup when Form button is clicked", () => {

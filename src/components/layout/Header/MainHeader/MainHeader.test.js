@@ -7,7 +7,7 @@ import { MainHeader } from "./MainHeader";
 import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 
-import { useLanguageContext } from "../../../..contexts/LanguageContext";
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
 jest.mock("../../../..contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
