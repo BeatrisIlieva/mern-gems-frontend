@@ -1,10 +1,15 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
+import { useNavigate } from "react-router-dom";
 
 import { InfoAndAction } from "./InfoAndAction";
 
-import { useNavigate } from "react-router-dom";
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
 
 jest.mock("../../../common/MiniImages/MiniImages", () => ({
   MiniImages: ({ jewelriesByCategory, clickHandler }) => (
@@ -52,6 +57,8 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("InfoAndAction Component", () => {
+  const mockLanguage = "English";
+
   const mockJewelries = [
     {
       categories: [{ title: "categoryTitle" }],
@@ -59,6 +66,12 @@ describe("InfoAndAction Component", () => {
       description: "Jewelry Description",
     },
   ];
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
 
   test("renders with correct child components and props", () => {
     render(
