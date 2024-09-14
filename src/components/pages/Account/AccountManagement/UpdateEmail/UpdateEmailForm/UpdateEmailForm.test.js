@@ -3,6 +3,7 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 
 import { UpdateEmailForm } from "./UpdateEmailForm";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { AuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../../../hooks/useService";
@@ -11,11 +12,16 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "../constants/initialFormValues";
 
 import { ERROR_MESSAGES } from "../../../../../../mappers/errorMessages";
 
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../../hooks/useService");
 
 const userId = "test-id";
 
 describe("UpdateEmailForm Component", () => {
+  const mockLanguage = "English";
   const mockToken = "testToken";
 
   const mockUserId = userId;
@@ -26,6 +32,8 @@ describe("UpdateEmailForm Component", () => {
   };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useService.mockReturnValue(mockUserLoginDetailsService);
 
     mockUserLoginDetailsService.getOne.mockClear();
@@ -125,7 +133,9 @@ describe("UpdateEmailForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 
@@ -172,7 +182,9 @@ describe("UpdateEmailForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 });
