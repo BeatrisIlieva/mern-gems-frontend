@@ -7,6 +7,12 @@ import { useAuthenticationContext } from "../../../../../contexts/Authentication
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../../contexts/WishlistContext";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
@@ -20,12 +26,14 @@ jest.mock("../../../../../contexts/WishlistContext", () => ({
 }));
 
 describe("MoveToWishlist Component", () => {
+  const mockLanguage = "English";
   const bagId = "test-bag-id";
   const categoryId = "test-category-id";
   const colorId = "test-color-id";
   const userId = "test-user-id";
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
     jest.clearAllMocks();
   });
 
