@@ -47,8 +47,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714893/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_2_kdpnm6.avif",
     category: allCategories[0],
     color: allColors[0],
-    description:
-      "45 pear-shaped and round brilliant pink sapphires weighing a total of approximately 4.36 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum",
+    description: {
+      English:
+        "pink sapphires weighing a total of approximately 4.36 carats, diamonds weighing a total of approximately 4.24 carats, set in platinum",
+      Chinese:
+        "粉色蓝宝石, 总重量约为 4.36 克拉, 钻石, 总重量约为 4.24 克拉, 镶于铂金中.",
+      Bulgarian:
+        "розови сапфири с общо тегло приблизително 4,36 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+    },
   });
 
   await Jewelry.create({
@@ -58,8 +64,13 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714895/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_sapphire_brsprfflrfmn_e_2_ojfbze.avif",
     category: allCategories[0],
     color: allColors[1],
-    description:
-      "45 pear-shaped and round brilliant sapphires weighing a total of approximately 4.17 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum",
+    description: {
+      English:
+        "blue sapphires weighing a total of approximately 4.17 carats, diamonds weighing a total of approximately 4.24 carats, set in platinum",
+      Chinese: "白色蓝宝石, 总重约4.17克拉, 钻石总重约4.24克拉, 镶嵌于铂金.",
+      Bulgarian:
+        "сини сапфири с общо тегло приблизително 4,17 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+    },
   });
 
   await Jewelry.create({
@@ -69,6 +80,13 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714894/forget-me-not-collection/bracelets/forget_me_not_bracelet_diamond_and_pink_sapphire_brpsprfflrfmn_e_2_1_pvbpcb.png",
     category: allCategories[0],
     color: allColors[2],
+    description: {
+      English:
+        "white sapphires weighing a total of approximately 4.17 carats, diamonds weighing a total of approximately 4.24 carats, set in platinum",
+      Chinese: "白色蓝宝石, 总重约4.17克拉, 钻石总重约4.24克拉, 镶嵌于铂金.",
+      Bulgarian:
+        "бели сапфири с общо тегло приблизително 4,36 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+    },
     description:
       "78 pear-shaped, marquise, and round brilliant diamonds, weighing a total of approximately 7.46 carats, set in platinum",
   });
