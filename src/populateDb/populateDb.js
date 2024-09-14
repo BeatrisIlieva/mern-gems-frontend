@@ -132,8 +132,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_diamond_drop_earrings_eadpdrflrfmn_ee-2_sksk7o.webp",
     category: allCategories[1],
     color: allColors[2],
-    description:
-      "A medley of marquise, pear-shaped, and round brilliant diamonds, weighing a total of approximately 4.38 carats, set in platinum",
+    description: {
+      English:
+        "A medley of marquise, pear-shaped, and round brilliant diamonds, weighing a total of approximately 4.38 carats, set in platinum.",
+      Chinese:
+        "总重约4.38克拉的榄尖形、水滴形和圆形明亮式切工钻石巧妙融合，悉心镶嵌于铂金底座之上。",
+      Bulgarian:
+        "Съвкупност от маркиза, крушовидни и кръгли брилянтни диаманти, тежащи общо приблизително 4,38 карата, вградени в платина.",
+    },
   });
 
   await Jewelry.create({
