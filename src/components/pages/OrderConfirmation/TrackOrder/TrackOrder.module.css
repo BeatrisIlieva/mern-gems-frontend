@@ -2,17 +2,9 @@
   text-decoration: none;
 }
 
-.gray {
-  color: var(--gray);
-}
-
 .violet {
   color: var(--violet);
   font-family: var(--bold-font-family);
-}
-
-.gray,
-.violet {
   animation: transitioning 1.6s forwards;
 }
 
