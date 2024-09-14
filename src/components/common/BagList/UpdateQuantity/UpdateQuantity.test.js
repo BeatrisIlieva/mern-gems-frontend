@@ -3,18 +3,26 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { UpdateQuantity } from "./UpdateQuantity";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useBagContext } from "../../../../contexts/BagContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
 
 jest.mock("../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
 
 describe("UpdateQuantity Component", () => {
+  const mockLanguage = "English";
   const bagId = "test-bag-id";
   const bagQuantity = 2;
   const inventoryQuantity = 5;
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     jest.clearAllMocks();
   });
 
