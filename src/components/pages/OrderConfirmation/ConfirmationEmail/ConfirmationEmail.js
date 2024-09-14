@@ -2,15 +2,20 @@ import { useState, useEffect } from "react";
 
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
 
+import { MESSAGE_BY_LANGUAGE } from "./constants/languageRelated";
+
 import styles from "./ConfirmationEmail.module.css";
 
 export const ConfirmationEmail = () => {
+  const { language } = useLanguageContext();
+
   const { userId } = useAuthenticationContext();
 
   const [userEmail, setUserEmail] = useState(null);
@@ -28,6 +33,8 @@ export const ConfirmationEmail = () => {
       });
   });
 
+  const message = MESSAGE_BY_LANGUAGE[language];
+
   return (
     <div className={styles["confirmation-email"]}>
       <div className={styles["bus-thumbnail"]}>
@@ -38,10 +45,7 @@ export const ConfirmationEmail = () => {
         />
       </div>
       <div className={styles["title"]}>
-        <NormalTitle
-          title={`A confirmation email has been sent to ${userEmail}`}
-          variant={"bolded"}
-        />
+        <NormalTitle title={`${message} ${userEmail}`} variant={"bolded"} />
       </div>
     </div>
   );
