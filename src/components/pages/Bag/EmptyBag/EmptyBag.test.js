@@ -3,6 +3,12 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { EmptyBag } from "./EmptyBag";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../reusable/InfoMessage/InfoMessage", () => ({
   InfoMessage: ({ title, subtitle }) => (
     <div>
@@ -17,6 +23,14 @@ jest.mock("../../../common/CardSlider/CardSlider", () => ({
 }));
 
 describe("EmptyBag Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders InfoMessage and CardSlider", () => {
     render(<EmptyBag />);
 
