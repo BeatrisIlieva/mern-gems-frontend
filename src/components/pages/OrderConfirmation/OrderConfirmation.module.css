@@ -4,9 +4,16 @@
   justify-content: center;
   align-items: center;
   margin: 4rem 2rem;
+  gap: 3rem;
 }
 
-.relative-container {
+.title {
+  font-size: var(--xlarge);
+  text-align: center;
+  max-width: 80%;
+}
+
+.letter-span {
   position: relative;
 }
 
@@ -14,7 +21,7 @@
   width: 8rem;
   position: absolute;
   top: -4.1rem;
-  left: -3rem;
+  left: -4rem;
   z-index: 100;
 }
 
@@ -23,10 +30,4 @@
   height: 100%;
   object-fit: contain;
   aspect-ratio: 1/1;
-}
-
-@media (max-width: 398px) {
-  .butterfly {
-    display: none;
-  }
 }
