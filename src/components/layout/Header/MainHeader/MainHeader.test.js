@@ -6,10 +6,11 @@ import { MainHeader } from "./MainHeader";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
+import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
-jest.mock("../../../..contexts/LanguageContext", () => ({
+jest.mock("../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
 }));
 
@@ -21,12 +22,17 @@ jest.mock("../../../../contexts/WishlistContext", () => ({
   useWishlistContext: jest.fn(),
 }));
 
+jest.mock("../../../../contexts/AuthenticationContext", () => ({
+  useAuthenticationContext: jest.fn(),
+}));
+
 describe("MainHeader Component", () => {
   const mockLanguage = "English";
+  const mockUserId = "user-123";
 
   beforeEach(() => {
     useLanguageContext.mockReturnValue({ language: mockLanguage });
-
+    useAuthenticationContext.mockReturnValue({ userId: mockUserId });
     useBagContext.mockReturnValue({ bagTotalQuantity: 3 });
     useWishlistContext.mockReturnValue({ wishlistTotalQuantity: 5 });
   });
@@ -58,7 +64,7 @@ describe("MainHeader Component", () => {
     expect(logoImage).toBeInTheDocument();
     expect(logoImage).toHaveAttribute(
       "src",
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1724933359/forget-me-not-collection/miniImages/Screenshot_2024-08-29_at_15.08.13_ycwzhl.png"
+      "https://res.cloudinary.com/deztgvefu/image/upload/v1726147711/forget-me-not-collection/miniImages/logo2_zfmuo1.png"
     );
   });
 });

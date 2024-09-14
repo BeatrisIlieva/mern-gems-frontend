@@ -157,7 +157,7 @@ describe("Form Component", () => {
 
     await waitFor(() => {
       expect(screen.getByTestId("error-message")).toHaveTextContent(
-        "Ensure you have selected the desired size"
+        "Please select the desired size"
       );
       expect(mockAdd).not.toHaveBeenCalled();
     });

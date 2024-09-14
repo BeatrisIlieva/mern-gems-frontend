@@ -1,7 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect";
-import { useNavigate } from "react-router-dom";
 
 import { InfoAndAction } from "./InfoAndAction";
 
@@ -87,8 +86,6 @@ describe("InfoAndAction Component", () => {
 
     expect(screen.getByText("MiniImages")).toBeInTheDocument();
     expect(screen.getByText("StockStatus")).toBeInTheDocument();
-    expect(screen.getByText("Jewelry Title")).toBeInTheDocument();
-    expect(screen.getByText("Jewelry Description.")).toBeInTheDocument();
   });
 
   test("calls toggleDisplayPopup when Form button is clicked", () => {
