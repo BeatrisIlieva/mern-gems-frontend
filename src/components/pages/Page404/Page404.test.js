@@ -6,11 +6,21 @@ import { InfoMessage } from "../../reusable/InfoMessage/InfoMessage";
 
 import { CardSlider } from "../../common/CardSlider/CardSlider";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../reusable/InfoMessage/InfoMessage");
 jest.mock("../../common/CardSlider/CardSlider");
 
 describe("Page404 Component", () => {
+  const mockLanguage = "English";
+
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     InfoMessage.mockReturnValue(<div data-testid="info-message" />);
     CardSlider.mockReturnValue(<div data-testid="card-slider" />);
   });
