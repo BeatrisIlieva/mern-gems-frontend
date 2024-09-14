@@ -3,6 +3,7 @@
   top: 0.25rem;
   right: 2rem;
   z-index: 120;
+  cursor: pointer;
 }
 
 .switch-language.to-the-left {

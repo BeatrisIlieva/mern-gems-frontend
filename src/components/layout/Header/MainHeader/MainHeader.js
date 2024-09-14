@@ -41,7 +41,7 @@ export const MainHeader = () => {
 
   return (
     <header className={styles["header"]}>
-      {isAuthenticated && <SwitchLanguage variant={"to-the-left"}/>}
+      {isAuthenticated && <SwitchLanguage variant={"to-the-left"} />}
       <Logo />
       <nav className={styles["nav"]}>
         <ul role="list" className={styles["list"]}>
