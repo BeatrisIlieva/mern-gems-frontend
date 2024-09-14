@@ -234,8 +234,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714891/forget-me-not-collection/rings/forget_me_not_diamond_ring_frdprfflrfmn_e-2h_mktny9.webp",
     category: allCategories[3],
     color: allColors[2],
-    description:
-      "6 pear-shaped and 1 round brilliant diamond, weighing a total of approximately 1.66 carats, set in platinum",
+    description: {
+      English:
+        "6 pear-shaped and 1 round brilliant diamond, weighing a total of approximately 1.66 carats, set in platinum.",
+      Chinese:
+        "6颗水滴形和1颗圆形明亮式切工，总重约1.66克拉的钻石，镶嵌于铂金底座之上。",
+      Bulgarian:
+        "6 крушовидни и 1 кръгъл брилянтен диамант, с общо тегло приблизително 1,66 карата, вградени в платина.",
+    },
   });
 
   const allJewelries = await Jewelry.find();
