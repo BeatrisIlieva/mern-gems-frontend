@@ -21,9 +21,9 @@ export const FlagIcon = () => {
 
   return (
     <section className={styles["languages"]}>
-      <button className={styles["button"]} onClick={setDisplayDropdown(true)}>
-        {selectedImage}
-      </button>
+      <div className={styles["thumbnail"]} onClick={setDisplayDropdown(true)}>
+        <img className={styles["image"]} src={selectedImage} alt="flag" />
+      </div>
       {displayDropdown && (
         <div className={styles["dropdown"]}>
           {Object.keys(IMAGE_URLS)
