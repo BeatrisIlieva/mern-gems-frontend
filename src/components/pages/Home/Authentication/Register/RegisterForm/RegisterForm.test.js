@@ -4,6 +4,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 import { RegisterForm } from "./RegisterForm";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { AuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../../../hooks/useService";
@@ -11,9 +12,15 @@ import { useService } from "../../../../../../hooks/useService";
 import { ERROR_MESSAGES } from "../../../../../../mappers/errorMessages";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../../hooks/useService");
 
 describe("RegisterForm Component", () => {
+  const mockLanguage = "English";
+
   const mockToken = "testToken";
 
   const mockUserLoginDetailsService = {
@@ -21,6 +28,8 @@ describe("RegisterForm Component", () => {
   };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useService.mockReturnValue(mockUserLoginDetailsService);
 
     mockUserLoginDetailsService.register.mockClear();
@@ -109,7 +118,9 @@ describe("RegisterForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 
@@ -149,7 +160,9 @@ describe("RegisterForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 });

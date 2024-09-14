@@ -117,7 +117,9 @@ describe("LoginForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key][mockLanguage]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 
@@ -157,7 +159,9 @@ describe("LoginForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key][mockLanguage]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 });
