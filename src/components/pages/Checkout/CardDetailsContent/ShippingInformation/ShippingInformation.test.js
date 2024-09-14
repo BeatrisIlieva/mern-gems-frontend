@@ -3,6 +3,12 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { ShippingInformation } from "./ShippingInformation";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../reusable/DualTitleSection/DualTitleSection", () => ({
   DualTitleSection: ({ firstTitle, secondTitle }) => (
     <div>
@@ -31,6 +37,14 @@ jest.mock("./UserShippingDetails/UserShippingDetails", () => ({
 }));
 
 describe("ShippingInformation Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders components correctly and handles button click", () => {
     const toggleDisplayShippingDetailsPopup = jest.fn();
 
