@@ -1,11 +1,21 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { SwitchButton } from "./SwitchButton";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 describe("SwitchButton Component", () => {
+  const mockLanguage = "English";
+
   const mockSwitchPopupHandler = jest.fn();
   const option = "register";
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     jest.clearAllMocks();
   });
 
