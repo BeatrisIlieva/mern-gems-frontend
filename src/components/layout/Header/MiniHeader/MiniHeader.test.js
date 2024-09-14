@@ -4,11 +4,25 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { MiniHeader } from "./MiniHeader";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../reusable/NormalTitle/NormalTitle", () => ({
   NormalTitle: ({ title }) => <h1>{title}</h1>,
 }));
 
 describe("MiniHeader Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders the Link component with correct props", () => {
     render(
       <Router>
