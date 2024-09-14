@@ -49,11 +49,11 @@ async function populateDb() {
     color: allColors[0],
     description: {
       English:
-        "pink sapphires weighing a total of approximately 4.36 carats, diamonds weighing a total of approximately 4.24 carats, set in platinum",
+        "45 pear-shaped and round brilliant pink sapphires weighing a total of approximately 4.36 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum.",
       Chinese:
-        "粉色蓝宝石, 总重量约为 4.36 克拉, 钻石, 总重量约为 4.24 克拉, 镶于铂金中.",
+        "45颗水滴形和圆形明亮式切工，总重约4.36克拉的粉色蓝宝石和33颗水滴形、榄尖形和圆形明亮式切工，总重约4.24拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "розови сапфири с общо тегло приблизително 4,36 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+        "45 крушовидни и кръгли брилянтни розови сапфира с общо тегло приблизително 4,36 карата и 33 крушовидни диаманта, маркиз и кръгли брилянти с общо тегло приблизително 4,24 карата, вградени в платина.",
     },
   });
 
@@ -66,10 +66,11 @@ async function populateDb() {
     color: allColors[1],
     description: {
       English:
-        "blue sapphires weighing a total of approximately 4.17 carats, diamonds weighing a total of approximately 4.24 carats, set in platinum",
-      Chinese: "白色蓝宝石, 总重约4.17克拉, 钻石总重约4.24克拉, 镶嵌于铂金.",
+        "45 pear-shaped and round brilliant sapphires weighing a total of approximately 4.17 carats and 33 pear-shaped, marquise and round brilliant diamonds weighing a total of approximately 4.24 carats, set in platinum.",
+      Chinese:
+        "45颗水滴形和圆形明亮式切工，总重约4.17克拉的蓝宝石和33颗水滴型、榄尖形和圆形明亮式切工，总重约4.24克拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "сини сапфири с общо тегло приблизително 4,17 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+        "45 крушовидни и кръгли брилянтни розови сапфира с общо тегло приблизително 4,17 карата и 33 крушовидни диаманта, маркиз и кръгли брилянти с общо тегло приблизително 4,24 карата, вградени в платина.",
     },
   });
 
@@ -96,6 +97,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_pink_sapphire_eapspdrflrfmn_ee-2_p9jicb.webp",
     category: allCategories[1],
     color: allColors[0],
+    description: {
+      English:
+        "pink sapphires weighing a total of approximately 3.20 carats, diamonds weighing a total of approximately 1.98 carats, set in platinum",
+      Chinese:
+        "粉色蓝宝石, 总重量约为 3.20 克拉, 钻石, 总重量约为 1.98 克拉, 镶于铂金中.",
+      Bulgarian:
+        "розови сапфири с общо тегло приблизително 4,36 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+    },
     description:
       "28 pear-shaped and round brilliant pink sapphires weighing a total of approximately 3.20 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum",
   });
