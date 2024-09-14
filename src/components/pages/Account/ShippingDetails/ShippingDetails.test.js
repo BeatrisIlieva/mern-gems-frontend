@@ -3,6 +3,12 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { ShippingDetails } from "./ShippingDetails";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../reusable/SectionContainer/SectionContainer", () => ({
   SectionContainer: ({ sectionTitle, callBackFunction, icon, buttonTitle }) => (
     <div>
@@ -38,6 +44,14 @@ jest.mock("../../../common/ShippingDetailsForm/ShippingDetailsForm", () => ({
 }));
 
 describe("ShippingDetails Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("does not render Popup initially", () => {
     render(<ShippingDetails />);
 
