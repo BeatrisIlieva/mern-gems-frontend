@@ -4,6 +4,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 import { LoginForm } from "./LoginForm";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { AuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../../../hooks/useService";
@@ -11,9 +12,14 @@ import { useService } from "../../../../../../hooks/useService";
 import { ERROR_MESSAGES } from "../../../../../../mappers/errorMessages";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../../hooks/useService");
 
 describe("LoginForm Component", () => {
+  const mockLanguage = "English";
   const mockToken = "testToken";
 
   const mockUserLoginDetailsService = {
@@ -21,6 +27,8 @@ describe("LoginForm Component", () => {
   };
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useService.mockReturnValue(mockUserLoginDetailsService);
 
     mockUserLoginDetailsService.login.mockClear();
