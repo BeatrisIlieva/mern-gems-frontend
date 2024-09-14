@@ -3,9 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 import { Logout } from "./Logout";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
 import { useService } from "../../../../../hooks/useService";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
 
 jest.mock("react-router-dom", () => ({
   useNavigate: jest.fn(),
@@ -34,11 +39,15 @@ jest.mock("../../../../reusable/Button/Button", () => ({
 }));
 
 describe("Logout Component", () => {
+  const mockLanguage = "English";
+
   let mockLogout;
   let mockClearToken;
   let mockNavigate;
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     mockLogout = jest.fn();
     mockClearToken = jest.fn();
     mockNavigate = jest.fn();
