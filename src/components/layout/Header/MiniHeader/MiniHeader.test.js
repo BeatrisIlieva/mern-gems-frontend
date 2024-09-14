@@ -54,7 +54,7 @@ describe("MiniHeader Component", () => {
       </Router>
     );
 
-    const titleElement = screen.getByText("Go To Bag");
+    const titleElement = screen.getByText("Go to Bag");
     expect(titleElement).toBeInTheDocument();
   });
 

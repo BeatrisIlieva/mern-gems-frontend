@@ -297,7 +297,7 @@ describe("CardDetailsForm Component", () => {
 
     const errorMessageContainer = screen.getByTestId("expiryDate-error");
     expect(errorMessageContainer).toHaveTextContent(
-      CARD_HAS_EXPIRED_ERROR_MESSAGE
+      CARD_HAS_EXPIRED_ERROR_MESSAGE[mockLanguage]
     );
   });
 

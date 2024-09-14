@@ -8,6 +8,12 @@ import { useAuthenticationContext } from "../../../../contexts/AuthenticationCon
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 import { useBagContext } from "../../../../contexts/BagContext";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
@@ -21,6 +27,7 @@ jest.mock("../../../../contexts/WishlistContext", () => ({
 }));
 
 describe("MiniBag Component", () => {
+  const mockLanguage = "English";
   const mockUserId = "user123";
 
   const toggleDisplayMiniBagPopup = jest.fn();
@@ -29,6 +36,8 @@ describe("MiniBag Component", () => {
   const mockRemoveFromWishlist = jest.fn();
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useAuthenticationContext.mockReturnValue({
       userId: mockUserId,
     });
