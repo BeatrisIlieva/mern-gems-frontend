@@ -3,7 +3,13 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { MiniImages } from "./MiniImages";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
 import { MINI_IMAGES_BY_TITLE_AND_IMAGE_URL } from "./constants/miniImagesByTitleAndImageUrl";
+
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
 
 jest.mock("./Image/Image", () => ({
   Image: ({ imageUrl, title, colorName, updateActiveMiniImage, isActive }) => (
@@ -18,6 +24,8 @@ jest.mock("./Image/Image", () => ({
 }));
 
 describe("MiniImages Component", () => {
+  const mockLanguage = "English";
+
   const mockClickHandler = jest.fn();
 
   const jewelriesByCategory = [
@@ -25,6 +33,12 @@ describe("MiniImages Component", () => {
       colors: [{ title: "Pink" }],
     },
   ];
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
 
   test("renders mini images with correct properties", () => {
     render(

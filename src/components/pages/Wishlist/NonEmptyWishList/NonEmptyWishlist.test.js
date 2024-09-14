@@ -4,6 +4,12 @@ import { NonEmptyWishlist } from "./NonEmptyWishlist";
 
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../reusable/InfoMessage/InfoMessage", () => ({
   InfoMessage: ({ title, subtitle }) => (
     <div>
@@ -27,6 +33,14 @@ jest.mock("../../../../contexts/WishlistContext", () => ({
 }));
 
 describe("NonEmptyWishlist Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders InfoMessage and Content components when wishlist has items", () => {
     const mockWishlistItems = [
       { _id: "1", category: { title: "Jewelry" }, color: { title: "Red" } },
