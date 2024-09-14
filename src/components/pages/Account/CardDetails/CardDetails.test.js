@@ -2,6 +2,12 @@ import { render, screen, fireEvent } from "@testing-library/react";
 
 import { CardDetails } from "./CardDetails";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../reusable/SectionContainer/SectionContainer", () => ({
   SectionContainer: ({ sectionTitle, callBackFunction, icon, buttonTitle }) => (
     <div>
@@ -33,6 +39,14 @@ jest.mock("../../../common/CardDetailsForm/CardDetailsForm", () => ({
 }));
 
 describe("CardDetails Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders SectionContainer with correct props", () => {
     render(<CardDetails />);
 

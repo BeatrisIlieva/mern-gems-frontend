@@ -53,7 +53,7 @@ describe("MiniImages Component", () => {
         const image = screen.getByTestId(`image-${colorName}`);
         expect(image).toBeInTheDocument();
         expect(image).toHaveAttribute("src", imageUrl);
-        expect(image).toHaveAttribute("alt", title);
+        expect(image).toHaveAttribute("alt", title[mockLanguage]);
       }
     );
   });

@@ -42,7 +42,7 @@ describe("OrderHistoryList Component", () => {
   test("renders order information correctly", () => {
     render(
       <OrderHistoryList
-        status="Completed"
+        statusEnglish="Completed"
         createdAt="2024-09-01T00:00:00Z"
         totalPrice={123.45}
         jewelries={[{ _id: "1", name: "Ring", price: 50 }]}
@@ -61,7 +61,7 @@ describe("OrderHistoryList Component", () => {
   test("renders jewelry items correctly", () => {
     render(
       <OrderHistoryList
-        status="Completed"
+        statusEnglish="Completed"
         createdAt="2024-09-01T00:00:00Z"
         totalPrice={123.45}
         jewelries={[
@@ -80,7 +80,7 @@ describe("OrderHistoryList Component", () => {
   test("renders empty jewelry list correctly", () => {
     render(
       <OrderHistoryList
-        status="Completed"
+        statusEnglish="Completed"
         createdAt="2024-09-01T00:00:00Z"
         totalPrice={123.45}
         jewelries={[]}
