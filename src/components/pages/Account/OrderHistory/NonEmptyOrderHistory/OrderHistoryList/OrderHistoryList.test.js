@@ -3,6 +3,12 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { OrderHistoryList } from "./OrderHistoryList";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 import { convertToReadableDate } from "../../../../../../utils/convertToReadableDate";
 
 jest.mock("../../../../../reusable/JewelryCard/JewelryCard", () => ({
@@ -23,7 +29,11 @@ jest.mock("../../../../../../utils/convertToReadableDate", () => ({
 }));
 
 describe("OrderHistoryList Component", () => {
+  const mockLanguage = "English";
+
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     convertToReadableDate.mockImplementation((date) =>
       new Date(date).toLocaleDateString()
     );
