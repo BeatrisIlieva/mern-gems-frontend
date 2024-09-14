@@ -59,6 +59,12 @@ jest.mock("./Buttons/Buttons", () => ({
 describe("BagList Component", () => {
   const mockLanguage = "English";
 
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   const mockBagItems = [
     {
       bagId: "1",
@@ -66,7 +72,7 @@ describe("BagList Component", () => {
       jewelryTitle: "Jewelry 1",
       totalPrice: "100",
       size: "M",
-      categoryId: "cat1",
+      categoryId: "1",
       colorId: "color1",
       quantity: 2,
       inventoryQuantity: 10,
@@ -86,7 +92,7 @@ describe("BagList Component", () => {
 
     expect(
       screen.getByText(
-        "Buttons Component - BagId: 1, CategoryId: cat1, ColorId: color1"
+        "Buttons Component - BagId: 1, CategoryId: 1, ColorId: color1"
       )
     ).toBeInTheDocument();
     expect(
@@ -108,7 +114,7 @@ describe("BagList Component", () => {
 
     expect(
       screen.queryByText(
-        "Buttons Component - BagId: 1, CategoryId: cat1, ColorId: color1"
+        "Buttons Component - BagId: 1, CategoryId: 1, ColorId: color1"
       )
     ).not.toBeInTheDocument();
     expect(
@@ -132,7 +138,7 @@ describe("BagList Component", () => {
 
     expect(
       screen.queryByText(
-        "Buttons Component - BagId: 1, CategoryId: cat1, ColorId: color1"
+        "Buttons Component - BagId: 1, CategoryId: 1, ColorId: color1"
       )
     ).not.toBeInTheDocument();
     expect(
