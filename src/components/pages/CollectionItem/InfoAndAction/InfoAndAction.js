@@ -57,7 +57,7 @@ export const InfoAndAction = memo(
           <div>
             <LargeTitle title={jewelryTitle} textAlign={"left"} />
             <Paragraph
-              text={`${jewelriesByCategory[0].description}.`}
+              text={`${jewelriesByCategory[0].description[language]}`}
               textAlign={"left"}
               color={"gray"}
             />
