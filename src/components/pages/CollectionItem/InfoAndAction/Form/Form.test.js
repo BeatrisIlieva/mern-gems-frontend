@@ -6,6 +6,12 @@ import { Form } from "./Form";
 import { useBagContext } from "../../../../../contexts/BagContext";
 import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
@@ -46,11 +52,13 @@ jest.mock("../../../../common/Heart/Heart", () => ({
 }));
 
 describe("Form Component", () => {
+  const mockLanguage = "English";
   const mockAdd = jest.fn();
   const mockToggleDisplayPopup = jest.fn();
   const mockUserId = "user-123";
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
     jest.clearAllMocks();
     useBagContext.mockReturnValue({ add: mockAdd });
     useAuthenticationContext.mockReturnValue({ userId: mockUserId });

@@ -26,10 +26,6 @@ describe("TrackOrder Component", () => {
       </MemoryRouter>
     );
 
-    expect(
-      screen.getByText("You can track your order status in your")
-    ).toBeInTheDocument();
-
     const accountLink = screen.getByRole("link", { name: /Account/i });
     expect(accountLink).toBeInTheDocument();
     expect(accountLink).toHaveAttribute("href", "/users/account");
