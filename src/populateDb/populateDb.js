@@ -200,8 +200,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714892/forget-me-not-collection/rings/forget_me_not_ring_diamond_and_pink_sapphire_frpsprfflrfmn_e_2_k7nhpe.avif",
     category: allCategories[3],
     color: allColors[0],
-    description:
-      "6 pear-shaped pink sapphires weighing a total of approximately 2.22 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum",
+    description: {
+      English:
+        "6 pear-shaped pink sapphires weighing a total of approximately 2.22 carats and 1 round brilliant diamond weighing approximately 0.05 carats, set in platinum.",
+      Chinese:
+        "6颗水滴形切工，总重约2.22克拉的粉色蓝宝石和1颗圆形明亮式切工，重约0.05克拉的钻石，悉心镶嵌于铂金底座之上。",
+      Bulgarian:
+        "6 крушовидни розови сапфира с общо тегло приблизително 2,22 карата и 1 кръгъл брилянтен диамант с тегло приблизително 0,05 карата, вградени в платина.",
+    },
   });
 
   await Jewelry.create({
