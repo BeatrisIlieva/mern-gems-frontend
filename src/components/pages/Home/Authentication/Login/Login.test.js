@@ -34,8 +34,9 @@ describe("Login Component", () => {
   const mockSwitchOptions = { Register: "Register" };
 
   beforeEach(() => {
-    jest.clearAllMocks();
     useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
   });
 
   test("renders LargeTitle with correct text and alignment", () => {

@@ -3,6 +3,12 @@ import { MemoryRouter } from "react-router-dom";
 
 import { Sizes } from "./Sizes";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../reusable/NormalTitle/NormalTitle", () => ({
   NormalTitle: ({ title, variant }) => (
     <div data-testid={`normal-title-${variant}`}>{title}</div>
@@ -10,6 +16,8 @@ jest.mock("../../../../../reusable/NormalTitle/NormalTitle", () => ({
 }));
 
 describe("Sizes Component", () => {
+  const mockLanguage = "English";
+
   const mockChangeHandler = jest.fn();
 
   const mockInventories = [
@@ -19,6 +27,8 @@ describe("Sizes Component", () => {
   ];
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     jest.clearAllMocks();
   });
 
