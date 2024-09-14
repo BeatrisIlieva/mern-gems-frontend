@@ -100,14 +100,12 @@ async function populateDb() {
     color: allColors[0],
     description: {
       English:
-        "pink sapphires weighing a total of approximately 3.20 carats, diamonds weighing a total of approximately 1.98 carats, set in platinum",
+        "28 pear-shaped and round brilliant pink sapphires weighing a total of approximately 3.20 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum.",
       Chinese:
-        "粉色蓝宝石, 总重量约为 3.20 克拉, 钻石, 总重量约为 1.98 克拉, 镶于铂金中.",
+        "28颗水滴形和圆形明亮式切工，总重约3.20克拉的粉色蓝宝石和28颗榄尖形和圆形明亮式切工，总重约1.98克拉的钻石，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "розови сапфири с общо тегло приблизително 4,36 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+        "28 крушовидни и кръгли брилянтни розови сапфира с общо тегло приблизително 3,20 карата и 28 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 1,98 карата, вградени в платина.",
     },
-    description:
-      "28 pear-shaped and round brilliant pink sapphires weighing a total of approximately 3.20 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum",
   });
 
   await Jewelry.create({
@@ -117,8 +115,14 @@ async function populateDb() {
       "https://res.cloudinary.com/deztgvefu/image/upload/v1723714886/forget-me-not-collection/earrings/forget_me_not_drop_earrings_diamond_and_sapphire_easpdrflrfmn_ee-2_vtkyhb.webp",
     category: allCategories[1],
     color: allColors[1],
-    description:
-      "28 pear-shaped and round brilliant sapphires weighing a total of approximately 3.00 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum",
+    description: {
+      English:
+        "28 pear-shaped and round brilliant sapphires weighing a total of approximately 3.00 carats and 28 marquise and round brilliant diamonds weighing a total of approximately 1.98 carats, set in platinum.",
+      Chinese:
+        "28颗水滴形和圆形明亮式切工，总重約3.00克拉的蓝宝石和28颗榄尖形和圆形明亮式切工，总重約1.98克拉的钻石，悉心镶嵌于铂金底座之上。",
+      Bulgarian:
+        "28 крушовидни и кръгли брилянтни сини сапфира с общо тегло приблизително 3,00 карата и 28 маркиза и кръгли брилянтни диаманта с общо тегло приблизително 1,98 карата, вградени в платина.",
+    },
   });
 
   await Jewelry.create({
