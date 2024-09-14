@@ -1,7 +1,7 @@
 export const TITLES_BY_LANGUAGE = {
-  English: "This Wishlist Is Empty",
-  Chinese: "这个愿望清单是空的",
-  Bulgarian: "Засега нямате любими бижута",
+  English: "This Wish List Is Empty.",
+  Chinese: "这个愿望清单是空的.",
+  Bulgarian: "Засега нямате любими бижута.",
 };
 
 export const SUBTITLES_BY_LANGUAGE = {

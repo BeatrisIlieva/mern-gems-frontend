@@ -61,8 +61,8 @@ describe("InfoAndAction Component", () => {
 
   const mockJewelries = [
     {
-      categories: [{ title: "categoryTitle" }],
-      title: "Jewelry Title",
+      category: 1,
+      title: {English: "Jewelry Title"},
       description: "Jewelry Description",
     },
   ];

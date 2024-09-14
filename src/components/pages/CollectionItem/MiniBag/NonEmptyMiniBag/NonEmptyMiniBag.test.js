@@ -5,6 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag";
 import { useBagContext } from "../../../../../contexts/BagContext";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+
+jest.mock("../../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
@@ -37,12 +43,14 @@ jest.mock("../../../../reusable/DualTitleSection/DualTitleSection", () => ({
 }));
 
 describe("NonEmptyMiniBag Component", () => {
+  const mockLanguage = "English";
   const mockNavigate = jest.fn();
   const mockPopupCloseHandler = jest.fn();
   const mockTotalPrice = 123.45;
 
   beforeEach(() => {
     jest.clearAllMocks();
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
     useNavigate.mockReturnValue(mockNavigate);
     useBagContext.mockReturnValue({ totalPrice: mockTotalPrice });
   });

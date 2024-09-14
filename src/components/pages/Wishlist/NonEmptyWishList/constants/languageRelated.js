@@ -1,5 +1,5 @@
 export const TITLES_BY_LANGUAGE = {
-  English: "Your Wishlist",
+  English: "Your Wish List",
   Chinese: "您的愿望清单",
   Bulgarian: "Любими Бижута",
 };
