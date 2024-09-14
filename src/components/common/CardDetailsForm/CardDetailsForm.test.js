@@ -3,6 +3,7 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 
 import { CardDetailsForm } from "./CardDetailsForm";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
 import { AuthenticationContext } from "../../../contexts/AuthenticationContext";
 import { BagContext } from "../../../contexts/BagContext";
 
@@ -16,11 +17,16 @@ import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../constants/expiryDate";
 
 import { ERROR_MESSAGES } from "../../../mappers/errorMessages";
 
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../hooks/useService");
 
 const userId = "test-id";
 
 describe("CardDetailsForm Component", () => {
+  const mockLanguage = "English";
   const mockToken = "testToken";
   const mockUserId = userId;
   const mockTotalPrice = 100;
@@ -41,6 +47,8 @@ describe("CardDetailsForm Component", () => {
   const mockPopupCloseHandler = jest.fn();
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useService.mockImplementation((serviceFactory) => {
       if (serviceFactory === paymentServiceFactory) {
         return mockPaymentService;
@@ -232,7 +240,9 @@ describe("CardDetailsForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 
@@ -342,7 +352,9 @@ describe("CardDetailsForm Component", () => {
 
     Object.keys(INITIAL_FORM_VALUES).forEach((key) => {
       const errorMessageContainer = screen.getByTestId(`${key}-error`);
-      expect(errorMessageContainer).toHaveTextContent(ERROR_MESSAGES[key]);
+      expect(errorMessageContainer).toHaveTextContent(
+        ERROR_MESSAGES[key][mockLanguage]
+      );
     });
   });
 });
