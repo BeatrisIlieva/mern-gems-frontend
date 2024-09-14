@@ -52,7 +52,9 @@ export const SwitchLanguage = ({ variant }) => {
   return (
     <section className={sectionStyles}>
       <div
-        className={styles["thumbnail"]}
+        className={`${styles["thumbnail"]} ${
+          isTransitioning ? styles["slide-out"] : styles["slide-in"]
+        }`}
         onClick={updateIsTransitioningHandler}
       >
         <img className={styles["image"]} src={selectedImage} alt="flag" />
