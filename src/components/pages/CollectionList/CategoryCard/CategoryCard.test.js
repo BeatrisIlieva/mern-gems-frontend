@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect"; 
+import "@testing-library/jest-dom/extend-expect";
 
 import { CategoryCard } from "./CategoryCard";
 
@@ -8,6 +8,12 @@ import { useWishlistContext } from "../../../../contexts/WishlistContext";
 
 import { useNavigate } from "react-router-dom";
 import { useJewelry } from "../../../../hooks/useJewelry";
+
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
 
 jest.mock("../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
@@ -30,6 +36,7 @@ jest.mock("../../../../utils/slugify", () => ({
 }));
 
 describe("CategoryCard component", () => {
+  const mockLanguage = "English";
   const mockAdd = jest.fn();
   const mockRemove = jest.fn();
   const mockUserId = "user123";
@@ -37,6 +44,8 @@ describe("CategoryCard component", () => {
   const mockNavigate = jest.fn();
 
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useAuthenticationContext.mockReturnValue({
       userId: mockUserId,
     });
