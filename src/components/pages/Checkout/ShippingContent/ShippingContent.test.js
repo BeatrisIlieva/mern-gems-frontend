@@ -3,6 +3,12 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { ShippingContent } from "./ShippingContent";
 
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+jest.mock("../../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../reusable/ChildWrapper/ChildWrapper", () => ({
   ChildWrapper: ({ children }) => <div>{children}</div>,
 }));
@@ -16,6 +22,14 @@ jest.mock("../../../common/ShippingDetailsForm/ShippingDetailsForm", () => ({
 }));
 
 describe("ShippingContent Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+
   test("renders LargeTitle and ShippingDetailsForm correctly", () => {
     render(<ShippingContent />);
 
