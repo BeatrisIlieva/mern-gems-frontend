@@ -36,7 +36,7 @@ describe("EmptyBag Component", () => {
 
     expect(screen.getByText("Your Shopping Bag Is Empty.")).toBeInTheDocument();
     expect(
-      screen.getByText("Explore and add something you love.")
+      screen.getByText("You can continue shopping by exploring the collection.")
     ).toBeInTheDocument();
 
     expect(screen.getByText("CardSlider")).toBeInTheDocument();
