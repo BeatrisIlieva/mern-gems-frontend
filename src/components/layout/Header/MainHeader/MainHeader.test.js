@@ -7,6 +7,12 @@ import { MainHeader } from "./MainHeader";
 import { useBagContext } from "../../../../contexts/BagContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
 
+import { useLanguageContext } from "../../../..contexts/LanguageContext";
+
+jest.mock("../../../..contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
@@ -16,7 +22,11 @@ jest.mock("../../../../contexts/WishlistContext", () => ({
 }));
 
 describe("MainHeader Component", () => {
+  const mockLanguage = "English";
+
   beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
     useBagContext.mockReturnValue({ bagTotalQuantity: 3 });
     useWishlistContext.mockReturnValue({ wishlistTotalQuantity: 5 });
   });
