@@ -82,13 +82,11 @@ async function populateDb() {
     color: allColors[2],
     description: {
       English:
-        "white sapphires weighing a total of approximately 4.17 carats, diamonds weighing a total of approximately 4.24 carats, set in platinum",
-      Chinese: "白色蓝宝石, 总重约4.17克拉, 钻石总重约4.24克拉, 镶嵌于铂金.",
+        "diamonds weighing a total of approximately 7.46 carats, set in platinum",
+      Chinese: "钻石, 重量约为 7.46 克拉, 镶嵌于铂金中.",
       Bulgarian:
-        "бели сапфири с общо тегло приблизително 4,36 карата, диаманти с общо тегло приблизително 4,24 карата, вградени в платина",
+        "диаманти с общо тегло приблизително 7,46 карата, вградени в платина",
     },
-    description:
-      "78 pear-shaped, marquise, and round brilliant diamonds, weighing a total of approximately 7.46 carats, set in platinum",
   });
 
   await Jewelry.create({
