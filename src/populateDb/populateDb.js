@@ -83,10 +83,11 @@ async function populateDb() {
     color: allColors[2],
     description: {
       English:
-        "diamonds weighing a total of approximately 7.46 carats, set in platinum",
-      Chinese: "钻石, 重量约为 7.46 克拉, 镶嵌于铂金中.",
+        "78 pear-shaped, marquise, and round brilliant diamonds, weighing a total of approximately 7.46 carats, set in platinum.",
+      Chinese:
+        "78颗水滴形、榄尖形和圆形明亮式切工，总重7.46克拉的钻石熠熠生辉，悉心镶嵌于铂金底座之上。",
       Bulgarian:
-        "диаманти с общо тегло приблизително 7,46 карата, вградени в платина",
+        "78 крушовидни диаманта, маркиз и кръгли брилянти, с общо тегло приблизително 7,46 карата, вградени в платина.",
     },
   });
 
