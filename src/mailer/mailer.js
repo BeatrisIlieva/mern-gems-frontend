@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 const fs = require("fs");
 const path = require("path");
 
-exports.sendRegistrationEmail = (email) => {
+exports.sendRegistrationEmail = (email, selectedLanguage) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -11,7 +11,15 @@ exports.sendRegistrationEmail = (email) => {
     },
   });
 
-  const htmlFilePath = path.join(__dirname, "email-greeting.html");
+  let htmlFilePath;
+
+  if (selectedLanguage === "English") {
+    htmlFilePath = path.join(__dirname, "email-greeting-in-english.html");
+  } else if (selectedLanguage === "Chinese") {
+    htmlFilePath = path.join(__dirname, "email-greeting-in-chinese.html");
+  } else {
+    htmlFilePath = path.join(__dirname, "email-greeting-in-bulgarian.html");
+  }
 
   fs.readFile(htmlFilePath, "utf8", (err, html) => {
     if (err) {
@@ -36,7 +44,7 @@ exports.sendRegistrationEmail = (email) => {
   });
 };
 
-exports.sendOrderConfirmationEmail = (email, firstName) => {
+exports.sendOrderConfirmationEmail = (email, firstName, selectedLanguage) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -45,7 +53,24 @@ exports.sendOrderConfirmationEmail = (email, firstName) => {
     },
   });
 
-  const htmlFilePath = path.join(__dirname, "email-order-confirmation.html");
+  let htmlFilePath;
+
+  if (selectedLanguage === "English") {
+    htmlFilePath = path.join(
+      __dirname,
+      "email-order-confirmation-in-english.html"
+    );
+  } else if (selectedLanguage === "Chinese") {
+    htmlFilePath = path.join(
+      __dirname,
+      "email-order-confirmation-in-chinese.html"
+    );
+  } else {
+    htmlFilePath = path.join(
+      __dirname,
+      "email-order-confirmation-in-bulgarian.html"
+    );
+  }
 
   fs.readFile(htmlFilePath, "utf8", (err, html) => {
     if (err) {

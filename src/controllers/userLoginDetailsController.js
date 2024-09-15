@@ -7,7 +7,7 @@ const userCardDetailsManager = require("../managers/userCardDetailsManager");
 const { sendRegistrationEmail } = require("../mailer/mailer");
 
 router.post("/register", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, selectedLanguage } = req.body;
 
   try {
     const { token, userId } = await userLoginDetailsManager.register({
@@ -19,7 +19,7 @@ router.post("/register", async (req, res) => {
 
     await userCardDetailsManager.create({ _id: userId });
 
-    // sendRegistrationEmail(email);
+    sendRegistrationEmail(email, selectedLanguage);
 
     res.status(201).json({ token, userId });
   } catch (err) {

@@ -43,7 +43,7 @@ describe("paymentController", () => {
   const invalidCardHolder = "T1 T1";
   const cVVCode = "123";
   const invalidCVVCode = "12";
-  const expiryDate = "10/25";
+  const expiryDate = "10/30";
   const invalidExpiryDate = "10/21";
 
   afterEach(async () => {
@@ -90,8 +90,11 @@ describe("paymentController", () => {
     expect(sendOrderConfirmationEmail).toHaveBeenCalledTimes(1);
 
     const userShippingDetails = await UserShippingDetails.findById(userId);
-    
-    expect(sendOrderConfirmationEmail).toHaveBeenCalledWith(email, userShippingDetails.firstName);
+
+    expect(sendOrderConfirmationEmail).toHaveBeenCalledWith(
+      email,
+      userShippingDetails.firstName
+    );
   });
 
   test("Test complete transaction with invalid data; Expect errors", async () => {

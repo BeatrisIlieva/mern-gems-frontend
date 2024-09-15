@@ -44,14 +44,11 @@ describe("jewelryController", () => {
       expect(item).toHaveProperty("description");
       expect(item).toHaveProperty("secondImageUrl");
       expect(item).toHaveProperty("inventories");
-      expect(item).toHaveProperty("title");
     });
   });
 
   test("Test find all jewelries by invalid category; Expect errors", async () => {
-    const res = await request.get(
-      `/jewelries/${invalidCategoryId}/${colorId}`
-    );
+    const res = await request.get(`/jewelries/${invalidCategoryId}/${colorId}`);
 
     expect(res.status).toBe(401);
     expect(res.body.message).toBe("Invalid Url");

@@ -3,7 +3,7 @@ const UserShippingDetails = require("../models/UserShippingDetails");
 
 const { sendOrderConfirmationEmail } = require("../mailer/mailer");
 
-exports.create = async (userId) => {
+exports.create = async (userId, selectedLanguage) => {
   const userLoginDetails = await UserLoginDetails.findById(userId);
 
   const email = userLoginDetails.email;
@@ -12,5 +12,5 @@ exports.create = async (userId) => {
 
   const firstName = userShippingDetails.firstName;
 
-  // sendOrderConfirmationEmail(email, firstName);
+  sendOrderConfirmationEmail(email, firstName, selectedLanguage);
 };
