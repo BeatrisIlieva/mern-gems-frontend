@@ -6,8 +6,8 @@ import { EXPIRY_DATE_PATTERN } from "../../../../constants/expiryDate";
 const FORM_KEYS = {
   LongCardNumber: "longCardNumber",
   CardHolder: "cardHolder",
-  CvvCode: "cVVCode",
   ExpiryDate: "expiryDate",
+  CvvCode: "cVVCode",
 };
 
 export const INITIAL_FORM_VALUES = {
@@ -45,23 +45,6 @@ export const INITIAL_FORM_VALUES = {
     expiredTestData: "Test",
   },
 
-  [FORM_KEYS.CvvCode]: {
-    fieldLabel: {
-      English: "CVV *",
-      Chinese: "CVV码 *",
-      Bulgarian: "Код за сигурност *",
-    },
-    fieldValue: "",
-    regexPattern: CVV_CODE_PATTERN,
-    errorMessage: "",
-    isFocused: false,
-    fieldType: "text",
-    validTestData: "123",
-    invalidTestData: "12T",
-    emptyTestData: "",
-    expiredTestData: "123",
-  },
-
   [FORM_KEYS.ExpiryDate]: {
     fieldLabel: {
       English: "MM/YY *",
@@ -77,6 +60,23 @@ export const INITIAL_FORM_VALUES = {
     invalidTestData: "1130",
     emptyTestData: "",
     expiredTestData: "11/20",
+  },
+
+  [FORM_KEYS.CvvCode]: {
+    fieldLabel: {
+      English: "CVV *",
+      Chinese: "CVV码 *",
+      Bulgarian: "Код за сигурност *",
+    },
+    fieldValue: "",
+    regexPattern: CVV_CODE_PATTERN,
+    errorMessage: "",
+    isFocused: false,
+    fieldType: "text",
+    validTestData: "123",
+    invalidTestData: "12T",
+    emptyTestData: "",
+    expiredTestData: "123",
   },
 };
 
