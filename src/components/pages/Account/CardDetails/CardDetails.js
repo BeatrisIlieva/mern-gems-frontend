@@ -19,8 +19,15 @@ export const CardDetails = () => {
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
+  const [movePopup, setMovePopup] = useState(false);
+
   const toggleDisplayPopup = () => {
-    setDisplayPopup((displayPopup) => !displayPopup);
+    setMovePopup(true);
+
+    setTimeout(async () => {
+      setDisplayPopup((displayPopup) => !displayPopup);
+      setMovePopup(false);
+    }, 400);
   };
 
   const sectionTitle = SAVED_CREDIT_CARD_NAMING_NAMING[language];
@@ -37,6 +44,7 @@ export const CardDetails = () => {
       />
       {displayPopup && (
         <Popup
+          movePopup={movePopup}
           displayPopup={displayPopup}
           toggleDisplayPopup={toggleDisplayPopup}
           modalVariant={"large"}
