@@ -13,7 +13,7 @@
 <h4 align="center">
   <a href="#built-with">Built With</a> ·
   <a href="#deployment">Deployment</a> ·
-  <a href="#ssl-certificate">SSL certificate</a> ·
+  <a href="#ssl-certificate">SSL Certificate</a> ·
   <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#features">Features</a> ·
