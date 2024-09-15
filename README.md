@@ -16,6 +16,7 @@
   <a href="#demo-video">Demo Video</a> ·
   <a href="#built-with">Built With</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
+  <a href="#optimization">Optimization</a> ·
   <a href="#languages">Languages</a> ·
   <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
@@ -43,6 +44,13 @@
 
 ## Responsive Design
 - Our website is fully optimized for all device sizes, starting from a minimum screen width of 340px, ensuring a seamless experience across smartphones, tablets, and desktops.
+
+<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
+
+## Optimization
+- Jest
+
+The application is manually optimized for performance by utilizing React's useMemo, useCallback, and memo functions, to help minimize unnecessary re-renders and improve efficiency.
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
