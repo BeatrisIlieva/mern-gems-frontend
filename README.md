@@ -18,8 +18,8 @@
   <a href="#responsive-design">Responsive Design</a> ·
   <a href="#optimization">Optimization</a> ·
   <a href="#languages">Languages</a> ·
-  <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
+    <a href="#testing">Testing</a> ·
   <a href="#features">Features</a> ·
   <a href="#backend">Backend</a> 
 </h4>
@@ -71,13 +71,6 @@ The application is manually optimized for performance by utilizing React's useMe
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
-## Testing
-- Jest
-
-![Coverage Status](https://img.shields.io/badge/coverage-81%25-brightgreen.svg)
-
-<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
-
 ## Error Handling
 1. Input Validation
 - All user inputs are validated using regular expressions (regex)
@@ -95,6 +88,13 @@ The application is manually optimized for performance by utilizing React's useMe
 
 3. Size Selection
 - If a user clicks the "Add To Bag" button without selecting a size, an error message is displayed to inform them of the requirement
+
+<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
+
+## Testing
+- Jest
+
+![Coverage Status](https://img.shields.io/badge/coverage-81%25-brightgreen.svg)
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
