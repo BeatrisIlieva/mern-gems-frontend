@@ -53,7 +53,7 @@ The application is manually optimized for performance by utilizing React's useMe
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Languages
-Our application offers a user experience across three languages:
+Our website offers a user experience across three languages:
 
 <p style="display: flex; align-items: center; justify-content: center; height: 60px;">
 <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/british_1_mrryno.png" alt="British flag" width="50"> 
