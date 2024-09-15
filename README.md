@@ -109,36 +109,37 @@ Our website offers a user experience across three languages:
 #### 2. Local Storage
 - We use a custom React hook to store the user's token and selected language in local storage. This ensures that the user's preferences are preserved even after a hard refresh
 
-#### 10. Product filtration 
+#### 3. Product filtration 
 
-#### 11. Shopping Bag Count
+#### 4. Shopping Bag Count
 
-#### 12. Wishlist Count
+#### 5. Wishlist Count
 
-#### 13. Toggle Like
+#### 6. Toggle Like
 
-#### 14. Create/Update Card Details Form
+#### 7. Create/Update Card Details Form
 
-#### 15. Create/Update Shipping Details Form
+#### 8. Create/Update Shipping Details Form
 
-#### 16. Update Password Form
+#### 9. Update Password Form
 
-#### 17. Update Email Form
+#### 10. Update Email Form
 
-#### 18. Logout Button
+#### 11. Order History 
 
-#### 19. Mini Navigation at the checkout stage
+#### 12. Logout Button
 
-#### 20. Order Summary at every step of the Checkout process
+#### 13. Mini Navigation at the checkout stage
 
-#### 21. Order Confirmation Page
+#### 14. Order Summary at every step of the Checkout process
 
-#### 22. Order History Page
+#### 15. Order Confirmation Page
 
-#### 23. Route Guard 
+#### 16. Route Guard 
 
-#### 24. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
-#### 24. `Page 404` 
+#### 17. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
+
+#### 18. `Page 404` 
   
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
