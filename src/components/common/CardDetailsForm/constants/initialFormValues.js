@@ -32,7 +32,7 @@ export const INITIAL_FORM_VALUES = {
     fieldLabel: {
       English: "Name On Card *",
       Chinese: "持卡人姓名 *",
-      Bulgarian: "Име на картодържателя *",
+      Bulgarian: "Картодържател *",
     },
     fieldValue: "",
     regexPattern: NAME_PATTERN,

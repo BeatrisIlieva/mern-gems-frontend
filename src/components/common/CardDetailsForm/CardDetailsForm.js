@@ -86,17 +86,19 @@ export const CardDetailsForm = ({ popupCloseHandler }) => {
       }
 
       if (!errorOccurred) {
-        const data = getData(values);
+        const cardData = getData(values);
+
+        const languageData = { selectedLanguage: language };
 
         try {
           setIsLoading(true);
 
-          await userCardDetailsService.update(userId, data);
+          await userCardDetailsService.update(userId, cardData);
 
           if (popupCloseHandler) {
             popupCloseHandler();
           } else {
-            await paymentService.create(userId, data);
+            await paymentService.create(userId, languageData);
             await orderService.create(userId);
             navigate("/order-confirmation");
           }

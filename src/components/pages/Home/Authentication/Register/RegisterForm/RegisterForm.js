@@ -40,8 +40,12 @@ export const RegisterForm = ({ closeHandler }) => {
       if (!errorOccurred) {
         const data = getData(values);
 
+        const dataWithLanguage = { ...data, selectedLanguage: language };
+
         try {
-          const result = await userLoginDetailsService.register(data);
+          const result = await userLoginDetailsService.register(
+            dataWithLanguage
+          );
 
           clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
 

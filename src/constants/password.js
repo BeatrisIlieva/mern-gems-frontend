@@ -16,7 +16,7 @@ export const PASSWORD_ERROR_MESSAGE = {
 export const PASSWORD_REQUIREMENTS = {
   English: `* Password must be between ${PASSWORD_LENGTH.MIN} and ${PASSWORD_LENGTH.MAX} English letters and include at least one lowercase letter, one uppercase letter, and one digit`,
   Chinese: `密码必须是 ${PASSWORD_LENGTH.MIN} 到 ${PASSWORD_LENGTH.MAX} 个英文字母，并包含至少一个小写字母、一个大写字母和一个数字`,
-  Bulgarian: `* Паролата трябва да е между ${PASSWORD_LENGTH.MIN} и ${PASSWORD_LENGTH.MAX} английски букви и да съдържа поне една малка буква, една главна буква и едно число`,
+  Bulgarian: `* Паролата трябва да съдържа между ${PASSWORD_LENGTH.MIN} и ${PASSWORD_LENGTH.MAX} английски букви, поне една малка буква, една главна буква и едно число`,
 };
 
 export const PASSWORD_MISMATCH_ERROR_MESSAGE = {

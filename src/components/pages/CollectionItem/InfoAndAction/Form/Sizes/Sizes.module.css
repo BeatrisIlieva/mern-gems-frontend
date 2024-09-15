@@ -84,9 +84,3 @@ input[type="radio"]:disabled ~ label {
     padding-bottom: 0.25rem;
   }
 }
-
-@media (max-width: 385px) {
-  .error-message {
-    font-size: 10px;
-  }
-}

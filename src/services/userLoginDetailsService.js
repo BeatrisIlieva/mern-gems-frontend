@@ -9,7 +9,7 @@ export const userLoginDetailsServiceFactory = (token) => {
 
   return {
     register: (data) => request.post(`${baseUrl}/register`, data),
-    
+
     getOne: (userId) => request.get(`${baseUrl}/${userId}`),
 
     login: (data) => request.post(`${baseUrl}/login`, data),

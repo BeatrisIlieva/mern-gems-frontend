@@ -25,6 +25,7 @@
   border-radius: 2rem;
   animation: transitioning 1s forwards;
   box-shadow: 0 0 0 1px var(--medium-pink);
+  align-items: center;
 }
 
 .button-container.add-to-wishlist:hover {

@@ -90,13 +90,20 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 1213px) {
+  .modal {
+    width: 50vw;
+  }
+}
+
 @media (max-width: 1024px) {
   .modal {
     width: 70vw;
   }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 693px) {
   .modal {
     width: 100vw;
     border-radius: 0;
