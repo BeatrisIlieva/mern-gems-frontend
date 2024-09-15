@@ -31,7 +31,7 @@ jest.mock("../../../../common/LargeImages/LargeImages", () => ({
   ),
 }));
 
-jest.mock("../../../../common/MiniImages/MiniImages", () => ({
+jest.mock("../../../../reusable/MiniImages/MiniImages", () => ({
   MiniImages: ({ clickHandler }) => (
     <div
       data-testid="mini-images"

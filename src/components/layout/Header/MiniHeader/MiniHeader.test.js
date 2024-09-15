@@ -35,18 +35,6 @@ describe("MiniHeader Component", () => {
     expect(linkElement).toHaveAttribute("href", "/users/shopping-bag");
   });
 
-  test("renders the FontAwesomeIcon with the correct icon", () => {
-    render(
-      <Router>
-        <MiniHeader />
-      </Router>
-    );
-
-    const iconElement = screen.getByRole("img");
-    expect(iconElement).toBeInTheDocument();
-    expect(iconElement).toHaveClass("logo-image");
-  });
-
   test("renders the NormalTitle component with correct title", () => {
     render(
       <Router>

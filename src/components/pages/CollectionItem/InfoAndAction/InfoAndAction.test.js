@@ -10,7 +10,7 @@ jest.mock("../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
 }));
 
-jest.mock("../../../common/MiniImages/MiniImages", () => ({
+jest.mock("../../../reusable/MiniImages/MiniImages", () => ({
   MiniImages: ({ jewelriesByCategory, clickHandler }) => (
     <div>
       <button onClick={() => clickHandler("colorTitle")}>MiniImages</button>

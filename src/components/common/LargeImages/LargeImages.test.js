@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 
 import { LargeImages } from "./LargeImages";
-import { JewelryImage } from "../JewelryImage/JewelryImage";
+import { JewelryImage } from "../../reusable/JewelryImage";
 
 jest.mock("../JewelryImage/JewelryImage", () => ({
   JewelryImage: jest.fn(() => <div>JewelryImage</div>),

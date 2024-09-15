@@ -4,7 +4,7 @@ import { Popup } from "./Popup";
 
 import styles from "./Popup.module.css";
 
-jest.mock("../../common/XMark/XMark", () => ({
+jest.mock("../../reusable/XMark/XMark", () => ({
   XMark: ({ callbackFunction }) => (
     <button onClick={callbackFunction}>Close</button>
   ),

@@ -15,7 +15,7 @@ import { orderServiceFactory } from "../../../services/orderService";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 import { CARD_HAS_EXPIRED_ERROR_MESSAGE } from "../../../constants/expiryDate";
 
-import { ERROR_MESSAGES } from "../../../mappers/errorMessages";
+import { ERROR_MESSAGES } from "../../../constants/errorMessages";
 
 jest.mock("../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),

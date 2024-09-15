@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { Images } from "./Images";
 
-jest.mock("../../../common/JewelryImage/JewelryImage", () => ({
+jest.mock("../../../reusable/JewelryImage/JewelryImage", () => ({
   JewelryImage: ({ clickHandler }) => (
     <button onClick={clickHandler}>Jewelry Image</button>
   ),

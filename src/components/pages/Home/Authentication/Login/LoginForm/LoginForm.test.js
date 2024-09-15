@@ -9,7 +9,7 @@ import { AuthenticationContext } from "../../../../../../contexts/Authentication
 
 import { useService } from "../../../../../../hooks/useService";
 
-import { ERROR_MESSAGES } from "../../../../../../mappers/errorMessages";
+import { ERROR_MESSAGES } from "../../../../../../constants/errorMessages";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 jest.mock("../../../../../../contexts/LanguageContext", () => ({
