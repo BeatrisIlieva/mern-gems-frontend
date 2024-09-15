@@ -1,4 +1,4 @@
-import { ERROR_MESSAGES } from "../mappers/errorMessages";
+import { ERROR_MESSAGES } from "../constants/errorMessages";
 
 const isValid = (value, pattern) => {
   return pattern.test(value);
