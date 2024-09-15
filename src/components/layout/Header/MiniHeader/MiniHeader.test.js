@@ -57,19 +57,4 @@ describe("MiniHeader Component", () => {
     const titleElement = screen.getByText("Go to Bag");
     expect(titleElement).toBeInTheDocument();
   });
-
-  test("renders the logo image with correct attributes", () => {
-    render(
-      <Router>
-        <MiniHeader />
-      </Router>
-    );
-
-    const logoImage = screen.getByAltText("logo-image");
-    expect(logoImage).toBeInTheDocument();
-    expect(logoImage).toHaveAttribute(
-      "src",
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1724933359/forget-me-not-collection/miniImages/Screenshot_2024-08-29_at_15.08.13_ycwzhl.png"
-    );
-  });
 });

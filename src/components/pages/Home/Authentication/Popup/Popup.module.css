@@ -19,7 +19,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
   width: 320px;
 }
