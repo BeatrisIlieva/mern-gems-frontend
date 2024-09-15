@@ -1,14 +1,14 @@
-import { PASSWORD_ERROR_MESSAGE } from "../constants/password";
-import { PASSWORD_MISMATCH_ERROR_MESSAGE } from "../constants/password";
-import { EMAIL_ERROR_MESSAGE } from "../constants/email";
-import { NAME_ERROR_MESSAGE } from "../constants/name";
-import { PHONE_ERROR_MESSAGE } from "../constants/phone";
-import { STREET_ERROR_MESSAGE } from "../constants/street";
-import { ZIP_CODE_ERROR_MESSAGE } from "../constants/zipCode";
-import { APARTMENT_ERROR_MESSAGE } from "../constants/apartment";
-import { LONG_CARD_NUMBER_PATTERN_ERROR_MESSAGE } from "../constants/cardNumber";
-import { CVV_CODE_PATTERN_ERROR_MESSAGE } from "../constants/cVVCode";
-import { EXPIRY_DATE_PATTERN_ERROR_MESSAGE } from "../constants/expiryDate";
+import { PASSWORD_ERROR_MESSAGE } from "./password";
+import { PASSWORD_MISMATCH_ERROR_MESSAGE } from "./password";
+import { EMAIL_ERROR_MESSAGE } from "./email";
+import { NAME_ERROR_MESSAGE } from "./name";
+import { PHONE_ERROR_MESSAGE } from "./phone";
+import { STREET_ERROR_MESSAGE } from "./street";
+import { ZIP_CODE_ERROR_MESSAGE } from "./zipCode";
+import { APARTMENT_ERROR_MESSAGE } from "./apartment";
+import { LONG_CARD_NUMBER_PATTERN_ERROR_MESSAGE } from "./cardNumber";
+import { CVV_CODE_PATTERN_ERROR_MESSAGE } from "./cVVCode";
+import { EXPIRY_DATE_PATTERN_ERROR_MESSAGE } from "./expiryDate";
 
 export const ERROR_MESSAGES = {
   password: PASSWORD_ERROR_MESSAGE,
