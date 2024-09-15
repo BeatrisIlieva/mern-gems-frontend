@@ -43,18 +43,17 @@
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Responsive Design
-- Our website is fully optimized for all device sizes, starting from a minimum screen width of 340px, ensuring a seamless experience across smartphones, tablets, and desktops.
+Our website is fully optimized for all device sizes, starting from a minimum screen width of 340px, ensuring a seamless experience across smartphones, tablets, and desktops.
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Optimization
-
 The application is manually optimized for performance by utilizing React's useMemo, useCallback, and memo functions, to help minimize unnecessary re-renders and improve efficiency.
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Languages
-- Our application offers a user experience across three languages:
+Our application offers a user experience across three languages:
 
 <p style="display: flex; align-items: center; justify-content: center; height: 60px;">
 <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/british_1_mrryno.png" alt="British flag" width="50"> 
