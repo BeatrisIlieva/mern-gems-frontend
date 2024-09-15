@@ -15,6 +15,7 @@
   <a href="#introduction">Introduction</a> ·
   <a href="#demo-video">Demo Video</a> ·
   <a href="#built-with">Built With</a> ·
+  <a href="#responsive-design">Responsive Design</a> ·
   <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#features">Features</a> ·
@@ -36,9 +37,11 @@
 
 ## Built With
 - React
-- CSS Modules
-> [!NOTE]
-> Currently optimized for desktop; future plans include implementing media queries for responsiveness on various devices
+
+<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
+
+## Responsive Design
+- Our website is fully optimized for all device sizes, starting from a minimum screen width of 340px, ensuring a seamless experience across smartphones, tablets, and desktops.
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
