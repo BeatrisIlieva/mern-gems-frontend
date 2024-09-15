@@ -43,9 +43,7 @@ export const Sizes = memo(
                 onMouseLeave={() => setHoveredLabel("")}
                 onTouchStart={() => setHoveredLabel(item.size)}
                 onTouchEnd={() => setHoveredLabel("")}
-                className={`${styles["label"]} ${
-                  hoveredLabel === item.size ? styles["hovered"] : ""
-                }`.trim()}
+                className={styles["label"]}
                 htmlFor={item.size}
               >
                 {item.size}
