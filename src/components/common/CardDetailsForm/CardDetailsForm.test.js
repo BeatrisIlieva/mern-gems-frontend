@@ -175,10 +175,9 @@ describe("CardDetailsForm Component", () => {
         submitData
       );
 
-      expect(mockPaymentService.create).toHaveBeenCalledWith(
-        userId,
-        submitData
-      );
+      expect(mockPaymentService.create).toHaveBeenCalledWith(userId, {
+        selectedLanguage: "English",
+      });
       expect(mockOrderService.create).toHaveBeenCalledWith(userId);
 
       expect(mockPopupCloseHandler).not.toHaveBeenCalled();

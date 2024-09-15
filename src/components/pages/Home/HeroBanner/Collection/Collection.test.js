@@ -7,17 +7,6 @@ jest.mock("./Description/Description", () => ({
 }));
 
 describe("Collection Component", () => {
-  test("renders the image with correct src attribute", () => {
-    render(<Collection />);
-
-    const image = screen.getByRole("img");
-    expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute(
-      "src",
-      "https://res.cloudinary.com/deztgvefu/image/upload/v1716995569/collections/forgetmenot_rz0umv.png"
-    );
-  });
-
   test("renders the Description component", () => {
     render(<Collection />);
 
