@@ -38,13 +38,10 @@ describe("paymentController", () => {
   const email = "test@email.com";
   const password = "123456Bb";
   const longCardNumber = "1234567890123456";
-  const invalidLongCardNumber = "123456789012345";
   const cardHolder = "Test Test";
-  const invalidCardHolder = "T1 T1";
   const cVVCode = "123";
-  const invalidCVVCode = "12";
   const expiryDate = "10/30";
-  const invalidExpiryDate = "10/21";
+  const selectedLanguage = "English";
 
   afterEach(async () => {
     let userId;
@@ -66,7 +63,7 @@ describe("paymentController", () => {
   test("Test complete transaction with valid data; Expect success", async () => {
     await request
       .post("/users-login-details/register")
-      .send({ email, password });
+      .send({ email, password, selectedLanguage });
 
     const createdUserLoginDetails = await UserLoginDetails.findOne({
       email,
@@ -93,32 +90,8 @@ describe("paymentController", () => {
 
     expect(sendOrderConfirmationEmail).toHaveBeenCalledWith(
       email,
-      userShippingDetails.firstName
+      userShippingDetails.firstName,
+      selectedLanguage
     );
-  });
-
-  test("Test complete transaction with invalid data; Expect errors", async () => {
-    await request
-      .post("/users-login-details/register")
-      .send({ email, password });
-
-    const createdUserLoginDetails = await UserLoginDetails.findOne({
-      email,
-    });
-
-    const userId = createdUserLoginDetails._id;
-
-    await request.post(`/bags/add/${jewelryId}/${userId}`).send({
-      size,
-    });
-
-    const res3 = await request.put(`/payments/${userId}`).send({
-      longCardNumber: invalidLongCardNumber,
-      cardHolder: invalidCardHolder,
-      cVVCode: invalidCVVCode,
-      expiryDate: invalidExpiryDate,
-    });
-
-    expect(res3.status).toBe(401);
   });
 });

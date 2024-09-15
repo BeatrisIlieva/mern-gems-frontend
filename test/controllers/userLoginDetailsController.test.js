@@ -43,6 +43,7 @@ describe("userLoginDetailsController", () => {
   const password = "123456Bb";
   const wrongPassword = "123456Bc";
   const newPassword = "123456Bt";
+  const selectedLanguage = "English"
 
   afterEach(async () => {
     let userId;
@@ -70,7 +71,7 @@ describe("userLoginDetailsController", () => {
   test("Test user registration; It should populate user models; Expect success", async () => {
     const res = await request
       .post("/users-login-details/register")
-      .send({ email, password });
+      .send({ email, password, selectedLanguage });
 
     expect(res.status).toBe(201);
 
@@ -96,13 +97,13 @@ describe("userLoginDetailsController", () => {
 
     expect(sendRegistrationEmail).toHaveBeenCalledTimes(1);
 
-    expect(sendRegistrationEmail).toHaveBeenCalledWith(email);
+    expect(sendRegistrationEmail).toHaveBeenCalledWith(email, selectedLanguage);
   });
 
   test("Test user registration; It should not populate user models with duplicate email; Expect error", async () => {
     await request
       .post("/users-login-details/register")
-      .send({ email, password });
+      .send({ email, password, selectedLanguage });
 
     const res2 = await request
       .post("/users-login-details/register")
@@ -116,7 +117,7 @@ describe("userLoginDetailsController", () => {
   test("Test user login; It should login user; Expect success", async () => {
     await request
       .post("/users-login-details/register")
-      .send({ email, password });
+      .send({ email, password, selectedLanguage });
 
     const res2 = await request
       .post("/users-login-details/login")
