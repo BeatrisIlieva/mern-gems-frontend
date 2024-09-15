@@ -13,7 +13,7 @@
 <h4 align="center">
   <a href="#built-with">Built With</a> ·
   <a href="#deployment">Deployment</a> ·
-  <a href="#ssl-certificate">SSL Certificate</a> ·
+  <a href="#ssl-certificate">Public SSL Certificate</a> ·
   <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#features">Features</a> ·
@@ -40,9 +40,9 @@
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
-## SSL certificate
+## Public SSL Certificate
 
-- Public AWS Certificate Manager 
+- AWS Certificate Manager 
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
