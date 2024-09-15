@@ -1,4 +1,4 @@
-import { XMark } from "../../common/XMark/XMark";
+import { XMark } from "../../reusable/XMark/XMark";
 
 import { usePopup } from "../../../hooks/usePopup";
 
