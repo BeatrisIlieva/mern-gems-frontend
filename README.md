@@ -11,8 +11,7 @@
 <a name="error-handling"></a>
 
 
-<h5 align="center">
-  <a href="#demo-video">Demo Video</a> ·
+<h4 align="center">
   <a href="#built-with">Built With</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
   <a href="#optimization">Optimization</a> ·
@@ -32,8 +31,6 @@
 ## Demo Video
 
 [![Watch the video](https://img.youtube.com/vi/MBGi5NiVf_8/maxresdefault.jpg)](https://www.youtube.com/watch?v=MBGi5NiVf_8)
-
-<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Built With
 - React
