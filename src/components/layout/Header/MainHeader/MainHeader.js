@@ -40,7 +40,7 @@ export const MainHeader = () => {
   );
 
   return (
-    <header className={styles["header"]}>
+    <header className={styles["main-header"]}>
       {isAuthenticated && <SwitchLanguage variant={"to-the-left"} />}
       <Logo />
       <nav className={styles["nav"]}>

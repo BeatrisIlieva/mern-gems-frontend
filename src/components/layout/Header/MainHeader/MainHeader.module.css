@@ -1,5 +1,5 @@
-.header {
-  grid-area: header;
+.main-header {
+  grid-area: main-header;
   position: sticky;
   top: 0;
   width: 100vw;
