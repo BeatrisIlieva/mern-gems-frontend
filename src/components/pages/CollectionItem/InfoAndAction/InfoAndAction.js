@@ -1,7 +1,7 @@
 import { useCallback, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { MiniImages } from "../../../common/MiniImages/MiniImages";
+import { MiniImages } from "../../../reusable/MiniImages/MiniImages";
 import { StockStatus } from "../../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
