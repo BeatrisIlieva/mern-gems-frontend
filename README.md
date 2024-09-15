@@ -11,7 +11,7 @@
 <a name="error-handling"></a>
 
 
-<h4 align="center">
+<h4 align="center" font-size="10px">
   <a href="#demo-video">Demo Video</a> ·
   <a href="#built-with">Built With</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
