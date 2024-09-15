@@ -41,7 +41,7 @@
 ## Testing
 - Jest
 
-![Coverage Status](https://img.shields.io/badge/coverage-86%25-brightgreen.svg)
+![Coverage Status](https://img.shields.io/badge/coverage-84%25-brightgreen.svg)
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
