@@ -102,18 +102,6 @@
   
 - Errors related to invalid inputs returned by the backend are displayed to the user
 
-#### 4. Product filtration
-- Utilizes DynamicDropdown components for selecting stone types and stone colors
-- Implements changeHandler and submitHandler functions to respond to user selections and apply filters accordingly
-- Offers clearFilter functionality to reset filters and update the displayed jewelry items based on user actions
-- Provides visual indicators (iSelectedStoneType, isSelectedStoneColor) to highlight whether a stone type or stone color filter is active
-
-#### 5. Product sorting
-- Sorts items based on their current availability
-- Arranges items in ascending order of price
-- Arranges items in descending order of price
-- Visual feedback is provided with a highlighted indicator next to the selected sorting option
-
 #### 10. Product filtration 
 
 #### 11. Shopping Bag Count
@@ -149,6 +137,6 @@
 ## Backend
 - Built with Node.js, Express.js and MondoDB
 
-#### *Find the Backend Repository [**HERE**](https://github.com/BeatrisIlieve/MERNGems-Backend)*
+#### *Find the Backend Repository [**HERE**](https://github.com/BeatrisIlieve/mern-gems-backend/tree/main)*
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
