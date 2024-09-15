@@ -85,8 +85,6 @@
 - Login Error Handling:
   - When a user tries to log in, the application verifies the email and password against the database
   - If the password is invalid or there is no user with the provided email, an error message is displayed to notify the user
-- Success Message:
-  - If a user password is successfully changed, a success message is displayed
 
 3. Size Selection
 - If a user clicks the "Add To Bag" button without selecting a size, an error message is displayed to inform them of the requirement
