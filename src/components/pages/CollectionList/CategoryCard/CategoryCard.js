@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Content } from "./Content/Content";
-import { ShopBy } from "../../../common/ShopBy/ShopBy";
+import { ShopBy } from "../../../reusable/ShopBy/ShopBy";
 
 import { useJewelry } from "../../../../hooks/useJewelry";
 
@@ -38,7 +38,10 @@ export const CategoryCard = ({ categoryTitle, colorTitle }) => {
   return (
     <>
       {jewelriesByCategory.length > 0 && (
-        <section className={styles["category-card"]} data-testid={"category-card"}>
+        <section
+          className={styles["category-card"]}
+          data-testid={"category-card"}
+        >
           <ShopBy
             categoryTitle={categoryTitle}
             buttonClickHandler={buttonClickHandler}

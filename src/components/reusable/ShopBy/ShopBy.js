@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { Button } from "../../reusable/Button/Button";
+import { Button } from "../Button/Button";
 
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
