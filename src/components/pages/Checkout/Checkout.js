@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 
-import { ShoppingProcessContainer } from "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer";
+import { CheckoutProcessContainer } from "../../reusable/CheckoutProcessContainer/CheckoutProcessContainer";
 import { OrderSummary } from "../../common/OrderSummary/OrderSummary";
 import { BagList } from "../../common/BagList/BagList";
 import { ChildWrapper } from "../../reusable/ChildWrapper/ChildWrapper";
@@ -14,7 +14,7 @@ export const Checkout = () => {
 
   return (
     <>
-      <ShoppingProcessContainer>
+      <CheckoutProcessContainer>
         <>{locationIsCheckout ? <ShippingContent /> : <CardDetailsContent />}</>
         <ChildWrapper>
           <>
@@ -22,7 +22,7 @@ export const Checkout = () => {
             <BagList />
           </>
         </ChildWrapper>
-      </ShoppingProcessContainer>
+      </CheckoutProcessContainer>
     </>
   );
 };

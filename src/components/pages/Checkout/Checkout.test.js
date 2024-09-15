@@ -5,9 +5,9 @@ import "@testing-library/jest-dom/extend-expect";
 import { Checkout } from "./Checkout";
 
 jest.mock(
-  "../../reusable/ShoppingProcessContainer/ShoppingProcessContainer",
+  "../../reusable/CheckoutProcessContainer/CheckoutProcessContainer",
   () => ({
-    ShoppingProcessContainer: ({ children }) => <div>{children}</div>,
+    CheckoutProcessContainer: ({ children }) => <div>{children}</div>,
   })
 );
 

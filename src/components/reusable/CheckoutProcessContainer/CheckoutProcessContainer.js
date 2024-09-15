@@ -1,6 +1,6 @@
-import styles from "./ShoppingProcessContainer.module.css";
+import styles from "./CheckoutProcessContainer.module.css";
 
-export const ShoppingProcessContainer = ({ children }) => {
+export const CheckoutProcessContainer = ({ children }) => {
   return (
     <section className={styles["shopping-process-container"]}>
       <div className={styles["children"]}>{children}</div>

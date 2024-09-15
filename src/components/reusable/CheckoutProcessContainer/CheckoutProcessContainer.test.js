@@ -1,15 +1,15 @@
 import { render } from "@testing-library/react";
 
-import { ShoppingProcessContainer } from "./ShoppingProcessContainer";
+import { CheckoutProcessContainer } from "./CheckoutProcessContainer";
 
-import styles from "./ShoppingProcessContainer.module.css";
+import styles from "./CheckoutProcessContainer.module.css";
 
-describe("ShoppingProcessContainer Component", () => {
+describe("CheckoutProcessContainer Component", () => {
   test("renders with the correct class names and children", () => {
     const { container, getByText } = render(
-      <ShoppingProcessContainer>
+      <CheckoutProcessContainer>
         <div>Child Content</div>
-      </ShoppingProcessContainer>
+      </CheckoutProcessContainer>
     );
 
     const sectionElement = container.querySelector("section");

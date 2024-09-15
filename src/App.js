@@ -12,13 +12,13 @@ import styles from "./App.module.css";
 function App() {
   const location = useLocation();
 
-  const displayingMiniHeader =
+  const stageIsCheckout =
     location.pathname === "/checkout" ||
     location.pathname === "/checkout/payment";
 
-  const style = displayingMiniHeader
-    ? `${styles["app"]} ${styles["checkout-process-container"]}`
-    : `${styles["app"]}`;
+  const style = `${styles["app"]} ${
+    stageIsCheckout ? styles["checkout-process-container"] : ""
+  }`.trim();
 
   return (
     <div className={style}>
