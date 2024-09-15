@@ -110,9 +110,9 @@
 
 #### 13. Toggle Like
 
-#### 14. Create/Update Personal Information Form
+#### 14. Create/Update Card Details Form
 
-#### 15. Create/Update Shipping Information Form
+#### 15. Create/Update Shipping Details Form
 
 #### 16. Update Password Form
 
