@@ -1,6 +1,6 @@
 import { useState, useEffect, memo } from "react";
 
-import { JewelryImage } from "../JewelryImage/JewelryImage";
+import { JewelryImage } from "../../reusable/JewelryImage/JewelryImage";
 import { CircleIcons } from "../CircleIcons/CircleIcons";
 import { Heart } from "../Heart/Heart";
 import { DualTitleSection } from "../../reusable/DualTitleSection/DualTitleSection";

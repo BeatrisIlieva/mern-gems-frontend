@@ -1,6 +1,6 @@
 import { useState, useEffect, memo, useCallback } from "react";
 
-import { JewelryImage } from "../../../common/JewelryImage/JewelryImage";
+import { JewelryImage } from "../../../reusable/JewelryImage/JewelryImage";
 import { CircleIcons } from "../../../common/CircleIcons/CircleIcons";
 
 import styles from "./Images.module.css";
