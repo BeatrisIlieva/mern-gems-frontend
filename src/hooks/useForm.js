@@ -9,7 +9,7 @@ import { getPatternErrorMessage } from "../utils/getPatternErrorMessage";
 export const useForm = (INITIAL_FORM_VALUES) => {
   const [values, setValues] = useState(INITIAL_FORM_VALUES);
 
-  const updateForm = useCallback(() => {
+  const updateForm = () => {
     Object.keys(values).forEach((fieldKey) => {
       const input = document.getElementById(fieldKey);
 
@@ -24,7 +24,7 @@ export const useForm = (INITIAL_FORM_VALUES) => {
         }));
       }
     });
-  }, [values]);
+  };
 
   const clickHandler = useCallback(
     (fieldKey) => {
