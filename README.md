@@ -102,22 +102,11 @@
   
 - Errors related to invalid inputs returned by the backend are displayed to the user
 
-#### 2. JSON Web Token expiration (adjusted JWT token expiration to 10 seconds for demo video to showcase Login Popup; reset to 10 minutes and rebuilt app afterwards)
-- The application tracks user activity, including keyboard inputs, clicks, and scrolling
-- If no activity is detected for 10 minutes, the user is automatically logged out
-- On the payment page, a popup informs the user that their session has expired. The popup includes a button to go to the login page. After logging in, the user is redirected back to the payment page to continue their transaction
-- On pages other than the payment page, the user is logged out and redirected to the login page
-
-#### 3. Load More Functionality in the `JewelryList` and `Wishlist` components
-- When a component mounts, it fetches items based on the user selection - category or collection. The first subset of items, based on a predefined number, is displayed initially
-- A "Load More" button is displayed at the bottom of the item list. Clicking the button triggers a `loadMoreHandler` function, which updates the number of items displayed
-- The `loadMoreHandler` function increments the number of displayed items. When all items are displayed, the "Load More" button disappears
-
 #### 4. Product filtration
 - Utilizes DynamicDropdown components for selecting stone types and stone colors
 - Implements changeHandler and submitHandler functions to respond to user selections and apply filters accordingly
 - Offers clearFilter functionality to reset filters and update the displayed jewelry items based on user actions
-- Provides visual indicators (isSelectedStoneType, isSelectedStoneColor) to highlight whether a stone type or stone color filter is active
+- Provides visual indicators (iSelectedStoneType, isSelectedStoneColor) to highlight whether a stone type or stone color filter is active
 
 #### 5. Product sorting
 - Sorts items based on their current availability
@@ -125,34 +114,13 @@
 - Arranges items in descending order of price
 - Visual feedback is provided with a highlighted indicator next to the selected sorting option
 
-#### 6. Toggle Like
-- Allows users to toggle their liking status by clicking a heart icon associated with each jewelry item
-- Utilizes useWishlistContext to access functions for adding and removing items from the wishlist
-- Toggles the `isLikedByUser` state locally for immediate visual feedback
-
-#### 7. Mini Bag
-- Sets lastLocation in localStorage to "/user/shopping-bag" to track navigation and redirect unauthenticated users to their shopping bag after login
-- Contains a miniBagRef to manage the reference to the mini bag's modal content, allowing the user to close the modal by clicking outside of it
-- Provides buttons for "View Bag" and "Continue Checkout", which are links that navigate to the full shopping bag page and the checkout page, respectively
-- Includes a close button (X mark) that allows users to close the mini bag
-- Allows the user to increase or decrease the quantity of items. Additionally, the buttons for adjusting the quantity are styled to appear active or inactive based on the available stock. A remove button is also provided
-
-#### 8. Authentication Required for Checkout
-- If the user is not logged in and clicks the checkout button, they are redirected to the login page
-- Upon successful login, they are then redirected back to the checkout page to complete their purchase
-
-#### 9. Mini Navigation
-- The component uses state variables (isScrolled, isScrollingUp, lastScrollY) to detect scroll direction and position
-- When the user scrolls down, a minimized MiniHeader component is displayed
-- Conversely, when the user scrolls up, the full header component with comprehensive navigation options is shown
-
-#### 10. Search Box Popup
+#### 10. Product filtration 
 
 #### 11. Shopping Bag Count
 
 #### 12. Wishlist Count
 
-#### 13. Products Count
+#### 13. Toggle Like
 
 #### 14. Create/Update Personal Information Form
 
@@ -164,7 +132,7 @@
 
 #### 18. Logout Button
 
-#### 19. Delete Account Popup
+#### 19. Mini Navigation at the checkout stage
 
 #### 20. Order Summary at every step of the Checkout process
 
