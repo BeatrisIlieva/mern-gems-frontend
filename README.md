@@ -96,7 +96,7 @@ Our website offers a user experience across three languages:
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Features
-#### Custom Forms
+#### 1. Custom Forms
    
 - Floating labels
   
