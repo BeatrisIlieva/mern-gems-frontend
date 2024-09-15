@@ -22,8 +22,6 @@ export const ShippingDetails = () => {
   const [movePopup, setMovePopup] = useState(false);
 
   const toggleDisplayPopup = () => {
-
-
     setMovePopup(true);
 
     setTimeout(async () => {
@@ -46,7 +44,7 @@ export const ShippingDetails = () => {
       />
       {displayPopup && (
         <Popup
-        movePopup={movePopup}
+          movePopup={movePopup}
           displayPopup={displayPopup}
           toggleDisplayPopup={toggleDisplayPopup}
           modalVariant={"large"}
