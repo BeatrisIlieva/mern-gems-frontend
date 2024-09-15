@@ -31,7 +31,8 @@
   gap: 4px;
   box-shadow: 0 0 0 1px var(--medium-gray);
   border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0;
+  width: 5rem;
   justify-content: center;
   align-items: center;
 }
@@ -80,7 +81,6 @@ input[type="radio"]:disabled ~ label {
   }
 
   .label {
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+    padding: 0.25rem 0;
   }
 }
