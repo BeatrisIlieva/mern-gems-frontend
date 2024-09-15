@@ -93,6 +93,10 @@
 <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/british_1_mrryno.png" alt="British flag" width="50"> 
 <span>English</span>
 </p>
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/chinese_1_mrryno.png" alt="Chinese flag" width="50"> 
+<span>Chinese</span>
+</p>
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
