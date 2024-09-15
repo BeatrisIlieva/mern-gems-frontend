@@ -37,6 +37,10 @@
   align-items: center;
 }
 
+.label.hovered {
+  background: var(--very-light-gray);
+}
+
 .error-message {
   color: var(--red);
   height: 2rem;
@@ -50,10 +54,6 @@ input[type="radio"] {
 
 input[type="radio"]:not(:disabled) ~ label {
   cursor: pointer;
-}
-
-input[type="radio"]:not(:disabled) ~ label:hover {
-  background: var(--very-light-gray);
 }
 
 input[type="radio"]:disabled ~ label {
