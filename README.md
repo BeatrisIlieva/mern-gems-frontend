@@ -107,7 +107,7 @@ Our website offers a user experience across three languages:
 - Errors related to invalid inputs returned by the backend are displayed to the user
 
 #### 2. Local Storage
-- We use a custom React hook to store the user's token and selected language in local storage. This ensures that the user's preferences are preserved even after a hard refresh.
+- We use a custom React hook to store the user's token and selected language in local storage. This ensures that the user's preferences are preserved even after a hard refresh
 
 #### 10. Product filtration 
 
@@ -138,6 +138,7 @@ Our website offers a user experience across three languages:
 #### 23. Route Guard 
 
 #### 24. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
+#### 24. `Page 404` 
   
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
