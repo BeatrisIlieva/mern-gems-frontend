@@ -1,0 +1,134 @@
+html {
+  line-height: 1.25;
+  letter-spacing: 0.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "tisaSansProLight";
+  src: url("./fonts/tisaSansProLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "tisaSansProBold";
+  src: url("./fonts/tisaSansProMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "tisaSansProBoldItalic";
+  src: url("./fonts/tisaSansProMediumItalic.ttf") format("truetype");
+}
+
+:root {
+  --main-font-family: tisaSansProLight, Arial, sans-serif, -apple-system,
+    ui-sans-serif, system-ui;
+  --bold-font-family: tisaSansProBold, Arial, sans-serif, -apple-system,
+    ui-sans-serif, system-ui;
+  --bold-italic-font-family: tisaSansProBoldItalic, Arial, sans-serif,
+    -apple-system, ui-sans-serif, system-ui;
+}
+
+:root {
+  --small: 0.813rem;
+  --normal: 0.875rem;
+  --medium: 1rem;
+  --large: 1.375rem;
+  --xlarge: 1.75rem;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --pink: #e48cb0;
+  --medium-pink: #ecafc8;
+  --light-pink: #fae8ef;
+  --very-light-pink: #fcf4f7;
+  --violet: #cb9bf7;
+  --dark-violet: #a27cc6;
+  --very-light-violet: #cb9bf717;
+  --blue: #2334a3;
+  --red: #fa2a55;
+  --medium-red: #fb3f66;
+  --green: #00b200;
+  --gray: #4c4a49;
+  --medium-gray: #878685;
+  --light-gray: #cbc9c9;
+  --very-light-gray: #f3f3f3;
+}
+
+input[type="text"],
+[type="password"],
+[type="email"] {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-internal-autofill-selected {
+  -webkit-box-shadow: 0 0 0px 1000px var(--white) inset !important;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  caret-color: var(--pink);
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--small);
+  height: var(--small);
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  border: 1px solid var(--gray);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--very-light-pink);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-pink);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--medium-pink);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink);
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 0px;
+}

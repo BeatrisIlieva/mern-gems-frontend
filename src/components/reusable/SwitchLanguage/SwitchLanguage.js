@@ -67,7 +67,6 @@ export const SwitchLanguage = ({ variant }) => {
         </div>
         <FontAwesomeIcon
           icon={displayDropdown ? faCaretUp : faCaretDown}
-          // className={styles["icon"]}
           className={`${styles["icon"]} ${
             isTransitioning ? styles["slide-out"] : styles["slide-in"]
           }`}

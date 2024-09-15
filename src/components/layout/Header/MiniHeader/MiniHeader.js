@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
-import { SwitchLanguage } from "../../../common/SwitchLanguage/SwitchLanguage";
+import { SwitchLanguage } from "../../../reusable/SwitchLanguage/SwitchLanguage";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 

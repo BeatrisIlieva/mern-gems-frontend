@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import { HorizontalLine } from "../../../reusable/HorizontalLine/HorizontalLine";
 import { NavLinkItem } from "./NavLinkItem/NavLinkItem";
-import { SwitchLanguage } from "../../../common/SwitchLanguage/SwitchLanguage";
+import { SwitchLanguage } from "../../../reusable/SwitchLanguage/SwitchLanguage";
 import { Logo } from "./Logo/Logo";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
