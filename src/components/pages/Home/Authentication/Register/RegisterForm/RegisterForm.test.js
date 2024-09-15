@@ -65,7 +65,9 @@ describe("RegisterForm Component", () => {
       submitData[key] = value.validTestData;
     });
 
-    const { firstName, lastName, email, password } = submitData;
+    submitData["selectedLanguage"] = "English";
+
+    const { firstName, lastName, email, password, selectedLanguage } = submitData;
 
     await waitFor(() => {
       expect(mockUserLoginDetailsService.register).toHaveBeenCalledWith({
@@ -73,6 +75,7 @@ describe("RegisterForm Component", () => {
         lastName,
         email,
         password,
+        selectedLanguage
       });
     });
 
