@@ -48,7 +48,6 @@
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Optimization
-- Jest
 
 The application is manually optimized for performance by utilizing React's useMemo, useCallback, and memo functions, to help minimize unnecessary re-renders and improve efficiency.
 
