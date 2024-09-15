@@ -16,6 +16,7 @@
   <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#features">Features</a> ·
+  <a href="#languages">Languages</a> ·
   <a href="#frontend">Frontend</a> 
 </h4>
 
@@ -82,6 +83,16 @@
 6. Orders History, ordered by the creation time
   
 7. Email Notifications upon Registration and Order Completion
+
+<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
+
+## Languages
+- Our application offers a user experience across three languages:
+
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/british_1_mrryno.png" alt="British flag" width="50"> 
+<span>English</span>
+</p>
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
