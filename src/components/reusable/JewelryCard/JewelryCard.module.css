@@ -1,6 +1,5 @@
 .thumbnail {
   width: 8rem;
-  height: 8rem;
   border: 0.1px solid var(--light-gray);
   animation: transitioning 1s forwards;
 }
