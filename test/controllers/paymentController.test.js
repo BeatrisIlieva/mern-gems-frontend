@@ -37,10 +37,6 @@ describe("paymentController", () => {
   const size = "15.2 cm";
   const email = "test@email.com";
   const password = "123456Bb";
-  const longCardNumber = "1234567890123456";
-  const cardHolder = "Test Test";
-  const cVVCode = "123";
-  const expiryDate = "10/30";
   const selectedLanguage = "English";
 
   afterEach(async () => {
@@ -76,7 +72,7 @@ describe("paymentController", () => {
     });
 
     const res3 = await request.put(`/payments/${userId}`).send({
-      selectedLanguage
+      selectedLanguage,
     });
 
     expect(res3.status).toBe(204);
