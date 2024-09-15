@@ -28,7 +28,7 @@
 
 <p align="center"><i>Welcome to our Online Jewelry Store! This web application serves as a platform for showcasing and selling a stunning collection of exquisite jewelry.</i></p>
 
-<i>## Demo Video </i>
+## *Demo Video*
 
 [![Watch the video](https://img.youtube.com/vi/MBGi5NiVf_8/maxresdefault.jpg)](https://www.youtube.com/watch?v=MBGi5NiVf_8)
 
