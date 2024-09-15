@@ -76,10 +76,7 @@ describe("paymentController", () => {
     });
 
     const res3 = await request.put(`/payments/${userId}`).send({
-      longCardNumber,
-      cardHolder,
-      cVVCode,
-      expiryDate,
+      selectedLanguage
     });
 
     expect(res3.status).toBe(204);
