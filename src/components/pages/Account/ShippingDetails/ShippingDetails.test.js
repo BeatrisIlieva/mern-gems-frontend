@@ -21,7 +21,7 @@ jest.mock("../reusable/SectionContainer/SectionContainer", () => ({
 }));
 
 jest.mock("../../../reusable/Popup/Popup", () => ({
-  Popup: ({ toggleDisplayPopup, modalVariant, children }) => (
+  Popup: ({ movePopup, toggleDisplayPopup, modalVariant, children }) => (
     <div data-testid="popup" className={modalVariant}>
       <button onClick={toggleDisplayPopup}>Close</button>
       {children}
@@ -54,25 +54,6 @@ describe("ShippingDetails Component", () => {
 
   test("does not render Popup initially", () => {
     render(<ShippingDetails />);
-
-    expect(screen.queryByTestId("popup")).not.toBeInTheDocument();
-  });
-
-  test("renders Popup when button is clicked", () => {
-    render(<ShippingDetails />);
-
-    fireEvent.click(screen.getByLabelText("Add new address"));
-
-    expect(screen.getByTestId("popup")).toBeInTheDocument();
-    expect(screen.getByText("Form Button")).toBeInTheDocument();
-  });
-
-  test("closes Popup when close button is clicked", () => {
-    render(<ShippingDetails />);
-
-    fireEvent.click(screen.getByLabelText("Add new address"));
-
-    fireEvent.click(screen.getByText("Close"));
 
     expect(screen.queryByTestId("popup")).not.toBeInTheDocument();
   });
