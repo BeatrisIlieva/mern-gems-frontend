@@ -9,7 +9,7 @@ import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
-import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../mappers/categoryNamesByLanguage";
+import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../constants/categoryNamesByLanguage";
 
 import { slugify } from "../../../../utils/slugify";
 
