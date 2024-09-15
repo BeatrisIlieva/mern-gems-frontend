@@ -1,38 +1,59 @@
-import { render, screen, fireEvent, act } from "@testing-library/react";
+import {
+  render,
+  fireEvent,
+  screen,
+  waitFor,
+  act,
+} from "@testing-library/react";
 import { SwitchLanguage } from "./SwitchLanguage";
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
-import { IMAGE_URLS } from "./constsnts/imageUrls";
+import { IMAGE_URLS } from "./constants/imageUrls";
 
 jest.mock("../../../contexts/LanguageContext");
 
+const mockUpdateLanguage = jest.fn();
+
 describe("SwitchLanguage Component", () => {
-  const mockUpdateLanguage = jest.fn();
-
   beforeEach(() => {
-    mockUpdateLanguage.mockClear();
-
     useLanguageContext.mockReturnValue({
       language: "English",
       updateLanguage: mockUpdateLanguage,
     });
   });
 
-  it("renders the initial selected language", () => {
+  test("renders the SwitchLanguage component with initial language", () => {
     render(<SwitchLanguage variant="to-the-left" />);
-
-    const flagImage = screen.getByAltText("flag");
-    expect(flagImage).toBeInTheDocument();
-    expect(flagImage).toHaveAttribute("src", IMAGE_URLS.English);
+    const img = screen.getByAltText("flag");
+    expect(img).toBeInTheDocument();
+    expect(img.src).toContain(IMAGE_URLS.English);
   });
 
-  it("displays the dropdown when clicked", async () => {
+  test("toggles dropdown on image click", async () => {
     render(<SwitchLanguage variant="to-the-left" />);
 
-    const flagThumbnail = screen.getByAltText("flag");
+    const img = screen.getByAltText("flag");
 
     act(() => {
-      fireEvent.click(flagThumbnail);
+      fireEvent.click(img);
+    });
+
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 400));
+    });
+
+    await waitFor(() => {
+      const dropdown = screen.getByTestId("dropdown");
+      expect(dropdown).toBeInTheDocument();
+    });
+  });
+
+  test("changes language on dropdown selection", async () => {
+    render(<SwitchLanguage variant="to-the-left" />);
+
+    const img = screen.getByAltText("flag");
+    act(() => {
+      fireEvent.click(img);
     });
 
     await act(async () => {
@@ -40,28 +61,15 @@ describe("SwitchLanguage Component", () => {
     });
 
     const chineseFlag = screen.getByAltText("Chinese flag");
-    const bulgarianFlag = screen.getByAltText("Bulgarian flag");
-    expect(chineseFlag).toBeInTheDocument();
-    expect(bulgarianFlag).toBeInTheDocument();
-  });
-
-  it("updates the language when a new flag is selected", async () => {
-    render(<SwitchLanguage variant="to-the-left" />);
-
-    const flagThumbnail = screen.getByAltText("flag");
 
     act(() => {
-      fireEvent.click(flagThumbnail);
+      fireEvent.click(chineseFlag);
     });
 
     await act(async () => {
       await new Promise((resolve) => setTimeout(resolve, 400));
     });
 
-    const chineseFlag = screen.getByAltText("Chinese flag");
-    fireEvent.click(chineseFlag);
-
-    const updatedFlagImage = screen.getByAltText("flag");
-    expect(updatedFlagImage).toHaveAttribute("src", IMAGE_URLS.English);
+    expect(mockUpdateLanguage).toHaveBeenCalledWith("Chinese");
   });
 });

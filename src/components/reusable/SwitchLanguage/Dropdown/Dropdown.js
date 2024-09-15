@@ -15,6 +15,7 @@ export const Dropdown = memo(
 
     return (
       <div
+        data-testid="dropdown"
         className={`${dropdownStyles} ${
           isTransitioning ? styles["slide-out"] : styles["slide-in"]
         }`}

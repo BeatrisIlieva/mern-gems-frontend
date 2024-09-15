@@ -24,6 +24,7 @@ export const SelectedLanguage = memo(
           altText={"flag"}
         />
         <FontAwesomeIcon
+          data-testid="caret-icon"
           icon={displayDropdown ? faCaretUp : faCaretDown}
           className={`${styles["icon"]} ${
             isTransitioning ? styles["slide-out"] : styles["slide-in"]
