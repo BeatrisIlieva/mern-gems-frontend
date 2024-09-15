@@ -16,6 +16,7 @@
   <a href="#demo-video">Demo Video</a> ·
   <a href="#built-with">Built With</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
+  <a href="#languages">Languages</a> ·
   <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#features">Features</a> ·
@@ -42,6 +43,24 @@
 
 ## Responsive Design
 - Our website is fully optimized for all device sizes, starting from a minimum screen width of 340px, ensuring a seamless experience across smartphones, tablets, and desktops.
+
+<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
+
+## Languages
+- Our application offers a user experience across three languages:
+
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/british_1_mrryno.png" alt="British flag" width="50"> 
+<span>English</span>
+</p>
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300299/forget-me-not-collection/miniImages/chinese_1_infllx.png" alt="Chinese flag" width="50"> 
+<span>Chinese</span>
+</p>
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300300/forget-me-not-collection/miniImages/bulgarian_1_asspdw.png" alt="Bulgarian flag" width="50"> 
+<span>Bulgarian</span>
+</p>
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
