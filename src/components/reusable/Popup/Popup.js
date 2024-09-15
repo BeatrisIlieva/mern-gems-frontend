@@ -10,6 +10,7 @@ export const Popup = ({
   modalVariant,
   overlayVariant,
   displayPopup,
+  movePopup,
 }) => {
   const { isTransitioning, popupRef, popupCloseHandler } = usePopup({
     toggleDisplayPopup,
@@ -19,12 +20,16 @@ export const Popup = ({
   return (
     <section
       className={`${styles["overlay"]}  ${styles[overlayVariant]} ${
-        isTransitioning ? styles["transition-out"] : styles["transition-in"]
+        isTransitioning || movePopup
+          ? styles["transition-out"]
+          : styles["transition-in"]
       }`}
     >
       <div
         className={`${styles["modal"]} ${styles[modalVariant]} ${
-          isTransitioning ? styles["slide-out"] : styles["slide-in"]
+          isTransitioning || movePopup
+            ? styles["slide-out"]
+            : styles["slide-in"]
         }`}
       >
         <XMark callbackFunction={popupCloseHandler} />

@@ -19,8 +19,17 @@ export const ShippingDetails = () => {
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
+  const [movePopup, setMovePopup] = useState(false);
+
   const toggleDisplayPopup = () => {
-    setDisplayPopup((displayPopup) => !displayPopup);
+
+
+    setMovePopup(true);
+
+    setTimeout(async () => {
+      setDisplayPopup((displayPopup) => !displayPopup);
+      setMovePopup(false);
+    }, 400);
   };
 
   const sectionTitle = ADDRESS_BOOK_NAMING_NAMING[language];
@@ -37,6 +46,7 @@ export const ShippingDetails = () => {
       />
       {displayPopup && (
         <Popup
+        movePopup={movePopup}
           displayPopup={displayPopup}
           toggleDisplayPopup={toggleDisplayPopup}
           modalVariant={"large"}
