@@ -98,9 +98,6 @@
   
 - Validation Messages
   
-- Dropdown Menus for card expiration month and card expiration year
-  - The menus suggest only valid options to ensure that the user cannot select an invalid expiration date
-  
 - After submitting any of the forms, the backend also performs validation to ensure that all inputs, including menus and fields, offer only valid options
   
 - Errors related to invalid inputs returned by the backend are displayed to the user
