@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import { SelectedLanguage } from "./SelectedLanguage/SelectedLanguage";
 import { Dropdown } from "./Dropdown/Dropdown";
@@ -9,7 +9,7 @@ import { IMAGE_URLS } from "./constants/imageUrls";
 
 import styles from "./SwitchLanguage.module.css";
 
-export const SwitchLanguage = ({ variant }) => {
+export const SwitchLanguage = memo(({ variant }) => {
   const { language, updateLanguage } = useLanguageContext();
 
   const [selectedImage, setSelectedImage] = useState(IMAGE_URLS[language]);
@@ -65,4 +65,4 @@ export const SwitchLanguage = ({ variant }) => {
       )}
     </section>
   );
-};
+});
