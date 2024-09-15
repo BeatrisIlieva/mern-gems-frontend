@@ -12,7 +12,6 @@
 
 
 <h4>
-  <a href="#introduction">Introduction</a> ·
   <a href="#demo-video">Demo Video</a> ·
   <a href="#built-with">Built With</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
@@ -28,8 +27,7 @@
   <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1725543807/forget-me-not-collection/miniImages/pngtree-sweet-pink-ribbon-png-image_13127280_cfwfwv.png" alt="Project Logo" width="80">
 </p>
 
-## Introduction
-<p><i>Welcome to our Online Jewelry Store! This web application serves as a platform for showcasing and selling a stunning collection of exquisite jewelry.</i></p>
+<p align="center"><i>Welcome to our Online Jewelry Store! This web application serves as a platform for showcasing and selling a stunning collection of exquisite jewelry.</i></p>
 
 ## Demo Video
 
