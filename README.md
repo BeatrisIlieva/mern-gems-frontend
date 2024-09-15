@@ -11,7 +11,7 @@
 <a name="error-handling"></a>
 
 
-<h4 align="center">
+<h4>
   <a href="#introduction">Introduction</a> ·
   <a href="#demo-video">Demo Video</a> ·
   <a href="#built-with">Built With</a> ·
@@ -19,7 +19,7 @@
   <a href="#optimization">Optimization</a> ·
   <a href="#languages">Languages</a> ·
   <a href="#error-handling">Error Handling</a> ·
-    <a href="#testing">Testing</a> ·
+  <a href="#testing">Testing</a> ·
   <a href="#features">Features</a> ·
   <a href="#backend">Backend</a> 
 </h4>
