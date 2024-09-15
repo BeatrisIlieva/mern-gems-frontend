@@ -1,11 +1,13 @@
 import { useState, createContext, useContext, useMemo } from "react";
 
+import { useLocalStorage } from "../hooks/useLocalStorage";
+
 import { LANGUAGES } from "../constants/languages";
 
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState(LANGUAGES[0]);
+  const [language, setLanguage] = useLocalStorage("language", LANGUAGES[0]);
 
   const updateLanguage = (selectedLanguage) => {
     setLanguage(selectedLanguage);
