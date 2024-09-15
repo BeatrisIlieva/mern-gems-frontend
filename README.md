@@ -106,6 +106,9 @@ Our website offers a user experience across three languages:
   
 - Errors related to invalid inputs returned by the backend are displayed to the user
 
+#### 2. Local Storage
+- We use a custom React hook to store the user's token and selected language in local storage. This ensures that the user's preferences are preserved even after a hard refresh.
+
 #### 10. Product filtration 
 
 #### 11. Shopping Bag Count
