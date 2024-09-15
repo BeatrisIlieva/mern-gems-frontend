@@ -11,7 +11,7 @@
 <a name="error-handling"></a>
 
 
-<h3 align="center">
+<h4 align="center">
   <a href="#built-with">Built With</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
   <a href="#optimization">Optimization</a> ·
