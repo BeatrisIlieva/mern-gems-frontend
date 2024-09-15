@@ -17,10 +17,17 @@ export const UpdatePassword = memo(() => {
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
-  const toggleDisplayPopup = () => {
-    setDisplayPopup((displayPopup) => !displayPopup);
+  const [movePopup, setMovePopup] = useState(false);
 
-    clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+  const toggleDisplayPopup = () => {
+    setMovePopup(true);
+
+    setTimeout(async () => {
+      setDisplayPopup((displayPopup) => !displayPopup);
+
+      clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+      setMovePopup(false);
+    }, 400);
   };
 
   const title = TITLE_NAMING[language];
@@ -34,6 +41,7 @@ export const UpdatePassword = memo(() => {
       />
       {displayPopup && (
         <Popup
+          movePopup={movePopup}
           displayPopup={displayPopup}
           toggleDisplayPopup={toggleDisplayPopup}
           modalVariant={"small"}
