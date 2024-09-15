@@ -2,7 +2,7 @@ import { useEffect, useState, memo } from "react";
 
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
-import { XMark } from "../../../common/XMark/XMark";
+import { XMark } from "../../../reusable/XMark/XMark";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
