@@ -1,16 +1,14 @@
-.switch-language {
-  position: absolute;
-  top: 0.25rem;
-  right: 2rem;
-  z-index: 120;
-  cursor: pointer;
-  animation: transitioning 1s forwards;
+.wrapper {
+  position: relative;
 }
 
-.switch-language.to-the-left {
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: row-reverse;
+.icon {
+  color: var(--medium-gray);
+  position: absolute;
+  bottom: -0.2rem;
+  right: -0.25rem;
+  font-size: 1rem;
+  animation: transitioning 1s forwards;
 }
 
 .slide-in {

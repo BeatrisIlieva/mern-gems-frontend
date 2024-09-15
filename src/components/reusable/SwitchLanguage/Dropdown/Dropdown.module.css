@@ -1,16 +1,13 @@
-.switch-language {
-  position: absolute;
-  top: 0.25rem;
-  right: 2rem;
-  z-index: 120;
-  cursor: pointer;
-  animation: transitioning 1s forwards;
-}
-
-.switch-language.to-the-left {
+.dropdown {
   display: flex;
   gap: 0.5rem;
   flex-direction: row-reverse;
+  animation: transitioning 1s forwards;
+}
+
+.dropdown.to-the-bottom {
+  flex-direction: column;
+  margin-top: 0.25rem;
 }
 
 .slide-in {

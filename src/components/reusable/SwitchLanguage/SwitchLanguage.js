@@ -1,12 +1,11 @@
 import { useState } from "react";
 
+import { SelectedLanguage } from "./SelectedLanguage/SelectedLanguage";
+import { Dropdown } from "./Dropdown/Dropdown";
+
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
-import { IMAGE_URLS } from "./constsnts/imageUrls";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
+import { IMAGE_URLS } from "./constants/imageUrls";
 
 import styles from "./SwitchLanguage.module.css";
 
@@ -48,53 +47,21 @@ export const SwitchLanguage = ({ variant }) => {
       ? `${styles["switch-language"]} ${styles[variant]}`
       : `${styles["switch-language"]}`;
 
-  const dropdownStyles =
-    variant === "to-the-bottom"
-      ? `${styles["dropdown"]} ${styles[variant]}`
-      : `${styles["dropdown"]}`;
-
   return (
     <section className={sectionStyles}>
-      <div className={styles["wrapper"]}>
-        {" "}
-        <div
-          className={`${styles["thumbnail"]} ${
-            isTransitioning ? styles["slide-out"] : styles["slide-in"]
-          }`}
-          onClick={updateIsTransitioningHandler}
-        >
-          <img className={styles["image"]} src={selectedImage} alt="flag" />
-        </div>
-        <FontAwesomeIcon
-          icon={displayDropdown ? faCaretUp : faCaretDown}
-          className={`${styles["icon"]} ${
-            isTransitioning ? styles["slide-out"] : styles["slide-in"]
-          }`}
-          onClick={updateIsTransitioningHandler}
-        />
-      </div>
+      <SelectedLanguage
+        updateIsTransitioningHandler={updateIsTransitioningHandler}
+        displayDropdown={displayDropdown}
+        isTransitioning={isTransitioning}
+        selectedImage={selectedImage}
+      />
       {displayDropdown && (
-        <div
-          className={`${dropdownStyles} ${
-            isTransitioning ? styles["slide-out"] : styles["slide-in"]
-          }`}
-        >
-          {Object.keys(IMAGE_URLS)
-            .filter((lang) => lang !== language)
-            .map((lang) => (
-              <div
-                key={lang}
-                className={styles["thumbnail"]}
-                onClick={() => languageChangeHandler(lang)}
-              >
-                <img
-                  className={styles["image"]}
-                  src={IMAGE_URLS[lang]}
-                  alt={`${lang} flag`}
-                />
-              </div>
-            ))}
-        </div>
+        <Dropdown
+          isTransitioning={isTransitioning}
+          language={language}
+          languageChangeHandler={languageChangeHandler}
+          variant={variant}
+        />
       )}
     </section>
   );
