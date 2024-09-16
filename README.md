@@ -36,7 +36,6 @@ Visit our website at: http://ec2-15-236-191-107.eu-west-3.compute.amazonaws.com:
 
 <br/>
 <br/>
-<br/>
 
 ## *Demo Video*
 
