@@ -28,12 +28,13 @@
 .wrapper {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .sub-title {
   cursor: pointer;
   font-size: var(--normal);
-  width: 100%;
+  white-space: nowrap;
 }
 
 .icon {
