@@ -13,6 +13,7 @@
 
 <h4 align="center">
   <a href="#built-with">Built With</a> ·
+  <a href="#deployment">Deployment</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
   <a href="#optimization">Optimization</a> ·
   <a href="#languages">Languages</a> ·
@@ -34,6 +35,11 @@
 
 ## Built With
 - React
+
+<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
+
+## Deployment
+- Firebase
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
