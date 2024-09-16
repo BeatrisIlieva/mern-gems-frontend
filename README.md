@@ -136,7 +136,7 @@ Our website offers a user experience across three languages:
 
 #### 17. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
 
-#### 18. `Page 404` 
+#### 18. Page 404 
   
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
