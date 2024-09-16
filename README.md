@@ -66,13 +66,13 @@ Our website offers a user experience across three languages:
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Error Handling
-1. Input Validation
+#### 1. Input Validation
 - All user inputs are validated using regular expressions (regex)
 - The validation rules are centralized in a set of constants and utility functions
 - DynamicForm component and a useForm hook are used to handle user inputs
 - Real-time feedback that ensures all data entered meets the required criteria before submission
 
-2. User Authentication
+#### 2. User Authentication
 - Register Error Handling:
   - When a user tries to register, the application verifies the email against the database
   - If the email is already registered, an error message is displayed to notify the user
@@ -80,7 +80,7 @@ Our website offers a user experience across three languages:
   - When a user tries to log in, the application verifies the email and password against the database
   - If the password is invalid or there is no user with the provided email, an error message is displayed to notify the user
 
-3. Size Selection
+#### 3. Size Selection
 - If a user clicks the "Add To Bag" button without selecting a size, an error message is displayed to inform them of the requirement
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
