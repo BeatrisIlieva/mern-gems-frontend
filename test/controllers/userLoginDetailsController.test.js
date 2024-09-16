@@ -43,7 +43,7 @@ describe("userLoginDetailsController", () => {
   const password = "123456Bb";
   const wrongPassword = "123456Bc";
   const newPassword = "123456Bt";
-  const selectedLanguage = "English"
+  const selectedLanguage = "English";
 
   afterEach(async () => {
     let userId;
@@ -93,7 +93,6 @@ describe("userLoginDetailsController", () => {
     expect(createdUserShippingDetails).not.toBeNull();
 
     expect(createdUserCardDetails).not.toBeNull();
-
 
     expect(sendRegistrationEmail).toHaveBeenCalledTimes(1);
 
