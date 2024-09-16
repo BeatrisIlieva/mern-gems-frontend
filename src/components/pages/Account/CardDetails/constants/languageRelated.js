@@ -7,5 +7,5 @@ export const SAVED_CREDIT_CARD_NAMING_NAMING = {
 export const BUTTON_TITLE = {
   English: "Add a New Credit Card",
   Chinese: "添加新的信用卡",
-  Bulgarian: "Добавете нов начин на плащане",
+  Bulgarian: "Нов начин на плащане",
 };
