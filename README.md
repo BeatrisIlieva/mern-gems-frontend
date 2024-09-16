@@ -49,16 +49,16 @@
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Error Handling
-1. Model Validations Using Regular Expressions:
+#### 1. Model Validations Using Regular Expressions:
 - Ensures that data fields such as email addresses follow a standard format, passwords meet complexity requirements, payment details are in correct format etc.
-2. Functions for Additional Validations:
+#### 2. Functions for Additional Validations:
 - Includes checks for email uniqueness during registration, verifies the correctness of the old password during password updates, checks if a card is not expired, etc.
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Features
 
-1. User Models:
+#### 1. User Models:
 - Implemented three distinct user models storing data about:
   - Logging credentials
   - Shipping details
@@ -74,17 +74,17 @@
 - Create and Update Card details functionality
 - Logout functionality
 
-2. Database aggregations for Product Filtering and Real-time Availability Tracking
+#### 2. Database aggregations for Product Filtering and Real-time Availability Tracking
    
-3. Obligatory Size Selection
+#### 3. Obligatory Size Selection
    
-4. Users can increase or decrease the quantity of items in their shopping bag, with validations in place to ensure that they cannot add more than the available quantity in the database or reduce the quantity below zero
+#### 4. Users can increase or decrease the quantity of items in their shopping bag, with validations in place to ensure that they cannot add more than the available quantity in the database or reduce the quantity below zero
     
-5. Wishlist
+#### 5. Wishlist
     
-6. Orders History, ordered by the creation time
+#### 6. Orders History, ordered by the creation time
   
-7. Email Notifications upon Registration and Order Completion
+#### 7. Email Notifications upon Registration and Order Completion
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
