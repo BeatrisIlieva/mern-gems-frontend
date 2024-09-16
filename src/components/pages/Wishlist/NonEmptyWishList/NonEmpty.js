@@ -11,7 +11,7 @@ import {
 
 import styles from "./NonEmptyWishlist.module.css";
 
-export const NonEmptyWishlist = () => {
+export const NonEmpty = () => {
   const { language } = useLanguageContext();
 
   const { wishlistItems, wishlistTotalQuantity } = useWishlistContext();
