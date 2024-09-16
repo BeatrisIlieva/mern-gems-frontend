@@ -2,7 +2,6 @@
   padding: 1.5rem 0;
   width: 20rem;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 1rem;
@@ -30,7 +29,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 0 0 0;
 }
 
 .sub-title {
