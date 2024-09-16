@@ -1,1 +1,1 @@
-export const HOST = "ec2-35-181-148-30.eu-west-3.compute.amazonaws.com:4000";
+export const HOST = "ec2-15-236-191-107.eu-west-3.compute.amazonaws.com:4000";
