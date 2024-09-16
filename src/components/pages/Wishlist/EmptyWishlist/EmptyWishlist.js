@@ -12,7 +12,7 @@ import {
 
 import styles from "./EmptyWishlist.module.css";
 
-export const Empty = memo(() => {
+export const EmptyWishlist = memo(() => {
   const { language } = useLanguageContext();
 
   const title = TITLES_BY_LANGUAGE[language];

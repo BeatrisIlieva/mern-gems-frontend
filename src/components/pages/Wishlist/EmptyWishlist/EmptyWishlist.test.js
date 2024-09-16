@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { EmptyWishlist } from "./Empty";
+import { EmptyWishlist } from "./EmptyWishlist";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
