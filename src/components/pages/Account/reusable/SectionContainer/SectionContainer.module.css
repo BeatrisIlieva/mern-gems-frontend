@@ -33,6 +33,7 @@
 .sub-title {
   cursor: pointer;
   font-size: var(--normal);
+  width: 100%;
 }
 
 .icon {
