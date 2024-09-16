@@ -7,5 +7,5 @@ export const ADDRESS_BOOK_NAMING_NAMING = {
 export const BUTTON_TITLE = {
   English: "Add a New Address",
   Chinese: "添加一个新配送地址",
-  Bulgarian: "Нов адрес за доставки",
+  Bulgarian: "Добавете нов адрес за доставки",
 };
