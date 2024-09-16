@@ -8,4 +8,4 @@ module.exports.ZIP_CODE_PATTERN = new RegExp(
   "u"
 );
 
-module.exports.ZIP_CODE_ERROR_MESSAGE = `This field requires ${ZIP_CODE_LENGTH.MIN}-${ZIP_CODE_LENGTH.MAX} characters`; 
+module.exports.ZIP_CODE_ERROR_MESSAGE = `This field requires ${ZIP_CODE_LENGTH.MIN}-${ZIP_CODE_LENGTH.MAX} characters`;
