@@ -37,6 +37,8 @@
 ## Deployment
 
 - Amazon Web Services (AWS) EC2 Instance
+- GitHub Actions
+- Docker Hub
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
