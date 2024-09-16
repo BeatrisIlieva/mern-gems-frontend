@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, memo } from "react";
 
 import { Remove } from "./Remove/Remove";
-import { MoveToWishlist } from "./MoveTo/MoveTo";
+import { MoveToWishlist } from "./MoveToWishlist/MoveToWishlist";
 import { DualTitleSection } from "../../../reusable/DualTitleSection/DualTitleSection";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
