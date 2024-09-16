@@ -26,16 +26,15 @@
   border-bottom: 0.1px solid var(--medium-gray);
 }
 
-.button {
+.wrapper {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: var(--white);
-  outline: none;
   padding: 10px 0px 0px 0px;
+}
+
+.subtitle {
+  cursor: pointer;
   font-size: var(--normal);
 }
 
@@ -44,4 +43,6 @@
   background-color: var(--pink);
   padding: 0.5rem;
   border-radius: 2rem;
+  cursor: pointer;
+  font-size: var(--normal);
 }

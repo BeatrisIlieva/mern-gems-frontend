@@ -9,10 +9,16 @@ export const SectionContainer = memo(
     return (
       <section className={styles["section-container"]}>
         <h2 className={styles["title"]}>{sectionTitle}</h2>
-        <button onClick={callBackFunction} className={styles["button"]}>
-          <FontAwesomeIcon icon={icon} className={styles["icon"]} />
-          {buttonTitle}
-        </button>
+        <div className={styles["wrapper"]}>
+          <FontAwesomeIcon
+            icon={icon}
+            className={styles["icon"]}
+            onClick={callBackFunction}
+          />
+          <h3 className={styles["sub-title"]} onClick={callBackFunction}>
+            {buttonTitle}
+          </h3>
+        </div>
       </section>
     );
   }
