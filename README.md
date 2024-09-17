@@ -64,24 +64,6 @@ The application is manually optimized for performance by utilizing React's useMe
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
-## Languages
-Our website offers a user experience across three languages:
-
-<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
-<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/british_1_mrryno.png" alt="British flag" width="50"> 
-<span>English</span>
-</p>
-<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
-<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300299/forget-me-not-collection/miniImages/chinese_1_infllx.png" alt="Chinese flag" width="50"> 
-<span>Chinese</span>
-</p>
-<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
-<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300300/forget-me-not-collection/miniImages/bulgarian_1_asspdw.png" alt="Bulgarian flag" width="50"> 
-<span>Bulgarian</span>
-</p>
-
-<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
-
 ## Error Handling
 #### 1. Input Validation
 - All user inputs are validated using regular expressions (regex)
@@ -120,37 +102,53 @@ Our website offers a user experience across three languages:
   
 - Errors related to invalid inputs returned by the backend are displayed to the user
 
-#### 4. Product filtration 
+#### 2. Languages
+Our website offers a user experience across three languages:
+<br/>
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300303/forget-me-not-collection/miniImages/british_1_mrryno.png" alt="British flag" width="50"> 
+<span>English</span>
+</p>
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300299/forget-me-not-collection/miniImages/chinese_1_infllx.png" alt="Chinese flag" width="50"> 
+<span>Chinese</span>
+</p>
+<p style="display: flex; align-items: center; justify-content: center; height: 60px;">
+<img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726300300/forget-me-not-collection/miniImages/bulgarian_1_asspdw.png" alt="Bulgarian flag" width="50"> 
+<span>Bulgarian</span>
+</p>
 
-#### 5. Shopping Bag Count
+#### 3. Product filtration 
 
-#### 6. Wishlist Count
+#### 4. Shopping Bag Count
 
-#### 7. Toggle Like
+#### 5. Wishlist Count
 
-#### 8. Create/Update Card Details Form
+#### 6. Toggle Like
 
-#### 9. Create/Update Shipping Details Form
+#### 7. Create/Update Card Details Form
 
-#### 10. Update Password Form
+#### 8. Create/Update Shipping Details Form
 
-#### 11. Update Email Form
+#### 9. Update Password Form
 
-#### 12. Order History 
+#### 10. Update Email Form
 
-#### 13. Logout Button
+#### 11. Order History 
 
-#### 14. Mini Navigation at the checkout stage
+#### 12. Logout Button
 
-#### 15. Order Summary at every step of the Checkout process
+#### 13. Mini Navigation at the checkout stage
 
-#### 16. Order Confirmation Page
+#### 14. Order Summary at every step of the Checkout process
 
-#### 17. Route Guard 
+#### 15. Order Confirmation Page
 
-#### 18. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
+#### 16. Route Guard 
 
-#### 19. Page 404 
+#### 17. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
+
+#### 18. Page 404 
   
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
