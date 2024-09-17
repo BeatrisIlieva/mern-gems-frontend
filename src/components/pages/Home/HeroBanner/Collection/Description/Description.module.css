@@ -14,7 +14,6 @@
   align-items: center;
   flex-direction: column;
   color: var(--white);
-  font-family: var(--bold-italic-font-family);
 }
 
 .inner-wrapper {
