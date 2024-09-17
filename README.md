@@ -39,7 +39,7 @@ Visit our website at: http://ec2-15-236-191-107.eu-west-3.compute.amazonaws.com
 
 ## *Demo Video*
 
-[![Watch the video](https://img.youtube.com/vi/MBGi5NiVf_8/maxresdefault.jpg)](https://www.youtube.com/watch?v=MBGi5NiVf_8)
+[![Watch the video](https://img.youtube.com/vi/RJyZrgUCcpo/maxresdefault.jpg)](https://www.youtube.com/watch?v=RJyZrgUCcpo)
 
 ## Built With
 - React
