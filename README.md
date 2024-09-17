@@ -11,12 +11,11 @@
 <a name="error-handling"></a>
 
 
-<h5 align="center">
+<h4 align="center">
   <a href="#built-with">Built With</a> ·
   <a href="#deployment">Deployment</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
   <a href="#optimization">Optimization</a> ·
-  <a href="#languages">Languages</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#testing">Testing</a> ·
   <a href="#features">Features</a> ·
@@ -147,8 +146,6 @@ Our website offers a user experience across three languages:
 #### 16. Route Guard 
 
 #### 17. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
-
-#### 18. Page 404 
   
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
