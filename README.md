@@ -57,13 +57,13 @@ Visit our website at: http://ec2-15-236-191-107.eu-west-3.compute.amazonaws.com
 Our website is fully optimized for all device sizes, starting from a minimum screen width of 340px, ensuring a seamless experience across smartphones, tablets, and desktops.
 
 <p align="center">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649931/mobile/login_cpsdjd.png" alt="Image 1" width="112">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649931/mobile/collection_phoiru.png" alt="Image 3" width="112">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/item_c6b12l.png" alt="Image 4" width="112">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/bag_rc7nkx.png" alt="Image 5" width="112">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/order-confirmation_umr84p.png" alt="Image 6" width="112">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649929/mobile/account_qdrxfh.png" alt="Image 7" width="112">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/wishlist_fwclxh.png" alt="Image 8" width="112">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649931/mobile/login_cpsdjd.png" alt="Image 1" width="114">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649931/mobile/collection_phoiru.png" alt="Image 3" width="114">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/item_c6b12l.png" alt="Image 4" width="114">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/bag_rc7nkx.png" alt="Image 5" width="114">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/order-confirmation_umr84p.png" alt="Image 6" width="114">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649929/mobile/account_qdrxfh.png" alt="Image 7" width="114">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1726649930/mobile/wishlist_fwclxh.png" alt="Image 8" width="114">
 </p>
 
 
