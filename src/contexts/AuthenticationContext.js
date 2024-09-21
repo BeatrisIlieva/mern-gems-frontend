@@ -24,9 +24,8 @@ export const AuthenticationProvider = ({ children }) => {
         setAuthentication({});
 
         localStorage.removeItem("authentication");
-        //600000
         await userLoginDetailsService.logout();
-      }, 60000000);
+      }, 600000);
     }
   };
 

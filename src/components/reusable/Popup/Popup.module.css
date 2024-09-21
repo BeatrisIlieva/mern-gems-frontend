@@ -10,7 +10,7 @@
   align-items: center;
   display: flex;
   transition: opacity 1s ease, transform 1s ease;
-  cursor: url("../../../assets/images/xmark.png"), auto;
+  cursor: url("../../../assets/images/xmark.png") 10 10, auto;
 }
 
 .modal {
