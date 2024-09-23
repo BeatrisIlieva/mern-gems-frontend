@@ -8,7 +8,6 @@ export const Popup = ({
   toggleDisplayPopup,
   children,
   modalVariant,
-  overlayVariant,
   displayPopup,
   movePopup,
 }) => {
@@ -19,7 +18,7 @@ export const Popup = ({
 
   return (
     <section
-      className={`${styles["overlay"]}  ${styles[overlayVariant]} ${
+      className={`${styles["overlay"]} ${
         isTransitioning || movePopup
           ? styles["transition-out"]
           : styles["transition-in"]

@@ -5,6 +5,9 @@ import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
 import { Logout } from "./Logout/Logout";
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
+import { UpdateEmailForm } from "./UpdateEmail/UpdateEmailForm/UpdateEmailForm";
+import { UpdatePasswordForm } from "./UpdatePassword/UpdatePasswordForm/UpdatePasswordForm";
+import { Button } from "../../../reusable/Button/Button";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
@@ -62,17 +65,37 @@ export const AccountManagement = () => {
       <LargeTitle title={title} />
       <NormalTitle title={userEmail} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
+      <Button
+        title={title}
+        callBackFunction={updateEmailClickHandler}
+        variant={"underlined"}
+      />
+            <Button
+        title={title}
+        callBackFunction={updatePasswordClickHandler}
+        variant={"underlined"}
+      />
         <UpdateEmail
           updateEmailClickHandler={updateEmailClickHandler}
           displayUpdateEmail={displayUpdateEmail}
           updateUserEmail={updateUserEmail}
         />
-        <UpdatePassword
+        {/* <UpdatePassword
           updatePasswordClickHandler={updatePasswordClickHandler}
           displayUpdatePassword={displayUpdatePassword}
-        />
+        /> */}
         <Logout />
       </div>
+      {/* {displayUpdateEmail && (
+        <div className={styles["update-form"]}>
+          <UpdateEmailForm />
+        </div>
+      )} */}
+      {displayUpdatePassword && (
+        <div className={styles["update-form"]}>
+          <UpdatePasswordForm />
+        </div>
+      )}
     </section>
   );
 };

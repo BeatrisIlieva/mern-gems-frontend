@@ -12,6 +12,8 @@ import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitia
 import { TITLE_NAMING } from "./constants/languageRelated";
 import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
+import styles from "./UpdateEmail.module.css"
+
 export const UpdateEmail = memo(({ updateUserEmail }) => {
   const { language } = useLanguageContext();
 
@@ -39,7 +41,15 @@ export const UpdateEmail = memo(({ updateUserEmail }) => {
         callBackFunction={toggleDisplayPopup}
         variant={"underlined"}
       />
-      {displayPopup && (
+            {displayPopup && (
+        <div className={styles["update-form"]}>
+          <UpdateEmailForm 
+                      popupCloseHandler={toggleDisplayPopup}
+                      updateUserEmail={updateUserEmail}
+          />
+        </div>
+      )}
+      {/* {displayPopup && (
         <Popup
           movePopup={movePopup}
           displayPopup={displayPopup}
@@ -52,7 +62,7 @@ export const UpdateEmail = memo(({ updateUserEmail }) => {
             updateUserEmail={updateUserEmail}
           />
         </Popup>
-      )}
+      )} */}
     </>
   );
 });

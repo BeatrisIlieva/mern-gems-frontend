@@ -18,10 +18,18 @@ export const CardDetailsContent = () => {
   const [displayShippingDetailsPopup, setDisplayShippingDetailsPopup] =
     useState(false);
 
+  const [movePopup, setMovePopup] = useState(false);
+
   const toggleDisplayShippingDetailsPopup = () => {
-    setDisplayShippingDetailsPopup(
-      (displayShippingDetailsPopup) => !displayShippingDetailsPopup
-    );
+    setMovePopup(true);
+
+    setTimeout(async () => {
+      setDisplayShippingDetailsPopup(
+        (displayShippingDetailsPopup) => !displayShippingDetailsPopup
+      );
+
+      setMovePopup(false);
+    }, 400);
   };
 
   return (
@@ -46,6 +54,7 @@ export const CardDetailsContent = () => {
       </Routes>
       {displayShippingDetailsPopup && (
         <Popup
+          movePopup={movePopup}
           toggleDisplayPopup={toggleDisplayShippingDetailsPopup}
           modalVariant={"large"}
           displayPopup={displayShippingDetailsPopup}
