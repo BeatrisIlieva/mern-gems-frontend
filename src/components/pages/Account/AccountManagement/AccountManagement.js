@@ -5,9 +5,6 @@ import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
 import { Logout } from "./Logout/Logout";
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
-import { UpdateEmailForm } from "./UpdateEmail/UpdateEmailForm/UpdateEmailForm";
-import { UpdatePasswordForm } from "./UpdatePassword/UpdatePasswordForm/UpdatePasswordForm";
-import { Button } from "../../../reusable/Button/Button";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
