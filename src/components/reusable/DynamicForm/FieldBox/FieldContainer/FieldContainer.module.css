@@ -12,6 +12,7 @@
 
 .error {
   border-bottom: 0.1px solid var(--red);
+  transition: box-shadow 0.3s ease;
 }
 
 .error:focus-within {
