@@ -43,7 +43,7 @@ export const UpdatePassword = memo(
           variant={"underlined"}
         />
         {displayUpdatePassword && (
-          <UpdatePasswordForm popupCloseHandler={toggleDisplayPopup} />
+          <UpdatePasswordForm popupCloseHandler={updatePasswordClickHandler} />
         )}
       </>
     );

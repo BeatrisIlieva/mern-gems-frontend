@@ -20,7 +20,7 @@ import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated"
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 
-export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
+export const UpdateEmailForm = ({ updateUserEmail }) => {
   const { language } = useLanguageContext();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -69,8 +69,6 @@ export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
           await userLoginDetailsService.updateEmail(userId, data);
 
           updateUserEmail(data.email);
-
-          popupCloseHandler();
         } catch (err) {
           console.log(err.message);
 

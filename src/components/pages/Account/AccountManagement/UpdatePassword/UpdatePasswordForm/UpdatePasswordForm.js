@@ -21,7 +21,7 @@ import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
-export const UpdatePasswordForm = ({ popupCloseHandler }) => {
+export const UpdatePasswordForm = () => {
   const { language } = useLanguageContext();
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -80,8 +80,6 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
           await userLoginDetailsService.updatePassword(userId, data);
 
           setValues(spreadValues);
-
-          popupCloseHandler();
         } catch (err) {
           console.log(err.message);
 
