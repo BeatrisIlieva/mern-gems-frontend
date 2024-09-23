@@ -12,6 +12,8 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 
+import styles from "./UpdatePassword.module.css";
+
 export const UpdatePassword = memo(
   ({ updatePasswordClickHandler, displayUpdatePassword }) => {
     const { language } = useLanguageContext();
@@ -43,7 +45,11 @@ export const UpdatePassword = memo(
           variant={"underlined"}
         />
         {displayUpdatePassword && (
-          <UpdatePasswordForm popupCloseHandler={updatePasswordClickHandler} />
+          <div className={styles["update-form"]}>
+            <UpdatePasswordForm
+              popupCloseHandler={updatePasswordClickHandler}
+            />
+          </div>
         )}
       </>
     );

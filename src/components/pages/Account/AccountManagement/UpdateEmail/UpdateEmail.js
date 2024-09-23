@@ -36,7 +36,7 @@ export const UpdateEmail = memo(
     const title = TITLE_NAMING[language];
 
     return (
-      <div className={styles["update-form"]}>
+      <>
         <Button
           title={title}
           callBackFunction={toggleDisplayPopup}
@@ -47,7 +47,7 @@ export const UpdateEmail = memo(
             <UpdateEmailForm updateUserEmail={updateUserEmail} />
           </div>
         )}
-      </div>
+      </>
     );
   }
 );
