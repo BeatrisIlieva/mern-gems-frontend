@@ -1,5 +1,5 @@
 .field-container {
-  border-bottom: 0.1px solid var(--pink);
+  border-bottom: 1px solid var(--pink);
   border-bottom-right-radius: 0.75rem;
   position: relative;
   padding: 0.25rem;
@@ -7,14 +7,14 @@
 }
 
 .field-container:focus-within {
-  box-shadow: 0 1.4px 0 0 var(--pink);
+  box-shadow: 0 2px 0 0 var(--pink);
 }
 
 .error {
-  border-bottom: 0.1px solid var(--red);
+  border-bottom: 1px solid var(--red);
   transition: box-shadow 0.3s ease;
 }
 
 .error:focus-within {
-  box-shadow: 0 1.4px 0 0 var(--red);
+  box-shadow: 0 2px 0 0 var(--red);
 }
