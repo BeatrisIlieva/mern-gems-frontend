@@ -12,41 +12,45 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 import styles from "./UpdateEmail.module.css";
 
-export const UpdateEmail = memo(({ updateUserEmail }) => {
-  const { language } = useLanguageContext();
+export const UpdateEmail = memo(
+  ({ updateEmailClickHandler, displayUpdateEmail, updateUserEmail }) => {
+    const { language } = useLanguageContext();
 
-  const [displayPopup, setDisplayPopup] = useState(false);
+    const [displayPopup, setDisplayPopup] = useState(false);
 
-  const [movePopup, setMovePopup] = useState(false);
+    const [movePopup, setMovePopup] = useState(false);
 
-  const toggleDisplayPopup = () => {
-    setMovePopup(true);
+    const toggleDisplayPopup = () => {
+      setMovePopup(true);
 
-    setTimeout(async () => {
-      setDisplayPopup((displayPopup) => !displayPopup);
+      setTimeout(async () => {
+        setDisplayPopup((displayPopup) => !displayPopup);
 
-      clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-      setMovePopup(false);
-    }, 400);
-  };
+        updateEmailClickHandler();
 
-  const title = TITLE_NAMING[language];
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+        setMovePopup(false);
+      }, 400);
+    };
 
-  return (
-    <>
-      <Button
-        title={title}
-        callBackFunction={toggleDisplayPopup}
-        variant={"underlined"}
-      />
-      {displayPopup && (
-        <div className={styles["update-form"]}>
-          <UpdateEmailForm
-            popupCloseHandler={toggleDisplayPopup}
-            updateUserEmail={updateUserEmail}
-          />
-        </div>
-      )}
-    </>
-  );
-});
+    const title = TITLE_NAMING[language];
+
+    return (
+      <div className={styles["update-form"]}>
+        <Button
+          title={title}
+          callBackFunction={toggleDisplayPopup}
+          variant={"underlined"}
+        />
+        {displayUpdateEmail && (
+          <div className={styles["update-form"]}>
+            <UpdateEmailForm
+              popupCloseHandler={toggleDisplayPopup}
+              updateUserEmail={updateUserEmail}
+            />
+          </div>
+        )}
+      </div>
+    );
+  }
+);

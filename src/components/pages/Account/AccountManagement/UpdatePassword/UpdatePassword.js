@@ -12,44 +12,40 @@ import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
 import { clearInitialFormValuesMessages } from "../../../../../utils/clearInitialFormValuesMessages";
 
-export const UpdatePassword = memo(() => {
-  const { language } = useLanguageContext();
+export const UpdatePassword = memo(
+  ({ updatePasswordClickHandler, displayUpdatePassword }) => {
+    const { language } = useLanguageContext();
 
-  const [displayPopup, setDisplayPopup] = useState(false);
+    const [displayPopup, setDisplayPopup] = useState(false);
 
-  const [movePopup, setMovePopup] = useState(false);
+    const [movePopup, setMovePopup] = useState(false);
 
-  const toggleDisplayPopup = () => {
-    setMovePopup(true);
+    const toggleDisplayPopup = () => {
+      setMovePopup(true);
 
-    setTimeout(async () => {
-      setDisplayPopup((displayPopup) => !displayPopup);
+      setTimeout(async () => {
+        setDisplayPopup((displayPopup) => !displayPopup);
 
-      clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
-      setMovePopup(false);
-    }, 400);
-  };
+        updatePasswordClickHandler();
 
-  const title = TITLE_NAMING[language];
+        clearInitialFormValuesMessages(FORM_KEYS, INITIAL_FORM_VALUES);
+        setMovePopup(false);
+      }, 400);
+    };
 
-  return (
-    <>
-      <Button
-        title={title}
-        callBackFunction={toggleDisplayPopup}
-        variant={"underlined"}
-      />
-      {displayPopup && (
-        <Popup
-          movePopup={movePopup}
-          displayPopup={displayPopup}
-          toggleDisplayPopup={toggleDisplayPopup}
-          modalVariant={"small"}
-        >
-          <LargeTitle title={title} textAlign={"align-center"} />
+    const title = TITLE_NAMING[language];
+
+    return (
+      <>
+        <Button
+          title={title}
+          callBackFunction={toggleDisplayPopup}
+          variant={"underlined"}
+        />
+        {displayUpdatePassword && (
           <UpdatePasswordForm popupCloseHandler={toggleDisplayPopup} />
-        </Popup>
-      )}
-    </>
-  );
-});
+        )}
+      </>
+    );
+  }
+);
