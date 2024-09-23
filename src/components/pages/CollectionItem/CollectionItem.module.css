@@ -6,6 +6,11 @@
   padding: 2rem;
   gap: 2rem;
   width: 100vw;
+  background-image: linear-gradient(
+    to right,
+    var(--very-light-pink),
+    var(--very-light-gray)
+  );
 }
 
 .info-and-action,
@@ -14,6 +19,8 @@
   background-color: var(--white);
   border-radius: 0.5rem;
   padding: 1.5rem;
+  box-shadow: rgba(50, 50, 93, 0.3) 0px 8px 32px -12px,
+    rgba(0, 0, 0, 0.4) 0px 6px 12px -18px;
 }
 
 .info-and-action {

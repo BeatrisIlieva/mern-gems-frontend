@@ -38,5 +38,26 @@
 @media (max-width: 701px) {
   #empty-bag {
     min-height: calc(100vh - 6.6rem);
+    background-image: linear-gradient(
+      to bottom,
+      var(--light-pink),
+      var(--very-light-pink),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--very-light-gray),
+      var(--light-gray)
+    );
   }
 }

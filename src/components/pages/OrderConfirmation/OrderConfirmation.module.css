@@ -16,7 +16,7 @@
     var(--very-light-gray),
     var(--light-gray)
   );
-  height: calc(100vh - 9.6rem);
+  min-height: calc(100vh - 9.6rem);
 }
 
 .title {
@@ -46,7 +46,7 @@
 
 @media (max-width: 701px) {
   #order-confirmation {
-    height: calc(100vh - 6.6rem);
+    min-height: calc(100vh - 6.6rem);
     background-image: linear-gradient(
       to bottom,
       var(--light-pink),
