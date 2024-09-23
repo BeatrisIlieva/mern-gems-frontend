@@ -3,8 +3,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 4rem 2rem;
+  padding: 0 2rem;
   gap: 3rem;
+  background-image: linear-gradient(
+    to right,
+    var(--light-pink),
+    var(--very-light-pink),
+    var(--white),
+    var(--white),
+    var(--white),
+    var(--white),
+    var(--very-light-gray),
+    var(--light-gray)
+  );
+  height: calc(100vh - 9.6rem);
 }
 
 .title {
@@ -30,4 +42,23 @@
   height: 100%;
   object-fit: contain;
   aspect-ratio: 1/1;
+}
+
+@media (max-width: 701px) {
+  #order-confirmation {
+    height: calc(100vh - 6.6rem);
+    background-image: linear-gradient(
+      to bottom,
+      var(--light-pink),
+      var(--very-light-pink),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--white),
+      var(--very-light-gray),
+      var(--light-gray)
+    );
+  }
 }

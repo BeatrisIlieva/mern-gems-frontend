@@ -5,6 +5,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-image: linear-gradient(
+    to right,
+    var(--light-pink),
+    var(--very-light-pink),
+    var(--very-light-gray),
+    var(--light-gray)
+  );
 }
 
 .outer-wrapper {

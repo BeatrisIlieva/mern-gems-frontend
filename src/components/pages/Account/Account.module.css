@@ -4,6 +4,20 @@
   align-items: center;
   gap: 2rem;
   height: calc(100vh - 9.6rem);
+  /* background-image: linear-gradient(
+    to right,
+    var(--light-pink),
+    var(--very-light-pink),
+    var(--white),
+    var(--white),
+    var(--very-light-gray),
+    var(--light-gray)
+  ); */
+  background-image: linear-gradient(
+    to right,
+    var(--very-light-pink),
+    var(--very-light-gray)
+  );
 }
 
 .flex-container {

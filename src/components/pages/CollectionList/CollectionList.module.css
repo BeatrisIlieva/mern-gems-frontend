@@ -5,6 +5,13 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
+  background-image: linear-gradient(
+    to right,
+    var(--light-pink),
+    var(--very-light-pink),
+    var(--very-light-gray),
+    var(--light-gray)
+  );
 }
 
 @media (max-width: 1400px) {
