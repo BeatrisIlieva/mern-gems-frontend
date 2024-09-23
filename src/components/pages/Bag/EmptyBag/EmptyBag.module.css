@@ -2,11 +2,21 @@
   display: flex;
   animation: transitioning 1.6s forwards;
   min-height: calc(100vh - 9.6rem);
-  background-color: var(--very-light-gray);
   align-items: center;
   justify-content: center;
   padding: 2rem;
   gap: 6rem;
+  background-image: linear-gradient(
+    to right,
+    var(--light-pink),
+    var(--very-light-pink),
+    var(--white),
+    var(--white),
+    var(--white),
+    var(--white),
+    var(--very-light-gray),
+    var(--light-gray)
+  );
 }
 
 @keyframes transitioning {
