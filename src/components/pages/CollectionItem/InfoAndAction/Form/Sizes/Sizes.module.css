@@ -30,7 +30,7 @@
 .label {
   gap: 0.25rem;
   box-shadow: 0 0 0 1px var(--medium-gray);
-  border-radius: 0.5rem;
+  border-radius: 0.938rem 3.125rem;
   padding: 0.5rem 0;
   width: 5rem;
   justify-content: center;
