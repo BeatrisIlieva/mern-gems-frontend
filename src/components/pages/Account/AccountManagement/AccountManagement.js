@@ -70,22 +70,12 @@ export const AccountManagement = () => {
           displayUpdateEmail={displayUpdateEmail}
           updateUserEmail={updateUserEmail}
         />
-        {/* <UpdatePassword
+        <UpdatePassword
           updatePasswordClickHandler={updatePasswordClickHandler}
           displayUpdatePassword={displayUpdatePassword}
-        /> */}
+        />
         <Logout />
       </div>
-      {/* {displayUpdateEmail && (
-        <div className={styles["update-form"]}>
-          <UpdateEmailForm />
-        </div>
-      )} */}
-      {displayUpdatePassword && (
-        <div className={styles["update-form"]}>
-          <UpdatePasswordForm />
-        </div>
-      )}
     </section>
   );
 };
