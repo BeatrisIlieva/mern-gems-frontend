@@ -20,7 +20,7 @@ import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated"
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 
-export const UpdateEmailForm = ({ updateUserEmail }) => {
+export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
   const { language } = useLanguageContext();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -69,6 +69,8 @@ export const UpdateEmailForm = ({ updateUserEmail }) => {
           await userLoginDetailsService.updateEmail(userId, data);
 
           updateUserEmail(data.email);
+
+          popupCloseHandler();
         } catch (err) {
           console.log(err.message);
 
@@ -88,7 +90,14 @@ export const UpdateEmailForm = ({ updateUserEmail }) => {
         }
       }
     },
-    [submitHandler, userLoginDetailsService, values, setValues, userId]
+    [
+      submitHandler,
+      userLoginDetailsService,
+      popupCloseHandler,
+      values,
+      setValues,
+      userId,
+    ]
   );
 
   const buttonTitle = useMemo(() => {

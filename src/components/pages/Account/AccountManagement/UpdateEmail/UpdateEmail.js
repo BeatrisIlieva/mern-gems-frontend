@@ -16,7 +16,7 @@ export const UpdateEmail = memo(
   ({ updateEmailClickHandler, displayUpdateEmail, updateUserEmail }) => {
     const { language } = useLanguageContext();
 
-    const [displayPopup, setDisplayPopup] = useState(false);
+    const [displayPopup, setDisplayPopup] = useState(updateUserEmail);
 
     const [movePopup, setMovePopup] = useState(false);
 
@@ -42,9 +42,12 @@ export const UpdateEmail = memo(
           callBackFunction={toggleDisplayPopup}
           variant={"underlined"}
         />
-        {displayUpdateEmail && (
+        {(displayPopup && displayUpdateEmail) && (
           <div className={styles["update-form"]}>
-            <UpdateEmailForm updateUserEmail={updateUserEmail} />
+            <UpdateEmailForm
+              updateUserEmail={updateUserEmail}
+              popupCloseHandler={toggleDisplayPopup}
+            />
           </div>
         )}
       </>

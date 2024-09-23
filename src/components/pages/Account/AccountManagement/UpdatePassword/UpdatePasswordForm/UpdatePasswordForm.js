@@ -21,7 +21,7 @@ import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
-export const UpdatePasswordForm = () => {
+export const UpdatePasswordForm = ({ popupCloseHandler }) => {
   const { language } = useLanguageContext();
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -80,6 +80,8 @@ export const UpdatePasswordForm = () => {
           await userLoginDetailsService.updatePassword(userId, data);
 
           setValues(spreadValues);
+
+          popupCloseHandler();
         } catch (err) {
           console.log(err.message);
 
@@ -95,7 +97,14 @@ export const UpdatePasswordForm = () => {
         }
       }
     },
-    [submitHandler, values, userLoginDetailsService, setValues, userId]
+    [
+      submitHandler,
+      values,
+      userLoginDetailsService,
+      popupCloseHandler,
+      setValues,
+      userId,
+    ]
   );
 
   const buttonTitle = useMemo(() => {

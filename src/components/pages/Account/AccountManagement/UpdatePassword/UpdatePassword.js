@@ -18,7 +18,7 @@ export const UpdatePassword = memo(
   ({ updatePasswordClickHandler, displayUpdatePassword }) => {
     const { language } = useLanguageContext();
 
-    const [displayPopup, setDisplayPopup] = useState(false);
+    const [displayPopup, setDisplayPopup] = useState(displayUpdatePassword);
 
     const [movePopup, setMovePopup] = useState(false);
 
@@ -44,10 +44,10 @@ export const UpdatePassword = memo(
           callBackFunction={toggleDisplayPopup}
           variant={"underlined"}
         />
-        {displayUpdatePassword && (
+        {(displayPopup && displayUpdatePassword) && (
           <div className={styles["update-form"]}>
             <UpdatePasswordForm
-              popupCloseHandler={updatePasswordClickHandler}
+              popupCloseHandler={toggleDisplayPopup}
             />
           </div>
         )}
