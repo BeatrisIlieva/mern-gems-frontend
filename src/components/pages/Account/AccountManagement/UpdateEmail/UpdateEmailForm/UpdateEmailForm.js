@@ -88,14 +88,7 @@ export const UpdateEmailForm = ({ updateUserEmail }) => {
         }
       }
     },
-    [
-      submitHandler,
-      userLoginDetailsService,
-      popupCloseHandler,
-      values,
-      setValues,
-      userId,
-    ]
+    [submitHandler, userLoginDetailsService, values, setValues, userId]
   );
 
   const buttonTitle = useMemo(() => {

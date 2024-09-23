@@ -44,9 +44,7 @@ export const UpdateEmail = memo(
         />
         {displayUpdateEmail && (
           <div className={styles["update-form"]}>
-            <UpdateEmailForm
-              updateUserEmail={updateUserEmail}
-            />
+            <UpdateEmailForm updateUserEmail={updateUserEmail} />
           </div>
         )}
       </div>

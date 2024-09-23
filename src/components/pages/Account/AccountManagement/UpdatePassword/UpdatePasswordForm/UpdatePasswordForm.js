@@ -95,14 +95,7 @@ export const UpdatePasswordForm = () => {
         }
       }
     },
-    [
-      submitHandler,
-      values,
-      userLoginDetailsService,
-      popupCloseHandler,
-      setValues,
-      userId,
-    ]
+    [submitHandler, values, userLoginDetailsService, setValues, userId]
   );
 
   const buttonTitle = useMemo(() => {
