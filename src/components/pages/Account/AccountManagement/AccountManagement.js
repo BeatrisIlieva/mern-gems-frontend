@@ -65,16 +65,6 @@ export const AccountManagement = () => {
       <LargeTitle title={title} />
       <NormalTitle title={userEmail} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
-      <Button
-        title={title}
-        callBackFunction={updateEmailClickHandler}
-        variant={"underlined"}
-      />
-            <Button
-        title={title}
-        callBackFunction={updatePasswordClickHandler}
-        variant={"underlined"}
-      />
         <UpdateEmail
           updateEmailClickHandler={updateEmailClickHandler}
           displayUpdateEmail={displayUpdateEmail}
