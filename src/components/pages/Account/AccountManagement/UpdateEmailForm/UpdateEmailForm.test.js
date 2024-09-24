@@ -3,20 +3,20 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 
 import { UpdateEmailForm } from "./UpdateEmailForm";
 
-import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
-import { AuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+import { AuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
-import { useService } from "../../../../../../hooks/useService";
+import { useService } from "../../../../../hooks/useService";
 
-import { FORM_KEYS, INITIAL_FORM_VALUES } from "../constants/initialFormValues";
+import { FORM_KEYS, INITIAL_FORM_VALUES } from "./constants/initialFormValues";
 
-import { ERROR_MESSAGES } from "../../../../../../constants/errorMessages";
+import { ERROR_MESSAGES } from "../../../../../constants/errorMessages";
 
-jest.mock("../../../../../../contexts/LanguageContext", () => ({
+jest.mock("../../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
 }));
 
-jest.mock("../../../../../../hooks/useService");
+jest.mock("../../../../../hooks/useService");
 
 const userId = "test-id";
 
