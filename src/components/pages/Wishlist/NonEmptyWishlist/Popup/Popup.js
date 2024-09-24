@@ -1,16 +1,32 @@
 import { CursorImageEffect } from "../../../../common/CursorImageEffect/CursorImageEffect";
 import { XMark } from "../../../../reusable/XMark/XMark";
 import { Form } from "../../../CollectionItem/InfoAndAction/Form/Form";
+import { Images } from "../../../CollectionItem/Images/Images";
+import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
+import { Paragraph } from "../../../../reusable/Paragraph/Paragraph";
+import { JewelryImage } from "../../../../reusable/JewelryImage/JewelryImage";
 
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 import { usePopup } from "../../../../../hooks/usePopup";
+
+import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../../constants/categoryNamesByLanguage";
 
 import styles from "./Popup.module.css";
 
-export const Popup = ({ toggleDisplayPopup, displayPopup, jewelriesByCategory }) => {
+export const Popup = ({
+  toggleDisplayPopup,
+  displayPopup,
+  jewelriesByCategory,
+}) => {
+  const { language } = useLanguageContext();
+
   const { isTransitioning, popupRef, popupCloseHandler } = usePopup({
     toggleDisplayPopup,
     displayPopup,
   });
+
+  const categoryId = jewelriesByCategory[0].category;
+  const jewelryTitle = CATEGORY_NAMES_BY_LANGUAGE[categoryId][language];
 
   return (
     <section
@@ -26,8 +42,37 @@ export const Popup = ({ toggleDisplayPopup, displayPopup, jewelriesByCategory })
         }`}
       >
         <XMark callbackFunction={popupCloseHandler} />
-        <div className={styles["mini-bag"]}>
-            <Form  jewelriesByCategory={jewelriesByCategory} toggleDisplayPopup={toggleDisplayPopup} />
+        <div className={styles["add-to-bag"]}>
+          <div className={styles["wrapper"]}>
+            <div className={styles["images"]}>
+              <div className={styles["thumbnail"]}>
+                <img
+                  className={styles["image"]}
+                  src={jewelriesByCategory[0].firstImageUrl}
+                  alt=""
+                />
+              </div>
+              <div className={styles["thumbnail"]}>
+                <img
+                  className={styles["image"]}
+                  src={jewelriesByCategory[0].secondImageUrl}
+                  alt=""
+                />
+              </div>
+            </div>
+            <div>
+              <LargeTitle title={jewelryTitle} textAlign={"left"} />
+              <Paragraph
+                text={`${jewelriesByCategory[0].description[language]}`}
+                textAlign={"left"}
+                color={"gray"}
+              />
+            </div>
+          </div>
+          <Form
+            jewelriesByCategory={jewelriesByCategory}
+            toggleDisplayPopup={toggleDisplayPopup}
+          />
         </div>
       </div>
     </section>
