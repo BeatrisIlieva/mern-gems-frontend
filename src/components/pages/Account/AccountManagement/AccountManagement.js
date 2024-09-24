@@ -81,7 +81,9 @@ export const AccountManagement = () => {
           variant={"underlined"}
         />
         <Logout />
-        {displayUpdateEmail && <UpdateEmailForm updateUserEmail={updateUserEmail} />}
+        {displayUpdateEmail && (
+          <UpdateEmailForm updateUserEmail={updateUserEmail} />
+        )}
         {displayUpdatePassword && <UpdatePasswordForm />}
       </div>
     </section>

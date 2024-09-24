@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import styles from "./Logo.module.css";
 
 export const Logo = () => {
@@ -14,7 +12,7 @@ export const Logo = () => {
           />
         </div>
       </div>
-      <Link to="/" className={styles["logo-wrapper"]}>
+      <div className={styles["logo-wrapper"]}>
         <div className={styles["thumbnail"]}>
           <img
             className={styles["logo-image"]}
@@ -24,7 +22,7 @@ export const Logo = () => {
             alt="logo-image"
           />
         </div>
-      </Link>
+      </div>
     </>
   );
 };
