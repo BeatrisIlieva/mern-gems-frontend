@@ -10,7 +10,6 @@
   align-items: center;
   display: flex;
   transition: opacity 1s ease, transform 1s ease;
-  pointer-events: none;
 }
 
 .modal {
