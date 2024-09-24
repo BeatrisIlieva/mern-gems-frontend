@@ -21,7 +21,9 @@ import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 
-export const UpdatePasswordForm = ({ popupCloseHandler }) => {
+import styles from "./UpdatePasswordForm.module.css";
+
+export const UpdatePasswordForm = () => {
   const { language } = useLanguageContext();
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -80,8 +82,6 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
           await userLoginDetailsService.updatePassword(userId, data);
 
           setValues(spreadValues);
-
-          popupCloseHandler();
         } catch (err) {
           console.log(err.message);
 
@@ -97,14 +97,7 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
         }
       }
     },
-    [
-      submitHandler,
-      values,
-      userLoginDetailsService,
-      popupCloseHandler,
-      setValues,
-      userId,
-    ]
+    [submitHandler, values, userLoginDetailsService, setValues, userId]
   );
 
   const buttonTitle = useMemo(() => {
@@ -112,7 +105,7 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
   }, []);
 
   return (
-    <>
+    <div className={styles["update-password-form"]}>
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
@@ -127,6 +120,6 @@ export const UpdatePasswordForm = ({ popupCloseHandler }) => {
         formVariant={"column-form"}
         fieldVariant={"large-field-box"}
       />
-    </>
+    </div>
   );
 };

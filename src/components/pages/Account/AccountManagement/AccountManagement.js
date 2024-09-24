@@ -5,6 +5,9 @@ import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
 import { Logout } from "./Logout/Logout";
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
+import { UpdateEmailForm } from "./UpdateEmail/UpdateEmailForm/UpdateEmailForm";
+import { UpdatePasswordForm } from "./UpdatePassword/UpdatePasswordForm/UpdatePasswordForm";
+import { Button } from "../../../reusable/Button/Button";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
@@ -13,7 +16,11 @@ import { useService } from "../../../../hooks/useService";
 
 import { userLoginDetailsServiceFactory } from "../../../../services/userLoginDetailsService";
 
-import { ACCOUNT_MANAGEMENT_NAMING } from "./constants/languageRelated";
+import {
+  ACCOUNT_MANAGEMENT_NAMING,
+  UPDATE_EMAIL_TITLE_NAMING,
+  UPDATE_PASSWORD_TITLE_NAMING,
+} from "./constants/languageRelated";
 
 import styles from "./AccountManagement.module.css";
 
@@ -57,12 +64,27 @@ export const AccountManagement = () => {
 
   const title = ACCOUNT_MANAGEMENT_NAMING[language];
 
+  const updateEmailButtonTitle = UPDATE_EMAIL_TITLE_NAMING[language];
+  const updatePasswordButtonTitle = UPDATE_PASSWORD_TITLE_NAMING[language];
+
   return (
     <section className={styles["account-management"]}>
       <LargeTitle title={title} />
       <NormalTitle title={userEmail} variant={"bolded"} />
       <div className={styles["buttons-container"]}>
-        <UpdateEmail
+        <Button
+          title={updateEmailButtonTitle}
+          callBackFunction={updateEmailClickHandler}
+          variant={"underlined"}
+        />
+        <Button
+          title={updatePasswordButtonTitle}
+          callBackFunction={updatePasswordClickHandler}
+          variant={"underlined"}
+        />
+        {displayUpdateEmail && <UpdateEmailForm updateUserEmail={updateUserEmail} />}
+        {displayUpdatePassword && <UpdatePasswordForm />}
+        {/* <UpdateEmail
           updateEmailClickHandler={updateEmailClickHandler}
           displayUpdateEmail={displayUpdateEmail}
           updateUserEmail={updateUserEmail}
@@ -70,7 +92,7 @@ export const AccountManagement = () => {
         <UpdatePassword
           updatePasswordClickHandler={updatePasswordClickHandler}
           displayUpdatePassword={displayUpdatePassword}
-        />
+        /> */}
         <Logout />
       </div>
     </section>

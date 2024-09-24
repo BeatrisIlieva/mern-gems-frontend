@@ -20,7 +20,9 @@ import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated"
 import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
 import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
 
-export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
+import styles from "./UpdateEmailForm.module.css";
+
+export const UpdateEmailForm = ({ updateUserEmail }) => {
   const { language } = useLanguageContext();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -69,8 +71,6 @@ export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
           await userLoginDetailsService.updateEmail(userId, data);
 
           updateUserEmail(data.email);
-
-          popupCloseHandler();
         } catch (err) {
           console.log(err.message);
 
@@ -82,22 +82,13 @@ export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
             PASSWORD_ERROR_MESSAGE
           );
 
-          console.log(spreadValues);
-
           setValues(spreadValues);
         } finally {
           setIsLoading(false);
         }
       }
     },
-    [
-      submitHandler,
-      userLoginDetailsService,
-      popupCloseHandler,
-      values,
-      setValues,
-      userId,
-    ]
+    [submitHandler, userLoginDetailsService, values, setValues, userId]
   );
 
   const buttonTitle = useMemo(() => {
@@ -105,7 +96,7 @@ export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
   }, []);
 
   return (
-    <>
+    <div className={styles["update-email-form"]}>
       <DynamicForm
         values={values}
         formKeys={FORM_KEYS}
@@ -120,6 +111,6 @@ export const UpdateEmailForm = ({ popupCloseHandler, updateUserEmail }) => {
         formVariant={"column-form"}
         fieldVariant={"large-field-box"}
       />
-    </>
+    </div>
   );
 };
