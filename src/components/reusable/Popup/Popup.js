@@ -1,7 +1,7 @@
 import { XMark } from "../../reusable/XMark/XMark";
+import { CursorImageEffect } from "../../common/CursorImageEffect/CursorImageEffect";
 
 import { usePopup } from "../../../hooks/usePopup";
-import {CursorImageEffect} from "../../common/CursorImageEffect/CursorImageEffect";
 
 import styles from "./Popup.module.css";
 
@@ -24,7 +24,7 @@ export const Popup = ({
           : styles["transition-in"]
       }`}
     >
-      <CursorImageEffect/>
+      <CursorImageEffect />
       <div
         ref={popupRef}
         className={`${styles["modal"]} ${

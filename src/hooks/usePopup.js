@@ -5,7 +5,6 @@ export const usePopup = ({ toggleDisplayPopup, displayPopup }) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const popupCloseHandler = () => {
-
     return new Promise((resolve) => {
       setIsTransitioning(true);
 
