@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}

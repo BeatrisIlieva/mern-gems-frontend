@@ -5,6 +5,7 @@ import { MiniBag } from "./MiniBag/MiniBag";
 import { Page404 } from "../Page404/Page404";
 import { Images } from "./Images/Images";
 import { InfoAndAction } from "./InfoAndAction/InfoAndAction";
+import { Nav } from "./Nav/Nav";
 
 import { useJewelry } from "../../../hooks/useJewelry";
 
@@ -43,18 +44,21 @@ export const CollectionItem = () => {
             />
           )}
           <section className={styles["collection-item"]}>
-            <div className={styles["images"]}>
-              {jewelriesByCategory.length > 0 && (
-                <Images jewelriesByCategory={jewelriesByCategory} />
-              )}
-            </div>
-            <div className={styles["info-and-action"]}>
-              {jewelriesByCategory.length > 0 && (
-                <InfoAndAction
-                  jewelriesByCategory={jewelriesByCategory}
-                  toggleDisplayPopup={toggleDisplayPopup}
-                />
-              )}
+            <Nav />
+            <div className={styles["wrapper"]}>
+              <div className={styles["images"]}>
+                {jewelriesByCategory.length > 0 && (
+                  <Images jewelriesByCategory={jewelriesByCategory} />
+                )}
+              </div>
+              <div className={styles["info-and-action"]}>
+                {jewelriesByCategory.length > 0 && (
+                  <InfoAndAction
+                    jewelriesByCategory={jewelriesByCategory}
+                    toggleDisplayPopup={toggleDisplayPopup}
+                  />
+                )}
+              </div>
             </div>
           </section>
         </>

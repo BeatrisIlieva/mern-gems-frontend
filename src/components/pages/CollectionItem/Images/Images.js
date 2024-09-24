@@ -17,7 +17,7 @@ export const Images = memo(({ jewelriesByCategory }) => {
   }, []);
 
   return (
-    <>
+    <div className={styles["images"]}>
       <JewelryImage
         firstImageUrlIsActive={firstImageUrlIsActive}
         firstImageUrl={jewelriesByCategory[0].firstImageUrl}
@@ -33,6 +33,6 @@ export const Images = memo(({ jewelriesByCategory }) => {
           secondImageUrl={jewelriesByCategory[0].secondImageUrl}
         />
       </div>
-    </>
+    </div>
   );
 });
