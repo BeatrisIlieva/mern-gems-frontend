@@ -1,12 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 
-import { UpdateEmail } from "./UpdateEmail/UpdateEmail";
-import { UpdatePassword } from "./UpdatePassword/UpdatePassword";
 import { Logout } from "./Logout/Logout";
 import { NormalTitle } from "../../../reusable/NormalTitle/NormalTitle";
 import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
-import { UpdateEmailForm } from "./UpdateEmail/UpdateEmailForm/UpdateEmailForm";
-import { UpdatePasswordForm } from "./UpdatePassword/UpdatePasswordForm/UpdatePasswordForm";
+import { UpdateEmailForm } from "./UpdateEmailForm/UpdateEmailForm";
+import { UpdatePasswordForm } from "./UpdatePasswordForm/UpdatePasswordForm";
 import { Button } from "../../../reusable/Button/Button";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
@@ -82,18 +80,9 @@ export const AccountManagement = () => {
           callBackFunction={updatePasswordClickHandler}
           variant={"underlined"}
         />
+        <Logout />
         {displayUpdateEmail && <UpdateEmailForm updateUserEmail={updateUserEmail} />}
         {displayUpdatePassword && <UpdatePasswordForm />}
-        {/* <UpdateEmail
-          updateEmailClickHandler={updateEmailClickHandler}
-          displayUpdateEmail={displayUpdateEmail}
-          updateUserEmail={updateUserEmail}
-        />
-        <UpdatePassword
-          updatePasswordClickHandler={updatePasswordClickHandler}
-          displayUpdatePassword={displayUpdatePassword}
-        /> */}
-        <Logout />
       </div>
     </section>
   );

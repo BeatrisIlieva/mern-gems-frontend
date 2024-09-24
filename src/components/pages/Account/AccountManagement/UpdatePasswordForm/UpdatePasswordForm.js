@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
 import { useCallback, useMemo } from "react";
 
-import { DynamicForm } from "../../../../../reusable/DynamicForm/DynamicForm";
+import { DynamicForm } from "../../../../reusable/DynamicForm/DynamicForm";
 
-import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
-import { useAuthenticationContext } from "../../../../../../contexts/AuthenticationContext";
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
-import { useForm } from "../../../../../../hooks/useForm";
-import { useService } from "../../../../../../hooks/useService";
+import { useForm } from "../../../../../hooks/useForm";
+import { useService } from "../../../../../hooks/useService";
 
-import { userLoginDetailsServiceFactory } from "../../../../../../services/userLoginDetailsService";
+import { userLoginDetailsServiceFactory } from "../../../../../services/userLoginDetailsService";
 
-import { checkIfFormErrorHasOccurred } from "../../../../../../utils/checkIfFormErrorHasOccurred";
-import { setWrongPasswordErrorMessage } from "../../../../../../utils/setWrongPasswordErrorMessage";
+import { checkIfFormErrorHasOccurred } from "../../../../../utils/checkIfFormErrorHasOccurred";
+import { setWrongPasswordErrorMessage } from "../../../../../utils/setWrongPasswordErrorMessage";
 
 import { getData } from "./helpers/getData";
 import { setPasswordMismatchErrorMessage } from "./helpers/setPasswordMismatchErrorMessage";
 
-import { PASSWORD_ERROR_MESSAGE } from "../../../../../../constants/password";
-import { SAVE_BUTTON_NAMING } from "../../../../../../constants/languageRelated";
-import { INITIAL_FORM_VALUES, FORM_KEYS } from "../constants/initialFormValues";
+import { PASSWORD_ERROR_MESSAGE } from "../../../../../constants/password";
+import { SAVE_BUTTON_NAMING } from "../../../../../constants/languageRelated";
+import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 import styles from "./UpdatePasswordForm.module.css";
 
