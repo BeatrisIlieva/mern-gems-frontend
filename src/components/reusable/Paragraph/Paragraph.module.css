@@ -20,7 +20,9 @@
 .paragraph.center {
   text-align: center;
   color: var(--white);
+}
 
+.paragraph.center.underline {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: white;

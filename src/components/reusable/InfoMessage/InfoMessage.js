@@ -8,7 +8,12 @@ export const InfoMessage = ({ title, subtitle }) => {
     <section className={styles["info-message"]}>
       <div className={styles["message"]}>
         <LargeTitle title={title} textAlign={"center"} />
-        <Paragraph text={subtitle} textAlign={"center"} color={"gray"} />
+        <Paragraph
+          text={subtitle}
+          textAlign={"center"}
+          color={"gray"}
+          underline={"underline"}
+        />
       </div>
       <div className={styles["thumbnail"]}>
         <img
