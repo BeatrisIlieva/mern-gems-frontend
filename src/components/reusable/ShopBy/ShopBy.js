@@ -4,10 +4,9 @@ import { Button } from "../Button/Button";
 
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
-import {
-  BUTTON_TITLES_BY_LANGUAGE,
-  CATEGORY_TITLES_BY_LANGUAGE,
-} from "./constants/languageRelated";
+import { BUTTON_TITLES_BY_LANGUAGE } from "./constants/languageRelated";
+
+import { CATEGORY_TITLES_BY_LANGUAGE } from "../../../constants/languageRelated";
 
 export const ShopBy = memo(({ categoryTitle, buttonClickHandler }) => {
   const { language } = useLanguageContext();

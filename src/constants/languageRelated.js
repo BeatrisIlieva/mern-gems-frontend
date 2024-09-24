@@ -39,3 +39,14 @@ export const EMPTY_BAG_TITLE = {
   Chinese: "您的购物袋是空的",
   Bulgarian: "Вашата чанта е празна",
 };
+
+export const CATEGORY_TITLES_BY_LANGUAGE = {
+  Bracelets: { English: "Bracelets", Chinese: "手链选购", Bulgarian: "Гривни" },
+  Earrings: { English: "Earrings", Chinese: "耳环选购", Bulgarian: "Обеци" },
+  Necklaces: {
+    English: "Necklaces",
+    Chinese: "项链选购 ",
+    Bulgarian: "Огърлици",
+  },
+  Rings: { English: "Rings", Chinese: "戒指选购", Bulgarian: "Пръстени" },
+};

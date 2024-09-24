@@ -54,7 +54,7 @@ export const InfoAndAction = memo(
               <StockStatus jewelriesByCategory={jewelriesByCategory} />
             </div>
           </div>
-          <div>
+          <div className={styles["info-wrapper"]}>
             <LargeTitle title={jewelryTitle} textAlign={"left"} />
             <Paragraph
               text={`${jewelriesByCategory[0].description[language]}`}
