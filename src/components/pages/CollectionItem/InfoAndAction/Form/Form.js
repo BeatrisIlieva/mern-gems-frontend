@@ -1,18 +1,11 @@
-import { useState, useEffect, useCallback } from "react";
-
 import { Sizes } from "./Sizes/Sizes";
 import { Button } from "../../../../reusable/Button/Button";
 import { Heart } from "../../../../common/Heart/Heart";
-
-import { useBagContext } from "../../../../../contexts/BagContext";
-import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
 
 import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 
 import { useAddToBagForm } from "../../../../../hooks/useAddToBagForm";
 
-import { SIZE_ERROR_MESSAGE } from "../../../../../constants/sizeErrorMessage";
-import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
 import { ADD_TO_BAG_BUTTON_TITLE } from "./constants/languageRelated";
 
 import styles from "./Form.module.css";
