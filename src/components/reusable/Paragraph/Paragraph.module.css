@@ -20,6 +20,12 @@
 .paragraph.center {
   text-align: center;
   color: var(--white);
+
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: white;
+  text-underline-offset: 0.2rem;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
 }
 
 .paragraph.white {

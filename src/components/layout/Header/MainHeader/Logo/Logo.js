@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 import styles from "./Logo.module.css";
 
 export const Logo = () => {
   return (
-    <>
+    <Link to={"/"}>
       <div className={styles["text-wrapper"]}>
         <div className={styles["text-thumbnail"]}>
           <img
@@ -23,6 +25,6 @@ export const Logo = () => {
           />
         </div>
       </div>
-    </>
+    </Link>
   );
 };
