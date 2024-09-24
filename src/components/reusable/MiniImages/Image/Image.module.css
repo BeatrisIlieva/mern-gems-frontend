@@ -35,3 +35,9 @@
 .title.gray {
   color: var(--medium-gray);
 }
+
+@media (max-width: 453px) {
+  .thumbnail {
+    width: 2.4rem;
+  }
+}
