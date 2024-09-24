@@ -1,16 +1,15 @@
 .cursor-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-  }
-  
-  .cursor-image {
-    position: absolute;
-    width: 2.5rem; /* Adjust size as needed */
-    height: 2.5rem; /* Adjust size as needed */
-    pointer-events: none; /* Ensure the image doesn't interfere with cursor events */
-    transition: transform 0.1s ease-out; /* Smooth movement */
-    z-index: 9999;
-  }
-  
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.cursor-image {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+  z-index: 9999;
+}
