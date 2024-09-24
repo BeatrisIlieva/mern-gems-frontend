@@ -18,48 +18,48 @@ import styles from "./Form.module.css";
 export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const { language } = useLanguageContext();
 
-  const { userId } = useAuthenticationContext();
+  // const { userId } = useAuthenticationContext();
 
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
 
   const inventories = jewelriesByCategory[0].inventories;
 
-  const [selectedSize, setSelectedSize] = useState(null);
+  // const [selectedSize, setSelectedSize] = useState(null);
 
-  const { add } = useBagContext();
+  // const { add } = useBagContext();
 
-  useEffect(() => {
-    setSelectedSize(null);
-    setErrorMessage(null);
-  }, [jewelriesByCategory[0].color, language]);
+  // useEffect(() => {
+  //   setSelectedSize(null);
+  //   setErrorMessage(null);
+  // }, [jewelriesByCategory[0].color, language]);
 
-  const changeHandler = useCallback((e) => {
-    setSelectedSize(e.target.value);
+  // const changeHandler = useCallback((e) => {
+  //   setSelectedSize(e.target.value);
 
-    setErrorMessage("");
-  }, []);
+  //   setErrorMessage("");
+  // }, []);
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
+  // const onSubmit = async (e) => {
+  //   e.preventDefault();
 
-    if (!selectedSize) {
-      setErrorMessage(SIZE_ERROR_MESSAGE[language]);
-      return;
-    }
+  //   if (!selectedSize) {
+  //     setErrorMessage(SIZE_ERROR_MESSAGE[language]);
+  //     return;
+  //   }
 
-    try {
-      const size = { [SIZE_FORM_KEY.Size]: selectedSize };
-      const jewelryId = jewelriesByCategory[0]._id;
+  //   try {
+  //     const size = { [SIZE_FORM_KEY.Size]: selectedSize };
+  //     const jewelryId = jewelriesByCategory[0]._id;
 
-      await add(size, jewelryId, userId);
+  //     await add(size, jewelryId, userId);
 
-      toggleDisplayPopup();
+  //     toggleDisplayPopup();
 
-      setSelectedSize(null);
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
+  //     setSelectedSize(null);
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
 
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
