@@ -2,7 +2,10 @@ import { useLocation, Link } from "react-router-dom";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
-import { CATEGORY_TITLES_BY_LANGUAGE } from "../../../../constants/languageRelated";
+import {
+  CATEGORY_TITLES_BY_LANGUAGE,
+  COLLECTION_BY_LANGUAGE,
+} from "../../../../constants/languageRelated";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
@@ -21,11 +24,13 @@ export const Nav = () => {
   const collectionTitleByLanguage =
     CATEGORY_TITLES_BY_LANGUAGE[category][language];
 
+  const collectionByLanguage = COLLECTION_BY_LANGUAGE[language];
+
   return (
     <nav className={styles["nav"]}>
       <ul className={styles["list"]} role="list">
         <Link to={"/collection"} className={styles["no-decoration"]}>
-          <li className={styles["item"]}>Collection</li>
+          <li className={styles["item"]}>{collectionByLanguage}</li>
         </Link>
         <FontAwesomeIcon icon={faCircle} className={styles["icon"]} />
         <li className={`${styles["item"]} ${styles["decoration"]}`}>

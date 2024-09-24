@@ -50,3 +50,9 @@ export const CATEGORY_TITLES_BY_LANGUAGE = {
   },
   Rings: { English: "Rings", Chinese: "戒指选购", Bulgarian: "Пръстени" },
 };
+
+export const COLLECTION_BY_LANGUAGE = {
+  English: "Collection",
+  Chinese: "珠宝收藏",
+  Bulgarian: "Колекция",
+};
