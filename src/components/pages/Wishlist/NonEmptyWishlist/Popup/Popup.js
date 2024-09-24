@@ -45,20 +45,20 @@ export const Popup = ({
         <div className={styles["add-to-bag"]}>
           <div className={styles["wrapper"]}>
             <div className={styles["images"]}>
-              <div className={styles["thumbnail"]}>
+              {/* <div className={styles["thumbnail"]}> */}
                 <img
                   className={styles["image"]}
                   src={jewelriesByCategory[0].firstImageUrl}
                   alt=""
                 />
-              </div>
-              <div className={styles["thumbnail"]}>
+              {/* </div> */}
+              {/* <div className={styles["thumbnail"]}> */}
                 <img
                   className={styles["image"]}
                   src={jewelriesByCategory[0].secondImageUrl}
                   alt=""
                 />
-              </div>
+              {/* </div> */}
             </div>
             <div className={styles["info-and-action-wrapper"]}>
               <div>
