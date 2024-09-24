@@ -1,6 +1,9 @@
 import { useLocation, Link } from "react-router-dom";
 
-import styles from "./Nav.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
+
+import styles from "./Nav.module.css";
 
 export const Nav = () => {
   const location = useLocation();
@@ -12,10 +15,11 @@ export const Nav = () => {
   return (
     <nav className={styles["nav"]}>
       <ul className={styles["list"]} role="list">
-        <Link to={"/collection"}>
+        <Link to={"/collection"} className={styles["no-decoration"]}>
           <li className={styles["item"]}>Collection</li>
         </Link>
-          <li className={styles["item"]}>{category}</li>
+        <FontAwesomeIcon icon={faCircle} className={styles["icon"]} />
+        <li className={`${styles["item"]} ${styles["decoration"]}`}>{category}</li>
       </ul>
     </nav>
   );
