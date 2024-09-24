@@ -9,6 +9,8 @@ import { useAuthenticationContext } from "../../../../../contexts/Authentication
 
 import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 
+import { useAddToBagForm } from "../../../../../hooks/useAddToBagForm";
+
 import { SIZE_ERROR_MESSAGE } from "../../../../../constants/sizeErrorMessage";
 import { SIZE_FORM_KEY } from "../../../../../constants/sizeFormKey";
 import { ADD_TO_BAG_BUTTON_TITLE } from "./constants/languageRelated";
@@ -18,48 +20,10 @@ import styles from "./Form.module.css";
 export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
   const { language } = useLanguageContext();
 
-  // const { userId } = useAuthenticationContext();
-
-  // const [errorMessage, setErrorMessage] = useState("");
+  const { errorMessage, changeHandler, onSubmit, selectedSize } =
+    useAddToBagForm({ jewelriesByCategory, toggleDisplayPopup });
 
   const inventories = jewelriesByCategory[0].inventories;
-
-  // const [selectedSize, setSelectedSize] = useState(null);
-
-  // const { add } = useBagContext();
-
-  // useEffect(() => {
-  //   setSelectedSize(null);
-  //   setErrorMessage(null);
-  // }, [jewelriesByCategory[0].color, language]);
-
-  // const changeHandler = useCallback((e) => {
-  //   setSelectedSize(e.target.value);
-
-  //   setErrorMessage("");
-  // }, []);
-
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   if (!selectedSize) {
-  //     setErrorMessage(SIZE_ERROR_MESSAGE[language]);
-  //     return;
-  //   }
-
-  //   try {
-  //     const size = { [SIZE_FORM_KEY.Size]: selectedSize };
-  //     const jewelryId = jewelriesByCategory[0]._id;
-
-  //     await add(size, jewelryId, userId);
-
-  //     toggleDisplayPopup();
-
-  //     setSelectedSize(null);
-  //   } catch (err) {
-  //     console.log(err.message);
-  //   }
-  // };
 
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>

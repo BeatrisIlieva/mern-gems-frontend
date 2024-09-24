@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 
 import { useLanguageContext } from "../contexts/LanguageContext";
+import { useAuthenticationContext } from "../contexts/AuthenticationContext";
+import { useBagContext } from "../contexts/BagContext";
 
+import { SIZE_FORM_KEY } from "../constants/sizeFormKey";
 import { SIZE_ERROR_MESSAGE } from "../constants/sizeErrorMessage";
 
 export const useAddToBagForm = ({
@@ -51,5 +54,5 @@ export const useAddToBagForm = ({
     }
   };
 
-  return { errorMessage, changeHandler, onSubmit };
+  return { errorMessage, changeHandler, onSubmit, selectedSize };
 };
