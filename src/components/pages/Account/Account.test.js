@@ -2,6 +2,12 @@ import { render, screen } from "@testing-library/react";
 
 import { Account } from "./Account";
 
+import { useLanguageContext } from "../../../contexts/LanguageContext";
+
+jest.mock("../../../contexts/LanguageContext", () => ({
+  useLanguageContext: jest.fn(),
+}));
+
 jest.mock("./OrderHistory/OrderHistory", () => ({
   OrderHistory: () => <div>OrderHistory</div>,
 }));
@@ -19,6 +25,14 @@ jest.mock("./AccountManagement/AccountManagement", () => ({
 }));
 
 describe("Account Component", () => {
+  const mockLanguage = "English";
+
+  beforeEach(() => {
+    useLanguageContext.mockReturnValue({ language: mockLanguage });
+
+    jest.clearAllMocks();
+  });
+  
   test("renders all child components correctly", () => {
     render(<Account />);
 

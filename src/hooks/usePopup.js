@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 export const usePopup = ({ toggleDisplayPopup, displayPopup }) => {
   const popupRef = useRef(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const popupCloseHandler = () => {
+  const popupCloseHandler = useCallback(() => {
     return new Promise((resolve) => {
       setIsTransitioning(true);
 
@@ -14,7 +14,7 @@ export const usePopup = ({ toggleDisplayPopup, displayPopup }) => {
         resolve();
       }, 400);
     });
-  };
+  }, [toggleDisplayPopup]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -41,7 +41,7 @@ export const usePopup = ({ toggleDisplayPopup, displayPopup }) => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [displayPopup]);
+  }, [displayPopup, popupCloseHandler]);
 
   return { isTransitioning, popupRef, popupCloseHandler };
 };

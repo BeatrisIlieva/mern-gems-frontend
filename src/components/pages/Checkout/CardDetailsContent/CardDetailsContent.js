@@ -56,7 +56,6 @@ export const CardDetailsContent = () => {
         <Popup
           movePopup={movePopup}
           toggleDisplayPopup={toggleDisplayShippingDetailsPopup}
-          modalVariant={"large"}
           displayPopup={displayShippingDetailsPopup}
         >
           <LargeTitle

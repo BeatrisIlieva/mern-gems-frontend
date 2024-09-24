@@ -15,8 +15,6 @@ describe("Popup Component", () => {
     const { container } = render(
       <Popup
         toggleDisplayPopup={() => {}}
-        modalVariant="large"
-        overlayVariant="dark"
       >
         <div>Popup Content</div>
       </Popup>
@@ -26,9 +24,7 @@ describe("Popup Component", () => {
     const divElement = container.querySelector("div.modal");
 
     expect(sectionElement).toHaveClass(styles["overlay"]);
-    expect(sectionElement).toHaveClass(styles["dark"]);
     expect(divElement).toHaveClass(styles["modal"]);
-    expect(divElement).toHaveClass(styles["large"]);
     expect(screen.getByText("Popup Content")).toBeInTheDocument();
   });
 
