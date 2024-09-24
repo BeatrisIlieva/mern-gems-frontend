@@ -10,7 +10,7 @@ import { useLargeImagesClick } from "../../../../../hooks/useLargeImagesClick";
 
 import styles from "./Content.module.css";
 
-export const Content = memo(({ categoryTitle, colorTitle }) => {
+export const Content = memo(({ categoryTitle, colorTitle, toggleDisplayPopup }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   const { jewelriesByCategory } = useJewelry({
@@ -50,6 +50,7 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
             }
             variant={"regular"}
           />
+          <button onClick={toggleDisplayPopup}>Move to Bag</button>
         </article>
       )}
     </>
