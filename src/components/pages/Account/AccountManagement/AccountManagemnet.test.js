@@ -1,8 +1,11 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+
 import { AccountManagement } from "./AccountManagement";
+
 import { useAuthenticationContext } from "../../../../contexts/AuthenticationContext";
-import { useService } from "../../../../hooks/useService";
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
+
+import { useService } from "../../../../hooks/useService";
 
 jest.mock("../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
@@ -73,6 +76,7 @@ describe("AccountManagement Component", () => {
     fireEvent.click(screen.getByText("Update Email"));
 
     expect(await screen.findByText("Update Email Form")).toBeInTheDocument();
+
     expect(screen.queryByText("Update Password Form")).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByText("Close Email Form"));
