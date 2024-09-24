@@ -18,8 +18,8 @@ export const CursorImageEffect = () => {
     };
   }, []);
 
-  const imageOffsetX = 25;
-  const imageOffsetY = 25;
+  const imageOffsetX = 20;
+  const imageOffsetY = 20;
 
   return (
     <div className={styles["cursor-container"]}>

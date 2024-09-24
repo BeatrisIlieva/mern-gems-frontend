@@ -10,6 +10,6 @@
   width: 2.5rem;
   height: 2.5rem;
   pointer-events: none;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.4s ease-out;
   z-index: 9999;
 }
