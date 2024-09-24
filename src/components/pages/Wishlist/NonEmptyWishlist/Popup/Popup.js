@@ -1,6 +1,6 @@
 import { CursorImageEffect } from "../../../../common/CursorImageEffect/CursorImageEffect";
 import { XMark } from "../../../../reusable/XMark/XMark";
-import { Form } from "../../../CollectionItem/InfoAndAction/Form/Form";
+import { Form } from "./Form/Form";
 import { Images } from "../../../CollectionItem/Images/Images";
 import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../../../reusable/Paragraph/Paragraph";
@@ -60,19 +60,21 @@ export const Popup = ({
                 />
               </div>
             </div>
-            <div>
-              <LargeTitle title={jewelryTitle} textAlign={"left"} />
-              <Paragraph
-                text={`${jewelriesByCategory[0].description[language]}`}
-                textAlign={"left"}
-                color={"gray"}
+            <div className={styles["info-and-action-wrapper"]}>
+              <div>
+                <LargeTitle title={jewelryTitle} textAlign={"left"} />
+                <Paragraph
+                  text={`${jewelriesByCategory[0].description[language]}`}
+                  textAlign={"left"}
+                  color={"gray"}
+                />
+              </div>
+              <Form
+                jewelriesByCategory={jewelriesByCategory}
+                toggleDisplayPopup={toggleDisplayPopup}
               />
             </div>
           </div>
-          <Form
-            jewelriesByCategory={jewelriesByCategory}
-            toggleDisplayPopup={toggleDisplayPopup}
-          />
         </div>
       </div>
     </section>

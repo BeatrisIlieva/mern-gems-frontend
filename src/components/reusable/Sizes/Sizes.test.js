@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 
 import { Sizes } from "./Sizes";
 
-import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+import { useLanguageContext } from "../../../contexts/LanguageContext";
 
 jest.mock("../../../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
