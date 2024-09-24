@@ -10,7 +10,6 @@
   align-items: center;
   display: flex;
   transition: opacity 1s ease, transform 1s ease;
-  cursor: url("../../../../assets/images/xmark.png"), auto;
 }
 
 .modal {
@@ -28,6 +27,8 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   cursor: default;
+  pointer-events: auto;
+  z-index: 99999;
 }
 
 .mini-bag {

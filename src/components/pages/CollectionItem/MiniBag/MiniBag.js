@@ -3,6 +3,7 @@ import { useEffect, useState, memo } from "react";
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
 import { XMark } from "../../../reusable/XMark/XMark";
+import { CursorImageEffect } from "../../../common/CursorImageEffect/CursorImageEffect";
 
 import { useBagContext } from "../../../../contexts/BagContext";
 
@@ -31,6 +32,7 @@ export const MiniBag = memo(({ toggleDisplayMiniBagPopup, displayPopup }) => {
       }`}
       data-testid="mini-bag"
     >
+      <CursorImageEffect />
       <div
         ref={popupRef}
         className={`${styles["modal"]} ${
