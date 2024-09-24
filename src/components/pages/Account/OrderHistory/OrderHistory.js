@@ -60,7 +60,6 @@ export const OrderHistory = () => {
       {displayPopup && (
         <Popup
           toggleDisplayPopup={toggleDisplayPopup}
-          modalVariant={"order-history"}
           displayPopup={displayPopup}
         >
           {orderItems.length < 1 ? (

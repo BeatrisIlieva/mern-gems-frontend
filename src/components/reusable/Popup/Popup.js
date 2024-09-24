@@ -7,7 +7,6 @@ import styles from "./Popup.module.css";
 export const Popup = ({
   toggleDisplayPopup,
   children,
-  modalVariant,
   displayPopup,
   movePopup,
 }) => {
@@ -25,7 +24,7 @@ export const Popup = ({
       }`}
     >
       <div
-        className={`${styles["modal"]} ${styles[modalVariant]} ${
+        className={`${styles["modal"]} ${
           isTransitioning || movePopup
             ? styles["slide-out"]
             : styles["slide-in"]
