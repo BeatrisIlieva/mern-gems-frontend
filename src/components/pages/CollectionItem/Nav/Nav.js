@@ -2,6 +2,8 @@ import { useLocation, Link } from "react-router-dom";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
+import { HOME_LINK_TITLE_BY_LANGUAGE } from "./constants/languageRelated";
+
 import {
   CATEGORY_TITLES_BY_LANGUAGE,
   COLLECTION_BY_LANGUAGE,
@@ -26,9 +28,15 @@ export const Nav = () => {
 
   const collectionByLanguage = COLLECTION_BY_LANGUAGE[language];
 
+  const homeLinkTitleByLanguage = HOME_LINK_TITLE_BY_LANGUAGE[language];
+
   return (
     <nav className={styles["nav"]}>
       <ul className={styles["list"]} role="list">
+        <Link to={"/"} className={styles["no-decoration"]}>
+          <li className={styles["item"]}>{homeLinkTitleByLanguage}</li>
+        </Link>
+        <FontAwesomeIcon icon={faCircle} className={styles["icon"]} />
         <Link to={"/collection"} className={styles["no-decoration"]}>
           <li className={styles["item"]}>{collectionByLanguage}</li>
         </Link>
