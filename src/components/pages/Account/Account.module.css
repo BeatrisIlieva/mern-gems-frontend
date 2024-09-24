@@ -1,6 +1,5 @@
 #account {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem 0;
@@ -14,7 +13,6 @@
 
 .heading {
   max-width: 46rem;
-  display: flex;
   margin-inline: auto;
   padding: 0 2rem;
   text-align: center;
