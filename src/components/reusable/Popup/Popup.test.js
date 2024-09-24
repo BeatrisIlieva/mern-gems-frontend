@@ -13,9 +13,7 @@ jest.mock("../../reusable/XMark/XMark", () => ({
 describe("Popup Component", () => {
   test("renders with the correct classes and children", () => {
     const { container } = render(
-      <Popup
-        toggleDisplayPopup={() => {}}
-      >
+      <Popup toggleDisplayPopup={() => {}}>
         <div>Popup Content</div>
       </Popup>
     );

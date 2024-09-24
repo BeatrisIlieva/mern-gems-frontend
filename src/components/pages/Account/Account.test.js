@@ -32,7 +32,7 @@ describe("Account Component", () => {
 
     jest.clearAllMocks();
   });
-  
+
   test("renders all child components correctly", () => {
     render(<Account />);
 
