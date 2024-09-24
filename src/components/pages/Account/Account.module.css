@@ -1,6 +1,7 @@
 #account {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   gap: 2rem;
   padding: 2rem 0;
   min-height: calc(100vh - 9.6rem);
@@ -11,33 +12,24 @@
   );
 }
 
+.heading {
+  max-width: 42rem;
+  display: flex;
+  margin-inline: auto;
+  text-align: center;
+  font-family: var(--bold-italic-font-family);
+  font-size: var(--normal);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-@media (max-width: 1280px) {
-  #account {
-    margin-bottom: 2rem;
-    height: 100%;
-  }
-
-  .flex-container {
-    gap: auto;
-  }
-}
-
-@media (orientation: portrait) and (max-width: 1280px) {
-  #account {
-    flex-direction: column;
-    flex-grow: 1;
-    min-height: 100%;
-  }
-}
-
-@media (orientation: landscape) and (max-width: 1280px) {
-  #account {
-    min-height: 100%;
-  }
 }
