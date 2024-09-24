@@ -19,11 +19,7 @@ export const NonEmptyWishlist = () => {
 
   const { wishlistItems, wishlistTotalQuantity } = useWishlistContext();
 
-  const [displayPopup, setDisplayPopup] = useState(false);
 
-  const toggleDisplayPopup = useCallback(() => {
-    setDisplayPopup((displayPopup) => !displayPopup);
-  }, []);
 
   const title = `${TITLES_BY_LANGUAGE[language]} (${wishlistTotalQuantity})`;
 
@@ -33,12 +29,6 @@ export const NonEmptyWishlist = () => {
     <>
       {wishlistItems.length > 0 && (
         <section id={styles["non-empty-wishlist"]}>
-          {displayPopup && (
-            <Popup
-            toggleDisplayPopup={toggleDisplayPopup}
-              displayPopup={displayPopup}
-            />
-          )}
           <InfoMessage title={title} subtitle={subtitle} />
           {wishlistTotalQuantity > 0 && (
             <div className={styles["outer-wrapper"]}>
@@ -47,7 +37,6 @@ export const NonEmptyWishlist = () => {
                   key={item._id}
                   categoryTitle={item.category.title}
                   colorTitle={item.color.title}
-                  toggleDisplayPopup={toggleDisplayPopup}
                 />
               ))}
             </div>
