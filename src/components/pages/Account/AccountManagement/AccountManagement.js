@@ -60,6 +60,14 @@ export const AccountManagement = () => {
     setDisplayUpdateEmailForm(false);
   }, []);
 
+  const closeUpdateEmailClickHandler = useCallback(() => {
+    setDisplayUpdateEmailForm(false);
+  }, []);
+
+  const closeUpdatePasswordClickHandler = useCallback(() => {
+    setDisplayUpdatePasswordForm(false);
+  }, []);
+
   const title = ACCOUNT_MANAGEMENT_NAMING[language];
 
   const updateEmailButtonTitle = UPDATE_EMAIL_TITLE_NAMING[language];
@@ -82,9 +90,16 @@ export const AccountManagement = () => {
         />
         <Logout />
         {displayUpdateEmail && (
-          <UpdateEmailForm updateUserEmail={updateUserEmail} />
+          <UpdateEmailForm
+            updateUserEmail={updateUserEmail}
+            closeUpdateEmailClickHandler={closeUpdateEmailClickHandler}
+          />
         )}
-        {displayUpdatePassword && <UpdatePasswordForm />}
+        {displayUpdatePassword && (
+          <UpdatePasswordForm
+            closeUpdatePasswordClickHandler={closeUpdatePasswordClickHandler}
+          />
+        )}
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ import { INITIAL_FORM_VALUES, FORM_KEYS } from "./constants/initialFormValues";
 
 import styles from "./UpdatePasswordForm.module.css";
 
-export const UpdatePasswordForm = () => {
+export const UpdatePasswordForm = ({ closeUpdatePasswordClickHandler }) => {
   const { language } = useLanguageContext();
 
   const [userLoginDetails, setUserLoginDetails] = useState([]);
@@ -82,6 +82,8 @@ export const UpdatePasswordForm = () => {
           await userLoginDetailsService.updatePassword(userId, data);
 
           setValues(spreadValues);
+
+          closeUpdatePasswordClickHandler();
         } catch (err) {
           console.log(err.message);
 

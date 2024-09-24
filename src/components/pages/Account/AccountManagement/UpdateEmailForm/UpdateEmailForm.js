@@ -22,7 +22,10 @@ import { PASSWORD_ERROR_MESSAGE } from "../../../../../constants/password";
 
 import styles from "./UpdateEmailForm.module.css";
 
-export const UpdateEmailForm = ({ updateUserEmail }) => {
+export const UpdateEmailForm = ({
+  updateUserEmail,
+  closeUpdateEmailClickHandler,
+}) => {
   const { language } = useLanguageContext();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -71,6 +74,8 @@ export const UpdateEmailForm = ({ updateUserEmail }) => {
           await userLoginDetailsService.updateEmail(userId, data);
 
           updateUserEmail(data.email);
+
+          closeUpdateEmailClickHandler();
         } catch (err) {
           console.log(err.message);
 
