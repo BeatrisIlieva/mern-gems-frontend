@@ -10,7 +10,7 @@
   align-items: center;
   display: flex;
   transition: opacity 1s ease, transform 1s ease;
-  cursor: url("../../../assets/images/xmark.png") 30 30, auto;
+  pointer-events: none;
 }
 
 .modal {
@@ -25,10 +25,8 @@
   border-radius: 0.5rem;
   max-height: 94vh;
   width: 640px;
-}
-
-.content {
-  overflow-y: auto;
+  pointer-events: auto;
+  z-index: 99999;
 }
 
 .slide-in {

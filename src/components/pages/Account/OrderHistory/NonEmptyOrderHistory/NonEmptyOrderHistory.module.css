@@ -1,4 +1,8 @@
 .non-empty-order-history {
+  overflow-y: auto;
+}
+
+.content {
   display: flex;
   justify-content: center;
   flex-direction: column;

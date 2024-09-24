@@ -13,15 +13,15 @@ export const NonEmptyOrderHistory = ({ orderItems }) => {
   const title = ORDER_HISTORY_NAMING[language];
 
   return (
-    <>
+    <div className={styles["non-empty-order-history"]}>
       <LargeTitle title={title} textAlign={"align-center"} />
-      <ul role="list" className={styles["non-empty-order-history"]}>
+      <ul role="list" className={styles["content"]}>
         {orderItems.map((item) => (
           <li key={item._id}>
             <OrderHistoryList {...item} />
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
