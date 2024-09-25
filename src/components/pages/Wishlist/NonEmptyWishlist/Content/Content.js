@@ -8,7 +8,6 @@ import { JewelryCard } from "./JewelryCard/JewelryCard";
 import { useBagContext } from "../../../../../contexts/BagContext";
 
 import { useService } from "../../../../../hooks/useService";
-import { useLargeImagesClick } from "../../../../../hooks/useLargeImagesClick";
 
 import { jewelryServiceFactory } from "../../../../../services/jewelryService";
 
@@ -18,17 +17,15 @@ import { CATEGORIES_BY_ID } from "../../../../../constants/categoriesById";
 import { COLORS_BY_ID } from "../../../../../constants/colorsById";
 
 export const Content = memo(({ categoryTitle, colorTitle }) => {
-  const [articleIsHovered, setArticleIsHovered] = useState(false);
-
-  const [isSoldOut, setIsSoldOut] = useState(false);
-
   const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
 
-  const { bagTotalQuantity } = useBagContext();
+  const [isSoldOut, setIsSoldOut] = useState(false);
 
   const [jewelryService, setJewelryService] = useState(
     useService(jewelryServiceFactory)
   );
+
+  const { bagTotalQuantity } = useBagContext();
 
   const categoryId = CATEGORIES_BY_ID[categoryTitle];
   const colorId = COLORS_BY_ID[colorTitle];
@@ -45,11 +42,6 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
         console.log(err.message);
       });
   }, [categoryTitle, colorTitle, jewelryService, bagTotalQuantity]);
-
-  const { largeImagesClickHandler } = useLargeImagesClick({
-    categoryTitle,
-    colorTitle,
-  });
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
@@ -83,7 +75,11 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
               displayPopup={displayMiniBagPopup}
             />
           )}
-          <JewelryCard />
+          <JewelryCard
+            jewelriesByCategory={jewelriesByCategory}
+            toggleDisplayPopup={toggleDisplayPopup}
+            isSoldOut={isSoldOut}
+          />
         </>
       )}
     </>

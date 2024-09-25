@@ -1,10 +1,25 @@
+import { useState } from "react";
+
 import { DualTitleSection } from "../../../../../reusable/DualTitleSection/DualTitleSection";
 import { PriceRange } from "../../../../../common/PriceRange/PriceRange";
 import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
 import { LargeImages } from "../../../../../common/LargeImages/LargeImages";
 import { Button } from "../../../../../reusable/Button/Button";
 
-export const JewelryCard = () => {
+import { useLargeImagesClick } from "../../../../../../hooks/useLargeImagesClick";
+
+export const JewelryCard = ({
+  jewelriesByCategory,
+  toggleDisplayPopup,
+  isSoldOut,
+}) => {
+  const [articleIsHovered, setArticleIsHovered] = useState(false);
+
+  const { largeImagesClickHandler } = useLargeImagesClick({
+    categoryTitle,
+    colorTitle,
+  });
+
   return (
     <article
       onMouseEnter={() => setArticleIsHovered(true)}
