@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
-import { BagHeader } from "../../BagHeader/BagHeader";
-import { BagList } from "../../BagList/BagList";
-import { Button } from "../../../reusable/Button/Button";
+import { BagHeader } from "../../../BagHeader/BagHeader";
+import { BagList } from "../../../BagList/BagList";
+import { Button } from "../../../../reusable/Button/Button";
 
-import { useLanguageContext } from "../../../../contexts/LanguageContext";
-import { useBagContext } from "../../../../contexts/BagContext";
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+import { useBagContext } from "../../../../../contexts/BagContext";
 
-import { CONTINUE_CHECKOUT_BUTTON_NAMING } from "../../../../constants/languageRelated";
+import { CONTINUE_CHECKOUT_BUTTON_NAMING } from "../../../../../constants/languageRelated";
 import { VIEW_BAG_BUTTON_NAMING } from "./constants/languageRelated";
 
 import styles from "./NonEmptyMiniBag.module.css";

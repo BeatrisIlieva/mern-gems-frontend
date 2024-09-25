@@ -1,12 +1,12 @@
-import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
-import { CardSlider } from "../../CardSlider/CardSlider";
+import { InfoMessage } from "../../../../reusable/InfoMessage/InfoMessage";
+import { CardSlider } from "../../../CardSlider/CardSlider";
 
-import { useLanguageContext } from "../../../../contexts/LanguageContext";
+import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 
 import {
   SUBTITLES_BY_LANGUAGE,
   EMPTY_BAG_TITLE,
-} from "../../../../constants/languageRelated";
+} from "../../../../../constants/languageRelated";
 
 import styles from "./EmptyMiniBag.module.css";
 

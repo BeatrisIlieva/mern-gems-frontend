@@ -1,23 +1,10 @@
-import { useEffect, useState, memo } from "react";
+import { memo } from "react";
 
-import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
-import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
+import { MiniBagContent } from "./MiniBagContent/MiniBagContent";
 import { Popup } from "../../reusable/Popup/Popup";
-
-import { useBagContext } from "../../../contexts/BagContext";
-
-import styles from "./MiniBag.module.css";
 
 export const MiniBag = memo(
   ({ toggleDisplayMiniBagPopup, displayPopup, movePopup }) => {
-    const { bagTotalQuantity } = useBagContext();
-
-    const [miniBagIsEmpty, setMiniBagIsEmpty] = useState(false);
-
-    useEffect(() => {
-      setMiniBagIsEmpty(bagTotalQuantity === 0);
-    }, [bagTotalQuantity]);
-
     return (
       <Popup
         toggleDisplayPopup={toggleDisplayMiniBagPopup}
@@ -26,13 +13,7 @@ export const MiniBag = memo(
         modalVariant={"right"}
         movePopup={movePopup}
       >
-        <div className={styles["mini-bag"]}>
-          {miniBagIsEmpty ? (
-            <EmptyMiniBag popupCloseHandler={toggleDisplayMiniBagPopup} />
-          ) : (
-            <NonEmptyMiniBag popupCloseHandler={toggleDisplayMiniBagPopup} />
-          )}
-        </div>
+        <MiniBagContent toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
       </Popup>
     );
   }
