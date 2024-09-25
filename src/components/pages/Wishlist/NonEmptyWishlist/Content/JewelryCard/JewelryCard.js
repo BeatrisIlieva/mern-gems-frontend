@@ -8,10 +8,14 @@ import { Button } from "../../../../../reusable/Button/Button";
 
 import { useLargeImagesClick } from "../../../../../../hooks/useLargeImagesClick";
 
+import styles from "./JewelryCard.module.css";
+
 export const JewelryCard = ({
   jewelriesByCategory,
   toggleDisplayPopup,
   isSoldOut,
+  categoryTitle,
+  colorTitle,
 }) => {
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 

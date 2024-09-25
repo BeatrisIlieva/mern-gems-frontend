@@ -79,6 +79,8 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
             jewelriesByCategory={jewelriesByCategory}
             toggleDisplayPopup={toggleDisplayPopup}
             isSoldOut={isSoldOut}
+            categoryTitle={categoryTitle}
+colorTitle={colorTitle}
           />
         </>
       )}
