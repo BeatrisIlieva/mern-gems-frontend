@@ -27,7 +27,7 @@ export const Popup = ({
   displayPopup,
   categoryTitle,
   colorTitle,
-  toggleDisplayMiniBagPopup
+  toggleDisplayMiniBagPopup,
 }) => {
   const { language } = useLanguageContext();
 
@@ -37,8 +37,6 @@ export const Popup = ({
   });
 
   const [isColorInitialized, setIsColorInitialized] = useState(false);
-
-  const [displayPage404, setDisplayPage404] = useState(false);
 
   const [selectedColor, setSelectedColor] = useState(colorTitle);
 
@@ -72,11 +70,9 @@ export const Popup = ({
       .getOne(categoryId, colorId)
       .then((data) => {
         setJewelriesByCategory(data);
-        setDisplayPage404(false);
       })
       .catch((err) => {
         console.log(err.message);
-        setDisplayPage404(true);
       });
   }, [categoryTitle, jewelryService, bagTotalQuantity, selectedColor]);
 
