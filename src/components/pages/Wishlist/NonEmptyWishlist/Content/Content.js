@@ -1,7 +1,6 @@
 import { useState, useEffect, memo, useCallback } from "react";
 
 import { AddToBag } from "./AddToBag/AddToBag";
-
 import { JewelryCard } from "./JewelryCard/JewelryCard";
 import { Popup } from "../../../../reusable/Popup/Popup";
 import { MiniBagContent } from "../../../../common/MiniBagContent/MiniBagContent";
@@ -91,22 +90,6 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
                 />
               </Popup>
             ))}
-          {/* {displayPopup && (
-            <AddToBag
-              toggleDisplayPopup={toggleDisplayPopup}
-              displayPopup={displayPopup}
-              jewelriesByCategory={jewelriesByCategory}
-              categoryTitle={categoryTitle}
-              colorTitle={colorTitle}
-              toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
-            />
-          )}
-          {displayMiniBagPopup && (
-            <MiniBag
-              toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
-              displayPopup={displayMiniBagPopup}
-            />
-          )} */}
           <JewelryCard
             jewelriesByCategory={jewelriesByCategory}
             toggleDisplayPopup={toggleDisplayAddToBagPopup}

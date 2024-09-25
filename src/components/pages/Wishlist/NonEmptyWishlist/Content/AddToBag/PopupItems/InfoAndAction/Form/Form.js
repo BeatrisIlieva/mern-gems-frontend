@@ -1,4 +1,4 @@
-import { Sizes } from "../../../../../../../../reusable/Sizes/Sizes"
+import { Sizes } from "../../../../../../../../reusable/Sizes/Sizes";
 import { Button } from "../../../../../../../../reusable/Button/Button";
 
 import { useLanguageContext } from "../../../../../../../../../contexts/LanguageContext";

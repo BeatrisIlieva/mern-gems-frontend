@@ -9,7 +9,6 @@ import { jewelryServiceFactory } from "../../../../../../services/jewelryService
 import { CATEGORIES_BY_ID } from "../../../../../../constants/categoriesById";
 import { COLORS_BY_ID } from "../../../../../../constants/colorsById";
 
-
 import { PopupItems } from "./PopupItems/PopupItems";
 
 export const AddToBag = ({
@@ -58,7 +57,6 @@ export const AddToBag = ({
         console.log(err.message);
       });
   }, [categoryTitle, jewelryService, bagTotalQuantity, selectedColor]);
-
 
   return (
     <>

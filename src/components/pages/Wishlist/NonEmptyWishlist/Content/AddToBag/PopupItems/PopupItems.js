@@ -5,7 +5,6 @@ import styles from "./PopupItems.module.css";
 
 export const PopupItems = ({
   toggleDisplayPopup,
-  displayPopup,
   jewelriesByCategory,
   popupCloseHandler,
   updateSelectedColor,
