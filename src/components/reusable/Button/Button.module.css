@@ -53,19 +53,18 @@
   background-image: linear-gradient(
     to right,
     var(--light-pink),
-    /* var(--light-pink), */
     var(--light-gray)
   );
   color: var(--gray);
   box-shadow: 0 0 0 1px var(--light-gray);
-  transition: background-image 300ms ease, color 300ms ease, box-shadow 300ms ease; /* Add transition for smooth animation */
+  transition: background-image 300ms ease, color 300ms ease,
+    box-shadow 300ms ease; /* Add transition for smooth animation */
 }
 
 .button.gray.hovered {
   background-image: linear-gradient(
     to right,
     var(--medium-pink),
-    /* var(--medium-gray), */
     var(--medium-gray)
   );
   color: var(--white);
@@ -73,12 +72,12 @@
 }
 
 .button.gray .button-text {
-  display: inline-block; /* Ensure the text behaves like an element that can be transformed */
-  transition: transform 600ms ease; /* Apply transition for smooth scaling */
+  display: inline-block;
+  transition: transform 600ms ease;
 }
 
 .button.gray.hovered .button-text {
-  transform: scale(1.1); /* Scale the text 10% larger */
+  transform: scale(1.1);
 }
 
 .button.white {
