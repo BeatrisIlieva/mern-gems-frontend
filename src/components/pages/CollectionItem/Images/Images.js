@@ -5,7 +5,7 @@ import { CircleIcons } from "../../../common/CircleIcons/CircleIcons";
 
 import styles from "./Images.module.css";
 
-export const Images = memo(({ jewelriesByCategory }) => {
+export const Images = memo(({ jewelriesByCategory, backgroundColor }) => {
   const [firstImageUrlIsActive, setFirstImageUrlIsActive] = useState(true);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export const Images = memo(({ jewelriesByCategory }) => {
   }, []);
 
   return (
-    <div className={styles["images"]}>
+    <div className={`${styles["images"]} ${backgroundColor ? styles["with-background"] : ""}`.trim()}>
       <JewelryImage
         firstImageUrlIsActive={firstImageUrlIsActive}
         firstImageUrl={jewelriesByCategory[0].firstImageUrl}

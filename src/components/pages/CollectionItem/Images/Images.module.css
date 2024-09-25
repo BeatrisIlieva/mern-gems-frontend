@@ -5,3 +5,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.images.with-background {
+  background-image: linear-gradient(
+    to right,
+    var(--very-light-pink),
+    var(--very-light-gray)
+  );
+}

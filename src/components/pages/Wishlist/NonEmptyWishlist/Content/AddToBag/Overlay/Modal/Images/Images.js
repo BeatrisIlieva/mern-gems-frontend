@@ -18,7 +18,7 @@ export const Images = ({ jewelriesByCategory }) => {
         />
       </div>
       <div className={styles["image"]}>
-        <LargeImages jewelriesByCategory={jewelriesByCategory} />
+        <LargeImages jewelriesByCategory={jewelriesByCategory} backgroundColor={"with-background"}/>
       </div>
     </>
   );
