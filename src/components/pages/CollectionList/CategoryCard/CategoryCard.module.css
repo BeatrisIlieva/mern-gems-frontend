@@ -6,22 +6,6 @@
   gap: 0.5rem;
 }
 
-.content {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem;
-  animation: transitioning 1s forwards;
-  background-color: var(--white);
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.content.hovered {
-  box-shadow: 0 0 0 1px var(--light-gray);
-}
-
 @keyframes transitioning {
   0% {
     opacity: 0;

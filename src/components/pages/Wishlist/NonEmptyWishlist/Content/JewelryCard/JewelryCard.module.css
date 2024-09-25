@@ -8,12 +8,14 @@
   background-color: var(--white);
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: rgba(50, 50, 93, 0.3) 0px 8px 32px -12px,
+  box-shadow: rgba(50, 50, 93, 0.6) 0px 8px 32px -12px,
     rgba(0, 0, 0, 0.6) 0px 6px 12px -18px;
+  transition: box-shadow 300ms ease;
 }
 
 .jewelry-card.hovered {
-  box-shadow: 0 0 0 1px var(--light-gray);
+  box-shadow: rgba(255, 255, 255, 0.9) 0px 8px 32px -4px,
+    rgba(255, 255, 255, 0.9) 0px 6px 12px -6px;
 }
 
 @keyframes transitioning {
