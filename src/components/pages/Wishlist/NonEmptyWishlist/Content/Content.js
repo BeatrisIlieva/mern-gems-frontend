@@ -26,11 +26,6 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
 
   const [isSoldOut, setIsSoldOut] = useState(false);
 
-  // const { jewelriesByCategory } = useJewelry({
-  //   categoryTitle,
-  //   colorTitle,
-  // });
-
   const [jewelriesByCategory, setJewelriesByCategory] = useState([]);
 
   const { bagTotalQuantity } = useBagContext();
@@ -38,8 +33,6 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
   const [jewelryService, setJewelryService] = useState(
     useService(jewelryServiceFactory)
   );
-
-  const [displayPage404, setDisplayPage404] = useState(false);
 
   const categoryId = CATEGORIES_BY_ID[categoryTitle];
   const colorId = COLORS_BY_ID[colorTitle];
@@ -50,14 +43,10 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
       .then((data) => {
         setJewelriesByCategory(data);
 
-        setDisplayPage404(false);
-
         setIsSoldOut(checkIfItemsHasBeenSoldOut(data[0]));
       })
       .catch((err) => {
         console.log(err.message);
-
-        setDisplayPage404(true);
       });
   }, [categoryTitle, colorTitle, jewelryService, bagTotalQuantity]);
 
