@@ -6,7 +6,11 @@ import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
 import { LargeImages } from "../../../../../common/LargeImages/LargeImages";
 import { Button } from "../../../../../reusable/Button/Button";
 
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+
 import { useLargeImagesClick } from "../../../../../../hooks/useLargeImagesClick";
+
+import { BUTTON_TITLE_BY_LANGUAGE } from "./constants/languageRelated";
 
 import styles from "./JewelryCard.module.css";
 
@@ -17,12 +21,16 @@ export const JewelryCard = ({
   categoryTitle,
   colorTitle,
 }) => {
+  const { language } = useLanguageContext();
+
   const [articleIsHovered, setArticleIsHovered] = useState(false);
 
   const { largeImagesClickHandler } = useLargeImagesClick({
     categoryTitle,
     colorTitle,
   });
+
+  const buttonTitle = BUTTON_TITLE_BY_LANGUAGE[language];
 
   return (
     <article
@@ -47,7 +55,7 @@ export const JewelryCard = ({
       />
       <div className={styles["button"]}>
         <Button
-          title={"Move to Bag"}
+          title={buttonTitle}
           buttonIsDisabled={isSoldOut}
           callBackFunction={toggleDisplayPopup}
           variant={"gray"}
