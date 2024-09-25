@@ -1,6 +1,6 @@
 import { Image } from "./Image/Image";
 // import { LargeImages } from "../../../../../../../../common/LargeImages/LargeImages";
-import { Images as LargeImages } from "../../../../../../../CollectionItem/Images/Images";
+import { Images as LargeImages } from "../../../../../../../../reusable/Images/Images";
 
 import styles from "./Images.module.css";
 
