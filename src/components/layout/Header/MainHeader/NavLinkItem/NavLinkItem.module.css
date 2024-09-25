@@ -1,3 +1,16 @@
+.nav-link-item {
+  transition: transform 600ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.nav-link-item:hover,
+.nav-link-item:active {
+  transform: scale(1.1);
+}
+
 .selected,
 .not-selected {
   display: flex;

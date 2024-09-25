@@ -9,7 +9,7 @@ import styles from "./NavLinkItem.module.css";
 
 export const NavLinkItem = memo(({ to, icon, label, count }) => {
   return (
-    <>
+    <div className={styles["nav-link-item"]}>
       <NavLink
         end
         className={({ isActive }) =>
@@ -23,6 +23,6 @@ export const NavLinkItem = memo(({ to, icon, label, count }) => {
       {(count || count === 0) && (
         <span className={styles["count"]}>({count})</span>
       )}
-    </>
+    </div>
   );
 });
