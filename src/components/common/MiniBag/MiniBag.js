@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { MiniBagContent } from "./MiniBagContent/MiniBagContent";
+import { MiniBagContent } from "../MiniBagContent/MiniBagContent";
 import { Popup } from "../../reusable/Popup/Popup";
 
 export const MiniBag = memo(

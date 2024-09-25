@@ -1,8 +1,10 @@
 import { useState, useEffect, memo, useCallback } from "react";
 
 import { AddToBag } from "./AddToBag/AddToBag";
-import { MiniBag } from "../../../../common/MiniBag/MiniBag";
+
 import { JewelryCard } from "./JewelryCard/JewelryCard";
+import { Popup } from "../../../../reusable/Popup/Popup";
+import { MiniBagContent } from "../../../../common/MiniBagContent/MiniBagContent";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 
@@ -62,19 +64,32 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
         <>
           {displayPopupContent &&
             (displayAddToBagPopup ? (
-              <AddToBag
-                toggleDisplayAddToBagPopup={toggleDisplayAddToBagPopup}
-                displayAddToBagPopup={displayAddToBagPopup}
-                jewelriesByCategory={jewelriesByCategory}
-                categoryTitle={categoryTitle}
-                colorTitle={colorTitle}
-                toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
-              />
+              <Popup
+                toggleDisplayPopup={toggleDisplayAddToBagPopup}
+                displayPopup={displayAddToBagPopup}
+                overlayVariant={"right"}
+                modalVariant={"right"}
+              >
+                <AddToBag
+                  toggleDisplayPopup={toggleDisplayAddToBagPopup}
+                  displayPopup={displayAddToBagPopup}
+                  jewelriesByCategory={jewelriesByCategory}
+                  categoryTitle={categoryTitle}
+                  colorTitle={colorTitle}
+                  toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+                />
+              </Popup>
             ) : (
-              <MiniBag
-                toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+              <Popup
+                toggleDisplayPopup={toggleDisplayMiniBagPopup}
                 displayPopup={displayMiniBagPopup}
-              />
+                overlayVariant={"right"}
+                modalVariant={"right"}
+              >
+                <MiniBagContent
+                  toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+                />
+              </Popup>
             ))}
           {/* {displayPopup && (
             <AddToBag
@@ -94,7 +109,7 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
           )} */}
           <JewelryCard
             jewelriesByCategory={jewelriesByCategory}
-            toggleDisplayAddToBagPopup={toggleDisplayAddToBagPopup}
+            toggleDisplayPopup={toggleDisplayAddToBagPopup}
             isSoldOut={isSoldOut}
             categoryTitle={categoryTitle}
             colorTitle={colorTitle}

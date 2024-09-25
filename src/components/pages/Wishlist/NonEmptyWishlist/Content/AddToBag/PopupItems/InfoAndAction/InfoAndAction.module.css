@@ -10,6 +10,9 @@
   margin-bottom: auto;
   padding: 2rem;
   gap: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 4rem;
 }
 
 .top-wrapper {
@@ -22,5 +25,7 @@
   .info-and-action-wrapper {
     width: 100%;
     height: fit-content;
+    position: unset;
+    padding: 2rem 0.5rem 2rem 0.5rem;
   }
 }

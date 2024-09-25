@@ -1,16 +1,16 @@
 import { useState, useEffect, useCallback } from "react";
 
-import { Overlay } from "./Overlay/Overlay";
-
 import { useBagContext } from "../../../../../../contexts/BagContext";
 
 import { useService } from "../../../../../../hooks/useService";
-import { usePopup } from "../../../../../../hooks/usePopup";
 
 import { jewelryServiceFactory } from "../../../../../../services/jewelryService";
 
 import { CATEGORIES_BY_ID } from "../../../../../../constants/categoriesById";
 import { COLORS_BY_ID } from "../../../../../../constants/colorsById";
+
+
+import { PopupItems } from "./PopupItems/PopupItems";
 
 export const AddToBag = ({
   toggleDisplayPopup,
@@ -59,23 +59,17 @@ export const AddToBag = ({
       });
   }, [categoryTitle, jewelryService, bagTotalQuantity, selectedColor]);
 
-  const { isTransitioning, popupRef, popupCloseHandler } = usePopup({
-    toggleDisplayPopup,
-    displayPopup,
-  });
 
   return (
     <>
       {jewelriesByCategory.length > 0 && (
-        <Overlay
+        <PopupItems
           toggleDisplayPopup={toggleDisplayPopup}
           displayPopup={displayPopup}
           jewelriesByCategory={jewelriesByCategory}
-          popupCloseHandler={popupCloseHandler}
+          popupCloseHandler={toggleDisplayPopup}
           updateSelectedColor={updateSelectedColor}
           toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
-          isTransitioning={isTransitioning}
-          popupRef={popupRef}
           categoryId={categoryId}
         />
       )}

@@ -1,13 +1,12 @@
-import { XMark } from "../../../../../../../../reusable/XMark/XMark";
 import { Form } from "./Form/Form";
-import { LargeTitle } from "../../../../../../../../reusable/LargeTitle/LargeTitle";
-import { Paragraph } from "../../../../../../../../reusable/Paragraph/Paragraph";
-import { MiniImages } from "../../../../../../../../reusable/MiniImages/MiniImages";
-import { StockStatus } from "../../../../../../../../common/StockStatus/StockStatus";
+import { LargeTitle } from "../../../../../../../reusable/LargeTitle/LargeTitle";
+import { Paragraph } from "../../../../../../../reusable/Paragraph/Paragraph";
+import { MiniImages } from "../../../../../../../reusable/MiniImages/MiniImages";
+import { StockStatus } from "../../../../../../../common/StockStatus/StockStatus";
 
-import { useLanguageContext } from "../../../../../../../../../contexts/LanguageContext";
+import { useLanguageContext } from "../../../../../../../../contexts/LanguageContext";
 
-import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../../../../../../constants/categoryNamesByLanguage";
+import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../../../../../constants/categoryNamesByLanguage";
 
 import styles from "./InfoAndAction.module.css";
 
@@ -24,7 +23,6 @@ export const InfoAndAction = ({
   const jewelryTitle = CATEGORY_NAMES_BY_LANGUAGE[categoryId][language];
   return (
     <section className={styles["info-and-action-wrapper"]}>
-      <XMark callbackFunction={popupCloseHandler} />
       <div className={styles["top-wrapper"]}>
         <StockStatus jewelriesByCategory={jewelriesByCategory} />
         <MiniImages

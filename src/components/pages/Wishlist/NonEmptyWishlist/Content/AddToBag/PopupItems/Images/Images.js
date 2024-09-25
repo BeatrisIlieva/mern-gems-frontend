@@ -1,5 +1,5 @@
 import { Image } from "./Image/Image";
-import { Images as SingleImage } from "../../../../../../../../reusable/Images/Images";
+import { Images as SingleImage } from "../../../../../../../reusable/Images/Images";
 
 import styles from "./Images.module.css";
 

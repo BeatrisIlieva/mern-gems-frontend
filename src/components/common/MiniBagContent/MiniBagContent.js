@@ -3,7 +3,7 @@ import { useEffect, useState, memo } from "react";
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
 
-import { useBagContext } from "../../../../contexts/BagContext";
+import { useBagContext } from "../../../contexts/BagContext";
 
 import styles from "./MiniBagContent.module.css";
 
