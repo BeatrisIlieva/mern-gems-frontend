@@ -18,9 +18,20 @@
 .wrapper {
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   gap: 0.2rem;
+  flex-direction: column;
 }
+
+/* .radio-container.column {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.radio-container.row {
+  flex-direction: row;
+
+} */
 
 .label,
 .error-message {
@@ -65,7 +76,7 @@ input[type="radio"]:disabled ~ label {
   text-decoration-color: var(--light-gray);
 }
 
-@media (max-width: 453px) {
+@media (max-width: 740px) {
   .size-wrapper {
     align-items: flex-start;
   }

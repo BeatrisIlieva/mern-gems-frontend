@@ -1,7 +1,7 @@
 .x-mark {
   display: flex;
   color: var(--medium-gray);
-  font-size: var(--large);
+  font-size: var(--medium);
   cursor: pointer;
   margin-bottom: 0.75rem;
   margin-left: auto;

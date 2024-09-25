@@ -18,22 +18,19 @@
   border-radius: 1rem;
   position: relative;
   transition: opacity 0.8s ease, transform 0.8s ease;
-  padding: 1.25rem;
+  /* padding: 1.25rem; */
   display: flex;
   flex-direction: column;
   overflow: hidden;
   height: 100vh;
-  width: 40vw;
+  width: 42vw;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   cursor: default;
   pointer-events: auto;
   z-index: 99999;
-  background-image: linear-gradient(
-    to right,
-    var(--very-light-pink),
-    var(--very-light-gray)
-  );
+
+  overflow-y: auto;
 }
 
 .add-to-bag {
@@ -42,7 +39,13 @@
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  background-color: var(--white);
+
+}
+
+.top-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .wrapper {
@@ -50,7 +53,8 @@
   /* flex-direction: column; */
   width: 100%;
   height: 100%;
-  gap: 1rem;
+  /* gap: 1rem; */
+  
 }
 
 .images {
@@ -58,30 +62,48 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 0.5rem;
-  background-color: var(--very-light-pink);
   width: 50%;
+  
 }
 
-.thumbnail {
-  width: 14rem;
-  height: 18rem;
-}
-
-/* .image {
+.image {
     width: 100%;
     height: 100%;
     object-fit: contain;
     aspect-ratio: 1/1;
-} */
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    background-image: linear-gradient(
+      to right,
+      var(--very-light-pink),
+      var(--very-light-gray)
+    );
+}
+
+.image:first-of-type{
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.image:last-of-type{
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
 .info-and-action-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  height: 86%;
+  margin-top: auto;
+  margin-bottom: auto;
   /* display: grid;
     grid-template-rows: repeat(2, 1fr);
     justify-content: space-between;  */
+    padding: 1rem;
 }
 
 .slide-in {
@@ -152,5 +174,15 @@
   .modal {
     width: 100vw;
     border-radius: 0;
+  }
+}
+
+@media (max-width: 844px) and (orientation: portrait) {
+  .info-and-action-wrapper  {
+    width: 60%;
+  }
+
+  .images {
+    width: 40%;
   }
 }

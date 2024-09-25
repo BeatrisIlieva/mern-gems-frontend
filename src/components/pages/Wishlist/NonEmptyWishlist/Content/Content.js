@@ -39,6 +39,8 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
               toggleDisplayPopup={toggleDisplayPopup}
               displayPopup={displayPopup}
               jewelriesByCategory={jewelriesByCategory}
+              categoryTitle={categoryTitle}
+              colorTitle={colorTitle}
             />
           )}
           <article

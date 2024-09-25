@@ -11,7 +11,7 @@ import { SIZE_NAMING } from "../../../constants/languageRelated";
 import styles from "./Sizes.module.css";
 
 export const Sizes = memo(
-  ({ inventories, errorMessage, changeHandler, selectedSize }) => {
+  ({ inventories, errorMessage, changeHandler, selectedSize, containerDirection }) => {
     const { language } = useLanguageContext();
 
     const [hoveredLabel, setHoveredLabel] = useState("");
@@ -25,7 +25,7 @@ export const Sizes = memo(
     return (
       <div className={styles["size-wrapper"]}>
         <NormalTitle title={SIZE_NAMING[language]} variant={"bolded"} />
-        <div className={styles["radio-container"]}>
+        <div className={`${styles["radio-container"]} ${styles[containerDirection]}`}>
           {inventories.map((item) => (
             <div key={item.size} className={styles["wrapper"]}>
               <input
