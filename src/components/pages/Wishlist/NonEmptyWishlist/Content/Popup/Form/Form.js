@@ -34,7 +34,6 @@ export const Form = ({
         errorMessage={errorMessage}
         changeHandler={changeHandler}
         selectedSize={selectedSize}
-        containerDirection={"column"}
       />
       <div className={styles["button-container"]}>
         <Button

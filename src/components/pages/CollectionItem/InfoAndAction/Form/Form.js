@@ -20,7 +20,7 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
 
   const inventories = jewelriesByCategory[0].inventories;
 
-    const allQuantitiesZero = checkIfItemsHasBeenSoldOut(jewelriesByCategory[0]);
+  const allQuantitiesZero = checkIfItemsHasBeenSoldOut(jewelriesByCategory[0]);
 
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
@@ -34,7 +34,11 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
         <div
           className={`${styles["button-container"]} ${styles["add-to-bag"]}`}
         >
-          <Button variant={"gray"} title={ADD_TO_BAG_BUTTON_TITLE[language]} buttonIsDisabled={allQuantitiesZero}/>
+          <Button
+            variant={"gray"}
+            title={ADD_TO_BAG_BUTTON_TITLE[language]}
+            buttonIsDisabled={allQuantitiesZero}
+          />
         </div>
         <div
           className={`${styles["button-container"]} ${styles["add-to-wishlist"]}`}

@@ -95,18 +95,7 @@ export const Popup = ({
           >
             <div className={styles["add-to-bag"]}>
               <div className={styles["wrapper"]}>
-                <div className={styles["images"]}>
-                  <img
-                    className={styles["image"]}
-                    src={jewelriesByCategory[0].firstImageUrl}
-                    alt=""
-                  />
-                  <img
-                    className={styles["image"]}
-                    src={jewelriesByCategory[0].secondImageUrl}
-                    alt=""
-                  />
-                </div>
+
                 <div className={styles["info-and-action-wrapper"]}>
                   <XMark callbackFunction={popupCloseHandler} />
                   <div className={styles["top-wrapper"]}>
