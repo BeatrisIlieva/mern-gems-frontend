@@ -1,6 +1,5 @@
 import { Image } from "./Image/Image";
-// import { LargeImages } from "../../../../../../../../common/LargeImages/LargeImages";
-import { Images as LargeImages } from "../../../../../../../../reusable/Images/Images";
+import { Images as SingleImage } from "../../../../../../../../reusable/Images/Images";
 
 import styles from "./Images.module.css";
 
@@ -18,7 +17,10 @@ export const Images = ({ jewelriesByCategory }) => {
         />
       </div>
       <div className={styles["image"]}>
-        <LargeImages jewelriesByCategory={jewelriesByCategory} backgroundColor={"with-background"}/>
+        <SingleImage
+          jewelriesByCategory={jewelriesByCategory}
+          backgroundColor={"with-background"}
+        />
       </div>
     </>
   );
