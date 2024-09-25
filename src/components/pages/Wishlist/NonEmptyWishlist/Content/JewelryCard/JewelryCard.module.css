@@ -1,4 +1,4 @@
-.content {
+.jewelry {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
     rgba(0, 0, 0, 0.6) 0px 6px 12px -18px;
 }
 
-.content.hovered {
+.jewelry.hovered {
   box-shadow: 0 0 0 1px var(--light-gray);
 }
 
