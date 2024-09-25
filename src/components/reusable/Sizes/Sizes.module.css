@@ -22,17 +22,6 @@
   flex-direction: column;
 }
 
-/* .radio-container.column {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.radio-container.row {
-  flex-direction: row;
-
-} */
-
 .label,
 .error-message {
   font-size: var(--normal);
