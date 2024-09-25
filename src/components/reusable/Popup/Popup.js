@@ -42,12 +42,7 @@ export const Popup = ({
       <CursorImageEffect />
       <div
         ref={popupRef}
-        className={`${styles["modal"]} ${styles[modalVariant]} ${
-          transitionStyle
-          // isTransitioning || movePopup
-          //   ? styles["slide-out"]
-          //   : styles["slide-in"]
-        }`}
+        className={`${styles["modal"]} ${styles[modalVariant]} ${transitionStyle}`}
       >
         <XMark callbackFunction={popupCloseHandler} />
         {children}
