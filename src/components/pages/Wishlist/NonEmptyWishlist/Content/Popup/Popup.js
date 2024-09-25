@@ -7,6 +7,7 @@ import { LargeTitle } from "../../../../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../../../../reusable/Paragraph/Paragraph";
 import { MiniImages } from "../../../../../reusable/MiniImages/MiniImages";
 import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
+import { Images } from "./Images/Images";
 
 import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { useBagContext } from "../../../../../../contexts/BagContext";
@@ -95,7 +96,7 @@ export const Popup = ({
           >
             <div className={styles["add-to-bag"]}>
               <div className={styles["wrapper"]}>
-
+                <Images jewelriesByCategory={jewelriesByCategory} />
                 <div className={styles["info-and-action-wrapper"]}>
                   <XMark callbackFunction={popupCloseHandler} />
                   <div className={styles["top-wrapper"]}>
