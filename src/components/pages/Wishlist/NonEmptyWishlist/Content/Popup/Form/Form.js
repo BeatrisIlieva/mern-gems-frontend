@@ -9,13 +9,23 @@ import { ADD_TO_BAG_BUTTON_TITLE } from "./constants/languageRelated";
 
 import styles from "./Form.module.css";
 
-export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
+export const Form = ({
+  jewelriesByCategory,
+  toggleDisplayPopup,
+  toggleDisplayMiniBagPopup,
+}) => {
   const { language } = useLanguageContext();
 
   const { errorMessage, changeHandler, onSubmit, selectedSize } =
     useAddToBagForm({ jewelriesByCategory, toggleDisplayPopup });
 
   const inventories = jewelriesByCategory[0].inventories;
+
+  const buttonClickHandler = () => {
+    if (selectedSize) {
+      toggleDisplayMiniBagPopup();
+    }
+  };
 
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
@@ -27,7 +37,11 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
         containerDirection={"column"}
       />
       <div className={styles["button-container"]}>
-        <Button variant={"gray"} title={ADD_TO_BAG_BUTTON_TITLE[language]} />
+        <Button
+          variant={"gray"}
+          title={ADD_TO_BAG_BUTTON_TITLE[language]}
+          callBackFunction={buttonClickHandler}
+        />
       </div>
     </form>
   );

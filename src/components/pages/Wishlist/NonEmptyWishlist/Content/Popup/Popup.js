@@ -27,6 +27,7 @@ export const Popup = ({
   displayPopup,
   categoryTitle,
   colorTitle,
+  toggleDisplayMiniBagPopup
 }) => {
   const { language } = useLanguageContext();
 
@@ -130,6 +131,7 @@ export const Popup = ({
                   <Form
                     jewelriesByCategory={jewelriesByCategory}
                     toggleDisplayPopup={toggleDisplayPopup}
+                    toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
                   />
                 </div>
               </div>

@@ -6,6 +6,7 @@ import { StockStatus } from "../../../../common/StockStatus/StockStatus";
 import { LargeImages } from "../../../../common/LargeImages/LargeImages";
 import { Popup } from "./Popup/Popup";
 import { Button } from "../../../../reusable/Button/Button";
+import { MiniBag } from "../../../CollectionItem/MiniBag/MiniBag";
 
 import { useBagContext } from "../../../../../contexts/BagContext";
 
@@ -61,6 +62,12 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
     setDisplayPopup((displayPopup) => !displayPopup);
   }, []);
 
+  const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
+
+  const toggleDisplayMiniBagPopup = useCallback(() => {
+    setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
+  }, []);
+
   return (
     <>
       {jewelriesByCategory.length > 0 && (
@@ -72,6 +79,13 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
               jewelriesByCategory={jewelriesByCategory}
               categoryTitle={categoryTitle}
               colorTitle={colorTitle}
+              toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+            />
+          )}
+          {displayMiniBagPopup && (
+            <MiniBag
+              toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+              displayPopup={displayMiniBagPopup}
             />
           )}
           <article
