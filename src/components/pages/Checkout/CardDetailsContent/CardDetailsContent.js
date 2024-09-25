@@ -57,6 +57,8 @@ export const CardDetailsContent = () => {
           movePopup={movePopup}
           toggleDisplayPopup={toggleDisplayShippingDetailsPopup}
           displayPopup={displayShippingDetailsPopup}
+          overlayVariant={"top"}
+          modalVariant={"top"}
         >
           <LargeTitle
             title={"Edit Shipping Address"}

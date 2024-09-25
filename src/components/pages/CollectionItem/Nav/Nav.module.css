@@ -19,6 +19,11 @@
   font-size: var(--normal);
 }
 
+.item:hover,
+.item:active {
+  color: var(--gray);
+}
+
 .icon {
   height: 0.2rem;
 }
@@ -31,6 +36,11 @@
   text-decoration: underline;
   text-decoration-color: var(--violet);
   text-underline-offset: 0.125rem;
+}
+
+.decoration:hover,
+.decoration:active {
+  color: var(--medium-gray);
 }
 
 @keyframes transitioning {
