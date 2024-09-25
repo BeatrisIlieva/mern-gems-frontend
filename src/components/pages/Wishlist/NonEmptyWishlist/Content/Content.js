@@ -51,6 +51,12 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
 
   const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
 
+  const [movePopup, setMovePopup] = useState(false);
+
+  const updateMovePopup = useCallback(() => {
+    setMovePopup((movePopup) => !movePopup);
+  }, []);
+
   const toggleDisplayMiniBagPopup = useCallback(() => {
     setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
   }, []);
@@ -84,9 +90,11 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
                 displayPopup={displayMiniBagPopup}
                 overlayVariant={"right"}
                 modalVariant={"right"}
+                movePopup={movePopup}
               >
                 <MiniBagContent
                   toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+                  updateMovePopup={updateMovePopup}
                 />
               </Popup>
             ))}

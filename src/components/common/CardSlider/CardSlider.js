@@ -35,9 +35,9 @@ export const CardSlider = ({ popupCloseHandler }) => {
     colorTitle: selectedColor,
   });
 
-  const clickHandler = useCallback(() => {
+  const clickHandler = useCallback(async () => {
     if (popupCloseHandler) {
-      popupCloseHandler();
+      await popupCloseHandler();
     }
 
     largeImagesClickHandler();
