@@ -2,12 +2,12 @@ import { useEffect, useState, memo } from "react";
 
 import { EmptyMiniBag } from "./EmptyMiniBag/EmptyMiniBag";
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag/NonEmptyMiniBag";
-import { XMark } from "../../../reusable/XMark/XMark";
-import { CursorImageEffect } from "../../../common/CursorImageEffect/CursorImageEffect";
+import { XMark } from "../../reusable/XMark/XMark";
+import { CursorImageEffect } from "../CursorImageEffect/CursorImageEffect";
 
-import { useBagContext } from "../../../../contexts/BagContext";
+import { useBagContext } from "../../../contexts/BagContext";
 
-import { usePopup } from "../../../../hooks/usePopup";
+import { usePopup } from "../../../hooks/usePopup";
 
 import styles from "./MiniBag.module.css";
 
