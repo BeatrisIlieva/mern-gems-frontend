@@ -12,6 +12,9 @@ export const Modal = ({
   isTransitioning,
   popupRef,
   categoryId,
+  displayPopup,
+displayMiniBagPopup,
+displayPopupContent
 }) => {
   return (
     <div

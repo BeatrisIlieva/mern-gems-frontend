@@ -47,6 +47,8 @@ export const ShippingDetails = () => {
           movePopup={movePopup}
           displayPopup={displayPopup}
           toggleDisplayPopup={toggleDisplayPopup}
+          overlayVariant={"top"}
+          modalVariant={"top"}
         >
           <LargeTitle title={sectionTitle} textAlign={"align-center"} />
           <ShippingDetailsForm popupCloseHandler={toggleDisplayPopup} />

@@ -27,9 +27,33 @@ export const CollectionItem = () => {
 
   const [displayPopup, setDisplayPopup] = useState(false);
 
-  const toggleDisplayPopup = useCallback(() => {
-    setDisplayPopup((displayPopup) => !displayPopup);
-  }, []);
+  // const toggleDisplayPopup = useCallback(() => {
+  //   setDisplayPopup((displayPopup) => !displayPopup);
+  // }, []);
+
+  const [movePopup, setMovePopup] = useState(false);
+
+  // const toggleDisplayPopup = () => {
+  //   setMovePopup(true);
+
+  //   setTimeout(async () => {
+  //     setDisplayPopup((displayPopup) => !displayPopup);
+  //     setMovePopup(false);
+  //   }, 400);
+  // };
+
+  const toggleDisplayPopup = () => {
+    return new Promise((resolve) => {
+      setMovePopup(true);
+  
+      // Simulate a delay for the closing animation
+      setTimeout(() => {
+        setDisplayPopup((displayPopup) => !displayPopup);
+        setMovePopup(false);
+        resolve();  // Resolve after the closing animation is done
+      }, 400);  // Adjust based on the duration of your animation (e.g., 300ms)
+    });
+  };
 
   return (
     <>
@@ -41,6 +65,7 @@ export const CollectionItem = () => {
             <MiniBag
               toggleDisplayMiniBagPopup={toggleDisplayPopup}
               displayPopup={displayPopup}
+              movePopup={movePopup}
             />
           )}
           <section className={styles["collection-item"]}>

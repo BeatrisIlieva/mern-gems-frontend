@@ -61,6 +61,8 @@ export const OrderHistory = () => {
         <Popup
           toggleDisplayPopup={toggleDisplayPopup}
           displayPopup={displayPopup}
+          overlayVariant={"top"}
+          modalVariant={"top"}
         >
           {orderItems.length < 1 ? (
             <EmptyOrderHistory popupCloseHandler={toggleDisplayPopup} />

@@ -47,6 +47,8 @@ export const CardDetails = () => {
           movePopup={movePopup}
           displayPopup={displayPopup}
           toggleDisplayPopup={toggleDisplayPopup}
+          overlayVariant={"top"}
+          modalVariant={"top"}
         >
           <LargeTitle title={sectionTitle} textAlign={"align-center"} />
           <CardDetailsForm popupCloseHandler={toggleDisplayPopup} />

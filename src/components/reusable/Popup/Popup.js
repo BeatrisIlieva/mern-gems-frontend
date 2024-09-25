@@ -10,15 +10,30 @@ export const Popup = ({
   children,
   displayPopup,
   movePopup,
+  overlayVariant,
+  modalVariant,
 }) => {
   const { isTransitioning, popupRef, popupCloseHandler } = usePopup({
     toggleDisplayPopup,
     displayPopup,
   });
 
+  const transitionStyle =
+    modalVariant === "top"
+      ? `${
+          isTransitioning || movePopup
+            ? styles["slide-out-top"]
+            : styles["slide-in-top"]
+        }`
+      : `${
+          isTransitioning || movePopup
+            ? styles["slide-out-right"]
+            : styles["slide-in-right"]
+        }`;
+
   return (
     <section
-      className={`${styles["overlay"]} ${
+      className={`${styles["overlay"]} ${styles[overlayVariant]} ${
         isTransitioning || movePopup
           ? styles["transition-out"]
           : styles["transition-in"]
@@ -27,10 +42,11 @@ export const Popup = ({
       <CursorImageEffect />
       <div
         ref={popupRef}
-        className={`${styles["modal"]} ${
-          isTransitioning || movePopup
-            ? styles["slide-out"]
-            : styles["slide-in"]
+        className={`${styles["modal"]} ${styles[modalVariant]} ${
+          transitionStyle
+          // isTransitioning || movePopup
+          //   ? styles["slide-out"]
+          //   : styles["slide-in"]
         }`}
       >
         <XMark callbackFunction={popupCloseHandler} />

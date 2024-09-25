@@ -17,3 +17,10 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+@media (max-width: 1100px) {
+  .info-and-action-wrapper {
+    width: 100%;
+    height: fit-content;
+  }
+}

@@ -9,7 +9,7 @@ import { useLanguageContext } from "../../../../../../../../../contexts/Language
 
 import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../../../../../../constants/categoryNamesByLanguage";
 
-import styles from "./InfoAndAction.module.css"
+import styles from "./InfoAndAction.module.css";
 
 export const InfoAndAction = ({
   popupCloseHandler,

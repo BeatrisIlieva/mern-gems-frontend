@@ -42,10 +42,10 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
       });
   }, [categoryTitle, colorTitle, jewelryService, bagTotalQuantity]);
 
-  const [displayPopup, setDisplayPopup] = useState(false);
+  const [displayAddToBagPopup, setDisplayAddToBagPopup] = useState(false);
 
-  const toggleDisplayPopup = useCallback(() => {
-    setDisplayPopup((displayPopup) => !displayPopup);
+  const toggleDisplayAddToBagPopup = useCallback(() => {
+    setDisplayAddToBagPopup((displayAddToBagPopup) => !displayAddToBagPopup);
   }, []);
 
   const [displayMiniBagPopup, setDisplayMiniBagPopup] = useState(false);
@@ -54,17 +54,17 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
     setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
   }, []);
 
-  const displayPopupContent = displayPopup || displayMiniBagPopup;
+  const displayPopupContent = displayAddToBagPopup || displayMiniBagPopup;
 
   return (
     <>
       {jewelriesByCategory.length > 0 && (
         <>
           {displayPopupContent &&
-            (displayPopup ? (
+            (displayAddToBagPopup ? (
               <AddToBag
-                toggleDisplayPopup={toggleDisplayPopup}
-                displayPopup={displayPopup}
+                toggleDisplayAddToBagPopup={toggleDisplayAddToBagPopup}
+                displayAddToBagPopup={displayAddToBagPopup}
                 jewelriesByCategory={jewelriesByCategory}
                 categoryTitle={categoryTitle}
                 colorTitle={colorTitle}
@@ -94,7 +94,7 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
           )} */}
           <JewelryCard
             jewelriesByCategory={jewelriesByCategory}
-            toggleDisplayPopup={toggleDisplayPopup}
+            toggleDisplayAddToBagPopup={toggleDisplayAddToBagPopup}
             isSoldOut={isSoldOut}
             categoryTitle={categoryTitle}
             colorTitle={colorTitle}
