@@ -54,11 +54,29 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
     setDisplayMiniBagPopup((displayMiniBagPopup) => !displayMiniBagPopup);
   }, []);
 
+  const displayPopupContent = displayPopup || displayMiniBagPopup;
+
   return (
     <>
       {jewelriesByCategory.length > 0 && (
         <>
-          {displayPopup && (
+          {displayPopupContent &&
+            (displayPopup ? (
+              <AddToBag
+                toggleDisplayPopup={toggleDisplayPopup}
+                displayPopup={displayPopup}
+                jewelriesByCategory={jewelriesByCategory}
+                categoryTitle={categoryTitle}
+                colorTitle={colorTitle}
+                toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+              />
+            ) : (
+              <MiniBag
+                toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+                displayPopup={displayMiniBagPopup}
+              />
+            ))}
+          {/* {displayPopup && (
             <AddToBag
               toggleDisplayPopup={toggleDisplayPopup}
               displayPopup={displayPopup}
@@ -73,7 +91,7 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
               toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
               displayPopup={displayMiniBagPopup}
             />
-          )}
+          )} */}
           <JewelryCard
             jewelriesByCategory={jewelriesByCategory}
             toggleDisplayPopup={toggleDisplayPopup}

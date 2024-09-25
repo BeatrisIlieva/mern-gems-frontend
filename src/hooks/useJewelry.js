@@ -22,7 +22,7 @@ export const useJewelry = ({ categoryTitle, colorTitle }) => {
 
   const categoryId = CATEGORIES_BY_ID[categoryTitle];
   const colorId = COLORS_BY_ID[colorTitle];
-  
+
   useEffect(() => {
     jewelryService
       .getOne(categoryId, colorId)
