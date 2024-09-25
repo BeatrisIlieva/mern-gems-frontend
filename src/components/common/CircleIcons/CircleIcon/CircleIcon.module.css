@@ -1,8 +1,14 @@
 .circle {
   color: var(--light-gray);
   height: 0.6rem;
+  transition: transform 600ms ease;
 }
 
 .selected {
   color: var(--medium-gray);
+}
+
+.circle:hover,
+.circle:active {
+  transform: scale(1.3);
 }
