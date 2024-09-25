@@ -4,6 +4,12 @@
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
+  transition: transform 400ms ease-in-out;
+}
+
+.category-card:hover,
+.category-card:active {
+  transform: translateY(-1.6rem);
 }
 
 @keyframes transitioning {
