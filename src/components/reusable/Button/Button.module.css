@@ -44,7 +44,9 @@
 
 .button.gray.disabled {
   cursor: not-allowed;
-  background: var(--light-gray);
+  background: var(--very-light-gray);
+  color: var(--light-gray);
+  box-shadow: var(--light-gray);
 }
 
 .button.gray {

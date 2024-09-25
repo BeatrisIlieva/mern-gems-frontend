@@ -109,12 +109,14 @@ export const Content = memo(({ categoryTitle, colorTitle }) => {
               }
               variant={"regular"}
             />
-            <Button
-              title={"Move to Bag"}
-              buttonIsDisabled={isSoldOut}
-              callBackFunction={toggleDisplayPopup}
-              variant={"gray"}
-            />
+            <div className={styles["button"]}>
+              <Button
+                title={"Move to Bag"}
+                buttonIsDisabled={isSoldOut}
+                callBackFunction={toggleDisplayPopup}
+                variant={"gray"}
+              />
+            </div>
           </article>
         </>
       )}
