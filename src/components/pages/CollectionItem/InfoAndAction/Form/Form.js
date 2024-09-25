@@ -6,6 +6,8 @@ import { useLanguageContext } from "../../../../../contexts/LanguageContext";
 
 import { useAddToBagForm } from "../../../../../hooks/useAddToBagForm";
 
+import { checkIfItemsHasBeenSoldOut } from "../../../../common/StockStatus/helpers/checkIfItemsHasBeenSoldOut";
+
 import { ADD_TO_BAG_BUTTON_TITLE } from "./constants/languageRelated";
 
 import styles from "./Form.module.css";
@@ -17,6 +19,8 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
     useAddToBagForm({ jewelriesByCategory, toggleDisplayPopup });
 
   const inventories = jewelriesByCategory[0].inventories;
+
+    const allQuantitiesZero = checkIfItemsHasBeenSoldOut(jewelriesByCategory[0]);
 
   return (
     <form method="POST" onSubmit={onSubmit} className={styles["form"]}>
@@ -30,7 +34,7 @@ export const Form = ({ jewelriesByCategory, toggleDisplayPopup }) => {
         <div
           className={`${styles["button-container"]} ${styles["add-to-bag"]}`}
         >
-          <Button variant={"gray"} title={ADD_TO_BAG_BUTTON_TITLE[language]} />
+          <Button variant={"gray"} title={ADD_TO_BAG_BUTTON_TITLE[language]} buttonIsDisabled={allQuantitiesZero}/>
         </div>
         <div
           className={`${styles["button-container"]} ${styles["add-to-wishlist"]}`}

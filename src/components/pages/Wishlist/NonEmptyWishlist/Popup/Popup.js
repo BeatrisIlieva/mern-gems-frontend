@@ -37,6 +37,8 @@ export const Popup = ({
 
   const [isColorInitialized, setIsColorInitialized] = useState(false);
 
+  const [displayPage404, setDisplayPage404] = useState(false);
+
   const [selectedColor, setSelectedColor] = useState(colorTitle);
 
   const updateSelectedColor = useCallback(
