@@ -97,12 +97,6 @@
   }
 }
 
-@media (max-width: 660px) {
-  .modal {
-    width: 320px;
-  }
-}
-
 .slide-in-right {
   animation: slideInRight 1s forwards;
 }
@@ -126,5 +120,30 @@
   }
   to {
     right: -100%;
+  }
+}
+
+@media (max-width: 660px) {
+  .modal.top {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1213px) {
+  .modal.right {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal.right {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 693px) {
+  .modal.right {
+    width: 100vw;
+    border-radius: 0;
   }
 }
