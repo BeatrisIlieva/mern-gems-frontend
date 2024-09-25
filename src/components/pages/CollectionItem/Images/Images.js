@@ -25,14 +25,12 @@ export const Images = memo(({ jewelriesByCategory }) => {
         title={jewelriesByCategory[0].title}
         clickHandler={toggleFirstImageUrlIsActive}
       />
-      <div className={styles["bottom-container"]}>
-        <CircleIcons
-          firstImageUrlIsActive={firstImageUrlIsActive}
-          toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
-          firstImageUrl={jewelriesByCategory[0].firstImageUrl}
-          secondImageUrl={jewelriesByCategory[0].secondImageUrl}
-        />
-      </div>
+      <CircleIcons
+        firstImageUrlIsActive={firstImageUrlIsActive}
+        toggleFirstImageUrlIsActive={toggleFirstImageUrlIsActive}
+        firstImageUrl={jewelriesByCategory[0].firstImageUrl}
+        secondImageUrl={jewelriesByCategory[0].secondImageUrl}
+      />
     </div>
   );
 });
