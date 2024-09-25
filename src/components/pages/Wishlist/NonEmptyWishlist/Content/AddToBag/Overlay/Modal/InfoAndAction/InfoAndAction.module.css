@@ -1,0 +1,19 @@
+.info-and-action-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  height: 86%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.top-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

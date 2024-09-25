@@ -11,3 +11,13 @@
     var(--very-light-gray)
   );
 }
+
+.image:first-of-type {
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.image:last-of-type {
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

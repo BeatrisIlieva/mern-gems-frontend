@@ -1,9 +1,9 @@
-import { Sizes } from "../../../../../../../../reusable/Sizes/Sizes";
-import { Button } from "../../../../../../../../reusable/Button/Button";
+import { Sizes } from "../../../../../../../../../reusable/Sizes/Sizes";
+import { Button } from "../../../../../../../../../reusable/Button/Button";
 
-import { useLanguageContext } from "../../../../../../../../../contexts/LanguageContext";
+import { useLanguageContext } from "../../../../../../../../../../contexts/LanguageContext";
 
-import { useAddToBagForm } from "../../../../../../../../../hooks/useAddToBagForm";
+import { useAddToBagForm } from "../../../../../../../../../../hooks/useAddToBagForm";
 
 import { ADD_TO_BAG_BUTTON_TITLE } from "./constants/languageRelated";
 
