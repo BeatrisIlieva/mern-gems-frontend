@@ -31,7 +31,7 @@ export const Button = memo(
         onTouchEnd={() => setIsHovered(false)}
       >
         <span className={styles["button-text"]}>
-        {isLoading ? PROCESSING_BUTTON_NAMING[language] : title}
+          {isLoading ? PROCESSING_BUTTON_NAMING[language] : title}
         </span>
       </button>
     );
