@@ -4,7 +4,7 @@ import { DualTitleSection } from "../../../../reusable/DualTitleSection/DualTitl
 import { PriceRange } from "../../../../common/PriceRange/PriceRange";
 import { StockStatus } from "../../../../common/StockStatus/StockStatus";
 import { LargeImages } from "../../../../common/LargeImages/LargeImages";
-import { Popup } from "../Popup/Popup";
+import { Popup } from "./Popup/Popup";
 import { Button } from "../../../../reusable/Button/Button";
 
 import { useBagContext } from "../../../../../contexts/BagContext";

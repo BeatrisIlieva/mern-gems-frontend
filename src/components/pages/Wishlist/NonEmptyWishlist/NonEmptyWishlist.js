@@ -1,8 +1,5 @@
-import { useState, useCallback } from "react";
-
 import { InfoMessage } from "../../../reusable/InfoMessage/InfoMessage";
 import { Content } from "./Content/Content";
-import { Popup } from "./Popup/Popup";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 import { useWishlistContext } from "../../../../contexts/WishlistContext";
@@ -18,8 +15,6 @@ export const NonEmptyWishlist = () => {
   const { language } = useLanguageContext();
 
   const { wishlistItems, wishlistTotalQuantity } = useWishlistContext();
-
-
 
   const title = `${TITLES_BY_LANGUAGE[language]} (${wishlistTotalQuantity})`;
 

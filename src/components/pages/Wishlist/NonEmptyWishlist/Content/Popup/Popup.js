@@ -1,24 +1,24 @@
 import { useState, useEffect, useCallback } from "react";
 
-import { CursorImageEffect } from "../../../../common/CursorImageEffect/CursorImageEffect";
-import { XMark } from "../../../../reusable/XMark/XMark";
+import { CursorImageEffect } from "../../../../../common/CursorImageEffect/CursorImageEffect";
+import { XMark } from "../../../../../reusable/XMark/XMark";
 import { Form } from "./Form/Form";
-import { LargeTitle } from "../../../../reusable/LargeTitle/LargeTitle";
-import { Paragraph } from "../../../../reusable/Paragraph/Paragraph";
-import { MiniImages } from "../../../../reusable/MiniImages/MiniImages";
-import { StockStatus } from "../../../../common/StockStatus/StockStatus";
+import { LargeTitle } from "../../../../../reusable/LargeTitle/LargeTitle";
+import { Paragraph } from "../../../../../reusable/Paragraph/Paragraph";
+import { MiniImages } from "../../../../../reusable/MiniImages/MiniImages";
+import { StockStatus } from "../../../../../common/StockStatus/StockStatus";
 
-import { useLanguageContext } from "../../../../../contexts/LanguageContext";
-import { useBagContext } from "../../../../../contexts/BagContext";
+import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
+import { useBagContext } from "../../../../../../contexts/BagContext";
 
-import { usePopup } from "../../../../../hooks/usePopup";
-import { useService } from "../../../../../hooks/useService";
+import { usePopup } from "../../../../../../hooks/usePopup";
+import { useService } from "../../../../../../hooks/useService";
 
-import { jewelryServiceFactory } from "../../../../../services/jewelryService";
+import { jewelryServiceFactory } from "../../../../../../services/jewelryService";
 
-import { CATEGORIES_BY_ID } from "../../../../../constants/categoriesById";
-import { COLORS_BY_ID } from "../../../../../constants/colorsById";
-import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../../constants/categoryNamesByLanguage";
+import { CATEGORIES_BY_ID } from "../../../../../../constants/categoriesById";
+import { COLORS_BY_ID } from "../../../../../../constants/colorsById";
+import { CATEGORY_NAMES_BY_LANGUAGE } from "../../../../../../constants/categoryNamesByLanguage";
 
 import styles from "./Popup.module.css";
 
