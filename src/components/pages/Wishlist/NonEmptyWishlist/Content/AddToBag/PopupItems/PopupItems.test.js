@@ -37,7 +37,7 @@ describe("PopupItems Component", () => {
     categoryId: "rings",
   };
 
-  it("renders without crashing", () => {
+  test("renders without crashing", () => {
     render(<PopupItems {...mockProps} />);
 
     const imagesComponent = screen.getByTestId("images-component");
@@ -51,14 +51,14 @@ describe("PopupItems Component", () => {
     expect(infoAndActionComponent).toHaveTextContent("Gold Ring");
   });
 
-  it("passes correct props to Images component", () => {
+  test("passes correct props to Images component", () => {
     render(<PopupItems {...mockProps} />);
 
     const imagesComponent = screen.getByTestId("images-component");
     expect(imagesComponent).toHaveTextContent("2 items");
   });
 
-  it("passes correct props to InfoAndAction component", () => {
+  test("passes correct props to InfoAndAction component", () => {
     render(<PopupItems {...mockProps} />);
 
     const infoAndActionComponent = screen.getByTestId(

@@ -56,7 +56,7 @@ describe("InfoAndAction Component", () => {
     categoryId: "rings",
   };
 
-  it("displays the correct jewelry title based on the language context", () => {
+  test("displays the correct jewelry title based on the language context", () => {
     CATEGORY_NAMES_BY_LANGUAGE.rings = { en: "Rings", es: "Anillos" };
 
     render(<InfoAndAction {...mockProps} />);
@@ -64,7 +64,7 @@ describe("InfoAndAction Component", () => {
     expect(screen.getByText("Rings")).toBeInTheDocument();
   });
 
-  it("calls updateSelectedColor when a MiniImage is clicked", () => {
+  test("calls updateSelectedColor when a MiniImage is clicked", () => {
     render(<InfoAndAction {...mockProps} />);
 
     fireEvent.click(screen.getByText("MiniImages"));
@@ -72,7 +72,7 @@ describe("InfoAndAction Component", () => {
     expect(mockProps.updateSelectedColor).toHaveBeenCalledWith(1);
   });
 
-  it('calls toggleDisplayPopup when the "Open Popup" button is clicked', () => {
+  test('calls toggleDisplayPopup when the "Open Popup" button is clicked', () => {
     render(<InfoAndAction {...mockProps} />);
 
     fireEvent.click(screen.getByText("Open Popup"));
@@ -80,7 +80,7 @@ describe("InfoAndAction Component", () => {
     expect(mockProps.toggleDisplayPopup).toHaveBeenCalled();
   });
 
-  it('calls toggleDisplayMiniBagPopup when the "Open Mini Bag" button is clicked', () => {
+  test('calls toggleDisplayMiniBagPopup when the "Open Mini Bag" button is clicked', () => {
     render(<InfoAndAction {...mockProps} />);
 
     fireEvent.click(screen.getByText("Open Mini Bag"));
