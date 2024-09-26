@@ -20,7 +20,7 @@ jest.mock("../../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
 
-jest.mock("./Sizes/Sizes", () => ({
+jest.mock("../../../../reusable/Sizes/Sizes", () => ({
   Sizes: ({ inventories, errorMessage, changeHandler, selectedSize }) => (
     <div>
       <select

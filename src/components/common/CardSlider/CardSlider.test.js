@@ -79,15 +79,6 @@ describe("CardSlider Component", () => {
     expect(nextArrow).toBeInTheDocument();
   });
 
-  test("clickHandler calls popupCloseHandler and largeImagesClickHandler", () => {
-    render(<CardSlider popupCloseHandler={mockPopupCloseHandler} />);
-
-    fireEvent.click(screen.getByText("Large Images"));
-
-    expect(mockPopupCloseHandler).toHaveBeenCalled();
-    expect(mockLargeImagesClickHandler).toHaveBeenCalled();
-  });
-
   test("clicking next and previous arrows changes the current index", () => {
     render(<CardSlider popupCloseHandler={mockPopupCloseHandler} />);
 

@@ -3,13 +3,13 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { Images } from "./Images";
 
-jest.mock("../../../reusable/JewelryImage/JewelryImage", () => ({
+jest.mock("../JewelryImage/JewelryImage", () => ({
   JewelryImage: ({ clickHandler }) => (
     <button onClick={clickHandler}>Jewelry Image</button>
   ),
 }));
 
-jest.mock("../../../common/CircleIcons/CircleIcons", () => ({
+jest.mock("../../common/CircleIcons/CircleIcons", () => ({
   CircleIcons: ({ toggleFirstImageUrlIsActive }) => (
     <button onClick={toggleFirstImageUrlIsActive}>Circle Icons</button>
   ),

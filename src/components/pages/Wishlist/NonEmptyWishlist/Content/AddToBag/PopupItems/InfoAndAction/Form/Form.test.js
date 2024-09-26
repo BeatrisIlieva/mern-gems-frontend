@@ -3,24 +3,24 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { Form } from "./Form";
 
-import { useBagContext } from "../../../../../contexts/BagContext";
-import { useAuthenticationContext } from "../../../../../contexts/AuthenticationContext";
+import { useBagContext } from "../../../../../../../../../contexts/BagContext";
+import { useAuthenticationContext } from "../../../../../../../../../contexts/AuthenticationContext";
 
-import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+import { useLanguageContext } from "../../../../../../../../../contexts/LanguageContext";
 
-jest.mock("../../../../../contexts/LanguageContext", () => ({
+jest.mock("../../../../../../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
 }));
 
-jest.mock("../../../../../contexts/BagContext", () => ({
+jest.mock("../../../../../../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
 
-jest.mock("../../../../../contexts/AuthenticationContext", () => ({
+jest.mock("../../../../../../../../../contexts/AuthenticationContext", () => ({
   useAuthenticationContext: jest.fn(),
 }));
 
-jest.mock("./Sizes/Sizes", () => ({
+jest.mock("../../../../../../../../reusable/Sizes/Sizes", () => ({
   Sizes: ({ inventories, errorMessage, changeHandler, selectedSize }) => (
     <div>
       <select
@@ -39,7 +39,8 @@ jest.mock("./Sizes/Sizes", () => ({
   ),
 }));
 
-jest.mock("../../../../reusable/Button/Button", () => ({
+
+jest.mock("../../../../../../../../reusable/Button/Button", () => ({
   Button: ({ title, callBackFunction, variant }) => (
     <button data-testid="add-to-bag-button" onClick={callBackFunction}>
       {title}
@@ -47,14 +48,11 @@ jest.mock("../../../../reusable/Button/Button", () => ({
   ),
 }));
 
-jest.mock("../../../../common/Heart/Heart", () => ({
-  Heart: () => <div data-testid="heart-icon">Heart</div>,
-}));
-
 describe("Form Component", () => {
   const mockLanguage = "English";
   const mockAdd = jest.fn();
   const mockToggleDisplayPopup = jest.fn();
+  const mockToggleDisplayMiniBagPopup = jest.fn();
   const mockUserId = "user-123";
 
   beforeEach(() => {
@@ -78,12 +76,12 @@ describe("Form Component", () => {
       <Form
         jewelriesByCategory={mockJewelriesByCategory}
         toggleDisplayPopup={mockToggleDisplayPopup}
+        toggleDisplayMiniBagPopup={mockToggleDisplayMiniBagPopup}
       />
     );
 
     expect(screen.getByTestId("size-select")).toBeInTheDocument();
     expect(screen.getByTestId("add-to-bag-button")).toBeInTheDocument();
-    expect(screen.getByTestId("heart-icon")).toBeInTheDocument();
   });
 
   test("submits form and calls toggleDisplayPopup when size is selected", async () => {
@@ -93,6 +91,7 @@ describe("Form Component", () => {
       <Form
         jewelriesByCategory={mockJewelriesByCategory}
         toggleDisplayPopup={mockToggleDisplayPopup}
+        toggleDisplayMiniBagPopup={mockToggleDisplayMiniBagPopup}
       />
     );
 
@@ -117,6 +116,7 @@ describe("Form Component", () => {
       <Form
         jewelriesByCategory={mockJewelriesByCategory}
         toggleDisplayPopup={mockToggleDisplayPopup}
+        toggleDisplayMiniBagPopup={mockToggleDisplayMiniBagPopup}
       />
     );
 
@@ -138,6 +138,7 @@ describe("Form Component", () => {
       <Form
         jewelriesByCategory={updatedJewelriesByCategory}
         toggleDisplayPopup={mockToggleDisplayPopup}
+        toggleDisplayMiniBagPopup={mockToggleDisplayMiniBagPopup}
       />
     );
 
@@ -150,6 +151,7 @@ describe("Form Component", () => {
       <Form
         jewelriesByCategory={mockJewelriesByCategory}
         toggleDisplayPopup={mockToggleDisplayPopup}
+        toggleDisplayMiniBagPopup={mockToggleDisplayMiniBagPopup}
       />
     );
 

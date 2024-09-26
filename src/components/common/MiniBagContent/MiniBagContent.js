@@ -30,13 +30,13 @@ export const MiniBagContent = memo(
     }, []);
 
     return (
-      <div className={styles["mini-bag"]}>
+      <section className={styles["mini-bag"]} data-testid="mini-bag">
         {miniBagIsEmpty ? (
           <EmptyMiniBag popupCloseHandler={clickHandler} />
         ) : (
           <NonEmptyMiniBag popupCloseHandler={clickHandler} />
         )}
-      </div>
+      </section>
     );
   }
 );

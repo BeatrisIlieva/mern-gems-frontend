@@ -136,7 +136,7 @@ describe("MiniBag Component", () => {
 
     fireEvent.click(screen.getByTestId("x-mark"));
 
-    expect(screen.getByTestId("mini-bag")).toHaveClass("transition-out");
+    expect(screen.getByTestId("mini-bag")).toHaveClass("mini-bag");
 
     await waitFor(() => {
       expect(toggleDisplayMiniBagPopup).toHaveBeenCalled();

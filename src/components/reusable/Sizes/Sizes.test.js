@@ -5,11 +5,11 @@ import { Sizes } from "./Sizes";
 
 import { useLanguageContext } from "../../../contexts/LanguageContext";
 
-jest.mock("../../../../../../contexts/LanguageContext", () => ({
+jest.mock("../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
 }));
 
-jest.mock("../../../../../reusable/NormalTitle/NormalTitle", () => ({
+jest.mock("../NormalTitle/NormalTitle", () => ({
   NormalTitle: ({ title, variant }) => (
     <div data-testid={`normal-title-${variant}`}>{title}</div>
   ),

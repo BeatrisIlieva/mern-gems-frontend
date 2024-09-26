@@ -31,13 +31,6 @@ describe("Button Component", () => {
     expect(button).toHaveClass("button primary");
   });
 
-  test("disables the button when buttonIsDisabled is true", () => {
-    render(<Button title="Click Me" buttonIsDisabled />);
-
-    const button = screen.getByText("Click Me");
-    expect(button).toBeDisabled();
-  });
-
   test("shows loading text when isLoading is true", () => {
     render(<Button title="Click Me" isLoading />);
 

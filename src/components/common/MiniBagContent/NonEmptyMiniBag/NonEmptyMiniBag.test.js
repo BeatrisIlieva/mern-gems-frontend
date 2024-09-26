@@ -3,15 +3,15 @@ import "@testing-library/jest-dom/extend-expect";
 import { useNavigate } from "react-router-dom";
 
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag";
-import { useBagContext } from "../../../../../contexts/BagContext";
+import { useBagContext } from "../../../../contexts/BagContext"; 
 
-import { useLanguageContext } from "../../../../../contexts/LanguageContext";
+import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
-jest.mock("../../../../../contexts/LanguageContext", () => ({
+jest.mock("../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
 }));
 
-jest.mock("../../../../../contexts/BagContext", () => ({
+jest.mock("../../../../contexts/BagContext", () => ({
   useBagContext: jest.fn(),
 }));
 
@@ -19,21 +19,21 @@ jest.mock("react-router-dom", () => ({
   useNavigate: jest.fn(),
 }));
 
-jest.mock("../../../../common/BagHeader/BagHeader", () => ({
+jest.mock("../../../common/BagHeader/BagHeader", () => ({
   BagHeader: () => <div>BagHeader</div>,
 }));
 
-jest.mock("../../../../common/BagList/BagList", () => ({
+jest.mock("../../../common/BagList/BagList", () => ({
   BagList: () => <div>BagList</div>,
 }));
 
-jest.mock("../../../../reusable/Button/Button", () => ({
+jest.mock("../../../reusable/Button/Button", () => ({
   Button: ({ title, callBackFunction }) => (
     <button onClick={callBackFunction}>{title}</button>
   ),
 }));
 
-jest.mock("../../../../reusable/DualTitleSection/DualTitleSection", () => ({
+jest.mock("../../../reusable/DualTitleSection/DualTitleSection", () => ({
   DualTitleSection: ({ firstTitle, secondTitle }) => (
     <div>
       <span>{firstTitle}</span>

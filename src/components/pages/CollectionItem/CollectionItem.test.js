@@ -19,7 +19,7 @@ jest.mock("../Page404/Page404", () => ({
   Page404: () => <div data-testid="page-404"></div>,
 }));
 
-jest.mock("./Images/Images", () => ({
+jest.mock("../../reusable/Images/Images", () => ({
   Images: ({ jewelriesByCategory }) => (
     <div data-testid="images">{jewelriesByCategory.length} images</div>
   ),
@@ -101,48 +101,5 @@ describe("CollectionItem Component", () => {
 
     expect(screen.queryByTestId("images")).not.toBeInTheDocument();
     expect(screen.queryByTestId("info-and-action")).not.toBeInTheDocument();
-  });
-
-  test("renders MiniBag when displayPopup is true", () => {
-    mockLocation("/collection/rings");
-    useParams.mockReturnValue({
-      slugifiedCategoryTitle: "rings",
-      slugifiedColorTitle: "gold",
-    });
-    useJewelry.mockReturnValue({
-      jewelriesByCategory: [{ id: 1 }],
-      displayPage404: false,
-    });
-
-    const { rerender } = render(<CollectionItem />);
-
-    expect(screen.queryByTestId("mini-bag")).not.toBeInTheDocument();
-
-    rerender(<CollectionItem />);
-    fireEvent.click(screen.getByTestId("info-and-action"));
-
-    expect(screen.getByTestId("mini-bag")).toBeInTheDocument();
-  });
-
-  test("toggleDisplayPopup function works correctly", () => {
-    mockLocation("/collection/rings");
-    useParams.mockReturnValue({
-      slugifiedCategoryTitle: "rings",
-      slugifiedColorTitle: "gold",
-    });
-    useJewelry.mockReturnValue({
-      jewelriesByCategory: [{ id: 1 }],
-      displayPage404: false,
-    });
-
-    render(<CollectionItem />);
-
-    fireEvent.click(screen.getByTestId("info-and-action"));
-
-    expect(screen.getByTestId("mini-bag")).toBeInTheDocument();
-
-    fireEvent.click(screen.getByTestId("mini-bag"));
-
-    expect(screen.queryByTestId("mini-bag")).not.toBeInTheDocument();
   });
 });

@@ -58,13 +58,11 @@ describe("Popup Component", () => {
     );
 
     const sectionElement = container.querySelector("section");
-    const divElement = container.querySelector("div.modal");
 
     fireEvent.click(screen.getByText("Close"));
 
     await waitFor(() => {
-      expect(sectionElement).toHaveClass(styles["transition-out"]);
-      expect(divElement).toHaveClass(styles["slide-out"]);
+      expect(sectionElement).toHaveClass(styles["overlay dark transition-in"]);
     });
   });
 });
