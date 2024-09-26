@@ -39,7 +39,6 @@ jest.mock("../../../../../../../../reusable/Sizes/Sizes", () => ({
   ),
 }));
 
-
 jest.mock("../../../../../../../../reusable/Button/Button", () => ({
   Button: ({ title, callBackFunction, variant }) => (
     <button data-testid="add-to-bag-button" onClick={callBackFunction}>
