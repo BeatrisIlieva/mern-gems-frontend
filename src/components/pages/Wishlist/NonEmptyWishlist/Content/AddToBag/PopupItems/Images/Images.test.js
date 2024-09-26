@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Images } from "./Images";
 
-// Mock child components
 jest.mock("./Image/Image", () => ({
   Image: ({ image, title }) => (
     <div data-testid="image-component">
@@ -31,11 +30,9 @@ describe("Images Component", () => {
   it("renders without crashing", () => {
     render(<Images jewelriesByCategory={mockJewelries} />);
 
-    // Check if both Image components are rendered
     const imageComponents = screen.getAllByTestId("image-component");
     expect(imageComponents.length).toBe(2);
 
-    // Check if SingleImage component is rendered
     const singleImageComponent = screen.getByTestId("single-image-component");
     expect(singleImageComponent).toBeInTheDocument();
   });
@@ -43,7 +40,6 @@ describe("Images Component", () => {
   it("passes correct props to Image components", () => {
     render(<Images jewelriesByCategory={mockJewelries} />);
 
-    // Verify the first Image component props
     const imageComponents = screen.getAllByTestId("image-component");
 
     expect(imageComponents[0].querySelector("img").src).toBe(
@@ -53,7 +49,6 @@ describe("Images Component", () => {
       "Necklace"
     );
 
-    // Verify the second Image component props
     expect(imageComponents[1].querySelector("img").src).toBe(
       "https://example.com/second-image.jpg"
     );
@@ -67,7 +62,8 @@ describe("Images Component", () => {
 
     const singleImageComponent = screen.getByTestId("single-image-component");
 
-    // Verify that the SingleImage component receives the correct props
-    expect(singleImageComponent).toHaveTextContent("1 items with background: with-background");
+    expect(singleImageComponent).toHaveTextContent(
+      "1 items with background: with-background"
+    );
   });
 });
