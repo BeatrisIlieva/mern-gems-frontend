@@ -9,14 +9,14 @@ describe("Image Component", () => {
   const mockImage = "https://example.com/image.jpg";
   const mockTitle = "Sample Jewelry";
 
-  it("renders an image element", () => {
+  test("renders an image element", () => {
     render(<Image image={mockImage} title={mockTitle} />);
 
     const imgElement = screen.getByRole("img");
     expect(imgElement).toBeInTheDocument();
   });
 
-  it("sets the correct src and alt attributes", () => {
+  test("sets the correct src and alt attributes", () => {
     render(<Image image={mockImage} title={mockTitle} />);
 
     const imgElement = screen.getByRole("img");
@@ -26,7 +26,7 @@ describe("Image Component", () => {
     expect(imgElement).toHaveAttribute("alt", mockTitle);
   });
 
-  it("applies the correct CSS class", () => {
+  test("applies the correct CSS class", () => {
     render(<Image image={mockImage} title={mockTitle} />);
 
     const imgElement = screen.getByRole("img");

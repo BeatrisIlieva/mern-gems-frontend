@@ -3,7 +3,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { useNavigate } from "react-router-dom";
 
 import { NonEmptyMiniBag } from "./NonEmptyMiniBag";
-import { useBagContext } from "../../../../contexts/BagContext"; 
+import { useBagContext } from "../../../../contexts/BagContext";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
 
