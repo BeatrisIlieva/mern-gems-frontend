@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Image } from "./Image";
 
-// Mock the CSS module
 jest.mock("./Image.module.css", () => ({
   image: "mocked-image-class",
 }));
@@ -13,7 +12,6 @@ describe("Image Component", () => {
   it("renders an image element", () => {
     render(<Image image={mockImage} title={mockTitle} />);
 
-    // Check if the img element is rendered
     const imgElement = screen.getByRole("img");
     expect(imgElement).toBeInTheDocument();
   });
@@ -23,10 +21,8 @@ describe("Image Component", () => {
 
     const imgElement = screen.getByRole("img");
 
-    // Verify the src attribute
     expect(imgElement).toHaveAttribute("src", mockImage);
 
-    // Verify the alt attribute
     expect(imgElement).toHaveAttribute("alt", mockTitle);
   });
 
@@ -35,7 +31,6 @@ describe("Image Component", () => {
 
     const imgElement = screen.getByRole("img");
 
-    // Verify the correct CSS class is applied
     expect(imgElement).toHaveClass("mocked-image-class");
   });
 });
