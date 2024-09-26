@@ -67,6 +67,13 @@
   box-shadow: var(--light-gray);
 }
 
+.button.pink.disabled {
+  cursor: not-allowed;
+  background: var(--very-light-gray);
+  color: var(--light-gray);
+  box-shadow: var(--light-gray);
+}
+
 .button.gray {
   background-image: linear-gradient(
     to right,
