@@ -52,6 +52,7 @@ export const CollectionItem = () => {
               toggleDisplayMiniBagPopup={toggleDisplayPopup}
               displayPopup={displayPopup}
               movePopup={movePopup}
+              updateMovePopup={toggleDisplayPopup}
             />
           )}
           <section className={styles["collection-item"]}>

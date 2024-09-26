@@ -4,7 +4,7 @@ import { MiniBagContent } from "../../../common/MiniBagContent/MiniBagContent";
 import { Popup } from "../../../reusable/Popup/Popup";
 
 export const MiniBag = memo(
-  ({ toggleDisplayMiniBagPopup, displayPopup, movePopup }) => {
+  ({ toggleDisplayMiniBagPopup, displayPopup, movePopup, updateMovePopup }) => {
     return (
       <Popup
         toggleDisplayPopup={toggleDisplayMiniBagPopup}
@@ -13,7 +13,10 @@ export const MiniBag = memo(
         modalVariant={"right"}
         movePopup={movePopup}
       >
-        <MiniBagContent toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup} />
+        <MiniBagContent
+          toggleDisplayMiniBagPopup={toggleDisplayMiniBagPopup}
+          updateMovePopup={updateMovePopup}
+        />
       </Popup>
     );
   }
