@@ -97,7 +97,7 @@ The application is manually optimized for performance by utilizing React's useMe
 ## Testing
 - Jest
 
-![Coverage Status](https://img.shields.io/badge/coverage-81%25-brightgreen.svg)
+![Coverage Status](https://img.shields.io/badge/coverage-80%25-brightgreen.svg)
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
