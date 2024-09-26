@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { PopupItems } from "./PopupItems";
 
-// Mock child components
 jest.mock("./Images/Images", () => ({
   Images: ({ jewelriesByCategory }) => (
     <div data-testid="images-component">{jewelriesByCategory.length} items</div>
@@ -41,13 +40,13 @@ describe("PopupItems Component", () => {
   it("renders without crashing", () => {
     render(<PopupItems {...mockProps} />);
 
-    // Check if Images component renders
     const imagesComponent = screen.getByTestId("images-component");
     expect(imagesComponent).toBeInTheDocument();
     expect(imagesComponent).toHaveTextContent("2 items");
 
-    // Check if InfoAndAction component renders
-    const infoAndActionComponent = screen.getByTestId("info-and-action-component");
+    const infoAndActionComponent = screen.getByTestId(
+      "info-and-action-component"
+    );
     expect(infoAndActionComponent).toBeInTheDocument();
     expect(infoAndActionComponent).toHaveTextContent("Gold Ring");
   });
@@ -55,7 +54,6 @@ describe("PopupItems Component", () => {
   it("passes correct props to Images component", () => {
     render(<PopupItems {...mockProps} />);
 
-    // Check if the jewelriesByCategory prop is passed correctly to Images
     const imagesComponent = screen.getByTestId("images-component");
     expect(imagesComponent).toHaveTextContent("2 items");
   });
@@ -63,12 +61,12 @@ describe("PopupItems Component", () => {
   it("passes correct props to InfoAndAction component", () => {
     render(<PopupItems {...mockProps} />);
 
-    const infoAndActionComponent = screen.getByTestId("info-and-action-component");
+    const infoAndActionComponent = screen.getByTestId(
+      "info-and-action-component"
+    );
 
-    // Ensure InfoAndAction component received the correct prop (first jewelry name)
     expect(infoAndActionComponent).toHaveTextContent("Gold Ring");
 
-    // Check if handlers are passed correctly (though they won't be triggered directly here)
     expect(mockProps.popupCloseHandler).not.toHaveBeenCalled();
     expect(mockProps.updateSelectedColor).not.toHaveBeenCalled();
     expect(mockProps.toggleDisplayPopup).not.toHaveBeenCalled();
