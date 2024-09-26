@@ -1,9 +1,8 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import { JewelryCard } from "./JewelryCard";
 import { useLanguageContext } from "../../../../../../contexts/LanguageContext";
 import { useLargeImagesClick } from "../../../../../../hooks/useLargeImagesClick";
 
-// Mock external dependencies
 jest.mock("../../../../../../contexts/LanguageContext", () => ({
   useLanguageContext: jest.fn(),
 }));
@@ -36,12 +35,6 @@ jest.mock("../../../../../reusable/Button/Button", () => ({
   )),
 }));
 
-// Define mock language data
-const BUTTON_TITLE_BY_LANGUAGE = {
-  en: "Add to Cart",
-  fr: "Ajouter au Panier",
-};
-
 describe("JewelryCard Component", () => {
   const mockJewelries = [{ id: 1, price: 100, stock: "In Stock" }];
   const mockToggleDisplayPopup = jest.fn();
@@ -49,7 +42,6 @@ describe("JewelryCard Component", () => {
   const mockLargeImagesClickHandler = jest.fn();
 
   beforeEach(() => {
-    // Set default mocks
     useLanguageContext.mockReturnValue({ language: "en" });
     useLargeImagesClick.mockReturnValue({
       largeImagesClickHandler: mockLargeImagesClickHandler,
@@ -72,19 +64,17 @@ describe("JewelryCard Component", () => {
     return render(<JewelryCard {...defaultProps} {...props} />);
   };
 
-  it("handles hover and touch events correctly", () => {
+  test("handles hover and touch events correctly", () => {
     const { container } = setup();
 
     const article = container.querySelector("article");
 
-    // Test mouse hover
     fireEvent.mouseEnter(article);
     expect(article).toHaveClass("hovered");
 
     fireEvent.mouseLeave(article);
     expect(article).not.toHaveClass("hovered");
 
-    // Test touch events
     fireEvent.touchStart(article);
     expect(article).toHaveClass("hovered");
 
