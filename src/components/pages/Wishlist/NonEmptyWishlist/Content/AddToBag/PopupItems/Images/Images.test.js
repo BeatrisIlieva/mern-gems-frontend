@@ -27,7 +27,7 @@ describe("Images Component", () => {
     },
   ];
 
-  it("renders without crashing", () => {
+  test("renders without crashing", () => {
     render(<Images jewelriesByCategory={mockJewelries} />);
 
     const imageComponents = screen.getAllByTestId("image-component");
@@ -37,7 +37,7 @@ describe("Images Component", () => {
     expect(singleImageComponent).toBeInTheDocument();
   });
 
-  it("passes correct props to Image components", () => {
+  test("passes correct props to Image components", () => {
     render(<Images jewelriesByCategory={mockJewelries} />);
 
     const imageComponents = screen.getAllByTestId("image-component");
@@ -57,7 +57,7 @@ describe("Images Component", () => {
     );
   });
 
-  it("passes correct props to SingleImage component", () => {
+  test("passes correct props to SingleImage component", () => {
     render(<Images jewelriesByCategory={mockJewelries} />);
 
     const singleImageComponent = screen.getByTestId("single-image-component");
