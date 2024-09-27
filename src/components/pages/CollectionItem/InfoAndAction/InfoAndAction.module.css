@@ -20,6 +20,16 @@
   justify-content: space-between;
 }
 
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-title {
+  font-family: var(--bold-italic-font-family);
+  font-size: var(--large);
+}
 @keyframes transitioning {
   0% {
     opacity: 0;

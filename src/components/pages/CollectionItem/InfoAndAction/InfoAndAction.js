@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { MiniImages } from "../../../reusable/MiniImages/MiniImages";
 import { StockStatus } from "../../../common/StockStatus/StockStatus";
 import { Form } from "./Form/Form";
-import { LargeTitle } from "../../../reusable/LargeTitle/LargeTitle";
 import { Paragraph } from "../../../reusable/Paragraph/Paragraph";
 
 import { useLanguageContext } from "../../../../contexts/LanguageContext";
@@ -55,7 +54,7 @@ export const InfoAndAction = memo(
             </div>
           </div>
           <div className={styles["info-wrapper"]}>
-            <LargeTitle title={jewelryTitle} textAlign={"left"} />
+            <h2 className={styles["category-title"]}>{jewelryTitle}</h2>
             <Paragraph
               text={`${jewelriesByCategory[0].description[language]}`}
               textAlign={"left"}
