@@ -30,6 +30,7 @@
   font-family: var(--bold-italic-font-family);
   font-size: var(--large);
 }
+
 @keyframes transitioning {
   0% {
     opacity: 0;
