@@ -57,7 +57,7 @@ Our website is fully optimized for all device sizes, starting from a minimum scr
 
 <p align="center">
     <img src="https://res.cloudinary.com/deztgvefu/image/upload/mobile/login_imeoyy.png" alt="Image 3" width="114">
-  <img src="https://res.cloudinary.com/deztgvefu/image/upload/mobile/home_dpk40t.png" alt="Image 1" width="114">
+  <img src="https://res.cloudinary.com/deztgvefu/image/upload/mobile/account_kqv6gf.png" alt="Image 1" width="114">
   <img src="https://res.cloudinary.com/deztgvefu/image/upload/mobile/collection_fkxgvc.png" alt="Image 4" width="114">
   <img src="https://res.cloudinary.com/deztgvefu/image/upload/mobile/bag_wurlyj.png" alt="Image 5" width="114">
   <img src="https://res.cloudinary.com/deztgvefu/image/upload/mobile/wishlist_gs1tbv.png" alt="Image 6" width="114">
