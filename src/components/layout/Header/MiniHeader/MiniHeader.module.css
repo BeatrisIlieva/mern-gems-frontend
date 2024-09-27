@@ -10,7 +10,6 @@
   z-index: 100;
   border-bottom: 0.1px solid var(--pink);
   animation: transitioning 1s forwards;
-  position: relative;
   height: 3rem;
   grid-area: unset;
 }
