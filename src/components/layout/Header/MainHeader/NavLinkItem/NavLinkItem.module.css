@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
 }
 
 .nav-link-item:hover,
@@ -16,7 +15,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
   animation: transitioning 1s forwards;
 }
 
@@ -35,6 +33,7 @@
   color: var(--pink);
   height: var(--medium);
   animation: transitioning 1s forwards;
+  padding: 0.25rem;
 }
 
 .count {
