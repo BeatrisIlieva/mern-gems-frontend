@@ -13,7 +13,6 @@
 
 <h4 align="center">
   <a href="#built-with">Built With</a> ·
-  <a href="#deployment">Deployment</a> ·
   <a href="#responsive-design">Responsive Design</a> ·
   <a href="#optimization">Optimization</a> ·
   <a href="#error-handling">Error Handling</a> ·
@@ -41,14 +40,6 @@ Visit our website at: http://ec2-15-236-191-107.eu-west-3.compute.amazonaws.com
 
 ## Built With
 - React
-
-<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
-
-## Deployment
-
-- Amazon Web Services (AWS) EC2 Instance
-- GitHub Actions
-- Docker Hub
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
