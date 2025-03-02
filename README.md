@@ -12,7 +12,6 @@
 
 <h4 align="center">
   <a href="#built-with">Built With</a> ·
-  <a href="#deployment">Deployment</a> ·
   <a href="#testing">Testing</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#features">Features</a> ·
@@ -30,14 +29,6 @@
 - MongoDB
 - MongoDB Atlas
 - Mongoose
-
-<p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
-
-## Deployment
-
-- Amazon Web Services (AWS) EC2 Instance
-- GitHub Actions
-- Docker Hub
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
