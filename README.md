@@ -23,6 +23,9 @@
   <img src="https://res.cloudinary.com/deztgvefu/image/upload/v1725543807/forget-me-not-collection/miniImages/pngtree-sweet-pink-ribbon-png-image_13127280_cfwfwv.png" alt="Project Logo" width="80">
 </p>
 
+## *Demo Video*
+[![Watch the video](https://img.youtube.com/vi/0aPSCCu5VB0/maxresdefault.jpg)](https://www.youtube.com/watch?v=0aPSCCu5VB0)
+
 ## Built With
 - Node.js
 - Express.js
