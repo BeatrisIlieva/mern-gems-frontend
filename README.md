@@ -27,11 +27,6 @@
 
 <p align="center"><i>Welcome to our Online Jewelry Store! This web application serves as a platform for showcasing and selling a stunning collection of exquisite jewelry.</i></p>
 
-
-<h4 align="center" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-Visit our website at: http://ec2-15-236-191-107.eu-west-3.compute.amazonaws.com
-</h4>
-
 <br/>
 <br/>
 
