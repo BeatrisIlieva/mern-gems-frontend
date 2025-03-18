@@ -17,8 +17,7 @@
   <a href="#optimization">Optimization</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#testing">Testing</a> ·
-  <a href="#features">Features</a> ·
-  <a href="#backend">Backend</a> 
+  <a href="#features">Features</a> 
 </h4>
 
 <p align="center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60px;">
@@ -34,7 +33,10 @@
 [![Watch the video](https://img.youtube.com/vi/0aPSCCu5VB0/maxresdefault.jpg)](https://www.youtube.com/watch?v=0aPSCCu5VB0)
 
 ## Built With
-- React
+
+- Frontend: React
+
+- Backend: Node.js, Express.js, MongoDB, MongoDB Atlas, Mongoose
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
@@ -77,12 +79,21 @@ The application is manually optimized for performance by utilizing React's useMe
 #### 3. Size Selection
 - If a user clicks the "Add To Bag" button without selecting a size, an error message is displayed to inform them of the requirement
 
+#### 4. Model Validations Using Regular Expressions:
+- Ensures that data fields such as email addresses follow a standard format, passwords meet complexity requirements, payment details are in correct format etc.
+
+#### 5. Functions for Additional Validations:
+- Includes checks for email uniqueness during registration, verifies the correctness of the old password during password updates, checks if a card is not expired, etc.
+
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
 ## Testing
 - Jest
 
-![Coverage Status](https://img.shields.io/badge/coverage-80%25-brightgreen.svg)
+- Frontend: 
+<br> ![Coverage Status](https://img.shields.io/badge/coverage-80%25-brightgreen.svg) 
+- Backend: 
+<br> ![Coverage Status](https://img.shields.io/badge/coverage-84%25-brightgreen.svg) 
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
@@ -142,12 +153,90 @@ Our website offers a user experience across three languages:
 #### 16. Route Guard 
 
 #### 17. `ScrollToTop` component that ensures the window scrolls to the top of the page whenever the user navigates to a new route
+
+#### 18. User Models:
+- Implemented three distinct user models storing data about:
+  - Logging credentials
+  - Shipping details
+  - Card details
+
+- Each user model is linked by a common user ID:
+  - The ID is derived from the logging credentials model
+  - The IDs for the shipping and card details models are set at the time of user registration
+    
+- Update Email functionality
+- Update Password functionality
+- Create and Update Shipping details functionality
+- Create and Update Card details functionality
+- Logout functionality
+
+#### 19. Database aggregations for Product Filtering and Real-time Availability Tracking
+   
+#### 20. Obligatory Size Selection
+   
+#### 21. Users can increase or decrease the quantity of items in their shopping bag, with validations in place to ensure that they cannot add more than the available quantity in the database or reduce the quantity below zero
+    
+#### 22. Wishlist
+    
+#### 23. Orders History, ordered by the creation time
+  
+#### 24. Email Notifications upon Registration and Order Completion
   
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
-## Backend
-- Built with Node.js, Express.js and MondoDB
+## Installation & Usage
 
-#### *Find the Backend Repository [**HERE**](https://github.com/BeatrisIlieve/mern-gems-backend/tree/main)*
+### Prerequisites
+Make sure you have the following installed on your system:
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- [MongoDB](https://www.mongodb.com/) (for local development or use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+- [Git](https://git-scm.com/)
+- A package manager: **npm** (comes with Node.js)
+
+---
+
+### **1. Clone the Repository**
+
+```sh
+git clone https://github.com/beatrisilieva/mern-gems-ultimate.git
+cd mern-gems
+```
+
+---
+
+### **2. Setup Backend**
+Navigate to the backend directory and install dependencies:
+
+```sh
+cd server
+npm install
+```
+
+Run the backend server:
+
+```sh
+npm start
+```
+
+The backend should now be running on `http://localhost:4000`.
+
+---
+
+### **3. Setup Frontend**
+
+Open a new terminal, navigate to the frontend directory, and install dependencies:
+
+```sh
+cd client
+npm install
+```
+
+Start the frontend development server:
+
+```sh
+npm start
+```
+
+The frontend should now be running on `http://localhost:3000`.
 
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
