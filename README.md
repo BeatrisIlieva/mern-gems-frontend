@@ -17,7 +17,8 @@
   <a href="#optimization">Optimization</a> ·
   <a href="#error-handling">Error Handling</a> ·
   <a href="#testing">Testing</a> ·
-  <a href="#features">Features</a> 
+  <a href="#features">Features</a> ·
+  <a href="#installation">Installation</a> 
 </h4>
 
 <p align="center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60px;">
@@ -184,7 +185,7 @@ Our website offers a user experience across three languages:
   
 <p align="right" dir="auto"><a href="#js-gems">Back To Top</a></p>
 
-## Installation & Usage
+## Installation
 
 ### Prerequisites
 Make sure you have the following installed on your system:
